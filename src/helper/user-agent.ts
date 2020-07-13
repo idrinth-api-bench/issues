@@ -1,7 +1,7 @@
 /* eslint @typescript-eslint/no-var-requires:0 */
 import {
   HashMap,
-} from '../../hashmap';
+} from '../hashmap';
 
 interface Lock {
   name: string,
