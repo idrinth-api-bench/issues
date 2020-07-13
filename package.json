@@ -1,0 +1,41 @@
+{
+  "name": "@idrinth/api-bench",
+  "description": "A library to benchmark apis, no matter if rest or soap",
+  "license": "MIT",
+  "version": "1.0.0",
+  "keywords": [
+    "api",
+    "rest",
+    "performance",
+    "benchmarking",
+    "typescript"
+  ],
+  "author": "Björn Büttner",
+  "contributors": [],
+  "dependencies": {
+    "typescript": "^3.9.5",
+    "needle": "^2.5",
+    "ts-node": "^8.10.2",
+    "@types/needle": "*",
+    "@types/form-urlencoded": "*",
+    "form-urlencoded": "*",
+    "app-root-path": "*"
+  },
+  "devDependencies": {
+    "eslint": "*",
+    "eslint-plugin-json": "*",
+    "mocha": "*",
+    "chai": "*",
+    "@types/chai": "*",
+    "@typescript-eslint/parser": "*",
+    "@typescript-eslint/eslint-plugin": "*",
+    "pino": "*",
+    "@types/pino": "*"
+  },
+  "scripts": {
+    "start": "node main.js",
+    "lint": "eslint .",
+    "lint-fix": "eslint --fix .",
+    "test": "exit 0"
+  }
+}

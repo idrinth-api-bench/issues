@@ -1,0 +1,175 @@
+extends:
+- eslint:recommended
+- "plugin:json/recommended"
+plugins:
+  - json
+ignorePatterns:
+- node_modules
+root: true
+env:
+  node: true
+  es6: true
+parser: "@typescript-eslint/parser"
+rules:
+  no-await-in-loop: error
+  no-extra-parens: warn
+  no-template-curly-in-string: error
+  class-methods-use-this: error
+  complexity:
+  - error
+  - 5
+  consistent-return: warn
+  curly: error
+  dot-notation: warn
+  eqeqeq: error
+  guard-for-in: error
+  no-alert: error
+  no-caller: error
+  no-eval: error
+  no-extend-native: error
+  no-extra-bind: warn
+  no-extra-label: warn
+  no-invalid-this: error
+  no-magic-numbers: warn
+  no-multi-spaces: warn
+  no-new-wrappers: error
+  no-new: error
+  no-console: warn
+  no-proto: error
+  no-return-await: error
+  no-self-compare: error
+  no-sequences: error
+  no-throw-literal: error
+  no-unused-expressions: warn
+  no-useless-call: warn
+  no-useless-return: warn
+  radix: error
+  require-await: error
+  require-unicode-regexp: error
+  wrap-iife:
+  - error
+  - inside
+  no-shadow: error
+  no-label-var: error
+  no-undef-init: error
+  no-undefined: error
+  no-use-before-define: error
+  func-call-spacing: 
+  - warn
+  - never
+  func-names:
+  - error
+  - never
+  func-style:
+  - warn
+  - expression
+  function-call-argument-newline:
+  - error
+  - consistent
+  implicit-arrow-linebreak:
+  - warn
+  - beside
+  indent:
+  - warn
+  - 2
+  key-spacing: warn
+  keyword-spacing: warn
+  lines-between-class-members:
+  - warn
+  - always
+  max-depth: warn
+  max-len:
+  - warn
+  - code: 80
+  max-params: warn
+  newline-per-chained-call: warn
+  new-parens: error
+  no-array-constructor: error
+  no-continue: error
+  no-lonely-if: error
+  no-multi-assign: error
+  no-multiple-empty-lines:
+  - warn
+  - max: 1
+  no-nested-ternary: error
+  no-new-object: error
+  no-tabs: warn
+  no-trailing-spaces: warn
+  no-unneeded-ternary: error
+  no-whitespace-before-property: warn
+  object-curly-newline:
+  - warn
+  - multiline: true
+    minProperties: 1
+  object-curly-spacing:
+  - warn
+  - always
+  object-property-newline: warn
+  one-var-declaration-per-line:
+  - error
+  - always
+  quotes:
+  - warn
+  - single
+  semi: error
+  semi-spacing: warn
+  semi-style: 
+  - error
+  - last
+  space-unary-ops:
+  - warn
+  - words: true
+    nonwords: true
+  space-before-function-paren:
+  - warn
+  - never
+  space-before-blocks:
+  - warn
+  - always
+  switch-colon-spacing:
+  - warn
+  - after: true
+    before: false
+  template-tag-spacing:
+  - warn
+  - always
+  eol-last:
+  - warn
+  - always
+  computed-property-spacing:
+  - warn
+  - never
+  comma-style:
+  - warn
+  - last
+  comma-spacing: warn
+  comma-dangle:
+  - warn
+  - always
+  block-spacing:
+  - warn
+  - always
+  array-element-newline: warn
+  brace-style: warn
+  array-bracket-spacing:
+  - warn
+  - never
+  - singleValue: true
+  array-bracket-newline:
+  - warn
+  - minItems: 2
+  prefer-rest-params: warn
+  template-curly-spacing:
+  - warn
+  - always
+  prefer-const: error
+  no-var: error
+  no-useless-constructor: warn
+  no-useless-computed-key: warn
+  no-confusing-arrow: warn
+  arrow-spacing: warn
+  arrow-body-style:
+  - warn
+  - as-needed
+parserOptions:
+  ecmaVersion: 2018
