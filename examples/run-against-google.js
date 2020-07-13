@@ -7,7 +7,7 @@ const tasks = [ {
   id: 'example',
   main: {
     method: 'get',
-    url: //'https://google.com/',
+    url: 'https://google.com/',
   },
   pre: [
     __dirname + '/../src/middlewares/cookie',
