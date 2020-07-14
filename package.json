@@ -14,12 +14,15 @@
   "contributors": [],
   "dependencies": {
     "typescript": "^3.9.5",
-    "needle": "^2.5",
     "ts-node": "^8.10.2",
+    "needle": "^2.5",
     "@types/needle": "*",
-    "@types/form-urlencoded": "*",
     "form-urlencoded": "*",
-    "app-root-path": "*"
+    "@types/form-urlencoded": "*",
+    "app-root-path": "*",
+    "@types/app-root-path": "*",
+    "cli-table3": "*",
+    "@fast-csv/format": "*"
   },
   "devDependencies": {
     "eslint": "*",

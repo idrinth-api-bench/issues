@@ -1,3 +1,3 @@
 require('ts-node',).register(require('./tsconfig',),);
 
-module.exports = require('./src/executor',).default;
+module.exports = require('./src/main',).default;

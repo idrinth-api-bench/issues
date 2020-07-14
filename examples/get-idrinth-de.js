@@ -1,13 +1,10 @@
 const execute = require('../main',);
-const pino = require('pino',);
-// this is using the side-effect of having main start the typescript inclusion
-const PinoWrapper = require('../src/logger/pino-wrapper',).PinoWrapper;
 
 const tasks = [ {
   id: 'example',
   main: {
     method: 'get',
-    url: 'https://google.com/',
+    url: 'https://idrinth.de/',
   },
   pre: [
     __dirname + '/../src/middlewares/cookie',
@@ -24,7 +21,4 @@ const tasks = [ {
 const threads = 2;
 const repetitions = 10;
 
-// eslint-disable-next-line no-console
-execute(threads, repetitions, tasks, console.log, new PinoWrapper(pino({
-  level: 'debug',
-},),),);
+execute(threads, repetitions, tasks,);

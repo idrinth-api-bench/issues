@@ -1,3 +1,3 @@
-import * as executor from './src/executor';
+import * as executor from './src/main';
 
 export default executor;

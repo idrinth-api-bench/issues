@@ -19,9 +19,7 @@ import {
 import {
   Logger,
 } from './logger/logger';
-import {
-  NullLogger,
-} from './logger/null-logger';
+import Reporter from './reporter/reporter';
 
 const EMPTY = 0;
 
@@ -30,12 +28,9 @@ const executor = (
   threads: number,
   repetitions: number,
   tasks: Array<Task>,
-  resultHandler: (data: {[z:string]: FinishedSet},) => undefined,
-  logger: Logger|undefined,
+  resultHandler?: Reporter,
+  logger?: Logger,
 ): void => {
-  if (typeof logger === 'undefined') {
-    logger = new NullLogger();
-  }
   const validator: Worker = new Worker('./worker/validator.js',);
   const calculator: Worker = new Worker('./worker/calculator.js',);
   let active = 0;
