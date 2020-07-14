@@ -97,7 +97,7 @@ const executor = (
       }
       active --;
       workers[j].terminate();
-      logger.info('All requests done',);
+      logger.info('All requests done, terminating thread',);
     },);
     active ++;
     workers[j].postMessage(internalTasks.shift(),);

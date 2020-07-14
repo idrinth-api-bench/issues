@@ -16,7 +16,9 @@ const CONSTANTS = {
 };
 const average = (
   ...inputs: Array<number>
-): number => Math.round(inputs.reduce((a, b,) => a+b,)/inputs.length,);
+): number => inputs.length > 0 ?
+  Math.round(inputs.reduce((a, b,) => a+b,)/inputs.length,) :
+  NaN;
 const last = (
   input: Array<number>,
 ): number => input.length -CONSTANTS.ARRAY_LENGTH_OFFSET;
