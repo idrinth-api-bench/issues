@@ -25,4 +25,6 @@ const threads = 2;
 const repetitions = 10;
 
 // eslint-disable-next-line no-console
-execute(threads, repetitions, tasks, console.log, new PinoWrapper(pino(),),);
+execute(threads, repetitions, tasks, console.log, new PinoWrapper(pino({
+  level: 'debug',
+},),),);

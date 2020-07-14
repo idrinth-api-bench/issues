@@ -10,8 +10,8 @@ const tasks = [ {
     url: 'http://localhost/',
     autohandle: 'json',
     body: {
-      name: 'world'
-    }
+      name: 'world',
+    },
   },
   pre: [
     __dirname + '/../src/middlewares/cookie',

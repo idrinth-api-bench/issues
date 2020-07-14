@@ -9,6 +9,7 @@ import {
 } from './finished-set';
 
 const CONSTANTS = {
+  EMPTY: 0,
   FIRST: 0,
   PERCENT10: 0.1,
   PERCENT90: 0.9,
@@ -16,14 +17,29 @@ const CONSTANTS = {
 };
 const average = (
   ...inputs: Array<number>
-): number => inputs.length > 0 ?
-  Math.round(inputs.reduce((a, b,) => a+b,)/inputs.length,) :
-  NaN;
+): number => Math.round(inputs.reduce((a, b,) => a+b,)/inputs.length,);
 const last = (
   input: Array<number>,
 ): number => input.length -CONSTANTS.ARRAY_LENGTH_OFFSET;
 
 parentPort.on('message', (result: ResultSet,) => {
+  if (result.durations.length === CONSTANTS.EMPTY) {
+    parentPort.postMessage({
+      id: result.id,
+      errors: result.errors,
+      msgs: result.msgs || {},
+      count: result.count,
+      avg100: NaN,
+      median100: NaN,
+      min100: NaN,
+      max100: NaN,
+      avg80: NaN,
+      median80: NaN,
+      min80: NaN,
+      max80: NaN,
+    },);
+    return;
+  }
   const sorted100 = result.durations.sort();
   const center80 = sorted100.slice(
     Math.floor(result.count * CONSTANTS.PERCENT10,),

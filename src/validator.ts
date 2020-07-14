@@ -8,15 +8,18 @@ import {
   Middleware,
 } from './middleware';
 
+const send = (result: Result, msg: string, success: boolean,): void => {
+  parentPort.postMessage({
+    duration: result.duration,
+    id: result.id,
+    success,
+    msg,
+  },);
+};
 parentPort.on('message', (result: Result&{success?: boolean;msg?:string},) => {
-  if (typeof result.success === 'boolean' && typeof result.msg !== 'undefined' && result.success === false) {
+  if (typeof result.success === 'boolean' && result.success === false) {
     //an error on some lower level
-    parentPort.postMessage({
-        duration: result.duration,
-        id: result.id,
-        success: false,
-        msg: result.msg+"",
-      });
+    send(result, result.msg+'', false,);
     return;
   }
   for (const validator of result.validators) {
@@ -25,17 +28,8 @@ parentPort.on('message', (result: Result&{success?: boolean;msg?:string},) => {
       const ware: Middleware = require(validator,).default;
       ware.process(result,);
     } catch (error) {
-      parentPort.postMessage({
-        duration: result.duration,
-        id: result.id,
-        success: false,
-        msg: error+'',
-      },);
+      send(result, error+'', false,);
     }
   }
-  parentPort.postMessage({
-    duration: result.duration,
-    id: result.id,
-    success: true,
-  },);
+  send(result, '', true,);
 },);

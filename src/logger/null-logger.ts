@@ -4,27 +4,27 @@ import {
 } from './logger';
 
 export class NullLogger implements Logger {
-  public fatal(msg: string|Error, data?: Record<string, unknown>,): void {
+  public fatal(msg: string, data?: Record<string, unknown>,): void {
     //nothing to do
   }
 
-  public error(msg: string|Error, data?: Record<string, unknown>,): void {
+  public error(msg: string, data?: Record<string, unknown>,): void {
     //nothing to do
   }
 
-  public warn(msg: string|Error, data?: Record<string, unknown>,): void {
+  public warn(msg: string, data?: Record<string, unknown>,): void {
     //nothing to do
   }
 
-  public info(msg: string|Error, data?: Record<string, unknown>,): void {
+  public info(msg: string, data?: Record<string, unknown>,): void {
     //nothing to do
   }
 
-  public debug(msg: string|Error, data?: Record<string, unknown>,): void {
+  public debug(msg: string, data?: Record<string, unknown>,): void {
     //nothing to do
   }
 
-  public trace(msg: string|Error, data?: Record<string, unknown>,): void {
+  public trace(msg: string, data?: Record<string, unknown>,): void {
     //nothing to do
   }
 }
