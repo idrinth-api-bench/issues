@@ -1,3 +1,6 @@
 /test
-/example
+/examples
+/nbproject
 /README.md
+.eslintrc.yml
+.travis.yml
