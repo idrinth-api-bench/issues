@@ -25,8 +25,6 @@ As usual with my projects this is MIT-licensed.
 
 ## Planned TODOs
 
-- a csv reporter
-- a useful console reporter
 - an access token middleware based on common patterns
 - a less painful addition of middlewares to tasks
 - unit tests (yeah, it's one of those projects)
