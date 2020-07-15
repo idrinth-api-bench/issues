@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Idrinth/api-bench.svg?branch=master)](https://travis-ci.com/Idrinth/api-bench) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/3171affc728048da8df4fe36b6d4771e)](https://www.codacy.com/manual/Idrinth/api-bench?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Idrinth/api-bench&amp;utm_campaign=Badge_Grade)
+
 # Why a Benchmark Runner
 
 Given, that the amount of APIs increase by moving to microservices, we need a way to determine if changes to a service's response times are related to code changes. For this purpose a defined load with repeatable request seems the most useful.

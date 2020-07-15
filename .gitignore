@@ -1,2 +1,6 @@
 /nbproject
 /node_modules
+/result.json
+/result.csv
+/.nyc_output
+/coverage

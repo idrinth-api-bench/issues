@@ -4,3 +4,9 @@
 /README.md
 .eslintrc.yml
 .travis.yml
+/result.json
+/result.csv
+/.nyc_output
+/coverage
+/.mocharc.yml
+/.nycrc.yml

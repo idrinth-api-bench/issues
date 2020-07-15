@@ -1,2 +1,4 @@
+extends:
+- "plugin:@typescript-eslint/recommended"
 env:
   mocha: true

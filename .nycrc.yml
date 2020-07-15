@@ -1,0 +1,11 @@
+require:
+- ts-node/register
+extension:
+- .ts
+reporter:
+- lcov
+- text-summary
+sourceMap: true
+instrument: true
+include:
+- src/**/*.ts

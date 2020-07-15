@@ -21,29 +21,31 @@
     "typescript": "^3.9.5",
     "ts-node": "^8.10.2",
     "needle": "^2.5",
-    "@types/needle": "*",
-    "form-urlencoded": "*",
-    "@types/form-urlencoded": "*",
-    "app-root-path": "*",
-    "@types/app-root-path": "*",
-    "cli-table3": "*",
-    "@fast-csv/format": "*"
+    "@types/needle": "^2.0.4",
+    "form-urlencoded": "^4.1.4",
+    "@types/form-urlencoded": "^2.0.1",
+    "app-root-path": "^3",
+    "@types/app-root-path": "^1.2.4",
+    "cli-table3": "^0.6",
+    "@fast-csv/format": "^4.3.1"
   },
   "devDependencies": {
-    "eslint": "*",
-    "eslint-plugin-json": "*",
-    "mocha": "*",
-    "chai": "*",
-    "@types/chai": "*",
-    "@typescript-eslint/parser": "*",
-    "@typescript-eslint/eslint-plugin": "*",
-    "pino": "*",
-    "@types/pino": "*"
+    "eslint": "^7.3.1",
+    "eslint-plugin-json": "^2.1.1",
+    "mocha": "^8.0.1",
+    "chai": "^4.2.0",
+    "nyc": "^15.1",
+    "@types/mocha": "^8",
+    "@types/chai": "^4.2.11",
+    "@typescript-eslint/parser": "^3.4",
+    "@typescript-eslint/eslint-plugin": "^3.4",
+    "pino": "^6.3.2",
+    "@types/pino": "^6.3"
   },
   "scripts": {
     "start": "node main.js",
     "lint": "eslint .",
     "lint-fix": "eslint --fix .",
-    "test": "exit 0"
+    "test": "nyc mocha"
   }
 }
