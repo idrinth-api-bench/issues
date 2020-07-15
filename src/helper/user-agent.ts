@@ -1,19 +1,19 @@
 /* eslint @typescript-eslint/no-var-requires:0 */
-import {
-  HashMap,
-} from '../hashmap';
-
-interface Lock {
-  name: string,
-  version: string,
-  dependencies: {[lib: string]: HashMap}
+interface Versioned {
+  version: string;
 }
+interface Lock extends Versioned{
+  name: string;
+  dependencies: {[lib: string]: Versioned};
+}
+
+const version = (obj: Versioned,) => obj.version.replace(/\.\d+$/u, '',);
 
 const reqlib: {require: (lib:string) => unknown} = require('app-root-path',);
 const lock: Lock = <Lock> reqlib.require('/package-lock.json',);
-const main = `${ lock.name }/${ lock.version.replace(/\.[0-9]+$/, '') }`;
-const needle = `needle/${ lock.dependencies.needle.version.replace(/\.[0-9]+$/, '') }`;
+const main = `${ lock.name }/${ version(lock,) }`;
+const needle = `needle/${ version(lock.dependencies.needle,) }`;
 const self = lock.dependencies['@idrinth/api-bench'] ?
-  `@idrinth/api-bench/${ lock.dependencies['@idrinth/api-bench'].version.replace(/\.[0-9]+$/, '') }` :
+  `@idrinth/api-bench/${ version(lock.dependencies['@idrinth/api-bench'],) }` :
   '';
 export default `${ main } ${ self } ${ needle }`.replace(/ {2}/ug, ' ',);
