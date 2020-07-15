@@ -4,12 +4,12 @@
 
 Given, that the amount of APIs increase by moving to microservices, we need a way to determine if changes to a service's response times are related to code changes. For this purpose a defined load with repeatable request seems the most useful.
 
-## Why not use an existing library?
+## Regarding exsting libraries
 
 Other tools like [matteofigus/api-benchmark](https://github.com/matteofigus/api-benchmark), [bvanderlaan/api-bench-runner](https://github.com/bvanderlaan/api-bench-runner) or [jeffbski/bench-rest](https://github.com/jeffbski/bench-rest) are all untouched for quite a while and don't provide type definitions for typescript. This makes them less desirable when working with bigger projects where the better static codecheck is an huge boost in developement speed.
 Additionally this tool separates the validation thread from the thread processing the actual requests to further minimize the effect of complicated validations or huge response bodies on the data gathering.
 
-## How to use this?
+## Usage & Examples
 
 Basicly require main/include main and supply the executor method with required parameters. There is an example avaible in /examples.
 
@@ -21,11 +21,11 @@ Middlewares use an absolute file path to be loaded. the following characters wil
 - `$@some/lib/abc` -> `@some/lib/src/middlewares/abc`
 - `#abc` -> `/path/to/root/src/middlewares/abc`
 
-## What loggers can I use?
+## Logging
 
 Any logger that either implements the [Interface](src/logger/logger.ts) or has a wrapper. So far a wrapper for pino is avaible.
 
-### What levels is this logging on?
+### Logging levels used
 
 Most log entries are debug level, with the major steps being written to info. Trace is currently not used but may be used for detailed argument printing at some point.
 
@@ -33,10 +33,9 @@ Most log entries are debug level, with the major steps being written to info. Tr
 
 As usual with my projects this is MIT-licensed.
 
-## Planned TODOs
+## Planned
 
-- an access token middleware based on common patterns
-- a less painful addition of middlewares to tasks
-- unit tests (yeah, it's one of those projects)
-- soap support
-- graphql support
+-   an access token middleware based on common patterns
+-   unit tests (yeah, it's one of those projects)
+-   soap support
+-   graphql support
