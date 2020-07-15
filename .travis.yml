@@ -25,4 +25,4 @@ jobs:
     script:
     - npm test
     after_success:
-    - bash <(wget -q -O - https://coverage.codacy.com/get.sh) -r coverage/lcov.info
+    - bash <(wget -q -O - https://coverage.codacy.com/get.sh) report -r coverage/lcov.info
