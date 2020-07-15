@@ -37,8 +37,8 @@ const executor = (
   let checking = 0;
   let analysing = 0;
   const workers: Array<Worker> = [];
-  const results: {[z:string]: ResultSet} = {};
-  const finished: {[z:string]: FinishedSet} = {};
+  const results: {[z: string]: ResultSet} = {};
+  const finished: {[z: string]: FinishedSet} = {};
   const internalTasks = [];
   logger.debug(
     'initializing tasks to have '+

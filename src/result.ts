@@ -11,11 +11,11 @@ export class Result {
   public duration: number;
 
   public response: {
-    headers:HashMap,
-    cookies:HashMap,
-    body:string,
-    uri:string,
-    status:number,
+    headers:HashMap;
+    cookies:HashMap;
+    body:string;
+    uri:string;
+    status:number;
   };
 
   // eslint-disable-next-line max-params
@@ -38,7 +38,7 @@ export class Result {
     };
     for (const header in response.headers) {
       if (typeof response.headers[header] === 'string') {
-        this.response.headers[header] = <string> response.headers[header];
+        this.response.headers[header] = response.headers[header] as string;
       }
     }
   }

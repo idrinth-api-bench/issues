@@ -11,7 +11,7 @@ export class ResultSet {
 
   public durations: Array<number>;
 
-  public msgs:{[msg:string]: number};
+  public msgs: {[msg: string]: number};
 
   public constructor(public readonly id: string,) {
     this.errors = InitialZero;

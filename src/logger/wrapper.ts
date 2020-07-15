@@ -9,35 +9,27 @@ export abstract class Wrapper implements Logger {
     data: Record<string, unknown>|Error,
   ): void
 
-  private _log(
-    level: string,
-    msg: string,
-    data: Record<string, unknown>|undefined,
-  ): void {
-    this.log(level, msg, data ? data : {},);
-  }
-
   public fatal(msg: string, data?: Record<string, unknown>,): void {
-    this._log('fatal', msg, data,);
+    this.log('fatal', msg, data ? data : {},);
   }
 
   public error(msg: string, data?: Record<string, unknown>,): void {
-    this._log('error', msg, data,);
+    this.log('error', msg, data ? data : {},);
   }
 
   public warn(msg: string, data?: Record<string, unknown>,): void {
-    this._log('warn', msg, data,);
+    this.log('warn', msg, data ? data : {},);
   }
 
   public info(msg: string, data?: Record<string, unknown>,): void {
-    this._log('info', msg, data,);
+    this.log('info', msg, data ? data : {},);
   }
 
   public debug(msg: string, data?: Record<string, unknown>,): void {
-    this._log('debug', msg, data,);
+    this.log('debug', msg, data ? data : {},);
   }
 
   public trace(msg: string, data?: Record<string, unknown>,): void {
-    this._log('trace', msg, data,);
+    this.log('trace', msg, data ? data : {},);
   }
 }
