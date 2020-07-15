@@ -13,12 +13,12 @@ import {
 import {
   Middleware,
 } from './middleware';
+import * as resolve from './helper/middleware-loader';
 
 parentPort.on('message', (task: Task,) => {
   let quest = task.main;
   for (const middleware of task.pre) {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const ware: Middleware = require(middleware,).default;
+    const ware: Middleware = resolve(middleware,);
     quest = ware.prepare(quest,);
   }
   const start = process.hrtime();

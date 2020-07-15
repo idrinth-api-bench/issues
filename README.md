@@ -11,6 +11,14 @@ Additionally this tool separates the validation thread from the thread processin
 
 Basicly require main/include main and supply the executor method with required parameters. There is an example avaible in /examples.
 
+### Middlewares
+
+Middlewares use an absolute file path to be loaded. the following characters will be used to expand short forms:
+
+- `^abc` -> `/path/to/this/library/src/middlewares/abc`
+- `$@some/lib/abc` -> `@some/lib/src/middlewares/abc`
+- `#abc` -> `/path/to/root/src/middlewares/abc`
+
 ## What loggers can I use?
 
 Any logger that either implements the [Interface](src/logger/logger.ts) or has a wrapper. So far a wrapper for pino is avaible.

@@ -8,8 +8,8 @@ const tasks = [ {
   },
   pre: [
     __dirname + '/../src/middlewares/cookie',
-    __dirname + '/../src/middlewares/csrf-header',
-    __dirname + '/../src/middlewares/encoding',
+    '^csrf-header',
+    '#encoding',
     __dirname + '/../src/middlewares/user-agent',
   ],
   post: [

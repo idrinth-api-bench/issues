@@ -7,6 +7,7 @@ import {
 import {
   Middleware,
 } from './middleware';
+import * as resolve from './helper/middleware-loader';
 
 const send = (result: Result, msg: string, success: boolean,): void => {
   parentPort.postMessage({
@@ -24,8 +25,7 @@ parentPort.on('message', (result: Result&{success?: boolean;msg?:string},) => {
   }
   for (const validator of result.validators) {
     try {
-      // eslint-disable-next-line @typescript-eslint/no-var-requires
-      const ware: Middleware = require(validator,).default;
+      const ware: Middleware = resolve(validator,);
       ware.process(result,);
     } catch (error) {
       send(result, error+'', false,);
