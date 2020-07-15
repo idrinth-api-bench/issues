@@ -4,7 +4,7 @@ import {
 } from 'chai';
 import 'mocha';
 
-describe('user-agent helper', () => {
+describe('helper/user-agent', () => {
   it('should be a string', () => {
     expect(userAgent,).to.be.a('string',);
   },);

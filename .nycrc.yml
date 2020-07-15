@@ -5,6 +5,7 @@ extension:
 reporter:
 - lcov
 - text-summary
+all: true
 sourceMap: true
 instrument: true
 include:
