@@ -17,7 +17,7 @@ const send = (result: Result, msg: string, success: boolean,): void => {
     msg,
   },);
 };
-parentPort.on('message', (result: Result&{success?: boolean;msg?:string},) => {
+parentPort.on('message', (result: Result&{success?: boolean;msg?: string},) => {
   if (typeof result.success === 'boolean' && result.success === false) {
     //an error on some lower level
     send(result, result.msg+'', false,);

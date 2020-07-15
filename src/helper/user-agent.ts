@@ -7,10 +7,10 @@ interface Lock extends Versioned{
   dependencies: {[lib: string]: Versioned};
 }
 
-const version = (obj: Versioned,) => obj.version.replace(/\.\d+$/u, '',);
+const version = (ob: Versioned,): string => ob.version.replace(/\.\d+$/u, '',);
 
-const reqlib: {require: (lib:string) => unknown} = require('app-root-path',);
-const lock: Lock = <Lock> reqlib.require('/package-lock.json',);
+const reqlib: {require: (lib: string) => unknown} = require('app-root-path',);
+const lock: Lock = reqlib.require('/package-lock.json',) as Lock;
 const main = `${ lock.name }/${ version(lock,) }`;
 const needle = `needle/${ version(lock.dependencies.needle,) }`;
 const self = lock.dependencies['@idrinth/api-bench'] ?

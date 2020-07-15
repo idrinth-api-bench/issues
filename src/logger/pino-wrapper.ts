@@ -13,7 +13,7 @@ export class PinoWrapper extends Wrapper {
   protected log(
     level: string,
     msg: string,
-    data: {msg?: string, __msg?: string},
+    data: {msg?: string; __msg?: string},
   ): void {
     if (typeof data.msg === 'string') {
       data.__msg = data.msg;

@@ -11,11 +11,11 @@ export class Result {
   public duration: number;
 
   public response: {
-    headers:HashMap;
-    cookies:HashMap;
-    body:string;
-    uri:string;
-    status:number;
+    headers: HashMap;
+    cookies: HashMap;
+    body: string;
+    uri: string;
+    status: number;
   };
 
   // eslint-disable-next-line max-params
@@ -25,7 +25,7 @@ export class Result {
     start: Array<number>,
     end: Array<number>,
     response: NeedleResponse,
-    public validators:Array<string>,
+    public validators: Array<string>,
   ) {
     this.duration = (end.shift() - start.shift()) * ToMicro;
     this.duration += end.pop() - start.pop();

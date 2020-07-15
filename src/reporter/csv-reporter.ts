@@ -9,7 +9,7 @@ import {
   createWriteStream,
 } from 'fs';
 
-const csv : Reporter = (results: {[id: string]: FinishedSet},): void => {
+const csv: Reporter = (results: {[id: string]: FinishedSet},): void => {
   const csvStream = format({
     headers: true,
   },);

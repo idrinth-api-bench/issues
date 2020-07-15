@@ -7,7 +7,7 @@ interface ReporterList {
   addReporter: (reporter: Reporter) => void;
 }
 interface Results {
-  [id: string]: FinishedSet
+  [id: string]: FinishedSet;
 }
 
 const reporters: Array<Reporter> = [];

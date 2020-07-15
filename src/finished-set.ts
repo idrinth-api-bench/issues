@@ -10,5 +10,5 @@ export interface FinishedSet {
   median80: number;
   min80: number;
   max80: number;
-  msgs?:{[msg: string]: number};
+  msgs?: {[msg: string]: number};
 }

@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/Idrinth/api-bench.svg?branch=master)](https://travis-ci.com/Idrinth/api-bench) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/3171affc728048da8df4fe36b6d4771e)](https://www.codacy.com/manual/Idrinth/api-bench?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Idrinth/api-bench&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.com/Idrinth/api-bench.svg?branch=master)](https://travis-ci.com/Idrinth/api-bench) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/3171affc728048da8df4fe36b6d4771e)](https://www.codacy.com/manual/Idrinth/api-bench?utm_source=github.com&utm_medium=referral&utm_content=Idrinth/api-bench&utm_campaign=Badge_Coverage) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/3171affc728048da8df4fe36b6d4771e)](https://www.codacy.com/manual/Idrinth/api-bench?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Idrinth/api-bench&amp;utm_campaign=Badge_Grade)
 
 # Why a Benchmark Runner
 
@@ -17,9 +17,9 @@ Basicly require main/include main and supply the executor method with required p
 
 Middlewares use an absolute file path to be loaded. the following characters will be used to expand short forms:
 
-- `^abc` -> `/path/to/this/library/src/middlewares/abc`
-- `$@some/lib/abc` -> `@some/lib/src/middlewares/abc`
-- `#abc` -> `/path/to/root/src/middlewares/abc`
+-   `^abc` -> `/path/to/this/library/src/middlewares/abc`
+-   `$@some/lib/abc` -> `@some/lib/src/middlewares/abc`
+-   `#abc` -> `/path/to/root/src/middlewares/abc`
 
 ## Logging
 
