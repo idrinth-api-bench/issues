@@ -4,6 +4,9 @@ import {
   expect,
 } from 'chai';
 import 'mocha';
+import {
+  NeedleHttpVerbs,
+} from 'needle';
 
 describe('middlewares/status-2xx', () => {
   it('should be a class', () => {
@@ -70,4 +73,32 @@ describe('middlewares/status-2xx', () => {
       );
     },);
   }
+  it('process should throw for undefined status', () => {
+    const input = {
+      response: {
+        // eslint-disable-next-line no-undefined
+        status: undefined,
+        headers: {},
+        cookies: {},
+        body: '',
+        uri: '',
+      },
+      duration: 0,
+      id: '',
+      validators: [],
+    };
+    expect(() => Status2xx.process(input,),).to.throw(
+      'Request returned no status',
+    );
+  },);
+  it('prepare should return input', () => {
+    const input = {
+      method: 'head' as NeedleHttpVerbs,
+      headers: {},
+      cookies: {},
+      body: 'body',
+      url: 'url',
+    };
+    expect(Status2xx.prepare(input,),).to.equal(input,);
+  },);
 },);
