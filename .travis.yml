@@ -4,6 +4,7 @@ cache:
   directories:
   - ~/.composer/cache/
   - ~/.npm
+  - ~/.codacy-coverage
 
 jobs:
   include:
@@ -23,3 +24,5 @@ jobs:
     - npm install
     script:
     - npm test
+    after_success:
+    - bash <(wget -q -O - https://coverage.codacy.com/get.sh)
