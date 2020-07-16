@@ -18,7 +18,7 @@ const resolve = (path: string,): string => {
     return reqlib + '/src/middlewares/' + shortened;
   }
   if (path[FIRST] === '$') {
-    return shortened.replace(/\/([^/])+$/u, '/src/middlewares/$1',);
+    return shortened.replace(/\/([^/]+)$/u, '/src/middlewares/$1',);
   }
   return path;
 };

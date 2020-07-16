@@ -8,4 +8,7 @@ describe('reporter/multi-reporter', () => {
   it('should be a function', () => {
     expect(MultiReporter,).to.be.a('function',);
   },);
+  it('should have a method addReporter', () => {
+    expect(MultiReporter.addReporter,).to.be.a('function',);
+  },);
 },);
