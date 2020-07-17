@@ -6,7 +6,7 @@ export abstract class Wrapper implements Logger {
   protected abstract log(
     level: string,
     msg: string,
-    data: Record<string, unknown>|Error,
+    data: Record<string, unknown>,
   ): void
 
   public fatal(msg: string, data?: Record<string, unknown>,): void {

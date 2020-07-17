@@ -11,22 +11,40 @@ describe('logger/null-logger', () => {
     expect(NullLogger,).to.be.a('function',);
   },);
   const logger = new NullLogger();
-  it('should have a static method trace', () => {
+  it('should have a method trace', () => {
     expect(logger.trace,).to.be.a('function',);
   },);
-  it('should have a static method debug', () => {
+  it('trace should not throw an error if called', () => {
+    expect(() => logger.trace('example',),).to.not.throw();
+  },);
+  it('should have a method debug', () => {
     expect(logger.debug,).to.be.a('function',);
   },);
-  it('should have a static method info', () => {
+  it('debug should not throw an error if called', () => {
+    expect(() => logger.debug('example',),).to.not.throw();
+  },);
+  it('should have a method info', () => {
     expect(logger.info,).to.be.a('function',);
   },);
-  it('should have a static method warn', () => {
+  it('info should not throw an error if called', () => {
+    expect(() => logger.info('example',),).to.not.throw();
+  },);
+  it('should have a method warn', () => {
     expect(logger.warn,).to.be.a('function',);
   },);
-  it('should have a static method error', () => {
+  it('warn should not throw an error if called', () => {
+    expect(() => logger.warn('example',),).to.not.throw();
+  },);
+  it('should have a method error', () => {
     expect(logger.error,).to.be.a('function',);
   },);
-  it('should have a static method fatal', () => {
+  it('error should not throw an error if called', () => {
+    expect(() => logger.error('example',),).to.not.throw();
+  },);
+  it('should have a method fatal', () => {
     expect(logger.fatal,).to.be.a('function',);
+  },);
+  it('fatal should not throw an error if called', () => {
+    expect(() => logger.fatal('example',),).to.not.throw();
   },);
 },);
