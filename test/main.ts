@@ -33,5 +33,5 @@ describe('main', () => {
       unlinkSync(file2,);
       setTimeout(done, SHORT,);
     }, SHORT,);
-  },).timeout(SHORT,);
+  },).timeout(LONG,);
 },);
