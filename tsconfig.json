@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
     "experimentalDecorators": true
-  }
+  },
+  "typeRoots" : [
+    "./typings",
+    "@types"
+  ]
 }
