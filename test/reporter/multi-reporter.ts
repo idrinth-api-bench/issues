@@ -27,7 +27,9 @@ describe('reporter/multi-reporter', () => {
         max80: 99,
       },
     };
-    multiReporter.addReporter(() => {throw new Error('Rep1');});
+    multiReporter.addReporter(() => {
+      throw new Error('Rep1',);
+    },);
     expect(() => multiReporter(results,),).to.throw('Rep1',);
   },);
 },);
