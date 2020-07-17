@@ -39,6 +39,11 @@ describe('logger/pino-wrapper', () => {
   it('trace should not throw an error if called', () => {
     expect(() => logger.trace('traced',),).to.throw('t|[{},"traced"]',);
   },);
+  it('trace should handle object messages', () => {
+    expect(() => logger.trace('traced',{msg: 'hi'}),).to.throw(
+      't|[{"msg":"hi","__msg":"hi"},"traced"]',
+    );
+  },);
   it('should have a method debug', () => {
     expect(logger.debug,).to.be.a('function',);
   },);
