@@ -16,6 +16,9 @@ describe('helper/middleware-loader', () => {
   it('should load by ^-path', () => {
     expect(loader('^cookie',),).to.be.a('function',);
   },);
+  it('should load by ^-path and skip the default key', () => {
+    expect(loader('^../main',),).to.be.a('function',);
+  },);
   it('should load by #-path', () => {
     expect(loader('#cookie',),).to.be.a('function',);
   },);
