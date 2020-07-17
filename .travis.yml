@@ -22,7 +22,9 @@ jobs:
     name: unittest
     install:
     - npm install
+    - npm install coveralls --save-dev
     script:
     - npm test
     after_success:
     - bash <(wget -q -O - https://coverage.codacy.com/get.sh) report -r coverage/lcov.info
+    - nyc report --reporter=text-lcov | coveralls 
