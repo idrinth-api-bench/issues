@@ -4,7 +4,7 @@ import {
 } from 'chai';
 import 'mocha';
 import {
-  existsSync, readFileSync,
+  existsSync, readFileSync, unlinkSync
 } from 'fs';
 
 describe('reporter/json-reporter', () => {
@@ -31,6 +31,7 @@ describe('reporter/json-reporter', () => {
     jsonReporter(results,);
     // eslint-disable-next-line no-unused-expressions
     expect(existsSync(file,),).to.be.true;
+    unlinkSync(file);
   },);
   it('should create a json file with matching contents', () => {
     const results = {
@@ -50,5 +51,6 @@ describe('reporter/json-reporter', () => {
     };
     jsonReporter(results,);
     expect(readFileSync(file,) + '',).to.equal(JSON.stringify(results,),);
+    unlinkSync(file);
   },);
 },);

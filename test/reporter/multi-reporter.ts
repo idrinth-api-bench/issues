@@ -3,6 +3,7 @@ import {
   expect,
 } from 'chai';
 import 'mocha';
+import {unlinkSync,} from 'fs';
 
 describe('reporter/multi-reporter', () => {
   it('should be a function', () => {
@@ -12,6 +13,8 @@ describe('reporter/multi-reporter', () => {
     expect(multiReporter.addReporter,).to.be.a('function',);
   },);
   it('should execute all reporters', () => {
+  const file1 = process.cwd() + '/result.csv';
+  const file2 = process.cwd() + '/result.json';
     const results = {
       any: {
         id: '1',
@@ -31,5 +34,7 @@ describe('reporter/multi-reporter', () => {
       throw new Error('Rep1',);
     },);
     expect(() => multiReporter(results,),).to.throw('Rep1',);
+    unlinkSync(file1);
+    unlinkSync(file2);
   },);
 },);
