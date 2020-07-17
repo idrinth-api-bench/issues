@@ -1,6 +1,8 @@
-const app = require('http').createServer((request, response) => {
-  response.writeHead(202, {});
+const PORT = 3000;
+const STATUS = 202;
+const app = require('http',).createServer((request, response,) => {
+  response.writeHead(STATUS, {},);
   response.end();
-});
+},);
 
-app.listen(3000);
+app.listen(PORT,);

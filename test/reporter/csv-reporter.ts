@@ -4,7 +4,7 @@ import {
 } from 'chai';
 import 'mocha';
 import {
-  existsSync, readFileSync, unlinkSync
+  existsSync, readFileSync, unlinkSync,
 } from 'fs';
 
 const ONE_SECOND = 1000;
@@ -34,7 +34,7 @@ describe('reporter/csv-reporter', () => {
     setTimeout(() => {
       // eslint-disable-next-line no-unused-expressions
       expect(existsSync(file,),).to.be.true;
-      unlinkSync(file);
+      unlinkSync(file,);
       done();
     }, ONE_SECOND,);
   },);
@@ -61,7 +61,7 @@ describe('reporter/csv-reporter', () => {
         + 'max100,avg80,median80,min80,max80'
         + '\n1,14,7,6,33,1,99,76,33,14,99',
       );
-      unlinkSync(file);
+      unlinkSync(file,);
       done();
     }, ONE_SECOND,);
   },);
