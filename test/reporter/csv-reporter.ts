@@ -14,7 +14,7 @@ describe('reporter/csv-reporter', () => {
   it('should be a function', () => {
     expect(csvReporter,).to.be.a('function',);
   },);
-  it('should create a csv file', () => {
+  it('should create a csv file', (done,) => {
     const results = {
       any: {
         id: '1',
@@ -31,8 +31,11 @@ describe('reporter/csv-reporter', () => {
       },
     };
     csvReporter(results,);
-    // eslint-disable-next-line no-unused-expressions
-    expect(existsSync(file,),).to.be.true;
+    setTimeout(() => {
+      // eslint-disable-next-line no-unused-expressions
+      expect(existsSync(file,),).to.be.true;
+      done();
+    }, ONE_SECOND,);
   },);
   it('should create a csv file with matching contents', (done,) => {
     const results = {
