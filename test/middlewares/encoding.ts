@@ -3,7 +3,9 @@ import {
   expect,
 } from 'chai';
 import 'mocha';
-import { Request } from '../../src/request';
+import {
+  Request,
+} from '../../src/request';
 
 describe('middlewares/encoding', () => {
   it('should be a class', () => {
@@ -16,15 +18,30 @@ describe('middlewares/encoding', () => {
     expect(Encoding.process,).to.be.a('function',);
   },);
   it('prepare should json-transform object to string', () => {
-    expect(Encoding.prepare(<Request><unknown>{body: {a: 'b'}, autohandle: 'json'}).body,).to.equal('{"a":"b"}',);
+    expect(Encoding.prepare(<Request><unknown>{
+      body: {
+        a: 'b',
+      },
+      autohandle: 'json',
+    },).body,).to.equal('{"a":"b"}',);
   },);
   it('prepare should json-transform array to string', () => {
-    expect(Encoding.prepare(<Request><unknown>{body: ['a'], autohandle: 'json'}).body,).to.equal('["a"]',);
+    expect(Encoding.prepare(<Request><unknown>{
+      body: [ 'a', ],
+      autohandle: 'json',
+    },).body,).to.equal('["a"]',);
   },);
   it('prepare should form-transform object to string', () => {
-    expect(Encoding.prepare(<Request><unknown>{body: {a: 'b'}, autohandle: 'form'}).body,).to.equal('a=b',);
+    expect(Encoding.prepare(<Request><unknown>{
+      body: {
+        a: 'b',
+      },
+      autohandle: 'form',
+    },).body,).to.equal('a=b',);
   },);
   it('prepare should not transform by default', () => {
-    expect(Encoding.prepare(<Request><unknown>{body: {}}).body,).to.deep.equal({},);
+    expect(Encoding.prepare(<Request><unknown>{
+      body: {},
+    },).body,).to.deep.equal({},);
   },);
 },);

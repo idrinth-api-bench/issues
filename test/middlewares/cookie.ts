@@ -3,8 +3,12 @@ import {
   expect,
 } from 'chai';
 import 'mocha';
-import { Request } from '../../src/request';
-import { Result } from '../../src/result';
+import {
+  Request,
+} from '../../src/request';
+import {
+  Result,
+} from '../../src/result';
 
 describe('middlewares/cookie', () => {
   it('should be a class', () => {
@@ -17,18 +21,38 @@ describe('middlewares/cookie', () => {
     expect(Cookie.process,).to.be.a('function',);
   },);
   it('should not set cookies by default', () => {
-    expect(Cookie.prepare(<Request>{}),).to.deep.equal({cookies: {}},);
+    expect(Cookie.prepare(<Request>{},),).to.deep.equal({
+      cookies: {},
+    },);
   },);
   it('should get cookies by default', () => {
-    expect(() => Cookie.process(<Result><unknown>{response: {cookies: {abc: 'def'}}}),).to.not.throw();
+    expect(() => Cookie.process(<Result><unknown>{
+      response: {
+        cookies: {
+          abc: 'def',
+        },
+      },
+    },),).to.not.throw();
   },);
   it('should set cookies it has', () => {
-    expect(Cookie.prepare(<Request>{}),).to.deep.equal({cookies: {abc: 'def'}},);
+    expect(Cookie.prepare(<Request>{},),).to.deep.equal({
+      cookies: {
+        abc: 'def',
+      },
+    },);
   },);
   it('should change no cookies if there are none', () => {
-    expect(() => Cookie.process(<Result><unknown>{response: {cookies: {}}}),).to.not.throw();
+    expect(() => Cookie.process(<Result><unknown>{
+      response: {
+        cookies: {},
+      },
+    },),).to.not.throw();
   },);
   it('should set cookies it has', () => {
-    expect(Cookie.prepare(<Request>{}),).to.deep.equal({cookies: {abc: 'def'}},);
+    expect(Cookie.prepare(<Request>{},),).to.deep.equal({
+      cookies: {
+        abc: 'def',
+      },
+    },);
   },);
 },);

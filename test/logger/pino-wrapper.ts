@@ -40,7 +40,9 @@ describe('logger/pino-wrapper', () => {
     expect(() => logger.trace('traced',),).to.throw('t|[{},"traced"]',);
   },);
   it('trace should handle object messages', () => {
-    expect(() => logger.trace('traced',{msg: 'hi'}),).to.throw(
+    expect(() => logger.trace('traced', {
+      msg: 'hi',
+    },),).to.throw(
       't|[{"msg":"hi","__msg":"hi"},"traced"]',
     );
   },);

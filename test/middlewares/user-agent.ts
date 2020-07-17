@@ -3,7 +3,9 @@ import {
   expect,
 } from 'chai';
 import 'mocha';
-import { Request } from '../../src/request';
+import {
+  Request,
+} from '../../src/request';
 
 describe('middlewares/user-agent', () => {
   it('should be a class', () => {
@@ -16,6 +18,8 @@ describe('middlewares/user-agent', () => {
     expect(UserAgent.process,).to.be.a('function',);
   },);
   it('prepare should add a user agent header', () => {
-    expect(UserAgent.prepare(<Request>{}).headers['user-agent'],).to.be.a('string',);
+    expect(UserAgent.prepare(<Request>{},).headers['user-agent'],).to.be.a(
+      'string',
+    );
   },);
 },);
