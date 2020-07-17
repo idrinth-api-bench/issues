@@ -23,7 +23,6 @@
     "needle": "^2.5",
     "@types/needle": "^2.0.4",
     "form-urlencoded": "^4.1.4",
-    "@types/form-urlencoded": "^2.0.1",
     "app-root-path": "^3",
     "@types/app-root-path": "^1.2.4",
     "cli-table3": "^0.6",

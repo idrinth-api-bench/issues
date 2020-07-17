@@ -4,7 +4,7 @@ import {
 import {
   Request,
 } from '../request';
-import * as formurlencoded from 'form-urlencoded';
+import formUrlEncoded from 'form-urlencoded';
 import {
   Result,
 } from '../result';
@@ -18,7 +18,7 @@ class Encoding {
       return request;
     }
     if (request.autohandle === 'form' && typeof request.body === 'object') {
-      request.body = formurlencoded(request.body,);
+      request.body = formUrlEncoded(request.body,);
     }
     return request;
   }
