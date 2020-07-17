@@ -10,8 +10,8 @@ import {
   Worker,
 } from 'worker_threads';
 
-const ONE_AND_HALF_SECOND = 1500;
-const FIVE_SECOND = 5000;
+const SHORT = 3500;
+const LONG = 7500;
 
 describe('main', () => {
   const file1 = process.cwd() + '/result.csv';
@@ -31,7 +31,7 @@ describe('main', () => {
       runner.terminate();
       unlinkSync(file1,);
       unlinkSync(file2,);
-      setTimeout(done, ONE_AND_HALF_SECOND,);
-    }, ONE_AND_HALF_SECOND,);
-  },).timeout(FIVE_SECOND,);
+      setTimeout(done, SHORT,);
+    }, SHORT,);
+  },).timeout(SHORT,);
 },);
