@@ -1,10 +1,11 @@
 import csvReporter from '../../src/reporter/csv-reporter';
+import * as mock from 'mock-fs';
 import {
   expect,
 } from 'chai';
 import 'mocha';
 import {
-  existsSync, readFileSync, unlinkSync,
+  existsSync, readFileSync,
 } from 'fs';
 
 const ONE_SECOND = 1000;
@@ -15,6 +16,7 @@ describe('reporter/csv-reporter', () => {
     expect(csvReporter,).to.be.a('function',);
   },);
   it('should create a csv file', (done,) => {
+    mock();
     const results = {
       any: {
         id: '1',
@@ -34,11 +36,12 @@ describe('reporter/csv-reporter', () => {
     setTimeout(() => {
       // eslint-disable-next-line no-unused-expressions
       expect(existsSync(file,),).to.be.true;
-      unlinkSync(file,);
+      mock.restore();
       done();
     }, ONE_SECOND,);
   },);
   it('should create a csv file with matching contents', (done,) => {
+    mock();
     const results = {
       any: {
         id: '1',
@@ -61,7 +64,7 @@ describe('reporter/csv-reporter', () => {
         + 'max100,avg80,median80,min80,max80'
         + '\n1,14,7,6,33,1,99,76,33,14,99',
       );
-      unlinkSync(file,);
+      mock.restore();
       done();
     }, ONE_SECOND,);
   },);

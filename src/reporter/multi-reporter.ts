@@ -18,7 +18,9 @@ const multi: Reporter&ReporterList = (results: Results,): void => {
 };
 
 multi.addReporter = (reporter: Reporter,): void => {
-  reporters.push(reporter,);
+  if (! reporters.includes(reporter,)) {
+    reporters.push(reporter,);
+  }
 };
 
 export default multi;

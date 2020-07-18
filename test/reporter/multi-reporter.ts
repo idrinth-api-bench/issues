@@ -1,11 +1,14 @@
 import multiReporter from '../../src/reporter/multi-reporter';
+import * as mock from 'mock-fs';
 import {
   expect,
 } from 'chai';
 import 'mocha';
 import {
-  unlinkSync,
+  existsSync,
 } from 'fs';
+
+const ONE_SECOND = 1000;
 
 describe('reporter/multi-reporter', () => {
   it('should be a function', () => {
@@ -14,7 +17,8 @@ describe('reporter/multi-reporter', () => {
   it('should have a method addReporter', () => {
     expect(multiReporter.addReporter,).to.be.a('function',);
   },);
-  it('should execute all reporters', () => {
+  it('should execute all reporters', (done,) => {
+    mock();
     const file1 = process.cwd() + '/result.csv';
     const file2 = process.cwd() + '/result.json';
     const results = {
@@ -32,11 +36,14 @@ describe('reporter/multi-reporter', () => {
         max80: 99,
       },
     };
-    multiReporter.addReporter(() => {
-      throw new Error('Rep1',);
-    },);
-    expect(() => multiReporter(results,),).to.throw('Rep1',);
-    unlinkSync(file1,);
-    unlinkSync(file2,);
+    multiReporter(results,);
+    // eslint-disable-next-line no-unused-expressions
+    expect(existsSync(file2,),).to.be.true;
+    setTimeout(() => {
+      // eslint-disable-next-line no-unused-expressions
+      expect(existsSync(file1,),).to.be.true;
+      mock.restore();
+      done();
+    }, ONE_SECOND,);
   },);
 },);

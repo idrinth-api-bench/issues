@@ -39,7 +39,8 @@
     "@typescript-eslint/parser": "^3.4",
     "@typescript-eslint/eslint-plugin": "^3.4",
     "pino": "^6.3.2",
-    "@types/pino": "^6.3"
+    "@types/pino": "^6.3",
+    "mock-fs": "*"
   },
   "scripts": {
     "start": "node main.js",

@@ -1,7 +1,4 @@
 import {
-  parentPort,
-} from 'worker_threads';
-import {
   ResultSet,
 } from './result-set';
 import {
@@ -22,9 +19,9 @@ const last = (
   input: Array<number>,
 ): number => input.length -CONSTANTS.ARRAY_LENGTH_OFFSET;
 
-parentPort.on('message', (result: ResultSet,) => {
+export = (result: ResultSet,): FinishedSet => {
   if (result.durations.length === CONSTANTS.EMPTY) {
-    parentPort.postMessage({
+    return {
       id: result.id,
       errors: result.errors,
       msgs: result.msgs || {},
@@ -37,8 +34,7 @@ parentPort.on('message', (result: ResultSet,) => {
       median80: NaN,
       min80: NaN,
       max80: NaN,
-    },);
-    return;
+    };
   }
   const sorted100 = result.durations.sort();
   const center80 = sorted100.slice(
@@ -49,7 +45,7 @@ parentPort.on('message', (result: ResultSet,) => {
   const max100 = sorted100[last(sorted100,)];
   const min80 = center80[CONSTANTS.FIRST];
   const max80 = center80[last(center80,)];
-  const stats: FinishedSet = {
+  return {
     id: result.id,
     errors: result.errors,
     msgs: result.msgs || {},
@@ -63,5 +59,4 @@ parentPort.on('message', (result: ResultSet,) => {
     min80,
     max80,
   };
-  parentPort.postMessage(stats,);
-},);
+};

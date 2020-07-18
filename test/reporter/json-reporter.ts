@@ -1,10 +1,11 @@
 import jsonReporter from '../../src/reporter/json-reporter';
+import * as mock from 'mock-fs';
 import {
   expect,
 } from 'chai';
 import 'mocha';
 import {
-  existsSync, readFileSync, unlinkSync,
+  existsSync, readFileSync,
 } from 'fs';
 
 describe('reporter/json-reporter', () => {
@@ -13,6 +14,7 @@ describe('reporter/json-reporter', () => {
     expect(jsonReporter,).to.be.a('function',);
   },);
   it('should create a json file', () => {
+    mock();
     const results = {
       any: {
         id: '1',
@@ -31,9 +33,10 @@ describe('reporter/json-reporter', () => {
     jsonReporter(results,);
     // eslint-disable-next-line no-unused-expressions
     expect(existsSync(file,),).to.be.true;
-    unlinkSync(file,);
+    mock.restore();
   },);
   it('should create a json file with matching contents', () => {
+    mock();
     const results = {
       any: {
         id: '1',
@@ -51,6 +54,6 @@ describe('reporter/json-reporter', () => {
     };
     jsonReporter(results,);
     expect(readFileSync(file,) + '',).to.equal(JSON.stringify(results,),);
-    unlinkSync(file,);
+    mock.restore();
   },);
 },);
