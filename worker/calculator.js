@@ -1,6 +1,6 @@
 require('ts-node',).register(require('../tsconfig',),);
 const Worker = require('worker_threads',);
-const worker = require('../src/calculator',);
+const worker = require('../src/worker/calculator',);
 
 Worker.parentPort.on(
   'message',

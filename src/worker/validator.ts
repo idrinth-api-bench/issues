@@ -1,10 +1,10 @@
 import {
   Result,
-} from './result';
+} from '../result';
 import {
   Middleware,
-} from './middleware';
-import * as resolve from './helper/middleware-loader';
+} from '../middleware';
+import * as resolve from '../helper/middleware-loader';
 
 interface Answer {
   duration: number;

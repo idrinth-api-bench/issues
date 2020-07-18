@@ -1,22 +1,22 @@
 import {
   Result,
-} from './result';
+} from '../result';
 import {
   request,
 } from 'needle';
 import {
   Task,
-} from './task';
+} from '../task';
 import {
   Middleware,
-} from './middleware';
-import * as resolve from './helper/middleware-loader';
+} from '../middleware';
+import * as resolve from '../helper/middleware-loader';
 
-interface callback {
+interface Callback {
   (arg: Result,): void
 }
 
-export = (task: Task, callable: callback,): void => {
+export = (task: Task, callable: Callback,): void => {
   let quest = task.main;
   for (const middleware of task.pre) {
     const ware: Middleware = resolve(middleware,);

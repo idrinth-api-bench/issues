@@ -1,9 +1,9 @@
 import {
   ResultSet,
-} from './result-set';
+} from '../result-set';
 import {
   FinishedSet,
-} from './finished-set';
+} from '../finished-set';
 
 const CONSTANTS = {
   EMPTY: 0,
