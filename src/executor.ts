@@ -1,7 +1,4 @@
 import {
-  Worker,
-} from 'worker_threads';
-import {
   Result,
 } from './result';
 import {
@@ -23,20 +20,34 @@ import Reporter from './reporter/reporter';
 
 const EMPTY = 0;
 
+interface WorkerConstructor {
+  new(path: string);
+}
+type Event = 'message';
+interface IWorker {
+  terminate: () => void;
+  postMessage: (param: unknown) => void;
+  on: (
+    event: Event,
+    handler: (message: unknown) => void
+  ) => void;
+}
+
 /* eslint max-params:0 */
 const executor = (
   threads: number,
   repetitions: number,
   tasks: Array<Task>,
-  resultHandler?: Reporter,
-  logger?: Logger,
+  resultHandler: Reporter,
+  logger: Logger,
+  Worker: WorkerConstructor,
 ): void => {
-  const validator: Worker = new Worker('./worker/validator.js',);
-  const calculator: Worker = new Worker('./worker/calculator.js',);
+  const validator: IWorker = new Worker('./worker/validator.js',);
+  const calculator: IWorker = new Worker('./worker/calculator.js',);
   let active = 0;
   let checking = 0;
   let analysing = 0;
-  const workers: Array<Worker> = [];
+  const workers: Array<IWorker> = [];
   const results: {[z: string]: ResultSet} = {};
   const finished: {[z: string]: FinishedSet} = {};
   const internalTasks = [];

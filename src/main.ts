@@ -10,6 +10,9 @@ import {
 import Reporter from './reporter/reporter';
 import defaultReporter from './helper/default-reporter';
 import executor from './executor';
+import {
+  Worker,
+} from 'worker_threads';
 
 /* eslint max-params:0 */
 export default (
@@ -25,5 +28,5 @@ export default (
   if (typeof resultHandler === 'undefined') {
     resultHandler = defaultReporter;
   }
-  executor(threads, repetitions, tasks, resultHandler, logger,);
+  executor(threads, repetitions, tasks, resultHandler, logger, Worker,);
 };
