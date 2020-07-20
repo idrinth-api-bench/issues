@@ -24,7 +24,7 @@ interface WorkerConstructor {
   new(path: string);
 }
 type Event = 'message';
-interface IWorker {
+interface Thread {
   terminate: () => void;
   postMessage: (param: unknown) => void;
   on: (
@@ -42,12 +42,12 @@ const executor = (
   logger: Logger,
   Worker: WorkerConstructor,
 ): void => {
-  const validator: IWorker = new Worker('./worker/validator.js',);
-  const calculator: IWorker = new Worker('./worker/calculator.js',);
+  const validator: Thread = new Worker('./worker/validator.js',);
+  const calculator: Thread = new Worker('./worker/calculator.js',);
   let active = 0;
   let checking = 0;
   let analysing = 0;
-  const workers: Array<IWorker> = [];
+  const workers: Array<Thread> = [];
   const results: {[z: string]: ResultSet} = {};
   const finished: {[z: string]: FinishedSet} = {};
   const internalTasks = [];

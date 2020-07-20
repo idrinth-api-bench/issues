@@ -13,7 +13,7 @@ import {
 import * as resolve from '../helper/middleware-loader';
 
 interface Callback {
-  (arg: Result,): void
+  (arg: Result,): void;
 }
 
 export = (task: Task, callable: Callback,): void => {
