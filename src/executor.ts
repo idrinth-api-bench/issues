@@ -17,6 +17,7 @@ import {
   Logger,
 } from './logger/logger';
 import Reporter from './reporter/reporter';
+import * as Progress from 'cli-progress';
 
 const EMPTY = 0;
 
@@ -44,6 +45,10 @@ const executor = (
 ): void => {
   const validator: Thread = new Worker('./worker/validator.js',);
   const calculator: Thread = new Worker('./worker/calculator.js',);
+  const bar = new Progress.SingleBar({
+    stopOnComplete: true,
+    clearOnComplete: true,
+  },);
   let active = 0;
   let checking = 0;
   let analysing = 0;
@@ -60,10 +65,12 @@ const executor = (
       internalTasks.push(task,);
     }
   }
+  bar.start(internalTasks.length + internalTasks.length + tasks.length, EMPTY,);
   calculator.on('message', (data: FinishedSet,) => {
     finished[data.id] = data;
     logger.debug(`Analyzation of ${ data.id } finished`,);
     analysing --;
+    bar.increment();
     if (active === EMPTY && checking === EMPTY && analysing === EMPTY) {
       calculator.terminate();
       logger.info('Starting supplied result handler',);
@@ -76,6 +83,7 @@ const executor = (
     logger.debug(`Starting validation of ${ data.id }`,);
     results[data.id] = results[data.id] || new ResultSet(data.id,);
     results[data.id].add(data,);
+    bar.increment();
     if (results[data.id].count === threads*repetitions) {
       logger.info(`Finished requesting all ${ data.id }`,);
       logger.debug(`Starting analyzation of ${ data.id }`,);
@@ -95,6 +103,7 @@ const executor = (
     workers[j].on('message', (data: Result,) => {
       logger.debug(`Starting validation of ${ data.id }`,);
       checking ++;
+      bar.increment();
       validator.postMessage(data,);
       if (internalTasks.length > EMPTY) {
         logger.debug('Starting next request',);

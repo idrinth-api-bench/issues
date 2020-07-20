@@ -21,7 +21,20 @@ const cli: Reporter = (results: {[id: string]: FinishedSet},): void => {
     ],
   },);
   for (const id of Object.getOwnPropertyNames(results,)) {
-    table.push(Object.values(results[id],),);
+    const vals = results[id];
+    table.push([
+      vals.id,
+      vals.errors,
+      vals.count,
+      vals.avg100,
+      vals.median100,
+      vals.min100,
+      vals.max100,
+      vals.avg80,
+      vals.median80,
+      vals.min80,
+      vals.max80,
+    ],);
   }
   // eslint-disable-next-line no-console
   console.log(`${ table }`,);
