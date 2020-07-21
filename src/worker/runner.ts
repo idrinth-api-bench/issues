@@ -18,9 +18,11 @@ interface Callback {
 
 export = (task: Task, callable: Callback,): void => {
   let quest = task.main;
-  for (const middleware of task.pre) {
-    const ware: Middleware = resolve(middleware,);
-    quest = ware.prepare(quest,);
+  if (task.pre) {
+    for (const middleware of task.pre) {
+      const ware: Middleware = resolve(middleware,);
+      quest = ware.prepare(quest,);
+    }
   }
   const start = process.hrtime();
   request(
