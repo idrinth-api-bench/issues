@@ -36,7 +36,7 @@ export = (result: ResultSet,): FinishedSet => {
       max80: NaN,
     };
   }
-  const sorted100 = result.durations.sort((a:number, b:number) => a-b);
+  const sorted100 = result.durations.sort((a:number, b:number,) => a-b,);
   const center80 = sorted100.slice(
     Math.floor(result.count * CONSTANTS.PERCENT10,),
     Math.ceil(result.count * CONSTANTS.PERCENT90,),

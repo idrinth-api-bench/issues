@@ -1,3 +1,4 @@
+/* eslint no-magic-numbers:0 */
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const calculator = require('../../src/worker/calculator',);
 import {
@@ -10,10 +11,15 @@ describe('calculator', () => {
     expect(calculator,).to.be.a('function',);
   },);
   it('should return an empty set if not given data', () => {
-    expect(calculator({id:'##', errors: 5, durations: [], count: 9}),).to.deep.equal({
+    expect(calculator({
       id: '##',
       errors: 5,
-      msgs:  {},
+      durations: [],
+      count: 9,
+    },),).to.deep.equal({
+      id: '##',
+      errors: 5,
+      msgs: {},
       count: 9,
       avg100: NaN,
       median100: NaN,
@@ -26,10 +32,25 @@ describe('calculator', () => {
     },);
   },);
   it('should return a set if given data', () => {
-    expect(calculator({id:'#1', errors: 5, msgs: {some: 5}, durations: [1,2,3,4], count: 9}),).to.deep.equal({
+    expect(calculator({
       id: '#1',
       errors: 5,
-      msgs:  {some: 5},
+      msgs: {
+        some: 5,
+      },
+      durations: [
+        1,
+        2,
+        3,
+        4,
+      ],
+      count: 9,
+    },),).to.deep.equal({
+      id: '#1',
+      errors: 5,
+      msgs: {
+        some: 5,
+      },
       count: 9,
       avg100: 3,
       median100: 3,
@@ -42,10 +63,36 @@ describe('calculator', () => {
     },);
   },);
   it('should return a result if given data', () => {
-    expect(calculator({id:'k#1', errors: 5, msgs: {some: 5}, durations: [1,2,3,4,5,6,7,8,9,10,23,343,32,2,2], count: 15}),).to.deep.equal({
+    expect(calculator({
       id: 'k#1',
       errors: 5,
-      msgs:  {some: 5},
+      msgs: {
+        some: 5,
+      },
+      durations: [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        23,
+        343,
+        32,
+        2,
+        2,
+      ],
+      count: 15,
+    },),).to.deep.equal({
+      id: 'k#1',
+      errors: 5,
+      msgs: {
+        some: 5,
+      },
       count: 15,
       avg100: 30,
       median100: 172,
