@@ -11,6 +11,7 @@ import {
 const TIMEOUT = 6000;
 const STATUS = 202;
 
+const server = new Worker('./fixtures/server.js',);
 describe('runner', () => {
   it('should be a function', () => {
     expect(runner,).to.be.a('function',);
@@ -21,7 +22,7 @@ describe('runner', () => {
         id: 'i',
         main: {
           method: 'get',
-          url: 'http://localhost:8901',
+          url: 'http://localhost:8902',
           cookies: {},
           headers: {},
           body: '',
@@ -38,7 +39,6 @@ describe('runner', () => {
       },);
   },).timeout(TIMEOUT,);
   it('should request a page from the server', (done,) => {
-    const server = new Worker('./fixtures/server.js',);
     runner(
       {
         id: 'i',
@@ -62,8 +62,9 @@ describe('runner', () => {
         expect(result.response.status,).to.equal(STATUS,);
         expect(result.response.uri,).to.equal('http://localhost:8901',);
         expect(result.validators,).to.deep.equal([],);
-        server.terminate();
         done();
       },);
   },);
+},).afterAll(() => {
+  server.terminate();
 },);
