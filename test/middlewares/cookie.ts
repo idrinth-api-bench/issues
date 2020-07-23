@@ -48,6 +48,11 @@ describe('middlewares/cookie', () => {
       },
     },),).to.not.throw();
   },);
+  it('should change no cookies if the response is incomplete', () => {
+    expect(() => Cookie.process(<Result><unknown>{
+      response: {},
+    },),).to.not.throw();
+  },);
   it('should set cookies it has', () => {
     expect(Cookie.prepare(<Request>{},),).to.deep.equal({
       cookies: {

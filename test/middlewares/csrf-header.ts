@@ -48,6 +48,11 @@ describe('middlewares/csrf-header', () => {
       },
     },),).to.not.throw();
   },);
+  it('should change no token if the response is incomplete', () => {
+    expect(() => CsrfHeader.process(<Result><unknown>{
+      response: {},
+    },),).to.not.throw();
+  },);
   it('should set token it has', () => {
     expect(CsrfHeader.prepare(<Request>{},),).to.deep.equal({
       headers: {

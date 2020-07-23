@@ -48,4 +48,19 @@ describe('validator', () => {
     //eslint-disable-next-line no-unused-expressions
     expect(result.success,).to.be.true;
   },);
+  it('should succeed if validator succeeds', () => {
+    const duration = 92;
+    const result = validator({
+      id: '#',
+      duration,
+      response: {
+        status: 209
+      },
+      validators: ['#status-2xx'],
+    },);
+    expect(result.id,).to.equal('#',);
+    expect(result.duration,).to.equal(duration,);
+    //eslint-disable-next-line no-unused-expressions
+    expect(result.success,).to.be.true;
+  },);
 },);
