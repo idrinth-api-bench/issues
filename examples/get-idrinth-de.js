@@ -18,7 +18,7 @@ const tasks = [ {
     __dirname + '/../src/middlewares/status-2xx',
   ],
 }, ];
-const threads = 12;
-const repetitions = 180;
+const threads = 2;
+const repetitions = 18;
 
 execute(threads, repetitions, tasks,);

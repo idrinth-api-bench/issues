@@ -49,7 +49,7 @@ describe('runner', () => {
           headers: {},
           body: '',
         },
-        pre: ['#cookie']
+        pre: [ '#cookie', ],
       },
       (result,) => {
         expect(result,).to.be.an('object',);

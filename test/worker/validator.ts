@@ -54,9 +54,9 @@ describe('validator', () => {
       id: '#',
       duration,
       response: {
-        status: 209
+        status: 209,
       },
-      validators: ['#status-2xx'],
+      validators: [ '#status-2xx', ],
     },);
     expect(result.id,).to.equal('#',);
     expect(result.duration,).to.equal(duration,);
