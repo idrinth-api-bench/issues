@@ -18,6 +18,7 @@ import {
 } from './logger/logger';
 import Reporter from './reporter/reporter';
 import * as Progress from 'cli-progress';
+import validateTasks from './validate-tasks';
 
 const EMPTY = 0;
 
@@ -43,9 +44,7 @@ const executor = (
   logger: Logger,
   Worker: WorkerConstructor,
 ): void => {
-  if (tasks.length === 0 || repetitions < 1 || threads < 1) {
-    throw new Error("Can't measure no tasks.");
-  }
+  validateTasks(repetitions, threads, tasks,);
   const validator: Thread = new Worker('./worker/validator.js',);
   const calculator: Thread = new Worker('./worker/calculator.js',);
   const bar = new Progress.SingleBar({

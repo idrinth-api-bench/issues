@@ -1,29 +1,56 @@
-import executor, { Thread } from '../src/executor';
+import executor, {
+  Thread,
+} from '../src/executor';
 import {
   expect,
 } from 'chai';
 import 'mocha';
-import { NullLogger } from '../src/logger/null-logger';
-import { Result } from '../src/result';
-import { ResultSet } from '../src/result-set';
-import { FinishedSet } from '../src/finished-set';
-import { PinoWrapper } from '../src/logger/pino-wrapper';
-import { Task } from '../src/task';
-const pino = require('pino',);
+import {
+  NullLogger,
+} from '../src/logger/null-logger';
+import {
+  Result,
+} from '../src/result';
+import {
+  FinishedSet,
+} from '../src/finished-set';
+import {
+  Task,
+} from '../src/task';
+import {
+  ValidationResult,
+} from '../src/validation-result';
 
-class FakeResult implements Result,ResultSet,FinishedSet {
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+const NOOP = () => {};
+const NONE = 0;
+
+class FakeResult implements Result, ValidationResult, FinishedSet {
+
+    public duration;
+
     public id = 'some-id';
-    public errors = 1;
-    public count  = 0;
-    public avg100 = 9;
-    public median100 = 9;
-    public max100 = 9;
-    public min100 = 9;
-    public avg80 = 9;
-    public median80 = 9;
-    public max80 = 9;
-    public min80 = 9;
-    public duration = 9;
+
+    public errors: number;
+
+    public count: number;
+
+    public avg100: number;
+
+    public median100: number;
+
+    public max100: number;
+
+    public min100: number;
+
+    public avg80: number;
+
+    public median80: number;
+
+    public max80: number;
+
+    public min80: number;
+
     public response = {
       headers: {},
       cookies: {},
@@ -31,67 +58,117 @@ class FakeResult implements Result,ResultSet,FinishedSet {
       uri: '',
       status: 202,
     };
+
     public validators = [];
-    public durations = [9];
+
+    public durations;
+
     public msgs = {};
+
+    success = true;
+
+    public constructor() {
+      const requests = 1;
+      this.errors = requests;
+      this.count = requests;
+      const duration = 9;
+      this.duration = duration;
+      this.avg100 = duration;
+      this.avg80 = duration;
+      this.durations = [ duration, ];
+      this.max100 = duration;
+      this.max80 = duration;
+      this.min100 = duration;
+      this.min80 = duration;
+      this.median100 = duration;
+      this.median80 = duration;
+    }
+
     public add() {
-      this.count++;
-    };
-};
+      this.count ++;
+    }
+}
 class FakeWorker implements Thread {
   private handler;
+
   public static built = {};
+
   public static terminated = {};
+
   private result = new FakeResult();
-  public constructor(private path: string)
-  {
-    FakeWorker.built[path] = FakeWorker.built[path] || 0;
-    FakeWorker.built[path]++;
+
+  public constructor(private path: string,) {
+    FakeWorker.built[path] = FakeWorker.built[path] || NONE;
+    FakeWorker.built[path] ++;
   }
-  public on(type: string, callable: (a: unknown)=>void): void
-  {
+
+  public on(type: string, callable: (a: unknown)=>void,): void {
     this.handler = callable;
   }
-  public postMessage(a: unknown): void {
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public postMessage(a: unknown,): void {
     const c = this.handler;
     const result = this.result;
-    setTimeout(() => c(result), 1);
+    const next = 1;
+    setTimeout(() => c(result,), next,);
   }
-  public terminate(): void
-  {
-    FakeWorker.terminated[this.path] = FakeWorker.terminated[this.path] || 0;
-    FakeWorker.terminated[this.path]++;
+
+  public terminate(): void {
+    FakeWorker.terminated[this.path] = FakeWorker.terminated[this.path] || NONE;
+    FakeWorker.terminated[this.path] ++;
   }
 }
 
 describe('executor', () => {
+  const repeats = 2;
+  const threads = 3;
+  const tasks = [ <Task> {
+    id: 'test',
+  }, ];
+  const once = 1;
   it('should be a function', () => {
     expect(executor,).to.be.a('function',);
   },);
-  it ('should not try to execute no tasks(0 tasks)', () => {
-    expect(() => executor(3, 2, [], () => {}, new NullLogger(), FakeWorker)).to.throw("Can't measure no tasks.");
-  });
-  it ('should not try to execute no tasks(0 repeats)', () => {
-    expect(() => executor(0, 2, [<Task> {id: 'test'}], () => {}, new NullLogger(), FakeWorker)).to.throw("Can't measure no tasks.");
-  });
-  it ('should not try to execute no tasks (0 threads)', () => {
-    expect(() => executor(3, 0, [<Task> {id: 'test'}], () => {}, new NullLogger(), FakeWorker)).to.throw("Can't measure no tasks.");
-  });
-  it ('should execute all tasks', (done) => {
-    executor(3, 2, [<Task> {id: 'test'}], () => done(), new NullLogger(), FakeWorker);
-  });
-  it ('should have build the right workers', () => {
-    expect(FakeWorker.built).to.deep.equal({
-      "./worker/calculator.js": 1,
-      "./worker/validator.js": 1,
-      "./worker/webrequest.js": 3,
-    });
-  });
-  it ('should have shut down the right workers', () => {
-    expect(FakeWorker.terminated).to.deep.equal({
-      "./worker/calculator.js": 1,
-      "./worker/validator.js": 1,
-      "./worker/webrequest.js": 3,
-    });
-  });
+  it('should not try to execute no tasks(0 tasks)', () => {
+    expect(
+      () => executor(threads, repeats, [], NOOP, new NullLogger(), FakeWorker,),
+    ).to.throw('Can\'t measure no tasks.',);
+  },);
+  it('should not try to execute no tasks(0 threads)', () => {
+    expect(
+      () => executor(NONE, repeats, tasks, NOOP, new NullLogger(), FakeWorker,),
+    ).to.throw('Can\'t measure no tasks.',);
+  },);
+  it('should not try to execute no tasks (0 repeats)', () => {
+    expect(
+      () => executor(threads, NONE, tasks, NOOP, new NullLogger(), FakeWorker,),
+    ).to.throw('Can\'t measure no tasks.',);
+  },);
+  it('should execute all tasks', (done,) => {
+    expect(
+      () => executor(
+        threads,
+        repeats,
+        tasks,
+        () => done(),
+        new NullLogger(),
+        FakeWorker,
+      ),
+    ).to.not.throw();
+  },);
+  it('should have build the right workers', () => {
+    expect(FakeWorker.built,).to.deep.equal({
+      './worker/calculator.js': once,
+      './worker/validator.js': once,
+      './worker/webrequest.js': threads,
+    },);
+  },);
+  it('should have shut down the right workers', () => {
+    expect(FakeWorker.terminated,).to.deep.equal({
+      './worker/calculator.js': once,
+      './worker/validator.js': once,
+      './worker/webrequest.js': threads,
+    },);
+  },);
 },);
