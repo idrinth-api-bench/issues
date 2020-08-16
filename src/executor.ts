@@ -21,11 +21,11 @@ import * as Progress from 'cli-progress';
 
 const EMPTY = 0;
 
-interface WorkerConstructor {
+export interface WorkerConstructor {
   new(path: string);
 }
 type Event = 'message';
-interface Thread {
+export interface Thread {
   terminate: () => void;
   postMessage: (param: unknown) => void;
   on: (
@@ -43,6 +43,9 @@ const executor = (
   logger: Logger,
   Worker: WorkerConstructor,
 ): void => {
+  if (tasks.length === 0 || repetitions < 1 || threads < 1) {
+    throw new Error("Can't measure no tasks.");
+  }
   const validator: Thread = new Worker('./worker/validator.js',);
   const calculator: Thread = new Worker('./worker/calculator.js',);
   const bar = new Progress.SingleBar({

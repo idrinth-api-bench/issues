@@ -44,6 +44,6 @@ As usual with my projects this is MIT-licensed.
 
 ## Planned
 
--   unit tests (yeah, it's one of those projects)
+-   more unit tests (yeah, it's one of those projects)
 -   soap support
 -   graphql support
