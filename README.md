@@ -4,7 +4,7 @@
 
 Given, that the amount of APIs increase by moving to microservices, we need a way to determine if changes to a service's response times are related to code changes. For this purpose a defined load with repeatable request seems the most useful.
 
-## Regarding exsting libraries
+## Regarding existing libraries
 
 Other tools like [matteofigus/api-benchmark](https://github.com/matteofigus/api-benchmark), [bvanderlaan/api-bench-runner](https://github.com/bvanderlaan/api-bench-runner) or [jeffbski/bench-rest](https://github.com/jeffbski/bench-rest) are all untouched for quite a while and don't provide type definitions for typescript. This makes them less desirable when working with bigger projects where the better static codecheck is an huge boost in developement speed.
 Additionally this tool separates the validation thread from the thread processing the actual requests to further minimize the effect of complicated validations or huge response bodies on the data gathering.
@@ -21,6 +21,15 @@ Middlewares use an absolute file path to be loaded. the following characters wil
 -   `$@some/lib/abc` -> `@some/lib/src/middlewares/abc`
 -   `#abc` -> `/path/to/root/src/middlewares/abc`
 
+#### Provided Middlewares
+
+- json and form encode
+- access token handling
+- csrf-header handling
+- status 2xx check
+- user-agent
+- cookies
+
 ## Logging
 
 Any logger that either implements the [Interface](src/logger/logger.ts) or has a wrapper. So far a wrapper for pino is avaible.
@@ -35,7 +44,6 @@ As usual with my projects this is MIT-licensed.
 
 ## Planned
 
--   an access token middleware based on common patterns
 -   unit tests (yeah, it's one of those projects)
 -   soap support
 -   graphql support
