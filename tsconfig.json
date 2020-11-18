@@ -6,5 +6,8 @@
   "typeRoots" : [
     "./typings",
     "@types"
+  ],
+  "include": [
+    "src/**/*.ts"
   ]
 }

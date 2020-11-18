@@ -4,3 +4,4 @@
 /result.csv
 /.nyc_output
 /coverage
+/src/**/*.js
