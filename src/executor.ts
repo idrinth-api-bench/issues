@@ -45,8 +45,8 @@ const executor = (
   Worker: WorkerConstructor,
 ): void => {
   validateTasks(repetitions, threads, tasks,);
-  const validator: Thread = new Worker('./worker/validator.js',);
-  const calculator: Thread = new Worker('./worker/calculator.js',);
+  const validator: Thread = new Worker(__dirname + '/../worker/validator.js',);
+  const calculator: Thread = new Worker(__dirname + '/../worker/calculator.js',);
   const bar = new Progress.SingleBar({
     stopOnComplete: true,
     clearOnComplete: true,
@@ -101,7 +101,7 @@ const executor = (
   },);
   logger.debug(`starting up ${ threads } Workers`,);
   for (let j=0; j<threads; j ++) {
-    workers.push(new Worker('./worker/webrequest.js',),);
+    workers.push(new Worker(__dirname + '/../worker/webrequest.js',),);
     workers[j].on('message', (data: Result,) => {
       logger.debug(`Starting validation of ${ data.id }`,);
       checking ++;
