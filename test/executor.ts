@@ -20,6 +20,9 @@ import {
 import {
   ValidationResult,
 } from '../src/validation-result';
+import {
+  realpathSync,
+} from 'fs';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const NOOP = () => {};
@@ -158,17 +161,17 @@ describe('executor', () => {
     ).to.not.throw();
   },);
   it('should have build the right workers', () => {
-    expect(FakeWorker.built,).to.deep.equal({
-      './worker/calculator.js': once,
-      './worker/validator.js': once,
-      './worker/webrequest.js': threads,
-    },);
+    const output = {};
+    output[realpathSync('./worker/calculator.js',)] = once;
+    output[realpathSync('./worker/validator.js',)] = once;
+    output[realpathSync('./worker/webrequest.js',)] = threads;
+    expect(FakeWorker.built,).to.deep.equal(output,);
   },);
   it('should have shut down the right workers', () => {
-    expect(FakeWorker.terminated,).to.deep.equal({
-      './worker/calculator.js': once,
-      './worker/validator.js': once,
-      './worker/webrequest.js': threads,
-    },);
+    const output = {};
+    output[realpathSync('./worker/calculator.js',)] = once;
+    output[realpathSync('./worker/validator.js',)] = once;
+    output[realpathSync('./worker/webrequest.js',)] = threads;
+    expect(FakeWorker.terminated,).to.deep.equal(output,);
   },);
 },);

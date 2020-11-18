@@ -16,6 +16,9 @@ import {
 import {
   Logger,
 } from './logger/logger';
+import {
+  realpathSync,
+} from 'fs';
 import Reporter from './reporter/reporter';
 import * as Progress from 'cli-progress';
 import validateTasks from './validate-tasks';
@@ -44,9 +47,13 @@ const executor = (
   logger: Logger,
   Worker: WorkerConstructor,
 ): void => {
+  const buildWorker = (file: string,) : Thread => {
+    const path = `${ __dirname }/../worker/${ file }.js`;
+    return new Worker(realpathSync(path,),);
+  };
   validateTasks(repetitions, threads, tasks,);
-  const validator: Thread = new Worker(__dirname + '/../worker/validator.js',);
-  const calculator: Thread = new Worker(__dirname + '/../worker/calculator.js',);
+  const validator: Thread = buildWorker('validator',);
+  const calculator: Thread = buildWorker('calculator',);
   const bar = new Progress.SingleBar({
     stopOnComplete: true,
     clearOnComplete: true,
@@ -101,7 +108,7 @@ const executor = (
   },);
   logger.debug(`starting up ${ threads } Workers`,);
   for (let j=0; j<threads; j ++) {
-    workers.push(new Worker(__dirname + '/../worker/webrequest.js',),);
+    workers.push(buildWorker('webrequest',),);
     workers[j].on('message', (data: Result,) => {
       logger.debug(`Starting validation of ${ data.id }`,);
       checking ++;

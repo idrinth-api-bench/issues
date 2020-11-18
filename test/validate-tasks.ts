@@ -30,23 +30,23 @@ describe('validateTasks', () => {
   const none = 0;
   it('it should throw if none executlable is given (0 threads)', () => {
     expect(() => validateTasks(repetitions, none, tasks,),).to.throw(
-      'Can\'t measure no tasks.'
+      'Can\'t measure no tasks.',
     );
   },);
   it('it should throw if none executlable is given (0 repetitions)', () => {
     expect(() => validateTasks(none, threads, tasks,),).to.throw(
-      'Can\'t measure no tasks.'
+      'Can\'t measure no tasks.',
     );
   },);
   it('it should throw if none executlable is given (0 tasks)', () => {
     expect(() => validateTasks(repetitions, threads, [],),).to.throw(
-      'Can\'t measure no tasks.'
+      'Can\'t measure no tasks.',
     );
   },);
   it('it should throw if task ids are duplicated', () => {
     expect(
       () => validateTasks(repetitions, threads, repeatedIdTasks,),
-    ).to.throw(`The id test is shared.`,);
+    ).to.throw('The id test is shared.',);
   },);
   it('it should not throw if given valid arguments', () => {
     expect(() => validateTasks(repetitions, threads, tasks,),).to.not.throw();
