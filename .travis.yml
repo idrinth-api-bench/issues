@@ -23,6 +23,7 @@ jobs:
     install:
     - npm install
     - npm install coveralls --save-dev
+    - npm install nyc --save-dev
     script:
     - npm test
     after_success:
