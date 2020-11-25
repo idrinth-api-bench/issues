@@ -25,6 +25,7 @@ jobs:
     - npm install
     - npm install coveralls --save-dev
     - npm install nyc --global
+    - npm install mocha --global
     script:
     - npm test
     after_success:
