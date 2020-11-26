@@ -27,6 +27,7 @@ jobs:
     - npm install nyc --global
     - npm install mocha --global
     - npm install ts-node --global
+    - npm install typescript --global
     script:
     - npm test
     after_success:
