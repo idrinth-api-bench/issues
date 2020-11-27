@@ -25,6 +25,7 @@ jobs:
     - npm install
     - npm install coveralls --save-dev
     - export PATH=node_modules/bin:$PATH
+    - echo $PATH
     script:
     - npm test
     after_success:
