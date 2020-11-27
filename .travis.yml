@@ -14,7 +14,7 @@ jobs:
     name: liniting
     install:
     - npm install
-    - export PATH=node_modules/bin:$PATH
+    - export PATH=/home/travis/build/Idrinth/api-bench/node_modules/.bin:$PATH
     script:
     - npm run-script lint
   - language: node_js
@@ -24,7 +24,7 @@ jobs:
     install:
     - npm install
     - npm install coveralls --save-dev
-    - export PATH=node_modules/bin:$PATH
+    - export PATH=/home/travis/build/Idrinth/api-bench/node_modules/.bin:$PATH
     - echo $PATH
     script:
     - npm test
