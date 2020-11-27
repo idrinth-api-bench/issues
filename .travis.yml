@@ -5,7 +5,9 @@ cache:
   - ~/.composer/cache/
   - ~/.npm
   - ~/.codacy-coverage
-
+branches:
+  only:
+  - master
 jobs:
   include:
   - language: node_js
@@ -26,7 +28,7 @@ jobs:
     - npm install coveralls --save-dev
     - export PATH=/home/travis/build/Idrinth/api-bench/node_modules/.bin:$PATH
     script:
-    - npm test
+    - npm run-script test
     after_success:
     - bash <(wget -q -O - https://coverage.codacy.com/get.sh) report -r coverage/lcov.info
     - nyc report --reporter=text-lcov | coveralls 
