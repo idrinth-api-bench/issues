@@ -14,7 +14,7 @@ jobs:
     name: liniting
     install:
     - npm install
-    - npm install eslint --global
+    - export PATH=node_modules/bin:$PATH
     script:
     - npm run-script lint
   - language: node_js
@@ -24,10 +24,7 @@ jobs:
     install:
     - npm install
     - npm install coveralls --save-dev
-    - npm install nyc --global
-    - npm install mocha --global
-    - npm install ts-node --global
-    - npm install typescript --global
+    - export PATH=node_modules/bin:$PATH
     script:
     - npm test
     after_success:
