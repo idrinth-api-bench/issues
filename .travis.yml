@@ -25,7 +25,6 @@ jobs:
     - npm install
     - npm install coveralls --save-dev
     - export PATH=/home/travis/build/Idrinth/api-bench/node_modules/.bin:$PATH
-    - echo $PATH
     script:
     - npm test
     after_success:
