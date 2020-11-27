@@ -11,5 +11,3 @@ jobs:
     steps:
     - name: Eslint check
       uses: Krizzu/eslint-check-action@v1.1.0
-      with:
-        ghToken: 382d9e629f7639c45154bfa5abefa80b27a6be59 
