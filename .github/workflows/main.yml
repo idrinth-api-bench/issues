@@ -9,5 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Eslint check
-      uses: Krizzu/eslint-check-action@v1.1.0
+    - uses: actions/checkout@v1
+    - name: Run NPM eslint
+      uses: anna-money/github-actions-npm@v1
