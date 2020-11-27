@@ -16,7 +16,7 @@ jobs:
     name: liniting
     install:
     - npm install
-    - export PATH=/home/travis/build/Idrinth/api-bench/node_modules/.bin:$PATH
+    - npm install eslint --global
     script:
     - npm run-script lint
   - language: node_js
@@ -26,7 +26,7 @@ jobs:
     install:
     - npm install
     - npm install coveralls --save-dev
-    - export PATH=/home/travis/build/Idrinth/api-bench/node_modules/.bin:$PATH
+    - npm install ts-node mocha typescript nyc --global
     script:
     - npm run-script test
     after_success:
