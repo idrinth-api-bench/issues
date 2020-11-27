@@ -4,9 +4,9 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-  workflow_dispatch:
 jobs:
-  build:
+  runNpmEslint:
+    name: Run NPM eslint
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
