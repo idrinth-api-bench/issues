@@ -11,16 +11,19 @@ interface Results {
 }
 
 const reporters: Array<Reporter> = [];
-const multi: ReporterList = (results: Results,): void => {
-  for (const reporter of reporters) {
-    reporter(results,);
-  }
-};
+const multi: ReporterList = (() => {
+  const func = (results: Results,): void => {
+    for (const reporter of reporters) {
+      reporter(results,);
+    }
+  };
 
-multi.addReporter = (reporter: Reporter,): void => {
-  if (! reporters.includes(reporter,)) {
-    reporters.push(reporter,);
-  }
-};
+  func.addReporter = (reporter: Reporter,): void => {
+    if (! reporters.includes(reporter,)) {
+      reporters.push(reporter,);
+    }
+  };
+  return func as ReporterList;
+})();
 
 export default multi;
