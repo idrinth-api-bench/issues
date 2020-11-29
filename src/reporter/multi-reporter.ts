@@ -3,7 +3,7 @@ import {
   FinishedSet,
 } from '../finished-set';
 
-interface ReporterList {
+interface ReporterList extends Reporter {
   addReporter: (reporter: Reporter) => void;
 }
 interface Results {
@@ -11,7 +11,7 @@ interface Results {
 }
 
 const reporters: Array<Reporter> = [];
-const multi: Reporter&ReporterList = (results: Results,): void => {
+const multi: ReporterList = (results: Results,): void => {
   for (const reporter of reporters) {
     reporter(results,);
   }
