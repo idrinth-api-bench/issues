@@ -26,7 +26,8 @@ import {
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const NOOP = {
-    report() {}
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  report() {},
 };
 const NONE = 0;
 
@@ -156,7 +157,11 @@ describe('executor', () => {
         threads,
         repeats,
         tasks,
-        {report(){ done()}},
+        {
+          report() {
+            done();
+          },
+        },
         new NullLogger(),
         FakeWorker,
       ),

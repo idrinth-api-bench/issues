@@ -68,8 +68,8 @@ describe('reporter/multi-reporter', () => {
         max80: 99,
       },
     };
-    multiReporter.addReporter(new CsvReporter());
-    multiReporter.addReporter(new JsonReporter());
+    multiReporter.addReporter(new CsvReporter(),);
+    multiReporter.addReporter(new JsonReporter(),);
     multiReporter.report(results,);
     // eslint-disable-next-line no-unused-expressions
     expect(existsSync(file2,),).to.be.true;
