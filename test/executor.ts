@@ -25,7 +25,9 @@ import {
 } from 'fs';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
-const NOOP = () => {};
+const NOOP = {
+    report() {}
+};
 const NONE = 0;
 
 class FakeResult implements Result, ValidationResult, FinishedSet {
@@ -154,7 +156,7 @@ describe('executor', () => {
         threads,
         repeats,
         tasks,
-        () => done(),
+        {report(){ done()}},
         new NullLogger(),
         FakeWorker,
       ),

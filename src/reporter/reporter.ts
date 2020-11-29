@@ -7,6 +7,6 @@ interface Results {
 }
 
 export default interface Reporter {
-  (results: Results): void;
+  report: (results: Results) => void;
 // eslint-disable-next-line semi
 }

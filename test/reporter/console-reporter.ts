@@ -24,6 +24,6 @@ describe('reporter/console-reporter', () => {
         max80: 99,
       },
     };
-    expect(() => consoleReporter(results,),).to.not.throw();
+    expect(() => new consoleReporter().report(results,),).to.not.throw();
   },);
 },);

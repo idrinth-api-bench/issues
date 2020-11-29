@@ -10,20 +10,18 @@ interface Results {
   [id: string]: FinishedSet;
 }
 
-const reporters: Array<Reporter> = [];
-const multi: ReporterList = (() => {
-  const func = (results: Results,): void => {
-    for (const reporter of reporters) {
-      reporter(results,);
-    }
-  };
+export default class implements ReporterList {
+    private reporters: Array<Reporter> = [];
 
-  func.addReporter = (reporter: Reporter,): void => {
-    if (! reporters.includes(reporter,)) {
-      reporters.push(reporter,);
+    report(results: Results,): void {
+      for (const reporter of this.reporters) {
+        reporter.report(results,);
+      }
     }
-  };
-  return func as ReporterList;
-})();
 
-export default multi;
+    addReporter(reporter: Reporter,): void {
+      if (! this.reporters.includes(reporter,)) {
+        this.reporters.push(reporter,);
+      }
+    }
+}

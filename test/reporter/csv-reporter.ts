@@ -32,7 +32,7 @@ describe('reporter/csv-reporter', () => {
         max80: 99,
       },
     };
-    csvReporter(results,);
+    new csvReporter().report(results,);
     setTimeout(() => {
       // eslint-disable-next-line no-unused-expressions
       expect(existsSync(file,),).to.be.true;
@@ -57,7 +57,7 @@ describe('reporter/csv-reporter', () => {
         max80: 99,
       },
     };
-    csvReporter(results,);
+    new csvReporter().report(results,);
     setTimeout(() => {
       expect(readFileSync(file,) + '',).to.equal(
         'id,errors,count,avg100,median100,min100,'

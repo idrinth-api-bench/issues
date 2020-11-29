@@ -30,7 +30,7 @@ describe('reporter/json-reporter', () => {
         max80: 99,
       },
     };
-    jsonReporter(results,);
+    new jsonReporter().report(results,);
     // eslint-disable-next-line no-unused-expressions
     expect(existsSync(file,),).to.be.true;
     mock.restore();
@@ -52,7 +52,7 @@ describe('reporter/json-reporter', () => {
         max80: 99,
       },
     };
-    jsonReporter(results,);
+    new jsonReporter().report(results,);
     expect(readFileSync(file,) + '',).to.equal(JSON.stringify(results,),);
     mock.restore();
   },);

@@ -1,10 +1,11 @@
-import multiReporter from '../reporter/multi-reporter';
-import csvReporter from '../reporter/csv-reporter';
-import consoleReporter from '../reporter/console-reporter';
-import jsonReporter from '../reporter/json-reporter';
+import MultiReporter from '../reporter/multi-reporter';
+import CsvReporter from '../reporter/csv-reporter';
+import ConsoleReporter from '../reporter/console-reporter';
+import JsonReporter from '../reporter/json-reporter';
 
-multiReporter.addReporter(csvReporter,);
-multiReporter.addReporter(consoleReporter,);
-multiReporter.addReporter(jsonReporter,);
+const multiReporter = new MultiReporter();
+multiReporter.addReporter(new CsvReporter,);
+multiReporter.addReporter(new ConsoleReporter,);
+multiReporter.addReporter(new JsonReporter,);
 
 export default multiReporter;

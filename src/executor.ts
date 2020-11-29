@@ -84,7 +84,7 @@ const executor = (
       calculator.terminate();
       logger.info('Starting supplied result handler',);
       logger.debug('Data', finished,);
-      resultHandler(finished,);
+      resultHandler.report(finished,);
       logger.info('Done',);
     }
   },);
