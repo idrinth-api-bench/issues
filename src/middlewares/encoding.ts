@@ -22,6 +22,6 @@ const prepare = (request: Request,): Request => {
 };
 
 export default {
-  ...process,
+  ...noop,
   prepare,
 } as Middleware;

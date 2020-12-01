@@ -47,7 +47,7 @@ const prepare = (request: Request,): Request => {
   return request;
 };
 
-const process = (response: Result,): void => {
+const processor = (response: Result,): void => {
   if (typeof response.response.headers === 'undefined') {
     return;
   }
@@ -76,5 +76,5 @@ const process = (response: Result,): void => {
 };
 export default {
   prepare,
-  process,
+  process: processor,
 } as Middleware;

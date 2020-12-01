@@ -12,7 +12,7 @@ import noop from './noop';
 const MAXIMUM = 299;
 const MINIMUM = 200;
 
-const process = (response: Result,): void => {
+const processor = (response: Result,): void => {
   if (typeof response.response.status === 'undefined') {
     throw new Error('Request returned no status',);
   }
@@ -25,5 +25,5 @@ const process = (response: Result,): void => {
 };
 export default {
   ...noop,
-  process,
+  process: processor,
 } as Middleware;

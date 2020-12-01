@@ -25,7 +25,7 @@ const prepare = (request: Request,): Request => {
   return request;
 };
 
-const process = (response: Result,): void => {
+const processor = (response: Result,): void => {
   if (typeof response.response.cookies === 'undefined') {
     return;
   }
@@ -36,6 +36,6 @@ const process = (response: Result,): void => {
   }
 };
 export default {
-  process,
+  process: processor,
   prepare,
 } as Middleware;
