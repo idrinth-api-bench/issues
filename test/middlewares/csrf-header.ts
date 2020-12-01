@@ -12,7 +12,7 @@ import {
 
 describe('middlewares/csrf-header', () => {
   it('should be a class', () => {
-    expect(CsrfHeader,).to.be.a('function',);
+    expect(CsrfHeader,).to.be.a('object',);
   },);
   it('should have a static method prepare', () => {
     expect(CsrfHeader.prepare,).to.be.a('function',);

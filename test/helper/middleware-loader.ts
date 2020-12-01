@@ -10,17 +10,17 @@ describe('helper/middleware-loader', () => {
   },);
   it('should load by absolute path', () => {
     expect(loader(__dirname + '/../../src/middlewares/cookie',),).to.be.a(
-      'function',
+      'object',
     );
   },);
   it('should load by ^-path', () => {
-    expect(loader('^cookie',),).to.be.a('function',);
+    expect(loader('^cookie',),).to.be.a('object',);
   },);
   it('should load by ^-path and skip the default key', () => {
     expect(loader('^../main',),).to.be.a('function',);
   },);
   it('should load by #-path', () => {
-    expect(loader('#cookie',),).to.be.a('function',);
+    expect(loader('#cookie',),).to.be.a('object',);
   },);
   it('should load by $-path', () => {
     expect(() => loader('$@idrinth/api-bench/cookie',),).to.throw(

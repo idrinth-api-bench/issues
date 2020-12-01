@@ -9,7 +9,7 @@ import {
 
 describe('middlewares/user-agent', () => {
   it('should be a class', () => {
-    expect(UserAgent,).to.be.a('function',);
+    expect(UserAgent,).to.be.a('object',);
   },);
   it('should have a static method prepare', () => {
     expect(UserAgent.prepare,).to.be.a('function',);

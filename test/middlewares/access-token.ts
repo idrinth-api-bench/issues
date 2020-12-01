@@ -12,7 +12,7 @@ import {
 
 describe('middlewares/csrf-header', () => {
   it('should be a class', () => {
-    expect(Access,).to.be.a('function',);
+    expect(Access,).to.be.a('object',);
   },);
   it('should have a static method prepare', () => {
     expect(Access.prepare,).to.be.a('function',);

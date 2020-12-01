@@ -9,7 +9,7 @@ import {
 
 describe('middlewares/encoding', () => {
   it('should be a class', () => {
-    expect(Encoding,).to.be.a('function',);
+    expect(Encoding,).to.be.a('object',);
   },);
   it('should have a static method prepare', () => {
     expect(Encoding.prepare,).to.be.a('function',);

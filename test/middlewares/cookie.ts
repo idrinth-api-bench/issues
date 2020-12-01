@@ -12,7 +12,7 @@ import {
 
 describe('middlewares/cookie', () => {
   it('should be a class', () => {
-    expect(Cookie,).to.be.a('function',);
+    expect(Cookie,).to.be.a('object',);
   },);
   it('should have a static method prepare', () => {
     expect(Cookie.prepare,).to.be.a('function',);

@@ -10,7 +10,7 @@ import {
 
 describe('middlewares/status-2xx', () => {
   it('should be a class', () => {
-    expect(Status2xx,).to.be.a('function',);
+    expect(Status2xx,).to.be.a('object',);
   },);
   it('should have a static method prepare', () => {
     expect(Status2xx.prepare,).to.be.a('function',);
