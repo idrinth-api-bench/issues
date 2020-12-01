@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 15.x]
+        node-version: [14.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -27,5 +27,5 @@ jobs:
     - run: npm ci
     - run: npm install coveralls --save-dev
     - run: npm test
-    - run: bash <(wget -q -O - https://coverage.codacy.com/get.sh) report -r coverage/lcov.info
+    #- run: bash <(wget -q -O - https://coverage.codacy.com/get.sh) report -r coverage/lcov.info
     - run: nyc report --reporter=text-lcov | coveralls
