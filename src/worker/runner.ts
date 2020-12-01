@@ -20,7 +20,7 @@ export = (task: Task, callable: Callback,): void => {
   let quest = task.main;
   if (task.pre) {
     for (const middleware of task.pre) {
-      const ware: Middleware = resolve(middleware,);
+      const ware: Middleware = resolve(middleware,) as Middleware;
       quest = ware.prepare(quest,);
     }
   }
