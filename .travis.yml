@@ -16,16 +16,16 @@ jobs:
     - npm install
     script:
     - npm run-script lint
-  - language: node_js
-    node_js: node
-    stage: Test
-    name: unittest
-    install:
-    - npm install
-    - npm install coveralls --save-dev
-    - npm install nyc --save-dev
-    script:
-    - npm test
-    after_success:
-    - bash <(wget -q -O - https://coverage.codacy.com/get.sh) report -r coverage/lcov.info
-    - nyc report --reporter=text-lcov | coveralls 
+#  - language: node_js
+#    node_js: node
+#    stage: Test
+#    name: unittest
+#    install:
+#    - npm install
+#    - npm install coveralls --save-dev
+#    - npm install nyc --save-dev
+#    script:
+#    - npm test
+#    after_success:
+#    - bash <(wget -q -O - https://coverage.codacy.com/get.sh) report -r coverage/lcov.info
+#    - nyc report --reporter=text-lcov | coveralls 
