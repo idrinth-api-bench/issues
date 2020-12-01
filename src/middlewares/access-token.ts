@@ -17,7 +17,7 @@ let refresh = '';
 const retrieve = (
   fallback: string,
   body: HashMap,
-  ...keys: [...Array<string>]
+  keys: Array<string>,
 ): string => {
   for (const key of keys) {
     if (typeof body[key] === 'string') {
@@ -55,13 +55,23 @@ const process = (response: Result,): void => {
     return;
   }
   const body = JSON.parse(response.response.body,);
-  access = retrieve(access, body, 'access', 'access_token', 'access-token',);
+  access = retrieve(
+    access,
+    body,
+    [
+      'access',
+      'access_token',
+      'access-token',
+    ],
+  );
   refresh = retrieve(
     refresh,
     body,
-    'refresh',
-    'refresh_token',
-    'refresh-token',
+    [
+      'refresh',
+      'refresh_token',
+      'refresh-token',
+    ],
   );
 };
 export default {
