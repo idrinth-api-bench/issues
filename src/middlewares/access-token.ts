@@ -7,7 +7,6 @@ import {
 import {
   Result,
 } from '../result';
-import staticImplements from '../helper/static-implements';
 import {
   HashMap,
 } from '../hashmap';
@@ -28,38 +27,38 @@ const get = (
   return fallback;
 };
 
-@staticImplements<Middleware>()
-class Access {
-  public static prepare(request: Request,): Request {
-    if (typeof request.body === 'string') {
-      request.body = request.body.replace(
-        /%refresh-token-middleware%/ug,
-        refresh,
-      );
-      request.body = request.body.replace(
-        /%access-token-middleware%/ug,
-        access,
-      );
-    }
-    if (typeof request.headers === 'undefined') {
-      request.headers = {};
-    }
-    if (access) {
-      request.headers.authorization = `Bearer ${ access }`;
-    }
-    return request;
+const prepare = (request: Request,): Request => {
+  if (typeof request.body === 'string') {
+    request.body = request.body.replace(
+      /%refresh-token-middleware%/ug,
+      refresh,
+    );
+    request.body = request.body.replace(
+      /%access-token-middleware%/ug,
+      access,
+    );
   }
+  if (typeof request.headers === 'undefined') {
+    request.headers = {};
+  }
+  if (access) {
+    request.headers.authorization = `Bearer ${ access }`;
+  }
+  return request;
+};
 
-  public static process(response: Result,): void {
-    if (typeof response.response.headers === 'undefined') {
-      return;
-    }
-    if (response.response.headers['content-type'] !== 'application/json') {
-      return;
-    }
-    const body = JSON.parse(response.response.body,);
-    access = get(access, body, 'access', 'access_token', 'access-token',);
-    refresh = get(refresh, body, 'refresh', 'refresh_token', 'refresh-token',);
+const process = (response: Result,): void => {
+  if (typeof response.response.headers === 'undefined') {
+    return;
   }
-}
-export default Access;
+  if (response.response.headers['content-type'] !== 'application/json') {
+    return;
+  }
+  const body = JSON.parse(response.response.body,);
+  access = get(access, body, 'access', 'access_token', 'access-token',);
+  refresh = get(refresh, body, 'refresh', 'refresh_token', 'refresh-token',);
+};
+export default {
+  prepare,
+  process,
+} as Middleware;

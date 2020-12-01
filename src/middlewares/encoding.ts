@@ -8,23 +8,20 @@ import formUrlEncoded from 'form-urlencoded';
 import {
   Result,
 } from '../result';
-import staticImplements from '../helper/static-implements';
+import process from './noop';
 
-@staticImplements<Middleware>()
-class Encoding {
-  public static prepare(request: Request,): Request {
-    if (request.autohandle === 'json') {
-      request.body = JSON.stringify(request.body,);
-      return request;
-    }
-    if (request.autohandle === 'form' && typeof request.body === 'object') {
-      request.body = formUrlEncoded(request.body,);
-    }
+const prepare = (request: Request,): Request => {
+  if (request.autohandle === 'json') {
+    request.body = JSON.stringify(request.body,);
     return request;
   }
-
-  public static process(response: Result,): void {
-    //no task here
+  if (request.autohandle === 'form' && typeof request.body === 'object') {
+    request.body = formUrlEncoded(request.body,);
   }
-}
-export default Encoding;
+  return request;
+};
+
+export default {
+  ...process,
+  prepare,
+} as Middleware;

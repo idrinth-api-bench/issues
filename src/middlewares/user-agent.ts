@@ -8,11 +8,9 @@ import {
   Request,
 } from '../request';
 import agent from '../helper/user-agent';
-import staticImplements from '../helper/static-implements';
+import process from './noop';
 
-@staticImplements<Middleware>()
-class UserAgent {
-  public static prepare(request: Request,): Request {
+  const prepare = (request: Request,): Request => {
     if (typeof request.headers === 'undefined') {
       request.headers = {};
     }
@@ -20,10 +18,9 @@ class UserAgent {
       request.headers['user-agent'] = agent;
     }
     return request;
-  }
+  };
 
-  public static process(response: Result,): void {
-    // noop
-  }
-}
-export default UserAgent;
+export default {
+  ...process,
+  prepare,
+} as Middleware;
