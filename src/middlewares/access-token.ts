@@ -17,7 +17,7 @@ let refresh = '';
 const retrieve = (
   fallback: string,
   body: HashMap,
-  ...keys: Array<string>
+  ...keys: [...Array<string>]
 ): string => {
   for (const key of keys) {
     if (typeof body[key] === 'string') {
