@@ -13,7 +13,7 @@ const CONSTANTS = {
   ARRAY_LENGTH_OFFSET: 1,
 };
 const average = (
-  ...inputs: Array<number>
+  inputs: Array<number>,
 ): number => Math.round(inputs.reduce((a, b,) => a+b,)/inputs.length,);
 const last = (
   input: Array<number>,
@@ -50,12 +50,22 @@ export = (result: ResultSet,): FinishedSet => {
     errors: result.errors,
     msgs: result.msgs || {},
     count: result.count,
-    avg100: average(...sorted100,),
-    median100: average(min100, max100,),
+    avg100: average(sorted100,),
+    median100: average(
+      [
+        min100,
+        max100,
+      ],
+    ),
     min100,
     max100,
-    avg80: average(...center80,),
-    median80: average(min80, max80,),
+    avg80: average(center80,),
+    median80: average(
+      [
+        min80,
+        max80,
+      ],
+    ),
     min80,
     max80,
   };
