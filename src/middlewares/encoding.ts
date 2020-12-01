@@ -8,7 +8,7 @@ import formUrlEncoded from 'form-urlencoded';
 import {
   Result,
 } from '../result';
-import process from './noop';
+import noop from './noop';
 
 const prepare = (request: Request,): Request => {
   if (request.autohandle === 'json') {

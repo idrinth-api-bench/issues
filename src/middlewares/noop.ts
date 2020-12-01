@@ -29,10 +29,10 @@ const get = (
 
 const prepare = (request: Request,): Request => request;
 
-const process = (response: Result,): void => {
+const processor = (response: Result,): void => {
   //noop
 };
 export default {
   prepare,
-  process,
+  process: processor,
 } as Middleware;

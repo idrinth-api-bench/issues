@@ -7,7 +7,7 @@ import {
 import {
   Result,
 } from '../result';
-import prepare from './noop';
+import noop from './noop';
 
 const MAXIMUM = 299;
 const MINIMUM = 200;
@@ -24,6 +24,6 @@ const process = (response: Result,): void => {
   }
 };
 export default {
-  ...prepare,
+  ...noop,
   process,
 } as Middleware;

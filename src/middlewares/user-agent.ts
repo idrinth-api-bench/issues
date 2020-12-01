@@ -8,7 +8,7 @@ import {
   Request,
 } from '../request';
 import agent from '../helper/user-agent';
-import process from './noop';
+import noop from './noop';
 
 const prepare = (request: Request,): Request => {
   if (typeof request.headers === 'undefined') {
@@ -21,6 +21,6 @@ const prepare = (request: Request,): Request => {
 };
 
 export default {
-  ...process,
+  ...noop,
   prepare,
 } as Middleware;
