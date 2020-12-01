@@ -14,7 +14,7 @@ import {
 let access = '';
 let refresh = '';
 
-const get = (
+const retrieve = (
   fallback: string,
   body: HashMap,
   ...keys: Array<string>
@@ -55,8 +55,14 @@ const process = (response: Result,): void => {
     return;
   }
   const body = JSON.parse(response.response.body,);
-  access = get(access, body, 'access', 'access_token', 'access-token',);
-  refresh = get(refresh, body, 'refresh', 'refresh_token', 'refresh-token',);
+  access = retrieve(access, body, 'access', 'access_token', 'access-token',);
+  refresh = retrieve(
+    refresh,
+    body,
+    'refresh',
+    'refresh_token',
+    'refresh-token',
+  );
 };
 export default {
   prepare,
