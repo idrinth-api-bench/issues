@@ -26,6 +26,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm test
-    - run: npm install coveralls nyc --global
+    #- run: npm install coveralls nyc --global
     #- run: bash <(wget -q -O - https://coverage.codacy.com/get.sh) report -r coverage/lcov.info
-    - run: nyc report --reporter=text-lcov | coveralls
+    #- run: nyc report --reporter=text-lcov | coveralls
