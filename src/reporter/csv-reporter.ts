@@ -8,6 +8,7 @@ import {
 import {
   createWriteStream,
 } from 'fs';
+import * as process from 'process';
 
 export default class Csv implements Reporter {
   // eslint-disable-next-line class-methods-use-this
