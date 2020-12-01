@@ -8,14 +8,14 @@ cache:
 
 jobs:
   include:
-  - language: node_js
-    node_js: node
-    stage: Test
-    name: liniting
-    install:
-    - npm install
-    script:
-    - npm run-script lint
+# - language: node_js
+#   node_js: node
+#    stage: Test
+#    name: liniting
+#    install:
+#    - npm install
+#    script:
+#    - npm run-script lint
 #  - language: node_js
 #    node_js: node
 #    stage: Test
