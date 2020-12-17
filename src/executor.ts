@@ -139,6 +139,7 @@ const executor = (
             after.postMessage(job.after.shift(),);
           } else {
             after.terminate();
+            before.terminate();
           }
         }
       },);
