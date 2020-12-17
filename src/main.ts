@@ -16,7 +16,7 @@ import {
 import Job from './job';
 
 /* eslint max-params:0 */
-const run = (
+export const run = (
   threads: number,
   repetitions: number,
   job: Job,
@@ -51,4 +51,3 @@ export default (
   };
   run(threads, repetitions, job, resultHandler, logger,);
 };
-//export run;
