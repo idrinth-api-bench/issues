@@ -23,6 +23,7 @@ import {
 import {
   realpathSync,
 } from 'fs';
+import Job from '../src/job';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const NOOP = () => {};
@@ -126,26 +127,47 @@ class FakeWorker implements Thread {
 describe('executor', () => {
   const repeats = 2;
   const threads = 3;
+  const setup = 2;
   const tasks = [ <Task> {
     id: 'test',
   }, ];
+  const noJob: Job = {
+    before: [],
+    beforeTask: [],
+    beforeEach: [],
+    main: [],
+    afterEach: [],
+    afterTask: [],
+    after: [],
+  };
+  const job: Job = {
+    ...noJob,
+    main: tasks,
+  };
   const once = 1;
   it('should be a function', () => {
     expect(executor,).to.be.a('function',);
   },);
   it('should not try to execute no tasks(0 tasks)', () => {
     expect(
-      () => executor(threads, repeats, [], NOOP, new NullLogger(), FakeWorker,),
+      () => executor(
+        threads,
+        repeats,
+        noJob,
+        NOOP,
+        new NullLogger(),
+        FakeWorker,
+      ),
     ).to.throw('Can\'t measure no tasks.',);
   },);
   it('should not try to execute no tasks(0 threads)', () => {
     expect(
-      () => executor(NONE, repeats, tasks, NOOP, new NullLogger(), FakeWorker,),
+      () => executor(NONE, repeats, job, NOOP, new NullLogger(), FakeWorker,),
     ).to.throw('Can\'t measure no tasks.',);
   },);
   it('should not try to execute no tasks (0 repeats)', () => {
     expect(
-      () => executor(threads, NONE, tasks, NOOP, new NullLogger(), FakeWorker,),
+      () => executor(threads, NONE, job, NOOP, new NullLogger(), FakeWorker,),
     ).to.throw('Can\'t measure no tasks.',);
   },);
   it('should execute all tasks', (done,) => {
@@ -153,7 +175,7 @@ describe('executor', () => {
       () => executor(
         threads,
         repeats,
-        tasks,
+        job,
         () => done(),
         new NullLogger(),
         FakeWorker,
@@ -164,14 +186,14 @@ describe('executor', () => {
     const output = {};
     output[realpathSync('./worker/calculator.js',)] = once;
     output[realpathSync('./worker/validator.js',)] = once;
-    output[realpathSync('./worker/webrequest.js',)] = threads;
+    output[realpathSync('./worker/webrequest.js',)] = threads + setup;
     expect(FakeWorker.built,).to.deep.equal(output,);
   },);
   it('should have shut down the right workers', () => {
     const output = {};
     output[realpathSync('./worker/calculator.js',)] = once;
     output[realpathSync('./worker/validator.js',)] = once;
-    output[realpathSync('./worker/webrequest.js',)] = threads;
+    output[realpathSync('./worker/webrequest.js',)] = threads + setup;
     expect(FakeWorker.terminated,).to.deep.equal(output,);
   },);
 },);

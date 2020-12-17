@@ -13,6 +13,24 @@ import executor from './executor';
 import {
   Worker,
 } from 'worker_threads';
+import Job from './job';
+
+/* eslint max-params:0 */
+const run = (
+  threads: number,
+  repetitions: number,
+  job: Job,
+  resultHandler?: Reporter|undefined,
+  logger?: Logger|undefined,
+) => {
+  if (typeof logger === 'undefined') {
+    logger = new NullLogger();
+  }
+  if (typeof resultHandler === 'undefined') {
+    resultHandler = defaultReporter;
+  }
+  executor(threads, repetitions, job, resultHandler, logger, Worker,);
+};
 
 /* eslint max-params:0 */
 export default (
@@ -22,11 +40,15 @@ export default (
   resultHandler?: Reporter|undefined,
   logger?: Logger|undefined,
 ): void => {
-  if (typeof logger === 'undefined') {
-    logger = new NullLogger();
-  }
-  if (typeof resultHandler === 'undefined') {
-    resultHandler = defaultReporter;
-  }
-  executor(threads, repetitions, tasks, resultHandler, logger, Worker,);
+  const job: Job = {
+    before: [],
+    beforeTask: [],
+    beforeEach: [],
+    main: tasks,
+    afterEach: [],
+    afterTask: [],
+    after: [],
+  };
+  run(threads, repetitions, job, resultHandler, logger,);
 };
+//export run;
