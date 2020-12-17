@@ -139,7 +139,6 @@ const executor = (
             after.postMessage(job.after.shift(),);
           } else {
             after.terminate();
-            before.terminate();
           }
         }
       },);
@@ -155,7 +154,6 @@ const executor = (
       return;
     }
     after.terminate();
-    before.terminate();
   },);
   before.on('message', () => {
     bar.increment();
@@ -171,6 +169,7 @@ const executor = (
     logger.debug('Starting next request',);
     before.postMessage(job.before.shift(),);
   } else {
+    before.terminate();
     startMain();
   }
 };

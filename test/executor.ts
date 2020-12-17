@@ -144,6 +144,11 @@ describe('executor', () => {
     ...noJob,
     main: tasks,
   };
+  const prePostJob: Job = {
+    ...job,
+    before: tasks,
+    after: tasks,
+  };
   const once = 1;
   it('should be a function', () => {
     expect(executor,).to.be.a('function',);
@@ -190,6 +195,34 @@ describe('executor', () => {
     expect(FakeWorker.built,).to.deep.equal(output,);
   },);
   it('should have shut down the right workers', () => {
+    const output = {};
+    output[realpathSync('./worker/calculator.js',)] = once;
+    output[realpathSync('./worker/validator.js',)] = once;
+    output[realpathSync('./worker/webrequest.js',)] = threads + setup;
+    expect(FakeWorker.terminated,).to.deep.equal(output,);
+  },);
+  it('should execute all tasks and pre and post', (done,) => {
+    FakeWorker.built = {};
+    FakeWorker.terminated = {};
+    expect(
+      () => executor(
+        threads,
+        repeats,
+        prePostJob,
+        () => done(),
+        new NullLogger(),
+        FakeWorker,
+      ),
+    ).to.not.throw();
+  },);
+  it('should have build the right workers after pre and post', () => {
+    const output = {};
+    output[realpathSync('./worker/calculator.js',)] = once;
+    output[realpathSync('./worker/validator.js',)] = once;
+    output[realpathSync('./worker/webrequest.js',)] = threads + setup;
+    expect(FakeWorker.built,).to.deep.equal(output,);
+  },);
+  it('should have shut down the right workers after pre and post', () => {
     const output = {};
     output[realpathSync('./worker/calculator.js',)] = once;
     output[realpathSync('./worker/validator.js',)] = once;
