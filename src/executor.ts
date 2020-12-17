@@ -5,9 +5,6 @@ import {
   FinishedSet,
 } from './finished-set';
 import {
-  Task,
-} from './task';
-import {
   ResultSet,
 } from './result-set';
 import {
@@ -22,8 +19,10 @@ import {
 import Reporter from './reporter/reporter';
 import * as Progress from 'cli-progress';
 import validateTasks from './validate-tasks';
+import Job from './job';
 
 const EMPTY = 0;
+const SINGLE = 1;
 
 export interface WorkerConstructor {
   new(path: string);
@@ -42,7 +41,7 @@ export interface Thread {
 const executor = (
   threads: number,
   repetitions: number,
-  tasks: Array<Task>,
+  job: Job,
   resultHandler: Reporter,
   logger: Logger,
   Worker: WorkerConstructor,
@@ -51,7 +50,7 @@ const executor = (
     const path = `${ __dirname }/../worker/${ file }.js`;
     return new Worker(realpathSync(path,),);
   };
-  validateTasks(repetitions, threads, tasks,);
+  validateTasks(repetitions, threads, job.main,);
   const validator: Thread = buildWorker('validator',);
   const calculator: Thread = buildWorker('calculator',);
   const bar = new Progress.SingleBar({
@@ -69,12 +68,21 @@ const executor = (
     'initializing tasks to have '+
    `${ threads } Threads x ${ repetitions } Repetitions todos`,
   );
-  for (const task of tasks) {
+  for (const task of job.main) {
     for (let i=0; i<threads*repetitions; i ++) {
       internalTasks.push(task,);
     }
   }
-  bar.start(internalTasks.length + internalTasks.length + tasks.length, EMPTY,);
+  const barLength = (() => {
+    const main = job.main.length * repetitions * threads;
+    const mainFactor = SINGLE + job.afterEach.length + job.beforeEach.length;
+    const validation = job.main.length * repetitions * threads;
+    const calculation = job.main.length;
+    const pre = job.before.length + job.beforeTask.length * job.main.length;
+    const post = job.after.length + job.afterTask.length * job.main.length;
+    return pre + main * mainFactor + post + validation + calculation;
+  })();
+  bar.start(barLength, EMPTY,);
   calculator.on('message', (data: FinishedSet,) => {
     finished[data.id] = data;
     logger.debug(`Analyzation of ${ data.id } finished`,);
@@ -106,25 +114,64 @@ const executor = (
       logger.info('Validations done',);
     }
   },);
-  logger.debug(`starting up ${ threads } Workers`,);
-  for (let j=0; j<threads; j ++) {
-    workers.push(buildWorker('webrequest',),);
-    workers[j].on('message', (data: Result,) => {
-      logger.debug(`Starting validation of ${ data.id }`,);
-      checking ++;
-      bar.increment();
-      validator.postMessage(data,);
-      if (internalTasks.length > EMPTY) {
-        logger.debug('Starting next request',);
-        workers[j].postMessage(internalTasks.shift(),);
-        return;
-      }
-      active --;
-      workers[j].terminate();
-      logger.info('All requests done, terminating thread',);
-    },);
-    active ++;
-    workers[j].postMessage(internalTasks.shift(),);
+  const before = buildWorker('webrequest',);
+  const after = buildWorker('webrequest',);
+  const startMain = () => {
+    logger.debug(`starting up ${ threads } Workers`,);
+    for (let j=0; j<threads; j ++) {
+      workers.push(buildWorker('webrequest',),);
+      workers[j].on('message', (data: Result,) => {
+        logger.debug(`Starting validation of ${ data.id }`,);
+        checking ++;
+        bar.increment();
+        validator.postMessage(data,);
+        if (internalTasks.length > EMPTY) {
+          logger.debug('Starting next request',);
+          workers[j].postMessage(internalTasks.shift(),);
+          return;
+        }
+        active --;
+        workers[j].terminate();
+        logger.info('All requests done, terminating thread',);
+        if (active === EMPTY) {
+          if (job.after.length > EMPTY) {
+            logger.debug('Starting next request',);
+            after.postMessage(job.after.shift(),);
+          } else {
+            after.terminate();
+            before.terminate();
+          }
+        }
+      },);
+      active ++;
+      workers[j].postMessage(internalTasks.shift(),);
+    }
+  };
+  after.on('message', () => {
+    bar.increment();
+    if (job.after.length > EMPTY) {
+      logger.debug('Starting next request',);
+      after.postMessage(job.after.shift(),);
+      return;
+    }
+    after.terminate();
+    before.terminate();
+  },);
+  before.on('message', () => {
+    bar.increment();
+    if (job.before.length > EMPTY) {
+      logger.debug('Starting next request',);
+      before.postMessage(job.before.shift(),);
+      return;
+    }
+    before.terminate();
+    startMain();
+  },);
+  if (job.before.length > EMPTY) {
+    logger.debug('Starting next request',);
+    before.postMessage(job.before.shift(),);
+  } else {
+    startMain();
   }
 };
 
