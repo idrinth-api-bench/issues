@@ -22,7 +22,7 @@ export const run = (
   job: Job,
   resultHandler?: Reporter|undefined,
   logger?: Logger|undefined,
-) => {
+): void => {
   if (typeof logger === 'undefined') {
     logger = new NullLogger();
   }

@@ -1,3 +1,4 @@
+require('ts-node',).register();
 const execute = require('../main',);
 const pino = require('pino',);
 // this is using the side-effect of having main start the typescript inclusion

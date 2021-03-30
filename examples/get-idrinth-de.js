@@ -1,3 +1,4 @@
+require('ts-node',).register();
 const execute = require('../main',);
 
 const tasks = [ {
