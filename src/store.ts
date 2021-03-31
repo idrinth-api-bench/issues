@@ -14,10 +14,7 @@ import {
 const hash = createHash('sha256',)
   .update(__dirname,)
   .digest('hex',);
-const cachefolder: string = tmpdir() + sep + hash;
-if (! existsSync(cachefolder,)) {
-  mkdirSync(cachefolder,);
-}
+const cachefolder: string = tmpdir() + sep + 'api-bench' + sep + '_' + hash;
 
 export default {
   get(key: string, defaulted: string,): string {
@@ -32,6 +29,9 @@ export default {
   set(key: string, value: string,): void {
     if (! key.match(/^[a-z0-9.]+$/u,)) {
       throw new Error('Invalid Key',);
+    }
+    if (! existsSync(cachefolder,)) {
+      console.log(mkdirSync(cachefolder, {recursive: true,}));
     }
     writeFileSync(cachefolder + sep + key, value,);
   },

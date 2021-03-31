@@ -32,9 +32,8 @@ describe('runner', () => {
         expect(result,).to.be.an('object',);
         expect(result.duration,).to.equal(null,);
         expect(result.id,).to.equal('i',);
-        expect(result.msg,).to.be.an('Error',);
+        expect(result.msg,).to.be.a('string',);
         expect(result.success,).to.equal(false,);
-        expect(result.validators,).to.deep.equal([],);
         done();
       },);
   },).timeout(TIMEOUT,);
@@ -55,14 +54,8 @@ describe('runner', () => {
         expect(result,).to.be.an('object',);
         expect(result.duration,).to.be.a('number',);
         expect(result.id,).to.equal('i',);
-        expect(result.response,).to.be.an('object',);
-        expect(result.response.body,).to.equal('',);
-        expect(result.response.cookies,).to.deep.equal({},);
-        expect(result.response.headers,).to.be.an('object',);
-        expect(result.response.headers.connection,).to.be.a('string',);
-        expect(result.response.status,).to.equal(STATUS,);
-        expect(result.response.uri,).to.equal('http://localhost:8901',);
-        expect(result.validators,).to.deep.equal([],);
+        expect(result.msg,).to.equal('');
+        expect(result.success,).to.equal(true,);
         done();
       },);
   },);

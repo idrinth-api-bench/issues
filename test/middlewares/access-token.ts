@@ -21,9 +21,7 @@ describe('middlewares/csrf-header', () => {
     expect(Access.process,).to.be.a('function',);
   },);
   it('should not set token by default', () => {
-    expect(Access.prepare(<Request>{},),).to.deep.equal({
-      headers: {},
-    },);
+    expect(Access.prepare(<Request>{},),).to.deep.equal({},);
   },);
   it('should get token by default', () => {
     expect(() => Access.process(<Result><unknown>{

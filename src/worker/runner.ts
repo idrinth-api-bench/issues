@@ -67,13 +67,15 @@ export = (task: Task, callable: Callback,): void => {
         result,
         task.post || [],
       );
-      for (const validator of task.post) {
-        try {
-          const ware: Middleware = resolve(validator,);
-          ware.process(res,);
-        } catch (er) {
-          callable(send(res, er+'', false,),);
-          return;
+      if (task.post) {
+        for (const validator of task.post) {
+          try {
+            const ware: Middleware = resolve(validator,);
+            ware.process(res,);
+          } catch (er) {
+            callable(send(res, er+'', false,),);
+            return;
+          }
         }
       }
       callable(send(res, '', true,),);

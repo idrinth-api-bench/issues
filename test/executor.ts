@@ -190,14 +190,12 @@ describe('executor', () => {
   it('should have build the right workers', () => {
     const output = {};
     output[realpathSync('./worker/calculator.js',)] = once;
-    output[realpathSync('./worker/validator.js',)] = once;
     output[realpathSync('./worker/webrequest.js',)] = threads + setup;
     expect(FakeWorker.built,).to.deep.equal(output,);
   },);
   it('should have shut down the right workers', () => {
     const output = {};
     output[realpathSync('./worker/calculator.js',)] = once;
-    output[realpathSync('./worker/validator.js',)] = once;
     output[realpathSync('./worker/webrequest.js',)] = threads + setup;
     expect(FakeWorker.terminated,).to.deep.equal(output,);
   },);
@@ -218,14 +216,12 @@ describe('executor', () => {
   it('should have build the right workers after pre and post', () => {
     const output = {};
     output[realpathSync('./worker/calculator.js',)] = once;
-    output[realpathSync('./worker/validator.js',)] = once;
     output[realpathSync('./worker/webrequest.js',)] = threads + setup;
     expect(FakeWorker.built,).to.deep.equal(output,);
   },);
   it('should have shut down the right workers after pre and post', () => {
     const output = {};
     output[realpathSync('./worker/calculator.js',)] = once;
-    output[realpathSync('./worker/validator.js',)] = once;
     output[realpathSync('./worker/webrequest.js',)] = threads + setup;
     expect(FakeWorker.terminated,).to.deep.equal(output,);
   },);
