@@ -15,8 +15,8 @@ const hash = createHash('sha256',)
   .update(__dirname,)
   .digest('hex',);
 const cachefolder: string = tmpdir() + sep + hash;
-if (!existsSync(cachefolder)) {
-mkdirSync(cachefolder,);
+if (! existsSync(cachefolder,)) {
+  mkdirSync(cachefolder,);
 }
 
 export default {

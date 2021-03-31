@@ -98,6 +98,7 @@ const executor = (
     logger.debug(`starting up ${ threads } Workers`,);
     for (let j=0; j<threads; j ++) {
       workers.push(buildWorker('webrequest',),);
+      /* eslint complexity:0 */
       workers[j].on('message', (data: ValidationResult,) => {
         logger.debug(`Starting validation of ${ data.id }`,);
         results[data.id] = results[data.id] || new ResultSet(data.id,);
@@ -109,7 +110,6 @@ const executor = (
           analysing ++;
           calculator.postMessage(results[data.id],);
         }
-        bar.increment();
         if (internalTasks.length > EMPTY) {
           logger.debug('Starting next request',);
           workers[j].postMessage(internalTasks.shift(),);
