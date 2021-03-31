@@ -31,7 +31,7 @@ export default {
       throw new Error('Invalid Key',);
     }
     if (! existsSync(cachefolder,)) {
-      console.log(mkdirSync(cachefolder, {recursive: true,}));
+      mkdirSync(cachefolder, {recursive: true,});
     }
     writeFileSync(cachefolder + sep + key, value,);
   },

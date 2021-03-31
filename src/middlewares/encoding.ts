@@ -12,7 +12,7 @@ import staticImplements from '../helper/static-implements';
 
 const handleForm = (request: Request,): Request => {
   if (! request.headers['content-type']) {
-    request.headers['content-tyoe'] = 'application/x-www-form-urlencoded';
+    request.headers['content-type'] = 'application/x-www-form-urlencoded';
   }
   request.body = formUrlEncoded(request.body,);
   return request;
@@ -20,7 +20,7 @@ const handleForm = (request: Request,): Request => {
 const handleJSON = (request: Request,): Request => {
   request.body = JSON.stringify(request.body,);
   if (! request.headers['content-type']) {
-    request.headers['content-tyoe'] = 'application/json';
+    request.headers['content-type'] = 'application/json';
   }
   return request;
 };
