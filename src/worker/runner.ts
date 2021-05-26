@@ -28,15 +28,32 @@ const send = (result: Result, msg: string, success: boolean,): Answer => ({
   success,
   msg,
 });
-
-export = (task: Task, callable: Callback,): void => {
-  let quest = task.main;
+const handlePre = (task: Task,) => {
   if (task.pre) {
     for (const middleware of task.pre) {
       const ware: Middleware = resolve(middleware,);
-      quest = ware.prepare(quest,);
+      task.main = ware.prepare(task.main,);
     }
   }
+  return task.main;
+};
+const handlePost = (task: Task, res:Result, callable: Callback,) => {
+
+  if (task.post) {
+    for (const validator of task.post) {
+      try {
+        const ware: Middleware = resolve(validator,);
+        ware.process(res,);
+      } catch (er) {
+        callable(send(res, er+'', false,),);
+        return false;
+      }
+    }
+  }
+  return true;
+};
+export = (task: Task, callable: Callback,): void => {
+  const quest = handlePre(task,);
   const start = process.hrtime();
   request(
     quest.method,
@@ -67,17 +84,8 @@ export = (task: Task, callable: Callback,): void => {
         result,
         task.post || [],
       );
-      if (task.post) {
-        for (const validator of task.post) {
-          try {
-            const ware: Middleware = resolve(validator,);
-            ware.process(res,);
-          } catch (er) {
-            callable(send(res, er+'', false,),);
-            return;
-          }
-        }
+      if (handlePost(task, res, callable,)) {
+        callable(send(res, '', true,),);
       }
-      callable(send(res, '', true,),);
     },);
 };

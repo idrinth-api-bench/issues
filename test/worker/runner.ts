@@ -9,7 +9,6 @@ import {
 } from 'worker_threads';
 
 const TIMEOUT = 6000;
-const STATUS = 202;
 
 const server = new Worker('./fixtures/server.js',);
 describe('runner', () => {
@@ -54,7 +53,7 @@ describe('runner', () => {
         expect(result,).to.be.an('object',);
         expect(result.duration,).to.be.a('number',);
         expect(result.id,).to.equal('i',);
-        expect(result.msg,).to.equal('');
+        expect(result.msg,).to.equal('',);
         expect(result.success,).to.equal(true,);
         done();
       },);
