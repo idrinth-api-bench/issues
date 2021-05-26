@@ -22,6 +22,8 @@ describe('reporter/console-reporter', () => {
         median80: 33,
         min80: 12,
         max80: 99,
+        stdv80: 12,
+        stdv100: 99,
       },
     };
     expect(() => consoleReporter(results,),).to.not.throw();

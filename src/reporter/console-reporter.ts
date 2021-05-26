@@ -18,6 +18,8 @@ const cli: Reporter = (results: {[id: string]: FinishedSet},): void => {
       'median 80%',
       'min 80%',
       'max 80%',
+      'stdv 80%',
+      'stdv 100%',
     ],
   },);
   for (const id of Object.getOwnPropertyNames(results,)) {

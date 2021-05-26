@@ -28,6 +28,8 @@ describe('reporter/json-reporter', () => {
         median80: 33,
         min80: 12,
         max80: 99,
+        stdv80: 99,
+        stdv100: 99,
       },
     };
     jsonReporter(results,);
@@ -50,6 +52,8 @@ describe('reporter/json-reporter', () => {
         median80: 33,
         min80: 14,
         max80: 99,
+        stdv80: 99,
+        stdv100: 99,
       },
     };
     jsonReporter(results,);

@@ -30,6 +30,8 @@ describe('reporter/csv-reporter', () => {
         median80: 33,
         min80: 12,
         max80: 99,
+        stdv100: 9,
+        stdv80: 8,
       },
     };
     csvReporter(results,);
@@ -55,14 +57,16 @@ describe('reporter/csv-reporter', () => {
         median80: 33,
         min80: 14,
         max80: 99,
+        stdv100: 9,
+        stdv80: 8,
       },
     };
     csvReporter(results,);
     setTimeout(() => {
       expect(readFileSync(file,) + '',).to.equal(
         'id,errors,count,avg100,median100,min100,'
-        + 'max100,avg80,median80,min80,max80'
-        + '\n1,14,7,6,33,1,99,76,33,14,99',
+        + 'max100,avg80,median80,min80,max80,stdv100,stdv80'
+        + '\n1,14,7,6,33,1,99,76,33,14,99,9,8',
       );
       mock.restore();
       done();

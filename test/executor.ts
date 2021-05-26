@@ -55,6 +55,10 @@ class FakeResult implements Result, ValidationResult, FinishedSet {
 
     public min80: number;
 
+    public stdv80: number;
+
+    public stdv100: number;
+
     public response = {
       headers: {},
       cookies: {},
@@ -86,6 +90,8 @@ class FakeResult implements Result, ValidationResult, FinishedSet {
       this.min80 = duration;
       this.median100 = duration;
       this.median80 = duration;
+      this.stdv100 = 100;
+      this.stdv80 = 80;
     }
 
     public add() {
