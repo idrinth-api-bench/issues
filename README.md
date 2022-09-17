@@ -34,6 +34,8 @@ Middlewares use an absolute file path to be loaded. the following characters wil
 
 Any logger that either implements the [Interface](src/logger/logger.ts) or has a wrapper. So far a wrapper for pino is avaible.
 
+
+
 ### Logging levels used
 
 Most log entries are debug level, with the major steps being written to info. Trace is currently not used but may be used for detailed argument printing at some point.
@@ -47,3 +49,6 @@ As usual with my projects this is MIT-licensed.
 -   more unit tests (yeah, it's one of those projects)
 -   soap support
 -   graphql support
+
+## Support
+You can reach me via discord at [Idrinth's Discord](https://discord.gg/xHSF8CGPTh).
