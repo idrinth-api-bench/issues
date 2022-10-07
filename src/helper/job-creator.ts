@@ -17,7 +17,8 @@ export default (): Job => {
   for (const type in Object.keys(job,)) {
     if (existsSync(reqlib + '/src/routes/'+type,)) {
       for (const file in readdirSync(reqlib + '/src/routes/'+type,)) {
-        if (file.match(/\.js|\.ts|\.json/,)) {
+        if (file.match(/\.js|\.ts|\.json/u,)) {
+          // eslint-disable-next-line @typescript-eslint/no-var-requires
           job[type].push(require(reqlib + '/src/routes/'+type+'/'+file,),);
         }
       }
