@@ -14,40 +14,45 @@ import {
   Worker,
 } from 'worker_threads';
 import Job from './job';
+import jobCreator from './helper/job-creator';
 
 /* eslint max-params:0 */
 export const run = (
-  threads: number,
-  repetitions: number,
-  job: Job,
+  threads = 10,
+  repetitions = 1000,
+  job: Job|Array<Task>|undefined,
   resultHandler?: Reporter|undefined,
   logger?: Logger|undefined,
-) => {
+): void => {
   if (typeof logger === 'undefined') {
     logger = new NullLogger();
   }
   if (typeof resultHandler === 'undefined') {
     resultHandler = defaultReporter;
   }
+  if (typeof job === 'undefined') {
+    job = jobCreator();
+  } else if (typeof job === 'object' && Array.isArray(job,)) {
+    job = {
+      before: [],
+      beforeTask: [],
+      beforeEach: [],
+      main: job,
+      afterEach: [],
+      afterTask: [],
+      after: [],
+    };
+  }
   executor(threads, repetitions, job, resultHandler, logger, Worker,);
 };
 
 /* eslint max-params:0 */
 export default (
-  threads: number,
-  repetitions: number,
-  tasks: Array<Task>,
+  threads = 10,
+  repetitions = 1000,
+  job: Job|Array<Task>|undefined,
   resultHandler?: Reporter|undefined,
   logger?: Logger|undefined,
 ): void => {
-  const job: Job = {
-    before: [],
-    beforeTask: [],
-    beforeEach: [],
-    main: tasks,
-    afterEach: [],
-    afterTask: [],
-    after: [],
-  };
   run(threads, repetitions, job, resultHandler, logger,);
 };
