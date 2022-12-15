@@ -19,11 +19,11 @@ import jobCreator from './helper/job-creator';
 const DEFAULT_THREADS = 10;
 const DEFAULT_REPETITIONS = 1000;
 
-/* eslint max-params:0 */
+/* eslint max-params:0, complexity:0 */
 export const run = (
   threads = DEFAULT_THREADS,
   repetitions = DEFAULT_REPETITIONS,
-  job: Job|Array<Task>|undefined,
+  job?: Job|Array<Task>|undefined,
   resultHandler?: Reporter|undefined,
   logger?: Logger|undefined,
 ): void => {
@@ -53,7 +53,7 @@ export const run = (
 export default (
   threads = DEFAULT_THREADS,
   repetitions = DEFAULT_REPETITIONS,
-  job: Job|Array<Task>|undefined,
+  job?: Job|Array<Task>|undefined,
   resultHandler?: Reporter|undefined,
   logger?: Logger|undefined,
 ): void => {
