@@ -23,7 +23,7 @@ function getEnv(name: string,): string|undefined {
 export function analyze(func: Function,): Param[] {
   const parameters = func.toString()
     .replace(/\r|\n/gu, ' ',)
-    .replace(/^function\s*\(|\)\s*{.*}\s*$/gu, '',)
+    .replace(/^function\s*\(|\)\s*\{.*\}\s*$/gu, '',)
     .split(',',);
   const ret = [];
   for (const parameter of parameters) {

@@ -28,7 +28,7 @@ export default (): Job => {
           const val = require(reqlib + '/src/routes/'+snaked+'/'+file,);
           if (typeof val === 'function') {
             const parameters = analyze(val,);
-            job[type].push(val.call(this, ...parameters.map(x, => x.value,)),);
+            job[type].push(val.call(this, ...parameters.map(x => x.value,)),);
           } else {
             job[type].push(val,);
           }
