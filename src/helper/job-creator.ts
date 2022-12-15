@@ -3,6 +3,11 @@ import * as reqlib from 'app-root-path';
 import {
   readdirSync, existsSync,
 } from 'fs';
+import {
+ snakeCase, } from 'snake-case';
+import {
+analyze
+} from './function-analyzer';
 
 export default (): Job => {
   const job:Job = {
@@ -15,11 +20,18 @@ export default (): Job => {
     after: [],
   };
   for (const type in Object.keys(job,)) {
-    if (existsSync(reqlib + '/src/routes/'+type,)) {
-      for (const file in readdirSync(reqlib + '/src/routes/'+type,)) {
+    const snaked = snakeCase(type,);
+    if (existsSync(reqlib + '/src/routes/'+snaked,)) {
+      for (const file in readdirSync(reqlib + '/src/routes/'+snaked,)) {
         if (file.match(/\.js|\.ts|\.json/u,)) {
           // eslint-disable-next-line @typescript-eslint/no-var-requires
-          job[type].push(require(reqlib + '/src/routes/'+type+'/'+file,),);
+          const val = require(reqlib + '/src/routes/'+snaked+'/'+file,);
+          if (typeof val === 'function') {
+            const parameters = analyze(val,);
+            job[type].push(val.call(this, ...parameters.map(x, => x.value,)),);
+          } else {
+            job[type].push(val,);
+          }
         }
       }
     }

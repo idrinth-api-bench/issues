@@ -37,7 +37,8 @@
     "form-urlencoded": "^4.1.4",
     "needle": "^2.5",
     "ts-node": "^9",
-    "typescript": "^4"
+    "typescript": "^4",
+    "snake-case": "^3"
   },
   "devDependencies": {
     "@types/chai": "^4.2.11",
