@@ -55,6 +55,10 @@ class FakeResult implements Result, ValidationResult, FinishedSet {
 
     public min80: number;
 
+    public stdv80: number;
+
+    public stdv100: number;
+
     public response = {
       headers: {},
       cookies: {},
@@ -86,6 +90,8 @@ class FakeResult implements Result, ValidationResult, FinishedSet {
       this.min80 = duration;
       this.median100 = duration;
       this.median80 = duration;
+      this.stdv100 = 100;
+      this.stdv80 = 80;
     }
 
     public add() {
@@ -190,14 +196,12 @@ describe('executor', () => {
   it('should have build the right workers', () => {
     const output = {};
     output[realpathSync('./worker/calculator.js',)] = once;
-    output[realpathSync('./worker/validator.js',)] = once;
     output[realpathSync('./worker/webrequest.js',)] = threads + setup;
     expect(FakeWorker.built,).to.deep.equal(output,);
   },);
   it('should have shut down the right workers', () => {
     const output = {};
     output[realpathSync('./worker/calculator.js',)] = once;
-    output[realpathSync('./worker/validator.js',)] = once;
     output[realpathSync('./worker/webrequest.js',)] = threads + setup;
     expect(FakeWorker.terminated,).to.deep.equal(output,);
   },);
@@ -218,14 +222,12 @@ describe('executor', () => {
   it('should have build the right workers after pre and post', () => {
     const output = {};
     output[realpathSync('./worker/calculator.js',)] = once;
-    output[realpathSync('./worker/validator.js',)] = once;
     output[realpathSync('./worker/webrequest.js',)] = threads + setup;
     expect(FakeWorker.built,).to.deep.equal(output,);
   },);
   it('should have shut down the right workers after pre and post', () => {
     const output = {};
     output[realpathSync('./worker/calculator.js',)] = once;
-    output[realpathSync('./worker/validator.js',)] = once;
     output[realpathSync('./worker/webrequest.js',)] = threads + setup;
     expect(FakeWorker.terminated,).to.deep.equal(output,);
   },);

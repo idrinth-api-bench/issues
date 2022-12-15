@@ -1,7 +1,4 @@
 import {
-  Result,
-} from './result';
-import {
   FinishedSet,
 } from './finished-set';
 import {
@@ -20,6 +17,7 @@ import Reporter from './reporter/reporter';
 import * as Progress from 'cli-progress';
 import validateTasks from './validate-tasks';
 import Job from './job';
+import store from './store';
 
 const EMPTY = 0;
 const SINGLE = 1;
@@ -51,14 +49,13 @@ const executor = (
     return new Worker(realpathSync(path,),);
   };
   validateTasks(repetitions, threads, job.main,);
-  const validator: Thread = buildWorker('validator',);
   const calculator: Thread = buildWorker('calculator',);
   const bar = new Progress.SingleBar({
     stopOnComplete: true,
     clearOnComplete: true,
   },);
   let active = 0;
-  let checking = 0;
+  const checking = 0;
   let analysing = 0;
   const workers: Array<Thread> = [];
   const results: {[z: string]: ResultSet} = {};
@@ -76,11 +73,10 @@ const executor = (
   const barLength = (() => {
     const main = job.main.length * repetitions * threads;
     const mainFactor = SINGLE + job.afterEach.length + job.beforeEach.length;
-    const validation = job.main.length * repetitions * threads;
     const calculation = job.main.length;
     const pre = job.before.length + job.beforeTask.length * job.main.length;
     const post = job.after.length + job.afterTask.length * job.main.length;
-    return pre + main * mainFactor + post + validation + calculation;
+    return pre + main * mainFactor + post + calculation;
   })();
   bar.start(barLength, EMPTY,);
   calculator.on('message', (data: FinishedSet,) => {
@@ -96,35 +92,24 @@ const executor = (
       logger.info('Done',);
     }
   },);
-  validator.on('message', (data: ValidationResult,) => {
-    logger.debug(`Starting validation of ${ data.id }`,);
-    results[data.id] = results[data.id] || new ResultSet(data.id,);
-    results[data.id].add(data,);
-    bar.increment();
-    if (results[data.id].count === threads*repetitions) {
-      logger.info(`Finished requesting all ${ data.id }`,);
-      logger.debug(`Starting analyzation of ${ data.id }`,);
-      analysing ++;
-      calculator.postMessage(results[data.id],);
-    }
-    checking --;
-    logger.debug(`Finished validation of ${ data.id }`,);
-    if (active === EMPTY && checking === EMPTY) {
-      validator.terminate();
-      logger.info('Validations done',);
-    }
-  },);
   const before = buildWorker('webrequest',);
   const after = buildWorker('webrequest',);
   const startMain = () => {
     logger.debug(`starting up ${ threads } Workers`,);
     for (let j=0; j<threads; j ++) {
       workers.push(buildWorker('webrequest',),);
-      workers[j].on('message', (data: Result,) => {
+      /* eslint complexity:0 */
+      workers[j].on('message', (data: ValidationResult,) => {
         logger.debug(`Starting validation of ${ data.id }`,);
-        checking ++;
+        results[data.id] = results[data.id] || new ResultSet(data.id,);
+        results[data.id].add(data,);
         bar.increment();
-        validator.postMessage(data,);
+        if (results[data.id].count === threads*repetitions) {
+          logger.info(`Finished requesting all ${ data.id }`,);
+          logger.debug(`Starting analyzation of ${ data.id }`,);
+          analysing ++;
+          calculator.postMessage(results[data.id],);
+        }
         if (internalTasks.length > EMPTY) {
           logger.debug('Starting next request',);
           workers[j].postMessage(internalTasks.shift(),);
@@ -139,6 +124,7 @@ const executor = (
             after.postMessage(job.after.shift(),);
           } else {
             after.terminate();
+            store.clean();
           }
         }
       },);
@@ -153,6 +139,7 @@ const executor = (
       after.postMessage(job.after.shift(),);
       return;
     }
+    store.clean();
     after.terminate();
   },);
   before.on('message', () => {

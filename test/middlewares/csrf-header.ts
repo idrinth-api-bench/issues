@@ -21,9 +21,7 @@ describe('middlewares/csrf-header', () => {
     expect(CsrfHeader.process,).to.be.a('function',);
   },);
   it('should not set token by default', () => {
-    expect(CsrfHeader.prepare(<Request>{},),).to.deep.equal({
-      headers: {},
-    },);
+    expect(CsrfHeader.prepare(<Request>{},),).to.deep.equal({},);
   },);
   it('should get token by default', () => {
     expect(() => CsrfHeader.process(<Result><unknown>{

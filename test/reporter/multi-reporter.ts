@@ -34,6 +34,8 @@ describe('reporter/multi-reporter', () => {
         median80: 33,
         min80: 14,
         max80: 99,
+        stdv80: 99,
+        stdv100: 99,
       },
     };
     multiReporter(results,);

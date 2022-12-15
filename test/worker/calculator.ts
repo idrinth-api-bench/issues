@@ -29,6 +29,8 @@ describe('calculator', () => {
       median80: NaN,
       min80: NaN,
       max80: NaN,
+      stdv80: NaN,
+      stdv100: NaN,
     },);
   },);
   it('should return a set if given data', () => {
@@ -60,6 +62,8 @@ describe('calculator', () => {
       median80: 3,
       min80: 1,
       max80: 4,
+      stdv100: 1.224744871391589,
+      stdv80: 1.224744871391589,
     },);
   },);
   it('should return a result if given data', () => {
@@ -102,6 +106,8 @@ describe('calculator', () => {
       median80: 17,
       min80: 2,
       max80: 32,
+      stdv80: 8.611262750250173,
+      stdv100: 83.93449827097318,
     },);
   },);
 },);

@@ -11,9 +11,7 @@ import staticImplements from '../helper/static-implements';
 import {
   HashMap,
 } from '../hashmap';
-
-let access = '';
-let refresh = '';
+import store from '../store';
 
 const get = (
   fallback: string,
@@ -31,20 +29,22 @@ const get = (
 @staticImplements<Middleware>()
 class Access {
   public static prepare(request: Request,): Request {
-    if (typeof request.body === 'string') {
-      request.body = request.body.replace(
-        /%refresh-token-middleware%/ug,
-        refresh,
-      );
-      request.body = request.body.replace(
-        /%access-token-middleware%/ug,
-        access,
-      );
-    }
-    if (typeof request.headers === 'undefined') {
-      request.headers = {};
-    }
+    const access = store.get('access', '',);
+    const refresh = store.get('refresh', '',);
     if (access) {
+      if (typeof request.body === 'string') {
+        request.body = request.body.replace(
+          /%refresh-token-middleware%/ug,
+          refresh,
+        );
+        request.body = request.body.replace(
+          /%access-token-middleware%/ug,
+          access,
+        );
+      }
+      if (typeof request.headers === 'undefined') {
+        request.headers = {};
+      }
       request.headers.authorization = `Bearer ${ access }`;
     }
     return request;
@@ -58,8 +58,12 @@ class Access {
       return;
     }
     const body = JSON.parse(response.response.body,);
+    let access = store.get('access', '',);
+    let refresh = store.get('refresh', '',);
     access = get(access, body, 'access', 'access_token', 'access-token',);
     refresh = get(refresh, body, 'refresh', 'refresh_token', 'refresh-token',);
+    store.set('access', access,);
+    store.set('refresh', refresh,);
   }
 }
 export default Access;
