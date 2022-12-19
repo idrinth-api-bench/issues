@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "experimentalDecorators": true,
-    "module": "CommonJS"
+    "module": "CommonJS",
+    "lib": ["es2020"],
+    "module": "commonjs",
+    "target": "es2020"
   },
   "typeRoots" : [
     "./typings",

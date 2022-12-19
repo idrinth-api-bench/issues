@@ -14,12 +14,17 @@ import {
   Worker,
 } from 'worker_threads';
 import Job from './job';
+import jobCreator from './helper/job-creator';
+import * as reqlib from 'app-root-path';
 
-/* eslint max-params:0 */
+const DEFAULT_THREADS = 10;
+const DEFAULT_REPETITIONS = 1000;
+
+/* eslint max-params:0, complexity:0 */
 export const run = (
-  threads: number,
-  repetitions: number,
-  job: Job,
+  threads = DEFAULT_THREADS,
+  repetitions = DEFAULT_REPETITIONS,
+  job?: Job|Array<Task>|undefined,
   resultHandler?: Reporter|undefined,
   logger?: Logger|undefined,
 ): void => {
@@ -29,25 +34,29 @@ export const run = (
   if (typeof resultHandler === 'undefined') {
     resultHandler = defaultReporter;
   }
+  if (typeof job === 'undefined') {
+    job = jobCreator(`${ reqlib }`,);
+  } else if (typeof job === 'object' && Array.isArray(job,)) {
+    job = {
+      before: [],
+      beforeTask: [],
+      beforeEach: [],
+      main: job,
+      afterEach: [],
+      afterTask: [],
+      after: [],
+    };
+  }
   executor(threads, repetitions, job, resultHandler, logger, Worker,);
 };
 
 /* eslint max-params:0 */
 export default (
-  threads: number,
-  repetitions: number,
-  tasks: Array<Task>,
+  threads = DEFAULT_THREADS,
+  repetitions = DEFAULT_REPETITIONS,
+  job?: Job|Array<Task>|undefined,
   resultHandler?: Reporter|undefined,
   logger?: Logger|undefined,
 ): void => {
-  const job: Job = {
-    before: [],
-    beforeTask: [],
-    beforeEach: [],
-    main: tasks,
-    afterEach: [],
-    afterTask: [],
-    after: [],
-  };
   run(threads, repetitions, job, resultHandler, logger,);
 };
