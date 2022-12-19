@@ -49,8 +49,8 @@ describe('helper/function-analyzer', () => {
     }, ],);
   },);
   it('should return an array of params when handling two params', () => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars
-    const ret = analyze((myNumber = RANDOM_NUMBER, /*Boolean*/myString = '',) => {},);
+    // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars, no-magic-numbers
+    const ret = analyze((myNumber = 11, /*Boolean*/myString = '',) => {},);
     expect(ret,).to.be.an('array',);
     expect(ret,).to.deep.equal(
       [
@@ -72,8 +72,8 @@ describe('helper/function-analyzer', () => {
     );
   },);
   it('should return an array of params when handling one number params', () => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars
-    const ret = analyze((myNumber = RANDOM_NUMBER,) => {},);
+    // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars, no-magic-numbers
+    const ret = analyze((myNumber = 11,) => {},);
     expect(ret,).to.be.an('array',);
     expect(ret,).to.deep.equal([ {
       value: RANDOM_NUMBER,
