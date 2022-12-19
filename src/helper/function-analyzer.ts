@@ -10,7 +10,7 @@ export interface Param {
     envName: string;
 }
 
-function getEnv(name: string,): string|undefined {
+const getEnv = (name: string,): string|undefined => {
   for (const key of Object.keys(process.env,)) {
     if (key.toUpperCase() === name) {
       return process[key];
@@ -18,9 +18,10 @@ function getEnv(name: string,): string|undefined {
   }
   // eslint-disable-next-line no-undefined
   return undefined;
-}
+};
 
-export function analyze(func: Function,): Param[] {
+// eslint-disable-next-line complexity, @typescript-eslint/ban-types
+export const analyze = (func: Function,): Param[] => {
   const parameters = func.toString()
     .replace(/\r|\n/gu, ' ',)
     .replace(/^function\s*\(|\)\s*\{.*\}\s*$/gu, '',)
@@ -35,14 +36,24 @@ export function analyze(func: Function,): Param[] {
       envName: '',
     };
     if (parameter.match(/\/\*.+\*\/.+=.+/u,)) {
-      value.name = parameter.replace(/\/\*.+\*\/|=.+$/gu, '',).replace(/\s*/gu, '',);
-      value.default = parameter.replace(/^.+=/u, '',).replace(/^\s*|\s*$/gu, '',);
-      value.type = parameter.replace(/^.*\/\*|\*\/.+$/gu, '',).replace(/\s*/gu, '',)
+      value.name = parameter
+        .replace(/\/\*.+\*\/|=.+$/gu, '',)
+        .replace(/\s*/gu, '',);
+      value.default = parameter
+        .replace(/^.+=/u, '',)
+        .replace(/^\s*|\s*$/gu, '',);
+      value.type = parameter
+        .replace(/^.*\/\*|\*\/.+$/gu, '',)
+        .replace(/\s*/gu, '',)
         .toLowerCase();
     } else if (parameter.match(/\/\*.+\*\/.+/u,)) {
-      value.name = parameter.replace(/\/\*.+\*\/|=.+$/gu, '',).replace(/\s*/gu, '',);
+      value.name = parameter
+        .replace(/\/\*.+\*\/|=.+$/gu, '',)
+        .replace(/\s*/gu, '',);
       value.default = '';
-      value.type = parameter.replace(/^.*\/\*|\*\/.+$/gu, '',).replace(/\s*/gu, '',)
+      value.type = parameter
+        .replace(/^.*\/\*|\*\/.+$/gu, '',)
+        .replace(/\s*/gu, '',)
         .toLowerCase();
       if (value.type === 'boolean') {
         value.default = 'false';
@@ -50,8 +61,12 @@ export function analyze(func: Function,): Param[] {
         value.default = '0';
       }
     } else if (parameter.match(/.+=.+/u,)) {
-      value.name = parameter.replace(/\/\*.+\*\/|=.+$/gu, '',).replace(/\s*/gu, '',);
-      value.default = parameter.replace(/^.+=/u, '',).replace(/^\s*|\s*$/gu, '',);
+      value.name = parameter
+        .replace(/\/\*.+\*\/|=.+$/gu, '',)
+        .replace(/\s*/gu, '',);
+      value.default = parameter
+        .replace(/^.+=/u, '',)
+        .replace(/^\s*|\s*$/gu, '',);
       value.type = 'string';
       if (! Number.isNaN(Number.parseFloat(value.default,),)) {
         value.type = 'number';
@@ -70,8 +85,7 @@ export function analyze(func: Function,): Param[] {
       break;
     case 'bool':
     case 'boolean':
-      // eslint-disable-next-line no-undefined
-      value.value = getEnv(value.name,)===undefined ? value.default==='true' : getEnv(value.name,)==='true';
+      value.value = (getEnv(value.name,) || value.default) === 'true';
       break;
     case 'string':
     default:
@@ -83,4 +97,4 @@ export function analyze(func: Function,): Param[] {
     ret.push(value,);
   }
   return ret;
-}
+};
