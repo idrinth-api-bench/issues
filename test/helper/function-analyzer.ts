@@ -24,7 +24,7 @@ describe('helper/function-analyzer', () => {
     expect(ret,).to.be.an('array',);
     expect(ret,).to.deep.equal([],);
   },);
-  it('should return an array of params when handling one typed params', () => {
+  it('should return an array of params when handling one typed param', () => {
     // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars
     const ret = analyze(function(/*Boolean*/myBoolean,) {},);
     expect(ret,).to.be.an('array',);
@@ -36,7 +36,7 @@ describe('helper/function-analyzer', () => {
       type: 'boolean',
     }, ],);
   },);
-  it('should return an array of params when handling one untyped params', () => {
+  it('should return an array of params when handling one untyped param', () => {
     // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars
     const ret = analyze((myString,) => {},);
     expect(ret,).to.be.an('array',);
