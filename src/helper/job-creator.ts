@@ -1,5 +1,4 @@
 import Job from '../job';
-import * as reqlib from 'app-root-path';
 import {
   readdirSync, existsSync,
 } from 'fs';
@@ -33,7 +32,7 @@ const include = (path: string,): Task => {
   return val;
 };
 
-export default (): Job => {
+export default (root: string,): Job => {
   const job:Job = {
     before: [],
     beforeTask: [],
@@ -44,11 +43,11 @@ export default (): Job => {
     after: [],
   };
   for (const type of TYPES) {
-    const snaked = snakeCase(type,);
-    if (existsSync(reqlib + '/src/routes/'+snaked,)) {
-      for (const file of readdirSync(reqlib + '/src/routes/'+snaked,)) {
+    const dir = root + '/src/routes/' + snakeCase(type,);
+    if (existsSync(dir,)) {
+      for (const file of readdirSync(dir,)) {
         if (file.match(/\.js|\.ts|\.json/u,)) {
-          job[type].push(include(reqlib + '/src/routes/'+snaked+'/'+file,),);
+          job[type].push(include(dir + '/' + file,),);
         }
       }
     }

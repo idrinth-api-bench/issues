@@ -15,6 +15,7 @@ import {
 } from 'worker_threads';
 import Job from './job';
 import jobCreator from './helper/job-creator';
+import * as reqlib from 'app-root-path';
 
 const DEFAULT_THREADS = 10;
 const DEFAULT_REPETITIONS = 1000;
@@ -34,7 +35,7 @@ export const run = (
     resultHandler = defaultReporter;
   }
   if (typeof job === 'undefined') {
-    job = jobCreator();
+    job = jobCreator(`${ reqlib }`,);
   } else if (typeof job === 'object' && Array.isArray(job,)) {
     job = {
       before: [],
