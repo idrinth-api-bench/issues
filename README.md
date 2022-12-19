@@ -11,7 +11,9 @@ Additionally this tool separates the validation thread from the thread processin
 
 ## Usage & Examples
 
-Basicly require main/include main and supply the executor method with required parameters. There is an example avaible in /examples.
+Basicly require main/include main and supply the executor method with required parameters. There is an example avaible in /examples. Tasks defined in `src/routes`-subfolders `before`, `before_task`, `before_each`, `main`, `after_each`, `after_task` and `after` will be used to automatically fill the Job processed by the executor.
+
+Parameters of contained functions will be filled with environment variable values of the respective name (`aBc` -> `A_BC`).
 
 ### Middlewares
 
@@ -33,8 +35,6 @@ Middlewares use an absolute file path to be loaded. the following characters wil
 ## Logging
 
 Any logger that either implements the [Interface](src/logger/logger.ts) or has a wrapper. So far a wrapper for pino is avaible.
-
-
 
 ### Logging levels used
 
