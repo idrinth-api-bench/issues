@@ -25,16 +25,28 @@ describe('helper/job-creator', () => {
       }, ],
       'beforeEach': [],
       'beforeTask': [],
-      'main': [ {
-        'id': 'main test',
-        'main': {
-          'body': '',
-          'cookies': {},
-          'headers': {},
-          'method': 'head',
-          'url': 'http://localhost',
+      'main': [
+        {
+          'id': 'main test',
+          'main': {
+            'body': '',
+            'cookies': {},
+            'headers': {},
+            'method': 'head',
+            'url': 'http://localhost',
+          },
         },
-      }, ],
+        {
+          'id': 'main test 2',
+          'main': {
+            'body': '',
+            'cookies': {},
+            'headers': {},
+            'method': 'put',
+            'url': 'http://localhost',
+          },
+        },
+      ],
     },);
   },);
 },);
