@@ -23,16 +23,16 @@ const getEnv = (name: string,): string|undefined => {
 // eslint-disable-next-line complexity, @typescript-eslint/ban-types
 export const analyze = (func: Function,): Param[] => {
   const parameters: string[] = ((): string[] => {
-      const fun: string = func.toString().replace(/\r|\n/gu, ' ',);
-      if (fun.match(/\s*function\s*/u)) {
-          return fun
-            .replace(/^function\s*\(|\)\s*\{.*\}\s*$/gu, '',)
-            .split(',',);
-      }
+    const fun: string = func.toString().replace(/\r|\n/gu, ' ',);
+    if (fun.match(/\s*function\s*/u,)) {
+      return fun
+        .replace(/^function\s*\(|\)\s*\{.*\}\s*$/gu, '',)
+        .split(',',);
+    }
     return fun
       .replace(/^\s*\(|\)\s*=>\s*\{.*\}\s*$/gu, '',)
       .split(',',);
-  }) ();
+  })();
   const ret = [];
   for (const parameter of parameters) {
     const value: Param = {
@@ -102,7 +102,7 @@ export const analyze = (func: Function,): Param[] => {
       break;
     }
     if (value.name !== '') {
-        ret.push(value,);
+      ret.push(value,);
     }
   }
   return ret;
