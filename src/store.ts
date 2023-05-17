@@ -38,8 +38,10 @@ export default {
     writeFileSync(cachefolder + sep + key, value,);
   },
   clean(): void {
-    rmdirSync(cachefolder, {
-      recursive: true,
-    },);
+    if (existsSync(cachefolder,)) {
+        rmdirSync(cachefolder, {
+          recursive: true,
+        },);
+    }
   },
 };
