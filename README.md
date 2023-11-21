@@ -6,12 +6,12 @@ Given, that the amount of APIs increase by moving to microservices, we need a wa
 
 ## Regarding existing libraries
 
-Other tools like [matteofigus/api-benchmark](https://github.com/matteofigus/api-benchmark), [bvanderlaan/api-bench-runner](https://github.com/bvanderlaan/api-bench-runner) or [jeffbski/bench-rest](https://github.com/jeffbski/bench-rest) are all untouched for quite a while and don't provide type definitions for typescript. This makes them less desirable when working with bigger projects where the better static codecheck is an huge boost in developement speed.
-Additionally this tool separates the validation thread from the thread processing the actual requests to further minimize the effect of complicated validations or huge response bodies on the data gathering.
+Other tools like [matteofigus/api-benchmark](https://github.com/matteofigus/api-benchmark), [bvanderlaan/api-bench-runner](https://github.com/bvanderlaan/api-bench-runner) or [jeffbski/bench-rest](https://github.com/jeffbski/bench-rest) are all untouched for quite a while and don't provide type definitions for typescript. This makes them less desirable when working with bigger projects where the better static codecheck is a huge boost in development speed.
+Additionally, this tool separates the validation thread from the thread processing the actual requests to further minimize the effect of complicated validations or huge response bodies on the data gathering.
 
 ## Usage & Examples
 
-Basicly require main/include main and supply the executor method with required parameters. There is an example avaible in /examples. Tasks defined in `src/routes`-subfolders `before`, `before_task`, `before_each`, `main`, `after_each`, `after_task` and `after` will be used to automatically fill the Job processed by the executor.
+Basically require main/include main and supply the executor method with required parameters. There is an example avaible in /examples. Tasks defined in `src/routes`-subfolders `before`, `before_task`, `before_each`, `main`, `after_each`, `after_task` and `after` will be used to automatically fill the Job processed by the executor.
 
 Parameters of contained functions will be filled with environment variable values of the respective name (`aBc` -> `A_BC`).
 
@@ -34,7 +34,7 @@ Middlewares use an absolute file path to be loaded. the following characters wil
 
 ## Logging
 
-Any logger that either implements the [Interface](src/logger/logger.ts) or has a wrapper. So far a wrapper for pino is avaible.
+Any logger that either implements the [Interface](src/logger/logger.ts) or has a wrapper. So far a wrapper for pino is available.
 
 ### Logging levels used
 
@@ -51,4 +51,5 @@ As usual with my projects this is MIT-licensed.
 -   graphql support
 
 ## Support
+
 You can reach me via discord at [Idrinth's Discord](https://discord.gg/xHSF8CGPTh).

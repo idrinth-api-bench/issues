@@ -1,5 +1,5 @@
 try {
-  require('ts-node',).register(require('../tsconfig',),);
+  require('ts-node',).register(require(__dirname + '/tsconfig',),);
 } catch (E) {
   //this is only relevant for development
 }

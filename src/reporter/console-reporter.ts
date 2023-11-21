@@ -36,6 +36,8 @@ const cli: Reporter = (results: {[id: string]: FinishedSet},): void => {
       vals.median80,
       vals.min80,
       vals.max80,
+      vals.stdv80,
+      vals.stdv100
     ],);
   }
   // eslint-disable-next-line no-console

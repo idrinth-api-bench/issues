@@ -17,7 +17,7 @@ const csv: Reporter = (results: {[id: string]: FinishedSet},): void => {
   csvStream.pipe(createWriteStream(process.cwd() + '/result.csv',),);
 
   for (const id of Object.getOwnPropertyNames(results,)) {
-    csvStream.write(results[id],);
+    csvStream.write({...results[id], msgs: JSON.stringify(results[id].msgs)},);
   }
   csvStream.end();
 };
