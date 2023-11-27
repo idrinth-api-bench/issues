@@ -1,17 +1,17 @@
 import {
   Middleware,
-} from '../middleware';
+} from '../middleware.js';
 import {
   Request,
-} from '../request';
+} from '../request.js';
 import {
   Result,
-} from '../result';
-import staticImplements from '../helper/static-implements';
+} from '../result.js';
+import staticImplements from '../helper/static-implements.js';
 import {
   HashMap,
-} from '../hashmap';
-import store from '../store';
+} from '../hashmap.js';
+import store from '../store.js';
 
 const get = (
   fallback: string,
@@ -54,7 +54,7 @@ class Access {
     if (typeof response.response.headers === 'undefined') {
       return;
     }
-    if (response.response.headers['content-type'] !== 'application/json') {
+    if (!response.response.headers['content-type'].match(/application\/json/i)) {
       return;
     }
     const body = JSON.parse(response.response.body,);
