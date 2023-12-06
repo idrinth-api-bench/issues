@@ -1,9 +1,19 @@
 import {
   HashMap,
-} from './hashmap';
+} from './hashmap.js';
 import {
   NeedleHttpVerbs,
 } from 'needle';
+
+interface FormContent {
+  [key: string]: string|FormContent;
+}
+//
+type SimpleType = string|null|number|boolean;
+interface JsonContent {
+  [key: string]: SimpleType|JsonContent|Array<SimpleType|JsonContent>;
+  [key: number]: SimpleType|JsonContent|Array<SimpleType|JsonContent>;
+}
 
 export interface Request {
   method: NeedleHttpVerbs;
@@ -12,13 +22,4 @@ export interface Request {
   body: string|FormContent|JsonContent;
   autohandle?: 'json'|'form';
   url: string;
-}
-
-type Json = string|JsonContent|null|number|boolean;
-interface FormContent {
-  [key: string]: string|FormContent;
-}
-interface JsonContent {
-  [key: string]: Json|Array<Json>;
-  [key: number]: Json|Array<Json>;
 }

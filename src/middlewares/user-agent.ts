@@ -1,14 +1,14 @@
 import {
   Middleware,
-} from '../middleware';
+} from '../middleware.js';
 import {
   Result,
-} from '../result';
+} from '../result.js';
 import {
   Request,
-} from '../request';
-import agent from '../helper/user-agent';
-import staticImplements from '../helper/static-implements';
+} from '../request.js';
+import agent from '../helper/user-agent.js';
+import staticImplements from '../helper/static-implements.js';
 
 @staticImplements<Middleware>()
 class UserAgent {

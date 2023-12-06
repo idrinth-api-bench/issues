@@ -1,9 +1,9 @@
 import {
   ResultSet,
-} from '../result-set';
+} from '../result-set.js';
 import {
   FinishedSet,
-} from '../finished-set';
+} from '../finished-set.js';
 
 const CONSTANTS = {
   EMPTY: 0,
@@ -25,7 +25,7 @@ const stdv = (avg: number, input: Array<number>,): number => {
   }
   return Math.sqrt(variance,);
 };
-export = (result: ResultSet,): FinishedSet => {
+export default (result: ResultSet,): FinishedSet => {
   if (result.durations.length === CONSTANTS.EMPTY) {
     return {
       id: result.id,

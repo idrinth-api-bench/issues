@@ -1,14 +1,14 @@
 import {
   Middleware,
-} from '../middleware';
+} from '../middleware.js';
 import {
   Request,
-} from '../request';
+} from '../request.js';
 import {
   Result,
-} from '../result';
-import staticImplements from '../helper/static-implements';
-import store from '../store';
+} from '../result.js';
+import staticImplements from '../helper/static-implements.js';
+import store from '../store.js';
 
 @staticImplements<Middleware>()
 class CsrfHeader {

@@ -1,5 +1,4 @@
-import csvReporter from '../../src/reporter/csv-reporter';
-import * as mock from 'mock-fs';
+import csvReporter from '../../src/reporter/csv-reporter.js';
 import {
   expect,
 } from 'chai';
@@ -8,15 +7,14 @@ import {
   existsSync, readFileSync,
 } from 'fs';
 
-const ONE_SECOND = 1000;
+const WAIT_TIME = 1500;
 
 describe('reporter/csv-reporter', () => {
-  const file = process.cwd() + '/result.csv';
   it('should be a function', () => {
     expect(csvReporter,).to.be.a('function',);
   },);
   it('should create a csv file', (done,) => {
-    mock();
+    const file = '/csv1/result.csv';
     const results = {
       any: {
         id: '1',
@@ -34,16 +32,15 @@ describe('reporter/csv-reporter', () => {
         stdv80: 8,
       },
     };
-    csvReporter(results,);
+    csvReporter(results, '/csv1',);
     setTimeout(() => {
       // eslint-disable-next-line no-unused-expressions
       expect(existsSync(file,),).to.be.true;
-      mock.restore();
       done();
-    }, ONE_SECOND,);
+    }, WAIT_TIME,);
   },);
   it('should create a csv file with matching contents', (done,) => {
-    mock();
+    const file = '/csv2/result.csv';
     const results = {
       any: {
         id: '1',
@@ -61,15 +58,14 @@ describe('reporter/csv-reporter', () => {
         stdv80: 8,
       },
     };
-    csvReporter(results,);
+    csvReporter(results, '/csv2',);
     setTimeout(() => {
       expect(readFileSync(file,) + '',).to.equal(
         'id,errors,count,avg100,median100,min100,'
-        + 'max100,avg80,median80,min80,max80,stdv100,stdv80'
-        + '\n1,14,7,6,33,1,99,76,33,14,99,9,8',
+        + 'max100,avg80,median80,min80,max80,stdv100,stdv80,msgs'
+        + '\n1,14,7,6,33,1,99,76,33,14,99,9,8,',
       );
-      mock.restore();
       done();
-    }, ONE_SECOND,);
+    }, WAIT_TIME,);
   },);
 },);

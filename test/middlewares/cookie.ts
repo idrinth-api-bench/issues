@@ -1,4 +1,4 @@
-import Cookie from '../../src/middlewares/cookie';
+import Cookie from '../../src/middlewares/cookie.js';
 import {
   expect,
 } from 'chai';

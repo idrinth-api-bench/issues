@@ -1,6 +1,6 @@
 import {
   Task,
-} from './task';
+} from './task.js';
 
 const EMPTY = 0;
 

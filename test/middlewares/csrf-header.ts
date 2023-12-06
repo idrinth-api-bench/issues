@@ -1,14 +1,14 @@
-import CsrfHeader from '../../src/middlewares/csrf-header';
+import CsrfHeader from '../../src/middlewares/csrf-header.js';
 import {
   expect,
 } from 'chai';
 import 'mocha';
 import {
   Request,
-} from '../../src/request';
+} from '../../src/request.js';
 import {
   Result,
-} from '../../src/result';
+} from '../../src/result.js';
 
 describe('middlewares/csrf-header', () => {
   it('should be a class', () => {

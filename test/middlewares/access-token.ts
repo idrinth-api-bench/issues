@@ -1,4 +1,4 @@
-import Access from '../../src/middlewares/access-token';
+import Access from '../../src/middlewares/access-token.js';
 import {
   expect,
 } from 'chai';

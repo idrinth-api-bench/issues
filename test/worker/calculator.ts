@@ -1,10 +1,12 @@
 /* eslint no-magic-numbers:0 */
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const calculator = require('../../src/worker/calculator',);
+import calculator from '../../src/worker/calculator.js';
 import {
   expect,
 } from 'chai';
 import 'mocha';
+import {
+  ValidationResult,
+} from '../../src/validation-result.js';
 
 describe('calculator', () => {
   it('should be a function', () => {
@@ -12,6 +14,10 @@ describe('calculator', () => {
   },);
   it('should return an empty set if not given data', () => {
     expect(calculator({
+      msgs: {},
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      add(result: ValidationResult,): void {
+      },
       id: '##',
       errors: 5,
       durations: [],
@@ -35,6 +41,9 @@ describe('calculator', () => {
   },);
   it('should return a set if given data', () => {
     expect(calculator({
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      add(result: ValidationResult,): void {
+      },
       id: '#1',
       errors: 5,
       msgs: {
@@ -68,6 +77,9 @@ describe('calculator', () => {
   },);
   it('should return a result if given data', () => {
     expect(calculator({
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      add(result: ValidationResult,): void {
+      },
       id: 'k#1',
       errors: 5,
       msgs: {

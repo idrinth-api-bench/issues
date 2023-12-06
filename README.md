@@ -11,7 +11,7 @@ Additionally, this tool separates the validation thread from the thread processi
 
 ## Usage & Examples
 
-Basically require main/include main and supply the executor method with required parameters. There is an example avaible in /examples. Tasks defined in `src/routes`-subfolders `before`, `before_task`, `before_each`, `main`, `after_each`, `after_task` and `after` will be used to automatically fill the Job processed by the executor.
+Basically require main/include main and supply the executor method with required parameters. Tasks defined in `src/routes`-subfolders `before`, `before_task`, `before_each`, `main`, `after_each`, `after_task` and `after` will be used to automatically fill the Job processed by the executor.
 
 Parameters of contained functions will be filled with environment variable values of the respective name (`aBc` -> `A_BC`).
 

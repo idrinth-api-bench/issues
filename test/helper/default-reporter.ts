@@ -1,4 +1,4 @@
-import defaultReporter from '../../src/helper/default-reporter';
+import defaultReporter from '../../src/helper/default-reporter.js';
 import {
   expect,
 } from 'chai';

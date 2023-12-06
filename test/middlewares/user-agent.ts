@@ -1,4 +1,4 @@
-import UserAgent from '../../src/middlewares/user-agent';
+import UserAgent from '../../src/middlewares/user-agent.js';
 import {
   expect,
 } from 'chai';

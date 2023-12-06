@@ -1,6 +1,7 @@
 import {
   writeFileSync, readFileSync, existsSync, rmdirSync, mkdirSync,
 } from 'fs';
+import fsExtra from 'fs-extra/esm';
 import {
   tmpdir,
 } from 'os';
@@ -10,6 +11,8 @@ import {
 import {
   sep,
 } from 'path';
+import * as url from 'url';
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 const hash = createHash('sha256',)
   .update(__dirname,)
@@ -39,9 +42,7 @@ export default {
   },
   clean(): void {
     if (existsSync(cachefolder,)) {
-        rmdirSync(cachefolder, {
-          recursive: true,
-        },);
+      fsExtra.emptyDir(cachefolder);
     }
   },
 };

@@ -1,7 +1,7 @@
-import multiReporter from '../reporter/multi-reporter';
-import csvReporter from '../reporter/csv-reporter';
-import consoleReporter from '../reporter/console-reporter';
-import jsonReporter from '../reporter/json-reporter';
+import multiReporter from '../reporter/multi-reporter.js';
+import csvReporter from '../reporter/csv-reporter.js';
+import consoleReporter from '../reporter/console-reporter.js';
+import jsonReporter from '../reporter/json-reporter.js';
 
 multiReporter.addReporter(csvReporter,);
 multiReporter.addReporter(consoleReporter,);

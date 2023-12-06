@@ -1,6 +1,6 @@
 import {
   snakeCase,
-} from 'snake-case';
+} from 'change-case';
 
 export interface Param {
     name: string;

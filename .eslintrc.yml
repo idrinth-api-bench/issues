@@ -81,6 +81,7 @@ rules:
   max-len:
   - warn
   - code: 80
+    ignorePattern: eslint
   max-params: warn
   newline-per-chained-call: warn
   new-parens: error

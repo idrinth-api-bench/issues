@@ -1,10 +1,14 @@
-import Reporter from './reporter';
+import Reporter from './reporter.js';
 import {
   FinishedSet,
-} from '../finished-set';
-import * as Table from 'cli-table3';
+} from '../finished-set.js';
+import Table from 'cli-table3';
 
-const cli: Reporter = (results: {[id: string]: FinishedSet},): void => {
+const cli: Reporter = (
+  results: {[id: string]: FinishedSet},
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  rootDir: string,
+): void => {
   const table = new Table({
     head: [
       'id',
@@ -37,7 +41,7 @@ const cli: Reporter = (results: {[id: string]: FinishedSet},): void => {
       vals.min80,
       vals.max80,
       vals.stdv80,
-      vals.stdv100
+      vals.stdv100,
     ],);
   }
   // eslint-disable-next-line no-console

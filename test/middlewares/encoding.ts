@@ -1,4 +1,4 @@
-import Encoding from '../../src/middlewares/encoding';
+import Encoding from '../../src/middlewares/encoding.js';
 import {
   expect,
 } from 'chai';

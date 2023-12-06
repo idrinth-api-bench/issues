@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const runner = require('../../src/worker/runner',);
+import runner from '../../src/worker/runner.js';
 import {
   expect,
 } from 'chai';
@@ -10,7 +9,7 @@ import {
 
 const TIMEOUT = 6000;
 
-const server = new Worker('./fixtures/server.js',);
+const server = new Worker('./fixtures/server.cjs',);
 describe('runner', () => {
   it('should be a function', () => {
     expect(runner,).to.be.a('function',);
@@ -57,7 +56,7 @@ describe('runner', () => {
         expect(result.success,).to.equal(true,);
         done();
       },);
-  },);
+  },).timeout(TIMEOUT,);
 },).afterAll(() => {
   server.terminate();
 },);

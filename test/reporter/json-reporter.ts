@@ -1,5 +1,4 @@
-import jsonReporter from '../../src/reporter/json-reporter';
-import * as mock from 'mock-fs';
+import jsonReporter from '../../src/reporter/json-reporter.js';
 import {
   expect,
 } from 'chai';
@@ -8,13 +7,14 @@ import {
   existsSync, readFileSync,
 } from 'fs';
 
+const WAIT_TIME = 1500;
+
 describe('reporter/json-reporter', () => {
-  const file = process.cwd() + '/result.json';
   it('should be a function', () => {
     expect(jsonReporter,).to.be.a('function',);
   },);
-  it('should create a json file', () => {
-    mock();
+  it('should create a json file', (done,) => {
+    const file = '/json1/result.json';
     const results = {
       any: {
         id: '1',
@@ -32,13 +32,15 @@ describe('reporter/json-reporter', () => {
         stdv100: 99,
       },
     };
-    jsonReporter(results,);
-    // eslint-disable-next-line no-unused-expressions
-    expect(existsSync(file,),).to.be.true;
-    mock.restore();
+    jsonReporter(results, '/json1',);
+    setTimeout(() => {
+      // eslint-disable-next-line no-unused-expressions
+      expect(existsSync(file,),).to.be.true;
+      done();
+    }, WAIT_TIME,);
   },);
-  it('should create a json file with matching contents', () => {
-    mock();
+  it('should create a json file with matching contents', (done,) => {
+    const file = '/json2/result.json';
     const results = {
       any: {
         id: '1',
@@ -56,8 +58,10 @@ describe('reporter/json-reporter', () => {
         stdv100: 99,
       },
     };
-    jsonReporter(results,);
-    expect(readFileSync(file,) + '',).to.equal(JSON.stringify(results,),);
-    mock.restore();
+    jsonReporter(results, '/json2',);
+    setTimeout(() => {
+      expect(readFileSync(file,) + '',).to.equal(JSON.stringify(results,),);
+      done();
+    }, WAIT_TIME,);
   },);
 },);

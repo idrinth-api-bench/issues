@@ -1,9 +1,9 @@
 import {
   Request,
-} from './request';
+} from './request.js';
 import {
   Result,
-} from './result';
+} from './result.js';
 
 export interface Middleware {
   process(response: Result): void;

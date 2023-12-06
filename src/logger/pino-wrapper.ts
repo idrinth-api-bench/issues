@@ -3,7 +3,7 @@ import {
 } from 'pino';
 import {
   Wrapper,
-} from './wrapper';
+} from './wrapper.js';
 
 export class PinoWrapper extends Wrapper {
   public constructor(private logger: Logger,) {
@@ -13,7 +13,7 @@ export class PinoWrapper extends Wrapper {
   protected log(
     level: string,
     msg: string,
-    data: {msg?: string; __msg?: string},
+    data: Record<string, unknown>,
   ): void {
     if (typeof data.msg === 'string') {
       data.__msg = data.msg;

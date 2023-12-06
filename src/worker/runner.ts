@@ -1,25 +1,25 @@
 import {
   Result,
-} from '../result';
+} from '../result.js';
 import {
   request,
 } from 'needle';
 import {
   Task,
-} from '../task';
+} from '../task.js';
 import {
   Middleware,
-} from '../middleware';
-import * as resolve from '../helper/middleware-loader';
+} from '../middleware.js';
+import load from '../helper/middleware-loader.js';
 
-interface Callback {
-  (arg: Answer,): void;
-}
 interface Answer {
   duration: number;
   id: string;
   success: boolean;
   msg: string;
+}
+interface Callback {
+  (arg: Answer,): void;
 }
 
 const send = (result: Result, msg: string, success: boolean,): Answer => ({
@@ -28,21 +28,22 @@ const send = (result: Result, msg: string, success: boolean,): Answer => ({
   success,
   msg,
 });
-const handlePre = (task: Task,) => {
+const handlePre = async(task: Task,) => {
   if (task.pre) {
     for (const middleware of task.pre) {
-      const ware: Middleware = resolve(middleware,);
+      // eslint-disable-next-line no-await-in-loop
+      const ware: Middleware = await load(middleware,);
       task.main = ware.prepare(task.main,);
     }
   }
   return task.main;
 };
-const handlePost = (task: Task, res:Result, callable: Callback,) => {
-
+const handlePost = async(task: Task, res:Result, callable: Callback,) => {
   if (task.post) {
     for (const validator of task.post) {
       try {
-        const ware: Middleware = resolve(validator,);
+        // eslint-disable-next-line no-await-in-loop
+        const ware: Middleware = await load(validator,);
         ware.process(res,);
       } catch (er) {
         callable(send(res, er+'', false,),);
@@ -52,8 +53,8 @@ const handlePost = (task: Task, res:Result, callable: Callback,) => {
   }
   return true;
 };
-export = (task: Task, callable: Callback,): void => {
-  const quest = handlePre(task,);
+export default async(task: Task, callable: Callback,): Promise<void> => {
+  const quest = await handlePre(task,);
   const start = process.hrtime();
   request(
     quest.method,
@@ -63,7 +64,7 @@ export = (task: Task, callable: Callback,): void => {
       headers: quest.headers,
       cookies: quest.cookies,
     },
-    (error, result,) => {
+    async(error, result,) => {
       if (error) {
         callable(send({
           duration: null,
@@ -84,7 +85,7 @@ export = (task: Task, callable: Callback,): void => {
         result,
         task.post || [],
       );
-      if (handlePost(task, res, callable,)) {
+      if (await handlePost(task, res, callable,)) {
         callable(send(res, '', true,),);
       }
     },);

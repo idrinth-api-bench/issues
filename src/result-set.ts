@@ -1,6 +1,6 @@
 import {
   ValidationResult,
-} from './validation-result';
+} from './validation-result.js';
 
 const InitialZero = 0;
 

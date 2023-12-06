@@ -3,7 +3,7 @@ import {
 } from 'needle';
 import {
   HashMap,
-} from './hashmap';
+} from './hashmap.js';
 
 const ToMicro = 1000000000;
 

@@ -1,5 +1,4 @@
-import multiReporter from '../../src/reporter/multi-reporter';
-import * as mock from 'mock-fs';
+import multiReporter from '../../src/reporter/multi-reporter.js';
 import {
   expect,
 } from 'chai';
@@ -7,8 +6,10 @@ import 'mocha';
 import {
   existsSync,
 } from 'fs';
+import makeConsoleMock from 'consolemock';
 
-const ONE_SECOND = 1000;
+const ONE_SECOND = 1500;
+const SINGLE_ENTRY = 1;
 
 describe('reporter/multi-reporter', () => {
   it('should be a function', () => {
@@ -18,9 +19,8 @@ describe('reporter/multi-reporter', () => {
     expect(multiReporter.addReporter,).to.be.a('function',);
   },);
   it('should execute all reporters', (done,) => {
-    mock();
-    const file1 = process.cwd() + '/result.csv';
-    const file2 = process.cwd() + '/result.json';
+    const file1 = '/multi/result.csv';
+    const file2 = '/multi/result.json';
     const results = {
       any: {
         id: '1',
@@ -38,13 +38,21 @@ describe('reporter/multi-reporter', () => {
         stdv100: 99,
       },
     };
-    multiReporter(results,);
-    // eslint-disable-next-line no-unused-expressions
-    expect(existsSync(file2,),).to.be.true;
+    const oldConsole = console;
+    // eslint-disable-next-line no-global-assign
+    console = makeConsoleMock();
+    multiReporter(results, '/multi',);
     setTimeout(() => {
+      // eslint-disable-next-line no-console
+      const history = console.history();
+      expect(history,).to.be.an('array',);
+      expect(history.length,).to.equal(SINGLE_ENTRY,);
       // eslint-disable-next-line no-unused-expressions
       expect(existsSync(file1,),).to.be.true;
-      mock.restore();
+      // eslint-disable-next-line no-unused-expressions
+      expect(existsSync(file2,),).to.be.true;
+      // eslint-disable-next-line no-global-assign
+      console = oldConsole;
       done();
     }, ONE_SECOND,);
   },);

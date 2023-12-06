@@ -1,6 +1,6 @@
 import {
   Request,
-} from './request';
+} from './request.js';
 
 export interface Task {
   id: string;

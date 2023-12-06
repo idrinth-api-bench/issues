@@ -1,5 +1,5 @@
 /* eslint no-magic-numbers: 0 */
-import Status2xx from '../../src/middlewares/status-2xx';
+import Status2xx from '../../src/middlewares/status-2xx.js';
 import {
   expect,
 } from 'chai';

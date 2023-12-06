@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
     "experimentalDecorators": true,
-    "module": "CommonJS",
-    "lib": ["es2020"],
-    "module": "commonjs",
-    "target": "es2020"
+    "module": "NodeNext",
+    "lib": [],
+    "target": "ESNext",
+    "esModuleInterop": true,
+    "moduleResolution": "NodeNext",
+    "resolveJsonModule": true
   },
   "typeRoots" : [
     "./typings",
@@ -12,5 +14,11 @@
   ],
   "include": [
     "src/**/*.ts"
-  ]
+  ],
+  "ts-node": {
+    "transpileOnly": true,
+    "moduleTypes": {
+      "*.ts": "cjs"
+    }
+  }
 }

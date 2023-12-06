@@ -9,6 +9,6 @@
 /.nyc_output
 /coverage
 /.mocharc.yml
-/.nycrc.yml
+/.nycrc.json
 /fixtures
 /.github

@@ -1,6 +1,6 @@
 import {
   Task,
-} from './task';
+} from './task.js';
 
 interface Job {
     before: Task[],

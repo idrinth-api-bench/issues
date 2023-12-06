@@ -1,23 +1,27 @@
 import {
   FinishedSet,
-} from './finished-set';
+} from './finished-set.js';
 import {
   ResultSet,
-} from './result-set';
+} from './result-set.js';
 import {
   ValidationResult,
-} from './validation-result';
+} from './validation-result.js';
 import {
   Logger,
-} from './logger/logger';
+} from './logger/logger.js';
 import {
   realpathSync,
 } from 'fs';
-import Reporter from './reporter/reporter';
-import * as Progress from 'cli-progress';
-import validateTasks from './validate-tasks';
-import Job from './job';
-import store from './store';
+import Reporter from './reporter/reporter.js';
+import Progress from 'cli-progress';
+import validateTasks from './validate-tasks.js';
+import Job from './job.js';
+import store from './store.js';
+import * as url from 'url';
+import ReportModifier from './report-modifier/report-modifier.js';
+import Storage from './storage/storage.js';
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 const EMPTY = 0;
 const SINGLE = 1;
@@ -43,7 +47,11 @@ const executor = (
   resultHandler: Reporter,
   logger: Logger,
   Worker: WorkerConstructor,
+  reportModifiers: Array<ReportModifier>,
+  resultStorage: Storage,
+  resultOutputDir: string,
 ): void => {
+  const now = new Date();
   const buildWorker = (file: string,) : Thread => {
     const path = `${ __dirname }/../worker/${ file }.js`;
     return new Worker(realpathSync(path,),);
@@ -81,6 +89,7 @@ const executor = (
   bar.start(barLength, EMPTY,);
   calculator.on('message', (data: FinishedSet,) => {
     finished[data.id] = data;
+    resultStorage.store(data, now,);
     logger.debug(`Analyzation of ${ data.id } finished`,);
     analysing --;
     bar.increment();
@@ -88,7 +97,12 @@ const executor = (
       calculator.terminate();
       logger.info('Starting supplied result handler',);
       logger.debug('Data', finished,);
-      resultHandler(finished,);
+      for (const reportModifier of reportModifiers) {
+        for (const set of Object.keys(finished,)) {
+          finished[set] = reportModifier.adjust(finished[set],);
+        }
+      }
+      resultHandler(finished, resultOutputDir,);
       logger.info('Done',);
     }
   },);

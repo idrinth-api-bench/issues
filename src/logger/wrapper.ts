@@ -1,6 +1,6 @@
 import {
   Logger,
-} from './logger';
+} from './logger.js';
 
 export abstract class Wrapper implements Logger {
   protected abstract log(

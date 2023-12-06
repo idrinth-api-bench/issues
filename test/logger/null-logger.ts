@@ -1,6 +1,6 @@
 import {
   NullLogger,
-} from '../../src/logger/null-logger';
+} from '../../src/logger/null-logger.js';
 import {
   expect,
 } from 'chai';

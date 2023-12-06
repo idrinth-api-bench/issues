@@ -1,13 +1,13 @@
 import {
   Middleware,
-} from '../middleware';
+} from '../middleware.js';
 import {
   Request,
-} from '../request';
+} from '../request.js';
 import {
   Result,
-} from '../result';
-import staticImplements from '../helper/static-implements';
+} from '../result.js';
+import staticImplements from '../helper/static-implements.js';
 
 const MAXIMUM = 299;
 const MINIMUM = 200;

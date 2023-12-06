@@ -1,29 +1,41 @@
-import main from '../src/main';
 import {
+  run,
+} from '../src/main.js';
+import {
+  use as chaiUse,
   expect,
 } from 'chai';
+import chaiAsPromised from 'chai-as-promised';
 import 'mocha';
-import Reporter from '../src/reporter/reporter';
+import Reporter from '../src/reporter/reporter.js';
 import {
   NullLogger,
-} from '../src/logger/null-logger';
+} from '../src/logger/null-logger.js';
+
+chaiUse(chaiAsPromised,);
 
 const NOOPR: Reporter = () => { /* noop */ };
 const ONE = 1;
 
 describe('main', () => {
   it('should be a function', () => {
-    expect(main,).to.be.a('function',);
+    expect(run,).to.be.a('function',);
   },);
   it('can be called with 3 params', () => {
-    expect(() => main(ONE, ONE, [],),).to.throw('Can\'t measure no tasks.',);
+    expect(run({}, ONE, ONE, [],),)
+      .to.be.rejectedWith('Can\'t measure no tasks.',);
   },);
   it('can be called with 4 params', () => {
-    expect(() => main(ONE, ONE, [], NOOPR,),)
-      .to.throw('Can\'t measure no tasks.',);
+    expect(run({
+      resultHandler: NOOPR,
+    }, ONE, ONE, [],),)
+      .to.be.rejectedWith('Can\'t measure no tasks.',);
   },);
   it('can be called with 5 params', () => {
-    expect(() => main(ONE, ONE, [], NOOPR, new NullLogger(),),)
-      .to.throw('Can\'t measure no tasks.',);
+    expect(run({
+      logger: new NullLogger(),
+      resultHandler: NOOPR,
+    }, ONE, ONE, [],),)
+      .to.be.rejectedWith('Can\'t measure no tasks.',);
   },);
 },);

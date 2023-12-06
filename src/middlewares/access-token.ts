@@ -54,7 +54,8 @@ class Access {
     if (typeof response.response.headers === 'undefined') {
       return;
     }
-    if (!response.response.headers['content-type'].match(/application\/json/i)) {
+    const contentType = response.response.headers['content-type'];
+    if (! contentType.match(/^application\/json/ui,)) {
       return;
     }
     const body = JSON.parse(response.response.body,);

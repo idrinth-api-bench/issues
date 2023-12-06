@@ -1,29 +1,33 @@
+import mock from 'mock-fs';
 import executor, {
   Thread,
-} from '../src/executor';
+} from '../src/executor.js';
 import {
   expect,
 } from 'chai';
 import 'mocha';
 import {
   NullLogger,
-} from '../src/logger/null-logger';
+} from '../src/logger/null-logger.js';
 import {
   Result,
-} from '../src/result';
+} from '../src/result.js';
 import {
   FinishedSet,
-} from '../src/finished-set';
+} from '../src/finished-set.js';
 import {
   Task,
-} from '../src/task';
+} from '../src/task.js';
 import {
   ValidationResult,
-} from '../src/validation-result';
+} from '../src/validation-result.js';
 import {
   realpathSync,
 } from 'fs';
-import Job from '../src/job';
+import Job from '../src/job.js';
+import NoopStorage from '../src/storage/noop-storage.js';
+import * as url from 'url';
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const NOOP = () => {};
@@ -31,72 +35,72 @@ const NONE = 0;
 
 class FakeResult implements Result, ValidationResult, FinishedSet {
 
-    public duration;
+  public duration;
 
-    public id = 'some-id';
+  public id = 'some-id';
 
-    public errors: number;
+  public errors: number;
 
-    public count: number;
+  public count: number;
 
-    public avg100: number;
+  public avg100: number;
 
-    public median100: number;
+  public median100: number;
 
-    public max100: number;
+  public max100: number;
 
-    public min100: number;
+  public min100: number;
 
-    public avg80: number;
+  public avg80: number;
 
-    public median80: number;
+  public median80: number;
 
-    public max80: number;
+  public max80: number;
 
-    public min80: number;
+  public min80: number;
 
-    public stdv80: number;
+  public stdv80: number;
 
-    public stdv100: number;
+  public stdv100: number;
 
-    public response = {
-      headers: {},
-      cookies: {},
-      body: '',
-      uri: '',
-      status: 202,
-    };
+  public response = {
+    headers: {},
+    cookies: {},
+    body: '',
+    uri: '',
+    status: 202,
+  };
 
-    public validators = [];
+  public validators = [];
 
-    public durations;
+  public durations;
 
-    public msgs = {};
+  public msgs = {};
 
-    success = true;
+  success = true;
 
-    public constructor() {
-      const requests = 1;
-      this.errors = requests;
-      this.count = requests;
-      const duration = 9;
-      this.duration = duration;
-      this.avg100 = duration;
-      this.avg80 = duration;
-      this.durations = [ duration, ];
-      this.max100 = duration;
-      this.max80 = duration;
-      this.min100 = duration;
-      this.min80 = duration;
-      this.median100 = duration;
-      this.median80 = duration;
-      this.stdv100 = 100;
-      this.stdv80 = 80;
-    }
+  public constructor() {
+    const requests = 1;
+    this.errors = requests;
+    this.count = requests;
+    const duration = 9;
+    this.duration = duration;
+    this.avg100 = duration;
+    this.avg80 = duration;
+    this.durations = [ duration, ];
+    this.max100 = duration;
+    this.max80 = duration;
+    this.min100 = duration;
+    this.min80 = duration;
+    this.median100 = duration;
+    this.median80 = duration;
+    this.stdv100 = 100;
+    this.stdv80 = 80;
+  }
 
-    public add() {
-      this.count ++;
-    }
+  public add() {
+    this.count ++;
+  }
 }
 class FakeWorker implements Thread {
   private handler;
@@ -168,17 +172,40 @@ describe('executor', () => {
         NOOP,
         new NullLogger(),
         FakeWorker,
+        [],
+        new NoopStorage(),
+        '/executor',
       ),
     ).to.throw('Can\'t measure no tasks.',);
   },);
   it('should not try to execute no tasks(0 threads)', () => {
     expect(
-      () => executor(NONE, repeats, job, NOOP, new NullLogger(), FakeWorker,),
+      () => executor(
+        NONE,
+        repeats,
+        job,
+        NOOP,
+        new NullLogger(),
+        FakeWorker,
+        [],
+        new NoopStorage(),
+        '/executor',
+      ),
     ).to.throw('Can\'t measure no tasks.',);
   },);
   it('should not try to execute no tasks (0 repeats)', () => {
     expect(
-      () => executor(threads, NONE, job, NOOP, new NullLogger(), FakeWorker,),
+      () => executor(
+        threads,
+        NONE,
+        job,
+        NOOP,
+        new NullLogger(),
+        FakeWorker,
+        [],
+        new NoopStorage(),
+        '/executor',
+      ),
     ).to.throw('Can\'t measure no tasks.',);
   },);
   it('should execute all tasks', (done,) => {
@@ -190,6 +217,9 @@ describe('executor', () => {
         () => done(),
         new NullLogger(),
         FakeWorker,
+        [],
+        new NoopStorage(),
+        '/output',
       ),
     ).to.not.throw();
   },);
@@ -216,6 +246,9 @@ describe('executor', () => {
         () => done(),
         new NullLogger(),
         FakeWorker,
+        [],
+        new NoopStorage(),
+        '/executor',
       ),
     ).to.not.throw();
   },);

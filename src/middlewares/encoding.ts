@@ -1,14 +1,14 @@
 import {
   Middleware,
-} from '../middleware';
+} from '../middleware.js';
 import {
   Request,
-} from '../request';
+} from '../request.js';
 import formUrlEncoded from 'form-urlencoded';
 import {
   Result,
-} from '../result';
-import staticImplements from '../helper/static-implements';
+} from '../result.js';
+import staticImplements from '../helper/static-implements.js';
 
 const handleForm = (request: Request,): Request => {
   if (! request.headers['content-type']) {

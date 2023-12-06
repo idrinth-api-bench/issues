@@ -1,22 +1,19 @@
 import {
-  PinoWrapper,
-} from '../../src/logger/pino-wrapper.js';
+  WinstonWrapper,
+} from '../../src/logger/winston-wrapper.js';
 import {
   expect,
 } from 'chai';
 import 'mocha';
 import {
   Logger,
-} from 'pino';
+} from 'winston';
 
-describe('logger/pino-wrapper', () => {
+describe('logger/winston-wrapper', () => {
   it('should be a class', () => {
-    expect(PinoWrapper,).to.be.a('function',);
+    expect(WinstonWrapper,).to.be.a('function',);
   },);
-  const logger = new PinoWrapper(<Logger><unknown> {
-    trace: (...rest) => {
-      throw new Error('t|' + JSON.stringify(rest,),);
-    },
+  const logger = new WinstonWrapper(<Logger><unknown> {
     debug: (...rest) => {
       throw new Error('d|' + JSON.stringify(rest,),);
     },
@@ -29,51 +26,48 @@ describe('logger/pino-wrapper', () => {
     error: (...rest) => {
       throw new Error('e|' + JSON.stringify(rest,),);
     },
-    fatal: (...rest) => {
-      throw new Error('f|' + JSON.stringify(rest,),);
-    },
   },);
   it('should have a method trace', () => {
     expect(logger.trace,).to.be.a('function',);
   },);
   it('trace should not throw an error if called', () => {
-    expect(() => logger.trace('traced',),).to.throw('t|[{},"traced"]',);
+    expect(() => logger.trace('traced',),).to.throw('d|["traced {}"]',);
   },);
   it('trace should handle object messages', () => {
     expect(() => logger.trace('traced', {
       msg: 'hi',
     },),).to.throw(
-      't|[{"msg":"hi","__msg":"hi"},"traced"]',
+      'd|["traced {\\"msg\\":\\"hi\\"}"]',
     );
   },);
   it('should have a method debug', () => {
     expect(logger.debug,).to.be.a('function',);
   },);
   it('debug should not throw an error if called', () => {
-    expect(() => logger.debug('debugged',),).to.throw('d|[{},"debugged"]',);
+    expect(() => logger.debug('debugged',),).to.throw('d|["debugged {}"]',);
   },);
   it('should have a method info', () => {
     expect(logger.info,).to.be.a('function',);
   },);
   it('info should not throw an error if called', () => {
-    expect(() => logger.info('infoed',),).to.throw('i|[{},"infoed"]',);
+    expect(() => logger.info('infoed',),).to.throw('i|["infoed {}"]',);
   },);
   it('should have a method warn', () => {
     expect(logger.warn,).to.be.a('function',);
   },);
   it('warn should not throw an error if called', () => {
-    expect(() => logger.warn('warned',),).to.throw('w|[{},"warned"]',);
+    expect(() => logger.warn('warned',),).to.throw('w|["warned {}"]',);
   },);
   it('should have a method error', () => {
     expect(logger.error,).to.be.a('function',);
   },);
   it('error should not throw an error if called', () => {
-    expect(() => logger.error('errored',),).to.throw('e|[{},"errored"]',);
+    expect(() => logger.error('errored',),).to.throw('e|["errored {}"]',);
   },);
   it('should have a method fatal', () => {
     expect(logger.fatal,).to.be.a('function',);
   },);
   it('fatal should not throw an error if called', () => {
-    expect(() => logger.fatal('fataled',),).to.throw('f|[{},"fataled"]',);
+    expect(() => logger.fatal('fataled',),).to.throw('e|["fataled {}"]',);
   },);
 },);

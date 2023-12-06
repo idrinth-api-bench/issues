@@ -1,4 +1,4 @@
-import userAgent from '../../src/helper/user-agent';
+import userAgent from '../../src/helper/user-agent.js';
 import {
   expect,
 } from 'chai';

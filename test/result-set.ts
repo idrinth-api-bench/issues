@@ -1,7 +1,7 @@
 /* eslint no-magic-numbers:0 */
 import {
   ResultSet,
-} from '../src/result-set';
+} from '../src/result-set.js';
 import {
   expect,
 } from 'chai';

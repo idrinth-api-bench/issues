@@ -1,6 +1,6 @@
 import {
   analyze,
-} from '../../src/helper/function-analyzer';
+} from '../../src/helper/function-analyzer.js';
 import {
   expect,
 } from 'chai';

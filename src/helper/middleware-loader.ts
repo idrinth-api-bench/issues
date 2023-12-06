@@ -1,9 +1,9 @@
 import {
   HashMap,
-} from '../hashmap';
+} from '../hashmap.js';
 import {
   Middleware,
-} from '../middleware';
+} from '../middleware.js';
 import * as reqlib from 'app-root-path';
 
 const FIRST = 0;
@@ -22,10 +22,8 @@ const resolve = (path: string,): string => {
   }
   return path;
 };
-const load = (path: string,): Middleware => {
+const load = async(path: string,): Promise<Middleware> => {
   const req = cache[path] || (cache[path] = resolve(path,));
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const data = require(req,);
-  return typeof data.default !== 'undefined' ? data.default : data;
+  return await import(req) as Middleware;
 };
-export = load;
+export default load;
