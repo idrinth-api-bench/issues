@@ -1,4 +1,3 @@
-import mock from 'mock-fs';
 import executor, {
   Thread,
 } from '../src/executor.js';
@@ -26,8 +25,6 @@ import {
 } from 'fs';
 import Job from '../src/job.js';
 import NoopStorage from '../src/storage/noop-storage.js';
-import * as url from 'url';
-const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const NOOP = () => {};

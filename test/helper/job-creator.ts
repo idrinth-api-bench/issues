@@ -10,7 +10,7 @@ describe('helper/job-creator', () => {
   it('should be a string', () => {
     expect(jobCreator,).to.be.a('function',);
   },);
-  it('should be match expectations', (done,) => {
+  it('should be match expectations', () => {
     expect(jobCreator(__dirname + '/../../fixtures',)).to.eventually.deep.equal({
       'after': [],
       'afterEach': [],
