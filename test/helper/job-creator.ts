@@ -1,17 +1,19 @@
 import jobCreator from '../../src/helper/job-creator.js';
 import {
-  expect,
+  expect, use as chaiUse,
 } from 'chai';
 import 'mocha';
 import * as url from 'url';
+import chaiAsPromised from "chai-as-promised";
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
+chaiUse(chaiAsPromised,);
 describe('helper/job-creator', () => {
   it('should be a string', () => {
     expect(jobCreator,).to.be.a('function',);
   },);
   it('should be match expectations', () => {
-    expect(jobCreator(__dirname + '/../../fixtures',)).to.eventually.deep.equal({
+    expect(jobCreator(__dirname + '../../fixtures',)).to.eventually.deep.equal({
       'after': [],
       'afterEach': [],
       'afterTask': [],

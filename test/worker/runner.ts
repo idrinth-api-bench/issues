@@ -6,11 +6,31 @@ import 'mocha';
 import {
   Worker,
 } from 'worker_threads';
+import url from 'url';
 
 const TIMEOUT = 6000;
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
-const server = new Worker('./fixtures/server.cjs',);
-describe('runner', () => {
+function delay(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
+
+let server;
+
+describe('runner', async () => {
+  let ready = false;
+  before(async () => {
+    server = new Worker(__dirname + '../../fixtures/server.cjs',);
+    server.onmessage = (msg) => {
+      ready = msg === 'started';
+    }
+  });
+  while (!ready) {
+    await delay(100);
+  }
+  after(() => {
+    server.terminate();
+  },)
   it('should be a function', () => {
     expect(runner,).to.be.a('function',);
   },);
@@ -57,6 +77,4 @@ describe('runner', () => {
         done();
       },);
   },).timeout(TIMEOUT,);
-},).afterAll(() => {
-  server.terminate();
 },);

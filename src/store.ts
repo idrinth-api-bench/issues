@@ -17,7 +17,7 @@ const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 const hash = createHash('sha256',)
   .update(__dirname,)
   .digest('hex',);
-const cachefolder: string = tmpdir() + sep + 'api-bench' + sep + '_' + hash;
+const cachefolder: string = tmpdir() + sep + 'api-bench' + sep + '_' + hash + process.pid;
 
 export default {
   get(key: string, defaulted: string,): string {

@@ -60,7 +60,9 @@
     "ts-node": "^10.9.1",
     "typescript": "^5.3.2",
     "winston": "^3.11.0",
-    "consolemock": "^1.1.0"
+    "consolemock": "^1.1.0",
+    "mock-fs": "^5.2.0",
+    "@types/mock-fs": "^4.13.4"
   },
   "scripts": {
     "start": "node main.js",

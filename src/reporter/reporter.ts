@@ -1,12 +1,7 @@
-import {
-  FinishedSet,
-} from '../finished-set.js';
+import FinishedRun from "../FinishedRun.js";
 
-interface Results {
-  [id: string]: FinishedSet;
+interface Reporter {
+  (results: FinishedRun, rootDir: string): void;
 }
 
-export default interface Reporter {
-  (results: Results, rootDir: string): void;
-// eslint-disable-next-line semi
-}
+export default Reporter;

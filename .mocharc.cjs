@@ -7,4 +7,5 @@ module.exports = {
         'experimental-specifier-resolution=node',
         'loader=ts-node/esm'
     ],
+    parallel: true
 }

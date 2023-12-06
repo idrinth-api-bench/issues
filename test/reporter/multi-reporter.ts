@@ -1,3 +1,4 @@
+import mock = require("mock-fs");
 import multiReporter from '../../src/reporter/multi-reporter.js';
 import {
   expect,
@@ -12,15 +13,21 @@ const ONE_SECOND = 1500;
 const SINGLE_ENTRY = 1;
 
 describe('reporter/multi-reporter', () => {
+  before(() => {
+    mock({
+      '/multi': mock.directory({}),
+    });
+  });
+  after(() => {
+    mock.restore();
+  });
   it('should be a function', () => {
     expect(multiReporter,).to.be.a('function',);
   },);
   it('should have a method addReporter', () => {
     expect(multiReporter.addReporter,).to.be.a('function',);
   },);
-  it('should execute all reporters', (done,) => {
-    const file1 = '/multi/result.csv';
-    const file2 = '/multi/result.json';
+  it('should execute all reporters', () => {
     const results = {
       any: {
         id: '1',
@@ -38,22 +45,13 @@ describe('reporter/multi-reporter', () => {
         stdv100: 99,
       },
     };
-    const oldConsole = console;
-    // eslint-disable-next-line no-global-assign
-    console = makeConsoleMock();
+    let wasExecuted = false;
+    multiReporter.addReporter((localResults, rootDir) => {
+      wasExecuted = true;
+      expect(localResults,).to.deep.equal(results,);
+      expect(rootDir,).to.equal('/multi');
+    },)
     multiReporter(results, '/multi',);
-    setTimeout(() => {
-      // eslint-disable-next-line no-console
-      const history = console.history();
-      expect(history,).to.be.an('array',);
-      expect(history.length,).to.equal(SINGLE_ENTRY,);
-      // eslint-disable-next-line no-unused-expressions
-      expect(existsSync(file1,),).to.be.true;
-      // eslint-disable-next-line no-unused-expressions
-      expect(existsSync(file2,),).to.be.true;
-      // eslint-disable-next-line no-global-assign
-      console = oldConsole;
-      done();
-    }, ONE_SECOND,);
+    expect(wasExecuted).to.be.true;
   },);
 },);

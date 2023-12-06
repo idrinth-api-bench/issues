@@ -34,7 +34,7 @@ Middlewares use an absolute file path to be loaded. the following characters wil
 
 ## Logging
 
-Any logger that either implements the [Interface](src/logger/logger.ts) or has a wrapper. So far a wrapper for pino is available.
+Any logger that either implements the [Interface](src/logger/logger.ts) or has a wrapper. Wrappers for pino and winston are available.
 
 ### Logging levels used
 

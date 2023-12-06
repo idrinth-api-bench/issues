@@ -3,9 +3,10 @@ import {
   FinishedSet,
 } from '../finished-set.js';
 import Table from 'cli-table3';
+import FinishedRun from "../FinishedRun.js";
 
 const cli: Reporter = (
-  results: {[id: string]: FinishedSet},
+  results: FinishedRun,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   rootDir: string,
 ): void => {

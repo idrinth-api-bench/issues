@@ -1,15 +1,25 @@
+import mock = require('mock-fs');
 import jsonReporter from '../../src/reporter/json-reporter.js';
 import {
   expect,
 } from 'chai';
 import 'mocha';
 import {
-  existsSync, readFileSync,
+  readFileSync,
 } from 'fs';
 
 const WAIT_TIME = 1500;
 
 describe('reporter/json-reporter', () => {
+  before(() => {
+    mock({
+      '/json1': mock.directory({}),
+      '/json2': mock.directory({}),
+    });
+  });
+  after(() => {
+    mock.restore();
+  });
   it('should be a function', () => {
     expect(jsonReporter,).to.be.a('function',);
   },);
@@ -35,7 +45,7 @@ describe('reporter/json-reporter', () => {
     jsonReporter(results, '/json1',);
     setTimeout(() => {
       // eslint-disable-next-line no-unused-expressions
-      expect(existsSync(file,),).to.be.true;
+      expect(readFileSync(file,) + '',).to.not.be.empty;
       done();
     }, WAIT_TIME,);
   },);
@@ -48,7 +58,7 @@ describe('reporter/json-reporter', () => {
         count: 7,
         avg100: 6,
         median100: 33,
-        min100: 1,
+        min100: 11,
         max100: 99,
         avg80: 76,
         median80: 33,

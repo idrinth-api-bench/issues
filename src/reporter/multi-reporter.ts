@@ -1,18 +1,13 @@
 import Reporter from './reporter.js';
-import {
-  FinishedSet,
-} from '../finished-set.js';
+import FinishedRun from "../FinishedRun.js";
 
 interface ReporterList {
   addReporter: (reporter: Reporter) => void;
 }
-interface Results {
-  [id: string]: FinishedSet;
-}
 
 const reporters: Array<Reporter> = [];
 const multi: Reporter&ReporterList = (
-  results: Results,
+  results: FinishedRun,
   rootDir: string,
 ): void => {
   for (const reporter of reporters) {

@@ -1,16 +1,17 @@
 import Reporter from './reporter.js';
 import {
-  FinishedSet,
-} from '../finished-set.js';
-import {
+  createWriteStream,
   writeFileSync,
 } from 'fs';
+import FinishedRun from "../FinishedRun.js";
 
 const json: Reporter = (
-  results: {[id: string]: FinishedSet},
+  results: FinishedRun,
   rootDir: string,
 ): void => {
-  writeFileSync(rootDir+ '/result.json', JSON.stringify(results,),);
+  const stream = createWriteStream(rootDir + '/result.json');
+  stream.write(JSON.stringify(results,),);
+  stream.end();
 };
 
 export default json;

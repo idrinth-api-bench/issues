@@ -1,15 +1,25 @@
+import mock = require("mock-fs");
 import csvReporter from '../../src/reporter/csv-reporter.js';
 import {
   expect,
 } from 'chai';
 import 'mocha';
 import {
-  existsSync, readFileSync,
+  readFileSync,
 } from 'fs';
 
 const WAIT_TIME = 1500;
 
 describe('reporter/csv-reporter', () => {
+  before(() => {
+    mock({
+      '/csv1': mock.directory({}),
+      '/csv2': mock.directory({}),
+    });
+  });
+  after(() => {
+    mock.restore();
+  });
   it('should be a function', () => {
     expect(csvReporter,).to.be.a('function',);
   },);
@@ -35,7 +45,7 @@ describe('reporter/csv-reporter', () => {
     csvReporter(results, '/csv1',);
     setTimeout(() => {
       // eslint-disable-next-line no-unused-expressions
-      expect(existsSync(file,),).to.be.true;
+      expect(readFileSync(file,) + '',).to.not.be.empty;
       done();
     }, WAIT_TIME,);
   },);

@@ -6,11 +6,9 @@ import {
   snakeCase,
 } from 'change-case';
 import {
-  analyze,
-} from './function-analyzer.js';
-import {
   Task,
 } from '../task.js';
+import include from './include-default.js';
 
 const TYPES = [
   'before',
@@ -21,15 +19,6 @@ const TYPES = [
   'afterTask',
   'after',
 ];
-
-const include = async(path: string,): Promise<Task> => {
-  const val = await import(path,);
-  if (typeof val === 'function') {
-    const parameters = analyze(val,);
-    return val(...parameters.map((x,) => x.value,),);
-  }
-  return val as Task;
-};
 
 export default async(root: string,): Promise<Job> => {
   const job:Job = {
@@ -45,9 +34,9 @@ export default async(root: string,): Promise<Job> => {
     const dir = root + '/src/routes/' + snakeCase(type,);
     if (existsSync(dir,)) {
       for (const file of readdirSync(dir,)) {
-        if (file.match(/\.js|\.ts|\.json/u,)) {
+        if (file.match(/\.c?js|\.ts|\.json/u,)) {
           // eslint-disable-next-line no-await-in-loop
-          job[type].push(await include(dir + '/' + file,),);
+          job[type].push((await include(dir + '/' + file,)) as Task,);
         }
       }
     }

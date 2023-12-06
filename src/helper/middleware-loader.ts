@@ -5,6 +5,7 @@ import {
   Middleware,
 } from '../middleware.js';
 import * as reqlib from 'app-root-path';
+import include from './include-default.js';
 
 const FIRST = 0;
 const SECOND = 1;
@@ -24,6 +25,6 @@ const resolve = (path: string,): string => {
 };
 const load = async(path: string,): Promise<Middleware> => {
   const req = cache[path] || (cache[path] = resolve(path,));
-  return await import(req) as Middleware;
+  return await include(req) as Middleware;
 };
 export default load;

@@ -8,9 +8,10 @@ import {
 import {
   createWriteStream,
 } from 'fs';
+import FinishedRun from "../FinishedRun.js";
 
 const csv: Reporter = (
-  results: {[id: string]: FinishedSet},
+  results: FinishedRun,
   rootDir: string,
 ): void => {
   const csvStream = format({
