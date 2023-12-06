@@ -9,28 +9,28 @@ import {
 import url from 'url';
 
 const TIMEOUT = 6000;
+const WAIT_DELAY = 100;
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
-function delay(time) {
-  return new Promise(resolve => setTimeout(resolve, time));
-}
+const delay = (time,) => new Promise((resolve,) => setTimeout(resolve, time,),);
 
 let server;
 
-describe('runner', async () => {
+describe('runner', async() => {
   let ready = false;
-  before(async () => {
+  before(() => {
     server = new Worker(__dirname + '../../fixtures/server.cjs',);
-    server.onmessage = (msg) => {
+    server.onmessage = (msg,) => {
       ready = msg === 'started';
-    }
-  });
-  while (!ready) {
-    await delay(100);
+    };
+  },);
+  while (! ready) {
+    // eslint-disable-next-line no-await-in-loop
+    await delay(WAIT_DELAY,);
   }
   after(() => {
     server.terminate();
-  },)
+  },);
   it('should be a function', () => {
     expect(runner,).to.be.a('function',);
   },);

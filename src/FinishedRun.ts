@@ -1,4 +1,6 @@
-import {FinishedSet} from "./finished-set.js";
+import {
+  FinishedSet,
+} from './finished-set.js';
 
 interface FinishedRun {
     [id: string]: FinishedSet

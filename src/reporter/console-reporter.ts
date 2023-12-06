@@ -1,9 +1,6 @@
 import Reporter from './reporter.js';
-import {
-  FinishedSet,
-} from '../finished-set.js';
 import Table from 'cli-table3';
-import FinishedRun from "../FinishedRun.js";
+import FinishedRun from '../FinishedRun.js';
 
 const cli: Reporter = (
   results: FinishedRun,

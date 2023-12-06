@@ -1,4 +1,4 @@
-import mock from "mock-fs";
+import mock from 'mock-fs';
 import executor, {
   Thread,
 } from '../src/executor.js';
@@ -26,7 +26,7 @@ import {
 } from 'fs';
 import Job from '../src/job.js';
 import NoopStorage from '../src/storage/noop-storage.js';
-import makeConsoleMock from "consolemock";
+import makeConsoleMock from 'consolemock';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const NOOP = () => {};
@@ -137,17 +137,21 @@ describe('executor', () => {
   let oldConsole;
   before(() => {
     const config = {
-      '/executor': mock.directory({}),
+      '/executor': mock.directory({},),
     };
-    config[process.cwd()] = mock.load(process.cwd());
-    mock(config, {createCwd: false});
+    config[process.cwd()] = mock.load(process.cwd(),);
+    mock(config, {
+      createCwd: false,
+    },);
     oldConsole = console;
-    console = makeConsoleMock()
-  });
+    // eslint-disable-next-line no-global-assign
+    console = makeConsoleMock();
+  },);
   after(() => {
     mock.restore();
+    // eslint-disable-next-line no-global-assign
     console = oldConsole;
-  });
+  },);
   const repeats = 2;
   const threads = 3;
   const setup = 2;

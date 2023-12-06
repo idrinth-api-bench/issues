@@ -1,26 +1,19 @@
-import mock = require("mock-fs");
+import mock = require('mock-fs');
 import multiReporter from '../../src/reporter/multi-reporter.js';
 import {
   expect,
 } from 'chai';
 import 'mocha';
-import {
-  existsSync,
-} from 'fs';
-import makeConsoleMock from 'consolemock';
-
-const ONE_SECOND = 1500;
-const SINGLE_ENTRY = 1;
 
 describe('reporter/multi-reporter', () => {
   before(() => {
     mock({
-      '/multi': mock.directory({}),
-    });
-  });
+      '/multi': mock.directory({},),
+    },);
+  },);
   after(() => {
     mock.restore();
-  });
+  },);
   it('should be a function', () => {
     expect(multiReporter,).to.be.a('function',);
   },);
@@ -46,12 +39,13 @@ describe('reporter/multi-reporter', () => {
       },
     };
     let wasExecuted = false;
-    multiReporter.addReporter((localResults, rootDir) => {
+    multiReporter.addReporter((localResults, rootDir,) => {
       wasExecuted = true;
       expect(localResults,).to.deep.equal(results,);
-      expect(rootDir,).to.equal('/multi');
-    },)
+      expect(rootDir,).to.equal('/multi',);
+    },);
     multiReporter(results, '/multi',);
-    expect(wasExecuted).to.be.true;
+    // eslint-disable-next-line no-unused-expressions
+    expect(wasExecuted,).to.be.true;
   },);
 },);

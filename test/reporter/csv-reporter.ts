@@ -1,4 +1,4 @@
-import mock = require("mock-fs");
+import mock = require('mock-fs');
 import csvReporter from '../../src/reporter/csv-reporter.js';
 import {
   expect,
@@ -13,13 +13,13 @@ const WAIT_TIME = 1500;
 describe('reporter/csv-reporter', () => {
   before(() => {
     mock({
-      '/csv1': mock.directory({}),
-      '/csv2': mock.directory({}),
-    });
-  });
+      '/csv1': mock.directory({},),
+      '/csv2': mock.directory({},),
+    },);
+  },);
   after(() => {
     mock.restore();
-  });
+  },);
   it('should be a function', () => {
     expect(csvReporter,).to.be.a('function',);
   },);

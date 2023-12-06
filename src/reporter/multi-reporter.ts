@@ -1,5 +1,5 @@
 import Reporter from './reporter.js';
-import FinishedRun from "../FinishedRun.js";
+import FinishedRun from '../FinishedRun.js';
 
 interface ReporterList {
   addReporter: (reporter: Reporter) => void;

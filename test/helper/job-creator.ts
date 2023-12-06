@@ -4,7 +4,7 @@ import {
 } from 'chai';
 import 'mocha';
 import * as url from 'url';
-import chaiAsPromised from "chai-as-promised";
+import chaiAsPromised from 'chai-as-promised';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 chaiUse(chaiAsPromised,);
@@ -13,7 +13,8 @@ describe('helper/job-creator', () => {
     expect(jobCreator,).to.be.a('function',);
   },);
   it('should be match expectations', () => {
-    expect(jobCreator(__dirname + '../../fixtures',)).to.eventually.deep.equal({
+    const result = jobCreator(__dirname + '../../fixtures',);
+    expect(result,).to.eventually.deep.equal({
       'after': [],
       'afterEach': [],
       'afterTask': [],

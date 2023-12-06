@@ -1,4 +1,4 @@
-import FinishedRun from "../FinishedRun.js";
+import FinishedRun from '../FinishedRun.js';
 
 interface Reporter {
   (results: FinishedRun, rootDir: string): void;

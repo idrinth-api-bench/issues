@@ -1,5 +1,5 @@
 import {
-  writeFileSync, readFileSync, existsSync, mkdirSync,rmdirSync
+  writeFileSync, readFileSync, existsSync, mkdirSync, rmdirSync,
 } from 'fs';
 import fsExtra from 'fs-extra/esm';
 import {
@@ -17,7 +17,8 @@ const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 const hash = createHash('sha256',)
   .update(__dirname,)
   .digest('hex',);
-const cachefolder: string = tmpdir() + sep + 'api-bench' + sep + '_' + hash + process.pid;
+const id = hash + process.pid;
+const cachefolder: string = tmpdir() + sep + 'api-bench' + sep + '_' + id;
 
 export default {
   get(key: string, defaulted: string,): string {
@@ -42,7 +43,7 @@ export default {
   },
   async clean(): void {
     if (existsSync(cachefolder,)) {
-      await fsExtra.emptyDir(cachefolder);
+      await fsExtra.emptyDir(cachefolder,);
       rmdirSync(cachefolder,);
     }
   },

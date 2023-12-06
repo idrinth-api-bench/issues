@@ -32,6 +32,10 @@ Middlewares use an absolute file path to be loaded. the following characters wil
 - user-agent
 - cookies
 
+### Storage
+
+Storage classes store each finished set of the run. By default, nothing is stored, but a mysql storage is provided for those wanting it.
+
 ## Logging
 
 Any logger that either implements the [Interface](src/logger/logger.ts) or has a wrapper. Wrappers for pino and winston are available.

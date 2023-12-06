@@ -13,13 +13,13 @@ const WAIT_TIME = 1500;
 describe('reporter/json-reporter', () => {
   before(() => {
     mock({
-      '/json1': mock.directory({}),
-      '/json2': mock.directory({}),
-    });
-  });
+      '/json1': mock.directory({},),
+      '/json2': mock.directory({},),
+    },);
+  },);
   after(() => {
     mock.restore();
-  });
+  },);
   it('should be a function', () => {
     expect(jsonReporter,).to.be.a('function',);
   },);

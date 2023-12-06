@@ -3,12 +3,9 @@ import {
 } from '@fast-csv/format';
 import Reporter from './reporter.js';
 import {
-  FinishedSet,
-} from '../finished-set.js';
-import {
   createWriteStream,
 } from 'fs';
-import FinishedRun from "../FinishedRun.js";
+import FinishedRun from '../FinishedRun.js';
 
 const csv: Reporter = (
   results: FinishedRun,
