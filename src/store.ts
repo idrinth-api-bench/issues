@@ -13,7 +13,6 @@ import {
 } from 'path';
 import * as url from 'url';
 import {rmdirSync} from "fs-extra";
-import * as path from "path";
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 const hash = createHash('sha256',)
