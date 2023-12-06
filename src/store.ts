@@ -41,7 +41,7 @@ export default {
     }
     writeFileSync(cachefolder + sep + key, value,);
   },
-  async clean(): void {
+  async clean(): Promise<void> {
     if (existsSync(cachefolder,)) {
       await fsExtra.emptyDir(cachefolder,);
       rmdirSync(cachefolder,);
