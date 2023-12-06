@@ -1,5 +1,5 @@
 import {
-  writeFileSync, readFileSync, existsSync, mkdirSync,
+  writeFileSync, readFileSync, existsSync, mkdirSync,rmdirSync
 } from 'fs';
 import fsExtra from 'fs-extra/esm';
 import {
@@ -12,7 +12,6 @@ import {
   sep,
 } from 'path';
 import * as url from 'url';
-import {rmdirSync} from "fs-extra";
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 const hash = createHash('sha256',)
