@@ -1,13 +1,10 @@
-const { parentPort } = require('worker_threads');
-
-const PORT = 8901;
+const PORT = 48901;
 const STATUS_NO_RESPONSE = 202;
 
-const server = require('http',)
-  .createServer(function(req, res,) {
+require('http',)
+  .createServer((req, res,) => {
     res.writeHead(STATUS_NO_RESPONSE,);
     res.end();
+    process.exit(0);
   },)
   .listen(PORT,);
-
-parentPort.postMessage('started');

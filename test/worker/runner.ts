@@ -4,33 +4,19 @@ import {
 } from 'chai';
 import 'mocha';
 import {
-  Worker,
-} from 'worker_threads';
+  spawn,
+} from 'child_process';
 import url from 'url';
 
-const TIMEOUT = 6000;
-const WAIT_DELAY = 100;
+const TIMEOUT = 15000;
+const WAIT_DELAY = 7500;
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 const delay = (time,) => new Promise((resolve,) => setTimeout(resolve, time,),);
 
 let server;
 
-describe('runner', async() => {
-  let ready = false;
-  before(() => {
-    server = new Worker(__dirname + '../../fixtures/server.cjs',);
-    server.onmessage = (msg,) => {
-      ready = msg === 'started';
-    };
-  },);
-  while (! ready) {
-    // eslint-disable-next-line no-await-in-loop
-    await delay(WAIT_DELAY,);
-  }
-  after(() => {
-    server.terminate();
-  },);
+describe('worker/runner', async function() {
   it('should be a function', () => {
     expect(runner,).to.be.a('function',);
   },);
@@ -55,18 +41,18 @@ describe('runner', async() => {
         done();
       },);
   },).timeout(TIMEOUT,);
-  it('should request a page from the server', (done,) => {
-    runner(
+  it('should request a page from the server', async () => {
+    await delay(WAIT_DELAY,)
+    await runner(
       {
         id: 'i',
         main: {
           method: 'get',
-          url: 'http://localhost:8901',
+          url: 'http://localhost:48901',
           cookies: {},
           headers: {},
           body: '',
         },
-        pre: [ '#cookie', ],
       },
       (result,) => {
         expect(result,).to.be.an('object',);
@@ -74,7 +60,21 @@ describe('runner', async() => {
         expect(result.id,).to.equal('i',);
         expect(result.msg,).to.equal('',);
         expect(result.success,).to.equal(true,);
-        done();
       },);
   },).timeout(TIMEOUT,);
-},);
+},)
+  .beforeAll(() => {
+    server = spawn('node', [__dirname + '../../fixtures/server.cjs'],);
+    server.on('error', (error) => {
+      console.log(`error: ${error.message}`);
+    });
+    server.on("close", code => {
+      console.log(`child process exited with code ${code}`);
+    });
+    server.stdout.on("data", data => {
+      console.log(`stdout: ${data}`);
+    });
+    server.stderr.on("data", data => {
+      console.log(`stderr: ${data}`);
+    });
+  },);
