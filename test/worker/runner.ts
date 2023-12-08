@@ -9,7 +9,7 @@ import {
 import url from 'url';
 
 const TIMEOUT = 15000;
-const WAIT_DELAY = 7500;
+const WAIT_DELAY = 2500;
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 const delay = (time,) => new Promise((resolve,) => setTimeout(resolve, time,),);
@@ -58,6 +58,7 @@ describe('worker/runner', () => {
         expect(result.msg,).to.equal('',);
         expect(result.success,).to.equal(true,);
       },);
+    await delay(WAIT_DELAY,);
   },).timeout(TIMEOUT,);
 },)
   .beforeAll(() => {

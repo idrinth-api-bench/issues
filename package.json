@@ -68,11 +68,10 @@
     "winston": "^3.11.0"
   },
   "scripts": {
-    "start": "node main.js",
     "lint": "eslint src test",
     "lint-fix": "eslint --fix src test",
     "test": "c8 mocha",
-    "clear": "rm src/*.js",
+    "clear": "rm src/*.js src/**/*.js",
     "tsc": "tsc -p tsconfig.json",
     "prepublishOnly": "npm run tsc",
     "postpublishOnly": "rm src/*.js src/**/*.js"
