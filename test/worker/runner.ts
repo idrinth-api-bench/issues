@@ -65,16 +65,4 @@ describe('worker/runner', async function() {
 },)
   .beforeAll(() => {
     server = spawn('node', [__dirname + '../../fixtures/server.cjs'],);
-    server.on('error', (error) => {
-      console.log(`error: ${error.message}`);
-    });
-    server.on("close", code => {
-      console.log(`child process exited with code ${code}`);
-    });
-    server.stdout.on("data", data => {
-      console.log(`stdout: ${data}`);
-    });
-    server.stderr.on("data", data => {
-      console.log(`stderr: ${data}`);
-    });
   },);
