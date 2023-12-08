@@ -14,14 +14,12 @@ const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 const delay = (time,) => new Promise((resolve,) => setTimeout(resolve, time,),);
 
-let server;
-
-describe('worker/runner', async function() {
+describe('worker/runner', () => {
   it('should be a function', () => {
     expect(runner,).to.be.a('function',);
   },);
-  it('should request a page from the offline server', (done,) => {
-    runner(
+  it('should request a page from the offline server', async() => {
+    await runner(
       {
         id: 'i',
         main: {
@@ -38,11 +36,10 @@ describe('worker/runner', async function() {
         expect(result.id,).to.equal('i',);
         expect(result.msg,).to.be.a('string',);
         expect(result.success,).to.equal(false,);
-        done();
       },);
   },).timeout(TIMEOUT,);
-  it('should request a page from the server', async () => {
-    await delay(WAIT_DELAY,)
+  it('should request a page from the server', async() => {
+    await delay(WAIT_DELAY,);
     await runner(
       {
         id: 'i',
@@ -64,5 +61,5 @@ describe('worker/runner', async function() {
   },).timeout(TIMEOUT,);
 },)
   .beforeAll(() => {
-    server = spawn('node', [__dirname + '../../fixtures/server.cjs'],);
+    spawn('node', [ __dirname + '../../fixtures/server.cjs', ],);
   },);
