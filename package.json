@@ -2,7 +2,7 @@
   "name": "@idrinth/api-bench",
   "description": "A library to benchmark apis, no matter if rest or soap",
   "license": "MIT",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "homepage": "https://github.com/Idrinth/api-bench",
   "type": "module",
   "main": "src/main.js",
