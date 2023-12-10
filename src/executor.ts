@@ -21,7 +21,6 @@ import store from './store.js';
 import * as url from 'url';
 import ReportModifier from './report-modifier/report-modifier.js';
 import Storage from './storage/storage.js';
-import reporter from "./reporter/reporter.js";
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 const EMPTY = 0;

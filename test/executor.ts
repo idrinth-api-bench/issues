@@ -29,7 +29,7 @@ import NoopStorage from '../src/storage/noop-storage.js';
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const NOOP = () => {};
 const NONE = 0;
-chaiUse(chaiAsPromised);
+chaiUse(chaiAsPromised,);
 
 class FakeResult implements Result, ValidationResult, FinishedSet {
 
@@ -133,7 +133,6 @@ class FakeWorker implements Thread {
 }
 
 describe('executor', () => {
-  let oldConsole;
   before(() => {
     const config = {
       '/executor': mock.directory({},),

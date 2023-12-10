@@ -28,13 +28,10 @@ import {
 } from 'fs';
 import Job from '../../src/job.js';
 import NoopStorage from '../../src/storage/noop-storage.js';
-import {ConsoleLogger} from '../../src/logger/console-logger.js';
 import makeConsoleMock from 'consolemock';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
-const NOOP = () => {};
 const NONE = 0;
-chaiUse(chaiAsPromised);
+chaiUse(chaiAsPromised,);
 
 class FakeResult implements Result, ValidationResult, FinishedSet {
 
@@ -182,7 +179,7 @@ describe('executor@job', () => {
         threads,
         repeats,
         job,
-          () => done(),
+        () => done(),
         new NullLogger(),
         FakeWorker,
         [],

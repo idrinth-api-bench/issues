@@ -31,7 +31,7 @@ import NoopStorage from '../../src/storage/noop-storage.js';
 import makeConsoleMock from 'consolemock';
 
 const NONE = 0;
-chaiUse(chaiAsPromised);
+chaiUse(chaiAsPromised,);
 
 class FakeResult implements Result, ValidationResult, FinishedSet {
 
@@ -182,7 +182,7 @@ describe('executor', () => {
     FakeWorker.built = {};
     FakeWorker.terminated = {};
     expect(
-       () => executor(
+      () => executor(
         threads,
         repeats,
         prePostJob,
