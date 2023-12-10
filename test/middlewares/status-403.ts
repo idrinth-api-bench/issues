@@ -37,7 +37,7 @@ describe('middlewares/status-403', () => {
       );
     },);
   }
-  it(`process should not throw for status 403`, () => {
+  it('process should not throw for status 403', () => {
     const input = {
       response: {
         status: 403,

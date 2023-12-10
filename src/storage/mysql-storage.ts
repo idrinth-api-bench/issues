@@ -53,7 +53,8 @@ export default class MysqlStorage implements Storage {
       ],
     );
   }
+
   close(): void {
-      this.connection.destroy();
+    this.connection.destroy();
   }
 }

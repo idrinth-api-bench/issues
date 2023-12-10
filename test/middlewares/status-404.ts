@@ -37,7 +37,7 @@ describe('middlewares/status-404', () => {
       );
     },);
   }
-  it(`process should not throw for status 404`, () => {
+  it('process should not throw for status 404', () => {
     const input = {
       response: {
         status: 404,

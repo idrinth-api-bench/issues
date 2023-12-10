@@ -8,8 +8,6 @@ import {
 } from '../../src/finished-set';
 import chaiAsPromised from 'chai-as-promised';
 import getDatabase from '@databases/mysql-test';
-import storage from "../../src/storage/storage";
-import store from "../../src/store";
 
 chaiUse(chaiAsPromised,);
 let database;
@@ -34,10 +32,10 @@ describe('storage/mysql-storage', () => {
       RADIX,
     );
   },);
-  after(async () => {
+  after(async() => {
     await delay(WAIT_MEDIUM,);
     database.kill();
-  });
+  },);
   it('should be a class', () => {
     expect(MysqlStorage,).to.be.a('function',);
   },);
