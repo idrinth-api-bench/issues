@@ -1,7 +1,7 @@
 import mock from 'mock-fs';
 import executor, {
   Thread,
-} from '../src/executor.js';
+} from '../../src/executor.js';
 import {
   use as chaiUse,
   expect,
@@ -10,24 +10,26 @@ import chaiAsPromised from 'chai-as-promised';
 import 'mocha';
 import {
   NullLogger,
-} from '../src/logger/null-logger.js';
+} from '../../src/logger/null-logger.js';
 import {
   Result,
-} from '../src/result.js';
+} from '../../src/result.js';
 import {
   FinishedSet,
-} from '../src/finished-set.js';
+} from '../../src/finished-set.js';
 import {
   Task,
-} from '../src/task.js';
+} from '../../src/task.js';
 import {
   ValidationResult,
-} from '../src/validation-result.js';
-import Job from '../src/job.js';
-import NoopStorage from '../src/storage/noop-storage.js';
+} from '../../src/validation-result.js';
+import {
+  realpathSync,
+} from 'fs';
+import Job from '../../src/job.js';
+import NoopStorage from '../../src/storage/noop-storage.js';
+import makeConsoleMock from 'consolemock';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
-const NOOP = () => {};
 const NONE = 0;
 chaiUse(chaiAsPromised);
 
@@ -142,12 +144,18 @@ describe('executor', () => {
     mock(config, {
       createCwd: false,
     },);
+    oldConsole = console;
+    // eslint-disable-next-line no-global-assign
+    console = makeConsoleMock();
   },);
   after(() => {
     mock.restore();
+    // eslint-disable-next-line no-global-assign
+    console = oldConsole;
   },);
   const repeats = 2;
   const threads = 3;
+  const setup = 2;
   const tasks = [ <Task> {
     id: 'test',
   }, ];
@@ -164,52 +172,41 @@ describe('executor', () => {
     ...noJob,
     main: tasks,
   };
-  it('should be a function', () => {
-    expect(executor,).to.be.a('function',);
-  },);
-  it('should not try to execute no tasks(0 tasks)', () => {
+  const prePostJob: Job = {
+    ...job,
+    before: tasks,
+    after: tasks,
+  };
+  const once = 1;
+  it('should execute all tasks and pre and post', (done,) => {
+    FakeWorker.built = {};
+    FakeWorker.terminated = {};
     expect(
-      () => executor(
+       () => executor(
         threads,
         repeats,
-        noJob,
-        NOOP,
+        prePostJob,
+        () => done(),
         new NullLogger(),
         FakeWorker,
         [],
         new NoopStorage(),
         '/executor',
       ),
-    ).to.throw('Can\'t measure no tasks.',);
-  },);
-  it('should not try to execute no tasks(0 threads)', () => {
-    expect(
-      () => executor(
-        NONE,
-        repeats,
-        job,
-        NOOP,
-        new NullLogger(),
-        FakeWorker,
-        [],
-        new NoopStorage(),
-        '/executor',
-      ),
-    ).to.throw('Can\'t measure no tasks.',);
-  },);
-  it('should not try to execute no tasks (0 repeats)', () => {
-    expect(
-      () => executor(
-        threads,
-        NONE,
-        job,
-        NOOP,
-        new NullLogger(),
-        FakeWorker,
-        [],
-        new NoopStorage(),
-        '/executor',
-      ),
-    ).to.throw('Can\'t measure no tasks.',);
+    ).to.not.throw();
+    describe('executor::workers', () => {
+      it('should have build the right workers after pre and post', () => {
+        const output = {};
+        output[realpathSync('./worker/calculator.js',)] = once;
+        output[realpathSync('./worker/webrequest.js',)] = threads + setup;
+        expect(FakeWorker.built,).to.deep.equal(output,);
+      },);
+      it('should have shut down the right workers after pre and post', () => {
+        const output = {};
+        output[realpathSync('./worker/calculator.js',)] = once;
+        output[realpathSync('./worker/webrequest.js',)] = threads + setup;
+        expect(FakeWorker.terminated,).to.deep.equal(output,);
+      },);
+    },);
   },);
 },);

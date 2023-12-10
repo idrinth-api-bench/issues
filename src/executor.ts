@@ -21,6 +21,7 @@ import store from './store.js';
 import * as url from 'url';
 import ReportModifier from './report-modifier/report-modifier.js';
 import Storage from './storage/storage.js';
+import reporter from "./reporter/reporter.js";
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 const EMPTY = 0;
@@ -65,7 +66,6 @@ const executor = (
   let active = 0;
   const checking = 0;
   let analysing = 0;
-  const workers: Array<Thread> = [];
   const results: {[z: string]: ResultSet} = {};
   const finished: {[z: string]: FinishedSet} = {};
   const internalTasks = [];
@@ -111,39 +111,41 @@ const executor = (
   const startMain = () => {
     logger.debug(`starting up ${ threads } Workers`,);
     for (let j=0; j<threads; j ++) {
-      workers.push(buildWorker('webrequest',),);
+      const worker = buildWorker('webrequest',);
       /* eslint complexity:0 */
-      workers[j].on('message', (data: ValidationResult,) => {
+      worker.on('message', (data: ValidationResult,) => {
         logger.debug(`Starting validation of ${ data.id }`,);
         results[data.id] = results[data.id] || new ResultSet(data.id,);
         results[data.id].add(data,);
         bar.increment();
         if (results[data.id].count === threads*repetitions) {
           logger.info(`Finished requesting all ${ data.id }`,);
-          logger.debug(`Starting analyzation of ${ data.id }`,);
+          logger.debug(`Starting analysation of ${ data.id }`,);
           analysing ++;
           calculator.postMessage(results[data.id],);
         }
         if (internalTasks.length > EMPTY) {
           logger.debug('Starting next request',);
-          workers[j].postMessage(internalTasks.shift(),);
+          worker.postMessage(internalTasks.shift(),);
           return;
         }
         active --;
-        workers[j].terminate();
         logger.info('All requests done, terminating thread',);
         if (active === EMPTY) {
           if (job.after.length > EMPTY) {
-            logger.debug('Starting next request',);
+            logger.debug('Starting after request',);
             after.postMessage(job.after.shift(),);
           } else {
+            logger.debug('No after request, done',);
             after.terminate();
             store.clean();
+            bar.stop();
           }
         }
+        worker.terminate();
       },);
       active ++;
-      workers[j].postMessage(internalTasks.shift(),);
+      worker.postMessage(internalTasks.shift(),);
     }
   };
   after.on('message', () => {
@@ -155,6 +157,7 @@ const executor = (
     }
     store.clean();
     after.terminate();
+    logger.debug('After done.',);
   },);
   before.on('message', () => {
     bar.increment();
