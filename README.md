@@ -29,6 +29,8 @@ Middlewares use an absolute file path to be loaded. the following characters wil
 - access token handling
 - csrf-header handling
 - status 2xx check
+- status 403 check
+- status 404 check
 - user-agent
 - cookies
 
