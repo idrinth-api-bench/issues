@@ -8,6 +8,8 @@ import {
 } from '../../src/finished-set';
 import chaiAsPromised from 'chai-as-promised';
 import getDatabase from '@databases/mysql-test';
+import storage from "../../src/storage/storage";
+import store from "../../src/store";
 
 chaiUse(chaiAsPromised,);
 let database;
@@ -15,6 +17,8 @@ let port = 3307;
 const WAIT_MEDIUM = 1000;
 const WAIT_LONG = 25000;
 const RADIX = 10;
+
+const delay = (time,) => new Promise((resolve,) => setTimeout(resolve, time,),);
 
 describe('storage/mysql-storage', () => {
   before(async function() {
@@ -30,6 +34,10 @@ describe('storage/mysql-storage', () => {
       RADIX,
     );
   },);
+  after(async () => {
+    await delay(WAIT_MEDIUM,);
+    database.kill();
+  });
   it('should be a class', () => {
     expect(MysqlStorage,).to.be.a('function',);
   },);
@@ -57,6 +65,7 @@ describe('storage/mysql-storage', () => {
     };
     expect(() => storage.store(results, new Date(),),).to.not.throw();
     setTimeout(() => {
+      storage.close();
       done();
     }, WAIT_MEDIUM,);
   },);

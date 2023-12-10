@@ -70,7 +70,7 @@
   "scripts": {
     "lint": "eslint src test",
     "lint-fix": "eslint --fix src test",
-    "test": "c8 mocha",
+    "test": "c8 mocha --exit",
     "clear": "rm src/*.js src/**/*.js",
     "tsc": "tsc -p tsconfig.json",
     "prepublishOnly": "npm run tsc",

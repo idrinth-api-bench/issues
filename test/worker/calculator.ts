@@ -8,7 +8,7 @@ import {
   ValidationResult,
 } from '../../src/validation-result.js';
 
-describe('calculator', () => {
+describe('worker/calculator', () => {
   it('should be a function', () => {
     expect(calculator,).to.be.a('function',);
   },);
