@@ -8,7 +8,7 @@
 /result.csv
 /.nyc_output
 /coverage
-/.mocharc.yml
+/.mocharc.cjs
 /.nycrc.json
 /fixtures
 /.github
