@@ -25,6 +25,7 @@ import {
 } from '../src/validation-result.js';
 import Job from '../src/job.js';
 import NoopStorage from '../src/storage/noop-storage.js';
+import NoProgress from '../src/progress/no-progress';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const NOOP = () => {};
@@ -178,6 +179,7 @@ describe('executor', () => {
         [],
         new NoopStorage(),
         '/executor',
+        new NoProgress(),
       ),
     ).to.throw('Can\'t measure no tasks.',);
   },);
@@ -193,6 +195,7 @@ describe('executor', () => {
         [],
         new NoopStorage(),
         '/executor',
+        new NoProgress(),
       ),
     ).to.throw('Can\'t measure no tasks.',);
   },);
@@ -208,6 +211,7 @@ describe('executor', () => {
         [],
         new NoopStorage(),
         '/executor',
+        new NoProgress(),
       ),
     ).to.throw('Can\'t measure no tasks.',);
   },);

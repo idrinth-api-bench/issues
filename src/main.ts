@@ -19,6 +19,8 @@ import reqlib from 'app-root-path';
 import ReportModifier from './report-modifier/report-modifier.js';
 import Storage from './storage/storage.js';
 import NoopStorage from './storage/noop-storage.js';
+import Progress from './progress/progress.js';
+import ProgressBar from './progress/progress-bar.js';
 
 const DEFAULT_THREADS = 10;
 const DEFAULT_REPETITIONS = 1000;
@@ -31,6 +33,7 @@ export const run = async(
     resultHandler?: Reporter|undefined,
     resultStorage?: Storage|undefined,
     resultOutputDir?: string
+    progress?: Progress
   },
   threads = DEFAULT_THREADS,
   repetitions = DEFAULT_REPETITIONS,
@@ -47,6 +50,9 @@ export const run = async(
   }
   if (typeof configuration.reportModifiers === 'undefined') {
     configuration.reportModifiers = [];
+  }
+  if (typeof configuration.progress === 'undefined') {
+    configuration.progress = new ProgressBar();
   }
   if (typeof job === 'undefined') {
     job = await jobCreator(`${ reqlib }`,);
@@ -71,5 +77,6 @@ export const run = async(
     configuration.reportModifiers,
     configuration.resultStorage,
     configuration.resultOutputDir || process.cwd(),
+    configuration.progress,
   );
 };

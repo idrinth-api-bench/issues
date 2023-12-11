@@ -14,17 +14,17 @@ import {
   realpathSync,
 } from 'fs';
 import Reporter from './reporter/reporter.js';
-import Progress from 'cli-progress';
 import validateTasks from './validate-tasks.js';
 import Job from './job.js';
 import store from './store.js';
 import * as url from 'url';
 import ReportModifier from './report-modifier/report-modifier.js';
 import Storage from './storage/storage.js';
+import Progress from './progress/progress.js';
+
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 const EMPTY = 0;
-const SINGLE = 1;
 
 export interface WorkerConstructor {
   new(path: string);
@@ -50,6 +50,7 @@ const executor = (
   reportModifiers: Array<ReportModifier>,
   resultStorage: Storage,
   resultOutputDir: string,
+  progress: Progress,
 ): void => {
   const now = new Date();
   const buildWorker = (file: string,) : Thread => {
@@ -57,11 +58,6 @@ const executor = (
     return new Worker(realpathSync(path,),);
   };
   validateTasks(repetitions, threads, job.main,);
-  const calculator: Thread = buildWorker('calculator',);
-  const bar = new Progress.SingleBar({
-    stopOnComplete: true,
-    clearOnComplete: true,
-  },);
   let active = 0;
   const checking = 0;
   let analysing = 0;
@@ -77,21 +73,14 @@ const executor = (
       internalTasks.push(task,);
     }
   }
-  const barLength = (() => {
-    const main = job.main.length * repetitions * threads;
-    const mainFactor = SINGLE + job.afterEach.length + job.beforeEach.length;
-    const calculation = job.main.length;
-    const pre = job.before.length + job.beforeTask.length * job.main.length;
-    const post = job.after.length + job.afterTask.length * job.main.length;
-    return pre + main * mainFactor + post + calculation;
-  })();
-  bar.start(barLength, EMPTY,);
+  progress.start(job, repetitions, threads,);
+  const calculator = buildWorker('calculator',);
   calculator.on('message', (data: FinishedSet,) => {
     finished[data.id] = data;
     resultStorage.store(data, now,);
     logger.debug(`Analyzation of ${ data.id } finished`,);
     analysing --;
-    bar.increment();
+    progress.increment();
     if (active === EMPTY && checking === EMPTY && analysing === EMPTY) {
       calculator.terminate();
       logger.info('Starting supplied result handler',);
@@ -116,7 +105,7 @@ const executor = (
         logger.debug(`Starting validation of ${ data.id }`,);
         results[data.id] = results[data.id] || new ResultSet(data.id,);
         results[data.id].add(data,);
-        bar.increment();
+        progress.increment();
         if (results[data.id].count === threads*repetitions) {
           logger.info(`Finished requesting all ${ data.id }`,);
           logger.debug(`Starting analysation of ${ data.id }`,);
@@ -138,7 +127,7 @@ const executor = (
             logger.debug('No after request, done',);
             after.terminate();
             store.clean();
-            bar.stop();
+            progress.stop();
           }
         }
         worker.terminate();
@@ -148,7 +137,7 @@ const executor = (
     }
   };
   after.on('message', () => {
-    bar.increment();
+    progress.increment();
     if (job.after.length > EMPTY) {
       logger.debug('Starting next request',);
       after.postMessage(job.after.shift(),);
@@ -159,7 +148,7 @@ const executor = (
     logger.debug('After done.',);
   },);
   before.on('message', () => {
-    bar.increment();
+    progress.increment();
     if (job.before.length > EMPTY) {
       logger.debug('Starting next request',);
       before.postMessage(job.before.shift(),);

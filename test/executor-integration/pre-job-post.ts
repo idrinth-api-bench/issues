@@ -29,6 +29,7 @@ import {
 import Job from '../../src/job.js';
 import NoopStorage from '../../src/storage/noop-storage.js';
 import makeConsoleMock from 'consolemock';
+import NoProgress from '../../src/progress/no-progress';
 
 const NONE = 0;
 chaiUse(chaiAsPromised,);
@@ -192,6 +193,7 @@ describe('executor', () => {
         [],
         new NoopStorage(),
         '/executor',
+        new NoProgress(),
       ),
     ).to.not.throw();
     describe('executor::workers', () => {
