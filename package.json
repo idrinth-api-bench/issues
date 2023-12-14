@@ -71,8 +71,8 @@
     "run-benchmark": "bin/run-benchmark.js"
   },
   "scripts": {
-    "lint": "eslint src test",
-    "lint-fix": "eslint --fix src test",
+    "lint": "eslint . --ext .js,.ts,.cjs,.json",
+    "lint-fix": "eslint --fix . --ext .js,.ts,.cjs,.json",
     "test": "c8 mocha",
     "clear": "rm src/*.js src/**/*.js",
     "tsc": "tsc -p tsconfig.json",

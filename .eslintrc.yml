@@ -5,6 +5,8 @@ plugins:
   - json
 ignorePatterns:
 - node_modules
+- src/*.js
+- src/**/*.js
 root: true
 env:
   node: true
@@ -54,7 +56,7 @@ rules:
   no-undef-init: error
   no-undefined: error
   no-use-before-define: error
-  func-call-spacing: 
+  func-call-spacing:
   - warn
   - never
   func-names:
@@ -114,7 +116,7 @@ rules:
   - single
   semi: error
   semi-spacing: warn
-  semi-style: 
+  semi-style:
   - error
   - last
   space-unary-ops:

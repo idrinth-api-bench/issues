@@ -8,6 +8,6 @@ declare module 'form-urlencoded' {
     skipBracket?: boolean;
     useDot?: boolean;
   }
-
+  // eslint-disable-next-line no-unused-vars
   export default function(data: any, opts?: FormEncodedOptions): string;
 }

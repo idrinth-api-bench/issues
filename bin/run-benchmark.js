@@ -1,6 +1,18 @@
-import { run } from '../src/main.js';
+import {
+  run,
+} from '../src/main.js';
 
-const threads = Number.parseInt(process.argv[2] || '1', 10);
-const repeats = Number.parseInt(process.argv[3] || '1', 10);
+const FIRST_ARGUMENT = 2;
+const SECOND_ARGUMENT = 3;
+const BASE_10_RADIX = 10;
 
-run({}, threads, repeats);
+const threads = Number.parseInt(
+  process.argv[FIRST_ARGUMENT] || '1',
+  BASE_10_RADIX,
+);
+const repeats = Number.parseInt(
+  process.argv[SECOND_ARGUMENT] || '1',
+  BASE_10_RADIX,
+);
+
+run({}, threads, repeats,);
