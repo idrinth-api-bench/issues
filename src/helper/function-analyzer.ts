@@ -10,20 +10,94 @@ export interface Param {
     envName: string;
 }
 
-const getEnv = (name: string,): string|undefined => {
+const getEnv = (name: string, defaultValue: string,): string => {
   for (const key of Object.keys(process.env,)) {
     if (key.toUpperCase() === name) {
       return process[key];
     }
   }
-  // eslint-disable-next-line no-undefined
-  return undefined;
+  return defaultValue;
 };
 
-// eslint-disable-next-line complexity, @typescript-eslint/ban-types
+// eslint-disable-next-line complexity
+const buildParameter = (parameter: string,): Param => {
+  const value: Param = {
+    name: '',
+    type: 'string',
+    default: '',
+    value: '',
+    envName: '',
+  };
+  if (parameter.match(/\/\*.+\*\/.+=.+/u,)) {
+    value.name = parameter
+      .replace(/\/\*.+\*\/|=.+$/gu, '',)
+      .replace(/\s*/gu, '',);
+    value.default = parameter
+      .replace(/^.+=/u, '',)
+      .replace(/^\s*|\s*$/gu, '',);
+    value.type = parameter
+      .replace(/^.*\/\*|\*\/.+$/gu, '',)
+      .replace(/\s*/gu, '',)
+      .toLowerCase();
+    return value;
+  }
+  if (parameter.match(/\/\*.+\*\/.+/u,)) {
+    value.name = parameter
+      .replace(/\/\*.+\*\/|=.+$/gu, '',)
+      .replace(/\s*/gu, '',);
+    value.default = '';
+    value.type = parameter
+      .replace(/^.*\/\*|\*\/.+$/gu, '',)
+      .replace(/\s*/gu, '',)
+      .toLowerCase();
+    if (value.type === 'boolean') {
+      value.default = 'false';
+    } else if (value.type === 'number') {
+      value.default = '0';
+    }
+    return value;
+  }
+  if (parameter.match(/.+=.+/u,)) {
+    value.name = parameter
+      .replace(/\/\*.+\*\/|=.+$/gu, '',)
+      .replace(/\s*/gu, '',);
+    value.default = parameter
+      .replace(/^.+=/u, '',)
+      .replace(/^\s*|\s*$/gu, '',);
+    if (! Number.isNaN(Number.parseFloat(value.default,),)) {
+      value.type = 'number';
+    } else if (value.default === 'true' || value.default === 'false') {
+      value.type = 'boolean';
+    }
+    return value;
+  }
+  value.name = parameter.replace(/\s*/gu, '',);
+  return value;
+};
+const parseParameterString = (parameter: string,): Param => {
+  const value = buildParameter(parameter,);
+  value.envName = snakeCase(value.name,).toUpperCase();
+  switch (value.type) {
+  case 'number':
+    value.value = Number.parseFloat(getEnv(value.name, value.default,),);
+    break;
+  case 'bool':
+  case 'boolean':
+    value.value = getEnv(value.name, value.default,) === 'true';
+    break;
+  case 'string':
+  default:
+    // eslint-disable-next-line no-magic-numbers
+    value.default = value.default.substring(1, value.default.length-2,);
+    value.value = getEnv(value.name, value.default,);
+    break;
+  }
+  return value;
+};
+// eslint-disable-next-line @typescript-eslint/ban-types
 export const analyze = (func: Function,): Param[] => {
   const parameters: string[] = ((): string[] => {
-    const fun: string = func.toString().replace(/\r|\n/gu, ' ',);
+    const fun: string = func.toString().replace(/[\r\n]/gu, ' ',);
     if (fun.match(/\s*function\s*/u,)) {
       return fun
         .replace(/^function\s*\(|\)\s*\{.*\}\s*$/gu, '',)
@@ -33,74 +107,9 @@ export const analyze = (func: Function,): Param[] => {
       .replace(/^\s*\(|\)\s*=>\s*\{.*\}\s*$/gu, '',)
       .split(',',);
   })();
-  const ret = [];
+  const ret: Param[] = [];
   for (const parameter of parameters) {
-    const value: Param = {
-      name: '',
-      type: '',
-      default: '',
-      value: '',
-      envName: '',
-    };
-    if (parameter.match(/\/\*.+\*\/.+=.+/u,)) {
-      value.name = parameter
-        .replace(/\/\*.+\*\/|=.+$/gu, '',)
-        .replace(/\s*/gu, '',);
-      value.default = parameter
-        .replace(/^.+=/u, '',)
-        .replace(/^\s*|\s*$/gu, '',);
-      value.type = parameter
-        .replace(/^.*\/\*|\*\/.+$/gu, '',)
-        .replace(/\s*/gu, '',)
-        .toLowerCase();
-    } else if (parameter.match(/\/\*.+\*\/.+/u,)) {
-      value.name = parameter
-        .replace(/\/\*.+\*\/|=.+$/gu, '',)
-        .replace(/\s*/gu, '',);
-      value.default = '';
-      value.type = parameter
-        .replace(/^.*\/\*|\*\/.+$/gu, '',)
-        .replace(/\s*/gu, '',)
-        .toLowerCase();
-      if (value.type === 'boolean') {
-        value.default = 'false';
-      } else if (value.type === 'number') {
-        value.default = '0';
-      }
-    } else if (parameter.match(/.+=.+/u,)) {
-      value.name = parameter
-        .replace(/\/\*.+\*\/|=.+$/gu, '',)
-        .replace(/\s*/gu, '',);
-      value.default = parameter
-        .replace(/^.+=/u, '',)
-        .replace(/^\s*|\s*$/gu, '',);
-      value.type = 'string';
-      if (! Number.isNaN(Number.parseFloat(value.default,),)) {
-        value.type = 'number';
-      } else if (value.default === 'true' || value.default === 'false') {
-        value.type = 'boolean';
-      }
-    } else {
-      value.name = parameter.replace(/\s*/gu, '',);
-      value.default = '';
-      value.type = 'string';
-    }
-    value.envName = snakeCase(value.name,).toUpperCase();
-    switch (value.type) {
-    case 'number':
-      value.value = Number.parseFloat(getEnv(value.name,) || value.default,);
-      break;
-    case 'bool':
-    case 'boolean':
-      value.value = (getEnv(value.name,) || value.default) === 'true';
-      break;
-    case 'string':
-    default:
-      // eslint-disable-next-line no-magic-numbers
-      value.default = value.default.substr(1, value.default.length-2,);
-      value.value = getEnv(value.name,) || value.default;
-      break;
-    }
+    const value = parseParameterString(parameter,);
     if (value.name !== '') {
       ret.push(value,);
     }

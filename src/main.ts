@@ -25,7 +25,7 @@ import ProgressBar from './progress/progress-bar.js';
 const DEFAULT_THREADS = 10;
 const DEFAULT_REPETITIONS = 1000;
 
-// eslint-disable-next-line complexity, max-params
+// eslint-disable-next-line complexity
 export const run = async(
   configuration: {
     reportModifiers?: Array<ReportModifier>|undefined,
@@ -38,6 +38,7 @@ export const run = async(
   threads = DEFAULT_THREADS,
   repetitions = DEFAULT_REPETITIONS,
   job?: Job|Array<Task>|undefined,
+  // eslint-disable-next-line max-params
 ): Promise<void> => {
   if (typeof configuration.logger === 'undefined') {
     configuration.logger = new NullLogger();
