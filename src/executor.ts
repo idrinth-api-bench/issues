@@ -75,43 +75,65 @@ const executor = (
   }
   progress.start(job, repetitions, threads,);
   const calculator = buildWorker('calculator',);
+  // eslint-disable-next-line complexity
+  const startResults = () => {
+    if (active !== EMPTY || checking !== EMPTY || analysing !== EMPTY) {
+      return;
+    }
+    calculator.terminate();
+    logger.info('Starting supplied result handler',);
+    logger.debug('Data', finished,);
+    for (const reportModifier of reportModifiers) {
+      for (const set of Object.keys(finished,)) {
+        finished[set] = reportModifier.adjust(finished[set],);
+      }
+    }
+    resultHandler(finished, resultOutputDir,);
+    logger.info('Done',);
+  };
   calculator.on('message', (data: FinishedSet,) => {
     finished[data.id] = data;
     resultStorage.store(data, now,);
     logger.debug(`Analyzation of ${ data.id } finished`,);
     analysing --;
     progress.increment();
-    if (active === EMPTY && checking === EMPTY && analysing === EMPTY) {
-      calculator.terminate();
-      logger.info('Starting supplied result handler',);
-      logger.debug('Data', finished,);
-      for (const reportModifier of reportModifiers) {
-        for (const set of Object.keys(finished,)) {
-          finished[set] = reportModifier.adjust(finished[set],);
-        }
-      }
-      resultHandler(finished, resultOutputDir,);
-      logger.info('Done',);
-    }
+    startResults();
   },);
   const before = buildWorker('webrequest',);
   const after = buildWorker('webrequest',);
   const startMain = () => {
     logger.debug(`starting up ${ threads } Workers`,);
+    const startAfter = (): void => {
+      if (active !== EMPTY) {
+        return;
+      }
+      if (job.after.length > EMPTY) {
+        logger.debug('Starting after request',);
+        after.postMessage(job.after.shift(),);
+        return;
+      }
+      logger.debug('No after request, done',);
+      after.terminate();
+      store.clean();
+      progress.stop();
+    };
+    const startAnalyzing = (id: string,): void => {
+      if (results[id].count !== threads*repetitions) {
+        return;
+      }
+      logger.info(`Finished requesting all ${ id }`,);
+      logger.debug(`Starting analysation of ${ id }`,);
+      analysing ++;
+      calculator.postMessage(results[id],);
+    };
     for (let j=0; j<threads; j ++) {
       const worker = buildWorker('webrequest',);
-      /* eslint complexity:0 */
       worker.on('message', (data: ValidationResult,) => {
         logger.debug(`Starting validation of ${ data.id }`,);
         results[data.id] = results[data.id] || new ResultSet(data.id,);
         results[data.id].add(data,);
         progress.increment();
-        if (results[data.id].count === threads*repetitions) {
-          logger.info(`Finished requesting all ${ data.id }`,);
-          logger.debug(`Starting analysation of ${ data.id }`,);
-          analysing ++;
-          calculator.postMessage(results[data.id],);
-        }
+        startAnalyzing(data.id,);
         if (internalTasks.length > EMPTY) {
           logger.debug('Starting next request',);
           worker.postMessage(internalTasks.shift(),);
@@ -119,17 +141,7 @@ const executor = (
         }
         active --;
         logger.info('All requests done, terminating thread',);
-        if (active === EMPTY) {
-          if (job.after.length > EMPTY) {
-            logger.debug('Starting after request',);
-            after.postMessage(job.after.shift(),);
-          } else {
-            logger.debug('No after request, done',);
-            after.terminate();
-            store.clean();
-            progress.stop();
-          }
-        }
+        startAfter();
         worker.terminate();
       },);
       active ++;
