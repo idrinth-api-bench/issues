@@ -25,7 +25,7 @@ import ProgressBar from './progress/progress-bar.js';
 const DEFAULT_THREADS = 10;
 const DEFAULT_REPETITIONS = 1000;
 
-/* eslint max-params:0, complexity:0 */
+// eslint-disable-next-line complexity, max-params
 export const run = async(
   configuration: {
     reportModifiers?: Array<ReportModifier>|undefined,
