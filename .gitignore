@@ -6,3 +6,6 @@
 /coverage
 /src/**/*.js
 /.idea
+/examples/**/package-lock.json
+/examples/**/result.json
+/examples/**/result.csv

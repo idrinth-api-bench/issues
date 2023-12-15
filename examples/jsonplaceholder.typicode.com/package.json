@@ -1,0 +1,12 @@
+{
+  "name": "@idrinth/api-bench-example_jsonplaceholder.typicode.com",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "@idrinth/api-bench": "*"
+  },
+  "scripts": {
+    "run": "run-benchmark"
+  }
+}

@@ -5,7 +5,10 @@ import isCallable from 'is-callable';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const include = async(path: string,): Promise<any> => {
-  let val = await import(path.replace(/\/\//ug, '/',).replace(/ts$/u, 'js',),);
+  path = path
+    .replace(/\/\//ug, '/',)
+    .replace(/ts$/u, 'js',);
+  let val = await import('file://' + path,);
   if (typeof val === 'object' && val.default) {
     val = val.default;
   }
