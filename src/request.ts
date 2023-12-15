@@ -17,9 +17,9 @@ interface JsonContent {
 
 export interface Request {
   method: NeedleHttpVerbs;
-  headers: HashMap;
-  cookies: HashMap;
-  body: string|FormContent|JsonContent;
+  headers?: HashMap;
+  cookies?: HashMap;
+  body?: string|FormContent|JsonContent;
   autohandle?: 'json'|'form';
   url: string;
 }

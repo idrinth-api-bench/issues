@@ -25,7 +25,7 @@ import {
 } from '../src/validation-result.js';
 import Job from '../src/job.js';
 import NoopStorage from '../src/storage/noop-storage.js';
-import NoProgress from '../src/progress/no-progress';
+import NoProgress from '../src/progress/no-progress.js';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const NOOP = () => {};

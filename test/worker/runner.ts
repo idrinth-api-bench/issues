@@ -46,9 +46,6 @@ describe('worker/runner', () => {
         main: {
           method: 'get',
           url: 'http://localhost:48901',
-          cookies: {},
-          headers: {},
-          body: '',
         },
       },
       (result,) => {
@@ -62,5 +59,5 @@ describe('worker/runner', () => {
   },).timeout(TIMEOUT,);
 },)
   .beforeAll(() => {
-    spawn('node', [ __dirname + '../../fixtures/server.cjs', ],);
+    spawn('node', [ __dirname + '../../fixtures/server.cjs', '48901', ],);
   },);

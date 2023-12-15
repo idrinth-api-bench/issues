@@ -1,4 +1,3 @@
-const PORT = 48901;
 const STATUS_NO_RESPONSE = 202;
 const DELAY = 1357;
 const EXIT_SUCCESS = 0;
@@ -16,4 +15,4 @@ const server = require('http',)
       process.exit(EXIT_SUCCESS,);
     },);
   },)
-  .listen(PORT,);
+  .listen(Number.parseInt(process.argv[4],),);
