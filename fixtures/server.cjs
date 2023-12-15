@@ -1,6 +1,7 @@
 const STATUS_NO_RESPONSE = 202;
 const DELAY = 1357;
 const EXIT_SUCCESS = 0;
+const FIRST_ARGUMENT = 4;
 
 const delay = (time,) => new Promise((resolve,) => setTimeout(resolve, time,),);
 
@@ -15,4 +16,4 @@ const server = require('http',)
       process.exit(EXIT_SUCCESS,);
     },);
   },)
-  .listen(Number.parseInt(process.argv[4],),);
+  .listen(Number.parseInt(process.argv[FIRST_ARGUMENT], 10,),);

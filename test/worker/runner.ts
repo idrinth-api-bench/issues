@@ -59,5 +59,8 @@ describe('worker/runner', () => {
   },).timeout(TIMEOUT,);
 },)
   .beforeAll(() => {
-    spawn('node', [ __dirname + '../../fixtures/server.cjs', '48901', ],);
+    spawn('node', [
+      __dirname + '../../fixtures/server.cjs',
+      '48901',
+    ],);
   },);
