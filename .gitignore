@@ -9,3 +9,4 @@
 /examples/**/package-lock.json
 /examples/**/result.json
 /examples/**/result.csv
+/examples/**/node_modules
