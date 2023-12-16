@@ -5,6 +5,7 @@ const FIRST_ARGUMENT = 4;
 
 const delay = (time,) => new Promise((resolve,) => setTimeout(resolve, time,),);
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const server = require('http',)
   .createServer((req, res,) => {
     res.writeHead(STATUS_NO_RESPONSE,);

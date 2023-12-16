@@ -1,6 +1,7 @@
 extends:
 - eslint:recommended
 - "plugin:json/recommended"
+- "plugin:@typescript-eslint/recommended"
 plugins:
   - json
 ignorePatterns:
