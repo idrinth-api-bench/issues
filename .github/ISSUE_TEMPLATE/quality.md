@@ -2,7 +2,7 @@
 name: Quality Issue
 about: Missing tests, code quality issues.
 title: ''
-labels: documentation
+labels: quality
 assignees: ''
 
 ---
