@@ -19,7 +19,7 @@ const version = (ob: Versioned,): string => {
 
 const lock: Lock = reqlib.require('/package-lock.json',) as Lock;
 const main = `${ lock.name }/${ version(lock,) }`;
-const needle = `needle/${ version(lock.packages['node_mopdules/needle'],) }`;
+const needle = `needle/${ version(lock.packages['node_modules/needle'],) }`;
 const selfName = 'node_modules/@idrinth/api-bench';
 const self = lock.packages['node_modules/@idrinth/api-bench'] ?
   `@idrinth/api-bench/${ version(lock.packages[selfName],) }` :
