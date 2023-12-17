@@ -1,6 +1,7 @@
 import {
   Task,
 } from './task.js';
+import language from './helper/language.js';
 
 const EMPTY = 0;
 
@@ -8,7 +9,7 @@ const noDuplicateIDs = (tasks: Array<Task>,) => {
   const ids: Array<string> = [];
   for (const task of tasks) {
     if (ids.includes(task.id,)) {
-      throw new Error(`The id ${ task.id } is shared.`,);
+      throw new Error(language('duplicate_task_id', task.id,),);
     }
     ids.push(task.id,);
   }
@@ -19,7 +20,7 @@ const executableAmount = (
   tasks: Array<Task>,
 ): void => {
   if (tasks.length === EMPTY || repetitions <= EMPTY || threads <= EMPTY) {
-    throw new Error('Can\'t measure no tasks.',);
+    throw new Error(language('no_tasks',),);
   }
 };
 

@@ -37,7 +37,8 @@
     "change-case": "^5.2.0",
     "needle": "^3.2.0",
     "fs-extra": "^11.2.0",
-    "is-callable": "^1.2.7"
+    "is-callable": "^1.2.7",
+    "yaml": "^2.3.4"
   },
   "devDependencies": {
     "@databases/mysql-test": "^4.0.2",
@@ -77,6 +78,6 @@
     "clear": "rm src/*.js src/**/*.js",
     "tsc": "tsc -p tsconfig.json",
     "prepublishOnly": "npm run tsc",
-    "postpublishOnly": "rm src/*.js src/**/*.js"
+    "postpublishOnly": "npm run clear"
   }
 }

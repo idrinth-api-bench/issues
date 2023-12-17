@@ -8,7 +8,7 @@ import {
 interface FormContent {
   [key: string]: string|FormContent;
 }
-//
+
 type SimpleType = string|null|number|boolean;
 interface JsonContent {
   [key: string]: SimpleType|JsonContent|Array<SimpleType|JsonContent>;

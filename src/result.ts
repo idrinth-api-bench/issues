@@ -10,7 +10,7 @@ const ToMicro = 1000000000;
 export class Result {
   public duration: number;
 
-  public response: {
+  public response?: {
     headers: HashMap;
     cookies: HashMap;
     body: string;

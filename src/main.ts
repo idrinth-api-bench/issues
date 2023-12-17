@@ -21,6 +21,9 @@ import Storage from './storage/storage.js';
 import NoopStorage from './storage/noop-storage.js';
 import Progress from './progress/progress.js';
 import ProgressBar from './progress/progress-bar.js';
+import {
+  locale,
+} from './helper/language.js';
 
 const DEFAULT_THREADS = 10;
 const DEFAULT_REPETITIONS = 1000;
@@ -33,13 +36,15 @@ export const run = async(
     resultHandler?: Reporter|undefined,
     resultStorage?: Storage|undefined,
     resultOutputDir?: string
-    progress?: Progress
+    progress?: Progress,
+    language?: string,
   },
   threads = DEFAULT_THREADS,
   repetitions = DEFAULT_REPETITIONS,
   job?: Job|Array<Task>|undefined,
   // eslint-disable-next-line max-params
 ): Promise<void> => {
+  await locale(configuration.language || 'en',);
   if (typeof configuration.logger === 'undefined') {
     configuration.logger = new NullLogger();
   }

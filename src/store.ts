@@ -12,6 +12,7 @@ import {
   sep,
 } from 'path';
 import * as url from 'url';
+import language from './helper/language.js';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 const hash = createHash('sha256',)
@@ -23,7 +24,7 @@ const cachefolder: string = tmpdir() + sep + 'api-bench' + sep + '_' + id;
 export default {
   get(key: string, defaulted: string,): string {
     if (! key.match(/^[a-z0-9.]+$/u,)) {
-      throw new Error('Invalid Key',);
+      throw new Error(language('invalid_key', key,),);
     }
     if (! existsSync(cachefolder + sep + key,)) {
       return defaulted;
@@ -32,7 +33,7 @@ export default {
   },
   set(key: string, value: string,): void {
     if (! key.match(/^[a-z0-9.]+$/u,)) {
-      throw new Error('Invalid Key',);
+      throw new Error(language('invalid_key', key,),);
     }
     if (! existsSync(cachefolder,)) {
       mkdirSync(cachefolder, {

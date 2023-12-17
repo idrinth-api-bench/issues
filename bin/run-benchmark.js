@@ -5,6 +5,7 @@ import {
 
 const FIRST_ARGUMENT = 2;
 const SECOND_ARGUMENT = 3;
+const THIRD_ARGUMENT = 4;
 const BASE_10_RADIX = 10;
 
 const threads = Number.parseInt(
@@ -16,4 +17,10 @@ const repeats = Number.parseInt(
   BASE_10_RADIX,
 );
 
-run({}, threads, repeats,);
+run(
+  {
+    language: process.argv[THIRD_ARGUMENT] || 'en',
+  },
+  threads,
+  repeats,
+);

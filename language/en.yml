@@ -1,0 +1,22 @@
+no_tasks: Can't measure no tasks.
+duplicate_task_id: The id %1% is shared.
+invalid_key: The given key %1% is invalid.
+finished_analyzing: Analyzation of %1% finished.
+initialization: Initializing tasks to have %1% Threads x %2% Repetitions todos
+starting_result: Starting supplied result handler.
+data: Data
+done: Done
+starting_workers: Starting up %1% Workers.
+starting_after: Starting after request.
+no_after: No after request, done.
+finished_requests: Finished requesting all %1%.
+starting_analyzation: Starting analysation of %1%.
+next_request: Starting next request.
+starting_validation: Starting validation of %1%.
+end_thread: All requests done, terminating thread.
+after_done: After done.
+no_response_status: Request returned no status
+response_status_above_2xx: Request returned status above 200-299 range
+response_status_below_2xx: Request returned status below 200-299 range
+response_status_not_404: Request returned status %1%, not 404
+response_status_not_403: Request returned status %1%, not 403

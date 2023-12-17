@@ -8,6 +8,7 @@ import {
   Result,
 } from '../result.js';
 import staticImplements from '../helper/static-implements.js';
+import language from '../helper/language.js';
 
 const MAXIMUM = 299;
 const MINIMUM = 200;
@@ -20,13 +21,13 @@ class Status2xx {
 
   public static process(response: Result,): void {
     if (typeof response.response.status === 'undefined') {
-      throw new Error('Request returned no status',);
+      throw new Error(language('no_response_status',),);
     }
     if (response.response.status > MAXIMUM) {
-      throw new Error('Request returned status above 200-299 range',);
+      throw new Error(language('response_status_above_2xx',),);
     }
     if (response.response.status < MINIMUM) {
-      throw new Error('Request returned status below 200-299 range',);
+      throw new Error(language('response_status_below_2xx',),);
     }
   }
 }

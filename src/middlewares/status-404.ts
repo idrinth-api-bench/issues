@@ -8,6 +8,7 @@ import {
   Result,
 } from '../result.js';
 import staticImplements from '../helper/static-implements.js';
+import language from '../helper/language.js';
 
 const STATUS = 404;
 
@@ -19,11 +20,11 @@ class Status404 {
 
   public static process(response: Result,): void {
     if (typeof response.response.status === 'undefined') {
-      throw new Error('Request returned no status',);
+      throw new Error(language('no_response_status',),);
     }
     if (response.response.status !== STATUS) {
       throw new Error(
-        `Request returned status ${ response.response.status }, not 404`,
+        language('response_status_not_404', `${ response.response.status }`,),
       );
     }
   }

@@ -71,8 +71,6 @@ export default async(task: Task, callable: Callback,): Promise<void> => {
           id: task.id,
           success: false,
           msg: error,
-          // eslint-disable-next-line no-undefined
-          response: undefined,
           validators: [],
         } as Result, error+'', false,),);
         return;
