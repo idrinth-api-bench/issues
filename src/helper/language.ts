@@ -15,6 +15,8 @@ import {
 } from 'url';
 const __dirname = fileURLToPath(new URL('.', import.meta.url,),);
 
+const NEXT = 1;
+
 const read = async(lang: string,) : Promise<HashMap> => {
   lang = lang.replace(/-.+$/u, '',).replace(/[^a-z]/gu, '',);
   const file = __dirname + '../../language/' + lang + '.yml';
@@ -35,7 +37,7 @@ const get = (key: string, ...args: string[]): string => {
   }
   let out = language[key];
   for (let pos = 0; pos < args.length; pos ++) {
-    out = out.replace(new RegExp(`%${ pos }%`, 'gu',), args[pos],);
+    out = out.replace(new RegExp(`%${ pos + NEXT }%`, 'gu',), args[pos],);
   }
   return out;
 };
