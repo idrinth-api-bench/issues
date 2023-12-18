@@ -12,13 +12,13 @@ const CONSTANTS = {
   PERCENT90: 0.9,
   ARRAY_LENGTH_OFFSET: 1,
 };
-const average = (
+const calculateAverage = (
   ...inputs: Array<number>
 ): number => Math.round(inputs.reduce((a, b,) => a+b,)/inputs.length,);
-const last = (
+const getLast = (
   input: Array<number>,
 ): number => input.length -CONSTANTS.ARRAY_LENGTH_OFFSET;
-const stdv = (avg: number, input: Array<number>,): number => {
+const calculateStandardDeviation = (avg: number, input: Array<number>,): number => {
   let variance = 0;
   for (const duration of input) {
     variance += (duration - avg) * (duration - avg) / input.length;
@@ -49,14 +49,14 @@ export default (result: ResultSet,): FinishedSet => {
     Math.floor(result.count * CONSTANTS.PERCENT10,),
     Math.ceil(result.count * CONSTANTS.PERCENT90,),
   );
-  const avg100 = average(...sorted100,);
-  const avg80 = average(...center80,);
-  const stdv100 = stdv(avg100, sorted100,);
-  const stdv80 = stdv(avg80, center80,);
+  const avg100 = calculateAverage(...sorted100,);
+  const avg80 = calculateAverage(...center80,);
+  const stdv100 = calculateStandardDeviation(avg100, sorted100,);
+  const stdv80 = calculateStandardDeviation(avg80, center80,);
   const min100 = sorted100[CONSTANTS.FIRST];
-  const max100 = sorted100[last(sorted100,)];
+  const max100 = sorted100[getLast(sorted100,)];
   const min80 = center80[CONSTANTS.FIRST];
-  const max80 = center80[last(center80,)];
+  const max80 = center80[getLast(center80,)];
   return {
     id: result.id,
     errors: result.errors,
@@ -65,11 +65,11 @@ export default (result: ResultSet,): FinishedSet => {
     stdv100,
     stdv80,
     avg100,
-    median100: average(min100, max100,),
+    median100: calculateAverage(min100, max100,),
     min100,
     max100,
     avg80,
-    median80: average(min80, max80,),
+    median80: calculateAverage(min80, max80,),
     min80,
     max80,
   };
