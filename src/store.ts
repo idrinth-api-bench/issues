@@ -1,5 +1,9 @@
 import {
-  writeFileSync, readFileSync, existsSync, mkdirSync, rmdirSync,
+  writeFileSync,
+  readFileSync,
+  existsSync,
+  mkdirSync,
+  rmdirSync,
 } from 'fs';
 import fsExtra from 'fs-extra/esm';
 import {
