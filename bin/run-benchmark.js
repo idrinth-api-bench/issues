@@ -2,6 +2,19 @@
 import {
   run,
 } from '../src/main.js';
+import {
+  config,
+} from 'dotenv';
+import reqlib from 'app-root-path';
+import {
+  pathExistsSync,
+} from 'fs-extra';
+
+if (pathExistsSync(reqlib + '/.env')) {
+  config({
+    path: reqlib + '/.env',
+  },);
+}
 
 const FIRST_ARGUMENT = 2;
 const SECOND_ARGUMENT = 3;
