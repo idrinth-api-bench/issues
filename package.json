@@ -75,7 +75,7 @@
     "lint": "eslint . --ext .js,.ts,.cjs,.json",
     "lint-fix": "eslint --fix . --ext .js,.ts,.cjs,.json",
     "test": "c8 mocha",
-    "clear": "rm src/*.js src/**/*.js",
+    "clear": "node tools/clear-js-files-from-src.js",
     "tsc": "tsc -p tsconfig.json",
     "prepublishOnly": "npm run tsc",
     "postpublishOnly": "npm run clear"
