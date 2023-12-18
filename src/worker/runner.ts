@@ -22,7 +22,11 @@ interface Callback {
   (arg: Answer,): void;
 }
 
-const send = (result: Result, msg: string, success: boolean,): Answer => ({
+const buildAnswer = (
+  result: Result,
+  msg: string,
+  success: boolean,
+): Answer => ({
   duration: result.duration,
   id: result.id,
   success,
@@ -32,8 +36,8 @@ const handlePre = async(task: Task,) => {
   if (task.pre) {
     for (const middleware of task.pre) {
       // eslint-disable-next-line no-await-in-loop
-      const ware: Middleware = await load(middleware,);
-      task.main = ware.prepare(task.main,);
+      const requestMiddleware: Middleware = await load(middleware,);
+      task.main = requestMiddleware.prepare(task.main,);
     }
   }
   return task.main;
@@ -43,10 +47,10 @@ const handlePost = async(task: Task, res:Result, callable: Callback,) => {
     for (const validator of task.post) {
       try {
         // eslint-disable-next-line no-await-in-loop
-        const ware: Middleware = await load(validator,);
-        ware.process(res,);
+        const validatorMiddleware: Middleware = await load(validator,);
+        validatorMiddleware.process(res,);
       } catch (er) {
-        callable(send(res, er+'', false,),);
+        callable(buildAnswer(res, er+'', false,),);
         return false;
       }
     }
@@ -54,19 +58,19 @@ const handlePost = async(task: Task, res:Result, callable: Callback,) => {
   return true;
 };
 export default async(task: Task, callable: Callback,): Promise<void> => {
-  const quest = await handlePre(task,);
-  const start = process.hrtime();
+  const requestConfig = await handlePre(task,);
+  const startTime = process.hrtime();
   request(
-    quest.method,
-    quest.url,
-    quest.body,
+    requestConfig.method,
+    requestConfig.url,
+    requestConfig.body,
     {
-      headers: quest.headers,
-      cookies: quest.cookies,
+      headers: requestConfig.headers,
+      cookies: requestConfig.cookies,
     },
     async(error, result,) => {
       if (error) {
-        callable(send({
+        callable(buildAnswer({
           duration: null,
           id: task.id,
           success: false,
@@ -75,16 +79,16 @@ export default async(task: Task, callable: Callback,): Promise<void> => {
         } as Result, error+'', false,),);
         return;
       }
-      const res = new Result(
+      const httpResult = new Result(
         task.id,
         task.main.url,
-        start,
+        startTime,
         process.hrtime(),
         result,
         task.post || [],
       );
-      if (await handlePost(task, res, callable,)) {
-        callable(send(res, '', true,),);
+      if (await handlePost(task, httpResult, callable,)) {
+        callable(buildAnswer(httpResult, '', true,),);
       }
     },);
 };
