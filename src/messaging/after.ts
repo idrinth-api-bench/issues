@@ -15,7 +15,7 @@ export default (
   logger: Logger,
   after: Thread,
   // eslint-disable-next-line max-params
-) => {
+): void => {
   progress.increment();
   if (job.after.length > EMPTY) {
     logger.debug(language('next_request',),);

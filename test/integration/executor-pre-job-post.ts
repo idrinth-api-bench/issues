@@ -29,7 +29,7 @@ import Job from '../../src/job.js';
 import NoopStorage from '../../src/storage/noop-storage.js';
 import makeConsoleMock from 'consolemock';
 import NoProgress from '../../src/progress/no-progress.js';
-import Counter from "../../src/counter";
+import Counter from '../../src/counter';
 
 const NONE = 0;
 chaiUse(chaiAsPromised,);

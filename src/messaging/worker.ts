@@ -69,7 +69,7 @@ export default (
   after: Thread,
   job: Job,
   // eslint-disable-next-line max-params
-) => {
+): void => {
   logger.debug(language('starting_validation', data.id,),);
   results[data.id] = results[data.id] || new ResultSet(data.id,);
   results[data.id].add(data,);

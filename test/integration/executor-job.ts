@@ -29,6 +29,7 @@ import Job from '../../src/job.js';
 import NoopStorage from '../../src/storage/noop-storage.js';
 import makeConsoleMock from 'consolemock';
 import NoProgress from '../../src/progress/no-progress.js';
+import Counter from '../../src/counter';
 
 const NONE = 0;
 chaiUse(chaiAsPromised,);
@@ -147,11 +148,13 @@ describe('executor@job', () => {
     oldConsole = console;
     // eslint-disable-next-line no-global-assign
     console = makeConsoleMock();
+    Counter.clear();
   },);
   after(() => {
     mock.restore();
     // eslint-disable-next-line no-global-assign
     console = oldConsole;
+    Counter.clear();
   },);
   const repeats = 2;
   const threads = 3;

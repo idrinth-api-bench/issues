@@ -22,7 +22,7 @@ const startResults = (
   resultHandler: Reporter,
   resultOutputDir: string,
   // eslint-disable-next-line max-params
-) => {
+): void => {
   if (! Counter.isEmpty('active',) || ! Counter.isEmpty('analyzing',)) {
     return;
   }
@@ -49,7 +49,7 @@ export default (
   reporter: Reporter,
   resultOutputDir: string,
   // eslint-disable-next-line max-params
-) => {
+): void => {
   finished[data.id] = data;
   resultStorage.store(data, now,);
   logger.debug(language('finished_analyzing', data.id,),);
