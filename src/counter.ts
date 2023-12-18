@@ -1,6 +1,7 @@
 const counter = {};
 const EMPTY = 0;
 const STEP = 1;
+
 export default class Counter {
   static increment(key: string,): void {
     counter[key] = (counter[key] || EMPTY) + STEP;
