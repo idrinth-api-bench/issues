@@ -16,7 +16,7 @@ describe('main', () => {
   it('should be a function', () => {
     expect(run,).to.be.a('function',);
   },);
-  it('can be called with 3 params', () => {
+  it('can be called with 4 params', () => {
     expect(run({}, ONE, ONE, [],),)
       .to.be.rejectedWith('Can\'t measure no tasks.',);
   },);

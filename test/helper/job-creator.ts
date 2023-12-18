@@ -3,7 +3,7 @@ import {
   expect, use as chaiUse,
 } from 'chai';
 import 'mocha';
-import * as url from 'url';
+import url from 'url';
 import chaiAsPromised from 'chai-as-promised';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 

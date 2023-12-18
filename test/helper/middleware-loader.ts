@@ -5,7 +5,7 @@ import {
 } from 'chai';
 import 'mocha';
 import chaiAsPromised from 'chai-as-promised';
-import * as url from 'url';
+import url from 'url';
 import {
   realpathSync,
 } from 'fs';
