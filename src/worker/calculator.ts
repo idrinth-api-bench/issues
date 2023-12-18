@@ -18,7 +18,10 @@ const calculateAverage = (
 const getLast = (
   input: Array<number>,
 ): number => input.length -CONSTANTS.ARRAY_LENGTH_OFFSET;
-const calculateStandardDeviation = (avg: number, input: Array<number>,): number => {
+const calculateStandardDeviation = (
+  avg: number,
+  input: Array<number>,
+): number => {
   let variance = 0;
   for (const duration of input) {
     variance += (duration - avg) * (duration - avg) / input.length;
