@@ -10,7 +10,7 @@ import {
   pathExistsSync,
 } from 'fs-extra';
 
-if (pathExistsSync(reqlib + '/.env')) {
+if (pathExistsSync(reqlib + '/.env',)) {
   config({
     path: reqlib + '/.env',
   },);

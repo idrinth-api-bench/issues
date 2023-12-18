@@ -10,6 +10,9 @@ export interface Param {
     envName: string;
 }
 
+const STRING_LIMITER_REMOVAL_START = 1;
+const STRING_LIMITER_REMOVAL_LENGTH = 2;
+
 const getEnv = (name: string, defaultValue: string,): string => {
   for (const key of Object.keys(process.env,)) {
     if (key.toUpperCase() === name) {
@@ -78,19 +81,22 @@ const parseParameterString = (parameter: string,): Param => {
   const value = buildParameter(parameter,);
   value.envName = snakeCase(value.name,).toUpperCase();
   switch (value.type) {
-  case 'number':
-    value.value = Number.parseFloat(getEnv(value.name, value.default,),);
-    break;
-  case 'bool':
-  case 'boolean':
-    value.value = getEnv(value.name, value.default,) === 'true';
-    break;
-  case 'string':
-  default:
-    // eslint-disable-next-line no-magic-numbers
-    value.default = value.default.substring(1, value.default.length-2,);
-    value.value = getEnv(value.name, value.default,);
-    break;
+    case 'number':
+      value.value = Number.parseFloat(getEnv(value.name, value.default,),);
+      break;
+    case 'bool':
+    case 'boolean':
+      value.value = getEnv(value.name, value.default,) === 'true';
+      break;
+    case 'string':
+    default:
+      value.default = value.default
+        .substring(
+          STRING_LIMITER_REMOVAL_START,
+          value.default.length-STRING_LIMITER_REMOVAL_LENGTH,
+        );
+      value.value = getEnv(value.name, value.default,);
+      break;
   }
   return value;
 };

@@ -3,7 +3,6 @@
 /nbproject
 /README.md
 .eslintrc.yml
-.travis.yml
 /result.json
 /result.csv
 /.nyc_output
@@ -13,3 +12,4 @@
 /fixtures
 /.github
 /.idea
+/tools
