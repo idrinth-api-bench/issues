@@ -1,7 +1,6 @@
 import mock from 'mock-fs';
-import executor, {
-  Thread,
-} from '../../src/executor.js';
+import executor from '../../src/executor.js';
+import Thread from '../../src/worker/thread.js';
 import {
   use as chaiUse,
   expect,
@@ -30,6 +29,7 @@ import Job from '../../src/job.js';
 import NoopStorage from '../../src/storage/noop-storage.js';
 import makeConsoleMock from 'consolemock';
 import NoProgress from '../../src/progress/no-progress.js';
+import Counter from "../../src/counter";
 
 const NONE = 0;
 chaiUse(chaiAsPromised,);
@@ -126,7 +126,7 @@ class FakeWorker implements Thread {
     const c = this.handler;
     const result = this.result;
     const next = 1;
-    setTimeout(() => c(result,), next,);
+    setTimeout(() => c(result, this,), next,);
   }
 
   public terminate(): void {
@@ -135,7 +135,7 @@ class FakeWorker implements Thread {
   }
 }
 
-describe('executor', () => {
+describe('executor@pre-post-job', () => {
   let oldConsole;
   before(() => {
     const config = {
@@ -148,11 +148,13 @@ describe('executor', () => {
     oldConsole = console;
     // eslint-disable-next-line no-global-assign
     console = makeConsoleMock();
+    Counter.clear();
   },);
   after(() => {
     mock.restore();
     // eslint-disable-next-line no-global-assign
     console = oldConsole;
+    Counter.clear();
   },);
   const repeats = 2;
   const threads = 3;

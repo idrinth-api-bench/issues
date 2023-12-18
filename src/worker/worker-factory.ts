@@ -15,8 +15,8 @@ const buildWorker = (
   // eslint-disable-next-line @typescript-eslint/ban-types
   onMessage: Function,
 ) : Thread => {
-  const path = realpathSync(`${ __dirname }/../worker/${ file }.js`,);
-  const worker = new Worker(realpathSync(path,),);
+  const path = realpathSync(`${ __dirname }../../worker/${ file }.js`,);
+  const worker = new Worker(path,);
   worker.on('message', (message,) => onMessage(message, worker,),);
   return worker;
 };

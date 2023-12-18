@@ -70,7 +70,8 @@ const executor = (
       reportModifiers,
       resultHandler,
       resultOutputDir,
-    ),);
+    ),
+  );
   const after = buildWorker(
     Worker,
     'webrequest',

@@ -14,6 +14,7 @@ import {
 } from 'child_process';
 import url from 'url';
 import NoProgress from '../../src/progress/no-progress.js';
+import Counter from "../../src/counter";
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 const ONE = 1;
@@ -35,9 +36,11 @@ describe('main@job', function() {
     mock(config, {
       createCwd: false,
     },);
+    Counter.clear();
   },);
   after(() => {
     mock.restore();
+    Counter.clear();
   },);
   it('should write results', async() => {
     await delay(WAIT_DELAY,);

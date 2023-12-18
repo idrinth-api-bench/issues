@@ -1,7 +1,6 @@
 import mock from 'mock-fs';
-import executor, {
-  Thread,
-} from '../../src/executor.js';
+import executor from '../../src/executor.js';
+import Thread from '../../src/worker/thread.js';
 import {
   use as chaiUse,
   expect,
@@ -126,7 +125,7 @@ class FakeWorker implements Thread {
     const c = this.handler;
     const result = this.result;
     const next = 1;
-    setTimeout(() => c(result,), next,);
+    setTimeout(() => c(result, this,), next,);
   }
 
   public terminate(): void {

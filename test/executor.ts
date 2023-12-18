@@ -1,7 +1,6 @@
 import mock from 'mock-fs';
-import executor, {
-  Thread,
-} from '../src/executor.js';
+import executor from '../src/executor.js';
+import Thread from '../src/worker/thread.js';
 import {
   use as chaiUse,
   expect,
@@ -26,6 +25,7 @@ import {
 import Job from '../src/job.js';
 import NoopStorage from '../src/storage/noop-storage.js';
 import NoProgress from '../src/progress/no-progress.js';
+import Counter from "../src/counter";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const NOOP = () => {};
@@ -124,7 +124,7 @@ class FakeWorker implements Thread {
     const c = this.handler;
     const result = this.result;
     const next = 1;
-    setTimeout(() => c(result,), next,);
+    setTimeout(() => c(result, this,), next,);
   }
 
   public terminate(): void {
@@ -142,9 +142,11 @@ describe('executor', () => {
     mock(config, {
       createCwd: false,
     },);
+    Counter.clear();
   },);
   after(() => {
     mock.restore();
+    Counter.clear();
   },);
   const repeats = 2;
   const threads = 3;

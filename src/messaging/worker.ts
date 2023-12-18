@@ -53,7 +53,7 @@ const startAnalyzing = (
   }
   logger.info(language('finished_requests', id,),);
   logger.debug(language('starting_analyzation', id,),);
-  Counter.increment('analysing',);
+  Counter.increment('analyzing',);
   calculator.postMessage(results[id],);
 };
 

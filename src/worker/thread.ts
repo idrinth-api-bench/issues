@@ -4,7 +4,7 @@ interface Thread {
   postMessage: (param: unknown) => void;
   on: (
     event: Event,
-    handler: (message: unknown) => void
+    handler: (message: unknown, self: Thread) => void
   ) => void;
 }
 export default Thread;
