@@ -15,7 +15,7 @@ import {
 import {
   sep,
 } from 'path';
-import * as url from 'url';
+import url from 'url';
 import language from './helper/language.js';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 

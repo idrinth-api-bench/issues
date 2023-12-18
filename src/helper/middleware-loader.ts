@@ -4,7 +4,7 @@ import {
 import {
   Middleware,
 } from '../middleware.js';
-import * as reqlib from 'app-root-path';
+import reqlib from 'app-root-path';
 import include from './include-default.js';
 import {
   realpathSync,
