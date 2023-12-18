@@ -9,7 +9,7 @@ import Thread from '../worker/thread.js';
 
 const EMPTY = 0;
 
-export default (
+const onAfter = (
   progress: Progress,
   job: Job,
   logger: Logger,
@@ -26,3 +26,4 @@ export default (
   after.terminate();
   logger.debug(language('after_done',),);
 };
+export default onAfter;

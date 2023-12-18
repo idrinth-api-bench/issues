@@ -8,7 +8,7 @@ import Thread from '../worker/thread.js';
 
 const EMPTY = 0;
 
-export default (
+const onBefore = (
   progress: Progress,
   job: Job,
   logger: Logger,
@@ -25,3 +25,4 @@ export default (
   before.terminate();
   startMain();
 };
+export default onBefore;

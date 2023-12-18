@@ -57,7 +57,7 @@ const startAnalyzing = (
   calculator.postMessage(results[id],);
 };
 
-export default (
+const onWorker = (
   data: ValidationResult,
   progress: Progress,
   logger: Logger,
@@ -85,3 +85,4 @@ export default (
   startAfter(after, logger, progress, job,);
   worker.terminate();
 };
+export default onWorker;

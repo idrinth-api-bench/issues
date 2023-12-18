@@ -37,7 +37,7 @@ const startResults = (
   resultHandler(finished, resultOutputDir,);
   logger.info(language('done',),);
 };
-export default (
+const onCalculate = (
   data: FinishedSet,
   finished: FinishedRun,
   now: Date,
@@ -64,3 +64,4 @@ export default (
     resultOutputDir,
   );
 };
+export default onCalculate;
