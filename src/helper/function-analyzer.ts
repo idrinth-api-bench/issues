@@ -82,11 +82,11 @@ const parseParameterString = (parameter: string,): Param => {
   value.envName = snakeCase(value.name,).toUpperCase();
   switch (value.type) {
     case 'number':
-      value.value = Number.parseFloat(getEnv(value.name, value.default,),);
+      value.value = Number.parseFloat(getEnv(value.envName, value.default,),);
       break;
     case 'bool':
     case 'boolean':
-      value.value = getEnv(value.name, value.default,) === 'true';
+      value.value = getEnv(value.envName, value.default,) === 'true';
       break;
     case 'string':
     default:
@@ -95,7 +95,7 @@ const parseParameterString = (parameter: string,): Param => {
           STRING_LIMITER_REMOVAL_START,
           value.default.length-STRING_LIMITER_REMOVAL_LENGTH,
         );
-      value.value = getEnv(value.name, value.default,);
+      value.value = getEnv(value.envName, value.default,);
       break;
   }
   return value;
