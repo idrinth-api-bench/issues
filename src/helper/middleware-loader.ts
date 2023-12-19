@@ -16,7 +16,7 @@ const cache: HashMap = {};
 const resolve = (path: string,): string => {
   const shortened = path.substring(SECOND,);
   if (path[FIRST] === '^') {
-    return FRAMEWORK_ROOT + 'src/middlewares/' + shortened + '.js';
+    return FRAMEWORK_ROOT + '/src/middlewares/' + shortened + '.js';
   }
   if (path[FIRST] === '#') {
     return reqlib + '/src/middlewares/' + shortened + '.js';
