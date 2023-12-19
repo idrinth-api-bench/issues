@@ -16,7 +16,7 @@ const STRING_LIMITER_REMOVAL_LENGTH = 2;
 const getEnv = (name: string, defaultValue: string,): string => {
   for (const key of Object.keys(process.env,)) {
     if (key.toUpperCase() === name) {
-      return process[key];
+      return process.env[key];
     }
   }
   return defaultValue;
