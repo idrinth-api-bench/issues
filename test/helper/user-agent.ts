@@ -10,17 +10,17 @@ describe('helper/user-agent', () => {
   },);
   it('should match expectations', () => {
     expect(userAgent,).to.match(
-      /^@idrinth\/api-bench\/[0-9]+\.[0-9]+ needle\/[0-9]+\.[0-9]+$/u,
+      /^@idrinth\/api-bench\/[0-9]+\.[0-9]+ @idrinth\/api-bench\/[0-9]+\.[0-9]+ needle\/[0-9]+\.[0-9]+$/u,
     );
   },);
   it('should not be needle version 0.0', () => {
     expect(userAgent,).to.not.match(
-      /^@idrinth\/api-bench\/[0-9]+\.[0-9]+ needle\/0\.0$/u,
+      /^@idrinth\/api-bench\/[0-9]+\.[0-9]+ @idrinth\/api-bench\/[0-9]+\.[0-9]+ needle\/0\.0$/u,
     );
   },);
   it('should not be api-bench version 0.0', () => {
     expect(userAgent,).to.not.match(
-      /^@idrinth\/api-bench\/0\.0 needle\/[0-9]+\.[0-9]+$/u,
+      /^@idrinth\/api-bench\/[0-9]+\.[0-9]+ @idrinth\/api-bench\/0\.0 needle\/[0-9]+\.[0-9]+$/u,
     );
   },);
 },);
