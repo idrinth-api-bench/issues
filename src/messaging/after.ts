@@ -6,8 +6,9 @@ import {
   Logger,
 } from '../logger/logger.js';
 import Thread from '../worker/thread.js';
-
-const EMPTY = 0;
+import {
+  EMPTY,
+} from '../constants.js';
 
 const onAfter = (
   progress: Progress,

@@ -16,8 +16,11 @@ import {
 import store from '../store.js';
 import Job from '../job.js';
 import Counter from '../counter.js';
+import ResultMap from '../result-map.js';
+import {
+  EMPTY,
+} from '../constants.js';
 
-const EMPTY = 0;
 
 const startAfter = (
   after: Thread,
@@ -45,7 +48,7 @@ const startAnalyzing = (
   total: number,
   logger: Logger,
   calculator: Thread,
-  results: {[z: string]: ResultSet},
+  results: ResultMap,
   // eslint-disable-next-line max-params
 ): void => {
   if (results[id].count !== total) {

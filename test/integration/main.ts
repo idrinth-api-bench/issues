@@ -14,7 +14,7 @@ import {
 } from 'child_process';
 import url from 'url';
 import NoProgress from '../../src/progress/no-progress.js';
-import Counter from '../../src/counter';
+import Counter from '../../src/counter.js';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 const ONE = 1;

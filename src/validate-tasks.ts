@@ -2,8 +2,9 @@ import {
   Task,
 } from './task.js';
 import language from './helper/language.js';
-
-const EMPTY = 0;
+import {
+  EMPTY,
+} from './constants.js';
 
 const noDuplicateIDs = (tasks: Array<Task>,) => {
   const ids: Array<string> = [];

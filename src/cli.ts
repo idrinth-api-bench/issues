@@ -8,11 +8,12 @@ import reqlib from 'app-root-path';
 import {
   existsSync,
 } from 'fs';
-
-const FIRST_ARGUMENT = 2;
-const SECOND_ARGUMENT = 3;
-const THIRD_ARGUMENT = 4;
-const BASE_10_RADIX = 10;
+import {
+  BASE_10_RADIX,
+  FIRST_ARGUMENT,
+  SECOND_ARGUMENT,
+  THIRD_ARGUMENT,
+} from './constants.js';
 
 export default async(args: string[]) => {
   const threads = Number.parseInt(

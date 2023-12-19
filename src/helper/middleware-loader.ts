@@ -7,18 +7,16 @@ import {
 import reqlib from 'app-root-path';
 import include from './include-default.js';
 import {
-  realpathSync,
-} from 'fs';
-import url from 'url';
-const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
+  FIRST,
+  FRAMEWORK_ROOT,
+  SECOND,
+} from "../constants.js";
 
-const FIRST = 0;
-const SECOND = 1;
 const cache: HashMap = {};
 const resolve = (path: string,): string => {
   const shortened = path.substring(SECOND,);
   if (path[FIRST] === '^') {
-    return realpathSync(__dirname + '/../middlewares/' + shortened + '.js',);
+    return FRAMEWORK_ROOT + 'src/middlewares/' + shortened + '.js';
   }
   if (path[FIRST] === '#') {
     return reqlib + '/src/middlewares/' + shortened + '.js';

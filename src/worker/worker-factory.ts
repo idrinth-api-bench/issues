@@ -4,10 +4,8 @@ import {
 import Thread from './thread.js';
 import WorkerConstructor from './worker-constructor.js';
 import {
-  fileURLToPath,
-} from 'url';
-
-const __dirname = fileURLToPath(new URL('.', import.meta.url,),);
+  FRAMEWORK_ROOT,
+} from '../constants.js';
 
 const buildWorker = (
   Worker: WorkerConstructor,
@@ -15,7 +13,7 @@ const buildWorker = (
   // eslint-disable-next-line @typescript-eslint/ban-types
   onMessage: Function,
 ) : Thread => {
-  const path = realpathSync(`${ __dirname }../../worker/${ file }.js`,);
+  const path = realpathSync(`${ FRAMEWORK_ROOT }/worker/${ file }.js`,);
   const worker = new Worker(path,);
   worker.on('message', (message,) => onMessage(message, worker,),);
   return worker;

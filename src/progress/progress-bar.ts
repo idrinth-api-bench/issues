@@ -3,9 +3,10 @@ import {
 } from 'cli-progress';
 import Job from '../job.js';
 import Progress from './progress.js';
-
-const SINGLE = 1;
-const EMPTY = 0;
+import {
+  EMPTY,
+  SINGLE,
+} from '../constants.js';
 
 class ProgressBar implements Progress {
   private bar: SingleBar;

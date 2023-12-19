@@ -25,8 +25,9 @@ import Counter from './counter.js';
 import WorkerConstructor from './worker/worker-constructor.js';
 import buildWorker from './worker/worker-factory.js';
 import Thread from './worker/thread.js';
-
-const EMPTY = 0;
+import {
+  EMPTY,
+} from './constants.js';
 
 /* eslint max-params:0 */
 const executor = (

@@ -1,14 +1,17 @@
+import {
+  COUNTER_STEP,
+  EMPTY,
+} from './constants.js';
+
 const counter = {};
-const EMPTY = 0;
-const STEP = 1;
 
 export default class Counter {
   static increment(key: string,): void {
-    counter[key] = (counter[key] || EMPTY) + STEP;
+    counter[key] = (counter[key] || EMPTY) + COUNTER_STEP;
   }
 
   static decrement(key: string,): void {
-    counter[key] = (counter[key] || EMPTY) - STEP;
+    counter[key] = (counter[key] || EMPTY) - COUNTER_STEP;
   }
 
   static isEmpty(key: string,): boolean {

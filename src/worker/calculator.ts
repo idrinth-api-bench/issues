@@ -4,20 +4,20 @@ import {
 import {
   FinishedSet,
 } from '../finished-set.js';
+import {
+  ARRAY_LENGTH_OFFSET,
+  EMPTY,
+  FIRST,
+  PERCENT10,
+  PERCENT90
+} from '../constants.js';
 
-const CONSTANTS = {
-  EMPTY: 0,
-  FIRST: 0,
-  PERCENT10: 0.1,
-  PERCENT90: 0.9,
-  ARRAY_LENGTH_OFFSET: 1,
-};
 const calculateAverage = (
   ...inputs: Array<number>
 ): number => Math.round(inputs.reduce((a, b,) => a+b,)/inputs.length,);
 const getLast = (
   input: Array<number>,
-): number => input.length -CONSTANTS.ARRAY_LENGTH_OFFSET;
+): number => input.length -ARRAY_LENGTH_OFFSET;
 const calculateStandardDeviation = (
   avg: number,
   input: Array<number>,
@@ -29,7 +29,7 @@ const calculateStandardDeviation = (
   return Math.sqrt(variance,);
 };
 export default (result: ResultSet,): FinishedSet => {
-  if (result.durations.length === CONSTANTS.EMPTY) {
+  if (result.durations.length === EMPTY) {
     return {
       id: result.id,
       errors: result.errors,
@@ -49,16 +49,16 @@ export default (result: ResultSet,): FinishedSet => {
   }
   const sorted100 = result.durations.sort((a: number, b: number,) => a-b,);
   const center80 = sorted100.slice(
-    Math.floor(result.count * CONSTANTS.PERCENT10,),
-    Math.ceil(result.count * CONSTANTS.PERCENT90,),
+    Math.floor(result.count * PERCENT10,),
+    Math.ceil(result.count * PERCENT90,),
   );
   const avg100 = calculateAverage(...sorted100,);
   const avg80 = calculateAverage(...center80,);
   const stdv100 = calculateStandardDeviation(avg100, sorted100,);
   const stdv80 = calculateStandardDeviation(avg80, center80,);
-  const min100 = sorted100[CONSTANTS.FIRST];
+  const min100 = sorted100[FIRST];
   const max100 = sorted100[getLast(sorted100,)];
-  const min80 = center80[CONSTANTS.FIRST];
+  const min80 = center80[FIRST];
   const max80 = center80[getLast(center80,)];
   return {
     id: result.id,

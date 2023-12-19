@@ -24,9 +24,11 @@ import ProgressBar from './progress/progress-bar.js';
 import {
   locale,
 } from './helper/language.js';
-
-const DEFAULT_THREADS = 10;
-const DEFAULT_REPETITIONS = 1000;
+import {
+  DEFAULT_LANGUAGE,
+  DEFAULT_REPETITIONS,
+  DEFAULT_THREADS,
+} from './constants.js';
 
 // eslint-disable-next-line complexity
 export const run = async(
@@ -44,7 +46,7 @@ export const run = async(
   job?: Job|Array<Task>|undefined,
   // eslint-disable-next-line max-params
 ): Promise<void> => {
-  await locale(configuration.language || 'en',);
+  await locale(configuration.language || DEFAULT_LANGUAGE,);
   if (typeof configuration.logger === 'undefined') {
     configuration.logger = new NullLogger();
   }

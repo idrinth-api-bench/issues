@@ -1,8 +1,9 @@
 import {
   ValidationResult,
 } from './validation-result.js';
-
-const InitialZero = 0;
+import {
+  INITIAL_ZERO,
+} from './constants.js';
 
 export class ResultSet {
   public errors: number;
@@ -14,8 +15,8 @@ export class ResultSet {
   public msgs: {[msg: string]: number};
 
   public constructor(public readonly id: string,) {
-    this.errors = InitialZero;
-    this.count = InitialZero;
+    this.errors = INITIAL_ZERO;
+    this.count = INITIAL_ZERO;
     this.durations = [];
     this.msgs = {};
   }
@@ -29,7 +30,7 @@ export class ResultSet {
       this.errors ++;
     }
     if (result.msg) {
-      this.msgs[result.msg] = this.msgs[result.msg] || InitialZero;
+      this.msgs[result.msg] = this.msgs[result.msg] || INITIAL_ZERO;
       this.msgs[result.msg] ++;
     }
   }

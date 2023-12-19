@@ -25,21 +25,20 @@ const cli: Reporter = (
     ],
   },);
   for (const id of Object.getOwnPropertyNames(results,)) {
-    const vals = results[id];
     table.push([
-      vals.id,
-      vals.errors,
-      vals.count,
-      vals.avg100,
-      vals.median100,
-      vals.min100,
-      vals.max100,
-      vals.avg80,
-      vals.median80,
-      vals.min80,
-      vals.max80,
-      vals.stdv80,
-      vals.stdv100,
+      results[id].id,
+      results[id].errors,
+      results[id].count,
+      results[id].avg100,
+      results[id].median100,
+      results[id].min100,
+      results[id].max100,
+      results[id].avg80,
+      results[id].median80,
+      results[id].min80,
+      results[id].max80,
+      results[id].stdv80,
+      results[id].stdv100,
     ],);
   }
   // eslint-disable-next-line no-console

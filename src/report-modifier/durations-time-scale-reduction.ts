@@ -2,8 +2,9 @@ import ReportModifier from './report-modifier.js';
 import {
   FinishedSet,
 } from '../finished-set.js';
-
-const THOUSAND = 1000;
+import {
+  THOUSAND,
+} from '../constants.js';
 
 export default class DurationsTimeScaleReduction implements ReportModifier {
   // eslint-disable-next-line class-methods-use-this

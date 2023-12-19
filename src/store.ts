@@ -15,12 +15,13 @@ import {
 import {
   sep,
 } from 'path';
-import url from 'url';
 import language from './helper/language.js';
-const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
+import {
+  FRAMEWORK_ROOT
+} from './constants.js';
 
 const hash = createHash('sha256',)
-  .update(__dirname,)
+  .update(FRAMEWORK_ROOT,)
   .digest('hex',);
 const id = hash + process.pid;
 const cachefolder: string = tmpdir() + sep + 'api-bench' + sep + '_' + id;

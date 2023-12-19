@@ -11,15 +11,14 @@ import {
   HashMap,
 } from '../hashmap.js';
 import {
-  fileURLToPath,
-} from 'url';
-const __dirname = fileURLToPath(new URL('.', import.meta.url,),);
+  FRAMEWORK_ROOT,
+} from "../constants.js";
 
 const NEXT = 1;
 
 const read = async(lang: string,) : Promise<HashMap> => {
   lang = lang.replace(/-.+$/u, '',).replace(/[^a-z]/gu, '',);
-  const file = __dirname + '../../language/' + lang + '.yml';
+  const file = FRAMEWORK_ROOT + '/language/' + lang + '.yml';
   if (! await pathExists(file,)) {
     return {};
   }
