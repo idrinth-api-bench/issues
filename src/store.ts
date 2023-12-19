@@ -17,7 +17,7 @@ import {
 } from 'path';
 import language from './helper/language.js';
 import {
-  FRAMEWORK_ROOT
+  FRAMEWORK_ROOT,
 } from './constants.js';
 
 const hash = createHash('sha256',)

@@ -21,7 +21,6 @@ import {
   EMPTY,
 } from '../constants.js';
 
-
 const startAfter = (
   after: Thread,
   logger: Logger,

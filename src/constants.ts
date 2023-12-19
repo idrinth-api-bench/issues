@@ -9,7 +9,11 @@ export const EMPTY = 0;
 export const INITIAL_ZERO = 0;
 export const FIRST_ARGUMENT = 2;
 export const SECOND_ARGUMENT = 3;
-export const FRAMEWORK_ROOT = realpathSync(fileURLToPath(new URL('.', import.meta.url,),) + '../');
+export const FRAMEWORK_ROOT = realpathSync(
+  fileURLToPath(
+    new URL('.', import.meta.url,),
+  ) + '../',
+);
 export const THIRD_ARGUMENT = 4;
 export const BASE_10_RADIX = 10;
 export const COUNTER_STEP = 1;

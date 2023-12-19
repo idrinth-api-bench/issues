@@ -15,7 +15,7 @@ import {
   THIRD_ARGUMENT,
 } from './constants.js';
 
-export default async(args: string[]) => {
+export default async(args: string[],) => {
   const threads = Number.parseInt(
     args[FIRST_ARGUMENT] || '1',
     BASE_10_RADIX,

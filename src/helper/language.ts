@@ -12,7 +12,7 @@ import {
 } from '../hashmap.js';
 import {
   FRAMEWORK_ROOT,
-} from "../constants.js";
+} from '../constants.js';
 
 const NEXT = 1;
 

@@ -9,7 +9,7 @@ import {
   EMPTY,
   FIRST,
   PERCENT10,
-  PERCENT90
+  PERCENT90,
 } from '../constants.js';
 
 const calculateAverage = (

@@ -6,13 +6,16 @@ import {
 import chaiAsPromised from 'chai-as-promised';
 import 'mocha';
 
-useChai(chaiAsPromised);
+useChai(chaiAsPromised,);
 
 describe('cli', () => {
   it('should be a function', () => {
     expect(cli,).to.be.a('function',);
   },);
   it('cli() throw when given 0 total tasks', () => {
-    expect(cli(['0', '0',],),).to.eventually.be.rejectedWith();
+    expect(cli([
+      '0',
+      '0',
+    ],),).to.eventually.be.rejectedWith();
   },);
 },);

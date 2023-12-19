@@ -10,7 +10,7 @@ import {
   FIRST,
   FRAMEWORK_ROOT,
   SECOND,
-} from "../constants.js";
+} from '../constants.js';
 
 const cache: HashMap = {};
 const resolve = (path: string,): string => {
