@@ -34,7 +34,7 @@ export default async(root: string,): Promise<Job> => {
     const dir = root + '/src/routes/' + snakeCase(type,);
     if (existsSync(dir,)) {
       for (const file of readdirSync(dir,)) {
-        if (file.match(/\.c?js|\.ts|\.json/u,)) {
+        if (file.match(/\.c?js|\.json/u,)) {
           // eslint-disable-next-line no-await-in-loop
           job[type].push((await include(dir + '/' + file,)) as Task,);
         }
