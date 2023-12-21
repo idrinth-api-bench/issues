@@ -2,37 +2,87 @@ import {
   mkdirSync,
   existsSync,
   writeFileSync,
+  cpSync as copySync,
 } from 'fs';
 import {
-  FIRST_ARGUMENT,
+  FIRST_ARGUMENT, FRAMEWORK_ROOT,
 } from './constants.js';
 import language from './helper/language.js';
 import {
-  spawn,
+  exec,
 } from 'child_process';
 
-export default async(args: string[], cwd: string,) => {
+export default (args: string[], cwd: string,) => {
   const name = args[FIRST_ARGUMENT] || 'benchmark';
-
-  if (existsSync(cwd + '/' + name,)) {
+  const root = cwd + '/' + name;
+  if (existsSync(root,)) {
     throw new Error(language('already_created',),);
   }
-  mkdirSync(cwd + '/' + name,);
-  mkdirSync(cwd + '/' + name + '/src',);
-  mkdirSync(cwd + '/' + name + '/src/routes',);
-  mkdirSync(cwd + '/' + name + '/src/routes/main',);
-  mkdirSync(cwd + '/' + name + '/src/routes/before',);
-  writeFileSync(cwd + '/' + name + '/package.json', JSON.stringify({
+  mkdirSync(root,);
+  mkdirSync(root + '/src',);
+  mkdirSync(root + '/test',);
+  mkdirSync(root + '/src/routes',);
+  mkdirSync(root + '/src/routes/main',);
+  mkdirSync(root + '/src/routes/before',);
+  writeFileSync(root + '/package.json', JSON.stringify({
     name,
     private: true,
+    type: 'module',
     dependencies: {
       '@idrinth/api-bench': '^2.4.5',
     },
+    devDependencies: {
+      typescript: '^2.4.5',
+      mocha: '*',
+      chai: '',
+      'ts-node': '',
+      c8: '',
+    },
     scripts: {
-      start: 'run-benchmark',
+      start: 'tsc -p tsconfig.json && run-benchmark',
+      test: 'c8 mocha test',
+      lint: 'eslint . --ext .js,.ts,.cjs,.json',
+      'lint-fix': 'eslint --fix . --ext .js,.ts,.cjs,.json',
     },
   },),);
-  spawn('npm install', {
-    cwd: cwd + '/' + name,
-  },);
+  writeFileSync(root + '/tsconfig.json', JSON.stringify({
+    compilerOptions: {
+      experimentalDecorators: true,
+      module: 'NodeNext',
+      lib: [],
+      target: 'ESNext',
+      esModuleInterop: true,
+      moduleResolution: 'NodeNext',
+      resolveJsonModule: true,
+    },
+    typeRoots: [ '@types', ],
+    include: [ 'src/**/*.ts', ],
+    'ts-node': {
+      transpileOnly: true,
+      moduleTypes: {
+        '*.ts': 'cjs',
+      },
+    },
+  },),);
+  writeFileSync(root + '/.gitignore', '/nbproject\n' +
+    '/node_modules\n' +
+    '/result.json\n' +
+    '/result.csv\n' +
+    '/result.html\n' +
+    '/src/**/*.js\n' +
+    '/.idea\n',);
+  copySync(FRAMEWORK_ROOT + '/.editorconfig', root + '/.editorconfig',);
+  copySync(FRAMEWORK_ROOT + '/.eslintrc.yml', root + '/.eslintrc.yml',);
+  copySync(FRAMEWORK_ROOT + '/.mocharc.cjs', root + '/.mocharc.cjs',);
+  copySync(FRAMEWORK_ROOT + '/.nycrc.json', root + '/.nycrc.json',);
+  exec('npm install', {
+    cwd: root,
+  },)
+    .on('error', console.error,)
+    .on('exit', () => {},);
+  exec('git init', {
+    cwd: root,
+  },)
+    .on('error', console.error,)
+    .on('exit', () => {},);
 };

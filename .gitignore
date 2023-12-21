@@ -2,6 +2,7 @@
 /node_modules
 /result.json
 /result.csv
+/result.html
 /.nyc_output
 /coverage
 /src/**/*.js
