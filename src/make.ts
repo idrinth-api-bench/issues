@@ -77,12 +77,8 @@ export default (args: string[], cwd: string,) => {
   copySync(FRAMEWORK_ROOT + '/.nycrc.json', root + '/.nycrc.json',);
   exec('npm install', {
     cwd: root,
-  },)
-    .on('error', console.error,)
-    .on('exit', () => {},);
+  },);
   exec('git init', {
     cwd: root,
-  },)
-    .on('error', console.error,)
-    .on('exit', () => {},);
+  },);
 };
