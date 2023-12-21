@@ -27,3 +27,5 @@ export const PERCENT90 = 0.9;
 export const ARRAY_LENGTH_OFFSET = 1;
 export const THOUSAND = 1000;
 export const SINGLE = 1;
+export const STRING_LIMITER_REMOVAL_START = 1;
+export const STRING_LIMITER_REMOVAL_LENGTH = 1;

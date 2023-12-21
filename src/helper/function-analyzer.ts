@@ -1,8 +1,12 @@
 import {
   snakeCase,
 } from 'change-case';
-import {FIRST} from "../constants.js";
-import language from "./language.js";
+import {
+  FIRST,
+  STRING_LIMITER_REMOVAL_START,
+  STRING_LIMITER_REMOVAL_LENGTH,
+} from '../constants.js';
+import language from './language.js';
 
 export interface Param {
     name: string;
@@ -11,9 +15,6 @@ export interface Param {
     value: string|number|boolean;
     envName: string;
 }
-
-const STRING_LIMITER_REMOVAL_START = 1;
-const STRING_LIMITER_REMOVAL_LENGTH = 1;
 
 const getEnv = (name: string, defaultValue: string,): string => {
   for (const key of Object.keys(process.env,)) {

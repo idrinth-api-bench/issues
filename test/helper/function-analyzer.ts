@@ -104,6 +104,6 @@ describe('helper/function-analyzer', () => {
   it('should throw when handling one broken param', () => {
     // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars
     expect(() => analyze((/*String*/ myBool = false,) => {},),)
-      .to.throw('Can\'t handle variable default value on myBool.');
+      .to.throw('Can\'t handle variable default value on myBool.',);
   },);
 },);
