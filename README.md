@@ -13,7 +13,18 @@ Additionally, this tool separates the validation thread from the thread processi
 
 Basically require main/include main and supply the executor method with required parameters. Tasks defined in `src/routes`-subfolders `before`, `before_task`, `before_each`, `main`, `after_each`, `after_task` and `after` will be used to automatically fill the Job processed by the executor.
 
-Parameters of contained functions will be filled with environment variable values of the respective name (`aBc` -> `A_BC`).
+### Autowiring Route Parameters
+
+Parameters of contained functions will be filled with environment variable values of the respective name (`aBc` -> `A_BC`). Types will be automatically applied if there is either a default value to get the type from or a comment like `/* boolean */ parameter` added in front of the parameter.
+
+Comment types will always win over default value types. If those two don't match, you might get weird results.
+
+Sadly a few things can't be done:
+
+- Do not use constants for their default values, they can't be properly analysed and will throw an Error.
+- Do not use arrays or objects as default values, they can't be autowired.
+- Destructuring is not supported
+- Default value types NOT of the same type as the parameter
 
 ### Middlewares
 
@@ -58,4 +69,4 @@ As usual with my projects this is MIT-licensed.
 
 ## Support
 
-You can reach me via discord at [Idrinth's Discord](https://discord.gg/xHSF8CGPTh).
+Additionally to support requests via issue, you can reach me via discord at [Idrinth's Discord](https://discord.gg/xHSF8CGPTh).

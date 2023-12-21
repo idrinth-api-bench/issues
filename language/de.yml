@@ -18,5 +18,6 @@ after_done: Nachgelagerte Anfragen abgeschlossen.
 no_response_status: Anfrage bekam keinen Status zurück
 response_status_above_2xx: Anfrage bekam einen Status oberhalb von 200-299 zurück
 response_status_below_2xx: Anfrage bekam einen Status unterhalb von 200-299 zurück
-response_status_not_404: Anfrage bekamm Status %1 zurück, nicht 404
-response_status_not_403: Anfrage bekamm Status %1 zurück, nicht 403
+response_status_not_404: Anfrage bekam Status %1 zurück, nicht 404
+response_status_not_403: Anfrage bekam Status %1 zurück, nicht 403
+variable_default_value: Kann variablen Standardwert von %1% nicht verarbeiten.

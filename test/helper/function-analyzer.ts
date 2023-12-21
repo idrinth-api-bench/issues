@@ -71,7 +71,7 @@ describe('helper/function-analyzer', () => {
       ],
     );
   },);
-  it('should return an array of params when handling one number params', () => {
+  it('should return an array of params when handling one number param', () => {
     // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars, no-magic-numbers
     const ret = analyze((myNumber = 11,) => {},);
     expect(ret,).to.be.an('array',);
@@ -82,5 +82,28 @@ describe('helper/function-analyzer', () => {
       name: 'myNumber',
       type: 'number',
     }, ],);
+  },);
+  it('should return an array of params when handling one string param', () => {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars
+    const ret = analyze((myString = 'An Example',) => {},);
+    expect(ret,).to.be.an('array',);
+    expect(ret,).to.deep.equal([ {
+      value: 'An Example',
+      default: 'An Example',
+      envName: 'MY_STRING',
+      name: 'myString',
+      type: 'string',
+    }, ],);
+  },);
+  it('should throw when handling one const param', () => {
+    const defaultValue = 'something';
+    // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars
+    expect(() => analyze((myString = defaultValue,) => {},),)
+      .to.throw('Can\'t handle variable default value on myString.',);
+  },);
+  it('should throw when handling one broken param', () => {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars
+    expect(() => analyze((/*String*/ myBool = false,) => {},),)
+      .to.throw('Can\'t handle variable default value on myBool.');
   },);
 },);

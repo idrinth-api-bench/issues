@@ -20,3 +20,4 @@ response_status_above_2xx: Request returned status above 200-299 range
 response_status_below_2xx: Request returned status below 200-299 range
 response_status_not_404: Request returned status %1%, not 404
 response_status_not_403: Request returned status %1%, not 403
+variable_default_value: Can't handle variable default value on %1%.

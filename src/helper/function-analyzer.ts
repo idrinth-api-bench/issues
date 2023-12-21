@@ -1,6 +1,8 @@
 import {
   snakeCase,
 } from 'change-case';
+import {FIRST} from "../constants.js";
+import language from "./language.js";
 
 export interface Param {
     name: string;
@@ -11,7 +13,7 @@ export interface Param {
 }
 
 const STRING_LIMITER_REMOVAL_START = 1;
-const STRING_LIMITER_REMOVAL_LENGTH = 2;
+const STRING_LIMITER_REMOVAL_LENGTH = 1;
 
 const getEnv = (name: string, defaultValue: string,): string => {
   for (const key of Object.keys(process.env,)) {
@@ -77,6 +79,7 @@ const buildParameter = (parameter: string,): Param => {
   value.name = parameter.replace(/\s*/gu, '',);
   return value;
 };
+// eslint-disable-next-line complexity
 const parseParameterString = (parameter: string,): Param => {
   const value = buildParameter(parameter,);
   value.envName = snakeCase(value.name,).toUpperCase();
@@ -86,10 +89,17 @@ const parseParameterString = (parameter: string,): Param => {
       break;
     case 'bool':
     case 'boolean':
-      value.value = getEnv(value.envName, value.default,) === 'true';
+      value.value = getEnv(value.envName, value.default,).toLowerCase();
+      value.value = value.value === 'true' || value.value === '1';
       break;
     case 'string':
     default:
+      if (value.default === '') {
+        break;
+      }
+      if (value.default[FIRST] !== '"' && value.default[FIRST] !== '\'') {
+        throw new Error(language('variable_default_value', value.name,),);
+      }
       value.default = value.default
         .substring(
           STRING_LIMITER_REMOVAL_START,
