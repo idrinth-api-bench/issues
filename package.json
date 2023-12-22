@@ -70,7 +70,8 @@
     "winston": "^3.11.0"
   },
   "bin": {
-    "run-benchmark": "bin/run-benchmark.js"
+    "run-benchmark": "bin/run-benchmark.js",
+    "make-benchmark-project": "bin/make-benchmark-project.js"
   },
   "scripts": {
     "lint": "eslint . --ext .js,.ts,.cjs,.json",

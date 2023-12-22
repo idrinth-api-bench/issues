@@ -5,7 +5,9 @@ import {
   cpSync as copySync,
 } from 'fs';
 import {
-  FIRST_ARGUMENT, FRAMEWORK_ROOT,
+  FIRST_ARGUMENT,
+  FRAMEWORK_ROOT,
+  INDENTATION_SPACES,
 } from './constants.js';
 import language from './helper/language.js';
 import {
@@ -44,7 +46,7 @@ export default (args: string[], cwd: string,) => {
       lint: 'eslint . --ext .js,.ts,.cjs,.json',
       'lint-fix': 'eslint --fix . --ext .js,.ts,.cjs,.json',
     },
-  },),);
+  }, null, INDENTATION_SPACES,),);
   writeFileSync(root + '/tsconfig.json', JSON.stringify({
     compilerOptions: {
       experimentalDecorators: true,
@@ -63,7 +65,7 @@ export default (args: string[], cwd: string,) => {
         '*.ts': 'cjs',
       },
     },
-  },),);
+  }, null, INDENTATION_SPACES,),);
   writeFileSync(root + '/.gitignore', '/nbproject\n' +
     '/node_modules\n' +
     '/result.json\n' +
