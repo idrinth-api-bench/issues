@@ -23,3 +23,6 @@ response_status_not_403: Request returned status %1%, not 403
 variable_default_value: Can't handle variable default value on %1%.
 name_invalid: Invalid project name.
 already_created: Project folder already exists.
+no_content_type: The content-type header is missing.
+no_json_content_type: The content-type %1% is not application/json.
+invalid_json_body: The JSON body is invalid. %1%
