@@ -21,8 +21,8 @@ import {
 export default (args: string[], cwd: string,) => {
   const name = (args[FIRST_ARGUMENT] || 'benchmark')
     .toLowerCase()
-    .replace(/[^a-z0-9_-]+/ug, '-')
-    .replace(/^[_-]+|[_-]+$/ug, '');
+    .replace(/[^a-z0-9_-]+/ug, '-',)
+    .replace(/^[_-]+|[_-]+$/ug, '',);
   if (name === '') {
     throw new Error(language('name_invalid',),);
   }
@@ -42,47 +42,47 @@ export default (args: string[], cwd: string,) => {
     () => mkdirSync(root + '/src/routes/main',),
     () => mkdirSync(root + '/src/routes/before',),
     () => writeFileSync(root + '/package.json', JSON.stringify({
-    name,
-    private: true,
-    type: 'module',
-    dependencies: {
-      '@idrinth/api-bench': '^2.4.5',
-    },
-    devDependencies: {
-      typescript: '^5.3.2',
-      mocha: '^10.2.0',
-      chai: '^4.3.10',
-      'ts-node': '^10.9.1',
-      c8: '^8.0.1',
-      eslint: '^8.55.0',
-      'eslint-plugin-json': '^3.1.0',
-    },
-    scripts: {
-      start: 'tsc -p tsconfig.json && run-benchmark',
-      test: 'c8 mocha test',
-      lint: 'eslint . --ext .js,.ts,.cjs,.json',
-      'lint-fix': 'eslint --fix . --ext .js,.ts,.cjs,.json',
-    },
-  }, null, INDENTATION_SPACES,),),
-    () => writeFileSync(root + '/tsconfig.json', JSON.stringify({
-    compilerOptions: {
-      experimentalDecorators: true,
-      module: 'NodeNext',
-      lib: [],
-      target: 'ESNext',
-      esModuleInterop: true,
-      moduleResolution: 'NodeNext',
-      resolveJsonModule: true,
-    },
-    typeRoots: [ '@types', ],
-    include: [ 'src/**/*.ts', ],
-    'ts-node': {
-      transpileOnly: true,
-      moduleTypes: {
-        '*.ts': 'cjs',
+      name,
+      private: true,
+      type: 'module',
+      dependencies: {
+        '@idrinth/api-bench': '^2.4.5',
       },
-    },
-  }, null, INDENTATION_SPACES,),),
+      devDependencies: {
+        typescript: '^5.3.2',
+        mocha: '^10.2.0',
+        chai: '^4.3.10',
+        'ts-node': '^10.9.1',
+        c8: '^8.0.1',
+        eslint: '^8.55.0',
+        'eslint-plugin-json': '^3.1.0',
+      },
+      scripts: {
+        start: 'tsc -p tsconfig.json && run-benchmark',
+        test: 'c8 mocha test',
+        lint: 'eslint . --ext .js,.ts,.cjs,.json',
+        'lint-fix': 'eslint --fix . --ext .js,.ts,.cjs,.json',
+      },
+    }, null, INDENTATION_SPACES,),),
+    () => writeFileSync(root + '/tsconfig.json', JSON.stringify({
+      compilerOptions: {
+        experimentalDecorators: true,
+        module: 'NodeNext',
+        lib: [],
+        target: 'ESNext',
+        esModuleInterop: true,
+        moduleResolution: 'NodeNext',
+        resolveJsonModule: true,
+      },
+      typeRoots: [ '@types', ],
+      include: [ 'src/**/*.ts', ],
+      'ts-node': {
+        transpileOnly: true,
+        moduleTypes: {
+          '*.ts': 'cjs',
+        },
+      },
+    }, null, INDENTATION_SPACES,),),
     () => writeFileSync(root + '/.gitignore', '/nbproject\n' +
     '/node_modules\n' +
     '/result.json\n' +
@@ -95,11 +95,11 @@ export default (args: string[], cwd: string,) => {
     () => copySync(FRAMEWORK_ROOT + '/.mocharc.cjs', root + '/.mocharc.cjs',),
     () => copySync(FRAMEWORK_ROOT + '/.nycrc.json', root + '/.nycrc.json',),
     () => exec('npm install', {
-    cwd: root,
-  },),
+      cwd: root,
+    },),
     () => exec('git init', {
-    cwd: root,
-  },),
+      cwd: root,
+    },),
   ];
   bar.start(tasks.length, EMPTY,);
   for (const task of tasks) {

@@ -20,7 +20,7 @@ describe('middlewares/json-validator', () => {
         method: 'get',
         url: 'https://localhost',
       };
-      expect(JsonValidator.prepare(param),).to.be.equal(param,);
+      expect(JsonValidator.prepare(param,),).to.be.equal(param,);
     },);
   },);
   describe('.process()', () => {
