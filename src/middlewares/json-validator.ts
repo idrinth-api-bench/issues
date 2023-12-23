@@ -21,7 +21,7 @@ export default class JsonValidator {
       throw Error(language('no_content_type',),);
     }
     const contentType = result.response.headers['content-type'];
-    if (contentType.match(/^application\/json/ui,)) {
+    if (! contentType.match(/^application\/json/ui,)) {
       throw Error(language('no_json_content_type', contentType,),);
     }
     try {

@@ -5,7 +5,7 @@ import {
 import 'mocha';
 import {
   Request,
-} from '../../src/request';
+} from '../../src/request.js';
 
 describe('middlewares/encoding', () => {
   it('should be a class', () => {
