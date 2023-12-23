@@ -115,7 +115,10 @@ class FakeWorker implements Thread {
     FakeWorker.built[path] ++;
   }
 
-  public on(type: string, callable: (a: unknown)=>void,): void {
+  public on(
+    event: 'message',
+    callable: (a: unknown, self: Thread,)=>void,
+  ): void {
     this.handler = callable;
   }
 

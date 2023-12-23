@@ -12,7 +12,7 @@ import {
 } from './constants.js';
 import language from './helper/language.js';
 import {
-  exec,
+  execSync,
 } from 'child_process';
 import {
   SingleBar,
@@ -94,10 +94,10 @@ export default (args: string[], cwd: string,) => {
     () => copySync(FRAMEWORK_ROOT + '/.eslintrc.yml', root + '/.eslintrc.yml',),
     () => copySync(FRAMEWORK_ROOT + '/.mocharc.cjs', root + '/.mocharc.cjs',),
     () => copySync(FRAMEWORK_ROOT + '/.nycrc.json', root + '/.nycrc.json',),
-    () => exec('npm install', {
+    () => execSync('npm install', {
       cwd: root,
     },),
-    () => exec('git init', {
+    () => execSync('git init', {
       cwd: root,
     },),
   ];
