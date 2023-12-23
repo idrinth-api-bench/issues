@@ -29,9 +29,15 @@ describe('middlewares/json-validator', () => {
     },);
     it('should throw if there is no type', () => {
       const response: Result = {
+        id: 'example',
+        validators: [],
         duration: 234242,
         response: {
           headers: {},
+          cookies: {},
+          uri: '',
+          status: 0,
+          body: '{{]]',
         },
       };
       expect(() => JsonValidator.process(response,),)
@@ -39,11 +45,17 @@ describe('middlewares/json-validator', () => {
     },);
     it('should throw if the type is not json', () => {
       const response: Result = {
+        id: 'example',
+        validators: [],
         duration: 234242,
         response: {
           headers: {
             'content-type': 'application/jason',
           },
+          cookies: {},
+          uri: '',
+          status: 0,
+          body: '{{]]',
         },
       };
       expect(() => JsonValidator.process(response,),)
@@ -53,11 +65,16 @@ describe('middlewares/json-validator', () => {
     },);
     it('should throw if the body is not json', () => {
       const response: Result = {
+        id: 'example',
+        validators: [],
         duration: 234242,
         response: {
           headers: {
             'content-type': 'application/json',
           },
+          cookies: {},
+          uri: '',
+          status: 0,
           body: '{{]]',
         },
       };
@@ -70,11 +87,16 @@ describe('middlewares/json-validator', () => {
     },);
     it('should not throw if the body is json', () => {
       const response: Result = {
+        id: 'example',
+        validators: [],
         duration: 234242,
         response: {
           headers: {
             'content-type': 'application/json',
           },
+          cookies: {},
+          uri: '',
+          status: 0,
           body: '{}',
         },
       };
