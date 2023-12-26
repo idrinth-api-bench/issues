@@ -2,7 +2,7 @@ import {
   Task,
 } from './task.js';
 
-interface Job {
+export interface Job {
     before: Task[],
     beforeTask: Task[],
     beforeEach: Task[],

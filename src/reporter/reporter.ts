@@ -1,6 +1,6 @@
 import FinishedRun from '../finished-run.js';
 
-interface Reporter {
+export interface Reporter {
   (results: FinishedRun, rootDir: string): void;
 }
 

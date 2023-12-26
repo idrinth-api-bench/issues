@@ -3,7 +3,7 @@ import {
   FinishedSet,
 } from '../finished-set.js';
 
-export default class DurationFloatsToInts implements ReportModifier {
+export class DurationFloatsToInts implements ReportModifier {
   // eslint-disable-next-line class-methods-use-this
   adjust(result: FinishedSet,): FinishedSet {
     result.stdv100 = Math.ceil(result.stdv100,);
@@ -18,4 +18,5 @@ export default class DurationFloatsToInts implements ReportModifier {
     result.min100 = Math.ceil(result.min100,);
     return result;
   }
-}
+};
+export default DurationFloatsToInts;

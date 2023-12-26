@@ -22,3 +22,4 @@ multi.addReporter = (reporter: Reporter,): void => {
 };
 
 export default multi;
+export const MultiReporter = multi;

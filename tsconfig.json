@@ -13,7 +13,8 @@
     "@types"
   ],
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "index.ts"
   ],
   "ts-node": {
     "transpileOnly": true,

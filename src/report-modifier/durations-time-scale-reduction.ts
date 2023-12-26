@@ -6,7 +6,7 @@ import {
   THOUSAND,
 } from '../constants.js';
 
-export default class DurationsTimeScaleReduction implements ReportModifier {
+export class DurationsTimeScaleReduction implements ReportModifier {
   // eslint-disable-next-line class-methods-use-this
   adjust(result: FinishedSet,): FinishedSet {
     result.stdv100 = result.stdv100/THOUSAND;
@@ -22,3 +22,4 @@ export default class DurationsTimeScaleReduction implements ReportModifier {
     return result;
   }
 }
+export default DurationsTimeScaleReduction;

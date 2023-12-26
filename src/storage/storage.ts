@@ -2,7 +2,7 @@ import {
   FinishedSet,
 } from '../finished-set.js';
 
-interface Storage
+export interface Storage
 {
     store(data: FinishedSet, now: Date): void;
 }

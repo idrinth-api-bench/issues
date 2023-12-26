@@ -2,7 +2,7 @@ import {
   FinishedSet,
 } from '../finished-set.js';
 
-interface ReportModifier {
+export interface ReportModifier {
     adjust(result: FinishedSet): FinishedSet;
 }
 

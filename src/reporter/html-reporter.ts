@@ -62,3 +62,4 @@ const html: Reporter = (
 };
 
 export default html;
+export const HtmlReporter = html;

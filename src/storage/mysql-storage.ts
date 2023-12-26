@@ -12,7 +12,7 @@ const project: string = reqlib
   .require('/package-lock.json',)
   .name.replace(/[^a-z0-9\-_]/gu, '_',);
 
-export default class MysqlStorage implements Storage {
+export class MysqlStorage implements Storage {
   private connection: Connection;
 
   constructor(host: string, password: string, port: number,) {
@@ -58,3 +58,4 @@ export default class MysqlStorage implements Storage {
     this.connection.destroy();
   }
 }
+export default MysqlStorage;

@@ -14,3 +14,4 @@ const json: Reporter = (
 };
 
 export default json;
+export const JsonReporter = json;
