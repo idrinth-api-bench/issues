@@ -2,6 +2,29 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/Idrinth/api-bench/badge.svg?branch=master)](https://coveralls.io/github/Idrinth/api-bench?branch=master) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/3171affc728048da8df4fe36b6d4771e)](https://www.codacy.com/manual/Idrinth/api-bench?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Idrinth/api-bench&amp;utm_campaign=Badge_Grade)
 
+## Contents
+
+- [Contents](#contents)
+- [Why a Benchmark Runner](#why-a-benchmark-runner)
+- [Regarding existing libraries](#regarding-existing-libraries)
+- [Usage & Examples](#usage--examples)
+  - [Binaries](#binaries)
+  - [Programmatically](#programmatically)
+  - [Results](#results)
+    - [CSV](#csv)
+    - [HTML](#html)
+    - [CLI](#cli)
+    - [JSON](#json)
+  - [Autowiring Route Parameters](#autowiring-route-parameters)
+  - [Middlewares](#middlewares)
+    - [Provided Middlewares](#provided-middlewares)
+  - [Storage](#storage)
+  - [Logging](#logging)
+    - [Logging levels used](#logging-levels-used)
+  - [License](#license)
+  - [Planned](#planned)
+  - [Support](#support)
+
 ## Why a Benchmark Runner
 
 Given, that the amount of APIs increase by moving to microservices, we need a way to determine if changes to a service's response times are related to code changes. For this purpose a defined load with repeatable request seems the most useful.
@@ -52,7 +75,7 @@ This provides a small table in the command line, that shows most of the data.
 
 #### JSON
 
-This provides a file easily handlebar via other software. By default, it is nor formatted for readability.
+This provides a file easily handled via other software. By default, it is not formatted for readability.
 
 ![Result](readme/json-result.jpg)
 
@@ -70,7 +93,7 @@ Sadly a few things can't be done:
 - Default value types NOT of the same type as the parameter
 
 ```js
-module.exports = (apiRootUrl, apiEMail, apiPassword) => ({
+module.exports = (apiRootUrl, apiEMail, apiPassword,) => ({
   id: 'login',
   main: {
     method: 'post',
