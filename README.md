@@ -28,6 +28,34 @@ Additionally, this tool separates the validation thread from the thread processi
 
 Basically require main/include main and supply the executor method with required parameters. Tasks defined in `src/routes`-subfolders `before`, `before_task`, `before_each`, `main`, `after_each`, `after_task` and `after` will be used to automatically fill the Job processed by the executor. Automatic filling only happens when there are no tasks provided to the function.
 
+### Results
+
+By default, multiple all possible result formats are provided. The files are created in the application root, but that can be overwritten programmatically.
+
+#### CSV
+
+This provides a file, that can easily opened by excel or handled programmatically.
+
+![Result](readme/csv-result.jpg)
+
+#### HTML
+
+This provides a simple html file, that could be sent by email for example.
+
+![Result](readme/html-result.jpg)
+
+#### CLI
+
+This provides a small table in the command line, that shows most of the data.
+
+![Result](readme/cli-result.jpg)
+
+### JSON
+
+This provides a file easily handlebar via other software. By default, it is nor formatted for readability.
+
+![Result](readme/json-result.jpg)
+
 ### Autowiring Route Parameters
 
 Parameters of contained functions will be filled with environment variable values of the respective name (`aBc` -> `A_BC`). Types will be automatically applied if there is either a default value to get the type from or a comment like `/* boolean */ parameter` added in front of the parameter.
@@ -40,6 +68,30 @@ Sadly a few things can't be done:
 - Do not use arrays or objects as default values, they can't be autowired.
 - Destructuring is not supported
 - Default value types NOT of the same type as the parameter
+
+```js
+module.exports = (apiRootUrl, apiEMail, apiPassword) => ({
+  id: 'login',
+  main: {
+    method: 'post',
+    body: {
+      email: apiEMail,
+      password: apiPassword,
+    },
+    autohandle: 'json',
+    url: apiRootUrl + '/api/login',
+  },
+  pre: [
+    '^user-agent',
+    '^encoding'
+  ],
+  post: [
+    '^status-2xx',
+    '^access-token',
+  ],
+});
+
+```
 
 ### Middlewares
 
@@ -64,11 +116,11 @@ Middlewares use an absolute file path to be loaded. the following characters wil
 
 Storage classes store each finished set of the run. By default, nothing is stored, but a mysql storage is provided for those wanting it.
 
-## Logging
+### Logging
 
 Any logger that either implements the [Interface](src/logger/logger.ts) or has a wrapper. Wrappers for pino and winston are available.
 
-### Logging levels used
+#### Logging levels used
 
 Most log entries are debug level, with the major steps being written to info. Trace is currently not used but may be used for detailed argument printing at some point.
 

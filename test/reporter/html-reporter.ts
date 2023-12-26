@@ -40,6 +40,9 @@ describe('reporter/html-reporter', () => {
         max80: 99,
         stdv100: 9,
         stdv80: 8,
+        msgs: {
+          'some error message': 4,
+        },
       },
     };
     htmlReporter(results, '/html1',);
@@ -66,6 +69,9 @@ describe('reporter/html-reporter', () => {
         max80: 99,
         stdv100: 9,
         stdv80: 8,
+        msgs: {
+          'some error message': 4,
+        },
       },
     };
     htmlReporter(results, '/html2',);
@@ -78,9 +84,10 @@ describe('reporter/html-reporter', () => {
         '<th>Minimum 100%</th><th>Maximum 80%</th><th>Maximum 100%</th>' +
         '<th>Median 80%</th><th>Median 100%</th>' +
         '<th>Standard Deviation 80%</th><th>Standard Deviation 100%</th>' +
-        '</tr></thead><tbody><tr><th>any</th><td>7</td><td>14</td><td>76</td>' +
-        '<td>6</td><td>14</td><td>1</td><td>99</td><td>99</td><td>33</td>' +
-        '<td>33</td><td>8</td><td>9</td><td>14</td></tr></tbody></table>' +
+        '<th>Messages</th></tr></thead><tbody><tr><th>any</th><td>7</td>' +
+        '<td>14</td><td>76</td><td>6</td><td>14</td><td>1</td><td>99</td>' +
+        '<td>99</td><td>33</td><td>33</td><td>8</td><td>9</td>' +
+        '<td>{"some error message":4}</td></tr></tbody></table>' +
         '</body></html>',
       );
       done();
