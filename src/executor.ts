@@ -28,6 +28,9 @@ import Thread from './worker/thread.js';
 import {
   EMPTY,
 } from './constants.js';
+import {
+  Task,
+} from './task.js';
 
 /* eslint max-params:0 */
 const executor = (
@@ -47,7 +50,7 @@ const executor = (
   validateTasks(repetitions, threads, job.main,);
   const results: {[z: string]: ResultSet} = {};
   const finished: {[z: string]: FinishedSet} = {};
-  const internalTasks = [];
+  const internalTasks: Task[] = [];
   logger.debug(
     language('initialization', `${ repetitions }`, `${ threads }`,),
   );
