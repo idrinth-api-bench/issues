@@ -46,3 +46,4 @@ const cli: Reporter = (
 };
 
 export default cli;
+export const CliReporter = cli;

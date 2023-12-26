@@ -27,3 +27,4 @@ const csv: Reporter = (
 };
 
 export default csv;
+export const CsvReporter = csv;
