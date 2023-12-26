@@ -50,7 +50,7 @@ This provides a small table in the command line, that shows most of the data.
 
 ![Result](readme/cli-result.jpg)
 
-### JSON
+#### JSON
 
 This provides a file easily handlebar via other software. By default, it is nor formatted for readability.
 
