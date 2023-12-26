@@ -85,7 +85,7 @@ Parameters of contained functions will be filled with environment variable value
 
 Comment types will always win over default value types. If those two don't match, you might get weird results.
 
-Sadly a few things can't be done:
+Sadly, a few things can't be done:
 
 - Do not use constants for their default values, they can't be properly analysed and will throw an Error.
 - Do not use arrays or objects as default values, they can't be autowired.
@@ -118,7 +118,7 @@ module.exports = (apiRootUrl, apiEMail, apiPassword,) => ({
 
 ### Middlewares
 
-Middlewares use an absolute file path to be loaded. the following characters will be used to expand short forms:
+Middlewares use an absolute file path to be loaded. The following characters will be used to expand short forms:
 
 -   `^abc` -> `/path/to/this/library/src/middlewares/abc.js`
 -   `$@some/lib/abc` -> `@some/lib/src/middlewares/abc.js`
@@ -153,10 +153,10 @@ As usual with my projects this is MIT-licensed.
 
 ## Planned
 
--   more unit tests (yeah, it's one of those projects)
--   soap support
--   graphql support
+- more unit tests (yeah, it's one of those projects)
+- soap support
+- graphql support
 
 ## Support
 
-Additionally to support requests via issue, you can reach me via discord at [Idrinth's Discord](https://discord.gg/xHSF8CGPTh). Commercial support and training is provided via [Björn Büttner](https://bjoern-buettner.me).
+Additionally, to support requests via issue, you can reach me via discord at [Idrinth's Discord](https://discord.gg/xHSF8CGPTh). Commercial support and training is provided via [Björn Büttner](https://bjoern-buettner.me).
