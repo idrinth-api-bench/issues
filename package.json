@@ -72,7 +72,10 @@
   "bin": {
     "run-benchmark": "bin/run-benchmark.js",
     "make-benchmark-project": "bin/make-benchmark-project.js",
-    "generate-benchmark-from-open-api": "bin/generate-benchmark-from-open-api.js"
+    "generate-benchmark-from-open-api": "bin/generate-benchmark-from-open-api.js",
+    "iabr": "bin/run-benchmark.js",
+    "iabmp": "bin/make-benchmark-project.js",
+    "iabgfoa": "bin/generate-benchmark-from-open-api.js"
   },
   "scripts": {
     "lint": "eslint . --ext .js,.ts,.cjs,.json",
