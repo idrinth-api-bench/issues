@@ -1,0 +1,5 @@
+routes:
+  /abc/{id}:
+    get: {}
+    post:
+      operationId: test

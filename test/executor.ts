@@ -1,4 +1,3 @@
-import mock from 'mock-fs';
 import executor from '../src/executor.js';
 import Thread from '../src/worker/thread.js';
 import {
@@ -138,17 +137,9 @@ class FakeWorker implements Thread {
 
 describe('executor', () => {
   before(() => {
-    const config = {
-      '/executor': mock.directory({},),
-    };
-    config[process.cwd()] = mock.load(process.cwd(),);
-    mock(config, {
-      createCwd: false,
-    },);
     Counter.clear();
   },);
   after(() => {
-    mock.restore();
     Counter.clear();
   },);
   const repeats = 2;

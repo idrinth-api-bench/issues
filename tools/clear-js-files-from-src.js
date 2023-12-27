@@ -16,3 +16,4 @@ const clearFolder = (folder,) => {
   }
 };
 clearFolder(__dirname + '../src',);
+rmSync(__dirname + '../index.js',);

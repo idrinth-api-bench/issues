@@ -7,9 +7,7 @@ import {
   writeFileSync,
   mkdirSync,
 } from 'fs';
-import {
-  readJSONSync,
-} from 'fs-extra';
+import fse from 'fs-extra';
 import OpenApi from './open-api/open-api.js';
 import assertTypeIsObject from './open-api/assert-type-is-object.js';
 import {
@@ -30,7 +28,7 @@ const write = (
   // eslint-disable-next-line max-params
 ) => {
   writeFileSync(
-    projectDir + '/src/main/' + toFilename(name,) + '.ts',
+    projectDir + '/src/routes/main/' + toFilename(name,) + '.ts',
     `import {
   Task,
 } from '@idrinth/api-bench';
@@ -67,11 +65,11 @@ export default (args: string[], projectDir: string,) => {
   if (! pathToDoc) {
     throw new Error(language('no_openapi_document_given',),);
   }
-  mkdirSync(projectDir + '/src/main', {
+  mkdirSync(projectDir + '/src/routes/main', {
     recursive: true,
   },);
   if (pathToDoc.endsWith('.json',)) {
-    buildFiles(readJSONSync(pathToDoc, 'utf8',), projectDir,);
+    buildFiles(fse.readJSONSync(pathToDoc, 'utf8',), projectDir,);
     return;
   }
   if (pathToDoc.endsWith('.yml',)) {
