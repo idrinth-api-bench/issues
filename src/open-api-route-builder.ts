@@ -46,6 +46,7 @@ export default (/*String*/apiBaseUrl: string): Task => ({
   post: [ '^status-2xx', ],
 });
 `,
+    'utf8',
   );
 };
 
