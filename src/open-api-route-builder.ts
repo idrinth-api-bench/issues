@@ -4,7 +4,7 @@ import {
 } from 'yaml';
 import {
   readFileSync,
-  writeFileSync,
+  createWriteStream,
   mkdirSync,
 } from 'fs';
 import fse from 'fs-extra';
@@ -27,8 +27,10 @@ const write = (
   uri: string,
   // eslint-disable-next-line max-params
 ) => {
-  writeFileSync(
+  const stream = createWriteStream(
     projectDir + '/src/routes/main/' + toFilename(name,) + '.ts',
+  );
+  stream.write(
     `import {
   Task,
 } from '@idrinth/api-bench';
@@ -46,8 +48,8 @@ export default (/*String*/apiBaseUrl: string): Task => ({
   post: [ '^status-2xx', ],
 });
 `,
-    'utf8',
   );
+  stream.end();
 };
 
 const buildFiles = (openApi: OpenApi, projectDir: string,) => {

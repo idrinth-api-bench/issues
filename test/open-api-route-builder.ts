@@ -5,11 +5,12 @@ import {
 } from 'chai';
 import 'mocha';
 import {
-  FRAMEWORK_ROOT,
-} from '../src/constants.js';
-import {
   readFileSync,
 } from 'fs';
+import url from 'url';
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
+
+const WAIT_TIME = 1500;
 
 describe('open-api-route-builder', () => {
   before(() => {
@@ -29,58 +30,67 @@ describe('open-api-route-builder', () => {
   it('should be a function', () => {
     expect(buildRoutes,).to.be.a('function',);
   },);
-  it('should create from openapi.yml', () => {
+  it('should create from openapi.yml', (done,) => {
     buildRoutes(
       [
         'node',
         'create.js',
-        FRAMEWORK_ROOT + '/fixtures/open-api.yml',
+        __dirname + '../fixtures/open-api.yml',
       ],
       '/oarb1',
     );
-    // eslint-disable-next-line no-unused-expressions
-    expect(readFileSync(
-      '/oarb1/src/routes/main/test.ts',
-    )+'',).to.not.be.empty;
-    // eslint-disable-next-line no-unused-expressions
-    expect(readFileSync(
-      '/oarb1/src/routes/main/get-abc-id.ts',
-    )+'',).to.not.be.empty;
+    setTimeout(() => {
+      // eslint-disable-next-line no-unused-expressions
+      expect(readFileSync(
+        '/oarb1/src/routes/main/test.ts',
+      ) + '',).to.not.be.empty;
+      // eslint-disable-next-line no-unused-expressions
+      expect(readFileSync(
+        '/oarb1/src/routes/main/get-abc-id.ts',
+      ) + '',).to.not.be.empty;
+      done();
+    }, WAIT_TIME,);
   },);
-  it('should create from openapi.yaml', () => {
+  it('should create from openapi.yaml', (done,) => {
     buildRoutes(
       [
         'node',
         'create.js',
-        FRAMEWORK_ROOT + '/fixtures/open-api.yaml',
+        __dirname + '../fixtures/open-api.yaml',
       ],
       '/oarb2',
     );
-    // eslint-disable-next-line no-unused-expressions
-    expect(readFileSync(
-      '/oarb2/src/routes/main/test.ts',
-    )+'',).to.not.be.empty;
-    // eslint-disable-next-line no-unused-expressions
-    expect(readFileSync(
-      '/oarb2/src/routes/main/get-abc-id.ts',
-    )+'',).to.not.be.empty;
+    setTimeout(() => {
+      // eslint-disable-next-line no-unused-expressions
+      expect(readFileSync(
+        '/oarb2/src/routes/main/test.ts',
+      ) + '',).to.not.be.empty;
+      // eslint-disable-next-line no-unused-expressions
+      expect(readFileSync(
+        '/oarb2/src/routes/main/get-abc-id.ts',
+      ) + '',).to.not.be.empty;
+      done();
+    }, WAIT_TIME,);
   },);
-  it('should create from openapi.json', () => {
+  it('should create from openapi.json', (done,) => {
     buildRoutes(
       [
         'node',
         'create.js',
-        FRAMEWORK_ROOT + '/fixtures/open-api.json',
+        __dirname + '../fixtures/open-api.json',
       ],
       '/oarb3',
     );
-    // eslint-disable-next-line no-unused-expressions
-    expect(readFileSync(
-      '/oarb3/src/routes/main/test.ts',
-    )+'',).to.not.be.empty;
-    // eslint-disable-next-line no-unused-expressions
-    expect(readFileSync(
-      '/oarb3/src/routes/main/get-abc-id.ts',
-    )+'',).to.not.be.empty;
+    setTimeout(() => {
+      // eslint-disable-next-line no-unused-expressions
+      expect(readFileSync(
+        '/oarb3/src/routes/main/test.ts',
+      ) + '',).to.not.be.empty;
+      // eslint-disable-next-line no-unused-expressions
+      expect(readFileSync(
+        '/oarb3/src/routes/main/get-abc-id.ts',
+      ) + '',).to.not.be.empty;
+      done();
+    }, WAIT_TIME,);
   },);
 },);
