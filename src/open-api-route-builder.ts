@@ -33,7 +33,7 @@ const write = (
     projectDir + '/src/main/' + toFilename(name,) + '.ts',
     `import {
   Task,
-} from '@idrinth/api-bench/src/task.js';
+} from '@idrinth/api-bench';
 
 export default (/*String*/apiBaseUrl: string): Task => ({
   id: '${ name.replace(/[^a-z0-9_\-/ ]+/iug, '',) }',

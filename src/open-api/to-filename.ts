@@ -1,4 +1,6 @@
-import {snakeCase} from "change-case";
+import {
+  snakeCase,
+} from 'change-case';
 
 export const toFilename = (name: string,): string => snakeCase(
   name

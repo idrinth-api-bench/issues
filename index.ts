@@ -12,7 +12,7 @@ import {
 } from './src/reporter/html-reporter.js';
 import {
   JsonReporter as JR,
-} from './src/reporter/json-reporter.js';;
+} from './src/reporter/json-reporter.js';
 import {
   MultiReporter as MR,
 } from './src/reporter/multi-reporter.js';
