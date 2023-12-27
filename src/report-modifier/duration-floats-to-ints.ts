@@ -18,5 +18,5 @@ export class DurationFloatsToInts implements ReportModifier {
     result.min100 = Math.ceil(result.min100,);
     return result;
   }
-};
+}
 export default DurationFloatsToInts;

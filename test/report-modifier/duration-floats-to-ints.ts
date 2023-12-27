@@ -6,7 +6,7 @@ import DurationFloatsToInts
 import 'mocha';
 import {
   FinishedSet,
-} from '../../src/finished-set';
+} from '../../src/finished-set.js';
 
 describe('report-modifier/duration-floats-to-ints', () => {
   it('be a class', () => {
