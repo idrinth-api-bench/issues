@@ -1,17 +1,20 @@
 import React from 'react';
+import Navbar from './components/navbar';
+import "./index.css";
+import "the-new-css-reset/css/reset.css";
 import {
   Routes, Route, BrowserRouter,
 } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import Home from './pages/home/index';
 import AutoWiring from './pages/autowiring';
-import Examples from './pages/examples';
+import Usage from './pages/usage';
 import Logging from './pages/logging';
 import Middlewares from './pages/middlewares';
 import Storage from './pages/storage';
 import Result from './pages/results';
 
-ReactDOM.createRoot(document.getElementById('root',)!,).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter
       future={{
@@ -19,14 +22,70 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
       }}
     >
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/examples" element={<Examples />} />
-        <Route path="/examples/autowiring" element={<AutoWiring />} />
-        <Route path="/examples/results" element={<Result />} />
-        <Route path="/examples/logging" element={<Logging />} />
-        <Route path="/examples/middlewares" element={<Middlewares />} />
-        <Route path="/examples/storage" element={<Storage />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <Navbar />
+              <Home />
+            </>
+          }
+        />
+        <Route
+          path="/usage"
+          element={
+            <>
+              <Navbar />
+              <Usage />
+            </>
+          }
+        />
+        <Route
+          path="/usage/autowiring"
+          element={
+            <>
+              <Navbar />
+              <AutoWiring />
+            </>
+          }
+        />
+        <Route
+          path="/usage/results"
+          element={
+            <>
+              <Navbar />
+              <Result />
+            </>
+          }
+        />
+        <Route
+          path="/usage/logging"
+          element={
+            <>
+              <Navbar />
+              <Logging />
+            </>
+          }
+        />
+        <Route
+          path="/usage/middlewares"
+          element={
+            <>
+              <Navbar />
+              <Middlewares />
+            </>
+          }
+        />
+        <Route
+          path="/usage/storage"
+          element={
+            <>
+              <Navbar/>
+              <Storage />
+            </>
+          }
+        />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 );

@@ -1,0 +1,74 @@
+:root {
+  --white: hsla(0, 0%, 100%, 1);
+  --dark-green: rgb(3, 61, 3);
+  --green: rgb(21, 163, 21);
+  --dark-gray:hsla(0, 0%, 25%, 1);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,h2,h3,p {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+h1,h2,h3 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 120%;
+}
+
+h2 {
+  font-size: 115%;
+}
+
+h3 {
+  font-size: 110%;
+}
+
+a {
+  color: var(--dark-green);
+  text-decoration: underline;
+}
+
+nav {
+background-color: var(--dark-gray);
+}
+
+nav a {
+  color: var(--green);
+  text-decoration: none;
+}
+nav ul {
+  display: flex;
+  gap: 0.50em;
+}
+
+ ul {
+  padding-left: 1.5em;
+ }
+
+ li {
+  list-style: circle;
+ }
+
+ nav li {
+  list-style: none;
+ }
+
+nav ul ul {
+  display: none;
+}
+
+nav li:hover ul {
+  display: flex;
+}
+
+a:hover, a:focus {
+  color: var(--green);
+}
+
