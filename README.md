@@ -26,9 +26,9 @@
   - [Logging](#logging)
     - [Logging levels used](#logging-levels-used)
     - [Custom Logger](#custom-logger)
-  - [License](#license)
-  - [Planned](#planned)
-  - [Support](#support)
+- [License](#license)
+- [Planned](#planned)
+- [Support](#support)
 
 ## What does this project do?
 
@@ -97,8 +97,6 @@ interface Reporter {
   (results: FinishedRun, rootDir: string): void;
 }
 ```
-
-The interface can be imported from `@idrinth/api-bench`.
 
 ### Autowiring Route Parameters
 
