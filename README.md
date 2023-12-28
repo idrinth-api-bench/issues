@@ -136,9 +136,9 @@ module.exports = (apiRootUrl, apiEMail, apiPassword,) => ({
 
 Middlewares use an absolute file path to be loaded. The following characters will be used to expand short forms:
 
--   `^abc` -> `/path/to/this/library/src/middlewares/abc.js`
--   `$@some/lib/abc` -> `@some/lib/src/middlewares/abc.js`
--   `#abc` -> `/path/to/root/src/middlewares/abc.js`
+- `^abc` -> `/path/to/this/library/src/middlewares/abc.js`
+- `$@some/lib/abc` -> `@some/lib/src/middlewares/abc.js`
+- `#abc` -> `/path/to/root/src/middlewares/abc.js`
 
 #### Provided Middlewares
 

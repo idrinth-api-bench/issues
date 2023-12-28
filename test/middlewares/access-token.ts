@@ -5,10 +5,10 @@ import {
 import 'mocha';
 import {
   Request,
-} from '../../src/request';
+} from '../../src/request.js';
 import {
   Result,
-} from '../../src/result';
+} from '../../src/result.js';
 
 describe('middlewares/csrf-header', () => {
   it('should be a class', () => {

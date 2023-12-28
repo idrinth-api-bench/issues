@@ -67,7 +67,8 @@
     "pino": "^8.16.2",
     "ts-node": "^10.9.1",
     "typescript": "^5.3.2",
-    "winston": "^3.11.0"
+    "winston": "^3.11.0",
+    "markdownlint-cli": "^0.38.0"
   },
   "bin": {
     "run-benchmark": "bin/run-benchmark.js",
@@ -80,6 +81,7 @@
   "scripts": {
     "lint": "eslint . --ext .js,.ts,.cjs,.json",
     "lint-fix": "eslint --fix . --ext .js,.ts,.cjs,.json",
+    "lint-md": "markdownlint *.md",
     "test": "c8 mocha",
     "clear": "node tools/clear-js-files-from-src.js",
     "tsc": "tsc -p tsconfig.json",
