@@ -27,7 +27,6 @@
     - [Logging levels used](#logging-levels-used)
     - [Custom Logger](#custom-logger)
 - [License](#license)
-- [Planned](#planned)
 - [Support](#support)
 
 ## What does this project do?
@@ -214,12 +213,6 @@ For ease of use a wrapper is provided as well, that only requires a log method t
 ## License
 
 As usual with my projects this is MIT-licensed.
-
-## Planned
-
-- more unit tests (yeah, it's one of those projects)
-- soap support
-- graphql support
 
 ## Support
 
