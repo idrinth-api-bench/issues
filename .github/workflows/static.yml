@@ -1,0 +1,39 @@
+name: Deploy content to Pages
+
+on:
+  push:
+    branches: ["master"]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.0.1
+      - name: Install
+        run: cd website && npm install
+      - name: Build
+        run: cd website && npm run build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'webpage/dist'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
