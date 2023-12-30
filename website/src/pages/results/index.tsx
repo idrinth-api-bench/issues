@@ -4,7 +4,7 @@ import ApiBenchReport from '../../../../readme/html-result.jpg';
 import CliReport from '../../../../readme/cli-result.jpg';
 import JsonReport from '../../../../readme/json-result.jpg';
 
-const Result = () => <div>
+const Result = () => <div className='content'>
   <h2>Results</h2>
   <p>
         By default, multiple all possible result formats are provided. The files

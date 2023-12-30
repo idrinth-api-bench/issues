@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Middlewares = () => <div>
+const Middlewares = () => <div className='content'>
   <h1>Middlewares</h1>
   <p>
         Middlewares use an absolute file path to be loaded. The following

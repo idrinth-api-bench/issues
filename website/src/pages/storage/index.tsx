@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Storage = () => <div>
+const Storage = () => <div className='content'>
   <h1>Storage</h1>
   <p>
         Storage classes store each finished set of the run. By default, nothing

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Logging = () => <div>
+const Logging = () => <div className='content'>
   <h1>Logging</h1>
   <p>
         Any logger that either implements the interface or has a wrapper is an

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AutoWiring = () => <>
-  <div>
+  <div className='content'>
     <h1>Autowiring Route Parameters</h1>
     <p>
           Parameters of contained functions will be filled with environment

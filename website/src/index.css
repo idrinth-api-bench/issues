@@ -65,6 +65,7 @@ nav a {
   color: var(--dark-green);
   text-decoration: none;
 }
+
 nav ul {
   display: flex;
   align-items: center;
@@ -76,7 +77,7 @@ nav ul {
  }
 
  li {
-  list-style: circle;
+  list-style: disc;
  }
 
  nav li {
@@ -114,15 +115,15 @@ h1,h2,h3 {
 }
 
 h1 {
-  font-size: 120%;
+  font-size: 170%;
 }
 
 h2 {
-  font-size: 115%;
+  font-size: 130%;
 }
 
 h3 {
-  font-size: 110%;
+  font-size: 120%;
 }
 
 a {
@@ -169,9 +170,6 @@ nav ul {
   padding-left: 1.5em;
  }
 
- li {
-  list-style: circle;
- }
 
  nav li {
   list-style: none;
@@ -193,5 +191,30 @@ nav li:hover ul {
 a:hover, a:focus {
   color: var(--green);
 }
+
+.home {
+  overflow: hidden;
+}
+.home  .card{
+  padding-top: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
+}
+.card h1,
+.card h2,
+.card p {
+   width: 30%;
+   float: left;
+}
+ .home p {
+  font-size: 1.5em;
+ }
+
+ .content {
+  padding-top: 2em;
+  margin-left: 4em;
+  margin-right: 4em;
+ }
 }
