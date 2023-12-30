@@ -1,6 +1,7 @@
 import {
   Trans,
 } from 'react-i18next';
+import React from 'react';
 
 const Index = () => <section className="home">
   <div className="card">
