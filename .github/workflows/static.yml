@@ -1,4 +1,4 @@
-name: Deploy content to Pages
+name: Pages
 
 on:
   push:
