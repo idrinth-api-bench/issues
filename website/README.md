@@ -18,4 +18,3 @@ npm run :dev
 # production mode
 npm run start:prod
 ```
-
