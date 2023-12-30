@@ -69,15 +69,17 @@ nav a {
   text-decoration: none;
 }
 
+
+ul {
+  padding-left: 1.5em;
+}
+
 nav ul {
   display: flex;
   align-items: center;
   gap: 2em;
 }
 
-ul {
-  padding-left: 1.5em;
-}
 
 li {
   list-style: disc;
