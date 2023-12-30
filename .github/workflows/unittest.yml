@@ -35,6 +35,8 @@ jobs:
         flag-name: run ${{ join(matrix.*, ' - ') }}
   end:
     runs-on: ubuntu-latest
+    if: ${{ always() && contains(join(needs.*.result, ','), 'success') }}
+    needs: [unittest]
     steps:
     - name: Coveralls
       uses: coverallsapp/github-action@master
