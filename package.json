@@ -79,7 +79,7 @@
     "iabgfoa": "bin/generate-benchmark-from-open-api.js"
   },
   "scripts": {
-    "lint": "eslint . --ext .js,.ts,.cjs,.json",
+    "lint": "eslint . --ext .js,.ts,.cjs,.json,.tsx",
     "lint-fix": "eslint --fix . --ext .js,.ts,.cjs,.json",
     "lint-md": "markdownlint *.md",
     "test": "c8 mocha",
