@@ -5,19 +5,19 @@ Website made using React to show the ideas behind the API benchmark inplementati
 ## Installation
 
 ```bash
-$ npm install
+ npm install
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ npm run start
+npm run start
 
 # watch mode
-$ npm run :dev
+npm run :dev
 
 # production mode
-$ npm run start:prod
+npm run start:prod
 ```
 
