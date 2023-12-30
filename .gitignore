@@ -7,10 +7,10 @@
 /coverage
 /src/**/*.js
 /.idea
-/examples/**/package-lock.json
-/examples/**/result.json
-/examples/**/result.csv
-/examples/**/node_modules
+/website/examples/**/package-lock.json
+/website/examples/**/result.json
+/website/examples/**/result.csv
+/website/examples/**/node_modules
 
 # Logs
 logs
@@ -27,9 +27,6 @@ dist-ssr
 *.local
 
 # Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
 .DS_Store
 *.suo
 *.ntvs*
