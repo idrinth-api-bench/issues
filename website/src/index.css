@@ -126,10 +126,6 @@ h3 {
   font-size: 120%;
 }
 
-a {
-  color: var(--dark-green);
-  text-decoration: underline;
-}
 
 header {
   width: 100%;
@@ -166,30 +162,16 @@ nav ul {
   gap: 2em;
 }
 
- ul {
-  padding-left: 1.5em;
- }
-
-
- nav li {
-  list-style: none;
- }
 
  header  h1 {
   font-size: 150%;
   color: var(--black);
  }
 
-nav ul ul {
-  display: none;
-}
+
 
 nav li:hover ul {
   flex-direction: row;
-}
-
-a:hover, a:focus {
-  color: var(--green);
 }
 
 .home {
