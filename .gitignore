@@ -11,3 +11,26 @@
 /examples/**/result.json
 /examples/**/result.csv
 /examples/**/node_modules
+
+# Logs
+logs
+/website/*.log
+/website/npm-debug.log*
+/website/yarn-debug.log*
+/website/yarn-error.log*
+/website/pnpm-debug.log*
+/website/lerna-debug.log*
+
+/website/node_modules
+/website/dist
+/website/dist-ssr
+/website/*.local
+
+# Editor directories and files
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
