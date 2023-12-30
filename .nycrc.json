@@ -1,6 +1,6 @@
 {
   "require": ["mock-fs", "ts-node/register"],
-  "extension" : [".ts"],
+  "extension" : [".ts", ".tsx"],
   "reporter": ["lcov", "text-summary"],
   "all": true,
   "sourceMap": true,
@@ -25,5 +25,5 @@
     "src/open-api/open-api.ts",
     "src/result-map.ts"
   ],
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "website/src/**/*.tsx"]
 }
