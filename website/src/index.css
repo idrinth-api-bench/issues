@@ -3,19 +3,24 @@
   --header-gray: hsla(0, 0%, 98%, 1);
   --dark-green: hsla(132, 33%, 29%, 1);
   --green: rgb(21, 163, 21);
-  --black:hsla(0, 0%, 0%, 1);
+  --black: hsla(0, 0%, 0%, 1);
 }
 
 body {
   font-family: 'Roboto', sans-serif;
 }
 
-h1,h2,h3,p {
+h1,
+h2,
+h3,
+p {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
 
-h1,h2,h3 {
+h1,
+h2,
+h3 {
   font-weight: 700;
 }
 
@@ -41,24 +46,22 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-   align-items: center;
+  align-items: center;
   background-color: var(--header-gray);
   padding-bottom: 1em;
   padding-top: 1em;
- 
 }
 
 header img {
-   width: 30%;
-  
+  width: 30%;
 }
+
 header div {
   width: 30%;
   display: flex;
   align-items: center;
   gap: 1em;
 }
-
 
 nav a {
   font-size: 1.3em;
@@ -72,22 +75,22 @@ nav ul {
   gap: 2em;
 }
 
- ul {
+ul {
   padding-left: 1.5em;
- }
+}
 
- li {
+li {
   list-style: disc;
- }
+}
 
- nav li {
+nav li {
   list-style: none;
- }
+}
 
- header  h1 {
+header h1 {
   font-size: 150%;
   color: var(--black);
- }
+}
 
 nav ul ul {
   display: none;
@@ -99,104 +102,106 @@ nav li:hover ul {
   gap: 1em;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
   color: var(--green);
 }
 
-
 @media only screen and (min-width: 768px) {
-  h1,h2,h3,p {
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-}
+  h1,
+  h2,
+  h3,
+  p {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
 
-h1,h2,h3 {
-  font-weight: 700;
-}
+  h1,
+  h2,
+  h3 {
+    font-weight: 700;
+  }
 
-h1 {
-  font-size: 170%;
-}
+  h1 {
+    font-size: 170%;
+  }
 
-h2 {
-  font-size: 130%;
-}
+  h2 {
+    font-size: 130%;
+  }
 
-h3 {
-  font-size: 120%;
-}
+  h3 {
+    font-size: 120%;
+  }
 
+  header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--header-gray);
+    padding-bottom: 1em;
+    padding-top: 1em;
+  }
 
-header {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-   align-items: center;
-  background-color: var(--header-gray);
-  padding-bottom: 1em;
-  padding-top: 1em;
- 
-}
+  header img {
+    width: 10%;
+  }
 
-header img {
-   width: 10%;
-  
-}
-header div {
-  width: 30%;
-  display: flex;
-  align-items: center;
-  gap: 1em;
-}
+  header div {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
 
+  nav a {
+    font-size: 1.3em;
+    color: var(--dark-green);
+    text-decoration: none;
+  }
 
-nav a {
-  font-size: 1.3em;
-  color: var(--dark-green);
-  text-decoration: none;
-}
-nav ul {
-  display: flex;
-  align-items: center;
-  gap: 2em;
-}
+  nav ul {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+  }
 
+  header h1 {
+    font-size: 150%;
+    color: var(--black);
+  }
 
- header  h1 {
-  font-size: 150%;
-  color: var(--black);
- }
+  nav li:hover ul {
+    flex-direction: row;
+  }
 
+  .home {
+    overflow: hidden;
+  }
 
+  .home .card {
+    padding-top: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-nav li:hover ul {
-  flex-direction: row;
-}
+  .card h1,
+  .card h2,
+  .card p {
+    width: 30%;
+    float: left;
+  }
 
-.home {
-  overflow: hidden;
-}
-.home  .card{
-  padding-top: 5em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-}
-.card h1,
-.card h2,
-.card p {
-   width: 30%;
-   float: left;
-}
- .home p {
-  font-size: 1.5em;
- }
+  .home p {
+    font-size: 1.5em;
+  }
 
- .content {
-  padding-top: 2em;
-  margin-left: 4em;
-  margin-right: 4em;
- }
+  .content {
+    padding-top: 2em;
+    margin-left: 4em;
+    margin-right: 4em;
+  }
 }
