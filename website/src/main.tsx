@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './components/navbar';
-import "./index.css";
-import "the-new-css-reset/css/reset.css";
+import './index.css';
+import 'the-new-css-reset/css/reset.css';
 import {
   Routes, Route, BrowserRouter,
 } from 'react-router-dom';
@@ -14,7 +14,7 @@ import Middlewares from './pages/middlewares';
 import Storage from './pages/storage';
 import Result from './pages/results';
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.createRoot(document.getElementById('root',)!,).render(
   <React.StrictMode>
     <BrowserRouter
       future={{
@@ -87,5 +87,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
