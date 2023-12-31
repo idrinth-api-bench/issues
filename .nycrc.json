@@ -25,5 +25,5 @@
     "src/open-api/open-api.ts",
     "src/result-map.ts"
   ],
-  "include": ["src/**/*.ts", "website/src/**/*.tsx"]
+  "include": ["src/**/*.ts"]
 }

@@ -24,13 +24,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - run: npm -v
     - run: npm run-script test
     - name: Coveralls
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         parallel: true
+        file: ./coverage/lcov.info
         flag-name: run ${{ join(matrix.*, ' - ') }}
   unittest-website:
 
@@ -49,18 +49,20 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: cd website && npm ci
-    - run: npm -v
     - run: cd website && npm run-script test
     - name: Coveralls
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         parallel: true
+        file: ./website/coverage/lcov.info
         flag-name: run website ${{ join(matrix.*, ' - ') }}
   end:
     runs-on: ubuntu-latest
     if: ${{ always() && contains(join(needs.*.result, ','), 'success') }}
-    needs: [unittest]
+    needs:
+    - unittest
+    - unittest-website
     steps:
     - name: Coveralls
       uses: coverallsapp/github-action@master

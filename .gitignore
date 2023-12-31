@@ -13,7 +13,7 @@
 /examples/**/node_modules
 
 # Logs
-logs
+/website/logs
 /website/*.log
 /website/npm-debug.log*
 /website/yarn-debug.log*
@@ -25,6 +25,7 @@ logs
 /website/dist
 /website/dist-ssr
 /website/*.local
+/website/coverage
 
 # Editor directories and files
 .DS_Store
