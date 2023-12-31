@@ -36,7 +36,7 @@ export class MysqlStorage implements Storage {
 
   store(data: FinishedSet, now: Date,): void {
     const date = (() => {
-      let result = `${now.getUTCFullYear()}-`;
+      let result = `${ now.getUTCFullYear() }-`;
       const month = now.getUTCMonth() + MONTH_OFFSET;
       result += month < TEN ? `0${ month }-` : `${ month }-`;
       result += now.getUTCDate() < TEN

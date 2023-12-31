@@ -1,6 +1,7 @@
 const extensionsRegex = /\.(s?css|svg|png|jpe?g|gif)$/u;
 
-export async function load(url, context, nextLoad,) {
+// eslint-disable-next-line require-await
+export const load = async(url, context, nextLoad,) => {
   if (extensionsRegex.test(url,)) {
     return {
       format: 'module',
@@ -9,4 +10,4 @@ export async function load(url, context, nextLoad,) {
     };
   }
   return nextLoad(url,);
-}
+};
