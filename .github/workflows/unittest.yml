@@ -43,9 +43,7 @@ jobs:
     - run: cd website && npm ci
     - run: cd website && npm run-script test
     - run: mv ./website/coverage ./
-    - run: ls -la
-    - run: ls -la ./coverage
-    - run: sed -i 's/SF:src/SF:website\/src/' ./coverage/lconf.info
+    - run: sed -i 's/SF:src/SF:website\/src/' ./coverage/lcov.info
     - name: Coveralls
       uses: coverallsapp/github-action@master
       with:
