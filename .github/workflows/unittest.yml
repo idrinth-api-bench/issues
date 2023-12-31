@@ -55,7 +55,7 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         parallel: true
-        file: ./website/coverage/lcov.info
+        files: ./website/coverage/lcov.info
         flag-name: run website ${{ join(matrix.*, ' - ') }}
   end:
     runs-on: ubuntu-latest
