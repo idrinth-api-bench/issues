@@ -30,34 +30,28 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         parallel: true
-        file: ./coverage/lcov.info
         flag-name: run ${{ join(matrix.*, ' - ') }}
   unittest-website:
 
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version:
-        - 20.x
-        - 21.x
-
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 21.x
     - run: cd website && npm ci
     - run: cd website && npm run-script test
     - run: mv ./website/coverage ./
+    - run: ls -la
+    - run: ls -la ./coverage
     - run: sed -i 's/SF:src/SF:website\/src/' ./coverage/lconf.info
     - name: Coveralls
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         parallel: true
-        flag-name: run website ${{ join(matrix.*, ' - ') }}
+        flag-name: run website
   end:
     runs-on: ubuntu-latest
     if: ${{ always() && contains(join(needs.*.result, ','), 'success') }}
