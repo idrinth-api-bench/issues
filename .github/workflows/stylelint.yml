@@ -1,4 +1,4 @@
-name: MARKDOWN-LINT
+name: STYLELINT
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
     - master
 
 jobs:
-  markdown-lint:
+  stylelint:
 
     runs-on: ubuntu-latest
 
