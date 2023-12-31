@@ -7,6 +7,10 @@ import {
   Connection,
 } from 'mysql2';
 import reqlib from 'app-root-path';
+import {
+  MONTH_OFFSET,
+  TEN,
+} from '../constants.js';
 
 const project: string = reqlib
   .require('/package-lock.json',)
@@ -31,12 +35,21 @@ export class MysqlStorage implements Storage {
   }
 
   store(data: FinishedSet, now: Date,): void {
+    const date = (() => {
+      let result = `${now.getUTCFullYear()}-`;
+      const month = now.getUTCMonth() + MONTH_OFFSET;
+      result += month < TEN ? `0${ month }-` : `${ month }-`;
+      result += now.getUTCDate() < TEN
+        ? `0${ now.getUTCDate() }`
+        : `${ now.getUTCDate() }`;
+      return result;
+    })();
     this.connection.execute(
       // eslint-disable-next-line max-len
       `INSERT INTO \`${ project }\` (id, day, errors, count, stdv100, stdv80, min80, min100,max80, max100, median80, median100, avg80, avg100, msgs) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
       [
         data.id,
-        now.getUTCFullYear()+'-'+now.getUTCMonth()+'-'+now.getUTCDate(),
+        date,
         data.errors,
         data.count,
         data.stdv100,
