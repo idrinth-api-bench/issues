@@ -2,9 +2,11 @@ name: UNITTEST
 
 on:
   push:
-    branches: [ master ]
+    branches:
+    - master
   pull_request:
-    branches: [ master ]
+    branches:
+    - master
 
 jobs:
   unittest:
@@ -14,13 +16,13 @@ jobs:
     strategy:
       matrix:
         node-version:
-        - 20.x
-        - 21.x
+        - ${{ vars.PREVIOUS_NODE_VERSION }}
+        - ${{ vars.CURRENT_NODE_VERSION }}
 
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v4.0.1
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
@@ -34,12 +36,13 @@ jobs:
   unittest-website:
 
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v4.0.1
       with:
-        node-version: 21.x
+        node-version: ${{ vars.CURRENT_NODE_VERSION }}
     - run: cd website && npm ci
     - run: cd website && npm run-script test
     - run: mv ./website/coverage ./

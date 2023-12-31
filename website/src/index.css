@@ -1,13 +1,13 @@
 :root {
-  --white: hsla(0, 0%, 100%, 1);
-  --header-gray: hsla(0, 0%, 98%, 1);
-  --dark-green: hsla(132, 33%, 29%, 1);
-  --green: rgb(21, 163, 21);
-  --black: hsla(0, 0%, 0%, 1);
+  --white: hsla(0deg 0% 100% / 100%);
+  --header-gray: hsla(0deg 0% 98% / 100%);
+  --dark-green: hsla(132deg 33% 29% / 100%);
+  --green: hsla(120deg 77% 36% / 100%);
+  --black: hsla(0deg 0% 0% / 100%);
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto, sans-serif;
 }
 
 h1,
@@ -64,7 +64,7 @@ header div {
 }
 
 nav a {
-  font-size: 1.3em;
+  font-size: 130%;
   color: var(--dark-green);
   text-decoration: none;
 }
@@ -89,7 +89,7 @@ nav li {
   list-style: none;
 }
 
-header h1 {
+header strong {
   font-size: 150%;
   color: var(--black);
 }
@@ -109,33 +109,7 @@ a:focus {
   color: var(--green);
 }
 
-@media only screen and (min-width: 768px) {
-  h1,
-  h2,
-  h3,
-  p {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-  }
-
-  h1,
-  h2,
-  h3 {
-    font-weight: 700;
-  }
-
-  h1 {
-    font-size: 170%;
-  }
-
-  h2 {
-    font-size: 130%;
-  }
-
-  h3 {
-    font-size: 120%;
-  }
-
+@media only screen and (width >= 768px) {
   header {
     width: 100%;
     display: flex;
@@ -171,7 +145,6 @@ a:focus {
   }
 
   header h1 {
-    font-size: 150%;
     color: var(--black);
   }
 

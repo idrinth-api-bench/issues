@@ -10,7 +10,7 @@ const Navbar = () => <>
   <header>
     <div>
       <img src={Readme} alt="readme" />
-      <h1>README</h1>
+      <strong>@idrinth/api-bench</strong>
     </div>
 
     <nav>

@@ -1,8 +1,9 @@
-name: Pages
+name: PAGES
 
 on:
   push:
-    branches: ["master"]
+    branches:
+    - master
   workflow_dispatch:
 permissions:
   contents: read
@@ -26,6 +27,8 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Setup Node.js environment
         uses: actions/setup-node@v4.0.1
+        with:
+          node-version: ${{ vars.CURRENT_NODE_VERSION }}
       - name: Install
         run: cd website && npm install
       - name: Build

@@ -19,5 +19,5 @@ jobs:
       uses: actions/setup-node@v4.0.1
       with:
         node-version: ${{ vars.CURRENT_NODE_VERSION }}
-    - run: npm ci
-    - run: npm run-script lint-md
+    - run: cd website && npm ci
+    - run: cd website && npm run-script lint-styles
