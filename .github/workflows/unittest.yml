@@ -50,12 +50,12 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: cd website && npm ci
     - run: cd website && npm run-script test
+    - run: mv ./website/coverage ./
     - name: Coveralls
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         parallel: true
-        file: ./website/coverage/lcov.info
         flag-name: run website ${{ join(matrix.*, ' - ') }}
   end:
     runs-on: ubuntu-latest
