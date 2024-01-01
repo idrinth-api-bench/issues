@@ -1,4 +1,6 @@
 import React from 'react';
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const Middlewares = () => (
   <>
@@ -32,12 +34,12 @@ const Middlewares = () => (
         called before sending a request, process after a request. If an error is
         thrown in process, any further validations are skipped.
       </p>
-      <pre>
-        <code>{`interface Middleware {
+    <SyntaxHighlighter language="javascript" style={docco}>
+      {`interface Middleware {
   process(response: Result): void;
   prepare(request: Request): Request;
-}`}</code>
-      </pre>
+}`}
+</SyntaxHighlighter>
     </div>
   </>
 );

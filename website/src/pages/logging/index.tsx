@@ -1,4 +1,6 @@
 import React from 'react';
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const Logging = () => (
   <>
@@ -21,8 +23,8 @@ const Logging = () => (
         You can implement the logger interface below and provide any logger you
         want to next to the already provided ones.
       </p>
-      <pre>
-        <code>{`interface Logger {
+      <SyntaxHighlighter language="javascript" style={docco}>
+          {`interface Logger {
   trace(msg: string, data: Record<string, unknown>): void;
   trace(msg: string): void;
   debug(msg: string, data: Record<string, unknown>): void;
@@ -35,8 +37,9 @@ const Logging = () => (
   error(msg: string): void;
   fatal(msg: string, data: Record<string, unknown>): void;
   fatal(msg: string): void;
-}`}</code>
-      </pre>
+}`}
+</SyntaxHighlighter>
+
       <p>
         For ease of use, a wrapper is provided as well, that only requires a log
         method to be implemented.

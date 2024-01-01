@@ -1,4 +1,6 @@
 import React from 'react';
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const AutoWiring = () => (
   <>
@@ -6,12 +8,13 @@ const AutoWiring = () => (
       <h1>Autowiring Route Parameters</h1>
       <p>
         Parameters of contained functions will be filled with environment
-        variable values of the respective name (aBc {"->"} A_BC).<br/> Types will be
-        automatically applied if there is either a default value to get the type
-        from or a comment like /* boolean */ parameter added in front of the
-        parameter.<br/> Comment types will always win over default value types. If
-        those two don't match, you might get weird results. Sadly, a few things
-        can't be done:
+        variable values of the respective name (aBc {"->"} A_BC).
+        <br /> Types will be automatically applied if there is either a default
+        value to get the type from or a comment like /* boolean */ parameter
+        added in front of the parameter.
+        <br /> Comment types will always win over default value types. If those
+        two don't match, you might get weird results. Sadly, a few things can't
+        be done:
       </p>
     </div>
     <div className="content">
@@ -27,9 +30,10 @@ const AutoWiring = () => (
         <li>Destructuring is not supported</li>
         <li>Default value types NOT of the same type as the parameter</li>
       </ul>
-      <pre>
-        <code>
-          {`module.exports = (apiRootUrl, apiEMail, apiPassword) => ({
+
+      <SyntaxHighlighter language="javascript" style={docco}>
+          
+            {`module.exports = (apiRootUrl, apiEMail, apiPassword) => ({
   id: 'login',
   main: {
     method: 'post',
@@ -50,8 +54,7 @@ const AutoWiring = () => (
   ],
 });
 `}
-        </code>
-      </pre>
+      </SyntaxHighlighter>
     </div>
   </>
 );

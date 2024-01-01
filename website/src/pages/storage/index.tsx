@@ -1,4 +1,6 @@
 import React from 'react';
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const Storage = () => (
   <>
@@ -15,14 +17,12 @@ const Storage = () => (
         To provide a custom storage, implement the interface below. The method
         will be called once per task.
       </p>
-      <pre>
-        <code>
-          {`interface Storage
+      <SyntaxHighlighter language="javascript" style={docco}>
+            {`interface Storage
 {
   store(data: FinishedSet, now: Date): void;
 }`}
-        </code>
-      </pre>
+      </SyntaxHighlighter>
     </div>
   </>
 );
