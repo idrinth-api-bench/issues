@@ -1,8 +1,7 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import {
-  docco,
-} from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import hljs from "react-syntax-highlighter/dist/esm/styles/hljs";
+const docco = hljs.docco;
 
 const Logging = () => <>
   <div className="title-card">
