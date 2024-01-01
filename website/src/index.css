@@ -1,6 +1,7 @@
 :root {
   --white: hsla(0deg 0% 100% / 100%);
-  --header-gray: hsla(0deg 0% 98% / 100%);
+  --light-gray: hsla(0deg 0% 95% / 100%);
+  --dark-gray: hsla(0deg 0% 25% / 100%);
   --dark-green: hsla(132deg 33% 29% / 100%);
   --green: hsla(120deg 77% 36% / 100%);
   --black: hsla(0deg 0% 0% / 100%);
@@ -47,7 +48,7 @@ header {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: var(--header-gray);
+  background-color: var(--light-gray);
   padding-bottom: 1em;
   padding-top: 1em;
 }
@@ -116,7 +117,7 @@ a:focus {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: var(--header-gray);
+    background-color: var(--light-gray);
     padding-bottom: 1em;
     padding-top: 1em;
   }
@@ -151,8 +152,9 @@ a:focus {
   nav li:hover ul {
     flex-direction: column;
     position: absolute;
-    background: var(--header-gray);
-    padding: 0 1em;
+    background: var(--light-gray);
+    padding: 1em;
+    box-shadow: 1em 1em 1.5em var(--dark-gray);
   }
 
   .home {
