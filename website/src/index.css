@@ -149,7 +149,10 @@ a:focus {
   }
 
   nav li:hover ul {
-    flex-direction: row;
+    flex-direction: column;
+    position: absolute;
+    background: var(--header-gray);
+    padding: 0 1em;
   }
 
   .home {
