@@ -1,6 +1,8 @@
 import React from 'react';
-import pkg from "react-syntax-highlighter/dist/esm/styles/hljs";
-const { docco } = pkg;
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import {
+  docco
+} from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const AutoWiring = () => <>
   <div className="title-card">
