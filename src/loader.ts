@@ -12,6 +12,7 @@ import {
 import fse from 'fs-extra';
 import reqlib from 'app-root-path';
 
+// eslint-disable-next-line complexity
 const loadUp = (args: string[],) => {
   let threads = Number.parseInt(
     args[FIRST_ARGUMENT] || '1',
