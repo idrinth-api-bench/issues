@@ -8,6 +8,7 @@ ignorePatterns:
 - node_modules
 - src/*.js
 - src/**/*.js
+- website
 root: true
 env:
   node: true
