@@ -6,40 +6,52 @@ import {
   NavLink,
 } from 'react-router-dom';
 
-const Navbar = () => <>
-  <header>
-    <div>
-      <img src={Readme} alt="readme" />
-      <strong>@idrinth/api-bench</strong>
-    </div>
+const Navbar = () => (
+  <>
+    <header>
+      <div>
+        <img src={Readme} alt="readme" />
+        <strong>@idrinth/api-bench</strong>
+      </div>
+     
+        <a href="https://www.npmjs.com/" target="blank">
+      
+          NPMJS
+        </a>
+  
+        <a href="https://github.com/Idrinth/api-bench" target="blank">
+          GITHUB
+        </a>
+     
 
-    <nav>
-      <ul>
-        <li>
-          <NavLink to="/">{'Home'}</NavLink>
-        </li>
-        <li>
-          <NavLink to="/usage">{'Usage & Examples'}</NavLink>
-          <ul>
-            <li>
-              <NavLink to="/usage/autowiring">{'Autowiring'}</NavLink>
-            </li>
-            <li>
-              <NavLink to="/usage/results">{'Results'}</NavLink>
-            </li>
-            <li>
-              <NavLink to="/usage/logging">{'Logging'}</NavLink>
-            </li>
-            <li>
-              <NavLink to="/usage/middlewares">{'Middlewares'}</NavLink>
-            </li>
-            <li>
-              <NavLink to="/usage/storage">{'Storage'}</NavLink>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </header>
-</>;
+      <nav>
+        <ul>
+          <li>
+            <NavLink to="/">{"Home"}</NavLink>
+          </li>
+          <li>
+            <NavLink to="/usage">{"Usage & Examples"}</NavLink>
+            <ul>
+              <li>
+                <NavLink to="/usage/autowiring">{"Autowiring"}</NavLink>
+              </li>
+              <li>
+                <NavLink to="/usage/results">{"Results"}</NavLink>
+              </li>
+              <li>
+                <NavLink to="/usage/logging">{"Logging"}</NavLink>
+              </li>
+              <li>
+                <NavLink to="/usage/middlewares">{"Middlewares"}</NavLink>
+              </li>
+              <li>
+                <NavLink to="/usage/storage">{"Storage"}</NavLink>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </>
+);
 export default Navbar;
