@@ -4,8 +4,6 @@ import ApiBenchReport from '../../../../readme/html-result.jpg';
 import CliReport from '../../../../readme/cli-result.jpg';
 import JsonReport from '../../../../readme/json-result.jpg';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import hljs from "react-syntax-highlighter/dist/esm/styles/hljs";
-const docco = hljs.docco;
 
 const Result = () => <>
   <div className="title-card">
@@ -47,7 +45,7 @@ const Result = () => <>
         in programmatically accessing the framework. It will be called with the
         complete result after all result modifiers have modified the result.
     </p>
-    <SyntaxHighlighter language="javascript" style={docco}>
+    <SyntaxHighlighter language="javascript">
       {`interface Reporter {
   (results: FinishedRun, rootDir: string): void;
 }`}

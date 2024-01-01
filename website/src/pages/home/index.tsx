@@ -45,7 +45,6 @@ const Index = () => <section className="home">
       <a href="https://github.com/jeffbski/bench-rest" target="_blank">
             jeffbski/bench-rest
       </a>
-      <br />
           are all untouched for quite a while and don't provide type definitions
           for typescript. This makes them less desirable when working with
           bigger projects where the better static code check is a huge boost in

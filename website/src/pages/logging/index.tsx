@@ -1,7 +1,5 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import hljs from "react-syntax-highlighter/dist/esm/styles/hljs";
-const docco = hljs.docco;
 
 const Logging = () => <>
   <div className="title-card">
@@ -23,7 +21,7 @@ const Logging = () => <>
         You can implement the logger interface below and provide any logger you
         want to next to the already provided ones.
     </p>
-    <SyntaxHighlighter language="javascript" style={docco}>
+    <SyntaxHighlighter language="javascript">
       {`interface Logger {
   trace(msg: string, data: Record<string, unknown>): void;
   trace(msg: string): void;

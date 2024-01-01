@@ -1,7 +1,5 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import hljs from "react-syntax-highlighter/dist/esm/styles/hljs";
-const docco = hljs.docco;
 
 const AutoWiring = () => <>
   <div className="title-card">
@@ -31,7 +29,7 @@ const AutoWiring = () => <>
       <li>Default value types NOT of the same type as the parameter</li>
     </ul>
 
-    <SyntaxHighlighter language="javascript" style={docco}>
+    <SyntaxHighlighter language="javascript">
 
       {`module.exports = (apiRootUrl, apiEMail, apiPassword) => ({
   id: 'login',

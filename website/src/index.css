@@ -110,6 +110,9 @@ a:focus {
   color: var(--green);
 }
 
+a[target=_blank]:after {
+  content: ' ⭷';
+}
 @media only screen and (width >= 768px) {
   header {
     width: 100%;
@@ -181,12 +184,12 @@ a:focus {
        flex-direction: column;
        justify-content: center;
        align-items: center;
-       
+
   }
 
-   
 
-  
+
+
 
   .home .card {
     padding-top: 5em;
@@ -195,7 +198,7 @@ a:focus {
     justify-content: center;
   }
 
- 
+
 
   .title-card p
   {
