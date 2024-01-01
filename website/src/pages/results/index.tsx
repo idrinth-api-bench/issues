@@ -5,7 +5,7 @@ import CliReport from '../../../../readme/cli-result.jpg';
 import JsonReport from '../../../../readme/json-result.jpg';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import {
-  docco,
+  docco
 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const Result = () => <>
