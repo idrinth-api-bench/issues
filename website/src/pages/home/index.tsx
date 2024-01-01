@@ -4,7 +4,7 @@ import {
 import React from 'react';
 
 const Index = () => <section className="home">
-  <div className="card">
+  <div className="title-card">
     <Trans>
       <h1>What does this project do?</h1>
     </Trans>
