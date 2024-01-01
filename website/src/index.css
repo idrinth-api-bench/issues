@@ -145,6 +145,10 @@ a:focus {
     gap: 2em;
   }
 
+   h1 {
+     font-size: 200%;
+  }
+
   header h1 {
     color: var(--black);
   }
@@ -161,6 +165,16 @@ a:focus {
     overflow: hidden;
   }
 
+   .title-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     padding-top: 2em;
+    margin-right: 3em;
+    margin-left: 3em;
+  }
+
   .home .title-card  {
        margin-top: 5em;
        display: flex;
@@ -170,9 +184,7 @@ a:focus {
        
   }
 
-    h1 {
-     font-size: 200%;
-  }
+   
 
   
 
@@ -183,15 +195,8 @@ a:focus {
     justify-content: center;
   }
 
-  .title-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-     padding-top: 2em;
-    margin-right: 3em;
-    margin-left: 3em;
-  }
+ 
+
   .title-card p
   {
    font-size: 1.2em;
