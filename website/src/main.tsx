@@ -6,8 +6,7 @@ import {
   Routes,
   Route,
   BrowserRouter,
-}
-  from 'react-router-dom';
+} from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import Home from './pages/home/index';
 import AutoWiring from './pages/autowiring';

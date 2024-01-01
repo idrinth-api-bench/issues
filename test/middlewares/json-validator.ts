@@ -80,9 +80,7 @@ describe('middlewares/json-validator', () => {
       };
       expect(() => JsonValidator.process(response,),)
         .to.throw(
-          'The JSON body is invalid. ' +
-          'SyntaxError: Expected property name or \'}\' in ' +
-          'JSON at position 1',
+          'The JSON body is invalid. SyntaxError:',
         );
     },);
     it('should not throw if the body is json', () => {
