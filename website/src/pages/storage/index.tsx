@@ -1,8 +1,6 @@
 import React from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import {
-  docco
-} from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import pkg from "react-syntax-highlighter/dist/esm/styles/hljs";
+const { docco } = pkg;
 
 const Storage = () => <>
   <div className="title-card">

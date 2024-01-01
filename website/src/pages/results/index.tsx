@@ -3,10 +3,8 @@ import CsvReport from '../../../../readme/csv-result.jpg';
 import ApiBenchReport from '../../../../readme/html-result.jpg';
 import CliReport from '../../../../readme/cli-result.jpg';
 import JsonReport from '../../../../readme/json-result.jpg';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import {
-  docco
-} from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import pkg from "react-syntax-highlighter/dist/esm/styles/hljs";
+const { docco } = pkg;
 
 const Result = () => <>
   <div className="title-card">
