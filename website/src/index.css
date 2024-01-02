@@ -110,9 +110,10 @@ a:focus {
   color: var(--green);
 }
 
-a[target=_blank]:after {
+a[target="_blank"]::after {
   content: ' ⭷';
 }
+
 @media only screen and (width >= 768px) {
   header {
     width: 100%;
