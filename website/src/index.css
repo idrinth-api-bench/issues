@@ -171,13 +171,13 @@ a[target="_blank"]::after {
     justify-content: center;
     align-items: center;
      padding-top: 2em;
-    margin-right: 3em;
-    margin-left: 3em;
+    padding-right: 3em;
+    padding-left: 3em;
   }
 
   .title-card p
   {
-   font-size: 1.2em;
+   font-size: 120%;
   }
 
   .card h1,
