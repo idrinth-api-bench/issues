@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from './components/navbar';
 import './index.css';
-import './pages/home/index.css';
 import 'the-new-css-reset/css/reset.css';
 import {
   Routes,
