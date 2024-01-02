@@ -1,7 +1,5 @@
 import React from 'react';
-
-import Readme from '../assets/readme-svgrepo-com.svg';
-
+import IAB from '../assets/iab.svg';
 import {
   NavLink,
 } from 'react-router-dom';
@@ -9,7 +7,7 @@ import {
 const Navbar = () => <>
   <header>
     <div>
-      <img src={Readme} alt="readme" />
+      <img src={IAB} alt="readme" />
       <strong>@idrinth/api-bench</strong>
     </div>
     <nav>
