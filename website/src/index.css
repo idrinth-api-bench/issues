@@ -165,10 +165,6 @@ a[target="_blank"]::after {
     box-shadow: 1em 1em 1.5em var(--dark-gray);
   }
 
-  .home {
-    overflow: hidden;
-  }
-
    .title-card {
     display: flex;
     flex-direction: column;
@@ -178,28 +174,6 @@ a[target="_blank"]::after {
     margin-right: 3em;
     margin-left: 3em;
   }
-
-  .home .title-card  {
-       margin-top: 5em;
-       display: flex;
-       flex-direction: column;
-       justify-content: center;
-       align-items: center;
-
-  }
-
-
-
-
-
-  .home .card {
-    padding-top: 5em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-
 
   .title-card p
   {
@@ -213,9 +187,7 @@ a[target="_blank"]::after {
     float: left;
   }
 
-  .home p {
-    font-size: 1.5em;
-  }
+
 
   .content {
     padding-top: 2em;
