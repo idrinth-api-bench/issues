@@ -15,6 +15,7 @@ import Logging from './pages/logging';
 import Middlewares from './pages/middlewares';
 import Storage from './pages/storage';
 import Result from './pages/results';
+import Imprint from './pages/imprint';
 
 ReactDOM.createRoot(document.getElementById('root',)!,).render(
   <React.StrictMode>
@@ -84,6 +85,15 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <Storage />
+            </>
+          }
+        />
+        <Route
+          path="/imprint"
+          element={
+            <>
+              <Navbar />
+              <Imprint />
             </>
           }
         />
