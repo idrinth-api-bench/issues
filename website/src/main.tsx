@@ -16,6 +16,7 @@ import Middlewares from './pages/middlewares';
 import Storage from './pages/storage';
 import Result from './pages/results';
 import Imprint from './pages/imprint';
+import './i18n.ts';
 
 ReactDOM.createRoot(document.getElementById('root',)!,).render(
   <React.StrictMode>

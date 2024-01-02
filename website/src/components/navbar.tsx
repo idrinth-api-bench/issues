@@ -7,7 +7,7 @@ import {
 const Navbar = () => <>
   <header>
     <div>
-      <img src={IAB} alt="readme" />
+      <img src={IAB} alt="@idrinth/api-bench" />
       <strong>@idrinth/api-bench</strong>
     </div>
     <nav>

@@ -6,9 +6,9 @@ import './index.css';
 
 const Index = () => <section className="home">
   <div className="title-card">
-    <Trans>
-      <h1>What does this project do?</h1>
-    </Trans>
+    <h1>
+      <Trans i18nKey="home.title">What does this project do?</Trans>
+    </h1>
     <p>
           This project provides a framework for testing rest-apis and websites
           for changes in response times. <br /> This helps to detect performance
