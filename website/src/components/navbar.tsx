@@ -16,7 +16,10 @@ const Navbar = () => <>
           <NavLink to="/">{'Home'}</NavLink>
         </li>
         <li>
-          <a href="https://www.npmjs.com/" target="_blank">
+          <a
+            href=" https://www.npmjs.com/package/@idrinth/api-bench"
+            target="_blank"
+          >
               NPMJS
           </a>
         </li>
