@@ -2,8 +2,8 @@ import {
   Trans,
 } from 'react-i18next';
 import React from 'react';
-import "./index.css";
-import "the-new-css-reset/css/reset.css";
+import './index.css';
+import 'the-new-css-reset/css/reset.css';
 
 const Index = () => <section className="home">
   <div className="title-card">
