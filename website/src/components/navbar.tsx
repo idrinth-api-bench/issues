@@ -12,11 +12,20 @@ const Navbar = () => <>
       <img src={Readme} alt="readme" />
       <strong>@idrinth/api-bench</strong>
     </div>
-
     <nav>
       <ul>
         <li>
           <NavLink to="/">{'Home'}</NavLink>
+        </li>
+        <li>
+          <a href="https://www.npmjs.com/" target="_blank">
+              NPMJS
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/Idrinth/api-bench" target="_blank">
+              GITHUB
+          </a>
         </li>
         <li>
           <NavLink to="/usage">{'Usage & Examples'}</NavLink>

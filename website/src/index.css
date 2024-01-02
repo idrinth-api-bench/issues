@@ -110,6 +110,10 @@ a:focus {
   color: var(--green);
 }
 
+a[target="_blank"]::after {
+  content: ' ⭷';
+}
+
 @media only screen and (width >= 768px) {
   header {
     width: 100%;
@@ -145,6 +149,10 @@ a:focus {
     gap: 2em;
   }
 
+   h1 {
+     font-size: 200%;
+  }
+
   header h1 {
     color: var(--black);
   }
@@ -161,11 +169,41 @@ a:focus {
     overflow: hidden;
   }
 
+   .title-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     padding-top: 2em;
+    margin-right: 3em;
+    margin-left: 3em;
+  }
+
+  .home .title-card  {
+       margin-top: 5em;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+
+  }
+
+
+
+
+
   .home .card {
     padding-top: 5em;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+
+
+  .title-card p
+  {
+   font-size: 1.2em;
   }
 
   .card h1,
