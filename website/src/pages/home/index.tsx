@@ -2,6 +2,7 @@ import {
   Trans,
 } from 'react-i18next';
 import React from 'react';
+import './index.css';
 
 const Index = () => <section className="home">
   <div className="title-card">
