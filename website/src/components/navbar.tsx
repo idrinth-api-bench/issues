@@ -3,7 +3,9 @@ import IAB from '../assets/iab.svg';
 import {
   NavLink,
 } from 'react-router-dom';
-import {version as VERSION} from '../../../package.json';
+import {
+  version as VERSION,
+} from '../../../package.json' with { type: "json" };
 
 const Navbar = () => <>
   <header>
@@ -15,7 +17,7 @@ const Navbar = () => <>
     <nav>
       <ul>
         <li>
-        <NavLink to="/">{'Home'}</NavLink>
+          <NavLink to="/">{'Home'}</NavLink>
         </li>
         <li>
           <a
