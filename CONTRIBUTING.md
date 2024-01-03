@@ -16,6 +16,18 @@ While adding functionality, keep in mind to break existing interfaces, entry poi
 
 Testing new code is expected and adding tests or improving tests for old code is appreciated. The goal is to find most issues by either static analysis or unit and integration tests.
 
+### Setup
+
+Runn the following commands to create the full project:
+
+```sh
+git clone https://github.com/idrinth/api-bench
+cd api-bench
+npm install
+cd website
+npm install
+```
+
 ## Documentation
 
 Documentation is an underrated part of every software. Adding any kind of clarification, example or improvement is highly appreciated and encouraged. The ones writing the documentation are the unsung heroes of open and closed source software.
