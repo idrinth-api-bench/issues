@@ -43,6 +43,10 @@ a {
   text-decoration: underline;
 }
 
+a[target="_blank"]::after {
+  content: ' ⭷';
+}
+
 header {
   width: 100%;
   display: flex;
@@ -72,15 +76,25 @@ nav a {
   text-decoration: none;
 }
 
+a:hover,
+a:focus {
+  color: var(--green);
+}
 
 ul {
   padding-left: 1.5em;
 }
 
+nav {
+  width: 100%;
+}
+
 nav ul {
   display: flex;
   align-items: center;
-  gap: 2em;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 0;
 }
 
 
@@ -90,30 +104,29 @@ li {
 
 nav li {
   list-style: none;
+  border-left: var(--dark-green) 5px solid;
+  border-bottom: var(--dark-green) 1px solid;
+  border-bottom-left-radius: 0.25em;
+  width: 100%;
+  text-align: center;
+}
+
+nav a:hover,
+nav a:focus {
+  text-decoration: underline;
+}
+
+nav li ul {
+  padding-left: 0.1em;
+}
+
+nav li li:last-of-type {
+  border-bottom: transparent 0 none;
 }
 
 header strong {
   font-size: 150%;
   color: var(--black);
-}
-
-nav ul ul {
-  display: none;
-}
-
-nav li:hover ul {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-}
-
-a:hover,
-a:focus {
-  color: var(--green);
-}
-
-a[target="_blank"]::after {
-  content: ' ⭷';
 }
 
 @media only screen and (width >= 768px) {
@@ -137,6 +150,12 @@ a[target="_blank"]::after {
     display: flex;
     align-items: center;
     gap: 1em;
+    max-width: initial;
+    padding-left: 1em;
+  }
+
+  nav {
+    width: auto;
   }
 
   nav a {
@@ -148,7 +167,17 @@ a[target="_blank"]::after {
   nav ul {
     display: flex;
     align-items: center;
+    flex-direction: row;
     gap: 2em;
+  }
+
+  nav li {
+    border: none;
+    width: initial;
+  }
+
+  nav ul ul {
+    display: none;
   }
 
    h1 {
@@ -160,7 +189,10 @@ a[target="_blank"]::after {
   }
 
   nav li:hover ul {
+    display: flex;
     flex-direction: column;
+    gap: 1em;
+    width: auto;
     position: absolute;
     background: var(--light-gray);
     padding: 1em;
@@ -172,13 +204,12 @@ a[target="_blank"]::after {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-     padding-top: 2em;
+    padding-top: 2em;
     padding-right: 3em;
     padding-left: 3em;
   }
 
-  .title-card p
-  {
+  .title-card p {
    font-size: 120%;
   }
 
@@ -189,11 +220,7 @@ a[target="_blank"]::after {
     float: left;
   }
 
-
-
   .content {
-    padding-top: 2em;
-    margin-left: 4em;
-    margin-right: 4em;
+    padding: 2em 4em;
   }
 }

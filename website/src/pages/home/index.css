@@ -1,27 +1,24 @@
 @media only screen and (width >= 768px) { 
   .home {
-    overflow: hidden;
+    overflow: auto;
+    padding: 2em 4em;
   }
 
   .home p {
-    font-size: 1.5em;
+    font-size: 150%;
   }
 
-    .home .title-card  {
-       padding-top: 5em;
-       display: flex;
-       flex-direction: column;
-       justify-content: center;
-       align-items: center;
-
+  .home .title-card  {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
   }
 
   .home .card {
-    padding-top: 5em;
+    padding-top: 2em;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
-
 }

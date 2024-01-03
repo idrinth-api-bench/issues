@@ -9,7 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "c8 mocha",
-    "lint-styles": "stylelint src/**/*.css"
+    "lint-styles": "stylelint src/index.css src/**/**/*.css"
   },
   "dependencies": {
     "i18next-browser-languagedetector": "^7.2.0",
