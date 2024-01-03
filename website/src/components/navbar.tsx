@@ -3,17 +3,19 @@ import IAB from '../assets/iab.svg';
 import {
   NavLink,
 } from 'react-router-dom';
+import {version as VERSION} from '../../../package.json';
 
 const Navbar = () => <>
   <header>
     <div>
-      <img src={IAB} alt="@idrinth/api-bench" />
+      <img src={IAB} alt="@idrinth/api-bench"/>
       <strong>@idrinth/api-bench</strong>
+      <em>v{VERSION}</em>
     </div>
     <nav>
       <ul>
         <li>
-          <NavLink to="/">{'Home'}</NavLink>
+        <NavLink to="/">{'Home'}</NavLink>
         </li>
         <li>
           <a

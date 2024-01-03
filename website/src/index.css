@@ -59,14 +59,17 @@ header {
 }
 
 header img {
-  width: 30%;
+  grid-row: 1/3;
+  padding-right: 1em;
+  height: 3em;
 }
 
 header div {
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: fit-content(4em) auto;
   align-items: center;
-  gap: 1em;
+  text-align: left;
   max-width: 360px;
 }
 
@@ -141,15 +144,8 @@ header strong {
     padding-top: 1em;
   }
 
-  header img {
-    width: 10%;
-  }
-
   header div {
     width: 30%;
-    display: flex;
-    align-items: center;
-    gap: 1em;
     max-width: initial;
     padding-left: 1em;
   }
@@ -180,8 +176,8 @@ header strong {
     display: none;
   }
 
-   h1 {
-     font-size: 200%;
+  h1 {
+    font-size: 200%;
   }
 
   header h1 {
