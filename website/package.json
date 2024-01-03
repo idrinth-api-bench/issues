@@ -22,6 +22,7 @@
     "the-new-css-reset": "^1.11.2"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-import-attributes": "^7.23.3",
     "@testing-library/react": "^14.1.2",
     "@types/chai": "^4.3.11",
     "@types/mocha": "^10.0.5",
