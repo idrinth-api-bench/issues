@@ -138,11 +138,11 @@ nav li:hover ul {
 }
 
 a[target="_blank"] {
-    padding-right: 1em;
-    background-image: url("assets/external-link-svgrepo-com.svg");
-    background-position: right center;
-    background-size: 1em 1em;
-    background-repeat: no-repeat;
+  padding-right: 1em;
+  background-image: url("assets/external-link-svgrepo-com.svg");
+  background-position: right center;
+  background-size: 1em 1em;
+  background-repeat: no-repeat;
 }
 
 @media only screen and (width >= 768px) {
