@@ -43,10 +43,6 @@ a {
   text-decoration: underline;
 }
 
-a[target="_blank"]::after {
-  content: ' ⭷';
-}
-
 header {
   width: 100%;
   display: flex;
@@ -82,7 +78,9 @@ nav a {
 a:hover,
 a:focus {
   color: var(--green);
+  text-decoration: underline;
 }
+
 
 ul {
   padding-left: 1.5em;
@@ -114,14 +112,11 @@ nav li {
   text-align: center;
 }
 
-nav a:hover,
-nav a:focus {
-  text-decoration: underline;
-}
 
 nav li ul {
   padding-left: 0.1em;
 }
+
 
 nav li li:last-of-type {
   border-bottom: transparent 0 none;
@@ -130,6 +125,24 @@ nav li li:last-of-type {
 header strong {
   font-size: 150%;
   color: var(--black);
+}
+
+nav ul ul {
+  display: none;
+}
+
+nav li:hover ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+a[target="_blank"] {
+    padding-right: 1em;
+    background-image: url("assets/external-link-svgrepo-com.svg");
+    background-position: right center;
+    background-size: 1em 1em;
+    background-repeat: no-repeat;
 }
 
 @media only screen and (width >= 768px) {
