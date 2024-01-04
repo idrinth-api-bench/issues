@@ -16,6 +16,7 @@ import Middlewares from './pages/middlewares';
 import Storage from './pages/storage';
 import Result from './pages/results';
 import Imprint from './pages/imprint';
+import Footer from './components/footer';
 
 ReactDOM.createRoot(document.getElementById('root',)!,).render(
   <React.StrictMode>
@@ -31,6 +32,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <Home />
+              <Footer />
             </>
           }
         />
