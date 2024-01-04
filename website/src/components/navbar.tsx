@@ -55,9 +55,6 @@ const Navbar = () => <>
             </li>
           </ul>
         </li>
-        <li>
-          <NavLink to="/imprint">{'Imprint'}</NavLink>
-        </li>
       </ul>
     </nav>
   </header>
