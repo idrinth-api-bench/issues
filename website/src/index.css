@@ -17,6 +17,8 @@ body {
   font-size: 16px;
   height: 100%;
   padding-bottom: 3em;
+  display: flex;
+  flex-direction: column;
 }
 
 h1,
@@ -159,9 +161,9 @@ a[target="_blank"] {
 @media only screen and (width >= 768px) {
   footer {
     display: flex;
-    padding: 2rem;
+    padding: 1rem 0;
     margin-top: auto;
-    background-color: var(--light-gray);
+    background-color: var(--dark-gray);
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -170,8 +172,8 @@ a[target="_blank"] {
   #policy-list {
     display: flex;
     justify-content: flex-end;
-    min-width: 80%;
-    
+    position: fixed;
+    min-width: 95%;
   }
 
   header {
@@ -207,17 +209,37 @@ a[target="_blank"] {
     width: initial;
   }
 
-  footer > ul > li {
-    display: flex;
-    margin-left: 10px;
- 
-    
+  footer > ul > li > a {
+    text-decoration: none;
+    color: white;
   }
 
-  nav ul ul {
+  footer > ul > li {
+    display: flex;
+    padding-left: 10px;
+ 
+  }
+
+  li::after {
+    content: " | ";
+    padding-left: 1rem;
+   }
+
+  li:last-child::after {
+    content: "";
+   }
+
+  nav ul ul{
     display: none;
   }
 
+  .footer-text {
+    padding-left: 5rem;
+    max-height: 100%;
+    white-space: nowrap;
+    color: white;
+  }
+  
   header h1 {
     color: var(--black);
   }
