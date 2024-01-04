@@ -6,6 +6,7 @@
 /.nyc_output
 /coverage
 /src/**/*.js
+/index.js
 /.idea
 /examples/**/package-lock.json
 /examples/**/result.json
