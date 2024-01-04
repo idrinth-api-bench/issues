@@ -138,6 +138,7 @@ nav li li:last-of-type {
 header strong {
   font-size: 150%;
   color: var(--black);
+  font-weight: normal;
 }
 
 a[target="_blank"] {
@@ -151,7 +152,7 @@ a[target="_blank"] {
 @media only screen and (width >= 768px) {
   header {
     flex-direction: row;
-    background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,0.15), rgba(255,255,255,0.05))
+    background-image: linear-gradient(to bottom, hsla(0deg 0% 100% / 10%), hsla(0deg 0% 100% / 15%), hsla(0deg 0% 100% / 5%));
   }
 
   header div {
