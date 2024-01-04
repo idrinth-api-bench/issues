@@ -8,13 +8,13 @@ const Middlewares = () => <>
         Middlewares use an absolute file path to be loaded. The following
         characters will be used to expand short forms:
     </p>
-  </div>
-  <div className="content">
     <ul>
       <li>{'^abc -> /path/to/this/library/src/middlewares/abc.js'}</li>
       <li>{'$@some/lib/abc -> @some/lib/src/middlewares/abc.js'}</li>
       <li>{'#abc -> /path/to/root/src/middlewares/abc.js'}</li>
     </ul>
+  </div>
+  <div className="card">
     <h2>Provided Middlewares</h2>
     <ul>
       <li>json and form encode</li>
@@ -26,18 +26,22 @@ const Middlewares = () => <>
       <li>user-agent</li>
       <li>cookies</li>
     </ul>
+  </div>
+  <div className="card">
     <h2>Custom Middleware</h2>
-    <p>
+    <div>
+      <p>
         For custom middleware, implement the following interface. Prepare is
-        called before sending a request, process after a request. If an error is
-        thrown in process, any further validations are skipped.
-    </p>
-    <SyntaxHighlighter language="javascript">
-      {`interface Middleware {
+        called before sending a request, process after a request. If an error
+        is thrown in process, any further validations are skipped.
+      </p>
+      <SyntaxHighlighter language="javascript">
+        {`interface Middleware {
   process(response: Result): void;
   prepare(request: Request): Request;
 }`}
-    </SyntaxHighlighter>
+      </SyntaxHighlighter>
+    </div>
   </div>
 </>;
 export default Middlewares;

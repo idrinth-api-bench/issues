@@ -15,7 +15,8 @@ const AutoWiring = () => <>
         be done:
     </p>
   </div>
-  <div className="content">
+  <div className="card">
+    <h2>Limitations</h2>
     <ul>
       <li>
           Do not use constants for their default values, they can't be properly
@@ -28,7 +29,9 @@ const AutoWiring = () => <>
       <li>Destructuring is not supported</li>
       <li>Default value types NOT of the same type as the parameter</li>
     </ul>
-
+  </div>
+  <div className="card">
+    <h2>Example</h2>
     <SyntaxHighlighter language="javascript">
 
       {`module.exports = (apiRootUrl, apiEMail, apiPassword) => ({
