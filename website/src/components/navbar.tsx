@@ -24,13 +24,16 @@ const Navbar = () => <>
             href=" https://www.npmjs.com/package/@idrinth/api-bench"
             target="_blank"
           >
-              NPMJS
+            NPMJS
           </a>
         </li>
         <li>
           <a href="https://github.com/Idrinth/api-bench" target="_blank">
-              GITHUB
+            GITHUB
           </a>
+        </li>
+        <li>
+          <NavLink to="/contributing">{'Contributing'}</NavLink>
         </li>
         <li>
           <NavLink to="/usage">{'Usage & Examples'}</NavLink>
@@ -58,5 +61,6 @@ const Navbar = () => <>
       </ul>
     </nav>
   </header>
-</>;
+</>
+;
 export default Navbar;
