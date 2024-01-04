@@ -2,4 +2,4 @@ RewriteEngine on
 RewriteCond %{REQUEST_URI} !^/$
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule .* / [L,R=302]
+RewriteRule .* /index.html [L]
