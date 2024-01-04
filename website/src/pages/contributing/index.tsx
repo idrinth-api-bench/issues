@@ -1,9 +1,5 @@
-import {
-  Trans,
-} from 'react-i18next';
 import React from 'react';
-import {Format} from "cli-progress";
-import SyntaxHighlighter from "react-syntax-highlighter";
+import SyntaxHighlighter from 'react-syntax-highlighter';
 
 const Index = () => <section className="home">
   <div className="title-card">
