@@ -7,10 +7,14 @@
   --green: hsla(120deg 77% 36% / 100%);
   --black: hsla(0deg 0% 0% / 100%);
 }
-
+html {
+  min-height: 100%;
+}
 body {
   font-family: Roboto, sans-serif;
   font-size: 16px;
+  height: 100%;
+  padding-bottom: 3em;
 }
 
 h1,
@@ -150,21 +154,30 @@ a[target="_blank"] {
   background-repeat: no-repeat;
 }
 
-
 @media only screen and (width >= 768px) {
+
   footer {
     display: flex;
-    position: fixed;
-    margin: 10px;
+    padding: 2rem;
+    margin-top: auto;
     background-color: var(--light-gray);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
-  footer > ul {
-    display: flex;
 
-  }
-  footer > ul > li {
+  #policyList {
+    display: flex;
     justify-content: flex-end;
-    margin-left: 5rem;
+    min-width: 80%;
+    
+  }
+
+  footer > ul > li {
+    display: flex;
+    margin-left: 10px;
+ 
+    
   }
 
   header {
