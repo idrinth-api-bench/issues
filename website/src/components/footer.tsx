@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => <footer>
   <span>© 2020-2024 Björn Büttner and contributors.</span>
-  <ul id="policyList">
+  <ul id="policy-list">
     <li>
       <a href="#" >About</a>
     </li>

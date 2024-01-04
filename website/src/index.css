@@ -7,9 +7,11 @@
   --green: hsla(120deg 77% 36% / 100%);
   --black: hsla(0deg 0% 0% / 100%);
 }
+
 html {
   min-height: 100%;
 }
+
 body {
   font-family: Roboto, sans-serif;
   font-size: 16px;
@@ -155,7 +157,6 @@ a[target="_blank"] {
 }
 
 @media only screen and (width >= 768px) {
-
   footer {
     display: flex;
     padding: 2rem;
@@ -166,17 +167,10 @@ a[target="_blank"] {
     width: 100%;
   }
 
-  #policyList {
+  #policy-list {
     display: flex;
     justify-content: flex-end;
     min-width: 80%;
-    
-  }
-
-  footer > ul > li {
-    display: flex;
-    margin-left: 10px;
- 
     
   }
 
@@ -211,6 +205,13 @@ a[target="_blank"] {
   nav li {
     border: none;
     width: initial;
+  }
+
+  footer > ul > li {
+    display: flex;
+    margin-left: 10px;
+ 
+    
   }
 
   nav ul ul {
