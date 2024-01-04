@@ -44,6 +44,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <Contributing />
+              <Footer />
             </>
           }
         />
@@ -53,6 +54,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <Usage />
+              <Footer />
             </>
           }
         />
@@ -62,6 +64,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <AutoWiring />
+              <Footer />
             </>
           }
         />
@@ -71,6 +74,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <Result />
+              <Footer />
             </>
           }
         />
@@ -80,6 +84,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <Logging />
+              <Footer />
             </>
           }
         />
@@ -89,6 +94,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <Middlewares />
+              <Footer />
             </>
           }
         />
@@ -98,6 +104,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <Storage />
+              <Footer />
             </>
           }
         />
@@ -107,6 +114,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <Imprint />
+              <Footer />
             </>
           }
         />
