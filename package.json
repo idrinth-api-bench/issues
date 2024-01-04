@@ -2,8 +2,8 @@
   "name": "@idrinth/api-bench",
   "description": "A library to benchmark apis, no matter if rest or soap",
   "license": "MIT",
-  "version": "2.4.5",
-  "homepage": "https://github.com/Idrinth/api-bench",
+  "version": "2.5.0",
+  "homepage": "https://idrinth-api-ben.ch",
   "type": "module",
   "main": "index.js",
   "repository": {
@@ -39,7 +39,8 @@
     "fs-extra": "^11.2.0",
     "is-callable": "^1.2.7",
     "yaml": "^2.3.4",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "fast-xml-parser": "^4.3.2"
   },
   "devDependencies": {
     "@databases/mysql-test": "^4.0.2",

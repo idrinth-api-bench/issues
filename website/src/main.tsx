@@ -16,6 +16,8 @@ import Middlewares from './pages/middlewares';
 import Storage from './pages/storage';
 import Result from './pages/results';
 import Imprint from './pages/imprint';
+import './i18n.ts';
+import Contributing from './pages/contributing';
 import Footer from './components/footer';
 
 ReactDOM.createRoot(document.getElementById('root',)!,).render(
@@ -32,7 +34,15 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <Home />
-              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/contributing"
+          element={
+            <>
+              <Navbar />
+              <Contributing />
             </>
           }
         />

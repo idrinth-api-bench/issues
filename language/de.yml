@@ -28,3 +28,5 @@ no_json_content_type: Der content-type %1% ist nicht application/json.
 invalid_json_body: Der JSON-Inhalt ist ungültig. %1%
 openapi_invalid: Das Open-Api-Dokument ist ungültig, bitte auf Fehler überprüfen!
 no_openapi_document_given: Es wurde kein Pfad zu einem Open-Api-Dokument angegeben.
+no_xml_content_type: Der content-type %1 ist nicht */xml.
+invalid_xml_body: Der XML-Inhalt ist ungültig.

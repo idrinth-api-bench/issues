@@ -9,9 +9,11 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "c8 mocha",
-    "lint-styles": "stylelint src/**/*.css"
+    "lint-styles": "stylelint src/index.css src/**/**/*.css"
   },
   "dependencies": {
+    "i18next-browser-languagedetector": "^7.2.0",
+    "i18next-http-backend": "^2.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^14.0.0",
@@ -20,6 +22,7 @@
     "the-new-css-reset": "^1.11.2"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-import-attributes": "^7.23.3",
     "@testing-library/react": "^14.1.2",
     "@types/chai": "^4.3.11",
     "@types/mocha": "^10.0.5",

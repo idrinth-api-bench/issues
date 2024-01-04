@@ -9,39 +9,43 @@ const Logging = () => <>
         option. Wrappers for pino and winston are available.
     </p>
   </div>
-  <div className="content">
+  <div className="card">
     <h2>Logging levels used</h2>
     <p>
         Most log entries are debug level, with the major steps being written to
         info. Trace is currently not used but may be used for detailed argument
         printing at some point.
     </p>
+  </div>
+  <div className="card">
     <h2>Custom Logger</h2>
-    <p>
-        You can implement the logger interface below and provide any logger you
-        want to next to the already provided ones.
-    </p>
-    <SyntaxHighlighter language="javascript">
-      {`interface Logger {
-  trace(msg: string, data: Record<string, unknown>): void;
-  trace(msg: string): void;
-  debug(msg: string, data: Record<string, unknown>): void;
-  debug(msg: string): void;
-  info(msg: string, data: Record<string, unknown>): void;
-  info(msg: string): void;
-  warn(msg: string, data: Record<string, unknown>): void;
-  warn(msg: string): void;
-  error(msg: string, data: Record<string, unknown>): void;
-  error(msg: string): void;
-  fatal(msg: string, data: Record<string, unknown>): void;
-  fatal(msg: string): void;
-}`}
-    </SyntaxHighlighter>
+    <div>
+      <p>
+        You can implement the logger interface below and provide any logger
+        you want to next to the already provided ones.
+      </p>
+      <SyntaxHighlighter language="javascript">
+        {`interface Logger {
+    trace(msg: string, data: Record<string, unknown>): void;
+    trace(msg: string): void;
+    debug(msg: string, data: Record<string, unknown>): void;
+    debug(msg: string): void;
+    info(msg: string, data: Record<string, unknown>): void;
+    info(msg: string): void;
+    warn(msg: string, data: Record<string, unknown>): void;
+    warn(msg: string): void;
+    error(msg: string, data: Record<string, unknown>): void;
+    error(msg: string): void;
+    fatal(msg: string, data: Record<string, unknown>): void;
+    fatal(msg: string): void;
+  }`}
+      </SyntaxHighlighter>
 
-    <p>
+      <p>
         For ease of use, a wrapper is provided as well, that only requires a log
         method to be implemented.
-    </p>
+      </p>
+    </div>
   </div>
 </>;
 export default Logging;

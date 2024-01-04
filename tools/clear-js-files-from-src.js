@@ -1,6 +1,6 @@
 import {
   rmSync,
-  readdirSync,
+  readdirSync, existsSync,
 } from 'fs';
 import {
   fileURLToPath,
@@ -16,4 +16,6 @@ const clearFolder = (folder,) => {
   }
 };
 clearFolder(__dirname + '../src',);
-rmSync(__dirname + '../index.js',);
+if (existsSync(__dirname + '../index.js')) {
+  rmSync(__dirname + '../index.js',);
+}

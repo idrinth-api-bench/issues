@@ -1,16 +1,18 @@
 import React from 'react';
-
-import Readme from '../assets/readme-svgrepo-com.svg';
-
+import IAB from '../assets/iab.svg';
 import {
   NavLink,
 } from 'react-router-dom';
+import pkg from '../../../package.json' with {
+  type: 'json'
+};
 
 const Navbar = () => <>
   <header>
     <div>
-      <img src={Readme} alt="readme" />
+      <img src={IAB} alt="@idrinth/api-bench"/>
       <strong>@idrinth/api-bench</strong>
+      <em>v{pkg.version}</em>
     </div>
     <nav>
       <ul>
@@ -18,14 +20,20 @@ const Navbar = () => <>
           <NavLink to="/">{'Home'}</NavLink>
         </li>
         <li>
-          <a href="https://www.npmjs.com/" target="_blank">
-              NPMJS
+          <a
+            href=" https://www.npmjs.com/package/@idrinth/api-bench"
+            target="_blank"
+          >
+            NPMJS
           </a>
         </li>
         <li>
           <a href="https://github.com/Idrinth/api-bench" target="_blank">
-              GITHUB
+            GITHUB
           </a>
+        </li>
+        <li>
+          <NavLink to="/contributing">{'Contributing'}</NavLink>
         </li>
         <li>
           <NavLink to="/usage">{'Usage & Examples'}</NavLink>
