@@ -1,8 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
 
 :root {
   --white: hsla(0deg 0% 100% / 100%);
@@ -155,6 +150,7 @@ a[target="_blank"] {
   background-repeat: no-repeat;
 }
 
+
 @media only screen and (width >= 768px) {
   header {
     flex-direction: row;
@@ -223,4 +219,5 @@ a[target="_blank"] {
     align-items: center;
     justify-content: center;
   }
+/* add footer styling here */
 }

@@ -34,6 +34,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <Home />
+              <Footer />
             </>
           }
         />
