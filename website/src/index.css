@@ -152,6 +152,21 @@ a[target="_blank"] {
 
 
 @media only screen and (width >= 768px) {
+  footer {
+    display: flex;
+    position: fixed;
+    margin: 10px;
+    background-color: var(--light-gray);
+  }
+  footer > ul {
+    display: flex;
+
+  }
+  footer > ul > li {
+    justify-content: flex-end;
+    margin-left: 5rem;
+  }
+
   header {
     flex-direction: row;
     background-image: linear-gradient(to bottom, hsla(0deg 0% 100% / 10%), hsla(0deg 0% 100% / 15%), hsla(0deg 0% 100% / 5%));
