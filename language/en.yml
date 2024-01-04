@@ -28,3 +28,5 @@ no_json_content_type: The content-type %1% is not application/json.
 invalid_json_body: The JSON body is invalid. %1%
 openapi_invalid: Your Open-Api document is not valid, please check for errors!
 no_openapi_document_given: You need to provide an Open-Api document path.
+no_xml_content_type: The content-type application/jason is not */xml.
+invalid_xml_body: The XML body is invalid.

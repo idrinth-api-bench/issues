@@ -25,6 +25,8 @@ const Middlewares = () => <>
       <li>status 404 check</li>
       <li>user-agent</li>
       <li>cookies</li>
+      <li>json-validator</li>
+      <li>xml-validator</li>
     </ul>
   </div>
   <div className="card">
