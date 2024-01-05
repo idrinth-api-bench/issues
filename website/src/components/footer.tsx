@@ -1,19 +1,19 @@
 import React from 'react';
 
 const Footer = () => <footer>
-  <span className='footer-text'>© 2020-2024 Björn Büttner and contributors.</span>
-  <ul id="policy-list">
+  <span >© 2020-2024 Björn Büttner and contributors.</span>
+  <ul>
     <li>
-      <a href="#" >About</a>
+      <a href="#">About</a>
     </li>
     <li>
-      <a href="#" >Privacy Policy</a>
+      <a href="#">Privacy Policy</a>
     </li>
     <li>
-      <a href="#" >Licensing</a>
+      <a href="#">Licensing</a>
     </li>
     <li>
-      <a href="/imprint" >Imprint</a>
+      <a href="/imprint">Imprint</a>
     </li>
   </ul>
 </footer>;
