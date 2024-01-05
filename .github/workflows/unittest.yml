@@ -15,8 +15,8 @@ jobs:
     strategy:
       matrix:
         node-version:
-        - $PREVIOUS_NODE_VERSION
-        - $CURRENT_NODE_VERSION
+        - ${{ PREVIOUS_NODE_VERSION }}
+        - ${{ CURRENT_NODE_VERSION }}
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -35,10 +35,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js $CURRENT_NODE_VERSION
+    - name: Use Node.js ${{ CURRENT_NODE_VERSION }}
       uses: actions/setup-node@v4.0.1
       with:
-        node-version: $CURRENT_NODE_VERSION
+        node-version: ${{ CURRENT_NODE_VERSION }}
     - run: cd website && npm ci
     - run: cd website && npm run-script test
     - run: mv ./website/coverage ./
