@@ -9,6 +9,6 @@ describe('components/navbar', () => {
   },);
   it('() should be an object', () => {
     const result = Navbar();
-    expect(result,).to.be.a('object',);
+    expect(result,).to.be.an('object',);
   },);
 },);
