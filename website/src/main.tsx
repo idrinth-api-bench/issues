@@ -1,3 +1,4 @@
+import './i18n.ts';
 import React from 'react';
 import Navbar from './components/navbar';
 import './index.css';
