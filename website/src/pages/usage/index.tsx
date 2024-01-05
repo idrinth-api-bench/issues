@@ -8,7 +8,6 @@ const Usage = () => <>
     <div className="title-card">
       <h1>Usage &amp; Examples</h1>
     </div>
-
     <div className="card">
       <h2>Binaries</h2>
       <ul>
@@ -44,7 +43,6 @@ const Usage = () => <>
     </div>
     <div className="card">
       <h2>Programmatically</h2>
-
       <p>
         <Lang lnkey= 'usage.programmatically.description' />
       </p>
