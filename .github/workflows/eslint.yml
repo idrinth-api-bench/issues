@@ -1,5 +1,4 @@
 name: ESLINT
-
 on:
   push:
     branches:
@@ -7,31 +6,29 @@ on:
   pull_request:
     branches:
     - master
-
+env:
+  PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts' }}
+  CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
 jobs:
   eslint:
-
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js
+      - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
         uses: actions/setup-node@v4.0.1
         with:
-          node-version: ${{ vars.CURRENT_NODE_VERSION }}
+          node-version: ${{ env.CURRENT_NODE_VERSION }}
       - run: npm ci
       - run: cd website && npm ci
       - run: npm run-script lint
   eslint-website:
-
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js
+      - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
         uses: actions/setup-node@v4.0.1
         with:
-          node-version: ${{ vars.CURRENT_NODE_VERSION }}
+          node-version: ${{ env.CURRENT_NODE_VERSION }}
       - run: npm ci
       - run: cd website && npm ci
       - run: cd website && npm run-script lint
