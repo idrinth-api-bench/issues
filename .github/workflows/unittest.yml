@@ -64,7 +64,8 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ always() && contains(join(needs.*.result, ','), 'success') }}
     needs:
-    - unittest
+    - unittest-latest
+    - unittest-current
     - unittest-website
     steps:
     - name: Coveralls
