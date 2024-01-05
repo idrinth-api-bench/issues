@@ -6,6 +6,9 @@ import {
 import pkg from '../../../package.json' with {
   type: 'json'
 };
+import {
+  Lang,
+} from './lang.tsx';
 
 const Navbar = () => <>
   <header>
@@ -17,7 +20,7 @@ const Navbar = () => <>
     <nav>
       <ul>
         <li>
-          <NavLink to="/">{'Home'}</NavLink>
+          <NavLink to="/"><Lang lnkey='home.nav'/></NavLink>
         </li>
         <li>
           <a

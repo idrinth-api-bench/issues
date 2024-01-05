@@ -16,7 +16,6 @@ import Middlewares from './pages/middlewares';
 import Storage from './pages/storage';
 import Result from './pages/results';
 import Imprint from './pages/imprint';
-import './i18n.ts';
 import Contributing from './pages/contributing';
 
 ReactDOM.createRoot(document.getElementById('root',)!,).render(
