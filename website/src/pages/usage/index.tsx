@@ -1,4 +1,7 @@
 import React from 'react';
+import {
+  Lang,
+} from '../../components/lang.tsx';
 
 const Usage = () => <>
   <section>
@@ -41,13 +44,9 @@ const Usage = () => <>
     </div>
     <div className="card">
       <h2>Programmatically</h2>
+
       <p>
-          Basically require main/include main and supply the executor method with
-          required parameters. Tasks defined in src/routes-subfolders before,
-          before_task, before_each, main, after_each, after_task, and after will
-          be used to automatically fill the Job processed by the executor.
-          Automatic filling only happens when there are no tasks provided to the
-          function.
+        <Lang lnkey= 'usage.programmatically.description' />
       </p>
     </div>
   </section>
