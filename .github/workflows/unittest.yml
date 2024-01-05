@@ -64,7 +64,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ always() && contains(join(needs.*.result, ','), 'success') }}
     needs:
-    - unittest-latest
+    - unittest-previous
     - unittest-current
     - unittest-website
     steps:
