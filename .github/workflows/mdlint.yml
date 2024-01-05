@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ CURRENT_NODE_VERSION }}
+    - name: Use Node.js ${{ envs.CURRENT_NODE_VERSION }}
       uses: actions/setup-node@v4.0.1
       with:
-        node-version: ${{ CURRENT_NODE_VERSION }}
+        node-version: ${{ envs.CURRENT_NODE_VERSION }}
     - run: npm ci
     - run: npm run-script lint-md
