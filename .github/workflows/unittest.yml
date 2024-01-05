@@ -10,27 +10,38 @@ env:
   PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
 jobs:
-  unittest:
+  unittest-previous:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version:
-        - ${{ env.PREVIOUS_NODE_VERSION }}
-        - ${{ env.CURRENT_NODE_VERSION }}
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4.0.1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm run-script test
-    - name: Coveralls
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        parallel: true
-        flag-name: run ${{ join(matrix.*, ' - ') }}
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4.0.1
+        with:
+          node-version: ${{ env.PREVIOUS_NODE_VERSION }}
+      - run: npm ci
+      - run: npm run-script test
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel: true
+          flag-name: run ${{ env.PREVIOUS_NODE_VERSION }}
+  unittest-current:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
+        uses: actions/setup-node@v4.0.1
+        with:
+          node-version: ${{ env.CURRENT_NODE_VERSION }}
+      - run: npm ci
+      - run: npm run-script test
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel: true
+          flag-name: run ${{ env.CURRENT_NODE_VERSION }}
   unittest-website:
     runs-on: ubuntu-latest
     steps:
