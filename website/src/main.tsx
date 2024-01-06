@@ -20,6 +20,7 @@ import Imprint from './pages/imprint';
 import Contributing from './pages/contributing';
 import Footer from './components/footer';
 
+
 ReactDOM.createRoot(document.getElementById('root',)!,).render(
   <React.StrictMode>
     <BrowserRouter
