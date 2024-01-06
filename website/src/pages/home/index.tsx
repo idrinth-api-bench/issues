@@ -1,12 +1,12 @@
-import {
-  Trans,
-} from 'react-i18next';
 import React from 'react';
+import {
+  Lang,
+} from '../../components/lang.tsx';
 
 const Index = () => <section className="home">
   <div className="title-card">
     <h1>
-      <Trans i18nKey="home.title">What does this project do?</Trans>
+      <Lang lnkey="home.title"/>
     </h1>
     <p>
         This project provides a framework for testing rest-apis and websites for

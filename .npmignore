@@ -9,6 +9,7 @@
 /coverage
 /.mocharc.cjs
 /.nycrc.json
+/.markdownlint.yaml
 /fixtures
 /.github
 /.idea
@@ -18,5 +19,5 @@
 /CODE_OF_CONDUCT.md
 /CONTRIBUTING.md
 /result.html
-/readme
+/readme/*
 /website
