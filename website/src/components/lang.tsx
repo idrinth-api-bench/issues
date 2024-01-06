@@ -5,13 +5,14 @@ import {
 } from 'react-i18next';
 
 export const Lang = ({
-  children, lnkey,
+  lnkey,
+  ...props
 },) => {
   const {
     t,
   } = useTranslation();
-  if (! children) {
-    children = lnkey;
+  if (! props.children) {
+    props.children = lnkey;
   }
-  return <Trans t={t} i18nKey={lnkey}>{children}</Trans>;
+  return <Trans t={t} i18nKey={lnkey}>{props.children}</Trans>;
 };

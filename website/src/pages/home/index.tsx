@@ -17,7 +17,7 @@ const Index = () => <section className="home">
   <div className="card">
     <h2>Why use a Benchmark Runner?</h2>
     <p>
-        Given, that the amount of APIs increase by moving to microservices, we
+        Given that the amount of APIs increase by moving to microservices, we
         need a way to determine if changes to a service's response times are
         related to code changes. <br />
         For this purpose a defined load with repeatable request seems the most

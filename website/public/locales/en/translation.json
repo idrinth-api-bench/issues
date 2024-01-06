@@ -2,5 +2,9 @@
   "home": {
     "nav": "Home",
     "title": "What does this project do?"
+  },
+  "404": {
+    "title": "404 Not Found",
+    "description": "Sadly the URL you entered couldn't be found."
   }
 }

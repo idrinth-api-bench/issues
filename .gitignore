@@ -21,7 +21,7 @@
 /website/yarn-error.log*
 /website/pnpm-debug.log*
 /website/lerna-debug.log*
-
+/website/cypress/screenshots
 /website/node_modules
 /website/dist
 /website/dist-ssr
