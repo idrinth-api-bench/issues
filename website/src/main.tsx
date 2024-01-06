@@ -22,7 +22,6 @@ import NotFound from './pages/not-found';
 import License from './pages/license';
 import Footer from './components/footer';
 
-
 ReactDOM.createRoot(document.getElementById('root',)!,).render(
   <React.StrictMode>
     <BrowserRouter
