@@ -7,7 +7,6 @@
   --black: hsla(0deg 0% 0% / 100%);
 }
 
-
 html {
   height: 100vh;
 }
@@ -16,7 +15,6 @@ body {
   font-family: Roboto, sans-serif;
   font-size: 16px;
   min-height: 100vh;
-  /* padding-bottom: 3em; */
 }
 
 h1,
@@ -168,7 +166,6 @@ section {
   footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* position: fixed; */
     padding: 1rem 0;
     background-color: var(--light-gray);
     bottom: 0;
@@ -180,7 +177,6 @@ section {
     display: flex;
     justify-content: flex-end;
     margin-right: 4rem;
-    /* position: fixed; */
   }
 
   header {

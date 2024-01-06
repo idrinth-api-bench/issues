@@ -10,7 +10,7 @@ const Footer = () => <footer>
       <a href="#">Privacy Policy</a>
     </li>
     <li>
-      <a href="#">Licensing</a>
+      <a href="/license">Licensing</a>
     </li>
     <li>
       <a href="/imprint">Imprint</a>
