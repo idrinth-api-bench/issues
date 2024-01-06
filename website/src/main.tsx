@@ -127,6 +127,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <License />
+              <Footer />
             </>
           }
         />
@@ -136,6 +137,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <NotFound />
+              <Footer />
             </>
           }
         />
