@@ -19,6 +19,7 @@ import Result from './pages/results';
 import Imprint from './pages/imprint';
 import Contributing from './pages/contributing';
 import NotFound from './pages/not-found';
+import License from './pages/license';
 
 ReactDOM.createRoot(document.getElementById('root',)!,).render(
   <React.StrictMode>
@@ -106,6 +107,15 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <Imprint />
+            </>
+          }
+        />
+        <Route
+          path="/license"
+          element={
+            <>
+              <Navbar />
+              <License />
             </>
           }
         />
