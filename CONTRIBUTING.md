@@ -18,7 +18,7 @@ Testing new code is expected and adding tests or improving tests for old code is
 
 ### Setup
 
-Runn the following commands to create the full project:
+Run the following commands to create the full project:
 
 ```sh
 git clone https://github.com/idrinth/api-bench
