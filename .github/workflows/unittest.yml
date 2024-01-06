@@ -45,21 +45,31 @@ jobs:
   unittest-website:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
-      uses: actions/setup-node@v4.0.1
-      with:
-        node-version: ${{ env.CURRENT_NODE_VERSION }}
-    - run: cd website && npm ci
-    - run: cd website && npm run-script test
-    - run: mv ./website/coverage ./
-    - run: sed -i 's/SF:src/SF:website\/src/' ./coverage/lcov.info
-    - name: Coveralls
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        parallel: true
-        flag-name: run website
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
+        uses: actions/setup-node@v4.0.1
+        with:
+          node-version: ${{ env.CURRENT_NODE_VERSION }}
+      - run: cd website && npm ci
+      - run: cd website && npm run-script test
+      - run: mv ./website/coverage ./
+      - run: sed -i 's/SF:src/SF:website\/src/' ./coverage/lcov.info
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel: true
+          flag-name: run website
+  unittest-e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
+        uses: actions/setup-node@v4.0.1
+        with:
+          node-version: ${{ env.CURRENT_NODE_VERSION }}
+      - run: cd website && npm ci
+      - run: cd website && npm run-script e2e
   end:
     runs-on: ubuntu-latest
     if: ${{ always() && contains(join(needs.*.result, ','), 'success') }}

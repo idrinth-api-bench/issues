@@ -18,6 +18,8 @@ import Storage from './pages/storage';
 import Result from './pages/results';
 import Imprint from './pages/imprint';
 import Contributing from './pages/contributing';
+import NotFound from './pages/not-found';
+import License from './pages/license';
 import Footer from './components/footer';
 
 
@@ -116,6 +118,24 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
               <Navbar />
               <Imprint />
               <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/license"
+          element={
+            <>
+              <Navbar />
+              <License />
+            </>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <>
+              <Navbar />
+              <NotFound />
             </>
           }
         />

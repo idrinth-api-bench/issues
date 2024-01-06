@@ -3,6 +3,10 @@
     "nav": "Home",
     "title": "What does this project do?"
   },
+  "404": {
+    "title": "404 Not Found",
+    "description": "Sadly the URL you entered couldn't be found."
+  },
   "usage": {
     "programmatically": {
       "description": "Basically require main/include main and supply the executor method with required parameters. Tasks defined in src/routes-subfolders before, before_task, before_each, main, after_each, after_task, and after will be used to automatically fill the Job processed by the executor. Automatic filling only happens when there are no tasks provided to the function."
