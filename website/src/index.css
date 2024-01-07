@@ -176,7 +176,6 @@ footer > ul {
 
 footer > ul > li > a {
   text-decoration: none;
-  color: var(--black);
 }
 
 footer > ul > li {
@@ -237,11 +236,6 @@ footer li:last-child::after {
     padding-left: 5rem;
     max-height: 100%;
     white-space: nowrap;
-    color: var(--black);
-  }
-
-  header h1 {
-    color: var(--black);
   }
 
   nav li:hover ul {
