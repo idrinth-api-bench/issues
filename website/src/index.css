@@ -210,6 +210,7 @@ footer li:last-child::after {
   header div {
     padding-left: 1em;
   }
+
   header strong {
     font-size: 150%;
   }
