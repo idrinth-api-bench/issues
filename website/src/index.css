@@ -160,13 +160,16 @@ a[target="_blank"] {
     max-width: initial;
     padding-left: 1em;
   }
+  header strong {
+    font-size: 150%;
+  }
 
   nav {
     width: auto;
   }
 
   nav a {
-    font-size: 1em;
+    font-size: 1.3em;
   }
 
   nav ul {
