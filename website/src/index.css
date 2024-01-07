@@ -163,7 +163,7 @@ nav li li:last-of-type {
 }
 
 header strong {
-  font-size: 150%;
+  font-size: 120%;
   color: var(--black);
   font-weight: normal;
 }
@@ -211,6 +211,10 @@ footer li:last-child::after {
     padding-left: 1em;
   }
 
+  header strong {
+    font-size: 150%;
+  }
+
   nav {
     width: auto;
   }
@@ -221,7 +225,7 @@ footer li:last-child::after {
 
   nav ul {
     flex-direction: row;
-    gap: 2em;
+    gap: 1.7em;
   }
 
   nav li {
