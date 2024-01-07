@@ -62,5 +62,22 @@ describe('middlewares/max-time', () => {
       };
       expect(() => MaxTime.process(response,),).to.not.throw();
     },);
+    it('should not throw if there is no max time', () => {
+      const response: Result = {
+        id: 'example',
+        validators: [],
+        duration: 234242,
+        // eslint-disable-next-line no-undefined
+        maxDuration: undefined,
+        response: {
+          headers: {},
+          cookies: {},
+          uri: '',
+          status: 0,
+          body: '',
+        },
+      };
+      expect(() => MaxTime.process(response,),).to.not.throw();
+    },);
   },);
 },);
