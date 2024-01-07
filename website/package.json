@@ -50,6 +50,6 @@
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
-    "@idrinth/duplicate-style-check": "^1.0.3"
+    "@idrinth/duplicate-style-check": "^1.0.5"
   }
 }
