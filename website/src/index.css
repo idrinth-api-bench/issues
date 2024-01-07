@@ -97,12 +97,6 @@ nav a {
   text-decoration: none;
 }
 
-a:hover,
-a:focus {
-  color: var(--green);
-  text-decoration: underline;
-}
-
 ul {
   padding-left: 1.5em;
 }
@@ -130,6 +124,34 @@ nav li {
   border-bottom-left-radius: 0.25em;
   width: 100%;
   text-align: center;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1rem 1em;
+  background-color: var(--light-gray);
+  width: 100%;
+}
+
+footer ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer  a {
+  text-decoration: none;
+}
+
+footer li {
+  display: flex;
+  padding-left: 10px;
+}
+
+a:hover,
+a:focus {
+  color: var(--green);
+  text-decoration: underline;
 }
 
 nav li ul {
@@ -161,27 +183,6 @@ a[target="_blank"] {
 section {
   min-height: calc(100vh - 6em - 2rem - 3px);
 }
-footer {
-  display: grid;
-  grid-template-columns: 1fr;
-  padding: 1rem 1em;
-  background-color: var(--light-gray);
-  width: 100%;
-}
-
-footer ul {
-  display: flex;
-  justify-content: flex-end;
-}
-
-footer  a {
-  text-decoration: none;
-}
-
-footer li {
-  display: flex;
-  padding-left: 10px;
-}
 
 footer li::after {
   content: " | ";
@@ -198,7 +199,7 @@ footer li:last-child::after {
     padding: 1rem 0;
    }
 
-  footer > ul {
+  footer ul {
     margin-right: 4rem;
   }
 
@@ -232,7 +233,7 @@ footer li:last-child::after {
     display: none;
   }
 
-  footer > span {
+  footer span {
     padding-left: 5rem;
     max-height: 100%;
     white-space: nowrap;
@@ -270,6 +271,7 @@ footer li:last-child::after {
   header {
     flex-direction: row;
   }
+
   header div {
     width: 30%;
     max-width: initial;
