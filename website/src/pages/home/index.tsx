@@ -51,6 +51,5 @@ const Index = () => <section className="home">
         complicated validations or huge response bodies on the data gathering.
     </p>
   </div>
-
 </section>;
 export default Index;

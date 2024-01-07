@@ -161,32 +161,53 @@ a[target="_blank"] {
 section {
   min-height: calc(100vh - 6em - 2rem - 3px);
 }
+footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1rem 1em;
+  background-color: var(--light-gray);
+  width: 100%;
+}
 
-@media only screen and (width >= 768px) {
+footer > ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer > ul > li > a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+footer > ul > li {
+  display: flex;
+  padding-left: 10px;
+}
+
+footer li::after {
+  content: " | ";
+  padding-left: 1rem;
+}
+
+footer li:last-child::after {
+  content: "";
+}
+
+@media only screen and (width >= 600px) {
   footer {
-    display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 1rem 0;
-    background-color: var(--light-gray);
-    bottom: 0;
-    width: 100%;
-
    }
 
   footer > ul {
-    display: flex;
-    justify-content: flex-end;
     margin-right: 4rem;
   }
 
-  header {
-    flex-direction: row;
+  header, footer {
     background-image: linear-gradient(to bottom, hsla(0deg 0% 100% / 10%), hsla(0deg 0% 100% / 15%), hsla(0deg 0% 100% / 5%));
   }
 
   header div {
-    width: 30%;
-    max-width: initial;
     padding-left: 1em;
   }
 
@@ -208,25 +229,6 @@ section {
     width: initial;
   }
 
-  footer > ul > li > a {
-    text-decoration: none;
-    color: var(--black);
-  }
-
-  footer > ul > li {
-    display: flex;
-    padding-left: 10px;
-  }
-
-  footer li::after {
-    content: " | ";
-    padding-left: 1rem;
-   }
-
-  footer li:last-child::after {
-    content: "";
-   }
-
   nav ul ul{
     display: none;
   }
@@ -237,7 +239,7 @@ section {
     white-space: nowrap;
     color: var(--black);
   }
-  
+
   header h1 {
     color: var(--black);
   }
@@ -270,3 +272,12 @@ section {
   }
 }
 
+@media only screen and (width >= 900px) {
+  header {
+    flex-direction: row;
+  }
+  header div {
+    width: 30%;
+    max-width: initial;
+  }
+}
