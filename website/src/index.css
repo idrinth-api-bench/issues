@@ -136,7 +136,7 @@ nav li li:last-of-type {
 }
 
 header strong {
-  font-size: 150%;
+  font-size: 120%;
   color: var(--black);
   font-weight: normal;
 }
@@ -166,12 +166,12 @@ a[target="_blank"] {
   }
 
   nav a {
-    font-size: 1.3em;
+    font-size: 1em;
   }
 
   nav ul {
     flex-direction: row;
-    gap: 2em;
+    gap: 1.7em;
   }
 
   nav li {
