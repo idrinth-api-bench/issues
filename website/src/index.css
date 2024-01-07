@@ -169,16 +169,16 @@ footer {
   width: 100%;
 }
 
-footer > ul {
+footer ul {
   display: flex;
   justify-content: flex-end;
 }
 
-footer > ul > li > a {
+footer  a {
   text-decoration: none;
 }
 
-footer > ul > li {
+footer li {
   display: flex;
   padding-left: 10px;
 }
