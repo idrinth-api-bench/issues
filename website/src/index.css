@@ -167,13 +167,9 @@ a[target="_blank"] {
 
   nav a {
     font-size: 1.3em;
-    color: var(--dark-green);
-    text-decoration: none;
   }
 
   nav ul {
-    display: flex;
-    align-items: center;
     flex-direction: row;
     gap: 2em;
   }
