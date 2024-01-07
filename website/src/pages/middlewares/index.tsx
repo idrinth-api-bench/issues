@@ -28,6 +28,7 @@ const Middlewares = () => <>
         <li>cookies</li>
         <li>json-validator</li>
         <li>xml-validator</li>
+        <li>xml-validator</li>
       </ul>
     </div>
     <div className="card">
