@@ -21,7 +21,7 @@ export default class MaxTime {
       return;
     }
     if (result.duration > result.maxDuration) {
-      throw new Error(language('too_slow',),);
+      throw new Error(language('too_slow', `${ result.maxDuration }`,),);
     }
   }
 }
