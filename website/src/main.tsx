@@ -20,6 +20,7 @@ import Imprint from './pages/imprint';
 import Contributing from './pages/contributing';
 import NotFound from './pages/not-found';
 import License from './pages/license';
+import Footer from './components/footer';
 
 ReactDOM.createRoot(document.getElementById('root',)!,).render(
   <React.StrictMode>
@@ -35,6 +36,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <Home />
+              <Footer />
             </>
           }
         />
@@ -44,6 +46,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <Contributing />
+              <Footer />
             </>
           }
         />
@@ -53,6 +56,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <Usage />
+              <Footer />
             </>
           }
         />
@@ -62,6 +66,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <AutoWiring />
+              <Footer />
             </>
           }
         />
@@ -71,6 +76,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <Result />
+              <Footer />
             </>
           }
         />
@@ -80,6 +86,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <Logging />
+              <Footer />
             </>
           }
         />
@@ -89,6 +96,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <Middlewares />
+              <Footer />
             </>
           }
         />
@@ -98,6 +106,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <Storage />
+              <Footer />
             </>
           }
         />
@@ -107,6 +116,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <Imprint />
+              <Footer />
             </>
           }
         />
@@ -116,6 +126,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <License />
+              <Footer />
             </>
           }
         />
@@ -125,6 +136,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <NotFound />
+              <Footer />
             </>
           }
         />

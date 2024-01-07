@@ -76,6 +76,8 @@ export default async(task: Task, callable: Callback,): Promise<void> => {
           success: false,
           msg: error,
           validators: [],
+          // eslint-disable-next-line no-undefined
+          maxDuration: undefined,
         } as Result, error+'', false,),);
         return;
       }
@@ -86,6 +88,7 @@ export default async(task: Task, callable: Callback,): Promise<void> => {
         process.hrtime(),
         result,
         task.post || [],
+        task.main.maxDuration,
       );
       if (await handlePost(task, httpResult, callable,)) {
         callable(buildAnswer(httpResult, '', true,),);

@@ -7,9 +7,14 @@
   --black: hsla(0deg 0% 0% / 100%);
 }
 
+html {
+  height: 100vh;
+}
+
 body {
   font-family: Roboto, sans-serif;
   font-size: 16px;
+  min-height: 100vh;
 }
 
 h1,
@@ -92,12 +97,6 @@ nav a {
   text-decoration: none;
 }
 
-a:hover,
-a:focus {
-  color: var(--green);
-  text-decoration: underline;
-}
-
 ul {
   padding-left: 1.5em;
 }
@@ -127,6 +126,34 @@ nav li {
   text-align: center;
 }
 
+footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1rem 1em;
+  background-color: var(--light-gray);
+  width: 100%;
+}
+
+footer ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer  a {
+  text-decoration: none;
+}
+
+footer li {
+  display: flex;
+  padding-left: 10px;
+}
+
+a:hover,
+a:focus {
+  color: var(--green);
+  text-decoration: underline;
+}
+
 nav li ul {
   padding-left: 0.1em;
 }
@@ -149,15 +176,38 @@ a[target="_blank"] {
   background-repeat: no-repeat;
 }
 
-@media only screen and (width >= 768px) {
-  header {
-    flex-direction: row;
+#root {
+  min-height: 100vh;
+}
+
+section {
+  min-height: calc(100vh - 6em - 2rem - 3px);
+}
+
+footer li::after {
+  content: " | ";
+  padding-left: 1rem;
+}
+
+footer li:last-child::after {
+  content: "";
+}
+
+@media only screen and (width >= 600px) {
+  footer {
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem 0;
+   }
+
+  footer ul {
+    margin-right: 4rem;
+  }
+
+  header, footer {
     background-image: linear-gradient(to bottom, hsla(0deg 0% 100% / 10%), hsla(0deg 0% 100% / 15%), hsla(0deg 0% 100% / 5%));
   }
 
   header div {
-    width: 30%;
-    max-width: initial;
     padding-left: 1em;
   }
   header strong {
@@ -182,12 +232,14 @@ a[target="_blank"] {
     width: initial;
   }
 
-  nav ul ul {
+  nav ul ul{
     display: none;
   }
 
-  header h1 {
-    color: var(--black);
+  footer span {
+    padding-left: 5rem;
+    max-height: 100%;
+    white-space: nowrap;
   }
 
   nav li:hover ul {
@@ -215,5 +267,16 @@ a[target="_blank"] {
     grid-template-columns: 1fr 2fr;
     align-items: center;
     justify-content: center;
+  }
+}
+
+@media only screen and (width >= 900px) {
+  header {
+    flex-direction: row;
+  }
+
+  header div {
+    width: 30%;
+    max-width: initial;
   }
 }

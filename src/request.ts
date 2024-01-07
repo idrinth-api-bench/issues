@@ -22,4 +22,5 @@ export interface Request {
   body?: string|FormContent|JsonContent;
   autohandle?: 'json'|'form';
   url: string;
+  maxDuration?: number|undefined;
 }
