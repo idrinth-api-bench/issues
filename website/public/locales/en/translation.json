@@ -19,5 +19,11 @@
     "custom": {
       "final": "For ease of use, a wrapper is provided as well, that only requires a log method to be implemented."
     }
+  },
+  "storage": {
+    "description": "Storage classes store each finished set of the run. By default, nothing is stored, but a mysql storage is provided for those wanting it.",
+    "custom": {
+      "description": "To provide a custom storage, implement the interface below. The method will be called once per task."
+    }
   }
 }
