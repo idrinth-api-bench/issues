@@ -62,7 +62,7 @@ const Result = () => <>
         in programmatically accessing the framework. It will be called with the
         complete result after all result modifiers have modified the result.
       </p>
-      <SyntaxHighlighter language="javascript">
+      <SyntaxHighlighter language="typescript">
         {`interface Reporter {
   (results: FinishedRun, rootDir: string): void;
 }`}

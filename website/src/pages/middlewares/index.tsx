@@ -38,7 +38,7 @@ const Middlewares = () => <>
           called before sending a request, process after a request. If an error
           is thrown in process, any further validations are skipped.
         </p>
-        <SyntaxHighlighter language="javascript">
+        <SyntaxHighlighter language="typescript">
           {`interface Middleware {
     process(response: Result): void;
     prepare(request: Request): Request;

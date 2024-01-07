@@ -26,7 +26,7 @@ const Logging = () => <>
           You can implement the logger interface below and provide any logger
           you want to next to the already provided ones.
         </p>
-        <SyntaxHighlighter language="javascript">
+        <SyntaxHighlighter language="typescript">
           {`interface Logger {
       trace(msg: string, data: Record<string, unknown>): void;
       trace(msg: string): void;

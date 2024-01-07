@@ -20,9 +20,9 @@ const Storage = () => <>
         </p>
         <SyntaxHighlighter language="typescript">
           {`interface Storage
-  {
-    store(data: FinishedSet, now: Date): void;
-  }`}
+{
+  store(data: FinishedSet, now: Date): void;
+}`}
         </SyntaxHighlighter>
       </div>
     </div>
