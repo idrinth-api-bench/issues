@@ -7,7 +7,10 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [ react({
     babel: {
-      plugins: [ '@babel/plugin-syntax-import-attributes', ],
+      plugins: [
+        '@babel/plugin-syntax-import-attributes',
+        'istanbul',
+      ],
     },
   },), ],
 },);
