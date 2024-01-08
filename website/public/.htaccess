@@ -5,6 +5,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule .* /index.html [L]
 
 ExpiresActive On
+ExpiresDefault "access"
 ExpiresByType image/gif "access plus 1 year"
 ExpiresByType image/png "access plus 1 year"
 ExpiresByType image/jpeg "access plus 1 year"
