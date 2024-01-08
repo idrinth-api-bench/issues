@@ -47,9 +47,9 @@ const Index = () => <section className="home">
     <h3>Naming conventions</h3>
     <p>
       <ul>
-        <li>CamelCase for all variables and classes.</li>
-        <li>snake-case for constants.</li>
-        <li>kebab-case for file names.</li>
+        <li>camelCase for variables and functions</li>
+        <li>UPPER_SNAKE_CASE for constants</li>
+        <li>UpperCamelCase/PascalCase for interfaces and classes</li>
       </ul>
     </p>
   </div>
@@ -59,7 +59,7 @@ const Index = () => <section className="home">
       <p>
         <ul>
           <li>
-            Last two node versions are required.
+            Last two node versions are required. 
             <i>(Currently: Node 20.10.0 LTS and Node 21.5.0)</i>
           </li>
           <li>

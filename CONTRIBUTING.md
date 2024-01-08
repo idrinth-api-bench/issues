@@ -18,9 +18,9 @@ Testing new code is expected and adding tests or improving tests for old code is
 
 ### Naming conventions
 
-CamelCase for all variables and classes.
-snake-case for constants.
-kebab-case for file names.
+camelCase for variables and functions
+UPPER_SNAKE_CASE for constants
+UpperCamelCase/PascalCase for interfaces and classes
 
 ### Requirements
 
