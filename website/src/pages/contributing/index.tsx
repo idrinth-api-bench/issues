@@ -44,6 +44,23 @@ const Index = () => <section className="home">
     </p>
   </div>
   <div className="card">
+    <h3>Naming conventions</h3>
+    <p>
+      * CamelCase for all variables and classes.
+      * snake-case for constants.
+      * kebab-case for file names.
+    </p>
+  </div>
+  <div className="card">
+    <h3>Requirements</h3>
+    <div>
+      <p>
+        * Last two node versions are required. <i>(Currently: Node 20.10.0 LTS and Node 21.5.0)</i>
+        * OS: Linux / Windows <i>(Other OS were not tested)</i>
+      </p>
+    </div>
+  </div>
+  <div className="card">
     <h3>Setup</h3>
     <div>
       <p>

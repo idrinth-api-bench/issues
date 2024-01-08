@@ -16,6 +16,17 @@ While adding functionality, keep in mind to break existing interfaces, entry poi
 
 Testing new code is expected and adding tests or improving tests for old code is appreciated. The goal is to find most issues by either static analysis or unit and integration tests.
 
+### Naming conventions
+
+- CamelCase for all variables and classes.
+- snake-case for constants.
+- kebab-case for file names.
+
+### Requirements
+
+- Last two node versions are required. <i>(Currently: Node 20.10.0 LTS and Node 21.5.0)</i>
+- OS: Linux / Windows <i>(Other OS were not tested)</i>
+
 ### Setup
 
 Run the following commands to create the full project:
