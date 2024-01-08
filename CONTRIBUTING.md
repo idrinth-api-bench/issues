@@ -18,14 +18,14 @@ Testing new code is expected and adding tests or improving tests for old code is
 
 ### Naming conventions
 
-- CamelCase for all variables and classes.
-- snake-case for constants.
-- kebab-case for file names.
+CamelCase for all variables and classes.
+snake-case for constants.
+kebab-case for file names.
 
 ### Requirements
 
-- Last two node versions are required. *(Currently: Node 20.10.0 LTS and Node 21.5.0)*
-- OS: Linux / Windows *(Other OS were not tested)*
+Last two node versions are required. *(Currently: Node 20.10.0 LTS and Node 21.5.0)*
+OS: Linux / Windows *(Other OS were not tested)*
 
 ### Setup
 
