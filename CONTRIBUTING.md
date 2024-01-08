@@ -25,7 +25,7 @@ Testing new code is expected and adding tests or improving tests for old code is
 
 ### Requirements
 
-- One of the last two node versions is required. *(Currently: Node 20.10.0 LTS and Node 21.5.0)*
+- One of the last two node versions is required.
 - OS: Linux / Windows *(Other OS were not tested)*
 
 ### Setup
