@@ -49,7 +49,8 @@ const Index = () => <section className="home">
       <ul>
         <li>camelCase for variables and functions</li>
         <li>UPPER_SNAKE_CASE for constants</li>
-        <li>UpperCamelCase/PascalCase for interfaces and classes</li>
+        <li>PascalCase for interfaces and classes</li>
+        <li>kebab-case for file names</li>
       </ul>
     </p>
   </div>
@@ -59,7 +60,7 @@ const Index = () => <section className="home">
       <p>
         <ul>
           <li>
-            Last two node versions <i>(Node 20.10.0 LTS and Node 21.5.0)</i>
+            One of the last two node versions <i>(Node 20.10.0 LTS and Node 21.5.0)</i>
           </li>
           <li>
             OS: Linux / Windows <i>(Other OS were not tested)</i>
