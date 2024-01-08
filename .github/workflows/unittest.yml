@@ -70,6 +70,14 @@ jobs:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
       - run: cd website && npm ci
       - run: cd website && npm run-script e2e
+      - run: mv ./website/coverage ./
+      - run: sed -i 's/SF:src/SF:website\/src/' ./coverage/lcov.info
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel: true
+          flag-name: run e2e
   end:
     runs-on: ubuntu-latest
     if: ${{ always() && contains(join(needs.*.result, ','), 'success') }}
@@ -77,6 +85,7 @@ jobs:
     - unittest-previous
     - unittest-current
     - unittest-website
+    - unittest-e2e
     steps:
     - name: Coveralls
       uses: coverallsapp/github-action@master
