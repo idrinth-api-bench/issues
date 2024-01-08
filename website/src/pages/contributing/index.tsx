@@ -55,7 +55,8 @@ const Index = () => <section className="home">
     <h3>Requirements</h3>
     <div>
       <p>
-        * Last two node versions are required. <i>(Currently: Node 20.10.0 LTS and Node 21.5.0)</i>
+        * Last two node versions are required.
+        <i>(Currently: Node 20.10.0 LTS and Node 21.5.0)</i>
         * OS: Linux / Windows <i>(Other OS were not tested)</i>
       </p>
     </div>
