@@ -18,14 +18,15 @@ Testing new code is expected and adding tests or improving tests for old code is
 
 ### Naming conventions
 
-camelCase for variables and functions
-UPPER_SNAKE_CASE for constants
-UpperCamelCase/PascalCase for interfaces and classes
+- camelCase for variables and functions
+- UPPER_SNAKE_CASE for constants
+- PascalCase for interfaces and classes
+- kebab-case for file names
 
 ### Requirements
 
-Last two node versions are required. *(Currently: Node 20.10.0 LTS and Node 21.5.0)*
-OS: Linux / Windows *(Other OS were not tested)*
+- One of the last two node versions is required. *(Currently: Node 20.10.0 LTS and Node 21.5.0)*
+- OS: Linux / Windows *(Other OS were not tested)*
 
 ### Setup
 
