@@ -1,8 +1,8 @@
 import React from 'react';
-import CsvReport from '../../assets/csv-result.jpg';
-import ApiBenchReport from '../../assets/html-result.jpg';
-import CliReport from '../../assets/cli-result.jpg';
-import JsonReport from '../../assets/json-result.jpg';
+import CsvReport from '../../../assets/csv-result.jpg';
+import ApiBenchReport from '../../../assets/html-result.jpg';
+import CliReport from '../../../assets/cli-result.jpg';
+import JsonReport from '../../../assets/json-result.jpg';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 
 const Result = () => <>

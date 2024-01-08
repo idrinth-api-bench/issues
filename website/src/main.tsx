@@ -10,17 +10,18 @@ import {
 } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import Home from './pages/home/index';
-import AutoWiring from './pages/autowiring';
+import AutoWiring from './pages/usage/autowiring';
 import Usage from './pages/usage';
-import Logging from './pages/logging';
-import Middlewares from './pages/middlewares';
-import Storage from './pages/storage';
-import Result from './pages/results';
+import Logging from './pages/usage/logging';
+import Middlewares from './pages/usage/middlewares';
+import Storage from './pages/usage/storage';
+import Result from './pages/usage/results';
 import Imprint from './pages/imprint';
 import Contributing from './pages/contributing';
 import NotFound from './pages/not-found';
 import License from './pages/license';
 import Footer from './components/footer';
+import RoutePage from './pages/usage/route';
 
 ReactDOM.createRoot(document.getElementById('root',)!,).render(
   <React.StrictMode>
@@ -126,6 +127,16 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
             <>
               <Navbar />
               <License />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/usage/route"
+          element={
+            <>
+              <Navbar />
+              <RoutePage />
               <Footer />
             </>
           }

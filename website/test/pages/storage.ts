@@ -1,4 +1,4 @@
-import Storage from '../../src/pages/storage/index.jsx';
+import Storage from '../../src/pages/usage/storage/index.jsx';
 import {
   expect,
 } from 'chai';

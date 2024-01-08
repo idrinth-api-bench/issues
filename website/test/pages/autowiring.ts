@@ -1,4 +1,4 @@
-import Autowiring from '../../src/pages/autowiring/index.jsx';
+import Autowiring from '../../src/pages/usage/autowiring/index.jsx';
 import {
   expect,
 } from 'chai';
