@@ -16,6 +16,7 @@
 # Logs
 /website/logs
 /website/*.log
+/website/.nyc_output
 /website/npm-debug.log*
 /website/yarn-debug.log*
 /website/yarn-error.log*
