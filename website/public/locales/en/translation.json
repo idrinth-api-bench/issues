@@ -25,5 +25,13 @@
     "custom": {
       "description": "To provide a custom storage, implement the interface below. The method will be called once per task."
     }
+  },
+  "route": {
+    "title": "Route",
+    "description": "Routes are build as configuration objects, that must be default-exported or provided via module.exports and be in a javascript file. The object is wrapped in a function to allow environment injection, see below for an example.",
+    "example": {
+      "title": "Example",
+      "description": "The code below defines a request to a URL from the environment with GET."
+    }
   }
 }

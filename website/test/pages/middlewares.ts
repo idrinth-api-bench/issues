@@ -1,4 +1,4 @@
-import Middlewares from '../../src/pages/middlewares/index.jsx';
+import Middlewares from '../../src/pages/usage/middlewares/index.jsx';
 import {
   expect,
 } from 'chai';
