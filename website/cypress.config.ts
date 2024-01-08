@@ -1,6 +1,6 @@
 import {
   defineConfig,
-} from 'cypress'
+} from 'cypress';
 import task from '@cypress/code-coverage/task';
 import useBabelRC from '@cypress/code-coverage/use-babelrc';
 
