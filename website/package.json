@@ -43,6 +43,7 @@
     "nyc": "^15.1.0",
     "chai": "^4.3.10",
     "eslint": "^8.55.0",
+    "babel-plugin-istanbul": "^6.1.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "global-jsdom": "^9.2.0",
