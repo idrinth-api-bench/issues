@@ -6,10 +6,10 @@ import useBabelRC from '@cypress/code-coverage/use-babelrc';
 
 export default defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {
-      task(on, config)
-      on('file:preprocessor', useBabelRC)
-      return config
+    setupNodeEvents(on, config,) {
+      task(on, config,);
+      on('file:preprocessor', useBabelRC,);
+      return config;
     },
   },
-})
+},);
