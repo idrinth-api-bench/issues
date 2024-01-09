@@ -124,6 +124,7 @@ nav li {
   border-bottom-left-radius: 0.25em;
   width: 100%;
   text-align: center;
+  padding: 0.5em 0;
 }
 
 footer {
