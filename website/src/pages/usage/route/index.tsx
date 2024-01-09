@@ -3,30 +3,30 @@ import {
   Lang,
 } from '../../../components/lang.tsx';
 import SyntaxHighlighter from 'react-syntax-highlighter';
+import DefaultMeta from '../../../components/default-meta.tsx';
 
-const Route = () => <>
-  <section>
-    <div className='title-card'>
-      <h1><Lang lnkey='route.title'/></h1>
-      <p><Lang lnkey='route.description'/></p>
-    </div>
-    <div className='card'>
-      <h1><Lang lnkey='route.example.title'/></h1>
-      <div>
-        <p><Lang lnkey='route.example.description'/></p>
-        <SyntaxHighlighter language='typescript'>{`import {
-  Task,
+const Route = () => <section>
+  <DefaultMeta page='route' path='/usage/route'/>
+  <div className='title-card'>
+    <h1><Lang lnkey='route.title'/></h1>
+    <p><Lang lnkey='route.description'/></p>
+  </div>
+  <div className='card'>
+    <h1><Lang lnkey='route.example.title'/></h1>
+    <div>
+      <p><Lang lnkey='route.example.description'/></p>
+      <SyntaxHighlighter language='typescript'>{`import {
+Task,
 } from '@idrinth/api-bench';
 
 export default (apiURL, apiPassword): Task => {
-  main: {
-    method: 'get',
-    url: apiURL + '?' + apiPassword
-  }
+main: {
+  method: 'get',
+  url: apiURL + '?' + apiPassword
+}
 };
-      `}</SyntaxHighlighter>
-      </div>
+    `}</SyntaxHighlighter>
     </div>
-  </section>
-</>;
+  </div>
+</section>;
 export default Route;

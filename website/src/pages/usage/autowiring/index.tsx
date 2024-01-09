@@ -1,7 +1,9 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
+import DefaultMeta from '../../../components/default-meta.tsx';
 
-const AutoWiring = () => <>
+const AutoWiring = () => <section>
+  <DefaultMeta page='autowiring' path='/usage/autowiring'/>
   <div className="title-card">
     <h1>Autowiring Route Parameters</h1>
     <p>
@@ -57,5 +59,5 @@ const AutoWiring = () => <>
 `}
     </SyntaxHighlighter>
   </div>
-</>;
+</section>;
 export default AutoWiring;
