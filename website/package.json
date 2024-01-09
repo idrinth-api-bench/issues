@@ -24,7 +24,8 @@
     "react-i18next": "^14.0.0",
     "react-router-dom": "^6.21.1",
     "react-syntax-highlighter": "^15.5.0",
-    "the-new-css-reset": "^1.11.2"
+    "the-new-css-reset": "^1.11.2",
+    "@fontsource/roboto": "^5.0.8"
   },
   "devDependencies": {
     "@babel/plugin-syntax-import-attributes": "^7.23.3",
