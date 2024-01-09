@@ -1,10 +1,9 @@
 import React from 'react';
 
-const Index = () => <section className="imprint">
+const Index = () => <section>
   <div className="title-card">
     <h1>Imprint</h1>
   </div>
-
   <div className="card">
     <h2>Data provided according to § 5 TMG</h2>
     <div itemScope itemType="https://schema.org/Organization">

@@ -4,28 +4,26 @@ import {
   Lang,
 } from '../../../components/lang.tsx';
 
-const Storage = () => <>
-  <section>
-    <div className="title-card">
-      <h1>Storage</h1>
+const Storage = () => <section>
+  <div className="title-card">
+    <h1>Storage</h1>
+    <p>
+      <Lang lnkey='storage.description'/>
+    </p>
+  </div>
+  <div className="card">
+    <h2>Custom Storage</h2>
+    <div>
       <p>
-        <Lang lnkey='storage.description'/>
+        <Lang lnkey='storage.custom.description'/>
       </p>
-    </div>
-    <div className="card">
-      <h2>Custom Storage</h2>
-      <div>
-        <p>
-          <Lang lnkey='storage.custom.description'/>
-        </p>
-        <SyntaxHighlighter language="typescript">
-          {`interface Storage
+      <SyntaxHighlighter language="typescript">
+        {`interface Storage
 {
-  store(data: FinishedSet, now: Date): void;
+store(data: FinishedSet, now: Date): void;
 }`}
-        </SyntaxHighlighter>
-      </div>
+      </SyntaxHighlighter>
     </div>
-  </section>
-</>;
+  </div>
+</section>;
 export default Storage;

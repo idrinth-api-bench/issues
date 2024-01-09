@@ -5,7 +5,7 @@ import CliReport from '../../../assets/cli-result.jpg';
 import JsonReport from '../../../assets/json-result.jpg';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 
-const Result = () => <>
+const Result = () => <section>
   <div className="title-card">
     <h1>Results</h1>
     <p>
@@ -69,5 +69,5 @@ const Result = () => <>
       </SyntaxHighlighter>
     </div>
   </div>
-</>;
+</section>;
 export default Result;

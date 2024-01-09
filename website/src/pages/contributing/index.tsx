@@ -1,7 +1,7 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 
-const Index = () => <section className="home">
+const Index = () => <section>
   <div className="title-card">
     <h1>
       Contributing
@@ -45,29 +45,23 @@ const Index = () => <section className="home">
   </div>
   <div className="card">
     <h3>Naming conventions</h3>
-    <p>
-      <ul>
-        <li>camelCase for variables and functions</li>
-        <li>UPPER_SNAKE_CASE for constants</li>
-        <li>PascalCase for interfaces and classes</li>
-        <li>kebab-case for file names</li>
-      </ul>
-    </p>
+    <ul>
+      <li>camelCase for variables and functions</li>
+      <li>UPPER_SNAKE_CASE for constants</li>
+      <li>PascalCase for interfaces and classes</li>
+      <li>kebab-case for file names</li>
+    </ul>
   </div>
   <div className="card">
     <h3>Requirements</h3>
-    <div>
-      <p>
-        <ul>
-          <li>
-            One of the last two node versions
-          </li>
-          <li>
-            OS: Linux / Windows <i>(Other OS were not tested)</i>
-          </li>
-        </ul>
-      </p>
-    </div>
+    <ul>
+      <li>
+        One of the last two node versions
+      </li>
+      <li>
+        OS: Linux / Windows <i>(Other OS were not tested)</i>
+      </li>
+    </ul>
   </div>
   <div className="card">
     <h3>Setup</h3>

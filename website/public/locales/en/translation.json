@@ -1,18 +1,70 @@
 {
   "home": {
+    "meta": {
+      "title": "Home",
+      "description": "Welcome to the documentation for the framework @idrinth/api-bench"
+    },
     "nav": "Home",
     "title": "What does this project do?"
   },
+  "imprint": {
+    "meta": {
+      "title": "Imprint",
+      "description": "Imprint and privacy statements for this website"
+    }
+  },
   "404": {
+    "meta": {
+      "title": "404 NOT FOUND",
+      "description": "The page you desired has not been found"
+    },
     "title": "404 Not Found",
     "description": "Sadly the URL you entered couldn't be found."
   },
+  "contributing": {
+    "meta": {
+      "title": "Contributing",
+      "description": "Contribution guidelines for the framework @idrinth/api-bench"
+    }
+  },
+  "license": {
+    "meta": {
+      "title": "License",
+      "description": "The framework @idrinth/api-bench is available under the MIT license"
+    }
+  },
+  "autowiring": {
+    "meta": {
+      "title": "Autowiring | Usage",
+      "description": "The framework @idrinth/api-bench can autowire environment variables into route definitions"
+    }
+  },
+  "middlewares": {
+    "meta": {
+      "title": "Middlewares | Usage",
+      "description": "The framework @idrinth/api-bench provides default middlewares and allows for custom middlewares"
+    }
+  },
+  "results": {
+    "meta": {
+      "title": "Results | Usage",
+      "description": "The framework @idrinth/api-bench provides default result handlers and allows for additional custom result handlers"
+    }
+  },
   "usage": {
+    "meta": {
+      "title": "Usage",
+      "description": "Basic usage information for the framework @idrinth/api-bench"
+    },
     "programmatically": {
       "description": "Basically require main/include main and supply the executor method with required parameters. Tasks defined in src/routes-subfolders before, before_task, before_each, main, after_each, after_task, and after will be used to automatically fill the Job processed by the executor. Automatic filling only happens when there are no tasks provided to the function."
     }
   },
   "logging": {
+    "meta": {
+      "title": "Logging | Usage",
+      "description": "Information about logging usage and support of the framework @idrinth/api-bench"
+    },
     "used": {
       "description": "Most log entries are debug level, with the major steps being written to info. Trace is currently not used but may be used for detailed argument printing at some point."
     },
@@ -21,12 +73,20 @@
     }
   },
   "storage": {
+    "meta": {
+      "title": "Storage | Usage",
+      "description": "Information about the provided mysql storage and how to create custom storage implementations for @idrinth/api-bench"
+    },
     "description": "Storage classes store each finished set of the run. By default, nothing is stored, but a mysql storage is provided for those wanting it.",
     "custom": {
       "description": "To provide a custom storage, implement the interface below. The method will be called once per task."
     }
   },
   "route": {
+    "meta": {
+      "title": "Route | Usage",
+      "description": "Information about how to create test route definitions with the framework @idrinth/api-bench"
+    },
     "title": "Route",
     "description": "Routes are build as configuration objects, that must be default-exported or provided via module.exports and be in a javascript file. The object is wrapped in a function to allow environment injection, see below for an example.",
     "example": {

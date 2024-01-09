@@ -3,7 +3,7 @@ import {
   Lang,
 } from '../../components/lang.tsx';
 
-const Index = () => <section className="home">
+const Index = () => <section>
   <div className="title-card">
     <h1>
       <Lang lnkey="404.title"/>
