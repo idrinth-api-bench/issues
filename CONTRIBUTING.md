@@ -16,6 +16,18 @@ While adding functionality, keep in mind to break existing interfaces, entry poi
 
 Testing new code is expected and adding tests or improving tests for old code is appreciated. The goal is to find most issues by either static analysis or unit and integration tests.
 
+### Naming conventions
+
+- camelCase for variables and functions
+- UPPER_SNAKE_CASE for constants
+- PascalCase for interfaces and classes
+- kebab-case for file names
+
+### Requirements
+
+- One of the last two node versions is required.
+- OS: Linux / Windows *(Other OS were not tested)*
+
 ### Setup
 
 Run the following commands to create the full project:

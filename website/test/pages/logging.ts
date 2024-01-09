@@ -1,4 +1,4 @@
-import Logging from '../../src/pages/logging/index.jsx';
+import Logging from '../../src/pages/usage/logging/index.jsx';
 import {
   expect,
 } from 'chai';

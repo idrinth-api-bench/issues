@@ -1,4 +1,4 @@
-import Results from '../../src/pages/results/index.jsx';
+import Results from '../../src/pages/usage/results/index.jsx';
 import {
   expect,
 } from 'chai';

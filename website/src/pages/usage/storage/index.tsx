@@ -2,7 +2,7 @@ import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import {
   Lang,
-} from '../../components/lang.tsx';
+} from '../../../components/lang.tsx';
 
 const Storage = () => <>
   <section>

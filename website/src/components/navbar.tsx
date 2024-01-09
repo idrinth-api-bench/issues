@@ -56,6 +56,9 @@ const Navbar = () => <>
             <li>
               <NavLink to="/usage/storage">{'Storage'}</NavLink>
             </li>
+            <li>
+              <NavLink to="/usage/route">{'Route'}</NavLink>
+            </li>
           </ul>
         </li>
       </ul>
