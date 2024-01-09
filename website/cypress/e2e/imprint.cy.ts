@@ -9,6 +9,8 @@ describe('imprint', () => {
   },);
   it('h1 matches', () => {
     cy.visit('http://localhost:8080/imprint',);
-    cy.get('h1').invoke ('text').should('eq', 'Imprint',);
+    cy.get('h1',)
+      .invoke('text',)
+      .should('eq', 'Imprint',);
   },);
 },);

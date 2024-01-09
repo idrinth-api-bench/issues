@@ -9,6 +9,8 @@ describe('usage/route', () => {
   },);
   it('h1 matches', () => {
     cy.visit('http://localhost:8080/usage/route',);
-    cy.get('h1').invoke ('text').should('eq', 'Route',);
+    cy.get('h1',)
+      .invoke('text',)
+      .should('eq', 'Route',);
   },);
 },);

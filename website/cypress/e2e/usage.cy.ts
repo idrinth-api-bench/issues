@@ -9,6 +9,8 @@ describe('usage', () => {
   },);
   it('h1 matches', () => {
     cy.visit('http://localhost:8080/usage',);
-    cy.get('h1').invoke ('text').should('eq', 'Usage & Examples',);
+    cy.get('h1',)
+      .invoke('text',)
+      .should('eq', 'Usage & Examples',);
   },);
 },);

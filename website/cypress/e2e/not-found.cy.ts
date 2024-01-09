@@ -9,6 +9,8 @@ describe('404', () => {
   },);
   it('h1 matches', () => {
     cy.visit('http://localhost:8080/404',);
-    cy.get('h1').invoke ('text').should('eq', '404 Not Found',);
+    cy.get('h1',)
+      .invoke('text',)
+      .should('eq', '404 Not Found',);
   },);
 },);

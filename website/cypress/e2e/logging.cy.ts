@@ -9,6 +9,8 @@ describe('usage/logging', () => {
   },);
   it('h1 matches', () => {
     cy.visit('http://localhost:8080/usage/logging',);
-    cy.get('h1').invoke ('text').should('eq', 'Logging',);
+    cy.get('h1',)
+      .invoke('text',)
+      .should('eq', 'Logging',);
   },);
 },);

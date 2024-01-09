@@ -9,6 +9,8 @@ describe('home', () => {
   },);
   it('h1 matches', () => {
     cy.visit('http://localhost:8080/',);
-    cy.get('h1').invoke ('text').should('eq', 'What does this project do?',);
+    cy.get('h1',)
+      .invoke('text',)
+      .should('eq', 'What does this project do?',);
   },);
 },);
