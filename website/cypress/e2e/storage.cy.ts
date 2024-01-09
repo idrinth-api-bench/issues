@@ -7,4 +7,8 @@ describe('usage/storage', () => {
     cy.visit('http://localhost:8080/usage/storage',);
     cy.title().should('eq', 'Storage | Usage | @idrinth/api-bench',);
   },);
+  it('h1 matches', () => {
+    cy.visit('http://localhost:8080/usage/storage',);
+    cy.get('h1').invoke ('text').should('eq', 'Storage',);
+  },);
 },);

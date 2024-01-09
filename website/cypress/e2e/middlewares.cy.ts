@@ -7,4 +7,8 @@ describe('usage/middlewares', () => {
     cy.visit('http://localhost:8080/usage/middlewares',);
     cy.title().should('eq', 'Middlewares | Usage | @idrinth/api-bench',);
   },);
+  it('h1 matches', () => {
+    cy.visit('http://localhost:8080/usage/middlewares',);
+    cy.get('h1').invoke ('text').should('eq', 'Middlewares',);
+  },);
 },);

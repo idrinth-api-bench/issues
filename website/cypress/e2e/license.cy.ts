@@ -7,4 +7,8 @@ describe('license', () => {
     cy.visit('http://localhost:8080/license',);
     cy.title().should('eq', 'License | @idrinth/api-bench',);
   },);
+  it('h1 matches', () => {
+    cy.visit('http://localhost:8080/license',);
+    cy.get('h1').invoke ('text').should('eq', 'MIT License',);
+  },);
 },);

@@ -7,4 +7,8 @@ describe('usage/route', () => {
     cy.visit('http://localhost:8080/usage/route',);
     cy.title().should('eq', 'Route | Usage | @idrinth/api-bench',);
   },);
+  it('h1 matches', () => {
+    cy.visit('http://localhost:8080/usage/route',);
+    cy.get('h1').invoke ('text').should('eq', 'Route',);
+  },);
 },);

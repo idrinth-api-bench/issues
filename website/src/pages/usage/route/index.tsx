@@ -10,7 +10,7 @@ const Route = () => <section>
     <p><Lang lnkey='route.description'/></p>
   </div>
   <div className='card'>
-    <h1><Lang lnkey='route.example.title'/></h1>
+    <h2><Lang lnkey='route.example.title'/></h2>
     <div>
       <p><Lang lnkey='route.example.description'/></p>
       <SyntaxHighlighter language='typescript'>{`import {
