@@ -1,8 +1,8 @@
 import './i18n.ts';
 import React from 'react';
 import Navbar from './components/navbar';
-import './index.css';
 import 'the-new-css-reset/css/reset.css';
+import './index.css';
 import {
   Routes,
   Route,
