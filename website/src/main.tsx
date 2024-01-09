@@ -22,7 +22,7 @@ import NotFound from './pages/not-found';
 import License from './pages/license';
 import Footer from './components/footer';
 import RoutePage from './pages/usage/route';
-import DefaultMeta from "./components/default-meta.tsx";
+import DefaultMeta from './components/default-meta.tsx';
 
 ReactDOM.createRoot(document.getElementById('root',)!,).render(
   <React.StrictMode>
