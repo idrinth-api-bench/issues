@@ -1,8 +1,9 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
+import Layout from '../../../components/layout.tsx';
 
-const AutoWiring = () => <section>
-  <div className="title-card">
+const AutoWiring = () => <Layout Outlet={<section>
+  <div className='title-card'>
     <h1>Autowiring Route Parameters</h1>
     <p>
         Parameters of contained functions will be filled with environment
@@ -15,7 +16,7 @@ const AutoWiring = () => <section>
         be done:
     </p>
   </div>
-  <div className="card">
+  <div className='card'>
     <h2>Limitations</h2>
     <ul>
       <li>
@@ -30,9 +31,9 @@ const AutoWiring = () => <section>
       <li>Default value types NOT of the same type as the parameter</li>
     </ul>
   </div>
-  <div className="card">
+  <div className='card'>
     <h2>Example</h2>
-    <SyntaxHighlighter language="javascript">
+    <SyntaxHighlighter language='javascript'>
 
       {`module.exports = (apiRootUrl, apiEMail, apiPassword) => ({
   id: 'login',
@@ -57,5 +58,8 @@ const AutoWiring = () => <section>
 `}
     </SyntaxHighlighter>
   </div>
-</section>;
+</section>}
+  page='autowiring'
+  path='/usage/autowiring'
+/>
 export default AutoWiring;

@@ -3,29 +3,30 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import {
   Lang,
 } from '../../../components/lang.tsx';
+import Layout from '../../../components/layout.tsx';
 
-const Logging = () => <section>
-  <div className="title-card">
+const Logging = () => <Layout Outlet={<section>
+  <div className='title-card'>
     <h1>Logging</h1>
     <p>
         Any logger that either implements the interface or has a wrapper is an
         option. Wrappers for pino and winston are available.
     </p>
   </div>
-  <div className="card">
+  <div className='card'>
     <h2>Logging levels used</h2>
     <p>
       <Lang lnkey='logging.used.description'/>
     </p>
   </div>
-  <div className="card">
+  <div className='card'>
     <h2>Custom Logger</h2>
     <div>
       <p>
         You can implement the logger interface below and provide any logger
         you want to next to the already provided ones.
       </p>
-      <SyntaxHighlighter language="typescript">
+      <SyntaxHighlighter language='typescript'>
         {`interface Logger {
     trace(msg: string, data: Record<string, unknown>): void;
     trace(msg: string): void;
@@ -46,6 +47,9 @@ const Logging = () => <section>
       </p>
     </div>
   </div>
-</section>;
+</section>}
+page='autowiring'
+path='/usage/autowiring'
+  />;
 
 export default Logging;

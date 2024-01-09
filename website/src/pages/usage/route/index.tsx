@@ -3,8 +3,9 @@ import {
   Lang,
 } from '../../../components/lang.tsx';
 import SyntaxHighlighter from 'react-syntax-highlighter';
+import Layout from '../../../components/layout.tsx';
 
-const Route = () => <section>
+const Route = () => <Layout Outlet={<section>
   <div className='title-card'>
     <h1><Lang lnkey='route.title'/></h1>
     <p><Lang lnkey='route.description'/></p>
@@ -26,5 +27,8 @@ main: {
     `}</SyntaxHighlighter>
     </div>
   </div>
-</section>;
+</section>}
+  page='autowiring'
+  path='/usage/route'
+/>;
 export default Route;
