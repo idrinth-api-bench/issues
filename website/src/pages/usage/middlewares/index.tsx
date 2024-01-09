@@ -1,9 +1,7 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import DefaultMeta from "../../../components/default-meta.tsx";
 
 const Middlewares = () => <section>
-  <DefaultMeta path='/usage/middlewares' page='middlewares'/>
   <div className="title-card">
     <h1>Middlewares</h1>
     <p>

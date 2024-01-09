@@ -3,10 +3,8 @@ import {
   Lang,
 } from '../../../components/lang.tsx';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import DefaultMeta from '../../../components/default-meta.tsx';
 
 const Route = () => <section>
-  <DefaultMeta page='route' path='/usage/route'/>
   <div className='title-card'>
     <h1><Lang lnkey='route.title'/></h1>
     <p><Lang lnkey='route.description'/></p>

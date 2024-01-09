@@ -22,6 +22,7 @@ import NotFound from './pages/not-found';
 import License from './pages/license';
 import Footer from './components/footer';
 import RoutePage from './pages/usage/route';
+import DefaultMeta from "./components/default-meta.tsx";
 
 ReactDOM.createRoot(document.getElementById('root',)!,).render(
   <React.StrictMode>
@@ -32,9 +33,10 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
     >
       <Routes>
         <Route
-          path="/"
+          path=""
           element={
             <>
+              <DefaultMeta page='home' path=''/>
               <Navbar />
               <Home />
               <Footer />
@@ -45,6 +47,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
           path="/contributing"
           element={
             <>
+              <DefaultMeta page='contributing' path='/contributing'/>
               <Navbar />
               <Contributing />
               <Footer />
@@ -55,6 +58,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
           path="/usage"
           element={
             <>
+              <DefaultMeta path='/usage' page='usage'/>
               <Navbar />
               <Usage />
               <Footer />
@@ -65,6 +69,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
           path="/usage/autowiring"
           element={
             <>
+              <DefaultMeta page='autowiring' path='/usage/autowiring'/>
               <Navbar />
               <AutoWiring />
               <Footer />
@@ -75,6 +80,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
           path="/usage/results"
           element={
             <>
+              <DefaultMeta page='results' path='/usage/results'/>
               <Navbar />
               <Result />
               <Footer />
@@ -85,6 +91,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
           path="/usage/logging"
           element={
             <>
+              <DefaultMeta page='logging' path='/usage/logging'/>
               <Navbar />
               <Logging />
               <Footer />
@@ -95,6 +102,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
           path="/usage/middlewares"
           element={
             <>
+              <DefaultMeta path='/usage/middlewares' page='middlewares'/>
               <Navbar />
               <Middlewares />
               <Footer />
@@ -105,6 +113,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
           path="/usage/storage"
           element={
             <>
+              <DefaultMeta page='storage' path='/usage/storage'/>
               <Navbar />
               <Storage />
               <Footer />
@@ -115,6 +124,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
           path="/imprint"
           element={
             <>
+              <DefaultMeta page='imprint' path='/imprint'/>
               <Navbar />
               <Imprint />
               <Footer />
@@ -125,6 +135,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
           path="/license"
           element={
             <>
+              <DefaultMeta page='license' path='/license'/>
               <Navbar />
               <License />
               <Footer />
@@ -135,6 +146,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
           path="/usage/route"
           element={
             <>
+              <DefaultMeta page='route' path='/usage/route'/>
               <Navbar />
               <RoutePage />
               <Footer />
@@ -145,6 +157,7 @@ ReactDOM.createRoot(document.getElementById('root',)!,).render(
           path="*"
           element={
             <>
+              <DefaultMeta path='/404' page='404'/>
               <Navbar />
               <NotFound />
               <Footer />

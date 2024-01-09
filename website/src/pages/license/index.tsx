@@ -1,8 +1,6 @@
 import React from 'react';
-import DefaultMeta from '../../components/default-meta.tsx';
 
-const License = () => <section className='license'>
-  <DefaultMeta page='license' path='/license'/>
+const License = () => <section>
   <div className="title-card">
     <h1>MIT License</h1>
     <p>

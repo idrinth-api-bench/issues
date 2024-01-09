@@ -2,10 +2,8 @@ import React from 'react';
 import {
   Lang,
 } from '../../components/lang.tsx';
-import DefaultMeta from "../../components/default-meta.tsx";
 
 const Usage = () => <section>
-  <DefaultMeta path='/usage' page='usage'/>
   <div className="title-card">
     <h1>Usage &amp; Examples</h1>
   </div>

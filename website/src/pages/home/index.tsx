@@ -2,10 +2,8 @@ import React from 'react';
 import {
   Lang,
 } from '../../components/lang.tsx';
-import DefaultMeta from '../../components/default-meta.tsx';
 
 const Index = () => <section>
-  <DefaultMeta page='home' path=''/>
   <div className="title-card">
     <h1>
       <Lang lnkey="home.title"/>

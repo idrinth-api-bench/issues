@@ -3,10 +3,8 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import {
   Lang,
 } from '../../../components/lang.tsx';
-import DefaultMeta from '../../../components/default-meta.tsx';
 
 const Storage = () => <section>
-  <DefaultMeta page='storage' path='/usage/storage'/>
   <div className="title-card">
     <h1>Storage</h1>
     <p>

@@ -1,8 +1,6 @@
 import React from 'react';
-import DefaultMeta from "../../components/default-meta.tsx";
 
 const Index = () => <section>
-  <DefaultMeta page='imprint' path='/imprint'/>
   <div className="title-card">
     <h1>Imprint</h1>
   </div>

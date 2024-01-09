@@ -4,10 +4,8 @@ import ApiBenchReport from '../../../assets/html-result.jpg';
 import CliReport from '../../../assets/cli-result.jpg';
 import JsonReport from '../../../assets/json-result.jpg';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import DefaultMeta from '../../../components/default-meta.tsx';
 
 const Result = () => <section>
-  <DefaultMeta page='results' path='/usage/results'/>
   <div className="title-card">
     <h1>Results</h1>
     <p>
