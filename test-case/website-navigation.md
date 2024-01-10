@@ -1,4 +1,5 @@
 # test case 1: website navigation
+
 1. go to http://localhost:8080
 2. check if site loads
 3. click on NPMJS
