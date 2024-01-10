@@ -5,14 +5,21 @@ import React from 'react';
 
 const Layout = ({
   Outlet,
-  page,
+  page = '',
   path = '',
   canonical = '',
-},) => <>
-  <DefaultMeta page={page} path={canonical ? canonical : path}/>
-  <Navbar/>
-  {Outlet}
-  <Footer/>
-</>;
+},) => {
+  const meta = page
+    ? <DefaultMeta page={page} path={canonical ? canonical : path}/>
+    : '';
+  return <>
+    {meta}
+    <Navbar/>
+    <article>
+      {Outlet}
+    </article>
+    <Footer/>
+  </>;
+};
 
 export default Layout;

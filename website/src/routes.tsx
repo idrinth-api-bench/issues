@@ -34,5 +34,6 @@ export default [
   make('usage/storage',),
   make('imprint',),
   make('license',),
+  make('support',),
   make('not-found', '*',),
 ];

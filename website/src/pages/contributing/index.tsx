@@ -2,7 +2,7 @@ import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import Layout from '../../components/layout.tsx';
 
-const Index = () => <Layout Outlet={<section>
+const Index = () => <Layout Outlet={<>
   <div className='title-card'>
     <h1>
       Contributing
@@ -97,7 +97,7 @@ npm install
       including third parties.
     </p>
   </div>
-</section>}
+</>}
 page='contributing'
 path='/contributing'
 />;

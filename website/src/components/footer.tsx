@@ -9,6 +9,9 @@ const Footer = () => <footer>
     <li>
       <a href="/imprint">Imprint</a>
     </li>
+    <li>
+      <a href="/support">Support</a>
+    </li>
   </ul>
 </footer>;
 
