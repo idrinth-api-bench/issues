@@ -13,4 +13,11 @@ ExpiresByType text/javascript "access plus 1 year"
 ExpiresByType image/svg+xml "access plus 1 year"
 ExpiresByType text/css "access plus 1 year"
 
-AddOutputFilterByType DEFLATE text/html text/javascript image/svg+xml text/css application/json
+FilterDeclare  gzip CONTENT_SET
+FilterProtocol gzip change=yes;byteranges=no
+FilterProvider gzip DEFLATE resp=Content-Type $text/html
+FilterProvider gzip DEFLATE resp=Content-Type $text/css
+FilterProvider gzip DEFLATE resp=Content-Type $text/javascript
+FilterProvider gzip DEFLATE resp=Content-Type $application/json
+FilterProvider gzip DEFLATE resp=Content-Type $image/svg+xml
+FilterChain    gzip
