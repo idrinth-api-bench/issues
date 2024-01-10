@@ -48,7 +48,7 @@ const Usage = () => <Layout Outlet={<section>
     </p>
   </div>
 </section>}
-  page='usage'
-  path='/usage'
+page='usage'
+path='/usage'
 />;
 export default Usage;

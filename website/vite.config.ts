@@ -8,11 +8,9 @@ import dynamicImportVariables from '@rollup/plugin-dynamic-import-vars';
 export default defineConfig({
   build: {
     rollupOptions: {
-      plugins: [
-        dynamicImportVariables({
-          errorWhenNoFilesFound: true,
-        }),
-      ],
+      plugins: [ dynamicImportVariables({
+        errorWhenNoFilesFound: true,
+      },), ],
       input: {
         index: 'index.html',
         contributing: 'src/pages/contributing/index.tsx',
@@ -29,23 +27,21 @@ export default defineConfig({
         'usage/storage': 'src/pages/usage/storage/index.tsx',
       },
       output: {
-        entryFileNames: (chunkInfo) => {
+        entryFileNames: (chunkInfo,) => {
           if (chunkInfo.name === 'index') {
-            return 'assets/main-[hash].js'
+            return 'assets/main-[hash].js';
           }
-          return 'assets/pages/[hash]/[name].js'
-        }
+          return 'assets/pages/[hash]/[name].js';
+        },
       },
     },
   },
-  plugins: [
-    react({
-      babel: {
-        plugins: [
-          '@babel/plugin-syntax-import-attributes',
-          'istanbul',
-        ],
-      },
-    },),
-  ],
+  plugins: [ react({
+    babel: {
+      plugins: [
+        '@babel/plugin-syntax-import-attributes',
+        'istanbul',
+      ],
+    },
+  },), ],
 },);

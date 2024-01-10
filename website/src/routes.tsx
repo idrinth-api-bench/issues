@@ -8,8 +8,8 @@ import {
   SECOND,
 } from './constants.ts';
 
-const make = (path: string, pathOverride?: string) => {
-  const LazyElement = path.includes('/')
+const make = (path: string, pathOverride?: string,) => {
+  const LazyElement = path.includes('/',)
     ? lazy(() => import(
       `./pages/${ path.split('/',)[FIRST] }/`
       + `${ path.split('/',)[SECOND] }/index.tsx`

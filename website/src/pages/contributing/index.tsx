@@ -98,7 +98,7 @@ npm install
     </p>
   </div>
 </section>}
-  page='contributing'
-  path='/contributing'
+page='contributing'
+path='/contributing'
 />;
 export default Index;

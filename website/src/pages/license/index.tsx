@@ -32,7 +32,7 @@ const License = () => <Layout Outlet={<section>
     </p>
   </div>
 </section>}
-  path='/license'
-  page='license'
+path='/license'
+page='license'
 />;
 export default License;

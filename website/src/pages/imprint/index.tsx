@@ -100,7 +100,7 @@ const Index = () => <Layout Outlet={<section>
     </p>
   </div>
 </section>}
-  page='imprint'
-  path='/imprint'
+page='imprint'
+path='/imprint'
 />;
 export default Index;
