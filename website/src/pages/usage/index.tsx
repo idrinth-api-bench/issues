@@ -2,12 +2,13 @@ import React from 'react';
 import {
   Lang,
 } from '../../components/lang.tsx';
+import Layout from '../../components/layout.tsx';
 
-const Usage = () => <section>
-  <div className="title-card">
+const Usage = () => <Layout Outlet={<section>
+  <div className='title-card'>
     <h1>Usage &amp; Examples</h1>
   </div>
-  <div className="card">
+  <div className='card'>
     <h2>Binaries</h2>
     <ul>
       <li>
@@ -40,11 +41,14 @@ const Usage = () => <section>
       </li>
     </ul>
   </div>
-  <div className="card">
+  <div className='card'>
     <h2>Programmatically</h2>
     <p>
       <Lang lnkey= 'usage.programmatically.description' />
     </p>
   </div>
-</section>;
+</section>}
+page='usage'
+path='/usage'
+/>;
 export default Usage;
