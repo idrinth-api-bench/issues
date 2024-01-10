@@ -13,4 +13,10 @@ describe('usage/storage', () => {
       .invoke('text',)
       .should('eq', 'Storage',);
   },);
+  it('link to self exists', () => {
+    cy.visit('http://localhost:8080/usage/storage',);
+    cy.get('nav a[href="/usage/storage"]',)
+      .invoke('text',)
+      .should('eq', 'Storage',);
+  },);
 },);
