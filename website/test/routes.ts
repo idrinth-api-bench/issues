@@ -5,6 +5,6 @@ import {
 
 describe('routes', () => {
   it('should be an array', () => {
-    expect(routes).to.be.an('array');
+    expect(routes,).to.be.an('array',);
   },);
 },);
