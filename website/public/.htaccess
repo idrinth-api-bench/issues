@@ -13,4 +13,4 @@ ExpiresByType text/javascript "access plus 1 year"
 ExpiresByType image/svg+xml "access plus 1 year"
 ExpiresByType text/css "access plus 1 year"
 
-AddOutputFilterByType DEFLATE text/*
+AddOutputFilterByType DEFLATE text/html text/javascript image/svg+xml text/css application/json
