@@ -3,11 +3,18 @@ import React, {
   Suspense,
 } from 'react';
 import Loader from './loader.tsx';
+import {
+  FIRST,
+  SECOND,
+} from './constants.ts';
 
 const make = (path: string, pathOverride?: string) => {
   const LazyElement = path.includes('/')
-    ? lazy(() => import(`./pages/${path.split('/')[0]}/${path.split('/')[1]}/index.tsx`))
-    : lazy(() => import(`./pages/${path}/index.tsx`));
+    ? lazy(() => import(
+      `./pages/${ path.split('/',)[FIRST] }/`
+      + `${ path.split('/',)[SECOND] }/index.tsx`
+      ,),)
+    : lazy(() => import(`./pages/${ path }/index.tsx`,),);
   return {
     path: pathOverride || '/' + path,
     exact: true,
@@ -16,16 +23,16 @@ const make = (path: string, pathOverride?: string) => {
 };
 
 export default [
-  make('home', '/'),
-  make('contributing'),
-  make('usage'),
-  make('usage/autowiring'),
-  make('usage/results'),
-  make('usage/route'),
-  make('usage/logging'),
-  make('usage/middlewares'),
-  make('usage/storage'),
-  make('imprint'),
-  make('license'),
-  make('not-found', '*'),
+  make('home', '/',),
+  make('contributing',),
+  make('usage',),
+  make('usage/autowiring',),
+  make('usage/results',),
+  make('usage/route',),
+  make('usage/logging',),
+  make('usage/middlewares',),
+  make('usage/storage',),
+  make('imprint',),
+  make('license',),
+  make('not-found', '*',),
 ];
