@@ -6,9 +6,13 @@ import readline from 'readline';
 const exec = (command, passthrough=false,) => {
   // eslint-disable-next-line no-console
   console.log(command,);
-  return execSync(command, passthrough ? {
+  const result = execSync(command, passthrough ? {
     stdio: 'inherit',
-  } : {},);
+  } : {},) + '';
+  if (!passthrough) {
+    console.log(result);
+  }
+  return result;
 };
 
 const FIRST_ARGUMENT = 2;
@@ -39,7 +43,7 @@ if (! process.argv[FIRST_ARGUMENT]) {
     ? process.argv[FIRST_ARGUMENT].split(':',)[ARRAY_SECOND]
     : process.argv[FIRST_ARGUMENT];
 
-  const remotes = exec('git remote',) + '';
+  const remotes = exec('git remote',);
   if (! remotes.includes(user,)) {
     exec(
       `git remote add ${ user } https://github.com/${ user }/api-bench`,
