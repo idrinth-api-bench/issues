@@ -13,7 +13,7 @@ jobs:
   eslint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
         uses: actions/setup-node@v4.0.1
         with:
@@ -24,7 +24,7 @@ jobs:
   eslint-website:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
         uses: actions/setup-node@v4.0.1
         with:
