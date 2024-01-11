@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from './components/layout.tsx';
+import Layout from '../components/layout.tsx';
 
 const Loader = () => <Layout
   Outlet={<div style={{
