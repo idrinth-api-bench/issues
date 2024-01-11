@@ -13,18 +13,6 @@ export default defineConfig({
       },), ],
       input: {
         index: 'index.html',
-        contributing: 'src/pages/contributing/index.tsx',
-        home: 'src/pages/home/index.tsx',
-        imprint: 'src/pages/imprint/index.tsx',
-        license: 'src/pages/license/index.tsx',
-        'not-found': 'src/pages/not-found/index.tsx',
-        usage: 'src/pages/usage/index.tsx',
-        'usage/autowiring': 'src/pages/usage/autowiring/index.tsx',
-        'usage/logging': 'src/pages/usage/logging/index.tsx',
-        'usage/middlewares': 'src/pages/usage/middlewares/index.tsx',
-        'usage/results': 'src/pages/usage/results/index.tsx',
-        'usage/route': 'src/pages/usage/route/index.tsx',
-        'usage/storage': 'src/pages/usage/storage/index.tsx',
       },
       output: {
         entryFileNames: (chunkInfo,) => {

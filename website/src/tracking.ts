@@ -9,7 +9,9 @@ if (window.location.host === 'idrinth-api-ben.ch') {
     g.src = u + file;
     s.appendChild(g,);
   };
+  // @ts-expect-error paq is a new property
   window._paq = window._paq || [];
+  // @ts-expect-error paq is a new property
   const _paq = window._paq;
   _paq.push([ 'trackPageView', ],);
   _paq.push([ 'enableLinkTracking', ],);
@@ -24,7 +26,9 @@ if (window.location.host === 'idrinth-api-ben.ch') {
     ],);
     make('matomo.js',);
   })();
+  // @ts-expect-error mtm is a new property
   window._mtm = window._mtm || [];
+  // @ts-expect-error mtm is a new property
   const _mtm = window._mtm;
   _mtm.push({
     'mtm.startTime': new Date().getTime(),

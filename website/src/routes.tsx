@@ -2,7 +2,7 @@ import React, {
   lazy,
   Suspense,
 } from 'react';
-import Loader from './loader.tsx';
+import Loader from './pagelike/loader.tsx';
 import {
   FIRST,
   SECOND,
