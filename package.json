@@ -80,6 +80,7 @@
     "iabgfoa": "bin/generate-benchmark-from-open-api.js"
   },
   "scripts": {
+    "coai": "node tools/checkout-and-install.js",
     "lint": "eslint . --ext .js,.ts,.cjs,.json,.tsx",
     "lint-fix": "eslint --fix . --ext .js,.ts,.cjs,.json",
     "lint-md": "markdownlint *.md test-case/*.md website/*.md",
