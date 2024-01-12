@@ -12,6 +12,7 @@
 /examples/**/result.json
 /examples/**/result.csv
 /examples/**/node_modules
+/.vscode
 
 # Logs
 /website/logs
