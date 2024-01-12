@@ -19,7 +19,8 @@ const Index = () => <Layout
         Not only do they help improving the code base,
         they help other people to get more use out of this framework.
         Please try to stick to the format of predefined issue types
-        to make it easier to filter and handle for anyone interested in the topic.
+        to make it easier to filter and handle for anyone interested in the
+        topic.
       </p>
     </div>
     <div className='card'>
@@ -31,8 +32,9 @@ const Index = () => <Layout
           since code will be read way more often than it will be changed.
         </p>
         <p>
-          While adding functionality, keep in mind to break existing interfaces,
-          entry points and functionality only if absolutely necessary.
+          While adding functionality, keep in mind to break existing
+          interfaces, entry points and functionality only if absolutely
+          necessary.
         </p>
       </div>
     </div>
@@ -107,10 +109,10 @@ npm run coai
     <div className='card'>
       <h3>Examples</h3>
       <p>
-        For examples please keep in mind, that we don't want to overload any api.
-        Don't use high load tasks, don't use apis that are not for public use.
-        It is expected that examples will be run and they must not damage anyone,
-        including third parties.
+        For examples please keep in mind, that we don't want to overload any
+        api. Don't use high load tasks, don't use apis that are not for public
+        use. It is expected that examples will be run and they must not damage
+        anyone, including third parties.
       </p>
     </div>
   </section>}
