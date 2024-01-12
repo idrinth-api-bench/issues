@@ -86,10 +86,10 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ always() && contains(join(needs.*.result, ','), 'success') }}
     needs:
-    - unittest-previous
-    - unittest-current
-    - unittest-website
-    - unittest-e2e
+    - framework-previous
+    - framework-current
+    - website
+    - e2e
     steps:
     - name: Coveralls
       uses: coverallsapp/github-action@master
