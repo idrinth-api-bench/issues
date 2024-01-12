@@ -1,23 +1,14 @@
-import {
-  execSync,
-} from 'child_process';
+import exec from './src/exec.js';
 import readline from 'readline';
-import { existsSync, readFileSync, writeFileSync } from 'fs';
-
-const exec = (command, passthrough=false,) => {
-  // eslint-disable-next-line no-console
-  console.log(command,);
-  const result = execSync(command, passthrough ? {
-    stdio: 'inherit',
-  } : {},) + '';
-  if (!passthrough) {
-    console.log(result);
-  }
-  return result;
-};
-
-const EXIT_FAILURE = 1;
-const EXIT_SUCCESS = 0;
+import {
+  existsSync,
+  readFileSync,
+  writeFileSync,
+} from 'fs';
+import {
+  EXIT_FAILURE,
+  EXIT_SUCCESS,
+} from './src/constants.js';
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -26,17 +17,29 @@ const rl = readline.createInterface({
 rl.question(
   'Enter version to publish',
   (version,) => {
-    if (!version.match(/^\d+\.\d+\.\d+$/)) {
-      // eslint-disable-next-line no-console
-      console.error('Invalid version.');
+    if (! version.match(/^\d+\.\d+\.\d+$/u,)) {
+      console.error('Invalid version.',);
       process.exit(EXIT_FAILURE,);
     }
-    for (const file of ['/package.json', '/framework/package.json', '/website/package.json']) {
-      if (!existsSync(process.cwd() + file)) {
-        console.error('File ' + file + ' missing');
+    for (const file of [
+      '/package.json',
+      '/framework/package.json',
+      '/website/package.json',
+    ]) {
+      if (! existsSync(process.cwd() + file,)) {
+        console.error('File ' + file + ' missing',);
         process.exit(EXIT_FAILURE,);
       }
-      writeFileSync(process.cwd() + file, readFileSync(process.cwd() + file, 'utf8').replace(/"version": "\d+\.\d+\.\d+",/u, `"version": "${ version }",`));
+      writeFileSync(
+        process.cwd() + file,
+        readFileSync(
+          process.cwd() + file,
+          'utf8',
+        ).replace(
+          /"version": "\d+\.\d+\.\d+",/u,
+          `"version": "${ version }",`,
+        ),
+      );
     }
     exec(
       'npm install',
