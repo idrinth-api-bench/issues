@@ -5,6 +5,8 @@
   "license": "MIT",
   "homepage": "https://idrinth-api-ben.ch",
   "type": "module",
+  "author": "Björn Büttner",
+  "contributors": [],
   "repository": {
     "type": "git",
     "url": "https://github.com/Idrinth/api-bench.git"

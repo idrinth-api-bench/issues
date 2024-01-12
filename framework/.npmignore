@@ -1,7 +1,4 @@
 /test
-/examples
-/nbproject
-/README.md
 .eslintrc.yml
 /result.json
 /result.csv
@@ -9,15 +6,6 @@
 /coverage
 /.mocharc.cjs
 /.nycrc.json
-/.markdownlint.yaml
 /fixtures
-/.github
-/.idea
 /tools
-/.editorconfig
-/SECURITY.md
-/CODE_OF_CONDUCT.md
-/CONTRIBUTING.md
 /result.html
-/readme/*
-/website

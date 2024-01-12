@@ -5,8 +5,13 @@
   "license": "MIT",
   "homepage": "https://idrinth-api-ben.ch",
   "type": "module",
+  "author": "Björn Büttner",
+  "contributors": [],
   "scripts": {
-    "lint-md": "markdownlint *.md"
+    "lint-md": "markdownlint *.md",
+    "coai": "node tools/checkout-and-install.js",
+    "publish": "node tools/publish.js",
+    "prepublishOnly": "exit 1"
   },
   "repository": {
     "type": "git",

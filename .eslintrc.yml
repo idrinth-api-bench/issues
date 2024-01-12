@@ -6,8 +6,6 @@ plugins:
   - json
 ignorePatterns:
 - node_modules
-- framework/src/*.js
-- framework/src/**/*.js
 root: true
 parser: "@typescript-eslint/parser"
 rules:
