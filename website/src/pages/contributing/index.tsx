@@ -45,6 +45,21 @@ const Index = () => <Layout Outlet={<section>
     </p>
   </div>
   <div className='card'>
+    <h4>Manual Tests</h4>
+    <div>
+      <p>
+        For manual testing you can run <strong>npm run coai</strong>
+        in the source folder to automatically check out and install
+        all required files for testing.
+      </p>
+      <SyntaxHighlighter language='bash'>{`
+git clone https://github.com/idrinth/api-bench
+cd api-bench
+npm run coai
+      `}</SyntaxHighlighter>
+    </div>
+  </div>
+  <div className='card'>
     <h3>Naming conventions</h3>
     <ul>
       <li>camelCase for variables and functions</li>
@@ -76,7 +91,7 @@ cd api-bench
 npm install
 cd website
 npm install
-        `}</SyntaxHighlighter>
+      `}</SyntaxHighlighter>
     </div>
   </div>
   <div className='card'>
@@ -98,7 +113,7 @@ npm install
     </p>
   </div>
 </section>}
-page='contributing'
-path='/contributing'
+                            page='contributing'
+                            path='/contributing'
 />;
 export default Index;
