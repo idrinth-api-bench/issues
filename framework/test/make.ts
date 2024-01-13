@@ -26,7 +26,7 @@ describe('make', () => {
     rmdirSync(tmp + '/benchmark',);
   },);
   after(async() => {
-    if (! existsSync(tmp+'/benchmark',)) {
+    if (! existsSync(tmp + '/benchmark',)) {
       return;
     }
     await emptyDir(tmp + '/benchmark',);
