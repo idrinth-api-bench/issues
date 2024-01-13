@@ -181,7 +181,7 @@ a[target="_blank"] {
   min-height: 100vh;
 }
 
-section {
+article {
   min-height: calc(100vh - 6em - 2rem - 3px);
 }
 

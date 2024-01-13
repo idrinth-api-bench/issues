@@ -6,7 +6,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import Layout from '../../../components/layout.tsx';
 
 const Route = () => <Layout
-  Outlet={<section>
+  Outlet={<>
     <div className='title-card'>
       <h1><Lang lnkey='route.title'/></h1>
       <p><Lang lnkey='route.description'/></p>
@@ -28,7 +28,7 @@ export default (apiURL, apiPassword): Task => {
       `}</SyntaxHighlighter>
       </div>
     </div>
-  </section>}
+  </>}
   page='route'
   path='/usage/routes'
 />;

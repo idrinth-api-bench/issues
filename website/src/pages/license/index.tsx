@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../../components/layout.tsx';
 
-const License = () => <Layout Outlet={<section>
+const License = () => <Layout Outlet={<>
   <div className='title-card'>
     <h1>MIT License</h1>
     <p>
@@ -31,7 +31,7 @@ const License = () => <Layout Outlet={<section>
       DEALINGS IN THE SOFTWARE.
     </p>
   </div>
-</section>}
+</>}
 path='/license'
 page='license'
 />;

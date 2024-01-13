@@ -13,4 +13,10 @@ describe('home', () => {
       .invoke('text',)
       .should('eq', 'What does this project do?',);
   },);
+  it('link to self exists', () => {
+    cy.visit('http://localhost:8080/',);
+    cy.get('nav a[href="/"]',)
+      .invoke('text',)
+      .should('eq', 'Home',);
+  },);
 },);

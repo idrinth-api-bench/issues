@@ -6,7 +6,7 @@ import {
 import Layout from '../../../components/layout.tsx';
 
 const Storage = () => <Layout
-  Outlet={<section>
+  Outlet={<>
     <div className='title-card'>
       <h1>Storage</h1>
       <p>
@@ -27,7 +27,7 @@ const Storage = () => <Layout
         </SyntaxHighlighter>
       </div>
     </div>
-  </section>}
+  </>}
   page='storage'
   path='/usage/storage'
 />;
