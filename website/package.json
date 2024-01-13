@@ -51,7 +51,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "babel-plugin-istanbul": "^6.1.1",
     "c8": "^9.1.0",
-    "chai": "^4.3.10",
+    "chai": "^5.0.0",
     "cypress": "^13.6.2",
     "eslint": "^8.55.0",
     "eslint-plugin-react-hooks": "^4.6.0",
