@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@babel/plugin-syntax-import-attributes": "^7.23.3",
-    "@cypress/code-coverage": "^3.12.17",
+    "@cypress/code-coverage": "^3.12.18",
     "@idrinth/duplicate-style-check": "^1.0.6",
     "@types/chai": "^4.3.11",
     "@types/mocha": "^10.0.6",
