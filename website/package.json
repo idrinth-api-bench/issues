@@ -1,8 +1,16 @@
 {
-  "name": "website",
+  "name": "@idrinth/api-bench/website",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.5.0",
+  "license": "MIT",
+  "homepage": "https://idrinth-api-ben.ch",
   "type": "module",
+  "author": "Björn Büttner",
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Idrinth/api-bench.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -14,7 +22,8 @@
     "e2e": "npm run build && start-server-and-test serve http://localhost:8080 'cypress run'",
     "write-e2e": "cypress open",
     "lint-styles": "stylelint src/index.css src/**/**/*.css",
-    "lint-css": "ilcd"
+    "lint-css": "ilcd",
+    "lint-md": "markdownlint *.md"
   },
   "dependencies": {
     "@fontsource/roboto": "^5.0.8",
@@ -57,6 +66,7 @@
     "ts-node": "^10.9.1",
     "typescript": "^5.3.3",
     "vite": "^5.0.8",
-    "@rollup/plugin-dynamic-import-vars": "^2.1.2"
+    "@rollup/plugin-dynamic-import-vars": "^2.1.2",
+    "markdownlint-cli": "^0.38.0"
   }
 }
