@@ -8,6 +8,9 @@ on:
     - master
   schedule:
     - cron: '29 14 * * 4'
+env:
+  PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
+  CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
 jobs:
   analyze:
     name: Analyze
@@ -27,6 +30,11 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
+        query: security-and-quality
+    - name: Setup Node.js environment ${{ env.CURRENT_NODE_VERSION }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.CURRENT_NODE_VERSION }}
     - name: Build root
       run: npm ci
     - name: Build website
