@@ -6,7 +6,7 @@ import {
 import Layout from '../../../components/layout.tsx';
 
 const Logging = () => <Layout
-  Outlet={<section>
+  Outlet={<>
     <div className='title-card'>
       <h1>Logging</h1>
       <p>
@@ -48,7 +48,7 @@ const Logging = () => <Layout
         </p>
       </div>
     </div>
-  </section>}
+  </>}
   page='logging'
   path='/usage/logging'
 />;

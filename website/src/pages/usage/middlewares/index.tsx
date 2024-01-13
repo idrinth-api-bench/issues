@@ -3,7 +3,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import Layout from '../../../components/layout.tsx';
 
 const Middlewares = () => <Layout
-  Outlet={<section>
+  Outlet={<>
     <div className='title-card'>
       <h1>Middlewares</h1>
       <p>
@@ -48,7 +48,7 @@ const Middlewares = () => <Layout
         </SyntaxHighlighter>
       </div>
     </div>
-  </section>}
+  </>}
   page='middlewares'
   path='/usage/middlewares'
 />;
