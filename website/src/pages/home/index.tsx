@@ -5,7 +5,7 @@ import {
 import Layout from '../../components/layout.tsx';
 
 const Index = () => <Layout Outlet={
-  <section>
+  <>
     <div className='title-card'>
       <h1>
         <Lang lnkey='home.title'/>
@@ -53,7 +53,7 @@ const Index = () => <Layout Outlet={
         complicated validations or huge response bodies on the data gathering.
       </p>
     </div>
-  </section>}
+  </>}
 page='home'
 />;
 export default Index;

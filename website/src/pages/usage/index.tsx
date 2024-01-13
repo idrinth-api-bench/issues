@@ -4,7 +4,7 @@ import {
 } from '../../components/lang.tsx';
 import Layout from '../../components/layout.tsx';
 
-const Usage = () => <Layout Outlet={<section>
+const Usage = () => <Layout Outlet={<>
   <div className='title-card'>
     <h1>Usage &amp; Examples</h1>
   </div>
@@ -47,7 +47,7 @@ const Usage = () => <Layout Outlet={<section>
       <Lang lnkey= 'usage.programmatically.description' />
     </p>
   </div>
-</section>}
+</>}
 page='usage'
 path='/usage'
 />;

@@ -13,4 +13,10 @@ describe('usage/route', () => {
       .invoke('text',)
       .should('eq', 'Route',);
   },);
+  it('link to self exists', () => {
+    cy.visit('http://localhost:8080/usage/route',);
+    cy.get('nav a[href="/usage/route"]',)
+      .invoke('text',)
+      .should('eq', 'Route',);
+  },);
 },);

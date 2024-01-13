@@ -7,7 +7,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import Layout from '../../../components/layout.tsx';
 
 const Results = () => <Layout
-  Outlet={<section>
+  Outlet={<>
     <div className='title-card'>
       <h1>Results</h1>
       <p>
@@ -72,7 +72,7 @@ const Results = () => <Layout
         </SyntaxHighlighter>
       </div>
     </div>
-  </section>}
+  </>}
   page='results'
   path='/usage/results'
 />;

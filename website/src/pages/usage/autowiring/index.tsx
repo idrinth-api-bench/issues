@@ -3,7 +3,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import Layout from '../../../components/layout.tsx';
 
 const AutoWiring = () => <Layout
-  Outlet={<section>
+  Outlet={<>
     <div className='title-card'>
       <h1>Autowiring Route Parameters</h1>
       <p>
@@ -58,7 +58,7 @@ const AutoWiring = () => <Layout
   `}
       </SyntaxHighlighter>
     </div>
-  </section>}
+  </>}
   page='autowiring'
   path='/usage/autowiring'
 />;

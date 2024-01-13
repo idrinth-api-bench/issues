@@ -13,4 +13,10 @@ describe('license', () => {
       .invoke('text',)
       .should('eq', 'MIT License',);
   },);
+  it('link to self exists', () => {
+    cy.visit('http://localhost:8080/license',);
+    cy.get('footer a[href="/license"]',)
+      .invoke('text',)
+      .should('eq', 'License',);
+  },);
 },);
