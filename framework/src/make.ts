@@ -89,7 +89,8 @@ export default (args: string[], cwd: string,) => {
       '/result.csv\n' +
       '/result.html\n' +
       '/src/**/*.js\n' +
-      '/.idea\n',),
+      '/.idea\n' +
+      '/.vscode\n',),
     () => writeFileSync(root + '/.eslintrc.yml', 'extends:\n' +
       '- eslint:recommended\n' +
       '- "plugin:json/recommended"\n' +
@@ -269,8 +270,8 @@ export default (args: string[], cwd: string,) => {
       '  ecmaVersion: 2018\n'
       ,),
     () => copySync(
-      FRAMEWORK_ROOT + '/.editorconfig',
-      root + '/../.editorconfig',
+      FRAMEWORK_ROOT + '/../.editorconfig',
+      root + '/.editorconfig',
     ),
     () => copySync(FRAMEWORK_ROOT + '/.mocharc.cjs', root + '/.mocharc.cjs',),
     () => copySync(FRAMEWORK_ROOT + '/.nycrc.json', root + '/.nycrc.json',),

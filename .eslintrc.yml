@@ -3,7 +3,7 @@ extends:
 - "plugin:json/recommended"
 - "plugin:@typescript-eslint/recommended"
 plugins:
-  - json
+- json
 ignorePatterns:
 - node_modules
 root: true
