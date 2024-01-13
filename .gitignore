@@ -1,13 +1,17 @@
-/nbproject
+# ROOT
 /node_modules
-/result.json
-/result.csv
-/result.html
-/.nyc_output
-/coverage
-/src/**/*.js
-/index.js
-/.idea
+
+# Framework
+/framework/node_modules
+/framework/result.json
+/framework/result.csv
+/framework/result.html
+/framework/.nyc_output
+/framework/coverage
+/framework/src/**/*.js
+/framework/index.js
+
+# Examples
 /examples/**/package-lock.json
 /examples/**/result.json
 /examples/**/result.csv
@@ -28,6 +32,7 @@
 /website/dist-ssr
 /website/*.local
 /website/coverage
+/website/tsconfig.tsbuildinfo
 
 # Editor directories and files
 .DS_Store
@@ -36,3 +41,6 @@
 *.njsproj
 *.sln
 *.sw?
+/nbproject
+/.idea
+/.vscode

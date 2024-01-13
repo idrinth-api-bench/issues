@@ -3,7 +3,7 @@ import IAB from '../assets/iab.svg';
 import {
   NavLink,
 } from 'react-router-dom';
-import pkg from '../../../package.json' with {
+import pkg from '../../package.json' with {
   type: 'json'
 };
 import {
