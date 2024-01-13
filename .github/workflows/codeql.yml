@@ -40,7 +40,7 @@ jobs:
     - name: Build website
       run: cd website && npm ci && npm run build
     - name: Build framework
-      run: cd framework && npm ci && npm run rsc
+      run: cd framework && npm ci && npm run tsc
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
       with:
