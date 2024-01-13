@@ -1,0 +1,17 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 100
+- package-ecosystem: npm
+  directory: "/framework"
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 100
+- package-ecosystem: npm
+  directory: "/website"
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 100
