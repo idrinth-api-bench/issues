@@ -38,9 +38,9 @@ jobs:
     - name: Build root
       run: npm ci
     - name: Build website
-      run: cd website && npm ci && npm run build
+      run: cd website && npm ci
     - name: Build framework
-      run: cd framework && npm ci && npm run tsc
+      run: cd framework && npm ci
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
       with:
