@@ -1,20 +1,46 @@
 import React, {
-  lazy,
+  lazy, ReactElement,
   Suspense,
 } from 'react';
 import Loader from './pagelike/loader.tsx';
 import {
   FIRST,
   SECOND,
+  THIRD,
 } from './constants.ts';
+import routes from './routes.json' with {
+  type: 'json',
+};
 
-const make = (path: string, pathOverride?: string,) => {
-  const LazyElement = path.includes('/',)
-    ? lazy(() => import(
-      `./pages/${ path.split('/',)[FIRST] }/`
-      + `${ path.split('/',)[SECOND] }/index.tsx`
-      ,),)
-    : lazy(() => import(`./pages/${ path }/index.tsx`,),);
+interface Route {
+  path: string,
+  exact: true,
+  element: ReactElement
+}
+
+const make = (path: string, pathOverride?: string,): Route => {
+  const parts = path.split('/');
+  const LazyElement = (() => {
+    switch(parts.length) {
+      case 1:
+        return lazy(() => import(
+            `./pages/${ parts[FIRST] }/index.tsx`
+          ,),);
+      case 2:
+        return lazy(() => import(
+            `./pages/${ parts[FIRST] }/`
+            + `${ parts[SECOND] }/index.tsx`
+          ,),);
+      case 3:
+        return lazy(() => import(
+            `./pages/${ parts[FIRST] }/`
+            + `${ parts[SECOND] }/`
+            + `${ parts[THIRD] }/index.tsx`
+          ,),);
+      default:
+        throw Error(`Too many path elements!`,);
+    }
+  })();
   return {
     path: pathOverride || '/' + path,
     exact: true,
@@ -22,18 +48,9 @@ const make = (path: string, pathOverride?: string,) => {
   };
 };
 
-export default [
-  make('home', '/',),
-  make('contributing',),
-  make('usage',),
-  make('usage/autowiring',),
-  make('usage/results',),
-  make('usage/route',),
-  make('usage/logging',),
-  make('usage/middlewares',),
-  make('usage/storage',),
-  make('imprint',),
-  make('license',),
-  make('support',),
-  make('not-found', '*',),
-];
+const data: Route[] = [];
+for (const route of routes) {
+  data.push(make(route.path, route.override),);
+}
+
+export default data;
