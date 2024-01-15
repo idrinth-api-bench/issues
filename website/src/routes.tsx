@@ -8,8 +8,6 @@ import {
   FIRST,
   SECOND,
   SINGLE_ELEMENT,
-  THIRD,
-  THREE_ELEMENTS,
   TWO_ELEMENTS,
 } from './constants.ts';
 import routes from './routes.json' with {
@@ -35,12 +33,6 @@ const make = (path: string, pathOverride?: string,): Route => {
           `./pages/${ parts[FIRST] }/`
             + `${ parts[SECOND] }/index.tsx`
           ,),);
-      /*case THREE_ELEMENTS:
-        return lazy(() => import(
-          `./pages/${ parts[FIRST] }/`
-          + `${ parts[SECOND] }/`
-          + `${ parts[THIRD] }/index.tsx`
-          ,),);*/
       default:
         throw Error('Too many path elements!',);
     }
