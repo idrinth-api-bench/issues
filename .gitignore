@@ -34,6 +34,7 @@
 /website/coverage
 /website/tsconfig.tsbuildinfo
 /website/src/routes.json
+/website/public/sitemap.xml
 
 # Editor directories and files
 .DS_Store
