@@ -4,19 +4,18 @@ import {
 } from 'fs';
 
 const data = [];
+const overrides = {
+  home: '/',
+  'not-found': '*'
+}
 
 for (const file of readdirSync('./src/pages', {encoding: 'utf8', recursive: true})) {
   if (file.endsWith('index.tsx')) {
     const path = file.replace(/\\/ug, '/').replace(/\/index\.tsx$/, '');
-    if ((file.includes('home'))) {
+    if (typeof overrides[path] === 'string') {
       data.push({
         path,
-        override: '/',
-      });
-    } else if (file.includes('not-found')) {
-      data.push({
-        path,
-        override: '*',
+        override: overrides[path],
       });
     } else {
       data.push({
