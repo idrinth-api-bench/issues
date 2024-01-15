@@ -8,9 +8,7 @@ import dynamicImportVariables from '@rollup/plugin-dynamic-import-vars';
 export default defineConfig({
   build: {
     rollupOptions: {
-      plugins: [ dynamicImportVariables({
-        errorWhenNoFilesFound: true,
-      },), ],
+      plugins: [ dynamicImportVariables(), ],
       input: {
         index: 'index.html',
       },

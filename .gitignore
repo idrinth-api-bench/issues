@@ -33,6 +33,7 @@
 /website/*.local
 /website/coverage
 /website/tsconfig.tsbuildinfo
+/website/src/routes.json
 
 # Editor directories and files
 .DS_Store
