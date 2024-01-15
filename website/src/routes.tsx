@@ -34,12 +34,12 @@ const make = (path: string, pathOverride?: string,): Route => {
           `./pages/${ parts[FIRST] }/`
             + `${ parts[SECOND] }/index.tsx`
           ,),);
-      case THREE_ELEMENTS:
+      /*case THREE_ELEMENTS:
         return lazy(() => import(
           `./pages/${ parts[FIRST] }/`
           + `${ parts[SECOND] }/`
           + `${ parts[THIRD] }/index.tsx`
-          ,),);
+          ,),);*/
       default:
         throw Error('Too many path elements!',);
     }
