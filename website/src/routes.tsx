@@ -6,7 +6,10 @@ import Loader from './pagelike/loader.tsx';
 import {
   FIRST,
   SECOND,
+  SINGLE_ELEMENT,
   THIRD,
+  THREE_ELEMENTS,
+  TWO_ELEMENTS,
 } from './constants.ts';
 import routes from './routes.json' with {
   type: 'json',
@@ -19,26 +22,26 @@ interface Route {
 }
 
 const make = (path: string, pathOverride?: string,): Route => {
-  const parts = path.split('/');
+  const parts = path.split('/',);
   const LazyElement = (() => {
-    switch(parts.length) {
-      case 1:
+    switch (parts.length) {
+      case SINGLE_ELEMENT:
         return lazy(() => import(
-            `./pages/${ parts[FIRST] }/index.tsx`
+          `./pages/${ parts[FIRST] }/index.tsx`
           ,),);
-      case 2:
+      case TWO_ELEMENTS:
         return lazy(() => import(
-            `./pages/${ parts[FIRST] }/`
+          `./pages/${ parts[FIRST] }/`
             + `${ parts[SECOND] }/index.tsx`
           ,),);
-      case 3:
+      case THREE_ELEMENTS:
         return lazy(() => import(
-            `./pages/${ parts[FIRST] }/`
-            + `${ parts[SECOND] }/`
-            + `${ parts[THIRD] }/index.tsx`
+          `./pages/${ parts[FIRST] }/`
+          + `${ parts[SECOND] }/`
+          + `${ parts[THIRD] }/index.tsx`
           ,),);
       default:
-        throw Error(`Too many path elements!`,);
+        throw Error('Too many path elements!',);
     }
   })();
   return {
@@ -50,7 +53,7 @@ const make = (path: string, pathOverride?: string,): Route => {
 
 const data: Route[] = [];
 for (const route of routes) {
-  data.push(make(route.path, route.override),);
+  data.push(make(route.path, route.override,),);
 }
 
 export default data;
