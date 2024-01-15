@@ -1,5 +1,6 @@
 import React, {
-  lazy, ReactElement,
+  lazy,
+  ReactElement,
   Suspense,
 } from 'react';
 import Loader from './pagelike/loader.tsx';
