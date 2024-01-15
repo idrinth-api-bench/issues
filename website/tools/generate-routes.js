@@ -6,7 +6,7 @@ import {
 const data = [];
 const overrides = {
   home: '/',
-  'not-found': '*'
+  'not-found': '*',
 }
 
 for (const file of readdirSync('./src/pages', {encoding: 'utf8', recursive: true})) {
