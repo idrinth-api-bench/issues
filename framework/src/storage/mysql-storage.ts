@@ -19,12 +19,18 @@ const project: string = reqlib
 export class MysqlStorage implements Storage {
   private connection: Connection;
 
-  constructor(host: string, password: string, port: number,) {
+  constructor(
+    host: string,
+    password: string,
+    port: number,
+    user: string = 'idrinth-api-bench',
+    database: string = 'idrinth-api-bench',
+  ) {
     this.connection = createConnection({
       host,
-      user: 'idrinth-api-bench',
+      user,
       password,
-      database: 'idrinth-api-bench',
+      database,
       port,
     },);
     this.connection.execute(
