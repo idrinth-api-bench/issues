@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../../components/layout.tsx';
 
-const Index = () => <Layout Outlet={<section>
+const Index = () => <Layout Outlet={<>
   <div className='title-card'>
     <h1>Imprint</h1>
   </div>
@@ -99,7 +99,7 @@ const Index = () => <Layout Outlet={<section>
       </em>
     </p>
   </div>
-</section>}
+</>}
 page='imprint'
 path='/imprint'
 />;

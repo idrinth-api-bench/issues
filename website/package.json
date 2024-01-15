@@ -1,11 +1,19 @@
 {
-  "name": "website",
+  "name": "@idrinth/api-bench/website",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.5.0",
+  "license": "MIT",
+  "homepage": "https://idrinth-api-ben.ch",
   "type": "module",
+  "author": "Björn Büttner",
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Idrinth/api-bench.git"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm run routes && tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint-fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",
@@ -14,7 +22,10 @@
     "e2e": "npm run build && start-server-and-test serve http://localhost:8080 'cypress run'",
     "write-e2e": "cypress open",
     "lint-styles": "stylelint src/index.css src/**/**/*.css",
-    "lint-css": "ilcd"
+    "lint-css": "ilcd",
+    "lint-md": "markdownlint *.md",
+    "postinstall": "npm run routes",
+    "routes": "node tools/generate-routes.js"
   },
   "dependencies": {
     "@fontsource/roboto": "^5.0.8",
@@ -24,13 +35,13 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^14.0.0",
-    "react-router-dom": "^6.21.1",
+    "react-router-dom": "^6.21.2",
     "react-syntax-highlighter": "^15.5.0",
     "the-new-css-reset": "^1.11.2"
   },
   "devDependencies": {
     "@babel/plugin-syntax-import-attributes": "^7.23.3",
-    "@cypress/code-coverage": "^3.12.17",
+    "@cypress/code-coverage": "^3.12.18",
     "@idrinth/duplicate-style-check": "^1.0.6",
     "@types/chai": "^4.3.11",
     "@types/mocha": "^10.0.6",
@@ -41,8 +52,8 @@
     "@typescript-eslint/parser": "^6.14.0",
     "@vitejs/plugin-react": "^4.2.1",
     "babel-plugin-istanbul": "^6.1.1",
-    "c8": "^8.0.1",
-    "chai": "^4.3.10",
+    "c8": "^9.1.0",
+    "chai": "^5.0.0",
     "cypress": "^13.6.2",
     "eslint": "^8.55.0",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -57,6 +68,7 @@
     "ts-node": "^10.9.1",
     "typescript": "^5.3.3",
     "vite": "^5.0.8",
-    "@rollup/plugin-dynamic-import-vars": "^2.1.2"
+    "@rollup/plugin-dynamic-import-vars": "^2.1.2",
+    "markdownlint-cli": "^0.38.0"
   }
 }
