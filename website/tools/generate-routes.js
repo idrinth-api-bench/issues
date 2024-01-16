@@ -25,7 +25,7 @@ const paddedDate = (date) => {
 let xml = '<?xml version="1.0" encoding="UTF-8"?>';
 xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 for (const file of readdirSync('./src/pages', {encoding: 'utf8', recursive: true})) {
-  if (file.endsWith('index.tsx')) {
+  if (file.endsWith('/index.tsx') || file.endsWith('\\index.tsx')) {
     const mtime = statSync('./src/pages/' + file).mtime;
     const changed = paddedDate(mtime);
     const path = file.replace(/\\/ug, '/').replace(/\/index\.tsx$/, '');
@@ -35,14 +35,14 @@ for (const file of readdirSync('./src/pages', {encoding: 'utf8', recursive: true
         override: overrides[path],
       });
       if (overrides[path] !== '*') {
-        xml += `<url><loc>https://idrinth-api-ben.ch${overrides[path]}</loc>`;
+        xml += `<url><loc>https://idrinth-api-ben.ch${overrides[path]}/</loc>`;
         xml += `<lastmod>${changed}</lastmod></url>`;
       }
     } else {
       data.push({
         path,
       });
-      xml += `<url><loc>https://idrinth-api-ben.ch/${ path }</loc>`;
+      xml += `<url><loc>https://idrinth-api-ben.ch/${ path }/</loc>`;
       xml += `<lastmod>${ changed }</lastmod></url>`;
     }
   }

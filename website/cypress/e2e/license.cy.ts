@@ -1,21 +1,21 @@
 describe('license', () => {
   it('can be visited', () => {
-    cy.visit('http://localhost:8080/license',);
-    cy.url().should('eq', 'http://localhost:8080/license',);
+    cy.visit('http://localhost:8080/license/',);
+    cy.url().should('eq', 'http://localhost:8080/license/',);
   },);
   it('title matches', () => {
-    cy.visit('http://localhost:8080/license',);
+    cy.visit('http://localhost:8080/license/',);
     cy.title().should('eq', 'License | @idrinth/api-bench',);
   },);
   it('h1 matches', () => {
-    cy.visit('http://localhost:8080/license',);
+    cy.visit('http://localhost:8080/license/',);
     cy.get('h1',)
       .invoke('text',)
       .should('eq', 'MIT License',);
   },);
   it('link to self exists', () => {
-    cy.visit('http://localhost:8080/license',);
-    cy.get('footer a[href="/license"]',)
+    cy.visit('http://localhost:8080/license/',);
+    cy.get('footer a[href="/license/"]',)
       .invoke('text',)
       .should('eq', 'License',);
   },);
