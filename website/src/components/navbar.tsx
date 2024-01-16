@@ -36,28 +36,28 @@ const Navbar = () => <>
           </a>
         </li>
         <li>
-          <NavLink to="/contributing">{'Contributing'}</NavLink>
+          <NavLink to="/contributing/">{'Contributing'}</NavLink>
         </li>
         <li>
-          <NavLink to="/usage">{'Usage & Examples'}</NavLink>
+          <NavLink to="/usage/">{'Usage & Examples'}</NavLink>
           <ul>
             <li>
-              <NavLink to="/usage/autowiring">{'Autowiring'}</NavLink>
+              <NavLink to="/usage/autowiring/">{'Autowiring'}</NavLink>
             </li>
             <li>
-              <NavLink to="/usage/results">{'Results'}</NavLink>
+              <NavLink to="/usage/results/">{'Results'}</NavLink>
             </li>
             <li>
-              <NavLink to="/usage/logging">{'Logging'}</NavLink>
+              <NavLink to="/usage/logging/">{'Logging'}</NavLink>
             </li>
             <li>
-              <NavLink to="/usage/middlewares">{'Middlewares'}</NavLink>
+              <NavLink to="/usage/middlewares/">{'Middlewares'}</NavLink>
             </li>
             <li>
-              <NavLink to="/usage/storage">{'Storage'}</NavLink>
+              <NavLink to="/usage/storage/">{'Storage'}</NavLink>
             </li>
             <li>
-              <NavLink to="/usage/route">{'Route'}</NavLink>
+              <NavLink to="/usage/route/">{'Route'}</NavLink>
             </li>
           </ul>
         </li>

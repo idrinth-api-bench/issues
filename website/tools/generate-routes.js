@@ -35,14 +35,14 @@ for (const file of readdirSync('./src/pages', {encoding: 'utf8', recursive: true
         override: overrides[path],
       });
       if (overrides[path] !== '*') {
-        xml += `<url><loc>https://idrinth-api-ben.ch${overrides[path]}</loc>`;
+        xml += `<url><loc>https://idrinth-api-ben.ch${overrides[path]}/</loc>`;
         xml += `<lastmod>${changed}</lastmod></url>`;
       }
     } else {
       data.push({
         path,
       });
-      xml += `<url><loc>https://idrinth-api-ben.ch/${ path }</loc>`;
+      xml += `<url><loc>https://idrinth-api-ben.ch/${ path }/</loc>`;
       xml += `<lastmod>${ changed }</lastmod></url>`;
     }
   }
