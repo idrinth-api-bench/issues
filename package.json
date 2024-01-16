@@ -12,7 +12,7 @@
     "lint-md": "markdownlint *.md",
     "coai": "node tools/checkout-and-install.js",
     "publish": "node tools/publish.js",
-    "prepublishOnly": "exit 1"
+    "spellcheck": "spellchecker"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   },
   "private": true,
   "devDependencies": {
+    "spellchecker-cli": "^6.1.1",
     "markdownlint-cli": "^0.38.0",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "@typescript-eslint/parser": "^6.13.2",

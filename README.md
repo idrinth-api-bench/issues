@@ -1,7 +1,7 @@
 # @idrinth/api-bench
 
-This is the repository for the api test framework and the documentation website.
+This is the repository for the API test framework and the documentation website.
 
-- [Framework Readme](/framework/README.md)
-- [Website Readme](/website/README.md)
+- [Framework README](/framework/README.md)
+- [Website README](/website/README.md)
 - [Documentation](https://idrinth-api-ben.ch)
