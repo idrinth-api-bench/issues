@@ -15,7 +15,7 @@ describe('usage/autowiring', () => {
   },);
   it('link to self exists', () => {
     cy.visit('http://localhost:8080/usage/autowiring',);
-    cy.get('nav a[href="/usage/autowiring"]',)
+    cy.get('nav a[href="/usage/autowiring/"]',)
       .invoke('text',)
       .should('eq', 'Autowiring',);
   },);

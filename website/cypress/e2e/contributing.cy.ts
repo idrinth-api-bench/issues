@@ -15,7 +15,7 @@ describe('contributing', () => {
   },);
   it('link to self exists', () => {
     cy.visit('http://localhost:8080/contributing',);
-    cy.get('nav a[href="/contributing"]',)
+    cy.get('nav a[href="/contributing/"]',)
       .invoke('text',)
       .should('eq', 'Contributing',);
   },);
