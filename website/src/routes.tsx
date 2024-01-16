@@ -38,7 +38,7 @@ const make = (path: string, pathOverride?: string,): Route => {
     }
   })();
   return {
-    path: (pathOverride || '/' + path) + '/',
+    path: pathOverride || '/' + path + '/',
     exact: true,
     element: <Suspense fallback={<Loader/>}><LazyElement/></Suspense>,
   };
