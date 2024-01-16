@@ -15,7 +15,13 @@ describe('home', () => {
   },);
   it('link to self exists', () => {
     cy.visit('http://localhost:8080/',);
-    cy.get('nav a[href="/"]',)
+    cy.get('header nav a[href="/"]',)
+      .invoke('text',)
+      .should('eq', 'Home',);
+  },);
+  it('breadcrumbs exists', () => {
+    cy.visit('http://localhost:8080/',);
+    cy.get('nav.breadcrumbs a[href="/"]',)
       .invoke('text',)
       .should('eq', 'Home',);
   },);

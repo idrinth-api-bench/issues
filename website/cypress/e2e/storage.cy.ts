@@ -15,7 +15,19 @@ describe('usage/storage', () => {
   },);
   it('link to self exists', () => {
     cy.visit('http://localhost:8080/usage/storage/',);
-    cy.get('nav a[href="/usage/storage/"]',)
+    cy.get('header nav a[href="/usage/storage/"]',)
+      .invoke('text',)
+      .should('eq', 'Storage',);
+  },);
+  it('breadcrumbs exists', () => {
+    cy.visit('http://localhost:8080/usage/storage/',);
+    cy.get('nav.breadcrumbs a[href="/"]',)
+      .invoke('text',)
+      .should('eq', 'Home',);
+    cy.get('nav.breadcrumbs a[href="/usage/"]',)
+      .invoke('text',)
+      .should('eq', 'Usage',);
+    cy.get('nav.breadcrumbs a[href="/usage/storage/"]',)
       .invoke('text',)
       .should('eq', 'Storage',);
   },);

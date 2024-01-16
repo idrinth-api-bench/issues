@@ -9,6 +9,9 @@ import {
 const Breadcrumbs = ({
   path,
 },) => {
+  if (path === '*') {
+    return '';
+  }
   const parts: string[] = path.split('/',);
   const nav: React.JSX.Element[] = [];
   for (let index = 1; index < parts.length; index ++) {

@@ -19,4 +19,13 @@ describe('support', () => {
       .invoke('text',)
       .should('eq', 'Support',);
   },);
+  it('breadcrumbs exists', () => {
+    cy.visit('http://localhost:8080/usage/autowiring',);
+    cy.get('nav.breadcrumbs a[href="/"]',)
+      .invoke('text',)
+      .should('eq', 'Home',);
+    cy.get('nav.breadcrumbs a[href="/support/"]',)
+      .invoke('text',)
+      .should('eq', 'Support',);
+  },);
 },);
