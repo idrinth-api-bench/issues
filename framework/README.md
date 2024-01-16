@@ -14,7 +14,7 @@
 
 ## What does this project do?
 
-This project provides a framework for testing rest-apis and websites for changes in response times. This helps to detect performance changes in code in a quick and simple manner.
+This project provides a framework for testing restful APIs and websites for changes in response times. This helps to detect performance changes in code in a quick and simple manner.
 
 ### Why use a Benchmark Runner
 
@@ -23,7 +23,7 @@ Given, that the amount of APIs increase by moving to microservices, we need a wa
 ### Regarding existing libraries
 
 Other tools like [matteofigus/api-benchmark](https://github.com/matteofigus/api-benchmark), [bvanderlaan/api-bench-runner](https://github.com/bvanderlaan/api-bench-runner) or [jeffbski/bench-rest](https://github.com/jeffbski/bench-rest) are all untouched for quite a while and don't provide type definitions for typescript. This makes them less desirable when working with bigger projects where the better static codecheck is a huge boost in development speed.
-Additionally, this tool separates the validation thread from the thread processing the actual requests to further minimize the effect of complicated validations or huge response bodies on the data gathering.
+Additionally, this tool separates the validation thread from the thread processing the actual requests to further minimise the effect of complicated validations or huge response bodies on the data gathering.
 
 ## Usage & Examples
 
