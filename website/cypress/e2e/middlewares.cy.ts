@@ -15,7 +15,7 @@ describe('usage/middlewares', () => {
   },);
   it('link to self exists', () => {
     cy.visit('http://localhost:8080/usage/middlewares/',);
-    cy.get('nav a[href="/usage/middlewares"]',)
+    cy.get('nav a[href="/usage/middlewares/"]',)
       .invoke('text',)
       .should('eq', 'Middlewares',);
   },);

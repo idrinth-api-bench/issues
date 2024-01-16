@@ -15,7 +15,7 @@ describe('imprint', () => {
   },);
   it('link to self exists', () => {
     cy.visit('http://localhost:8080/imprint/',);
-    cy.get('footer a[href="/imprint"]',)
+    cy.get('footer a[href="/imprint/"]',)
       .invoke('text',)
       .should('eq', 'Imprint',);
   },);

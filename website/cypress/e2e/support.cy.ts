@@ -15,7 +15,7 @@ describe('support', () => {
   },);
   it('link to self exists', () => {
     cy.visit('http://localhost:8080/support/',);
-    cy.get('footer a[href="/support"]',)
+    cy.get('footer a[href="/support/"]',)
       .invoke('text',)
       .should('eq', 'Support',);
   },);

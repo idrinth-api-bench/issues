@@ -15,7 +15,7 @@ describe('usage/logging', () => {
   },);
   it('link to self exists', () => {
     cy.visit('http://localhost:8080/usage/logging/',);
-    cy.get('nav a[href="/usage/logging"]',)
+    cy.get('nav a[href="/usage/logging/"]',)
       .invoke('text',)
       .should('eq', 'Logging',);
   },);
