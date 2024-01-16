@@ -127,6 +127,14 @@ nav li {
   padding: 0.5em 0;
 }
 
+nav.breadcrumbs li::after {
+  content: ' > ';
+}
+
+nav.breadcrumbs li:last-of-type::after {
+  content: '';
+}
+
 footer {
   display: grid;
   grid-template-columns: 1fr;
@@ -229,9 +237,18 @@ footer li:last-child::after {
     gap: 1.7em;
   }
 
+  nav.breadcrumbs ul {
+    gap: 0;
+    padding-left: 2.5em;
+  }
+
   nav li {
     border: none;
     width: initial;
+  }
+
+  nav.breadcrumbs li::after {
+     padding: 0 0.5em;
   }
 
   nav ul ul{
