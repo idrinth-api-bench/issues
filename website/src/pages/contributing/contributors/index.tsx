@@ -8,7 +8,7 @@ import {
 } from "../../../components/lang.tsx";
 
 const Index = () => {
-  const els = [];
+  const els: React.JSX.Element[] = [];
   for (const username of Object.keys(contributors)) {
     els.push(<div className={'card profile'}>
       <img src={ contributors[username].avatar } alt={contributors[username].name}/>
@@ -16,7 +16,7 @@ const Index = () => {
         <h2>
           <a href={contributors[username].url} target={'_blank'}>{contributors[username].name}</a>
         </h2>
-        <p>{contributors[username].bio || 'An awesome person helping others in their time off work, who doesn\'t yet have a personalized bio.'}</p>
+        <p>{contributors[username].bio}</p>
         <p>Location: {contributors[username].location || 'unknown'}</p>
         <p>{contributors[username].contributions} contributions to master</p>
       </div>
