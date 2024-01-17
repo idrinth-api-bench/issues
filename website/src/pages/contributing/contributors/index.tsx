@@ -17,7 +17,11 @@ const Index = () => {
       />
       <div>
         <h2>
-          <a href={contributors[username].url} target={'_blank'}>
+          <a
+            href={contributors[username].url}
+            target={'_blank'}
+            rel={'noopener'}
+          >
             {contributors[username].name}
           </a>
         </h2>
