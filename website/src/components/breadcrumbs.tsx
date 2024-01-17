@@ -17,8 +17,9 @@ const Breadcrumbs = ({
   for (let index = 1; index < parts.length; index ++) {
     let url = '';
     for (let i = 1; i <= index; i ++) {
-      url += '/' + parts[index];
+      url += '/' + parts[i];
     }
+    url += '/';
     nav.push(<li>
       <NavLink to={url}>
         <Lang lnkey={parts[index] + '.nav'}/>

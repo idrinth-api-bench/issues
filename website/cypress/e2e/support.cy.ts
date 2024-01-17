@@ -20,7 +20,7 @@ describe('support', () => {
       .should('eq', 'Support',);
   },);
   it('breadcrumbs exists', () => {
-    cy.visit('http://localhost:8080/usage/autowiring',);
+    cy.visit('http://localhost:8080/support',);
     cy.get('nav.breadcrumbs a[href="/"]',)
       .invoke('text',)
       .should('eq', 'Home',);

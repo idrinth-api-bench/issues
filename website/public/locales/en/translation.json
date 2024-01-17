@@ -82,7 +82,7 @@
     "programmatically": {
       "description": "Basically require main/include main and supply the executor method with required parameters. Tasks defined in src/routes-subfolders before, before_task, before_each, main, after_each, after_task, and after will be used to automatically fill the Job processed by the executor. Automatic filling only happens when there are no tasks provided to the function."
     },
-    "nav": "Usage"
+    "nav": "Usage & Examples"
   },
   "logging": {
     "meta": {
@@ -106,19 +106,19 @@
     "custom": {
       "description": "To provide a custom storage, implement the interface below. The method will be called once per task."
     },
-    "nav": "storage"
+    "nav": "Storage"
   },
-  "route": {
+  "routes": {
     "meta": {
-      "title": "Route | Usage",
+      "title": "Routes | Usage",
       "description": "Information about how to create test route definitions with the framework @idrinth/api-bench"
     },
-    "title": "Route",
+    "title": "Routes",
     "description": "Routes are build as configuration objects, that must be default-exported or provided via module.exports and be in a javascript file. The object is wrapped in a function to allow environment injection, see below for an example.",
     "example": {
       "title": "Example",
       "description": "The code below defines a request to a URL from the environment with GET."
     },
-    "nav": "route"
+    "nav": "Routes"
   }
 }

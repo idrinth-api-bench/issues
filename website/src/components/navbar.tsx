@@ -71,8 +71,8 @@ const Navbar = () => <>
               </NavLink>
             </li>
             <li>
-              <NavLink to="/usage/route/">
-                <Lang lnkey='route.nav'/>
+              <NavLink to="/usage/routes/">
+                <Lang lnkey='routes.nav'/>
               </NavLink>
             </li>
           </ul>
