@@ -43,7 +43,7 @@ const update = async(contributor) => {
 }
 
 for(const contributor of await contributors.json()) {
-  update(contributor);
+  await update(contributor);
 }
 
 writeFileSync('./src/contributors.json', JSON.stringify(users));
