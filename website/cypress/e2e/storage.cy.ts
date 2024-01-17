@@ -26,7 +26,7 @@ describe('usage/storage', () => {
       .should('eq', 'Home',);
     cy.get('nav.breadcrumbs a[href="/usage/"]',)
       .invoke('text',)
-      .should('eq', 'Usage',);
+      .should('eq', 'Usage & Examples',);
     cy.get('nav.breadcrumbs a[href="/usage/storage/"]',)
       .invoke('text',)
       .should('eq', 'Storage',);

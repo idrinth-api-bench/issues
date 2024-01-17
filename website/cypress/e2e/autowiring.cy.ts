@@ -26,7 +26,7 @@ describe('usage/autowiring', () => {
       .should('eq', 'Home',);
     cy.get('nav.breadcrumbs a[href="/usage/"]',)
       .invoke('text',)
-      .should('eq', 'Usage',);
+      .should('eq', 'Usage & Examples',);
     cy.get('nav.breadcrumbs a[href="/usage/autowiring/"]',)
       .invoke('text',)
       .should('eq', 'Autowiring',);
