@@ -21,7 +21,7 @@ const Breadcrumbs = ({
     }
     nav.push(<li>
       <NavLink to={url}>
-        <Lang lnkey={parts[index] + '.title'}/>
+        <Lang lnkey={parts[index] + '.nav'}/>
       </NavLink>
     </li>,);
   }
@@ -29,7 +29,7 @@ const Breadcrumbs = ({
     <ul>
       <li>
         <NavLink to={'/'}>
-          <Lang lnkey={'home.title'}/>
+          <Lang lnkey={'home.nav'}/>
         </NavLink>
       </li>
       { nav }
