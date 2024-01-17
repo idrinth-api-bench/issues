@@ -11,7 +11,7 @@ const users = {};
 if (existsSync('./src/contributors.json')) {
   const old = JSON.parse(readFileSync('./src/contributors.json', 'utf8'));
   for (const key of Object.keys(old)) {
-    if (old[key].lastUpdated < Date.now() - 24*60*60*1000) {
+    if (old[key].lastUpdated > Date.now() - 24*60*60*1000) {
       users[key] = old[key];
     }
   }
