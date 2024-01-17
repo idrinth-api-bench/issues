@@ -194,6 +194,18 @@ footer li:last-child::after {
   content: "";
 }
 
+.profile {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.profile img {
+  border-radius: 50%;
+  max-width: 200px;
+  justify-self: center;
+  border: 1px solid var(--dark-green);
+}
+
 @media only screen and (width >= 600px) {
   footer {
     grid-template-columns: 1fr 1fr;
@@ -206,6 +218,10 @@ footer li:last-child::after {
 
   header, footer {
     background-image: linear-gradient(to bottom, hsla(0deg 0% 100% / 10%), hsla(0deg 0% 100% / 15%), hsla(0deg 0% 100% / 5%));
+  }
+
+  .profile h2 {
+    text-align: left;
   }
 
   header div {
@@ -267,8 +283,6 @@ footer li:last-child::after {
     padding: 2em 3em;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    align-items: center;
-    justify-content: center;
   }
 }
 
