@@ -13,6 +13,15 @@
       "description": "Imprint and privacy statements for this website"
     }
   },
+  "contributors": {
+    "meta": {
+      "title": "Contributors | Contributing",
+      "description": "These are the people who made the site and framework what they are today."
+    },
+    "nav": "Contributors",
+    "title": "Contributors",
+    "description": "A big thank you to everyone who contributed. Below are the ones who contributed code, but other contributions are as valuable."
+  },
   "support": {
     "meta": {
       "title": "Support",
