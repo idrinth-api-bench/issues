@@ -11,7 +11,7 @@ const Index = () => <Layout Outlet={<>
       <meta content='Björn Büttner' itemProp='name' />
       <meta content='https://bjoern-buettner.me' itemProp='url' />
       <meta content='https://bjoern-buettner.me/logo.png' itemProp='logo' />
-      <meta content='webmaster@bjoern-buettner.me' itemProp='email' />
+      <meta content='webmaster@idrinth-api-ben.ch' itemProp='email' />
       <p itemProp='address'>
           Björn Büttner
         <br /> Böllerts Höfe 4<br />
