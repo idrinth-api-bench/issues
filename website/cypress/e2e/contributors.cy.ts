@@ -5,7 +5,8 @@ describe('contributors', () => {
   },);
   it('title matches', () => {
     cy.visit('http://localhost:8080/contributing/contributors/',);
-    cy.title().should('eq', 'Contributors | Contributing | @idrinth/api-bench',);
+    cy.title()
+      .should('eq', 'Contributors | Contributing | @idrinth/api-bench',);
   },);
   it('h1 matches', () => {
     cy.visit('http://localhost:8080/contributing/contributors/',);

@@ -5,23 +5,27 @@ import contributors from '../../../contributors.json' with {
 };
 import {
   Lang,
-} from "../../../components/lang.tsx";
+} from '../../../components/lang.tsx';
 
 const Index = () => {
   const els: React.JSX.Element[] = [];
-  for (const username of Object.keys(contributors)) {
+  for (const username of Object.keys(contributors,)) {
     els.push(<div className={'card profile'}>
-      <img src={ contributors[username].avatar } alt={contributors[username].name}/>
+      <img
+        src={contributors[username].avatar}
+        alt={contributors[username].name}
+      />
       <div>
         <h2>
-          <a href={contributors[username].url} target={'_blank'}>{contributors[username].name}</a>
+          <a href={contributors[username].url} target={'_blank'}>
+            {contributors[username].name}
+          </a>
         </h2>
         <p>{contributors[username].bio}</p>
         <p>Location: {contributors[username].location || 'unknown'}</p>
         <p>{contributors[username].contributions} contributions to master</p>
       </div>
-    </div>)
-    ;
+    </div>,);
   }
   return <Layout
     Outlet={<section>
@@ -38,5 +42,5 @@ const Index = () => {
     page='contributors'
     path='/contributing/contributors'
   />;
-}
+};
 export default Index;
