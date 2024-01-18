@@ -155,6 +155,13 @@ a[target="_blank"] {
     background-image: linear-gradient(to bottom, hsla(0deg 0% 100% / 10%), hsla(0deg 0% 100% / 15%), hsla(0deg 0% 100% / 5%));
   }
 
+  /* @media (prefers-color-scheme: dark) {
+    :root {
+      --background: var(--clr-dark)
+      --foreground: var(--clr-light)
+    }
+  } */
+
   header div {
     width: 30%;
     max-width: initial;
