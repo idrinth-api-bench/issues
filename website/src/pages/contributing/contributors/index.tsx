@@ -26,7 +26,7 @@ const Index = () => {
           </a>
         </h2>
         <p>{contributors[username].bio}</p>
-        <p>Location: {contributors[username].location || 'unknown'}</p>
+        <p>Location: {contributors[username].location}</p>
         <p>{contributors[username].contributions} contributions to master</p>
       </div>
     </div>,);
