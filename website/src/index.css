@@ -1,10 +1,10 @@
 :root {
-  --white: hsla(0deg 0% 100% / 100%);
+  --white: rgb(255, 255, 255);
   --light-gray: hsla(0deg 0% 95% / 100%);
   --dark-gray: hsla(0deg 0% 25% / 100%);
   --dark-green: hsla(132deg 33% 29% / 100%);
   --green: hsla(120deg 77% 36% / 100%);
-  --black: hsla(0deg 0% 0% / 100%);
+  --black: hsla(0deg 0% 0% / 100%); 
 }
 
 html {
@@ -224,12 +224,28 @@ footer li:last-child::after {
     text-align: left;
   }
 
-  /* @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: dark) {
     :root {
-      --background: var(--clr-dark)
-      --foreground: var(--clr-light)
+      --light-gray: #4b4b4b;
+      --dark-gray: #00100d;
+      --dark-green: rgb(2, 31, 7);
+
+      background-color: var(--dark-gray);
+      color: white;
+      
     }
-  } */
+    
+    nav a {
+      font-size: 130%;
+      color: rgb(0, 142, 0);
+      text-decoration: none;
+    }
+
+    a {
+      color: rgb(0, 142, 0);
+      text-decoration: underline;
+    }
+  }
 
   header div {
     padding-left: 1em;
