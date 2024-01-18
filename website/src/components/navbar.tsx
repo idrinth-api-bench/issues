@@ -39,6 +39,13 @@ const Navbar = () => <>
           <NavLink to="/contributing/">
             <Lang lnkey='contributing.nav'/>
           </NavLink>
+          <ul>
+            <li>
+              <NavLink to="/contributing/contributors/">
+                <Lang lnkey='contributors.nav'/>
+              </NavLink>
+            </li>
+          </ul>
         </li>
         <li>
           <NavLink to="/usage/">

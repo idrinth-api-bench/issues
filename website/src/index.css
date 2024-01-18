@@ -194,6 +194,18 @@ footer li:last-child::after {
   content: "";
 }
 
+.profile {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.profile img {
+  border-radius: 50%;
+  max-width: 200px;
+  justify-self: center;
+  border: 1px solid var(--dark-green);
+}
+
 nav.breadcrumbs li::after {
   content: ' > ';
 }
@@ -214,6 +226,10 @@ nav.breadcrumbs li:last-of-type::after {
 
   header, footer {
     background-image: linear-gradient(to bottom, hsla(0deg 0% 100% / 10%), hsla(0deg 0% 100% / 15%), hsla(0deg 0% 100% / 5%));
+  }
+
+  .profile h2 {
+    text-align: left;
   }
 
   header div {
@@ -284,8 +300,6 @@ nav.breadcrumbs li:last-of-type::after {
     padding: 2em 3em;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    align-items: center;
-    justify-content: center;
   }
 }
 

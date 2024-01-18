@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "npm run routes && tsc && vite build && node tools/generate-folders.js && node tools/minimize-language.js",
+    "build": "npm run routes && npm run contributors && tsc && vite build && node tools/generate-folders.js && node tools/minimize-language.js && cp src/assets/profile-*.jpg dist/assets/",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint-fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",
@@ -24,8 +24,9 @@
     "lint-styles": "stylelint src/index.css src/**/**/*.css",
     "lint-css": "ilcd",
     "lint-md": "markdownlint *.md",
-    "postinstall": "npm run routes",
-    "routes": "node tools/generate-routes.js"
+    "postinstall": "npm run routes && npm run contributors",
+    "routes": "node tools/generate-routes.js",
+    "contributors": "node tools/load-contributors.js"
   },
   "dependencies": {
     "@fontsource/roboto": "^5.0.8",
