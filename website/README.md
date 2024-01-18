@@ -1,6 +1,8 @@
+# @idrinth/api-bench/website
+
 ## Description
 
-Website made using React to show the ideas behind the API benchmark inplementation portraying the provided README.
+Website made using React to show the ideas behind the API benchmark implementation portraying the provided README.
 
 ## Installation
 

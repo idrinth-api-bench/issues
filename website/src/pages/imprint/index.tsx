@@ -1,44 +1,44 @@
 import React from 'react';
+import Layout from '../../components/layout.tsx';
 
-const Index = () => <section className="imprint">
-  <div className="title-card">
+const Index = () => <Layout Outlet={<>
+  <div className='title-card'>
     <h1>Imprint</h1>
   </div>
-
-  <div className="card">
+  <div className='card'>
     <h2>Data provided according to § 5 TMG</h2>
-    <div itemScope itemType="https://schema.org/Organization">
-      <meta content="Björn Büttner" itemProp="name" />
-      <meta content="https://bjoern-buettner.me" itemProp="url" />
-      <meta content="https://bjoern-buettner.me/logo.png" itemProp="logo" />
-      <meta content="webmaster@bjoern-buettner.me" itemProp="email" />
-      <p itemProp="address">
+    <div itemScope itemType='https://schema.org/Organization'>
+      <meta content='Björn Büttner' itemProp='name' />
+      <meta content='https://bjoern-buettner.me' itemProp='url' />
+      <meta content='https://bjoern-buettner.me/logo.png' itemProp='logo' />
+      <meta content='webmaster@idrinth-api-ben.ch' itemProp='email' />
+      <p itemProp='address'>
           Björn Büttner
         <br /> Böllerts Höfe 4<br />
           45479 Mülheim an der Ruhr
       </p>
     </div>
   </div>
-  <div className="card">
+  <div className='card'>
     <h2>Contact</h2>
     <p>
-        Telephone: <span itemProp="telephone">+4917647945826</span>
+        Telephone: <span itemProp='telephone'>+4917647945826</span>
       <br />
         eMail:{' '}
-      <a href="mailto:webmaster@idrinth-api-ben.ch" itemProp="email">
+      <a href='mailto:webmaster@idrinth-api-ben.ch' itemProp='email'>
           webmaster@idrinth-api-ben.ch
       </a>
     </p>
   </div>
-  <div className="card">
+  <div className='card'>
     <h2>Responsible for the content according to § 55 Abs. 2 RStV</h2>
-    <p itemProp="address">
+    <p itemProp='address'>
         Björn Büttner
       <br /> Böllerts Höfe 4<br />
         45479 Mülheim an der Ruhr
     </p>
   </div>
-  <div className="card">
+  <div className='card'>
     <div>
       <h2>Limited liability:</h2>
       <h3>Liability for links</h3>
@@ -50,7 +50,7 @@ const Index = () => <section className="imprint">
         laws, we will remove them as soon as we are notified of that.
     </p>
   </div>
-  <div className="card">
+  <div className='card'>
     <h2>Privacy</h2>
     <div>
       <p>
@@ -79,25 +79,28 @@ const Index = () => <section className="imprint">
       </p>
     </div>
   </div>
-  <div className="card">
+  <div className='card'>
     <h2>Source</h2>
     <p>
         Based on
       <em>
         {' '}<a
-          href="https://www.e-recht24.de/muster-disclaimer.htm"
-          rel="noopener"
-          target="_blank"
+          href='https://www.e-recht24.de/muster-disclaimer.htm'
+          rel='noopener'
+          target='_blank'
         >
             Disclaimer
         </a>
         {' '}of eRecht24, the internet law portal of{' '}
-        <a href="http://www.e-recht24.de/" rel="noopener" target="_blank">
+        <a href='http://www.e-recht24.de/' rel='noopener' target='_blank'>
             lawyer
         </a>{' '}
           Sören Siebert.
       </em>
     </p>
   </div>
-</section>;
+</>}
+page='imprint'
+path='/imprint'
+/>;
 export default Index;

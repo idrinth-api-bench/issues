@@ -1,10 +1,12 @@
 {
-  "require": ["mock-fs", "ts-node/register"],
+  "require": ["ts-node/register"],
   "extension" : [".ts", ".tsx"],
   "reporter": ["lcov", "text-summary"],
   "all": true,
   "sourceMap": true,
   "instrument": true,
-  "exclude": [],
-  "include": ["src/**/*.tsx"]
+  "exclude": [
+    "src/vite-env.d.ts"
+  ],
+  "include": ["src/**/*.tsx", "src/**/*.ts"]
 }

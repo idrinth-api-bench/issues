@@ -3,7 +3,7 @@ import IAB from '../assets/iab.svg';
 import {
   NavLink,
 } from 'react-router-dom';
-import pkg from '../../../package.json' with {
+import pkg from '../../package.json' with {
   type: 'json'
 };
 import {
@@ -36,30 +36,37 @@ const Navbar = () => <>
           </a>
         </li>
         <li>
-          <NavLink to="/contributing">{'Contributing'}</NavLink>
-        </li>
-        <li>
-          <NavLink to="/usage">{'Usage & Examples'}</NavLink>
+          <NavLink to="/contributing/">{'Contributing'}</NavLink>
           <ul>
             <li>
-              <NavLink to="/usage/autowiring">{'Autowiring'}</NavLink>
-            </li>
-            <li>
-              <NavLink to="/usage/results">{'Results'}</NavLink>
-            </li>
-            <li>
-              <NavLink to="/usage/logging">{'Logging'}</NavLink>
-            </li>
-            <li>
-              <NavLink to="/usage/middlewares">{'Middlewares'}</NavLink>
-            </li>
-            <li>
-              <NavLink to="/usage/storage">{'Storage'}</NavLink>
+              <NavLink to="/contributing/contributors/">
+                <Lang lnkey='contributors.nav'/>
+              </NavLink>
             </li>
           </ul>
         </li>
         <li>
-          <NavLink to="/imprint">{'Imprint'}</NavLink>
+          <NavLink to="/usage/">{'Usage & Examples'}</NavLink>
+          <ul>
+            <li>
+              <NavLink to="/usage/autowiring/">{'Autowiring'}</NavLink>
+            </li>
+            <li>
+              <NavLink to="/usage/results/">{'Results'}</NavLink>
+            </li>
+            <li>
+              <NavLink to="/usage/logging/">{'Logging'}</NavLink>
+            </li>
+            <li>
+              <NavLink to="/usage/middlewares/">{'Middlewares'}</NavLink>
+            </li>
+            <li>
+              <NavLink to="/usage/storage/">{'Storage'}</NavLink>
+            </li>
+            <li>
+              <NavLink to="/usage/route/">{'Route'}</NavLink>
+            </li>
+          </ul>
         </li>
       </ul>
     </nav>

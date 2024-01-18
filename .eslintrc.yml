@@ -3,15 +3,10 @@ extends:
 - "plugin:json/recommended"
 - "plugin:@typescript-eslint/recommended"
 plugins:
-  - json
+- json
 ignorePatterns:
 - node_modules
-- src/*.js
-- src/**/*.js
 root: true
-env:
-  node: true
-  es6: true
 parser: "@typescript-eslint/parser"
 rules:
   no-await-in-loop: error

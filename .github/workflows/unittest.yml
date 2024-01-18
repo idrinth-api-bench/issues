@@ -10,42 +10,46 @@ env:
   PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
 jobs:
-  unittest-previous:
+  framework-previous:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4.0.1
         with:
           node-version: ${{ env.PREVIOUS_NODE_VERSION }}
-      - run: npm ci
-      - run: npm run-script test
+      - run: cd framework && npm ci
+      - run: cd framework && npm run-script test
+      - run: mv ./framework/coverage ./
+      - run: sed -i 's/SF:src/SF:framework\/src/' ./coverage/lcov.info
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           flag-name: run ${{ env.PREVIOUS_NODE_VERSION }}
-  unittest-current:
+  framework-current:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
         uses: actions/setup-node@v4.0.1
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - run: npm ci
-      - run: npm run-script test
+      - run: cd framework && npm ci
+      - run: cd framework && npm run-script test
+      - run: mv ./framework/coverage ./
+      - run: sed -i 's/SF:src/SF:framework\/src/' ./coverage/lcov.info
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           flag-name: run ${{ env.CURRENT_NODE_VERSION }}
-  unittest-website:
+  website:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
         uses: actions/setup-node@v4.0.1
         with:
@@ -60,23 +64,32 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           flag-name: run website
-  unittest-e2e:
+  e2e:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
         uses: actions/setup-node@v4.0.1
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
       - run: cd website && npm ci
       - run: cd website && npm run-script e2e
+      - run: mv ./website/coverage ./
+      - run: sed -i 's/SF:src/SF:website\/src/' ./coverage/lcov.info
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel: true
+          flag-name: run e2e
   end:
     runs-on: ubuntu-latest
     if: ${{ always() && contains(join(needs.*.result, ','), 'success') }}
     needs:
-    - unittest-previous
-    - unittest-current
-    - unittest-website
+    - framework-previous
+    - framework-current
+    - website
+    - e2e
     steps:
     - name: Coveralls
       uses: coverallsapp/github-action@master

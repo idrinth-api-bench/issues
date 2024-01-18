@@ -1,0 +1,11 @@
+/test
+.eslintrc.yml
+/result.json
+/result.csv
+/.nyc_output
+/coverage
+/.mocharc.cjs
+/.nycrc.json
+/fixtures
+/tools
+/result.html

@@ -3,7 +3,7 @@ import {
   expect,
 } from 'chai';
 
-describe('pages/usage', () => {
+describe('pages/contributing', () => {
   it('should be a function', () => {
     expect(Contributing,).to.be.a('function',);
   },);
