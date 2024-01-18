@@ -16,6 +16,16 @@ While adding functionality, keep in mind to break existing interfaces, entry poi
 
 Testing new code is expected and adding tests or improving tests for old code is appreciated. The goal is to find most issues by either static analysis or unit and integration tests.
 
+#### Manual Tests
+
+For manual testing you can run `npm run coai` in the source folder to automatically check out and install all required files for testing.
+
+```bash
+git clone https://github.com/idrinth/api-bench
+cd api-bench
+npm run coai
+```
+
 ### Naming conventions
 
 - camelCase for variables and functions
@@ -37,6 +47,8 @@ git clone https://github.com/idrinth/api-bench
 cd api-bench
 npm install
 cd website
+npm install
+cd ../framework
 npm install
 ```
 
