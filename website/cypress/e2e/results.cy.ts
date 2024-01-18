@@ -27,7 +27,7 @@ describe('usage/results', () => {
     cy.get('nav.breadcrumbs a[href="/usage/"]',)
       .invoke('text',)
       .should('eq', 'Usage & Examples',);
-    cy.get('nav.breadcrumbs a[href="/usage/results/"]',)
+    cy.get('nav.breadcrumbs li:last-of-type',)
       .invoke('text',)
       .should('eq', 'Results',);
   },);

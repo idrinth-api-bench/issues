@@ -24,7 +24,7 @@ describe('contributing', () => {
     cy.get('nav.breadcrumbs a[href="/"]',)
       .invoke('text',)
       .should('eq', 'Home',);
-    cy.get('nav.breadcrumbs a[href="/contributing/"]',)
+    cy.get('nav.breadcrumbs li:last-of-type',)
       .invoke('text',)
       .should('eq', 'Contributing',);
   },);

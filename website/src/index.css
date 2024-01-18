@@ -92,8 +92,6 @@ header div {
 }
 
 nav a {
-  font-size: 130%;
-  color: var(--dark-green);
   text-decoration: none;
 }
 
@@ -102,7 +100,12 @@ ul {
 }
 
 nav {
+  font-size: 130%;
   width: 100%;
+}
+
+nav.breadcrumbs {
+  font-size: 70%;
 }
 
 nav ul {
@@ -242,10 +245,6 @@ nav.breadcrumbs li:last-of-type::after {
 
   nav {
     width: auto;
-  }
-
-  nav a {
-    font-size: 1.3em;
   }
 
   nav ul {

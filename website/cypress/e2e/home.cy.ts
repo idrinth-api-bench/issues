@@ -21,7 +21,7 @@ describe('home', () => {
   },);
   it('breadcrumbs exists', () => {
     cy.visit('http://localhost:8080/',);
-    cy.get('nav.breadcrumbs a[href="/"]',)
+    cy.get('nav.breadcrumbs li:last-of-type',)
       .invoke('text',)
       .should('eq', 'Home',);
   },);
