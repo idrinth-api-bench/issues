@@ -95,6 +95,13 @@ nav a {
   font-size: 130%;
   color: var(--dark-green);
   text-decoration: none;
+  padding: 5px 10px;
+}
+
+nav a.active {
+  background-color: var(--dark-green);
+  color: var(--white);
+  border-radius: 10px;
 }
 
 ul {
