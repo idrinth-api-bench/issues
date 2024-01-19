@@ -1,5 +1,5 @@
 :root {
-  --white: rgb(255, 255, 255);
+  --white: #fff;
   --light-gray: hsla(0deg 0% 95% / 100%);
   --dark-gray: hsla(0deg 0% 25% / 100%);
   --dark-green: hsla(132deg 33% 29% / 100%);
@@ -226,24 +226,23 @@ footer li:last-child::after {
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --light-gray: #4b4b4b;
-      --dark-gray: #00100d;
-      --dark-green: rgb(2, 31, 7);
+      --light-gray: var(#4b4b4b);
+      --dark-gray: var(#00100d);
+      --dark-green: var(#021f07);
 
-      background-color: var(--dark-gray);
-      color: white;
-      
+      background-color: var(#090807);
+      color: var(#fff);
+    }
+
+    a {
+      color: var(#008e00);
+      text-decoration: underline;
     }
     
     nav a {
       font-size: 130%;
-      color: rgb(0, 142, 0);
+      color: var(#008e00);
       text-decoration: none;
-    }
-
-    a {
-      color: rgb(0, 142, 0);
-      text-decoration: underline;
     }
   }
 
