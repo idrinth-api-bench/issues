@@ -47,8 +47,8 @@ const update = async(contributor,) => {
     name: user.name || user.login,
     avatar: '/assets/profile-' + hash + '.jpg',
     url: user.html_url,
-    bio: user.bio || defaultBio,
-    location: user.location,
+    bio: user.bio || 'An awesome person helping others in their time off work, who doesn\'t yet have a personalized bio.',
+    location: user.location || 'unknown',
     lastUpdated: Date.now(),
   };
   writeFileSync(
