@@ -58,7 +58,7 @@
     "babel-plugin-istanbul": "^6.1.1",
     "c8": "^9.1.0",
     "chai": "^5.0.0",
-    "cypress": "^13.6.2",
+    "cypress": "^13.6.3",
     "eslint": "^8.55.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
