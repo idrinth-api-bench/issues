@@ -1,16 +1,19 @@
 import React from 'react';
+import {
+  NavLink,
+} from 'react-router-dom';
 
 const Footer = () => <footer>
   <span>©2020-2024 Björn Büttner and contributors.</span>
   <ul>
     <li>
-      <a href="/license/">License</a>
+      <NavLink to="/license/">License</NavLink>
     </li>
     <li>
-      <a href="/imprint/">Imprint</a>
+      <NavLink to="/imprint/">Imprint</NavLink>
     </li>
     <li>
-      <a href="/support/">Support</a>
+      <NavLink to="/support/">Support</NavLink>
     </li>
   </ul>
 </footer>;

@@ -3,6 +3,7 @@ import {
   Lang,
 } from '../../components/lang.tsx';
 import Layout from '../../components/layout.tsx';
+import MailLink from "../../components/mail-link.tsx";
 
 const Index = () => <Layout
   Outlet={
@@ -21,9 +22,7 @@ const Index = () => <Layout
         </h2>
         <p>
           <Lang lnkey='support.commercial.description'/>{' '}
-          <a href='mailto:service@bjoern-buettner.me'>
-            service@bjoern-buettner.me
-          </a>
+          <MailLink to='service@bjoern-buettner.me'/>
         </p>
       </div>
       <div className='card'>
@@ -32,9 +31,7 @@ const Index = () => <Layout
         </h2>
         <p>
           <Lang lnkey='support.training.description'/>{' '}
-          <a href='mailto:service@bjoern-buettner.me'>
-            service@bjoern-buettner.me
-          </a>
+          <MailLink to='service@bjoern-buettner.me'/>
         </p>
       </div>
     </section>}
