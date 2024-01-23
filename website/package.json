@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "npm run routes && npm run contributors && tsc && vite build && node tools/generate-folders.js && node tools/minimize-language.js && cp src/assets/profile-*.jpg dist/assets/",
+    "build": "irfbrgr && npm run contributors && tsc && vite build && irfbrgf && node tools/minimize-language.js && cp src/assets/profile-*.jpg dist/assets/",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint-fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",
@@ -24,8 +24,8 @@
     "lint-styles": "stylelint src/index.css src/**/**/*.css",
     "lint-css": "ilcd",
     "lint-md": "markdownlint *.md",
-    "postinstall": "npm run routes && npm run contributors",
-    "routes": "node tools/generate-routes.js",
+    "postinstall": "irfbrgr && npm run contributors",
+    "routes": "irfbrgr",
     "contributors": "node tools/load-contributors.js"
   },
   "dependencies": {
@@ -60,6 +60,7 @@
     "chai": "^5.0.0",
     "cypress": "^13.6.3",
     "eslint": "^8.55.0",
+    "@idrinth/react-file-based-routes": "^1.0.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "global-jsdom": "^9.2.0",
