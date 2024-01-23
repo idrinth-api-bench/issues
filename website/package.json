@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "irfbrgr && vite",
-    "build": "irfbrgr && npm run contributors && tsc && vite build && irfbrgf && npm run language && cp src/assets/profile-*.jpg dist/assets/",
+    "build": "irfbrgr && npm run contributors && tsc && vite build && irfbrgf && npm run language",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint-fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",
