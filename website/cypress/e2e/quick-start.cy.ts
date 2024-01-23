@@ -20,7 +20,7 @@ describe('usage/quick-start', () => {
       .should('eq', 'Quick Start',);
   },);
   it('breadcrumbs exists', () => {
-    cy.visit('http://localhost:8080/usage/autowiring/',);
+    cy.visit('http://localhost:8080/quick-start/',);
     cy.get('nav.breadcrumbs a[href="/"]',)
       .invoke('text',)
       .should('eq', 'Home',);
