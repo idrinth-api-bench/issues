@@ -9,6 +9,7 @@ import pkg from '../../package.json' with {
 import {
   Lang,
 } from './lang.tsx';
+import ExternalLink from './external-link.tsx';
 
 const Navbar = () => <>
   <header>
@@ -23,21 +24,16 @@ const Navbar = () => <>
           <NavLink to="/"><Lang lnkey='home.nav'/></NavLink>
         </li>
         <li>
-          <a
-            href=" https://www.npmjs.com/package/@idrinth/api-bench"
-            target="_blank"
-            rel={'noopener'}
-          >
-            NPMJS
-          </a>
+          <ExternalLink
+            to=" https://www.npmjs.com/package/@idrinth/api-bench"
+            label={'NPMJS'}
+          />
         </li>
         <li>
-          <a
-            href="https://github.com/Idrinth/api-bench"
-            target="_blank"
-            rel={'noopener'}>
-            GITHUB
-          </a>
+          <ExternalLink
+            to="https://github.com/Idrinth/api-bench"
+            label={'GITHUB'}
+          />
         </li>
         <li>
           <NavLink to="/contributing/">{'Contributing'}</NavLink>
