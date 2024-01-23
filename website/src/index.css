@@ -235,7 +235,8 @@ footer li:last-child::after {
     :root {
       --light-gray: #4b4b4b;
       --dark-gray: #001000;
-      --light-green: #01510e;
+      --light-green: #026512;
+      
       background-color: #090807;
       color: #d8d6d6;
     }
