@@ -7,7 +7,7 @@ import {
 } from 'fs';
 
 export default (cwd: string, mode: 'bench'|'content'|'load',): string[] => {
-  const file = cwd + '/.idrinth-api-bech.yml';
+  const file = cwd + '/.idrinth-api-bench.yml';
   if (! existsSync(file,)) {
     return [];
   }
