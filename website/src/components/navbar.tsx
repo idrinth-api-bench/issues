@@ -24,6 +24,11 @@ const Navbar = () => <>
           <NavLink to="/"><Lang lnkey='home.nav'/></NavLink>
         </li>
         <li>
+          <NavLink to="/quick-start/">
+            <Lang lnkey='quick-start.nav'/>
+          </NavLink>
+        </li>
+        <li>
           <ExternalLink
             to=" https://www.npmjs.com/package/@idrinth/api-bench"
             label={'NPMJS'}
