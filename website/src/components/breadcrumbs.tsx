@@ -22,7 +22,7 @@ const build = (
     return;
   }
   let url = '';
-  for (let i = 1; i <= index; i++) {
+  for (let i = 1; i <= index; i ++) {
     url += '/' + parts[i];
   }
   url += '/';

@@ -25,7 +25,6 @@ describe('license', () => {
       .invoke('text',)
       .should('eq', 'Home',);
     cy.get('nav.breadcrumbs li:last-of-type',)
-    cy.get('nav.breadcrumbs li:last-of-type',)
       .invoke('text',)
       .should('eq', 'License',);
   },);
