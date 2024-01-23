@@ -37,8 +37,8 @@
     "i18next-http-backend": "^2.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-i18next": "^14.0.0",
-    "react-router-dom": "^6.21.2",
+    "react-i18next": "^14.0.1",
+    "react-router-dom": "^6.21.3",
     "react-syntax-highlighter": "^15.5.0",
     "the-new-css-reset": "^1.11.2"
   },
@@ -49,16 +49,16 @@
     "@rollup/plugin-dynamic-import-vars": "^2.1.2",
     "@types/chai": "^4.3.11",
     "@types/mocha": "^10.0.6",
-    "@types/react": "^18.2.45",
+    "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.17",
     "@types/react-router-dom": "^5.3.3",
     "@types/react-syntax-highlighter": "^15.5.11",
-    "@typescript-eslint/parser": "^6.14.0",
+    "@typescript-eslint/parser": "^6.19.0",
     "@vitejs/plugin-react": "^4.2.1",
     "babel-plugin-istanbul": "^6.1.1",
     "c8": "^9.1.0",
     "chai": "^5.0.0",
-    "cypress": "^13.6.2",
+    "cypress": "^13.6.3",
     "eslint": "^8.55.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
@@ -68,10 +68,10 @@
     "mocha": "^10.2.0",
     "nyc": "^15.1.0",
     "start-server-and-test": "^2.0.3",
-    "stylelint": "^16.1.0",
+    "stylelint": "^16.2.0",
     "stylelint-config-standard": "^36.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.3.3",
-    "vite": "^5.0.8"
+    "vite": "^5.0.12"
   }
 }

@@ -51,7 +51,7 @@ const Index = () => <Layout
       <h4>Manual Tests</h4>
       <div>
         <p>
-          For manual testing you can run <strong>npm run coai</strong>
+          For manual testing you can run <strong>npm run coai</strong>{' '}
           in the source folder to automatically check out and install
           all required files for testing.
         </p>
@@ -93,6 +93,8 @@ npm run coai
   cd api-bench
   npm install
   cd website
+  npm install
+  cd ../framework
   npm install
         `}</SyntaxHighlighter>
       </div>
