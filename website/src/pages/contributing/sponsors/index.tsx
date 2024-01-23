@@ -5,7 +5,7 @@ import {
 } from '../../../components/lang.tsx';
 import bjoernbuettner from '../../../assets/sponsors/bjoernbuettner.png';
 import jungwild from '../../../assets/sponsors/jungwild.png';
-import ExternalLink from "../../../components/external-link.tsx";
+import ExternalLink from '../../../components/external-link.tsx';
 
 const Index = () => <Layout
   Outlet={<section>

@@ -1,7 +1,7 @@
 import React from 'react';
 const mailLink = ({
   to,
-}) => <a
+},) => <a
   href={'mailto:' + to}
   itemProp='email'
 >{to}</a>;

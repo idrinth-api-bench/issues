@@ -3,7 +3,7 @@ import {
   Lang,
 } from '../../components/lang.tsx';
 import Layout from '../../components/layout.tsx';
-import MailLink from "../../components/mail-link.tsx";
+import MailLink from '../../components/mail-link.tsx';
 
 const Index = () => <Layout
   Outlet={

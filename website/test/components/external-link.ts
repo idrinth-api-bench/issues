@@ -8,7 +8,9 @@ describe('components/navbar', () => {
     expect(ExternalLink,).to.be.a('function',);
   },);
   it('() should be an object', () => {
-    const result = ExternalLink({to: 'https://example.com'});
+    const result = ExternalLink({
+      to: 'https://example.com',
+    },);
     expect(result,).to.be.an('object',);
   },);
 },);
