@@ -6,7 +6,10 @@ import {
   readFileSync,
 } from 'fs';
 
-export default (cwd: string, mode: 'bench'|'content'|'load',): string[] => {
+export default (
+  cwd: string,
+  mode: 'benchmarking'|'content-testing'|'load-testing',
+): string[] => {
   const file = cwd + '/.idrinth-api-bench.yml';
   if (! existsSync(file,)) {
     return [];
