@@ -25,7 +25,7 @@
     "lint-css": "ilcd",
     "lint-md": "markdownlint *.md",
     "postinstall": "npm run routes && npm run contributors",
-    "routes": "node tools/generate-routes.js",
+    "routes": "irfbrgr",
     "contributors": "node tools/load-contributors.js",
     "language": "node tools/minimize-language.js"
   },

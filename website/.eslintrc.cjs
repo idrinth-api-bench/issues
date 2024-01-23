@@ -6,7 +6,12 @@ module.exports = {
   extends: [
     "plugin:react-hooks/recommended",
   ],
-  ignorePatterns: ["dist", ".eslintrc.cjs", "node_modules"],
+  ignorePatterns: [
+    'dist',
+    '.eslintrc.cjs',
+    'node_modules',
+    'src/routes.tsx',
+  ],
   plugins: ["react-refresh"],
   rules: {
     "react-refresh/only-export-components": [
