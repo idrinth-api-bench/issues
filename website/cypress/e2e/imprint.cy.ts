@@ -19,4 +19,13 @@ describe('imprint', () => {
       .invoke('text',)
       .should('eq', 'Imprint',);
   },);
+  it('breadcrumbs exists', () => {
+    cy.visit('http://localhost:8080/imprint/',);
+    cy.get('nav.breadcrumbs a[href="/"]',)
+      .invoke('text',)
+      .should('eq', 'Home',);
+    cy.get('nav.breadcrumbs li:last-of-type',)
+      .invoke('text',)
+      .should('eq', 'Imprint',);
+  },);
 },);

@@ -15,7 +15,16 @@ describe('usage', () => {
   },);
   it('link to self exists', () => {
     cy.visit('http://localhost:8080/usage/',);
-    cy.get('nav a[href="/usage/"]',)
+    cy.get('header nav a[href="/usage/"]',)
+      .invoke('text',)
+      .should('eq', 'Usage & Examples',);
+  },);
+  it('breadcrumbs exists', () => {
+    cy.visit('http://localhost:8080/usage/',);
+    cy.get('nav.breadcrumbs a[href="/"]',)
+      .invoke('text',)
+      .should('eq', 'Home',);
+    cy.get('nav.breadcrumbs li:last-of-type',)
       .invoke('text',)
       .should('eq', 'Usage & Examples',);
   },);

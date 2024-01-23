@@ -33,10 +33,10 @@
 /website/*.local
 /website/coverage
 /website/tsconfig.tsbuildinfo
-/website/src/routes.json
+/website/src/routes.tsx
 /website/src/contributors.json
 /website/public/sitemap.xml
-/website/src/assets/profile-*.jpg
+/website/public/assets/profile-*.jpg
 
 # Editor directories and files
 .DS_Store

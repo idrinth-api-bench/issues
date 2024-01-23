@@ -12,8 +12,8 @@
     "url": "https://github.com/Idrinth/api-bench.git"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "npm run routes && npm run contributors && tsc && vite build && node tools/generate-folders.js && node tools/minimize-language.js && cp src/assets/profile-*.jpg dist/assets/",
+    "dev": "irfbrgr && vite",
+    "build": "irfbrgr && npm run contributors && tsc && vite build && irfbrgf && npm run language",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint-fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",
@@ -24,9 +24,10 @@
     "lint-styles": "stylelint src/index.css src/**/**/*.css",
     "lint-css": "ilcd",
     "lint-md": "markdownlint *.md",
-    "postinstall": "npm run routes && npm run contributors",
-    "routes": "node tools/generate-routes.js",
-    "contributors": "node tools/load-contributors.js"
+    "postinstall": "irfbrgr && npm run contributors",
+    "routes": "irfbrgr",
+    "contributors": "node tools/load-contributors.js",
+    "language": "node tools/minimize-language.js"
   },
   "dependencies": {
     "@fontsource/roboto": "^5.0.8",
@@ -46,6 +47,7 @@
     "@babel/plugin-syntax-import-attributes": "^7.23.3",
     "@cypress/code-coverage": "^3.12.18",
     "@idrinth/duplicate-style-check": "^1.0.6",
+    "@idrinth/react-file-based-routes": "^1.0.0",
     "@rollup/plugin-dynamic-import-vars": "^2.1.2",
     "@types/chai": "^4.3.11",
     "@types/mocha": "^10.0.6",
