@@ -207,14 +207,10 @@ footer li:last-child::after {
   grid-template-columns: 1fr;
 }
 
-.sponsor img,
-.profile img {
-  max-width: 200px;
-  place-self: center center;
-}
-
 .profile img {
   border-radius: 50%;
+  max-width: 200px;
+  place-self: center center;
   border: 1px solid var(--dark-green);
 }
 
