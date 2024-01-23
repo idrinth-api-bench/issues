@@ -210,8 +210,7 @@ footer li:last-child::after {
 .sponsor img,
 .profile img {
   max-width: 200px;
-  justify-self: center;
-  align-self: center;
+  place-self: center center;
 }
 
 .profile img {
