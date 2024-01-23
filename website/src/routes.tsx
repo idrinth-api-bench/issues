@@ -1,52 +1,155 @@
 import React, {
   lazy,
-  ReactElement,
   Suspense,
+  ElementType,
 } from 'react';
-import Loader from './pagelike/loader.tsx';
-import {
-  FIRST,
-  SECOND,
-  SINGLE_ELEMENT,
-  TWO_ELEMENTS,
-} from './constants.ts';
-import routes from './routes.json' with {
-  type: 'json',
-};
-
-interface Route {
-  path: string,
-  exact: true,
-  element: ReactElement
-}
-
-const make = (path: string, pathOverride?: string,): Route => {
-  const parts = path.split('/',);
-  const LazyElement = (() => {
-    switch (parts.length) {
-      case SINGLE_ELEMENT:
-        return lazy(() => import(
-          `./pages/${ parts[FIRST] }/index.tsx`
-          ,),);
-      case TWO_ELEMENTS:
-        return lazy(() => import(
-          `./pages/${ parts[FIRST] }/`
-            + `${ parts[SECOND] }/index.tsx`
-          ,),);
-      default:
-        throw Error('Too many path elements!',);
-    }
-  })();
-  return {
-    path: pathOverride || '/' + path + '/',
-    exact: true,
-    element: <Suspense fallback={<Loader/>}><LazyElement/></Suspense>,
-  };
-};
-
-const data: Route[] = [];
-for (const route of routes) {
-  data.push(make(route.path, route.override,),);
-}
-
-export default data;
+export default (Loader: ElementType) => [
+  (() => {
+    const LazyElement = lazy(() => import(
+      './pages/contributing/index.tsx',
+    ),);
+    return {
+      path: '/contributing/',
+      exact: true,
+      element: <Suspense fallback={<Loader/>}><LazyElement/></Suspense>,
+    };
+    })(),(() => {
+    const LazyElement = lazy(() => import(
+      `./pages/home/index.tsx`,
+    ),);
+    return {
+      path: '/',
+      exact: true,
+      element: <Suspense fallback={<Loader/>}><LazyElement/></Suspense>,
+    };
+    })(),
+  (() => {
+    const LazyElement = lazy(() => import(
+      './pages/imprint/index.tsx',
+    ),);
+    return {
+      path: '/imprint/',
+      exact: true,
+      element: <Suspense fallback={<Loader/>}><LazyElement/></Suspense>,
+    };
+    })(),
+  (() => {
+    const LazyElement = lazy(() => import(
+      './pages/license/index.tsx',
+    ),);
+    return {
+      path: '/license/',
+      exact: true,
+      element: <Suspense fallback={<Loader/>}><LazyElement/></Suspense>,
+    };
+    })(),(() => {
+    const LazyElement = lazy(() => import(
+      `./pages/not-found/index.tsx`,
+    ),);
+    return {
+      path: '*',
+      exact: true,
+      element: <Suspense fallback={<Loader/>}><LazyElement/></Suspense>,
+    };
+    })(),
+  (() => {
+    const LazyElement = lazy(() => import(
+      './pages/support/index.tsx',
+    ),);
+    return {
+      path: '/support/',
+      exact: true,
+      element: <Suspense fallback={<Loader/>}><LazyElement/></Suspense>,
+    };
+    })(),
+  (() => {
+    const LazyElement = lazy(() => import(
+      './pages/usage/index.tsx',
+    ),);
+    return {
+      path: '/usage/',
+      exact: true,
+      element: <Suspense fallback={<Loader/>}><LazyElement/></Suspense>,
+    };
+    })(),
+  (() => {
+    const LazyElement = lazy(() => import(
+      './pages/contributing/contributors/index.tsx',
+    ),);
+    return {
+      path: '/contributing/contributors/',
+      exact: true,
+      element: <Suspense fallback={<Loader/>}><LazyElement/></Suspense>,
+    };
+    })(),
+  (() => {
+    const LazyElement = lazy(() => import(
+      './pages/contributing/sponsors/index.tsx',
+    ),);
+    return {
+      path: '/contributing/sponsors/',
+      exact: true,
+      element: <Suspense fallback={<Loader/>}><LazyElement/></Suspense>,
+    };
+    })(),
+  (() => {
+    const LazyElement = lazy(() => import(
+      './pages/usage/autowiring/index.tsx',
+    ),);
+    return {
+      path: '/usage/autowiring/',
+      exact: true,
+      element: <Suspense fallback={<Loader/>}><LazyElement/></Suspense>,
+    };
+    })(),
+  (() => {
+    const LazyElement = lazy(() => import(
+      './pages/usage/logging/index.tsx',
+    ),);
+    return {
+      path: '/usage/logging/',
+      exact: true,
+      element: <Suspense fallback={<Loader/>}><LazyElement/></Suspense>,
+    };
+    })(),
+  (() => {
+    const LazyElement = lazy(() => import(
+      './pages/usage/middlewares/index.tsx',
+    ),);
+    return {
+      path: '/usage/middlewares/',
+      exact: true,
+      element: <Suspense fallback={<Loader/>}><LazyElement/></Suspense>,
+    };
+    })(),
+  (() => {
+    const LazyElement = lazy(() => import(
+      './pages/usage/results/index.tsx',
+    ),);
+    return {
+      path: '/usage/results/',
+      exact: true,
+      element: <Suspense fallback={<Loader/>}><LazyElement/></Suspense>,
+    };
+    })(),
+  (() => {
+    const LazyElement = lazy(() => import(
+      './pages/usage/route/index.tsx',
+    ),);
+    return {
+      path: '/usage/route/',
+      exact: true,
+      element: <Suspense fallback={<Loader/>}><LazyElement/></Suspense>,
+    };
+    })(),
+  (() => {
+    const LazyElement = lazy(() => import(
+      './pages/usage/storage/index.tsx',
+    ),);
+    return {
+      path: '/usage/storage/',
+      exact: true,
+      element: <Suspense fallback={<Loader/>}><LazyElement/></Suspense>,
+    };
+    })(),
+];

@@ -30,24 +30,25 @@ const Index = () => <Layout Outlet={
       <h2>Regarding existing libraries</h2>
       <p>
         Other tools like{' '}
-        <a href='https://github.com/matteofigus/api-benchmark' target='_blank'>
+        <a href='https://github.com/matteofigus/api-benchmark' target='_blank' rel='noopener'>
           matteofigus/api-benchmark
         </a>
         {' '},{' '}
         <a
           href='https://github.com/bvanderlaan/api-bench-runner'
           target='_blank'
+          rel='noopener'
         >
           bvanderlaan/api-bench-runner
         </a>
         {' '},{' '} or
-        <a href='https://github.com/jeffbski/bench-rest' target='_blank'>
+        <a href='https://github.com/jeffbski/bench-rest' target='_blank' rel='noopener'>
           jeffbski/bench-rest
         </a>{' '}
         are all untouched for quite a while and don't provide type definitions
         for typescript. This makes them less desirable when working with
         projects where the better static code check is a huge boost in
-        development speed. <br />
+        development speed.<br />
         Additionally, this tool separates the validation thread from the thread
         processing the actual requests to further minimize the effect of
         complicated validations or huge response bodies on the data gathering.

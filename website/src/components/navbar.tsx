@@ -26,12 +26,16 @@ const Navbar = () => <>
           <a
             href=" https://www.npmjs.com/package/@idrinth/api-bench"
             target="_blank"
+            rel={'noopener'}
           >
             NPMJS
           </a>
         </li>
         <li>
-          <a href="https://github.com/Idrinth/api-bench" target="_blank">
+          <a
+            href="https://github.com/Idrinth/api-bench"
+            target="_blank"
+            rel={'noopener'}>
             GITHUB
           </a>
         </li>
@@ -41,6 +45,11 @@ const Navbar = () => <>
             <li>
               <NavLink to="/contributing/contributors/">
                 <Lang lnkey='contributors.nav'/>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/contributing/sponsors/">
+                <Lang lnkey='sponsors.nav'/>
               </NavLink>
             </li>
           </ul>

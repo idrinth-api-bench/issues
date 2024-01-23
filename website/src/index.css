@@ -194,15 +194,21 @@ footer li:last-child::after {
   content: "";
 }
 
-.profile {
+.profile,
+.sponsor {
   display: grid;
   grid-template-columns: 1fr;
 }
 
+.sponsor img,
 .profile img {
-  border-radius: 50%;
   max-width: 200px;
   justify-self: center;
+  align-self: center;
+}
+
+.profile img {
+  border-radius: 50%;
   border: 1px solid var(--dark-green);
 }
 
@@ -220,7 +226,8 @@ footer li:last-child::after {
     background-image: linear-gradient(to bottom, hsla(0deg 0% 100% / 10%), hsla(0deg 0% 100% / 15%), hsla(0deg 0% 100% / 5%));
   }
 
-  .profile h2 {
+  .profile h2,
+  .sponsor h2 {
     text-align: left;
   }
 
