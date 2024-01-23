@@ -12,8 +12,8 @@
     "url": "https://github.com/Idrinth/api-bench.git"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "irfbrgr && npm run contributors && tsc && vite build && irfbrgf && node tools/minimize-language.js && cp src/assets/profile-*.jpg dist/assets/",
+    "dev": "irfbrgr && vite",
+    "build": "irfbrgr && npm run contributors && tsc && vite build && irfbrgf && npm run language",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint-fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",
@@ -26,7 +26,8 @@
     "lint-md": "markdownlint *.md",
     "postinstall": "irfbrgr && npm run contributors",
     "routes": "irfbrgr",
-    "contributors": "node tools/load-contributors.js"
+    "contributors": "node tools/load-contributors.js",
+    "language": "node tools/minimize-language.js"
   },
   "dependencies": {
     "@fontsource/roboto": "^5.0.8",
@@ -46,6 +47,8 @@
     "@babel/plugin-syntax-import-attributes": "^7.23.3",
     "@cypress/code-coverage": "^3.12.18",
     "@idrinth/duplicate-style-check": "^1.0.6",
+    "@idrinth/react-file-based-routes": "^1.0.0",
+    "@rollup/plugin-dynamic-import-vars": "^2.1.2",
     "@types/chai": "^4.3.11",
     "@types/mocha": "^10.0.6",
     "@types/react": "^18.2.48",
@@ -59,7 +62,6 @@
     "chai": "^5.0.0",
     "cypress": "^13.6.3",
     "eslint": "^8.55.0",
-    "@idrinth/react-file-based-routes": "^1.0.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "global-jsdom": "^9.2.0",
