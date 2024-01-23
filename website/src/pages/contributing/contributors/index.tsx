@@ -6,6 +6,7 @@ import contributors from '../../../contributors.json' with {
 import {
   Lang,
 } from '../../../components/lang.tsx';
+import ExternalLink from '../../../components/external-link.tsx';
 
 const Index = () => {
   const els: React.JSX.Element[] = [];
@@ -17,13 +18,10 @@ const Index = () => {
       />
       <div>
         <h2>
-          <a
-            href={contributors[username].url}
-            target={'_blank'}
-            rel={'noopener'}
-          >
-            {contributors[username].name}
-          </a>
+          <ExternalLink
+            to={contributors[username].url}
+            label={contributors[username].name}
+          />
         </h2>
         <p>{contributors[username].bio}</p>
         <p>Location: {contributors[username].location}</p>
