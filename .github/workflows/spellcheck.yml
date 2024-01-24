@@ -1,11 +1,19 @@
-name: CodeQL
+name: Spellcheck
 on:
   push:
     branches:
     - master
+    paths:
+    - '**.md'
+    - '**.json'
+    - '.github/workflows/**'
   pull_request:
     branches:
     - master
+    paths:
+    - '**.md'
+    - '**.json'
+    - '.github/workflows/**'
 env:
   PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}

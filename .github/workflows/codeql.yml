@@ -3,9 +3,23 @@ on:
   push:
     branches:
     - master
+    paths:
+    - '**.ts'
+    - '**.tsx'
+    - '**.js'
+    - '**.cjs'
+    - '**.json'
+    - '.github/workflows/**'
   pull_request:
     branches:
     - master
+    paths:
+    - '**.ts'
+    - '**.tsx'
+    - '**.js'
+    - '**.cjs'
+    - '**.json'
+    - '.github/workflows/**'
   schedule:
     - cron: '29 14 * * 4'
 env:
