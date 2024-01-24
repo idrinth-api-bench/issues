@@ -39,6 +39,20 @@ const Index = () => <Layout
       </div>
     </div>
     <div className='card'>
+      <h3>Contribution workflow</h3>
+      <ul>
+        <li>fork the repository</li>
+        <li>create a feature branch (issue-xxx-does-something)</li>
+        <li>create a draft pull request</li>
+        <li>mention fixes #xxx in the description</li>
+        <li>make your changes to the branch</li>
+        <li>check if actions are all green</li>
+        <li>mark as ready to review</li>
+        <li>get changes reviewed</li>
+        <li>if review is positive get changes merged otherwise fix and repeat</li>
+      </ul>
+    </div>
+    <div className='card'>
       <h3>Tests</h3>
       <p>
         Testing new code is expected and adding tests or

@@ -12,6 +12,18 @@ The style guidelines are provided via eslint. Please try to optimise code for re
 
 While adding functionality, keep in mind to break existing interfaces, entry points and functionality only if absolutely necessary.
 
+### Contribution workflow
+
+- fork the repository
+- create a feature branch (issue-xxx-does-something)
+- create a draft pull request
+- mention fixes #xxx in the description
+- make your changes to the branch
+- check if actions are all green
+- mark as ready to review
+- get changes reviewed
+- if review is positive get changes merged otherwise fix and repeat
+
 ### Tests
 
 Testing new code is expected and adding tests or improving tests for old code is appreciated. The goal is to find most issues by either static analysis or unit and integration tests.
