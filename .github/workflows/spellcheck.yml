@@ -1,11 +1,19 @@
-name: CodeQL
+name: Spellcheck
 on:
   push:
     branches:
     - master
+    paths:
+    - '**.md'
+    - '**.json'
+    - '.github/workflows/spellcheck.yml'
   pull_request:
     branches:
     - master
+    paths:
+    - '**.md'
+    - '**.json'
+    - '.github/workflows/spellcheck.yml'
 env:
   PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
@@ -13,14 +21,6 @@ jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
-    timeout-minutes: 360
-    permissions:
-      security-events: write
-    strategy:
-      fail-fast: false
-      matrix:
-        language:
-        - javascript-typescript
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
