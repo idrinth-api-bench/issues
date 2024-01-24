@@ -18,12 +18,10 @@ const Index = () => <Layout
       </p>
     </div>
     <div className={'card sponsor'}>
-      <div className={'sponsor-image'}>
-        <img
-          src={bjoernbuettner}
-          alt={'Bjoern Büttner\'s Backing'}
-        />
-      </div>
+      <img
+        src={bjoernbuettner}
+        alt={'Björn Büttner\'s Backing'}
+      />
       <div>
         <h2>
           <ExternalLink
@@ -36,12 +34,10 @@ const Index = () => <Layout
       </div>
     </div>
     <div className={'card sponsor'}>
-      <div className={'sponsor-image'}>
-        <img
-          src={jungwild}
-          alt={'JUNGWILD'}
-        />
-      </div>
+      <img
+        src={jungwild}
+        alt={'JUNGWILD'}
+      />
       <div>
         <h2>
           <ExternalLink
