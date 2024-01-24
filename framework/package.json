@@ -85,5 +85,9 @@
     "tsc": "tsc -p tsconfig.json",
     "prepublishOnly": "npm run tsc",
     "postpublishOnly": "npm run clear"
-  }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "engineStrict": true
 }
