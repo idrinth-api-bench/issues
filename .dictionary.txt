@@ -21,3 +21,4 @@ codecheck
 webmaster@idrinth-api-ben.ch
 faq
 sexualised
+NPMJS
