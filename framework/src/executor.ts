@@ -44,6 +44,7 @@ const executor = (
   resultStorage: Storage,
   resultOutputDir: string,
   progress: Progress,
+  blacklist: string[],
 ): void => {
   const total = threads*repetitions;
   const now = new Date();
@@ -55,6 +56,8 @@ const executor = (
     language('initialization', `${ repetitions }`, `${ threads }`,),
   );
   for (const task of job.main) {
+    task.pre = task.pre.filter((entry,) => ! blacklist.includes(entry,),);
+    task.post = task.post.filter((entry,) => ! blacklist.includes(entry,),);
     for (let i=0; i<total; i ++) {
       internalTasks.push(task,);
     }
