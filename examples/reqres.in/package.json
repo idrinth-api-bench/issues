@@ -8,5 +8,9 @@
   },
   "scripts": {
     "run": "run-benchmark"
-  }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "engineStrict": true
 }

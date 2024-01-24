@@ -19,4 +19,13 @@ describe('support', () => {
       .invoke('text',)
       .should('eq', 'Support',);
   },);
+  it('breadcrumbs exists', () => {
+    cy.visit('http://localhost:8080/support',);
+    cy.get('nav.breadcrumbs a[href="/"]',)
+      .invoke('text',)
+      .should('eq', 'Home',);
+    cy.get('nav.breadcrumbs li:last-of-type',)
+      .invoke('text',)
+      .should('eq', 'Support',);
+  },);
 },);

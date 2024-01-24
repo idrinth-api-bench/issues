@@ -6,31 +6,36 @@ import contributors from '../../../contributors.json' with {
 import {
   Lang,
 } from '../../../components/lang.tsx';
+import ExternalLink from '../../../components/external-link.tsx';
 
 const Index = () => {
-  const els: React.JSX.Element[] = [];
-  for (const username of Object.keys(contributors,)) {
-    els.push(<div className={'card profile'}>
-      <img
-        src={contributors[username].avatar}
-        alt={contributors[username].name}
-      />
-      <div>
-        <h2>
-          <a
-            href={contributors[username].url}
-            target={'_blank'}
-            rel={'noopener'}
-          >
-            {contributors[username].name}
-          </a>
-        </h2>
-        <p>{contributors[username].bio}</p>
-        <p>Location: {contributors[username].location}</p>
-        <p>{contributors[username].contributions} contributions to master</p>
-      </div>
-    </div>,);
-  }
+  // Convert contributors object into array
+  const contributorsArray = Object.keys(contributors,).map(
+    (username,) => ({
+      username,
+      ...contributors[username],
+    }),
+  );
+
+  // Sort in descending order by number of contributions
+  contributorsArray.sort((a, b,) => b.contributions - a.contributions,);
+
+  // Create els element
+  const els: React.JSX.Element[] = contributorsArray.map((contributor,) => <div
+    className={'card profile'}
+    key={contributor.username}>
+    <img src={contributor.avatar} alt={contributor.name} />
+    <div>
+      <h2>
+        <ExternalLink to={contributor.url} label={contributor.name} />
+      </h2>
+      <p>{contributor.bio}</p>
+      <p>Location: {contributor.location}</p>
+      <p>{contributor.contributions} contributions to master</p>
+    </div>
+  </div>
+    ,);
+
   return <Layout
     Outlet={<section>
       <div className='title-card'>

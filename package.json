@@ -9,10 +9,11 @@
   "contributors": [],
   "scripts": {
     "lint": "eslint tools examples --ext .js,.ts,.cjs,.json,.tsx",
-    "lint-md": "markdownlint *.md",
+    "lint-md": "markdownlint *.md .github/**/*.md",
     "coai": "node tools/checkout-and-install.js",
     "publish": "node tools/publish.js",
-    "spellcheck": "spellchecker"
+    "spellcheck": "spellchecker",
+    "setup": "node tools/setup.js"
   },
   "repository": {
     "type": "git",
@@ -26,5 +27,9 @@
     "@typescript-eslint/parser": "^6.19.0",
     "eslint": "^8.55.0",
     "eslint-plugin-json": "^3.1.0"
-  }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "engineStrict": true
 }

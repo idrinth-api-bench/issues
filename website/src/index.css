@@ -92,8 +92,6 @@ header div {
 }
 
 nav a {
-  font-size: 130%;
-  color: var(--dark-green);
   text-decoration: none;
   padding: 5px 10px;
 }
@@ -109,7 +107,12 @@ ul {
 }
 
 nav {
+  font-size: 130%;
   width: 100%;
+}
+
+nav.breadcrumbs {
+  font-size: 70%;
 }
 
 nav ul {
@@ -201,16 +204,29 @@ footer li:last-child::after {
   content: "";
 }
 
-.profile {
+.profile,
+.sponsor {
   display: grid;
   grid-template-columns: 1fr;
+}
+
+.sponsor img {
+  place-self: center;
 }
 
 .profile img {
   border-radius: 50%;
   max-width: 200px;
-  justify-self: center;
+  place-self: center center;
   border: 1px solid var(--dark-green);
+}
+
+nav.breadcrumbs li::after {
+  content: ' > ';
+}
+
+nav.breadcrumbs li:last-of-type::after {
+  content: '';
 }
 
 @media only screen and (width >= 600px) {
@@ -227,7 +243,8 @@ footer li:last-child::after {
     background-image: linear-gradient(to bottom, hsla(0deg 0% 100% / 10%), hsla(0deg 0% 100% / 15%), hsla(0deg 0% 100% / 5%));
   }
 
-  .profile h2 {
+  .profile h2,
+  .sponsor h2 {
     text-align: left;
   }
 
@@ -264,10 +281,6 @@ footer li:last-child::after {
     width: auto;
   }
 
-  nav a {
-    font-size: 1.3em;
-  }
-
   nav ul {
     flex-direction: row;
     gap: 1.7em;
@@ -280,6 +293,15 @@ footer li:last-child::after {
 
   nav ul ul{
     display: none;
+  }
+
+  nav.breadcrumbs ul {
+    gap: 0;
+    padding-left: 2.5em;
+  }
+
+  nav.breadcrumbs li::after {
+    padding: 0 0.5em;
   }
 
   footer span {

@@ -8,13 +8,13 @@ import Layout from '../../../components/layout.tsx';
 const Route = () => <Layout
   Outlet={<>
     <div className='title-card'>
-      <h1><Lang lnkey='route.title'/></h1>
-      <p><Lang lnkey='route.description'/></p>
+      <h1><Lang lnkey='routes.title'/></h1>
+      <p><Lang lnkey='routes.description'/></p>
     </div>
     <div className='card'>
-      <h2><Lang lnkey='route.example.title'/></h2>
+      <h2><Lang lnkey='routes.example.title'/></h2>
       <div>
-        <p><Lang lnkey='route.example.description'/></p>
+        <p><Lang lnkey='routes.example.description'/></p>
         <SyntaxHighlighter language='typescript'>{`import {
   Task,
 } from '@idrinth/api-bench';
@@ -29,7 +29,7 @@ export default (apiURL, apiPassword): Task => {
       </div>
     </div>
   </>}
-  page='route'
+  page='routes'
   path='/usage/routes'
 />;
 export default Route;

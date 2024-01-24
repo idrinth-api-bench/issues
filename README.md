@@ -1,7 +1,20 @@
 # @idrinth/api-bench
 
-This is the repository for the API test framework and the documentation website.
+[![Coverage Status](https://coveralls.io/repos/github/Idrinth/api-bench/badge.svg?branch=master)](https://coveralls.io/github/Idrinth/api-bench?branch=master) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/3171affc728048da8df4fe36b6d4771e)](https://app.codacy.com/gh/Idrinth/api-bench/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+
+This is the repository for the API test framework and it's documentation website.
 
 - [Framework README](/framework/README.md)
 - [Website README](/website/README.md)
-- [Documentation](https://idrinth-api-ben.ch)
+- [Documentation Website](https://idrinth-api-ben.ch)
+- [Examples](/examples)
+
+## Setup
+
+To get your project ready for development you need to run the following commands in order:
+
+- `git clone https://github.com/idrinth/api-bench`
+- `cd api-bench`
+- `npm run setup`
+
+Further information about contributing is available in the contribution guidelines [on the website](https://idrinth-api-ben.ch/contributing/) and [in the markdown file](/CONTRIBUTING.md).
