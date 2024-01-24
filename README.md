@@ -8,3 +8,13 @@ This is the repository for the API test framework and the documentation website.
 - [Website README](/website/README.md)
 - [Documentation Website](https://idrinth-api-ben.ch)
 - [Examples](/examples)
+
+## Setup
+
+To get your project ready for development you need to run the following commands in order:
+
+- `git clone https://github.com/idrinth/api-bench`
+- `cd api-bench`
+- `npm run setup`
+
+Further information about contributing is available in the contribution guidelines [on the website](https://idrinth-api-ben.ch/contributing/) and [in the markdown file](/CONTRIBUTING.md).
