@@ -9,7 +9,7 @@ on:
     - '**.js'
     - '**.cjs'
     - '**.json'
-    - '.github/workflows/**'
+    - '.github/workflows/codeql.yml'
   pull_request:
     branches:
     - master
@@ -19,7 +19,7 @@ on:
     - '**.js'
     - '**.cjs'
     - '**.json'
-    - '.github/workflows/**'
+    - '.github/workflows/codeql.yml'
   schedule:
     - cron: '29 14 * * 4'
 env:
