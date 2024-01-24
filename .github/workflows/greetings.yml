@@ -1,0 +1,18 @@
+name: Greetings
+
+on:
+- pull_request_target
+- issues
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: "Welcome in and thank you for your contribution. Usually issues are responded to within 48 hours, but depending on the current workload that may be slightly longer."
+        pr-message: "Thank you for contributing! Please make sure the actions pass. Once your pull request has been merged, you will be added to the contributer's list on the website. If you want to be shouted out on Linkedin, have a look for the shoutout issue of the specific version."

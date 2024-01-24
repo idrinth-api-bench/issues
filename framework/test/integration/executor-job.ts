@@ -189,6 +189,7 @@ describe('executor@job', () => {
         new NoopStorage(),
         '/executor',
         new NoProgress(),
+        [],
       ),
     ).to.not.throw();
     describe('executor@job::workers', () => {

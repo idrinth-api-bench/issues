@@ -1,0 +1,12 @@
+files:
+- '*.md'
+- '**/*.md'
+- '!**/node_modules/**/*.md'
+language: en-GB
+plugins:
+- spell
+- indefinite-article
+- repeated-words
+quiet: true
+dictionaries:
+- .dictionary.txt

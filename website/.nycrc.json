@@ -6,7 +6,8 @@
   "sourceMap": true,
   "instrument": true,
   "exclude": [
-    "src/vite-env.d.ts"
+    "src/vite-env.d.ts",
+    "src/routes.tsx"
   ],
   "include": ["src/**/*.tsx", "src/**/*.ts"]
 }

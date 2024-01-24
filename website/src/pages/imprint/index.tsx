@@ -1,5 +1,7 @@
 import React from 'react';
 import Layout from '../../components/layout.tsx';
+import ExternalLink from '../../components/external-link.tsx';
+import MailLink from '../../components/mail-link.tsx';
 
 const Index = () => <Layout Outlet={<>
   <div className='title-card'>
@@ -11,7 +13,7 @@ const Index = () => <Layout Outlet={<>
       <meta content='Björn Büttner' itemProp='name' />
       <meta content='https://bjoern-buettner.me' itemProp='url' />
       <meta content='https://bjoern-buettner.me/logo.png' itemProp='logo' />
-      <meta content='webmaster@bjoern-buettner.me' itemProp='email' />
+      <meta content='webmaster@idrinth-api-ben.ch' itemProp='email' />
       <p itemProp='address'>
           Björn Büttner
         <br /> Böllerts Höfe 4<br />
@@ -25,9 +27,7 @@ const Index = () => <Layout Outlet={<>
         Telephone: <span itemProp='telephone'>+4917647945826</span>
       <br />
         eMail:{' '}
-      <a href='mailto:webmaster@idrinth-api-ben.ch' itemProp='email'>
-          webmaster@idrinth-api-ben.ch
-      </a>
+      <MailLink to='webmaster@idrinth-api-ben.ch'/>
     </p>
   </div>
   <div className='card'>
@@ -84,17 +84,14 @@ const Index = () => <Layout Outlet={<>
     <p>
         Based on
       <em>
-        {' '}<a
-          href='https://www.e-recht24.de/muster-disclaimer.htm'
-          rel='noopener'
-          target='_blank'
-        >
-            Disclaimer
-        </a>
+        {' '}<ExternalLink
+          to='https://www.e-recht24.de/muster-disclaimer.htm'
+          label='Disclaimer'/>
         {' '}of eRecht24, the internet law portal of{' '}
-        <a href='http://www.e-recht24.de/' rel='noopener' target='_blank'>
-            lawyer
-        </a>{' '}
+        <ExternalLink
+          to='https://www.e-recht24.de/'
+          label='lawyer'
+        />{' '}
           Sören Siebert.
       </em>
     </p>
