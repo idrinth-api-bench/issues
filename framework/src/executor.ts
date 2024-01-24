@@ -56,8 +56,12 @@ const executor = (
     language('initialization', `${ repetitions }`, `${ threads }`,),
   );
   for (const task of job.main) {
-    task.pre = task.pre.filter((entry,) => ! blacklist.includes(entry,),);
-    task.post = task.post.filter((entry,) => ! blacklist.includes(entry,),);
+    if (task.pre) {
+      task.pre = task.pre.filter((entry,) => !blacklist.includes(entry,),);
+    }
+    if (task.post) {
+      task.post = task.post.filter((entry,) => !blacklist.includes(entry,),);
+    }
     for (let i=0; i<total; i ++) {
       internalTasks.push(task,);
     }
