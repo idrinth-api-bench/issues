@@ -27,5 +27,9 @@
     "@typescript-eslint/parser": "^6.19.0",
     "eslint": "^8.55.0",
     "eslint-plugin-json": "^3.1.0"
-  }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "engineStrict": true
 }
