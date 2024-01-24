@@ -210,6 +210,12 @@ footer li:last-child::after {
   grid-template-columns: 1fr;
 }
 
+.sponsor-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .profile img {
   border-radius: 50%;
   max-width: 200px;
