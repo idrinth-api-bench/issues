@@ -83,6 +83,9 @@ export default (args: string[], cwd: string,) => {
         },
       },
     }, null, INDENTATION_SPACES,),),
+    () => writeFileSync(root + '/.idrinth-api-bench.yml', 'benchmarking: []\n' +
+      'load-testing: []\n' +
+      'content-testing: []\n',),
     () => writeFileSync(root + '/.gitignore', '/nbproject\n' +
       '/node_modules\n' +
       '/result.json\n' +
