@@ -91,11 +91,7 @@ npm run coai
         <SyntaxHighlighter language='bash'>{`
   git clone https://github.com/idrinth/api-bench
   cd api-bench
-  npm install
-  cd website
-  npm install
-  cd ../framework
-  npm install
+  npm run setup
         `}</SyntaxHighlighter>
       </div>
     </div>

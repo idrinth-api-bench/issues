@@ -45,11 +45,7 @@ Run the following commands to create the full project:
 ```sh
 git clone https://github.com/idrinth/api-bench
 cd api-bench
-npm install
-cd website
-npm install
-cd ../framework
-npm install
+npm run setup
 ```
 
 ## Documentation
