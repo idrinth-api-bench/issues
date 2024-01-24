@@ -20,10 +20,13 @@
   },
   "private": true,
   "devDependencies": {
-    "markdownlint-cli": "^0.38.0",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "@typescript-eslint/parser": "^6.13.2",
     "eslint": "^8.55.0",
-    "eslint-plugin-json": "^3.1.0"
+    "eslint-plugin-json": "^3.1.0",
+    "markdownlint-cli": "^0.38.0"
+  },
+  "dependencies": {
+    "package-lock.json": "^1.0.0"
   }
 }
