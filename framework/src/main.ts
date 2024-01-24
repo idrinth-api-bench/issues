@@ -29,6 +29,7 @@ import {
   DEFAULT_REPETITIONS,
   DEFAULT_THREADS,
 } from './constants.js';
+import blacklist from './blacklist.js';
 
 // eslint-disable-next-line complexity
 export const run = async(
@@ -40,6 +41,7 @@ export const run = async(
     resultOutputDir?: string
     progress?: Progress,
     language?: string,
+    blacklist?: string[]
   },
   threads = DEFAULT_THREADS,
   repetitions = DEFAULT_REPETITIONS,
@@ -61,6 +63,9 @@ export const run = async(
   }
   if (typeof configuration.progress === 'undefined') {
     configuration.progress = new ProgressBar();
+  }
+  if (typeof configuration.blacklist === 'undefined') {
+    configuration.blacklist = blacklist(process.cwd(), 'benchmarking',);
   }
   if (typeof job === 'undefined') {
     job = await jobCreator(`${ reqlib }`,);
@@ -86,5 +91,6 @@ export const run = async(
     configuration.resultStorage,
     configuration.resultOutputDir || process.cwd(),
     configuration.progress,
+    configuration.blacklist,
   );
 };

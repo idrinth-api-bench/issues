@@ -31,6 +31,7 @@ import {
 import {
   Task,
 } from './task.js';
+import buildTaskList from './build-task-list.js';
 
 /* eslint max-params:0 */
 const executor = (
@@ -44,21 +45,17 @@ const executor = (
   resultStorage: Storage,
   resultOutputDir: string,
   progress: Progress,
+  blacklist: string[],
 ): void => {
   const total = threads*repetitions;
   const now = new Date();
   validateTasks(repetitions, threads, job.main,);
   const results: {[z: string]: ResultSet} = {};
   const finished: {[z: string]: FinishedSet} = {};
-  const internalTasks: Task[] = [];
   logger.debug(
     language('initialization', `${ repetitions }`, `${ threads }`,),
   );
-  for (const task of job.main) {
-    for (let i=0; i<total; i ++) {
-      internalTasks.push(task,);
-    }
-  }
+  const internalTasks: Task[] = buildTaskList(job.main, blacklist, total,);
   progress.start(job, repetitions, threads,);
   const calculator = buildWorker(
     Worker,

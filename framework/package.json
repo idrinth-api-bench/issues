@@ -40,7 +40,8 @@
     "is-callable": "^1.2.7",
     "yaml": "^2.3.4",
     "dotenv": "^16.3.1",
-    "fast-xml-parser": "^4.3.2"
+    "fast-xml-parser": "^4.3.2",
+    "mysql2": "^3.6.5"
   },
   "devDependencies": {
     "@databases/mysql-test": "^4.0.2",
@@ -61,7 +62,6 @@
     "eslint": "^8.55.0",
     "mocha": "^10.2.0",
     "mock-fs": "^5.2.0",
-    "mysql2": "^3.6.5",
     "pino": "^8.16.2",
     "ts-node": "^10.9.1",
     "typescript": "^5.3.2",
@@ -85,5 +85,9 @@
     "tsc": "tsc -p tsconfig.json",
     "prepublishOnly": "npm run tsc",
     "postpublishOnly": "npm run clear"
-  }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "engineStrict": true
 }
