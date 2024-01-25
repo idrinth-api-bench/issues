@@ -10,13 +10,13 @@ const defaultBio = 'An awesome person helping others in their time off work, ' +
 const MILLISECONDS_PER_DAY = 86400000;
 
 const contributors = await fetch(
-  'https://api.github.com/repos/Idrinth/api-bench/contributors'
+  'https://api.github.com/repos/Idrinth/api-bench/contributors',
 );
 const users = {};
 
-if (existsSync('./src/contributors.json')) {
-  const old = JSON.parse(readFileSync('./src/contributors.json', 'utf8'));
-  for (const key of Object.keys(old)) {
+if (existsSync('./src/contributors.json',)) {
+  const old = JSON.parse(readFileSync('./src/contributors.json', 'utf8',),);
+  for (const key of Object.keys(old,)) {
     if (old[key].lastUpdated > Date.now() - MILLISECONDS_PER_DAY) {
       users[key] = old[key];
     }
@@ -47,7 +47,7 @@ const update = async(contributor,) => {
     name: user.name || user.login,
     avatar: '/assets/profile-' + hash + '.jpg',
     url: user.html_url,
-    bio: user.bio || 'An awesome person helping others in their time off work, who doesn\'t yet have a personalized bio.',
+    bio: user.bio || defaultBio,
     location: user.location || 'unknown',
     lastUpdated: Date.now(),
   };
@@ -55,7 +55,7 @@ const update = async(contributor,) => {
     './public/assets/profile-' + hash + '.jpg',
     Buffer.from(
       new Uint8Array(
-        await (await fetch(user.avatar_url)).arrayBuffer(),
+        await (await fetch(user.avatar_url,)).arrayBuffer(),
       ),
     ),
   );
@@ -63,7 +63,7 @@ const update = async(contributor,) => {
 
 for (const contributor of await contributors.json()) {
   // eslint-disable-next-line no-await-in-loop
-  await update(contributor);
+  await update(contributor,);
 }
 
-writeFileSync('./src/contributors.json', JSON.stringify(users));
+writeFileSync('./src/contributors.json', JSON.stringify(users,),);
