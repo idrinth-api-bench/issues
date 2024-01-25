@@ -15,14 +15,14 @@ While adding functionality, keep in mind to break existing interfaces, entry poi
 ### Contribution workflow
 
 - fork the repository
-- create a feature branch (issue-xxx-does-something)
+- create a feature branch (issue-xxx-does-something) from master
 - create a draft pull request
-- mention fixes #xxx in the description
+- mention fixes #xxx in the description (use the appropriate pull request template)
 - make your changes to the branch
 - check if actions are all green
 - mark as ready to review
 - get changes reviewed
-- if review is positive get changes merged otherwise fix and repeat
+- if review is positive get changes merged, otherwise fix and send back to review
 
 ### Tests
 
