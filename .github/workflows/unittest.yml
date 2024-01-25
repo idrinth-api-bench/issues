@@ -42,6 +42,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           flag-name: run ${{ env.PREVIOUS_NODE_VERSION }}
+          fail-on-error: false
   framework-current:
     runs-on: ubuntu-latest
     steps:
@@ -60,6 +61,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           flag-name: run ${{ env.CURRENT_NODE_VERSION }}
+          fail-on-error: false
   website:
     runs-on: ubuntu-latest
     steps:
@@ -78,6 +80,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           flag-name: run website
+          fail-on-error: false
   e2e:
     runs-on: ubuntu-latest
     steps:
@@ -96,6 +99,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           flag-name: run e2e
+          fail-on-error: false
   end:
     runs-on: ubuntu-latest
     if: ${{ always() && contains(join(needs.*.result, ','), 'success') }}
@@ -110,3 +114,4 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         parallel-finished: true
+        fail-on-error: false
