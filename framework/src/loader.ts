@@ -36,7 +36,7 @@ const loadUp = (args: string[],) => {
   const runs = {};
   do {
     execSync(
-      `node ${ FRAMEWORK_ROOT }/bin/run-benchmark `
+      `node ${ FRAMEWORK_ROOT }/bin/run-benchmark.js `
       + `${ threads } ${ repeats } ${ language }`,
       {
         stdio: 'inherit',
