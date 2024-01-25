@@ -34,3 +34,4 @@ export const STRING_LIMITER_REMOVAL_LENGTH = 1;
 export const INDENTATION_SPACES = 2;
 export const MONTH_OFFSET = 1;
 export const TEN = 10;
+export const ONE = 1;

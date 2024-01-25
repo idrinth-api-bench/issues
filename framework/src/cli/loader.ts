@@ -6,12 +6,16 @@ import {
   FOURTH_ARGUMENT,
   SECOND_ARGUMENT,
   THIRD_ARGUMENT,
+  ONE, DEFAULT_LANGUAGE,
 } from '../constants.js';
 import fse from 'fs-extra';
 import reqlib from 'app-root-path';
 import {
   run,
 } from '../main.js';
+import language, {
+  locale,
+} from '../helper/language.js';
 
 // eslint-disable-next-line complexity
 const loadUp = async(args: string[],) => {
@@ -23,7 +27,7 @@ const loadUp = async(args: string[],) => {
     args[SECOND_ARGUMENT] || '100',
     BASE_10_RADIX,
   );
-  const language = args[THIRD_ARGUMENT] || 'en';
+  const lang = args[THIRD_ARGUMENT] || 'en';
   const increment = Number.parseInt(
     args[FOURTH_ARGUMENT] || '1',
     BASE_10_RADIX,
@@ -32,11 +36,21 @@ const loadUp = async(args: string[],) => {
     args[FIFTH_ARGUMENT] || '100',
     BASE_10_RADIX,
   );
+  await locale(lang || DEFAULT_LANGUAGE,);
+  if (maximum < threads) {
+    throw new Error(language('maximum_below_threads',),);
+  }
+  if (increment < ONE) {
+    throw new Error(language('increment_below_one',),);
+  }
+  if (maximum < ONE) {
+    throw new Error(language('maximum_below_one',),);
+  }
   const runs = {};
   do {
     // eslint-disable-next-line no-await-in-loop
     await run({
-      language: language,
+      language: lang,
       mode: 'load-testing',
     }, threads, repeats,);
     const execution = fse.readJsonSync(reqlib + '/result.json', 'utf-8',);
