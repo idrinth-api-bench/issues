@@ -24,6 +24,18 @@ describe('helper/function-analyzer', () => {
     expect(ret,).to.be.an('array',);
     expect(ret,).to.deep.equal([],);
   },);
+  it('should return an empty array when handling no params with wrapped body', () => {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    const ret = analyze(() => ({}),);
+    expect(ret,).to.be.an('array',);
+    expect(ret,).to.deep.equal([],);
+  },);
+  it('should return an empty array when handling no params with direct return body', () => {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    const ret = analyze(() => 'test',);
+    expect(ret,).to.be.an('array',);
+    expect(ret,).to.deep.equal([],);
+  },);
   it('should return an array of params when handling one typed param', () => {
     // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars
     const ret = analyze(function(/*Boolean*/myBoolean,) {},);
