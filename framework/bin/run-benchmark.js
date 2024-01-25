@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import cli from '../src/cli/cli.ts';
+import cli from '../src/cli/bench.js';
 
 cli(process.argv,);
