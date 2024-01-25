@@ -41,7 +41,8 @@ export const run = async(
     resultOutputDir?: string
     progress?: Progress,
     language?: string,
-    blacklist?: string[]
+    blacklist?: string[],
+    mode?: 'benchmarking'|'content-testing'|'load-testing'
   },
   threads = DEFAULT_THREADS,
   repetitions = DEFAULT_REPETITIONS,
@@ -65,7 +66,10 @@ export const run = async(
     configuration.progress = new ProgressBar();
   }
   if (typeof configuration.blacklist === 'undefined') {
-    configuration.blacklist = blacklist(process.cwd(), 'benchmarking',);
+    configuration.blacklist = blacklist(
+      process.cwd(),
+      configuration.mode || 'benchmarking',
+    );
   }
   if (typeof job === 'undefined') {
     job = await jobCreator(`${ reqlib }`,);

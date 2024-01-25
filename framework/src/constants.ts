@@ -16,6 +16,7 @@ export const FRAMEWORK_ROOT = realpathSync(
 );
 export const THIRD_ARGUMENT = 4;
 export const FOURTH_ARGUMENT = 5;
+export const FIFTH_ARGUMENT = 6;
 export const BASE_10_RADIX = 10;
 export const COUNTER_STEP = 1;
 export const DEFAULT_THREADS = 10;
@@ -33,3 +34,4 @@ export const STRING_LIMITER_REMOVAL_LENGTH = 1;
 export const INDENTATION_SPACES = 2;
 export const MONTH_OFFSET = 1;
 export const TEN = 10;
+export const ONE = 1;

@@ -1,6 +1,6 @@
 import {
   run,
-} from './main.js';
+} from '../main.js';
 import {
   config,
 } from 'dotenv';
@@ -13,7 +13,7 @@ import {
   FIRST_ARGUMENT,
   SECOND_ARGUMENT,
   THIRD_ARGUMENT,
-} from './constants.js';
+} from '../constants.js';
 
 export default async(args: string[],) => {
   const threads = Number.parseInt(

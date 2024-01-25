@@ -31,3 +31,6 @@ no_openapi_document_given: Es wurde kein Pfad zu einem Open-Api-Dokument angegeb
 no_xml_content_type: Der content-type %1% ist nicht */xml.
 invalid_xml_body: Der XML-Inhalt ist ungültig.
 too_slow: Die Antwortzeit lag oberhalb von %1% ns.
+maximum_below_threads: Das Maximum ist geringer als die Startzahl der Threads.
+increment_below_one: Jeder Durchlauf muss die Threadzahl verändern. Aktuell ist die Änderung unter eins.
+maximum_below_one: Das Maximum kann nicht kleiner als eins sein.

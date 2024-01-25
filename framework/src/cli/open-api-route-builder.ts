@@ -1,4 +1,4 @@
-import language from './helper/language.js';
+import language from '../helper/language.js';
 import {
   parse,
 } from 'yaml';
@@ -8,17 +8,17 @@ import {
   mkdirSync,
 } from 'fs';
 import fse from 'fs-extra';
-import OpenApi from './open-api/open-api.js';
-import assertTypeIsObject from './open-api/assert-type-is-object.js';
+import OpenApi from '../open-api/open-api.js';
+import assertTypeIsObject from '../open-api/assert-type-is-object.js';
 import {
   findName,
-} from './open-api/find-name.js';
+} from '../open-api/find-name.js';
 import {
   FIRST_ARGUMENT,
-} from './constants.js';
+} from '../constants.js';
 import {
   toFilename,
-} from './open-api/to-filename.js';
+} from '../open-api/to-filename.js';
 
 const write = (
   projectDir: string,
