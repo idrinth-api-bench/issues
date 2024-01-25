@@ -42,7 +42,7 @@ const Index = () => <Layout
       <h3>Contribution workflow</h3>
       <ul>
         <li>fork the repository</li>
-        <li>create a feature branch (issue-xxx-does-something)</li>
+        <li>create a feature branch (issue-xxx-does-something) from master</li>
         <li>create a draft pull request</li>
         <li>mention fixes #xxx in the description</li>
         <li>make your changes to the branch</li>
@@ -50,7 +50,8 @@ const Index = () => <Layout
         <li>mark as ready to review</li>
         <li>get changes reviewed</li>
         <li>
-          if review is positive get changes merged otherwise fix and repeat
+          if review is positive get changes merged otherwise fix and
+          send back to review
         </li>
       </ul>
     </div>
