@@ -9,7 +9,7 @@ import 'mocha';
 const RANDOM_NUMBER = 11;
 
 describe('helper/function-analyzer', () => {
-  it('should be a functiom', () => {
+  it('should be a function', () => {
     expect(analyze,).to.be.a('function',);
   },);
   it('should return an empty array when handling no params', () => {
