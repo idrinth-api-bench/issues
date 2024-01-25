@@ -13,7 +13,8 @@
     "coai": "node tools/checkout-and-install.js",
     "publish": "node tools/publish.js",
     "spellcheck": "spellchecker",
-    "setup": "node tools/setup.js"
+    "setup": "node tools/setup.js",
+    "regression": "node tools/regression.js"
   },
   "repository": {
     "type": "git",
