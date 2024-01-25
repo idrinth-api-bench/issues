@@ -4,6 +4,7 @@ import {
   FIFTH_ARGUMENT,
   FIRST_ARGUMENT,
   FOURTH_ARGUMENT,
+  FRAMEWORK_ROOT,
   SECOND_ARGUMENT,
   THIRD_ARGUMENT,
 } from './constants.js';
@@ -35,7 +36,8 @@ const loadUp = (args: string[],) => {
   const runs = {};
   do {
     execSync(
-      `node node_modules/bin/iabr ${ threads } ${ repeats } ${ language }`,
+      `node ${ FRAMEWORK_ROOT }/bin/run-benchmark `
+      + `${ threads } ${ repeats } ${ language }`,
       {
         stdio: 'inherit',
       },
@@ -50,7 +52,7 @@ const loadUp = (args: string[],) => {
       break;
     }
     threads += increment;
-  } while (threads < maximum);
+  } while (threads <= maximum);
   fse.writeJsonSync(reqlib + '/result.json', runs,);
 };
 export default loadUp;
