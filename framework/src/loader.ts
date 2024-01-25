@@ -4,18 +4,17 @@ import {
   FIFTH_ARGUMENT,
   FIRST_ARGUMENT,
   FOURTH_ARGUMENT,
-  FRAMEWORK_ROOT,
   SECOND_ARGUMENT,
   THIRD_ARGUMENT,
 } from './constants.js';
-import {
-  execSync,
-} from 'child_process';
 import fse from 'fs-extra';
 import reqlib from 'app-root-path';
+import {
+  run,
+} from './main.js';
 
 // eslint-disable-next-line complexity
-const loadUp = (args: string[],) => {
+const loadUp = async(args: string[],) => {
   let threads = Number.parseInt(
     args[FIRST_ARGUMENT] || '1',
     BASE_10_RADIX,
@@ -35,18 +34,16 @@ const loadUp = (args: string[],) => {
   );
   const runs = {};
   do {
-    execSync(
-      `node ${ FRAMEWORK_ROOT }/bin/run-benchmark.js `
-      + `${ threads } ${ repeats } ${ language }`,
-      {
-        stdio: 'inherit',
-      },
-    );
-    const run = fse.readJsonSync(reqlib + '/result.json', 'utf-8',);
+    // eslint-disable-next-line no-await-in-loop
+    await run({
+      language: language,
+      mode: 'load-testing',
+    }, threads, repeats,);
+    const execution = fse.readJsonSync(reqlib + '/result.json', 'utf-8',);
     let hasErrors = false;
     for (const test of Object.keys(run,)) {
-      hasErrors = hasErrors || run[test].errors > EMPTY;
-      runs['test x' + threads] = run[test];
+      hasErrors = hasErrors || execution[test].errors > EMPTY;
+      runs['test x' + threads] = execution[test];
     }
     if (hasErrors) {
       break;
