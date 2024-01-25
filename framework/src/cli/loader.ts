@@ -6,12 +6,12 @@ import {
   FOURTH_ARGUMENT,
   SECOND_ARGUMENT,
   THIRD_ARGUMENT,
-} from './constants.js';
+} from '../constants.js';
 import fse from 'fs-extra';
 import reqlib from 'app-root-path';
 import {
   run,
-} from './main.js';
+} from '../main.js';
 
 // eslint-disable-next-line complexity
 const loadUp = async(args: string[],) => {

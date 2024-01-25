@@ -1,5 +1,5 @@
 import mock from 'mock-fs';
-import buildRoutes from '../src/open-api-route-builder.js';
+import buildRoutes from '../../src/cli/open-api-route-builder.js';
 import {
   expect,
 } from 'chai';
@@ -35,7 +35,7 @@ describe('open-api-route-builder', () => {
       [
         'node',
         'create.js',
-        __dirname + '../fixtures/open-api.yml',
+        __dirname + '../../fixtures/open-api.yml',
       ],
       '/oarb1',
     );
@@ -56,7 +56,7 @@ describe('open-api-route-builder', () => {
       [
         'node',
         'create.js',
-        __dirname + '../fixtures/open-api.yaml',
+        __dirname + '../../fixtures/open-api.yaml',
       ],
       '/oarb2',
     );
@@ -77,7 +77,7 @@ describe('open-api-route-builder', () => {
       [
         'node',
         'create.js',
-        __dirname + '../fixtures/open-api.json',
+        __dirname + '../../fixtures/open-api.json',
       ],
       '/oarb3',
     );
