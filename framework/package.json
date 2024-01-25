@@ -24,7 +24,11 @@
     "statistics",
     "parallel",
     "worker",
-    "async"
+    "async",
+    "loadtest",
+    "load-test",
+    "measure",
+    "open-api"
   ],
   "author": "Björn Büttner",
   "contributors": [],
