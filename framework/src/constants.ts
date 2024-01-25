@@ -16,6 +16,7 @@ export const FRAMEWORK_ROOT = realpathSync(
 );
 export const THIRD_ARGUMENT = 4;
 export const FOURTH_ARGUMENT = 5;
+export const FIFTH_ARGUMENT = 6;
 export const BASE_10_RADIX = 10;
 export const COUNTER_STEP = 1;
 export const DEFAULT_THREADS = 10;

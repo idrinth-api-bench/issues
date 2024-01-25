@@ -72,6 +72,8 @@
     "run-benchmark": "bin/run-benchmark.js",
     "make-benchmark-project": "bin/make-benchmark-project.js",
     "generate-benchmark-from-open-api": "bin/generate-benchmark-from-open-api.js",
+    "run-loadtest": "bin/run-loadtest.js",
+    "iabl": "bin/run-loadtest.js",
     "iabr": "bin/run-benchmark.js",
     "iabmp": "bin/make-benchmark-project.js",
     "iabgfoa": "bin/generate-benchmark-from-open-api.js"
