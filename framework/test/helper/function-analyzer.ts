@@ -9,7 +9,7 @@ import 'mocha';
 const RANDOM_NUMBER = 11;
 
 describe('helper/function-analyzer', () => {
-  it('should be a functiom', () => {
+  it('should be a function', () => {
     expect(analyze,).to.be.a('function',);
   },);
   it('should return an empty array when handling no params', () => {
@@ -21,6 +21,18 @@ describe('helper/function-analyzer', () => {
   it('should return an empty array when handling no params', () => {
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     const ret = analyze(() => {},);
+    expect(ret,).to.be.an('array',);
+    expect(ret,).to.deep.equal([],);
+  },);
+  it('should return an empty array when handling no params with wrapped body', () => {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    const ret = analyze(() => ({}),);
+    expect(ret,).to.be.an('array',);
+    expect(ret,).to.deep.equal([],);
+  },);
+  it('should return an empty array when handling no params with direct return body', () => {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    const ret = analyze(() => 'test',);
     expect(ret,).to.be.an('array',);
     expect(ret,).to.deep.equal([],);
   },);
