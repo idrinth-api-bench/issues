@@ -53,16 +53,12 @@ rl.question(
       'cd website && npm install',
       true,
     );
-    exec(
-      'cp LICENSE framework/',
-      true,
+    writeFileSync(
+      process.cwd() + '/framework/LICENSE',
+      readFileSync(process.cwd() + '/LICENSE', 'utf8',),
     );
     exec(
       'cd framework && npm publish',
-      true,
-    );
-    exec(
-      'rm framework/LICENSE',
       true,
     );
     process.exit(EXIT_SUCCESS,);
