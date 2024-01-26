@@ -5,9 +5,7 @@
   --dark-green: hsla(132deg 33% 29% / 100%);
   --green: hsla(120deg 77% 36% / 100%);
   --black: hsla(0deg 0% 0% / 100%); 
-  --light-gray: #4b4b4b;
-  --dark-gray: #001000;
-  --light-green: #026512;
+  --light-green: hsla(129.7deg 96.12% 20.2% / 1);
 }
 
 html {
