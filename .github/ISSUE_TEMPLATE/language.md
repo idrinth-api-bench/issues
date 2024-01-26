@@ -7,7 +7,8 @@ assignees: ''
 
 ---
 
-**Context**
+## Context
+
 - Language: What language do you need to be added?
 - Translator: Can you do the translation yourself?
 - Project: Website, Framework, Both?

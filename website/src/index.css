@@ -1,10 +1,12 @@
 :root {
   --white: hsla(0deg 0% 100% / 100%);
-  --light-gray: hsla(0deg 0% 95% / 100%);
+  --light-gray: hsla(204deg 8% 76% / 100%);;
   --dark-gray: hsla(0deg 0% 25% / 100%);
   --dark-green: hsla(132deg 33% 29% / 100%);
   --green: hsla(120deg 77% 36% / 100%);
-  --black: hsla(0deg 0% 0% / 100%);
+  --black: hsla(0deg 0% 0% / 100%); 
+  --light-green: hsla(99deg 90% 36% / 100%);
+  --very-dark-gray: hsla(0deg 0% 12.94% / 100%)
 }
 
 html {
@@ -92,6 +94,8 @@ header div {
 }
 
 nav a {
+  font-size: 130%;
+  color: var(--dark-green);
   text-decoration: none;
   padding: 5px 10px;
 }
@@ -192,7 +196,7 @@ a[target="_blank"] {
 }
 
 article {
-  min-height: calc(100vh - 6em - 2rem - 3px);
+  min-height: calc(100vh - 6em - 2rem - 2em - 6px);
 }
 
 footer li::after {
@@ -210,10 +214,15 @@ footer li:last-child::after {
   grid-template-columns: 1fr;
 }
 
+.sponsor img {
+  place-self: center;
+}
+
 .profile img {
   border-radius: 50%;
   max-width: 200px;
   place-self: center center;
+  justify-self: center;
   border: 1px solid var(--dark-green);
 }
 
@@ -223,6 +232,11 @@ nav.breadcrumbs li::after {
 
 nav.breadcrumbs li:last-of-type::after {
   content: '';
+}
+
+.profile h2,
+.sponsor h2 {
+  text-align: left;
 }
 
 @media only screen and (width >= 600px) {
@@ -239,11 +253,6 @@ nav.breadcrumbs li:last-of-type::after {
     background-image: linear-gradient(to bottom, hsla(0deg 0% 100% / 10%), hsla(0deg 0% 100% / 15%), hsla(0deg 0% 100% / 5%));
   }
 
-  .profile h2,
-  .sponsor h2 {
-    text-align: left;
-  }
-
   header div {
     padding-left: 1em;
   }
@@ -254,6 +263,10 @@ nav.breadcrumbs li:last-of-type::after {
 
   nav {
     width: auto;
+  }
+
+  nav a {
+    font-size: 1.3em;
   }
 
   nav ul {
@@ -319,5 +332,43 @@ nav.breadcrumbs li:last-of-type::after {
   header div {
     width: 30%;
     max-width: initial;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  html {
+    background-color: var(--dark-gray);
+    color: var(--light-gray);
+  }
+
+  a,
+  nav a,
+  footer a,
+  footer span {
+    color: var(--light-green);
+  }
+ 
+  header strong {
+    color: var(--white);
+  }
+
+  header,
+  footer {
+    background-color: var(--very-dark-gray);
+  }
+
+  pre {
+    background-color: var(--black)
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) and (width >= 600px) {
+  nav li:hover ul {
+    background-color: var(--very-dark-gray);
+  }
+
+  header,
+  footer {
+    background-color: var(--black);
   }
 }

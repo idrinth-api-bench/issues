@@ -20,7 +20,7 @@ const Index = () => <Layout
     <div className={'card sponsor'}>
       <img
         src={bjoernbuettner}
-        alt={'Bjoern Büttner\'s Backing'}
+        alt={'Björn Büttner\'s Backing'}
       />
       <div>
         <h2>

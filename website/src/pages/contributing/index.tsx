@@ -39,6 +39,23 @@ const Index = () => <Layout
       </div>
     </div>
     <div className='card'>
+      <h3>Contribution workflow</h3>
+      <ul>
+        <li>fork the repository</li>
+        <li>create a feature branch (issue-xxx-does-something) from master</li>
+        <li>create a draft pull request</li>
+        <li>mention fixes #xxx in the description</li>
+        <li>make your changes to the branch</li>
+        <li>check if actions are all green</li>
+        <li>mark as ready to review</li>
+        <li>get changes reviewed</li>
+        <li>
+          if review is positive get changes merged otherwise fix and
+          send back to review
+        </li>
+      </ul>
+    </div>
+    <div className='card'>
       <h3>Tests</h3>
       <p>
         Testing new code is expected and adding tests or
@@ -91,11 +108,7 @@ npm run coai
         <SyntaxHighlighter language='bash'>{`
   git clone https://github.com/idrinth/api-bench
   cd api-bench
-  npm install
-  cd website
-  npm install
-  cd ../framework
-  npm install
+  npm run setup
         `}</SyntaxHighlighter>
       </div>
     </div>

@@ -3,9 +3,23 @@ on:
   push:
     branches:
     - master
+    paths:
+    - '**.ts'
+    - '**.tsx'
+    - '**.js'
+    - '**.cjs'
+    - '**.json'
+    - '.github/workflows/unittest.yml'
   pull_request:
     branches:
     - master
+    paths:
+    - '**.ts'
+    - '**.tsx'
+    - '**.js'
+    - '**.cjs'
+    - '**.json'
+    - '.github/workflows/unittest.yml'
 env:
   PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
@@ -18,6 +32,11 @@ jobs:
         uses: actions/setup-node@v4.0.1
         with:
           node-version: ${{ env.PREVIOUS_NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            website/package-lock.json
+            package-lock.json
       - run: cd framework && npm ci
       - run: cd framework && npm run-script test
       - run: mv ./framework/coverage ./
@@ -28,6 +47,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           flag-name: run ${{ env.PREVIOUS_NODE_VERSION }}
+          fail-on-error: false
   framework-current:
     runs-on: ubuntu-latest
     steps:
@@ -36,6 +56,11 @@ jobs:
         uses: actions/setup-node@v4.0.1
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            website/package-lock.json
+            package-lock.json
       - run: cd framework && npm ci
       - run: cd framework && npm run-script test
       - run: mv ./framework/coverage ./
@@ -46,6 +71,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           flag-name: run ${{ env.CURRENT_NODE_VERSION }}
+          fail-on-error: false
   website:
     runs-on: ubuntu-latest
     steps:
@@ -54,6 +80,11 @@ jobs:
         uses: actions/setup-node@v4.0.1
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            website/package-lock.json
+            package-lock.json
       - run: cd website && npm ci
       - run: cd website && npm run-script test
       - run: mv ./website/coverage ./
@@ -64,6 +95,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           flag-name: run website
+          fail-on-error: false
   e2e:
     runs-on: ubuntu-latest
     steps:
@@ -72,6 +104,11 @@ jobs:
         uses: actions/setup-node@v4.0.1
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            website/package-lock.json
+            package-lock.json
       - run: cd website && npm ci
       - run: cd website && npm run-script e2e
       - run: mv ./website/coverage ./
@@ -82,9 +119,9 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           flag-name: run e2e
+          fail-on-error: false
   end:
     runs-on: ubuntu-latest
-    if: ${{ always() && contains(join(needs.*.result, ','), 'success') }}
     needs:
     - framework-previous
     - framework-current
@@ -96,3 +133,4 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         parallel-finished: true
+        fail-on-error: false
