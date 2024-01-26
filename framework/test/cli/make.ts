@@ -1,4 +1,4 @@
-import make from '../src/make.js';
+import make from '../../src/cli/make.js';
 import {
   expect,
 } from 'chai';

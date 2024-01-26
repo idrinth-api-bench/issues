@@ -1,4 +1,4 @@
-import cli from '../src/cli.js';
+import cli from '../../src/cli/bench.js';
 import {
   use as useChai,
   expect,

@@ -121,7 +121,7 @@ export const analyze = (func: Function,): Param[] => {
         .split(',',);
     }
     return fun
-      .replace(/^\s*\(|\)\s*=>\s*\{.*\}\s*$/gu, '',)
+      .replace(/^\s*\(|\)\s*=>\s*.*$/gu, '',)
       .split(',',);
   })();
   const ret: Param[] = [];

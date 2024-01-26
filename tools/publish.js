@@ -30,15 +30,15 @@ rl.question(
         console.error('File ' + file + ' missing',);
         process.exit(EXIT_FAILURE,);
       }
+      const data = JSON.parse(readFileSync(
+        process.cwd() + file,
+        'utf8',
+      ),);
+      data.version = version;
       writeFileSync(
         process.cwd() + file,
-        readFileSync(
-          process.cwd() + file,
-          'utf8',
-        ).replace(
-          /"version": "\d+\.\d+\.\d+",/u,
-          `"version": "${ version }",`,
-        ),
+        // eslint-disable-next-line no-undefined
+        JSON.stringify(data, undefined, 2,),
       );
     }
     exec(
@@ -52,6 +52,10 @@ rl.question(
     exec(
       'cd website && npm install',
       true,
+    );
+    writeFileSync(
+      process.cwd() + '/framework/LICENSE',
+      readFileSync(process.cwd() + '/LICENSE', 'utf8',),
     );
     exec(
       'cd framework && npm publish',

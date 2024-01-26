@@ -9,15 +9,15 @@ import {
   FIRST_ARGUMENT,
   FRAMEWORK_ROOT,
   INDENTATION_SPACES,
-} from './constants.js';
-import language from './helper/language.js';
+} from '../constants.js';
+import language from '../helper/language.js';
 import {
   execSync,
 } from 'child_process';
 import {
   SingleBar,
 } from 'cli-progress';
-import pkg from '../package.json' with {
+import pkg from '../../package.json' with {
   type: 'json'
 };
 

@@ -10,6 +10,7 @@
 /framework/coverage
 /framework/src/**/*.js
 /framework/index.js
+/framework/LICENSE
 
 # Examples
 /examples/**/package-lock.json

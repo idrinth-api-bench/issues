@@ -26,6 +26,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            website/package-lock.json
+            package-lock.json
       - run: npm ci
       - run: npm run-script lint-md
   framework:
@@ -36,6 +41,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            website/package-lock.json
+            package-lock.json
       - run: cd framework && npm ci
       - run: cd framework && npm run-script lint-md
   website:
@@ -46,5 +56,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            website/package-lock.json
+            package-lock.json
       - run: cd website && npm ci
       - run: cd website && npm run-script lint-md
