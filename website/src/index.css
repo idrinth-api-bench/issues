@@ -253,11 +253,6 @@ nav.breadcrumbs li:last-of-type::after {
     background-image: linear-gradient(to bottom, hsla(0deg 0% 100% / 10%), hsla(0deg 0% 100% / 15%), hsla(0deg 0% 100% / 5%));
   }
 
-  .sponsor h2,
-  .profile h2 {
-    text-align: left;
-  }
-
   header div {
     padding-left: 1em;
   }
