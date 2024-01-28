@@ -1,6 +1,6 @@
 import mock from 'mock-fs';
-import executor from '../../src/executor.js';
-import Thread from '../../src/worker/thread.js';
+import executor from '../src/executor';
+import Thread from '../src/worker/thread';
 import {
   use as chaiUse,
   expect,
@@ -9,27 +9,27 @@ import chaiAsPromised from 'chai-as-promised';
 import 'mocha';
 import {
   NullLogger,
-} from '../../src/logger/null-logger.js';
+} from '../src/logger/null-logger';
 import {
   Result,
-} from '../../src/result.js';
+} from '../src/result';
 import {
   FinishedSet,
-} from '../../src/finished-set.js';
+} from '../src/finished-set';
 import {
   Task,
-} from '../../src/task.js';
+} from '../src/task';
 import {
   ValidationResult,
-} from '../../src/validation-result.js';
+} from '../src/validation-result';
 import {
   realpathSync,
 } from 'fs';
-import Job from '../../src/job.js';
-import NoopStorage from '../../src/storage/noop-storage.js';
+import Job from '../src/job';
+import NoopStorage from '../src/storage/noop-storage';
 import makeConsoleMock from 'consolemock';
-import NoProgress from '../../src/progress/no-progress.js';
-import Counter from '../../src/counter.js';
+import NoProgress from '../src/progress/no-progress';
+import Counter from '../src/counter';
 
 const NONE = 0;
 chaiUse(chaiAsPromised,);

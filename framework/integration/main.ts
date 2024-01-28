@@ -1,7 +1,7 @@
 import mock from 'mock-fs';
 import {
   run,
-} from '../../src/main.js';
+} from '../src/main';
 import {
   expect,
 } from 'chai';
@@ -13,8 +13,8 @@ import {
   spawn,
 } from 'child_process';
 import url from 'url';
-import NoProgress from '../../src/progress/no-progress.js';
-import Counter from '../../src/counter.js';
+import NoProgress from '../src/progress/no-progress';
+import Counter from '../src/counter';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 const ONE = 1;
