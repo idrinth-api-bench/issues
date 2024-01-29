@@ -67,7 +67,7 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "global-jsdom": "^24.0.0",
     "http-server": "^14.1.1",
-    "markdownlint-cli": "^0.38.0",
+    "markdownlint-cli": "^0.39.0",
     "mocha": "^10.2.0",
     "nyc": "^15.1.0",
     "start-server-and-test": "^2.0.3",
