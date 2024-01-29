@@ -42,7 +42,8 @@ export const run = async(
     progress?: Progress,
     language?: string,
     blacklist?: string[],
-    mode?: 'benchmarking'|'content-testing'|'load-testing'
+    mode?: 'benchmarking'|'content-testing'|'load-testing',
+    taskId?: string,
   },
   threads = DEFAULT_THREADS,
   repetitions = DEFAULT_REPETITIONS,
