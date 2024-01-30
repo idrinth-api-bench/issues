@@ -1,4 +1,6 @@
 import React from 'react';
 import Loader from '../../components/loader.tsx';
 
-export default () => <Loader lnkey={'loader.wait'}/>;
+const WaitLoader = () => <Loader lnkey={'loader.wait'}/>;
+
+export default WaitLoader;
