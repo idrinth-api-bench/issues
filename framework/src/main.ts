@@ -97,5 +97,6 @@ export const run = async(
     configuration.resultOutputDir || process.cwd(),
     configuration.progress,
     configuration.blacklist,
+    configuration.taskId,
   );
 };

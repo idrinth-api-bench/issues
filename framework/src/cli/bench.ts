@@ -34,6 +34,7 @@ export default async(args: string[],) => {
   await run(
     {
       language: args[THIRD_ARGUMENT] || 'en',
+      taskId: args[SECOND_ARGUMENT],
     },
     threads,
     repeats,
