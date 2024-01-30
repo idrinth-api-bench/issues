@@ -171,5 +171,10 @@
       "title": "First run",
       "description": "With the following command you can run the example against a public test api to see it in action. Please don't try to create a service denial scenario and keep the thread count low."
     }
+  },
+  "loader": {
+    "wait": "Trying to load fresh content for you, please wait.",
+    "offline": "Please go online and then refresh the page.",
+    "reload": "Content has changed, reloading the page for you in a moment."
   }
 }

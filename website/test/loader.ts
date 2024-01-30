@@ -1,4 +1,4 @@
-import Loader from '../src/pagelike/loader.tsx';
+import Loader from '../src/components/loader.tsx';
 import {
   expect,
 } from 'chai';
