@@ -22,7 +22,9 @@ const resolve = (path: string,): string => {
     return reqlib + '/src/middlewares/' + shortened + '.js';
   }
   if (path[FIRST] === '$') {
-    return shortened.replace(/\/([^/]+)$/u, '/src/middlewares/$1',) + '.js';
+    return reqlib + '/node_modules/'
+      + shortened.replace(/\/([^/]+)$/u, '/src/middlewares/$1',)
+      + '.js';
   }
   return path;
 };

@@ -284,7 +284,7 @@ export default (args: string[], cwd: string,) => {
     () => execSync('npm install', {
       cwd: root,
     },),
-    () => execSync('git init', {
+    () => execSync('git init --initial-branch=master', {
       cwd: root,
     },),
   ];
