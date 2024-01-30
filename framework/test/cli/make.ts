@@ -5,7 +5,8 @@ import {
 import 'mocha';
 import {
   existsSync,
-  readFileSync, rmdirSync,
+  readFileSync,
+  rmdirSync,
 } from 'fs';
 import {
   tmpdir,

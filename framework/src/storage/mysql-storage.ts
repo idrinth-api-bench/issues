@@ -19,6 +19,7 @@ const project: string = reqlib
 export class MysqlStorage implements Storage {
   private connection: Connection;
 
+  // eslint-disable-next-line max-params
   constructor(
     host: string,
     password: string,
