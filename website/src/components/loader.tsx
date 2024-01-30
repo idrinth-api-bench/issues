@@ -19,6 +19,7 @@ const Loader = ({
       position: 'absolute',
       textAlign: 'center',
       top: 'calc(50% - 0.5em)',
+      width: '100%',
     }}><Lang lnkey={lnkey}/></strong>
   </div>}
 />;
