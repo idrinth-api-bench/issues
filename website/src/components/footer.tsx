@@ -1,16 +1,28 @@
 import React from 'react';
+import {
+  Lang,
+} from './lang.tsx';
+import {
+  NavLink,
+} from 'react-router-dom';
 
 const Footer = () => <footer>
-  <span>© 2020-2024 Björn Büttner and contributors.</span>
+  <span>©2020-2024 Björn Büttner and contributors.</span>
   <ul>
     <li>
-      <a href="/license">License</a>
+      <NavLink to="/license/">
+        <Lang lnkey='license.nav'/>
+      </NavLink>
     </li>
     <li>
-      <a href="/imprint">Imprint</a>
+      <NavLink to="/imprint/">
+        <Lang lnkey='imprint.nav'/>
+      </NavLink>
     </li>
     <li>
-      <a href="/support">Support</a>
+      <NavLink to="/support/">
+        <Lang lnkey='support.nav'/>
+      </NavLink>
     </li>
   </ul>
 </footer>;

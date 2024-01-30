@@ -1,4 +1,4 @@
-import Loader from '../src/pagelike/loader.tsx';
+import Loader from '../src/components/loader.tsx';
 import {
   expect,
 } from 'chai';
@@ -8,7 +8,7 @@ describe('pages/usage', () => {
     expect(Loader,).to.be.a('function',);
   },);
   it('() should be an object', () => {
-    const result = Loader();
+    const result = Loader({lnkey: 'test-key'});
     expect(result,).to.be.a('object',);
   },);
 },);

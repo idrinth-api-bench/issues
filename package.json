@@ -1,6 +1,6 @@
 {
   "name": "@idrinth/api-bench/root",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "description": "",
   "license": "MIT",
   "homepage": "https://idrinth-api-ben.ch",
@@ -9,10 +9,12 @@
   "contributors": [],
   "scripts": {
     "lint": "eslint tools examples --ext .js,.ts,.cjs,.json,.tsx",
-    "lint-md": "markdownlint *.md",
+    "lint-md": "markdownlint *.md .github/**/*.md",
     "coai": "node tools/checkout-and-install.js",
     "publish": "node tools/publish.js",
-    "prepublishOnly": "exit 1"
+    "spellcheck": "spellchecker",
+    "setup": "node tools/setup.js",
+    "regression": "node tools/regression.js"
   },
   "repository": {
     "type": "git",
@@ -20,10 +22,15 @@
   },
   "private": true,
   "devDependencies": {
-    "markdownlint-cli": "^0.38.0",
-    "@typescript-eslint/eslint-plugin": "^6.13.2",
-    "@typescript-eslint/parser": "^6.13.2",
+    "spellchecker-cli": "^6.1.1",
+    "markdownlint-cli": "^0.39.0",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
     "eslint": "^8.55.0",
     "eslint-plugin-json": "^3.1.0"
-  }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "engineStrict": true
 }

@@ -10,6 +10,7 @@
 /framework/coverage
 /framework/src/**/*.js
 /framework/index.js
+/framework/LICENSE
 
 # Examples
 /examples/**/package-lock.json
@@ -33,6 +34,10 @@
 /website/*.local
 /website/coverage
 /website/tsconfig.tsbuildinfo
+/website/src/routes.tsx
+/website/src/contributors.json
+/website/public/sitemap.xml
+/website/public/assets/profile-*.jpg
 
 # Editor directories and files
 .DS_Store

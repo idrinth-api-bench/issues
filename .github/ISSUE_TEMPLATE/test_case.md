@@ -7,11 +7,14 @@ assignees: ''
 
 ---
 
-**Context**
+## Context
+
 Please describe why the test is an improvement, that is worth the time invested.
 
-**Test**
+## Test
+
 Please describe what you think should be tested.
 
-**Result**
+## Result
+
 Please describe the expected behaviour/result.

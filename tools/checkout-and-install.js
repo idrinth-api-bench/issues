@@ -43,8 +43,5 @@ if (! process.argv[FIRST_ARGUMENT]) {
     true,
   );
   exec('git pull', true,);
-  exec('npm install', true,);
-  exec('cd framework && npm install', true,);
-  exec('cd website && npm install', true,);
-  exec('cd website && npm run build', true,);
+  exec('npm run setup', true,);
 }

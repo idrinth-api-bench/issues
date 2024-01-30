@@ -1,5 +1,5 @@
 {
-  "name": "@idrinth/api-bench-example_reqres.in",
+  "name": "@idrinth/api-bench/example/reqres.in",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -8,5 +8,9 @@
   },
   "scripts": {
     "run": "run-benchmark"
-  }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "engineStrict": true
 }
