@@ -10,14 +10,6 @@ export default defineConfig({
       input: {
         index: 'index.html',
       },
-      output: {
-        entryFileNames: (chunkInfo,) => {
-          if (chunkInfo.name === 'index') {
-            return 'assets/main-[hash].js';
-          }
-          return 'assets/pages/[hash]/[name].js';
-        },
-      },
     },
   },
   plugins: [ react({
