@@ -60,8 +60,7 @@
     "@types/mock-fs": "^4.13.4",
     "@types/needle": "^3.2.3",
     "c8": "^9.1.0",
-    "chai": "^4.3.10",
-    "chai-as-promised": "^7.1.1",
+    "chai": "^5.0.3",
     "consolemock": "^1.1.0",
     "eslint": "^8.55.0",
     "mocha": "^10.2.0",
@@ -70,7 +69,7 @@
     "ts-node": "^10.9.1",
     "typescript": "^5.3.2",
     "winston": "^3.11.0",
-    "markdownlint-cli": "^0.38.0"
+    "markdownlint-cli": "^0.39.0"
   },
   "bin": {
     "run-benchmark": "bin/run-benchmark.js",
@@ -86,7 +85,8 @@
     "lint": "eslint . --ext .js,.ts,.cjs,.json,.tsx",
     "lint-fix": "eslint --fix . --ext .js,.ts,.cjs,.json",
     "lint-md": "markdownlint *.md",
-    "test": "c8 mocha",
+    "test": "c8 mocha test",
+    "integration": "c8 mocha integration",
     "clear": "node tools/clear-js-files-from-src.js",
     "tsc": "tsc -p tsconfig.json",
     "prepublishOnly": "npm run tsc",

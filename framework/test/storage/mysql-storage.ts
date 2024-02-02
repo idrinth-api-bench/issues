@@ -1,15 +1,13 @@
 import MysqlStorage from '../../src/storage/mysql-storage.js';
 import {
-  expect, use as chaiUse,
+  expect,
 } from 'chai';
 import 'mocha';
 import {
   FinishedSet,
 } from '../../src/finished-set';
-import chaiAsPromised from 'chai-as-promised';
 import getDatabase from '@databases/mysql-test';
 
-chaiUse(chaiAsPromised,);
 let database;
 let port = 3307;
 const WAIT_MEDIUM = 1000;

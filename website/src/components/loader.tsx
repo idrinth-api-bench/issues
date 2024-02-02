@@ -1,7 +1,12 @@
 import React from 'react';
-import Layout from '../components/layout.tsx';
+import Layout from './layout.tsx';
+import {
+  Lang,
+} from './lang.tsx';
 
-const Loader = () => <Layout
+const Loader = ({
+  lnkey,
+},) => <Layout
   Outlet={<div style={{
     position: 'fixed',
     left: '0',
@@ -12,9 +17,10 @@ const Loader = () => <Layout
   }}>
     <strong style={{
       position: 'absolute',
-      left: 'calc(50% - 3.5em)',
+      textAlign: 'center',
       top: 'calc(50% - 0.5em)',
-    }}>Loading</strong>
+      width: '100%',
+    }}><Lang lnkey={lnkey}/></strong>
   </div>}
 />;
 export default Loader;
