@@ -85,6 +85,15 @@ export const run = async(
       after: [],
     };
   }
+  if (typeof configuration.taskId === 'string') {
+    const output: Task[] = [];
+    for (const task of job.main || []) {
+      if (task.id && task.id.includes(configuration.taskId,)) {
+        output.push(task,);
+      }
+    }
+    job.main = output;
+  }
   executor(
     threads,
     repetitions,
@@ -97,6 +106,5 @@ export const run = async(
     configuration.resultOutputDir || process.cwd(),
     configuration.progress,
     configuration.blacklist,
-    configuration.taskId,
   );
 };

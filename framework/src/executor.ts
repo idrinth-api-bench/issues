@@ -32,9 +32,6 @@ import {
   Task,
 } from './task.js';
 import buildTaskList from './build-task-list.js';
-import {
-  config,
-} from 'dotenv';
 
 /* eslint max-params:0 */
 const executor = (
@@ -49,7 +46,6 @@ const executor = (
   resultOutputDir: string,
   progress: Progress,
   blacklist: string[],
-  taskId: string,
 ): void => {
   const total = threads*repetitions;
   const now = new Date();
@@ -59,7 +55,7 @@ const executor = (
   logger.debug(
     language('initialization', `${ repetitions }`, `${ threads }`,),
   );
-  const internalTasks: Task[] = buildTaskList(job.main, taskId, blacklist, total,);
+  const internalTasks: Task[] = buildTaskList(job.main, blacklist, total,);
   progress.start(job, repetitions, threads,);
   const calculator = buildWorker(
     Worker,

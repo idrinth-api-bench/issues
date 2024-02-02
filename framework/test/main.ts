@@ -21,4 +21,21 @@ describe('main', () => {
       expect(`${ e }`,).to.equal('Error: Can\'t measure no tasks.',);
     }
   },);
+  it('will filter out by id', async() => {
+    try {
+      await run({
+        taskId: 'example',
+      }, ONE, ONE, [{
+        id: 'wrong',
+        main: {
+          method: 'get',
+          url: 'http://localhost',
+        },
+      },],);
+      // eslint-disable-next-line no-unused-expressions
+      expect(false,).to.be.true;
+    } catch (e) {
+      expect(`${ e }`).to.equal('Can\'t measure no tasks.',);
+    }
+  },);
 },);
