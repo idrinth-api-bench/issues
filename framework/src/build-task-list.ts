@@ -11,7 +11,7 @@ export default (tasks: Task[], blacklist: string[], total: number,) => {
     if (task.post) {
       task.post = task.post.filter((entry,) => ! blacklist.includes(entry,),);
     }
-    for (let i=0; i<total; i ++) {
+    for (let i = 0; i < total; i ++) {
       internalTasks.push(task,);
     }
   }

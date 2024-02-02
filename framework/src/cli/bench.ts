@@ -11,6 +11,7 @@ import {
 import {
   BASE_10_RADIX,
   FIRST_ARGUMENT,
+  FOURTH_ARGUMENT,
   SECOND_ARGUMENT,
   THIRD_ARGUMENT,
 } from '../constants.js';
@@ -34,6 +35,7 @@ export default async(args: string[],) => {
   await run(
     {
       language: args[THIRD_ARGUMENT] || 'en',
+      taskId: args[FOURTH_ARGUMENT],
     },
     threads,
     repeats,

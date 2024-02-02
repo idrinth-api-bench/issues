@@ -42,7 +42,8 @@ export const run = async(
     progress?: Progress,
     language?: string,
     blacklist?: string[],
-    mode?: 'benchmarking'|'content-testing'|'load-testing'
+    mode?: 'benchmarking'|'content-testing'|'load-testing',
+    taskId?: string,
   },
   threads = DEFAULT_THREADS,
   repetitions = DEFAULT_REPETITIONS,
@@ -83,6 +84,15 @@ export const run = async(
       afterTask: [],
       after: [],
     };
+  }
+  if (typeof configuration.taskId === 'string') {
+    const output: Task[] = [];
+    for (const task of job.main || []) {
+      if (task.id && task.id.includes(configuration.taskId,)) {
+        output.push(task,);
+      }
+    }
+    job.main = output;
   }
   executor(
     threads,
