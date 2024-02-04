@@ -20,6 +20,7 @@ const Usage = () => <Layout
             <li>Argument 1: threads (default 1)</li>
             <li>Argument 2: repetitions (default 1)</li>
             <li>Argument 3: language code (default en)</li>
+            <li>Argument 4: taskId, that you want to run only (default empty)</li>
           </ul>
         </li>
         <li>
