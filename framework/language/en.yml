@@ -1,4 +1,4 @@
-no_tasks: Can't measure no tasks.
+no_tasks: Can't measure zero tasks.
 duplicate_task_id: The id %1% is shared.
 invalid_key: The given key %1% is invalid.
 finished_analyzing: Analyzation of %1% finished.
