@@ -1,9 +1,10 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
+import Layout from '../../../components/layout.tsx';
 
-const Middlewares = () => <>
-  <section>
-    <div className="title-card">
+const Middlewares = () => <Layout
+  Outlet={<>
+    <div className='title-card'>
       <h1>Middlewares</h1>
       <p>
           Middlewares use an absolute file path to be loaded. The following
@@ -15,7 +16,7 @@ const Middlewares = () => <>
         <li>{'#abc -> /path/to/root/src/middlewares/abc.js'}</li>
       </ul>
     </div>
-    <div className="card">
+    <div className='card'>
       <h2>Provided Middlewares</h2>
       <ul>
         <li>json and form encode</li>
@@ -31,7 +32,7 @@ const Middlewares = () => <>
         <li>xml-validator</li>
       </ul>
     </div>
-    <div className="card">
+    <div className='card'>
       <h2>Custom Middleware</h2>
       <div>
         <p>
@@ -39,14 +40,16 @@ const Middlewares = () => <>
           called before sending a request, process after a request. If an error
           is thrown in process, any further validations are skipped.
         </p>
-        <SyntaxHighlighter language="typescript">
+        <SyntaxHighlighter language='typescript'>
           {`interface Middleware {
-    process(response: Result): void;
-    prepare(request: Request): Request;
-    }`}
+  process(response: Result): void;
+  prepare(request: Request): Request;
+}`}
         </SyntaxHighlighter>
       </div>
     </div>
-  </section>
-</>;
+  </>}
+  page='middlewares'
+  path='/usage/middlewares'
+/>;
 export default Middlewares;

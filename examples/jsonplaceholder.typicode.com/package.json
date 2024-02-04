@@ -1,5 +1,5 @@
 {
-  "name": "@idrinth/api-bench-example_jsonplaceholder.typicode.com",
+  "name": "@idrinth/api-bench/example/jsonplaceholder.typicode.com",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -8,5 +8,9 @@
   },
   "scripts": {
     "run": "run-benchmark"
-  }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "engineStrict": true
 }

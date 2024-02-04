@@ -3,12 +3,13 @@ import IAB from '../assets/iab.svg';
 import {
   NavLink,
 } from 'react-router-dom';
-import pkg from '../../../package.json' with {
+import pkg from '../../package.json' with {
   type: 'json'
 };
 import {
   Lang,
 } from './lang.tsx';
+import ExternalLink from './external-link.tsx';
 
 const Navbar = () => <>
   <header>
@@ -23,41 +24,73 @@ const Navbar = () => <>
           <NavLink to="/"><Lang lnkey='home.nav'/></NavLink>
         </li>
         <li>
-          <a
-            href=" https://www.npmjs.com/package/@idrinth/api-bench"
-            target="_blank"
-          >
-            NPMJS
-          </a>
+          <NavLink to="/quick-start/">
+            <Lang lnkey='quick-start.nav'/>
+          </NavLink>
         </li>
         <li>
-          <a href="https://github.com/Idrinth/api-bench" target="_blank">
-            GITHUB
-          </a>
+          <ExternalLink
+            to=" https://www.npmjs.com/package/@idrinth/api-bench"
+            label={'NPMJS'}
+          />
         </li>
         <li>
-          <NavLink to="/contributing">{'Contributing'}</NavLink>
+          <ExternalLink
+            to="https://github.com/Idrinth/api-bench"
+            label={'GITHUB'}
+          />
         </li>
         <li>
-          <NavLink to="/usage">{'Usage & Examples'}</NavLink>
+          <NavLink to="/contributing/">
+            <Lang lnkey='contributing.nav'/>
+          </NavLink>
           <ul>
             <li>
-              <NavLink to="/usage/autowiring">{'Autowiring'}</NavLink>
+              <NavLink to="/contributing/contributors/">
+                <Lang lnkey='contributors.nav'/>
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/usage/results">{'Results'}</NavLink>
+              <NavLink to="/contributing/sponsors/">
+                <Lang lnkey='sponsors.nav'/>
+              </NavLink>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <NavLink to="/usage/">
+            <Lang lnkey='usage.nav'/>
+          </NavLink>
+          <ul>
+            <li>
+              <NavLink to="/usage/autowiring/">
+                <Lang lnkey='autowiring.nav'/>
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/usage/logging">{'Logging'}</NavLink>
+              <NavLink to="/usage/results/">
+                <Lang lnkey='results.nav'/>
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/usage/middlewares">{'Middlewares'}</NavLink>
+              <NavLink to="/usage/logging/">
+                <Lang lnkey='logging.nav'/>
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/usage/storage">{'Storage'}</NavLink>
+              <NavLink to="/usage/middlewares/">
+                <Lang lnkey='middlewares.nav'/>
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/usage/route">{'Route'}</NavLink>
+              <NavLink to="/usage/storage/">
+                <Lang lnkey='storage.nav'/>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/usage/routes/">
+                <Lang lnkey='routes.nav'/>
+              </NavLink>
             </li>
           </ul>
         </li>

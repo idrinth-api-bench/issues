@@ -1,5 +1,28 @@
 describe('home', () => {
   it('can be visited', () => {
     cy.visit('http://localhost:8080/',);
+    cy.url().should('eq', 'http://localhost:8080/',);
+  },);
+  it('title matches', () => {
+    cy.visit('http://localhost:8080/',);
+    cy.title().should('eq', 'Home | @idrinth/api-bench',);
+  },);
+  it('h1 matches', () => {
+    cy.visit('http://localhost:8080/',);
+    cy.get('h1',)
+      .invoke('text',)
+      .should('eq', 'What does this project do?',);
+  },);
+  it('link to self exists', () => {
+    cy.visit('http://localhost:8080/',);
+    cy.get('header nav a[href="/"]',)
+      .invoke('text',)
+      .should('eq', 'Home',);
+  },);
+  it('breadcrumbs exists', () => {
+    cy.visit('http://localhost:8080/',);
+    cy.get('nav.breadcrumbs li:last-of-type',)
+      .invoke('text',)
+      .should('eq', 'Home',);
   },);
 },);

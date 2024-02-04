@@ -1,10 +1,12 @@
 :root {
   --white: hsla(0deg 0% 100% / 100%);
-  --light-gray: hsla(0deg 0% 95% / 100%);
+  --light-gray: hsla(204deg 8% 76% / 100%);;
   --dark-gray: hsla(0deg 0% 25% / 100%);
   --dark-green: hsla(132deg 33% 29% / 100%);
   --green: hsla(120deg 77% 36% / 100%);
-  --black: hsla(0deg 0% 0% / 100%);
+  --black: hsla(0deg 0% 0% / 100%); 
+  --light-green: hsla(99deg 90% 36% / 100%);
+  --very-dark-gray: hsla(0deg 0% 12.94% / 100%)
 }
 
 html {
@@ -95,6 +97,13 @@ nav a {
   font-size: 130%;
   color: var(--dark-green);
   text-decoration: none;
+  padding: 5px 10px;
+}
+
+nav a.active {
+  background-color: var(--dark-green);
+  color: var(--white);
+  border-radius: 10px;
 }
 
 ul {
@@ -102,7 +111,12 @@ ul {
 }
 
 nav {
+  font-size: 130%;
   width: 100%;
+}
+
+nav.breadcrumbs {
+  font-size: 70%;
 }
 
 nav ul {
@@ -171,7 +185,7 @@ header strong {
 
 a[target="_blank"] {
   padding-right: 1em;
-  background-image: url("assets/external-link-svgrepo-com.svg");
+  background-image: url("assets/external-link-svgrepo-com.black.svg");
   background-position: right center;
   background-size: 1em 1em;
   background-repeat: no-repeat;
@@ -181,8 +195,8 @@ a[target="_blank"] {
   min-height: 100vh;
 }
 
-section {
-  min-height: calc(100vh - 6em - 2rem - 3px);
+article {
+  min-height: calc(100vh - 6em - 2rem - 2em - 6px);
 }
 
 footer li::after {
@@ -192,6 +206,37 @@ footer li::after {
 
 footer li:last-child::after {
   content: "";
+}
+
+.profile,
+.sponsor {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.sponsor img {
+  place-self: center;
+}
+
+.profile img {
+  border-radius: 50%;
+  max-width: 200px;
+  place-self: center center;
+  justify-self: center;
+  border: 1px solid var(--dark-green);
+}
+
+nav.breadcrumbs li::after {
+  content: ' > ';
+}
+
+nav.breadcrumbs li:last-of-type::after {
+  content: '';
+}
+
+.profile h2,
+.sponsor h2 {
+  text-align: left;
 }
 
 @media only screen and (width >= 600px) {
@@ -238,6 +283,15 @@ footer li:last-child::after {
     display: none;
   }
 
+  nav.breadcrumbs ul {
+    gap: 0;
+    padding-left: 2.5em;
+  }
+
+  nav.breadcrumbs li::after {
+    padding: 0 0.5em;
+  }
+
   footer span {
     padding-left: 5rem;
     max-height: 100%;
@@ -267,8 +321,6 @@ footer li:last-child::after {
     padding: 2em 3em;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    align-items: center;
-    justify-content: center;
   }
 }
 
@@ -280,5 +332,47 @@ footer li:last-child::after {
   header div {
     width: 30%;
     max-width: initial;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  html {
+    background-color: var(--dark-gray);
+    color: var(--light-gray);
+  }
+
+  a,
+  nav a,
+  footer a,
+  footer span {
+    color: var(--light-green);
+  }
+ 
+  header strong {
+    color: var(--white);
+  }
+
+  header,
+  footer {
+    background-color: var(--very-dark-gray);
+  }
+
+  pre {
+    background-color: var(--black)
+  }
+
+  a[target="_blank"] {
+    background-image: url("assets/external-link-svgrepo-com.white.svg");
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) and (width >= 600px) {
+  nav li:hover ul {
+    background-color: var(--very-dark-gray);
+  }
+
+  header,
+  footer {
+    background-color: var(--black);
   }
 }
