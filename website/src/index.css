@@ -185,7 +185,7 @@ header strong {
 
 a[target="_blank"] {
   padding-right: 1em;
-  background-image: url("assets/external-link-svgrepo-com.svg");
+  background-image: url("assets/external-link-svgrepo-com.black.svg");
   background-position: right center;
   background-size: 1em 1em;
   background-repeat: no-repeat;
@@ -359,6 +359,10 @@ nav.breadcrumbs li:last-of-type::after {
 
   pre {
     background-color: var(--black)
+  }
+
+  a[target="_blank"] {
+    background-image: url("assets/external-link-svgrepo-com.white.svg");
   }
 }
 
