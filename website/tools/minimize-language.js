@@ -5,7 +5,7 @@ import {
   existsSync,
 } from 'fs';
 
-import * as yaml from 'yaml';
+import yaml from 'yaml';
 import { dirname } from 'path';
 
 const generateJSONFromYAML = (yamlPath, outputPath) => {
@@ -22,7 +22,8 @@ const generateJSONFromYAML = (yamlPath, outputPath) => {
 
 const originDir = 'language';
 const targetDir = 'public/locales';
-const yamlFiles = readdirSync('language');
+
+const yamlFiles = readdirSync('language').filter(file => /\.yml$/.test(file));
 
 yamlFiles.forEach((yamlFile) => {
   const lang = yamlFile.replace('.yml', '');
