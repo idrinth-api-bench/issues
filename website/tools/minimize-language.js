@@ -5,40 +5,37 @@ import {
   existsSync,
 } from 'fs';
 
-const parseYaml = (content) => {
-  const lines = content.split('\n');
-  const result = {};
-
-  lines.forEach((line) => {
-    const [i, j] = line.split(':');
-    if (i && j) {
-      result[i.trim()] = j.trim();
-    }
-  });
-
-  return result;
-};
+import * as yaml from 'yaml';
+import { dirname } from 'path';
 
 const generateJSONFromYAML = (yamlPath, outputPath) => {
-  if(existsSync(yamlPath)) {
-    const content = readFileSync(yamlPath, 'utf8');
-    const jsonData = parseYaml(content);
-    writeFileSync(outputPath, JSON.stringify(jsonData, null, 2));
+  if (existsSync(yamlPath)) {
+    try {
+      const content = readFileSync(yamlPath, 'utf8');
+      const jsonData = yaml.parse(content);
+      writeFileSync(outputPath, JSON.stringify(jsonData));
+    } catch {
+      console.log(`Error processing: ${yamlPath}`, error);
+    }
   }
 };
 
-const localesPath = './dist/locales';
+const originDir = 'language';
+const targetDir = 'public/locales';
+const yamlFiles = readdirSync('language');
 
-for(const folder of readdirSync(localesPath, 'utf8')) {
-  // those from json file
-  const translationsPath = `${localesPath}/${folder}/translation.json`;
-
-  if(existsSync(translationsPath)) {
-    // read yaml, convert yaml to json, overwrite the original file
-    generateJSONFromYAML(translationsPath, translationsPath);
+yamlFiles.forEach((yamlFile) => {
+  const lang = yamlFile.replace('.yml', '');
+  const yamlPath = `${originDir}/${yamlFile}`;
+  const outputPath = `${targetDir}/${lang}/translation.json`;
+  
+  if (!existsSync(dirname(outputPath))) {
+    // create directory if it's not here
+    mkdirSync(dirname(outputPath), { recursive: true });
   }
-}
-
+  
+  generateJSONFromYAML(yamlPath, outputPath);
+});
 
 // Kept for myself to compare
 // for (const folder of readdirSync('./dist/locales', 'utf8')) {
