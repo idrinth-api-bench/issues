@@ -35,7 +35,7 @@ describe('main', () => {
       // eslint-disable-next-line no-unused-expressions
       expect(false,).to.be.true;
     } catch (e) {
-      expect(`${ e }`).to.equal('Can\'t measure no tasks.',);
+      expect(`${ e }`).to.equal('Error: Can\'t measure no tasks.',);
     }
   },);
 },);
