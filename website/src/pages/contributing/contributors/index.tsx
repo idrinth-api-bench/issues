@@ -30,6 +30,7 @@ const Index = () => {
         <ExternalLink to={contributor.url} label={contributor.name} />
       </h2>
       <p>{contributor.bio}</p>
+      <a href={`#${contributor.id}`}>{contributor.name}</a>
       <p>Location: {contributor.location}</p>
       <p>{contributor.contributions} contributions to master</p>
     </div>
@@ -40,13 +41,13 @@ const Index = () => {
     Outlet={<section>
       <div className='title-card'>
         <h1>
-          <Lang lnkey='contributors.title'/>
+          <Lang lnkey='contributors.title' />
         </h1>
         <p>
-          <Lang lnkey='contributors.description'/>
+          <Lang lnkey='contributors.description' />
         </p>
       </div>
-      { els }
+      {els}
     </section>}
     page='contributors'
     path='/contributing/contributors'

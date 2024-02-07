@@ -1,37 +1,33 @@
-import {
-  existsSync,
-  mkdirSync,
-  readFileSync,
-  writeFileSync,
-} from 'fs';
-import crypto from 'crypto';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
+import crypto from "crypto";
 
-const defaultBio = 'An awesome person helping others in their time off work, ' +
-  'but who doesn\'t yet have a personalized bio.';
+const defaultBio =
+  "An awesome person helping others in their time off work, " +
+  "but who doesn't yet have a personalized bio.";
 const MILLISECONDS_PER_DAY = 86400000;
 
 const contributors = await fetch(
-  'https://api.github.com/repos/Idrinth/api-bench/contributors',
+  "https://api.github.com/repos/Idrinth/api-bench/contributors"
 );
 const users = {};
 
-if (! process.env.CI) {
-  if (existsSync('./src/contributors.json',)) {
-    const old = JSON.parse(readFileSync('./src/contributors.json', 'utf8',),);
-    for (const key of Object.keys(old,)) {
+if (!process.env.CI) {
+  if (existsSync("./src/contributors.json")) {
+    const old = JSON.parse(readFileSync("./src/contributors.json", "utf8"));
+    for (const key of Object.keys(old)) {
       if (old[key].lastUpdated > Date.now() - MILLISECONDS_PER_DAY) {
         users[key] = old[key];
       }
     }
   }
-  if (!existsSync('./public/assets',)) {
-    mkdirSync('./public/assets', {
+  if (!existsSync("./public/assets")) {
+    mkdirSync("./public/assets", {
       recursive: true,
-    },);
+    });
   }
 
-  const update = async (contributor,) => {
-    if (contributor.type !== 'User') {
+  const update = async (contributor) => {
+    if (contributor.type !== "User") {
       return;
     }
     if (users[contributor.login]) {
@@ -40,33 +36,29 @@ if (! process.env.CI) {
     }
     const data = await fetch(contributor.url);
     const user = await data.json();
-    const hash = crypto
-      .createHash('md5',)
-      .update(user.login,)
-      .digest('hex',);
+    const hash = crypto.createHash("md5").update(user.login).digest("hex");
     users[user.login] = {
+      id: user.name || "Contributor",
       contributions: contributor.contributions,
       name: user.name || user.login,
-      avatar: '/assets/profile-' + hash + '.jpg',
+      avatar: "/assets/profile-" + hash + ".jpg",
       url: user.html_url,
       bio: user.bio || defaultBio,
-      location: user.location || 'unknown',
+      location: user.location || "unknown",
       lastUpdated: Date.now(),
     };
     writeFileSync(
-      './public/assets/profile-' + hash + '.jpg',
+      "./public/assets/profile-" + hash + ".jpg",
       Buffer.from(
-        new Uint8Array(
-          await (await fetch(user.avatar_url,)).arrayBuffer(),
-        ),
-      ),
+        new Uint8Array(await (await fetch(user.avatar_url)).arrayBuffer())
+      )
     );
   };
 
   for (const contributor of await contributors.json()) {
     // eslint-disable-next-line no-await-in-loop
-    await update(contributor,);
+    await update(contributor);
   }
 }
 
-writeFileSync('./src/contributors.json', JSON.stringify(users,),);
+writeFileSync("./src/contributors.json", JSON.stringify(users));
