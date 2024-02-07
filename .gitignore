@@ -16,9 +16,10 @@
 /examples/**/package-lock.json
 /examples/**/result.json
 /examples/**/result.csv
+/examples/**/result.html
 /examples/**/node_modules
 
-# Logs
+# Website
 /website/logs
 /website/*.log
 /website/.nyc_output
@@ -37,6 +38,7 @@
 /website/src/routes.tsx
 /website/src/contributors.json
 /website/public/sitemap.xml
+/website/public/locales
 /website/public/assets/profile-*.jpg
 
 # Editor directories and files
@@ -46,6 +48,6 @@
 *.njsproj
 *.sln
 *.sw?
-/nbproject
-/.idea
-/.vscode
+nbproject
+.idea
+.vscode

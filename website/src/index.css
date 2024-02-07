@@ -102,7 +102,7 @@ nav a {
   padding: 5px 10px;
 }
 
-nav a.active {
+header nav a.active {
   background-color: var(--dark-green);
   color: var(--white);
   border-radius: 10px;

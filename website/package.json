@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "irfbrgr && vite",
-    "build": "irfbrgr && npm run contributors && tsc && vite build && irfbrgf && npm run language",
+    "build": "irfbrgr && npm run language && npm run contributors && tsc && vite build && irfbrgf",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint-fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",
@@ -24,10 +24,10 @@
     "lint-styles": "stylelint src/index.css src/**/**/*.css",
     "lint-css": "ilcd",
     "lint-md": "markdownlint *.md",
-    "postinstall": "irfbrgr && npm run contributors",
+    "postinstall": "irfbrgr && npm run contributors && npm run language",
     "routes": "irfbrgr",
     "contributors": "node tools/load-contributors.js",
-    "language": "node tools/minimize-language.js"
+    "language": "node tools/generate-language.js"
   },
   "dependencies": {
     "@fontsource/roboto": "^5.0.8",
