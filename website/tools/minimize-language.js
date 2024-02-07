@@ -5,7 +5,6 @@ import {
   existsSync,
   mkdirSync
 } from 'fs';
-
 import yaml from 'yaml';
 import { dirname } from 'path';
 
