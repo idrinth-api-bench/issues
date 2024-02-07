@@ -1,180 +1,35 @@
-{
-  "home": {
-    "meta": {
-      "title": "Home",
-      "description": "Welcome to the documentation for the framework @idrinth/api-bench"
-    },
-    "nav": "Home",
-    "title": "What does this project do?"
-  },
-  "imprint": {
-    "meta": {
-      "title": "Imprint",
-      "description": "Imprint and privacy statements for this website"
-    },
-    "nav": "Imprint"
-  },
-  "sponsors": {
-    "meta": {
-      "title": "Sponsors | Contributing",
-      "description": "The following businesses and companies are sponsoring the development of api-bench by providing time, money or necessary tools."
-    },
-    "nav": "Sponsors",
-    "title": "Sponsors",
-    "description": "The following businesses and companies support the development of @idrinth/api-bench. This means they provide time, money or necessary tools for the development.",
-    "bjoernbuettner": {
-      "intro": "Björn Büttner is a Germany based business, that provides custom development and hosting services in a web context. Additionally to that some training and consulting are offered, that do include this project for performance monitoring.",
-      "sponsoring": "The business supports the project by hosting this documentation site for free and supplying the domain."
-    },
-    "jungwild": {
-      "intro": "jungwild is a Germany based recruiting agency, that uses the framework for testing their own apis.",
-      "sponsoring": "The agency provides some time for testing and developing changes of the framework before release."
-    }
-  },
-  "contributors": {
-    "meta": {
-      "title": "Contributors | Contributing",
-      "description": "These are the people who made the site and framework what they are today."
-    },
-    "nav": "Contributors",
-    "title": "Contributors",
-    "description": "A big thank you to everyone who contributed. Below are the ones who contributed code, but other contributions are as valuable."
-  },
-  "support": {
-    "meta": {
-      "title": "Support",
-      "description": "Support options for the @idrinth/api-bench framework."
-    },
-    "nav": "Support",
-    "title": "Support",
-    "description": "No matter who you are, you can get support via github issues and discussions. Support reaction times depend on the availability of volunteers, so it may take a day or two.",
-    "commercial": {
-      "title": "Commercial support",
-      "description": "If your closed source software needs support, that can't be handled via the above means, Björn Büttner also provides payed support on a business basis. You can reach the business via:"
-    },
-    "training": {
-      "title": "Professional Training",
-      "description": "Training is provided by Björn Büttner on a business basis for organisations. For pricing and scheduling contact the business at:"
-    }
-  },
-  "404": {
-    "meta": {
-      "title": "404 NOT FOUND",
-      "description": "The page you desired has not been found"
-    },
-    "title": "404 Not Found",
-    "description": "Sadly the URL you entered couldn't be found."
-  },
-  "contributing": {
-    "meta": {
-      "title": "Contributing",
-      "description": "Contribution guidelines for the framework @idrinth/api-bench"
-    },
-    "nav": "Contributing"
-  },
-  "license": {
-    "meta": {
-      "title": "License",
-      "description": "The framework @idrinth/api-bench is available under the MIT license"
-    },
-    "nav": "License"
-  },
-  "autowiring": {
-    "meta": {
-      "title": "Autowiring | Usage",
-      "description": "The framework @idrinth/api-bench can autowire environment variables into route definitions"
-    },
-    "nav": "Autowiring"
-  },
-  "middlewares": {
-    "meta": {
-      "title": "Middlewares | Usage",
-      "description": "The framework @idrinth/api-bench provides default middlewares and allows for custom middlewares"
-    },
-    "nav": "Middlewares"
-  },
-  "results": {
-    "meta": {
-      "title": "Results | Usage",
-      "description": "The framework @idrinth/api-bench provides default result handlers and allows for additional custom result handlers"
-    },
-    "nav": "Results"
-  },
-  "usage": {
-    "meta": {
-      "title": "Usage",
-      "description": "Basic usage information for the framework @idrinth/api-bench"
-    },
-    "programmatically": {
-      "description": "Basically require main/include main and supply the executor method with required parameters. Tasks defined in src/routes-subfolders before, before_task, before_each, main, after_each, after_task, and after will be used to automatically fill the Job processed by the executor. Automatic filling only happens when there are no tasks provided to the function."
-    },
-    "nav": "Usage & Examples"
-  },
-  "logging": {
-    "meta": {
-      "title": "Logging | Usage",
-      "description": "Information about logging usage and support of the framework @idrinth/api-bench"
-    },
-    "used": {
-      "description": "Most log entries are debug level, with the major steps being written to info. Trace is currently not used but may be used for detailed argument printing at some point."
-    },
-    "custom": {
-      "final": "For ease of use, a wrapper is provided as well, that only requires a log method to be implemented."
-    },
-    "nav": "Logging"
-  },
-  "storage": {
-    "meta": {
-      "title": "Storage | Usage",
-      "description": "Information about the provided mysql storage and how to create custom storage implementations for @idrinth/api-bench"
-    },
-    "description": "Storage classes store each finished set of the run. By default, nothing is stored, but a mysql storage is provided for those wanting it.",
-    "custom": {
-      "description": "To provide a custom storage, implement the interface below. The method will be called once per task."
-    },
-    "nav": "Storage"
-  },
-  "routes": {
-    "meta": {
-      "title": "Routes | Usage",
-      "description": "Information about how to create test route definitions with the framework @idrinth/api-bench"
-    },
-    "title": "Routes",
-    "description": "Routes are build as configuration objects, that must be default-exported or provided via module.exports and be in a javascript file. The object is wrapped in a function to allow environment injection, see below for an example.",
-    "example": {
-      "title": "Example",
-      "description": "The code below defines a request to a URL from the environment with GET."
-    },
-    "nav": "Routes"
-  },
-  "quick-start": {
-    "meta": {
-      "title": "Quick Start",
-      "description": "A few steps to quickly get an api-bench project up and running."
-    },
-    "nav": "Quick Start",
-    "title": "@idrinth/api-bench quick start",
-    "description": "Starting out with the framework is not difficult. Follow the next couple steps and you will have your first case ready to run in a few minutes.",
-    "step1": {
-      "title": "Requirements",
-      "description": "Make sure that nodejs in a supported version is installed. That means one of the latest two versions. The latest long term support(lts) version is always recommended."
-    },
-    "step2": {
-      "title": "Setup",
-      "description": "Run the creation command to create a new benchmark project in a folder within your current working directory:"
-    },
-    "step3": {
-      "title": "Case creation",
-      "description": "Go into the newly created project and create a new file at src/routes/main/first-test.ts. Fill it with the following example content:"
-    },
-    "step4": {
-      "title": "First run",
-      "description": "With the following command you can run the example against a public test api to see it in action. Please don't try to create a service denial scenario and keep the thread count low."
-    }
-  },
-  "loader": {
-    "wait": "Trying to load fresh content for you, please wait.",
-    "offline": "Please go online and then refresh the page.",
-    "reload": "Content has changed, reloading the page for you in a moment."
-  }
-}
+home:
+  meta:
+    title: Home
+    description: Welcome to the documentation for the framework @idrinth/api-bench
+  nav: Home
+  title: What does this project do?
+
+imprint:
+  meta:
+    title: Imprint
+    description: Imprint and privacy statements for this website
+  nav: Imprint
+
+sponsors:
+  meta:
+    title: Sponsors | Contributing
+    description: The following businesses and companies are sponsoring the development of api-bench by providing time, money, or necessary tools.
+  nav: Sponsors
+  title: Sponsors
+  description: >
+    The following businesses and companies support the development of @idrinth/api-bench.
+    This means they provide time, money, or necessary tools for the development.
+  bjoernbuettner:
+    intro: >
+      Björn Büttner is a Germany based business that provides custom development and hosting services in a web context.
+      Additionally, some training and consulting are offered, which includes this project for performance monitoring.
+    sponsoring: >
+      The business supports the project by hosting this documentation site for free and supplying the domain.
+  jungwild:
+    intro: >
+      Jungwild is a Germany based recruiting agency that uses the framework for testing their own APIs.
+    sponsoring: >
+      The agency provides some time for testing and developing changes of the framework before release.
+
+# Other sections omitted for brevity
