@@ -30,7 +30,7 @@ const Index = () => {
         <ExternalLink to={contributor.url} label={contributor.name} />
       </h2>
       <p>{contributor.bio}</p>
-      <a href={`#${contributor.id}`}>{contributor.name}</a>
+      <a href={`#${contributor.id} `}>{contributor.name}</a>
       <p>Location: {contributor.location}</p>
       <p>{contributor.contributions} contributions to master</p>
     </div>
