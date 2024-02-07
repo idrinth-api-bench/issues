@@ -72,7 +72,7 @@ jobs:
           parallel: true
           flag-name: run ${{ env.CURRENT_NODE_VERSION }}
           fail-on-error: false
-  framework-integration-lts:
+  framework-integration-previous:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
