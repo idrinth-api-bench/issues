@@ -10,13 +10,9 @@ import { dirname } from 'path';
 
 const generateJSONFromYAML = (yamlPath, outputPath) => {
   if (existsSync(yamlPath)) {
-    try {
-      const content = readFileSync(yamlPath, 'utf8');
-      const jsonData = yaml.parse(content);
-      writeFileSync(outputPath, JSON.stringify(jsonData));
-    } catch {
-      console.log(`Error processing: ${yamlPath}`, error);
-    }
+    const content = readFileSync(yamlPath, 'utf8');
+    const jsonData = yaml.parse(content);
+    writeFileSync(outputPath, JSON.stringify(jsonData));
   }
 };
 
@@ -29,12 +25,12 @@ yamlFiles.forEach((yamlFile) => {
   const lang = yamlFile.replace('.yml', '');
   const yamlPath = `${originDir}/${yamlFile}`;
   const outputPath = `${targetDir}/${lang}/translation.json`;
-  
+
   if (!existsSync(dirname(outputPath))) {
     // create directory if it's not here
     mkdirSync(dirname(outputPath), { recursive: true });
   }
-  
+
   generateJSONFromYAML(yamlPath, outputPath);
 });
 
