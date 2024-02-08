@@ -24,21 +24,22 @@ const cli: Reporter = (
       'stdv 100%',
     ],
   },);
+  const formatter = new Intl.NumberFormat();
   for (const id of Object.getOwnPropertyNames(results,)) {
     table.push([
       results[id].id,
-      results[id].errors,
-      results[id].count,
-      results[id].avg100,
-      results[id].median100,
-      results[id].min100,
-      results[id].max100,
-      results[id].avg80,
-      results[id].median80,
-      results[id].min80,
-      results[id].max80,
-      results[id].stdv80,
-      results[id].stdv100,
+      formatter.format(results[id].errors,),
+      formatter.format(results[id].count,),
+      formatter.format(results[id].avg100,),
+      formatter.format(results[id].median100,),
+      formatter.format(results[id].min100,),
+      formatter.format(results[id].max100,),
+      formatter.format(results[id].avg80,),
+      formatter.format(results[id].median80,),
+      formatter.format(results[id].min80,),
+      formatter.format(results[id].max80,),
+      formatter.format(results[id].stdv80,),
+      formatter.format(results[id].stdv100,),
     ],);
   }
   // eslint-disable-next-line no-console
