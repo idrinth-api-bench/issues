@@ -52,7 +52,6 @@
     "@istanbuljs/esm-loader-hook": "^0.2.0",
     "@types/app-root-path": "^1.2.8",
     "@types/chai": "^4.3.11",
-    "@types/chai-as-promised": "^7.1.8",
     "@types/cli-progress": "^3.11.5",
     "@types/fs-extra": "^11.0.4",
     "@types/is-callable": "^1.1.2",
