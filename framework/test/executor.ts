@@ -174,7 +174,7 @@ describe('executor', () => {
         '/executor',
         new NoProgress(),
       ),
-    ).to.throw('Can\'t measure no tasks.',);
+    ).to.throw('Can\'t measure zero tasks.',);
   },);
   it('should not try to execute no tasks(0 threads)', () => {
     expect(
@@ -190,7 +190,7 @@ describe('executor', () => {
         '/executor',
         new NoProgress(),
       ),
-    ).to.throw('Can\'t measure no tasks.',);
+    ).to.throw('Can\'t measure zero tasks.',);
   },);
   it('should not try to execute no tasks (0 repeats)', () => {
     expect(
@@ -206,6 +206,6 @@ describe('executor', () => {
         '/executor',
         new NoProgress(),
       ),
-    ).to.throw('Can\'t measure no tasks.',);
+    ).to.throw('Can\'t measure zero tasks.',);
   },);
 },);
