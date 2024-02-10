@@ -12,6 +12,7 @@
     "url": "https://github.com/Idrinth/api-bench.git"
   },
   "scripts": {
+    "start": "npm run build && npm run serve",
     "dev": "irfbrgr && vite",
     "build": "irfbrgr && npm run language && npm run contributors && tsc && vite build && irfbrgf",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
