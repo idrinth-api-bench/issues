@@ -8,7 +8,7 @@ import {
 describe('contributors', () => {
   beforeEach(`Navigate to page`, () => { cy.visit(`/${page.contributors}`,) })
   it('can be visited', () => {
-    cy.url().should('eq', `${BASEURL+page.contributors}`,);
+    cy.url().should('eq', `${BASEURL + page.contributors}`,);
   },);
   it('title matches', () => {
     cy.title()
@@ -40,7 +40,7 @@ describe('contributors', () => {
       .invoke('text',)
       .should(
         'eq',
-        `©2020-${ new Date().getFullYear() } Björn Büttner and contributors.`,
+        `©2020-${new Date().getFullYear()} Björn Büttner and contributors.`,
       );
   },);
 },);

@@ -6,9 +6,9 @@ import {
 
 
 describe('usage/middlewares', () => {
-  beforeEach(`Navigate to page`, () => {cy.visit(`/${page.middlewares}`)})
+  beforeEach(`Navigate to page`, () => { cy.visit(`/${page.middlewares}`) })
   it('can be visited', () => {
-    cy.url().should('eq', BASEURL+page.middlewares,);
+    cy.url().should('eq', BASEURL + page.middlewares,);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Middlewares | Usage | @idrinth/api-bench',);
@@ -39,7 +39,7 @@ describe('usage/middlewares', () => {
       .invoke('text',)
       .should(
         'eq',
-        `©2020-${ new Date().getFullYear() } Björn Büttner and contributors.`,
+        `©2020-${new Date().getFullYear()} Björn Büttner and contributors.`,
       );
   },);
 },);

@@ -6,9 +6,9 @@ import {
 
 
 describe('404', () => {
-  beforeEach(`Navigate to page`, () => {cy.visit(`/${page.notFound}`)})
+  beforeEach(`Navigate to page`, () => { cy.visit(`/${page.notFound}`) })
   it('can be visited', () => {
-    cy.url().should('eq', BASEURL+page.notFound,);
+    cy.url().should('eq', BASEURL + page.notFound,);
   },);
   it('title matches', () => {
     cy.title().should('eq', '404 NOT FOUND | @idrinth/api-bench',);
@@ -23,7 +23,7 @@ describe('404', () => {
       .invoke('text',)
       .should(
         'eq',
-        `©2020-${ new Date().getFullYear() } Björn Büttner and contributors.`,
+        `©2020-${new Date().getFullYear()} Björn Büttner and contributors.`,
       );
   },);
 },);

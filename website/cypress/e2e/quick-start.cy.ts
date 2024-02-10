@@ -6,9 +6,9 @@ import {
 
 
 describe('usage/quick-start', () => {
-  beforeEach(`Navigate to page`, () => {cy.visit(`/${page.quickStart}`)})
+  beforeEach(`Navigate to page`, () => { cy.visit(`/${page.quickStart}`) })
   it('can be visited', () => {
-    cy.url().should('eq', BASEURL+page.quickStart,);
+    cy.url().should('eq', BASEURL + page.quickStart,);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Quick Start | @idrinth/api-bench',);
@@ -36,7 +36,7 @@ describe('usage/quick-start', () => {
       .invoke('text',)
       .should(
         'eq',
-        `©2020-${ new Date().getFullYear() } Björn Büttner and contributors.`,
+        `©2020-${new Date().getFullYear()} Björn Büttner and contributors.`,
       );
   },);
 },);

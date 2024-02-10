@@ -6,9 +6,9 @@ import {
 
 
 describe('contributing/sponsors', () => {
-  beforeEach(`Navigate to page`, () => {cy.visit(`/${page.sponsors}`)})
+  beforeEach(`Navigate to page`, () => { cy.visit(`/${page.sponsors}`) })
   it('can be visited', () => {
-    cy.url().should('eq', BASEURL+page.sponsors,);
+    cy.url().should('eq', BASEURL + page.sponsors,);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Sponsors | Contributing | @idrinth/api-bench',);
@@ -28,7 +28,7 @@ describe('contributing/sponsors', () => {
       .invoke('text',)
       .should(
         'eq',
-        `©2020-${ new Date().getFullYear() } Björn Büttner and contributors.`,
+        `©2020-${new Date().getFullYear()} Björn Büttner and contributors.`,
       );
   },);
 },);

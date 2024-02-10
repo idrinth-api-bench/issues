@@ -6,10 +6,10 @@ import {
 
 
 describe('license', () => {
-  beforeEach(`navigate to page`, () => {cy.visit(`/${page.license}`,)})
+  beforeEach(`navigate to page`, () => { cy.visit(`/${page.license}`,) })
   it('can be visited', () => {
     cy.visit(`/${page.license}`,);
-    cy.url().should('eq', BASEURL+page.license,);
+    cy.url().should('eq', BASEURL + page.license,);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'License | @idrinth/api-bench',);
@@ -37,7 +37,7 @@ describe('license', () => {
       .invoke('text',)
       .should(
         'eq',
-        `©2020-${ new Date().getFullYear() } Björn Büttner and contributors.`,
+        `©2020-${new Date().getFullYear()} Björn Büttner and contributors.`,
       );
   },);
 },);

@@ -7,9 +7,9 @@ import {
 
 let here = page.usage
 describe('usage', () => {
-  beforeEach(`Navigate to page`, () => {cy.visit(`/${here}`)})
+  beforeEach(`Navigate to page`, () => { cy.visit(`/${here}`) })
   it('can be visited', () => {
-    cy.url().should('eq', BASEURL+page.usage,);
+    cy.url().should('eq', BASEURL + page.usage,);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Usage | @idrinth/api-bench',);
@@ -37,7 +37,7 @@ describe('usage', () => {
       .invoke('text',)
       .should(
         'eq',
-        `©2020-${ new Date().getFullYear() } Björn Büttner and contributors.`,
+        `©2020-${new Date().getFullYear()} Björn Büttner and contributors.`,
       );
   },);
 },);

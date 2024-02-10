@@ -6,9 +6,9 @@ import {
 
 
 describe('usage/autowiring', () => {
-  beforeEach(`navigate to page`, () => {cy.visit(`/${page.autowiring}`,)})
+  beforeEach(`navigate to page`, () => { cy.visit(`/${page.autowiring}`,) })
   it('can be visited', () => {
-    cy.url().should('eq', BASEURL+page.autowiring,);
+    cy.url().should('eq', BASEURL + page.autowiring,);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Autowiring | Usage | @idrinth/api-bench',);
@@ -39,7 +39,7 @@ describe('usage/autowiring', () => {
       .invoke('text',)
       .should(
         'eq',
-        `©2020-${ new Date().getFullYear() } Björn Büttner and contributors.`,
+        `©2020-${new Date().getFullYear()} Björn Büttner and contributors.`,
       );
   },);
 },);

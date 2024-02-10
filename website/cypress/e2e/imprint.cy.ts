@@ -6,9 +6,9 @@ import {
 
 
 describe('imprint', () => {
-  beforeEach(`navigate to page`, () => {cy.visit(`/${page.imprint}`,)})
+  beforeEach(`navigate to page`, () => { cy.visit(`/${page.imprint}`,) })
   it('can be visited', () => {
-    cy.url().should('eq', BASEURL+page.imprint,);
+    cy.url().should('eq', BASEURL + page.imprint,);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Imprint | @idrinth/api-bench',);
@@ -36,7 +36,7 @@ describe('imprint', () => {
       .invoke('text',)
       .should(
         'eq',
-        `©2020-${ new Date().getFullYear() } Björn Büttner and contributors.`,
+        `©2020-${new Date().getFullYear()} Björn Büttner and contributors.`,
       );
   },);
 },);

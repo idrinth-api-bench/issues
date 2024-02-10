@@ -6,9 +6,9 @@ import {
 
 
 describe('usage/route', () => {
-  beforeEach(`Navigate to page`, () => {cy.visit(`/${page.routes}`)})
+  beforeEach(`Navigate to page`, () => { cy.visit(`/${page.routes}`) })
   it('can be visited', () => {
-    cy.url().should('eq', BASEURL+page.routes,);
+    cy.url().should('eq', BASEURL + page.routes,);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Routes | Usage | @idrinth/api-bench',);
@@ -39,7 +39,7 @@ describe('usage/route', () => {
       .invoke('text',)
       .should(
         'eq',
-        `©2020-${ new Date().getFullYear() } Björn Büttner and contributors.`,
+        `©2020-${new Date().getFullYear()} Björn Büttner and contributors.`,
       );
   },);
 },);

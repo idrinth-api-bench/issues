@@ -6,9 +6,9 @@ import {
 
 
 describe('usage/logging', () => {
-  beforeEach(`navigate to page`, () => {cy.visit(`/${page.logging}`,)})
+  beforeEach(`navigate to page`, () => { cy.visit(`/${page.logging}`,) })
   it('can be visited', () => {
-    cy.url().should('eq', BASEURL+page.logging,);
+    cy.url().should('eq', BASEURL + page.logging,);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Logging | Usage | @idrinth/api-bench',);
@@ -39,7 +39,7 @@ describe('usage/logging', () => {
       .invoke('text',)
       .should(
         'eq',
-        `©2020-${ new Date().getFullYear() } Björn Büttner and contributors.`,
+        `©2020-${new Date().getFullYear()} Björn Büttner and contributors.`,
       );
   },);
 },);
