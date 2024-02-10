@@ -6,7 +6,7 @@ import {
 
 
 describe('usage/autowiring', () => {
-  beforeEach(`navigate to page`, () => { cy.visit(`/${page.autowiring}`,) })
+  beforeEach(`navigate to page`, () => { cy.visit(`/${page.autowiring}`,); });
   it('can be visited', () => {
     cy.url().should('eq', BASEURL + page.autowiring,);
   },);

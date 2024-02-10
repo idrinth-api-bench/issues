@@ -6,7 +6,7 @@ import {
 
 
 describe('contributing/sponsors', () => {
-  beforeEach(`Navigate to page`, () => { cy.visit(`/${page.sponsors}`) })
+  beforeEach(`Navigate to page`, () => { cy.visit(`/${page.sponsors}`); });
   it('can be visited', () => {
     cy.url().should('eq', BASEURL + page.sponsors,);
   },);

@@ -5,9 +5,8 @@ import {
 
 
 
-let here = page.usage
 describe('usage', () => {
-  beforeEach(`Navigate to page`, () => { cy.visit(`/${here}`) })
+  beforeEach(`Navigate to page`, () => { cy.visit(`/${page.usage}`); });
   it('can be visited', () => {
     cy.url().should('eq', BASEURL + page.usage,);
   },);

@@ -1,5 +1,5 @@
-const PORT = '8080'
-const BASEURL = `http://localhost:${PORT}/`
+const PORT = '8080';
+const BASEURL = `http://localhost:${PORT}/`;
 const page = {
   autowiring: 'usage/autowiring/',
   contributing: 'contributing/',
@@ -16,10 +16,10 @@ const page = {
   sponsors: 'contributing/sponsors/',
   storage: 'usage/storage/',
   usage: 'usage/'
-}
+};
 
 export {
   PORT,
   BASEURL,
   page,
-}
+};

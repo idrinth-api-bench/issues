@@ -6,7 +6,7 @@ import {
 
 
 describe('usage/storage', () => {
-  beforeEach(`Navigate to page`, () => { cy.visit(`/${page.storage}`) })
+  beforeEach(`Navigate to page`, () => { cy.visit(`/${page.storage}`); });
   it('can be visited', () => {
     cy.url().should('eq', BASEURL + page.storage,);
   },);

@@ -6,7 +6,7 @@ import {
 
 
 describe('usage/results', () => {
-  beforeEach(`Navigate to page`, () => { cy.visit(`/${page.results}`) })
+  beforeEach(`Navigate to page`, () => { cy.visit(`/${page.results}`); });
   it('can be visited', () => {
     cy.url().should('eq', BASEURL + page.results,);
   },);

@@ -6,7 +6,7 @@ import {
 
 
 describe('license', () => {
-  beforeEach(`navigate to page`, () => { cy.visit(`/${page.license}`,) })
+  beforeEach(`navigate to page`, () => { cy.visit(`/${page.license}`,); });
   it('can be visited', () => {
     cy.visit(`/${page.license}`,);
     cy.url().should('eq', BASEURL + page.license,);

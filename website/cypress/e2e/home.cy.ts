@@ -3,7 +3,7 @@ import {
 } from "./constants.ts";
 
 describe('home', () => {
-  beforeEach(`Navigate to page`, () => { cy.visit('/',) })
+  beforeEach(`Navigate to page`, () => { cy.visit('/',); });
   it('can be visited', () => {
     cy.url().should('eq', BASEURL,);
   },);
