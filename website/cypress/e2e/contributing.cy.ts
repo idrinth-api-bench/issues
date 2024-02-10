@@ -1,26 +1,29 @@
+import {
+  BASEURL,
+  page
+} from "./constants.ts";
+
+
+
 describe('contributing', () => {
+  beforeEach(`Navigate to page`, () => { cy.visit(`/${page.contributing}`,) })
   it('can be visited', () => {
-    cy.visit('http://localhost:8080/contributing/',);
-    cy.url().should('eq', 'http://localhost:8080/contributing/',);
+    cy.url().should('eq', `${BASEURL}/${page.contributing}`,);
   },);
   it('title matches', () => {
-    cy.visit('http://localhost:8080/contributing/',);
     cy.title().should('eq', 'Contributing | @idrinth/api-bench',);
   },);
   it('h1 matches', () => {
-    cy.visit('http://localhost:8080/contributing/',);
     cy.get('h1',)
       .invoke('text',)
       .should('eq', 'Contributing',);
   },);
   it('link to self exists', () => {
-    cy.visit('http://localhost:8080/contributing/',);
     cy.get('header nav a[href="/contributing/"]',)
       .invoke('text',)
       .should('eq', 'Contributing',);
   },);
   it('breadcrumbs exists', () => {
-    cy.visit('http://localhost:8080/contributing/',);
     cy.get('nav.breadcrumbs a[href="/"]',)
       .invoke('text',)
       .should('eq', 'Home',);
@@ -29,7 +32,6 @@ describe('contributing', () => {
       .should('eq', 'Contributing',);
   },);
   it('Copy right updated for the current year.', () => {
-    cy.visit('http://localhost:8080/',);
     cy.get('footer span',)
       .invoke('text',)
       .should(
