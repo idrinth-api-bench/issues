@@ -1,26 +1,30 @@
+import {
+  BASEURL,
+  page,
+} from './constants.ts'
+
+
+
 describe('license', () => {
+  beforeEach(`navigate to page`, () => {cy.visit(`/${page.license}`,)})
   it('can be visited', () => {
-    cy.visit('http://localhost:8080/license/',);
-    cy.url().should('eq', 'http://localhost:8080/license/',);
+    cy.visit(`/${page.license}`,);
+    cy.url().should('eq', BASEURL+page.license,);
   },);
   it('title matches', () => {
-    cy.visit('http://localhost:8080/license/',);
     cy.title().should('eq', 'License | @idrinth/api-bench',);
   },);
   it('h1 matches', () => {
-    cy.visit('http://localhost:8080/license/',);
     cy.get('h1',)
       .invoke('text',)
       .should('eq', 'MIT License',);
   },);
   it('link to self exists', () => {
-    cy.visit('http://localhost:8080/license/',);
     cy.get('footer a[href="/license/"]',)
       .invoke('text',)
       .should('eq', 'License',);
   },);
   it('breadcrumbs exists', () => {
-    cy.visit('http://localhost:8080/license/',);
     cy.get('nav.breadcrumbs a[href="/"]',)
       .invoke('text',)
       .should('eq', 'Home',);
@@ -29,7 +33,6 @@ describe('license', () => {
       .should('eq', 'License',);
   },);
   it('Copy right updated for the current year.', () => {
-    cy.visit('http://localhost:8080/',);
     cy.get('footer span',)
       .invoke('text',)
       .should(

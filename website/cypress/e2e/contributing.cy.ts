@@ -8,7 +8,7 @@ import {
 describe('contributing', () => {
   beforeEach(`Navigate to page`, () => { cy.visit(`/${page.contributing}`,) })
   it('can be visited', () => {
-    cy.url().should('eq', `${BASEURL}/${page.contributing}`,);
+    cy.url().should('eq', BASEURL+page.contributing,);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Contributing | @idrinth/api-bench',);
@@ -36,7 +36,7 @@ describe('contributing', () => {
       .invoke('text',)
       .should(
         'eq',
-        `©2020-${ new Date().getFullYear() } Björn Büttner and contributors.`,
+        `©2020-${new Date().getFullYear()} Björn Büttner and contributors.`,
       );
   },);
 },);
