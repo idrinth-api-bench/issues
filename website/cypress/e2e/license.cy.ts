@@ -28,4 +28,13 @@ describe('license', () => {
       .invoke('text',)
       .should('eq', 'License',);
   },);
+  it('Copy right updated for the current year.', () => {
+    cy.visit('http://localhost:8080/',);
+    cy.get('footer span',)
+      .invoke('text',)
+      .should(
+        'eq',
+        `©2020-${ new Date().getFullYear() } Björn Büttner and contributors.`,
+      );
+  },);
 },);
