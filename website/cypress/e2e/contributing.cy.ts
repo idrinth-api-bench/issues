@@ -1,4 +1,4 @@
-import { 
+import {
   BASE_URL,
   page
 } from '../fixtures/constants.ts';
