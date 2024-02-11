@@ -4,9 +4,9 @@ import {
 } from '../fixtures/constants.ts';
 
 describe('contributing/sponsors', () => {
-  beforeEach(`Navigate to page`, () => {cy.visit(page.sponsors);});
+  beforeEach('Navigate to page', () => {cy.visit(page.sponsors,);});
   it('can be visited', () => {
-    cy.url().should('eq', BASE_URL + page.sponsors);
+    cy.url().should('eq', BASE_URL + page.sponsors,);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Sponsors | Contributing | @idrinth/api-bench',);

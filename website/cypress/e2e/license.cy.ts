@@ -4,9 +4,9 @@ import {
 } from '../fixtures/constants.ts';
 
 describe('license', () => {
-  beforeEach(`navigate to page`, () => {cy.visit(page.license);});
+  beforeEach('navigate to page', () => {cy.visit(page.license,);});
   it('can be visited', () => {
-    cy.url().should('eq', BASE_URL + page.license);
+    cy.url().should('eq', BASE_URL + page.license,);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'License | @idrinth/api-bench',);

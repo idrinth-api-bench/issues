@@ -4,9 +4,9 @@ import {
 } from '../fixtures/constants.ts';
 
 describe('support', () => {
-  beforeEach(`Navigate to page`, () => {cy.visit(page.support);});
+  beforeEach('Navigate to page', () => {cy.visit(page.support,);});
   it('can be visited', () => {
-    cy.url().should('eq', BASE_URL + page.support);
+    cy.url().should('eq', BASE_URL + page.support,);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Support | @idrinth/api-bench',);
