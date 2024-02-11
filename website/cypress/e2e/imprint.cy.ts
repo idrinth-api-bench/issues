@@ -6,7 +6,7 @@ import {
 describe('imprint', () => {
   beforeEach('navigate to page', () => {
     cy.visit(page.imprint,);
-  });
+  },);
   it('can be visited', () => {
     cy.url().should('eq', BASE_URL + page.imprint,);
   },);

@@ -6,7 +6,7 @@ import {
 describe('404', () => {
   beforeEach('Navigate to page', () => {
     cy.visit(page.notFound,);
-  });
+  },);
   it('can be visited', () => {
     cy.url().should('eq', BASE_URL + page.notFound,);
   },);

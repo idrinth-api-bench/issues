@@ -6,7 +6,7 @@ import {
 describe('usage/quick-start', () => {
   beforeEach('Navigate to page', () => {
     cy.visit(page.quickStart,);
-  });
+  },);
   it('can be visited', () => {
     cy.url().should('eq', BASE_URL + page.quickStart,);
   },);
