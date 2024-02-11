@@ -39,7 +39,7 @@ describe('usage/autowiring', () => {
       .invoke('text',)
       .should(
         'eq',
-        `©2020-${new Date().getFullYear()} Björn Büttner and contributors.`,
+        `©2020-${ new Date().getFullYear() } Björn Büttner and contributors.`,
       );
   },);
 },);
