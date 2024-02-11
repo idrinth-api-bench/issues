@@ -4,7 +4,7 @@ import {
 } from '../fixtures/constants.ts';
 
 describe('usage/quick-start', () => {
-  beforeEach('Navigate to page', () => {cy.visit(page.quickStart,);});
+  beforeEach('Navigate to page', () => { cy.visit(page.quickStart,); });
   it('can be visited', () => {
     cy.url().should('eq', BASE_URL + page.quickStart,);
   },);

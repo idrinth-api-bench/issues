@@ -4,7 +4,7 @@ import {
 } from '../fixtures/constants.ts';
 
 describe('usage/middlewares', () => {
-  beforeEach('Navigate to page', () => {cy.visit(page.middlewares,);});
+  beforeEach('Navigate to page', () => { cy.visit(page.middlewares,); });
   it('can be visited', () => {
     cy.url().should('eq', BASE_URL + page.middlewares,);
   },);

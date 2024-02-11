@@ -4,7 +4,7 @@ import {
 } from '../fixtures/constants.ts';
 
 describe('usage', () => {
-  beforeEach('Navigate to page', () => {cy.visit(page.usage,);});
+  beforeEach('Navigate to page', () => { cy.visit(page.usage,); });
   it('can be visited', () => {
     cy.url().should('eq', BASE_URL + page.usage,);
   },);
