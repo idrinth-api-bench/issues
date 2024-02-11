@@ -4,7 +4,9 @@ import {
 } from '../fixtures/constants.ts';
 
 describe('contributing', () => {
-  beforeEach('Navigate to page', () => { cy.visit(page.contributing,); });
+  beforeEach('Navigate to page', () => {
+    cy.visit(page.contributing,);
+  });
   it('can be visited', () => {
     cy.url().should('eq', BASE_URL + page.contributing,);
   },);
