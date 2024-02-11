@@ -1,7 +1,7 @@
 import {
   BASEURL,
   page,
-} from './constants.ts'
+} from './constants.ts';
 
 
 

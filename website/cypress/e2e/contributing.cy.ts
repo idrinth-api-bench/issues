@@ -6,7 +6,7 @@ import {
 
 
 describe('contributing', () => {
-  beforeEach(`Navigate to page`, () => { cy.visit(`/${page.contributing}`,); });
+  beforeEach(`Navigate to page`, () => {cy.visit(`/${page.contributing}`,);});
   it('can be visited', () => {
     cy.url().should('eq', BASEURL + page.contributing,);
   },);

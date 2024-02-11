@@ -1,12 +1,12 @@
 import {
   BASEURL,
   page,
-} from './constants.ts'
+} from './constants.ts';
 
 
 
 describe('contributors', () => {
-  beforeEach(`Navigate to page`, () => { cy.visit(`/${page.contributors}`,); });
+  beforeEach(`Navigate to page`, () => { cy.visit(`/${page.contributors}`,);});
   it('can be visited', () => {
     cy.url().should('eq', `${BASEURL + page.contributors}`,);
   },);
