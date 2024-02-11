@@ -1,15 +1,12 @@
-import {
-  BASEURL,
-  page,
-} from './constants.ts';
-
-
+import { 
+  BASE_URL,
+  page 
+} from '../fixtures/constants.ts';
 
 describe('license', () => {
-  beforeEach(`navigate to page`, () => { cy.visit(`/${page.license}`,); });
+  beforeEach(`navigate to page`, () => {cy.visit(page.license);});
   it('can be visited', () => {
-    cy.visit(`/${page.license}`,);
-    cy.url().should('eq', BASEURL + page.license,);
+    cy.url().should('eq', BASE_URL + page.license);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'License | @idrinth/api-bench',);

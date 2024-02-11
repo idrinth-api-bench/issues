@@ -1,14 +1,12 @@
-import {
-  BASEURL,
-  page,
-} from './constants.ts';
-
-
+import { 
+  BASE_URL,
+  page 
+} from '../fixtures/constants.ts';
 
 describe('imprint', () => {
-  beforeEach(`navigate to page`, () => { cy.visit(`/${page.imprint}`,); });
+  beforeEach(`navigate to page`, () => {cy.visit(page.imprint);});
   it('can be visited', () => {
-    cy.url().should('eq', BASEURL + page.imprint,);
+    cy.url().should('eq', BASE_URL + page.imprint);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Imprint | @idrinth/api-bench',);

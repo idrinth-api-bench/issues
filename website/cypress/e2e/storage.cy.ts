@@ -1,14 +1,12 @@
-import {
-  BASEURL,
-  page,
-} from './constants.ts';
-
-
+import { 
+  BASE_URL,
+  page 
+} from '../fixtures/constants.ts';
 
 describe('usage/storage', () => {
-  beforeEach(`Navigate to page`, () => { cy.visit(`/${page.storage}`); });
+  beforeEach(`Navigate to page`, () => {cy.visit(page.storage);});
   it('can be visited', () => {
-    cy.url().should('eq', BASEURL + page.storage,);
+    cy.url().should('eq', BASE_URL + page.storage);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Storage | Usage | @idrinth/api-bench',);

@@ -1,14 +1,12 @@
-import {
-  BASEURL,
-  page,
-} from './constants.ts';
-
-
+import { 
+  BASE_URL,
+  page 
+} from '../fixtures/constants.ts';
 
 describe('usage/autowiring', () => {
-  beforeEach(`navigate to page`, () => { cy.visit(`/${page.autowiring}`,); });
+  beforeEach(`navigate to page`, () => {cy.visit(page.autowiring);});
   it('can be visited', () => {
-    cy.url().should('eq', BASEURL + page.autowiring,);
+    cy.url().should('eq', BASE_URL + page.autowiring);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Autowiring | Usage | @idrinth/api-bench',);

@@ -1,14 +1,12 @@
-import {
-  BASEURL,
-  page,
-} from './constants.ts';
-
-
+import { 
+  BASE_URL,
+  page 
+} from '../fixtures/constants.ts';
 
 describe('usage/quick-start', () => {
-  beforeEach(`Navigate to page`, () => { cy.visit(`/${page.quickStart}`); });
+  beforeEach(`Navigate to page`, () => {cy.visit(page.quickStart);});
   it('can be visited', () => {
-    cy.url().should('eq', BASEURL + page.quickStart,);
+    cy.url().should('eq', BASE_URL + page.quickStart);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Quick Start | @idrinth/api-bench',);

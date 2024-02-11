@@ -1,14 +1,12 @@
-import {
-  BASEURL,
-  page,
-} from './constants.ts';
-
-
+import { 
+  BASE_URL,
+  page 
+} from '../fixtures/constants.ts';
 
 describe('usage/results', () => {
-  beforeEach(`Navigate to page`, () => { cy.visit(`/${page.results}`); });
+  beforeEach(`Navigate to page`, () => {cy.visit(page.results);});
   it('can be visited', () => {
-    cy.url().should('eq', BASEURL + page.results,);
+    cy.url().should('eq', BASE_URL + page.results);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Results | Usage | @idrinth/api-bench',);

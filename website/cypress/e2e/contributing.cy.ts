@@ -1,14 +1,12 @@
-import {
-  BASEURL,
+import { 
+  BASE_URL,
   page
-} from "./constants.ts";
-
-
+} from '../fixtures/constants.ts';
 
 describe('contributing', () => {
-  beforeEach(`Navigate to page`, () => {cy.visit(`/${page.contributing}`,);});
+  beforeEach(`Navigate to page`, () => {cy.visit(page.contributing);});
   it('can be visited', () => {
-    cy.url().should('eq', BASEURL + page.contributing,);
+    cy.url().should('eq', BASE_URL + page.contributing);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Contributing | @idrinth/api-bench',);

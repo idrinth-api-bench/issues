@@ -1,14 +1,12 @@
-import {
-  BASEURL,
-  page,
-} from './constants.ts';
-
-
+import { 
+  BASE_URL,
+  page 
+} from '../fixtures/constants.ts';
 
 describe('contributors', () => {
-  beforeEach(`Navigate to page`, () => { cy.visit(`/${page.contributors}`,);});
+  beforeEach(`Navigate to page`, () => { cy.visit(page.contributors);});
   it('can be visited', () => {
-    cy.url().should('eq', `${BASEURL + page.contributors}`,);
+    cy.url().should('eq', BASE_URL + page.contributors);
   },);
   it('title matches', () => {
     cy.title()
