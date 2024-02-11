@@ -1,6 +1,6 @@
 import {
   BASE_URL,
-  page 
+  page, 
 } from '../fixtures/constants.ts';
 
 describe('contributors', () => {
