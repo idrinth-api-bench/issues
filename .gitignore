@@ -1,6 +1,6 @@
 # ROOT
 /node_modules
-cypress.config.ts
+./cypress.config.ts
 
 # Cypress
 /cypress/support/commands.ts
