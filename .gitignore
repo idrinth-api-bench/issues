@@ -37,7 +37,6 @@ cypress.config.ts
 /website/dist
 /website/dist-ssr
 /website/*.local
-/website/coverage
 /website/cypress/fixures/cypress.env.json
 /website/tsconfig.tsbuildinfo
 /website/src/routes.tsx
