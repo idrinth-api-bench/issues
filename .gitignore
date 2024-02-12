@@ -32,6 +32,7 @@
 /website/yarn-error.log*
 /website/pnpm-debug.log*
 /website/lerna-debug.log*
+/website/coverage
 /website/cypress/screenshots
 /website/node_modules
 /website/dist
