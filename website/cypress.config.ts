@@ -11,5 +11,6 @@ export default defineConfig({
       on('file:preprocessor', useBabelRC,);
       return config;
     },
+    baseUrl: 'http://localhost:8080',
   },
 },);

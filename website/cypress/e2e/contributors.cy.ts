@@ -1,27 +1,30 @@
+import {
+  BASE_URL,
+  page,
+} from '../fixtures/constants.ts';
+
 describe('contributors', () => {
+  beforeEach('Navigate to page', () => {
+    cy.visit(page.contributors,);
+  },);
   it('can be visited', () => {
-    cy.visit('http://localhost:8080/contributing/contributors/',);
-    cy.url().should('eq', 'http://localhost:8080/contributing/contributors/',);
+    cy.url().should('eq', BASE_URL + page.contributors,);
   },);
   it('title matches', () => {
-    cy.visit('http://localhost:8080/contributing/contributors/',);
     cy.title()
       .should('eq', 'Contributors | Contributing | @idrinth/api-bench',);
   },);
   it('h1 matches', () => {
-    cy.visit('http://localhost:8080/contributing/contributors/',);
     cy.get('h1',)
       .invoke('text',)
       .should('eq', 'Contributors',);
   },);
   it('link to self exists', () => {
-    cy.visit('http://localhost:8080/contributing/contributors/',);
     cy.get('header nav a[href="/contributing/contributors/"]',)
       .invoke('text',)
       .should('eq', 'Contributors',);
   },);
   it('breadcrumbs exists', () => {
-    cy.visit('http://localhost:8080/contributing/contributors/',);
     cy.get('nav.breadcrumbs a[href="/"]',)
       .invoke('text',)
       .should('eq', 'Home',);
@@ -33,7 +36,6 @@ describe('contributors', () => {
       .should('eq', 'Contributors',);
   },);
   it('Copy right updated for the current year.', () => {
-    cy.visit('http://localhost:8080/',);
     cy.get('footer span',)
       .invoke('text',)
       .should(

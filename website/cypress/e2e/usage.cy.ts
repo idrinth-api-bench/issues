@@ -1,26 +1,29 @@
+import {
+  BASE_URL,
+  page,
+} from '../fixtures/constants.ts';
+
 describe('usage', () => {
+  beforeEach('Navigate to page', () => {
+    cy.visit(page.usage,);
+  },);
   it('can be visited', () => {
-    cy.visit('http://localhost:8080/usage/',);
-    cy.url().should('eq', 'http://localhost:8080/usage/',);
+    cy.url().should('eq', BASE_URL + page.usage,);
   },);
   it('title matches', () => {
-    cy.visit('http://localhost:8080/usage/',);
     cy.title().should('eq', 'Usage | @idrinth/api-bench',);
   },);
   it('h1 matches', () => {
-    cy.visit('http://localhost:8080/usage/',);
     cy.get('h1',)
       .invoke('text',)
       .should('eq', 'Usage & Examples',);
   },);
   it('link to self exists', () => {
-    cy.visit('http://localhost:8080/usage/',);
     cy.get('header nav a[href="/usage/"]',)
       .invoke('text',)
       .should('eq', 'Usage & Examples',);
   },);
   it('breadcrumbs exists', () => {
-    cy.visit('http://localhost:8080/usage/',);
     cy.get('nav.breadcrumbs a[href="/"]',)
       .invoke('text',)
       .should('eq', 'Home',);
@@ -29,7 +32,6 @@ describe('usage', () => {
       .should('eq', 'Usage & Examples',);
   },);
   it('Copy right updated for the current year.', () => {
-    cy.visit('http://localhost:8080/',);
     cy.get('footer span',)
       .invoke('text',)
       .should(

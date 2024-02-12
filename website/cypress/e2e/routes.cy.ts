@@ -1,26 +1,29 @@
+import {
+  BASE_URL,
+  page,
+} from '../fixtures/constants.ts';
+
 describe('usage/route', () => {
+  beforeEach('Navigate to page', () => {
+    cy.visit(page.routes,);
+  },);
   it('can be visited', () => {
-    cy.visit('http://localhost:8080/usage/route/',);
-    cy.url().should('eq', 'http://localhost:8080/usage/route/',);
+    cy.url().should('eq', BASE_URL + page.routes,);
   },);
   it('title matches', () => {
-    cy.visit('http://localhost:8080/usage/routes/',);
     cy.title().should('eq', 'Routes | Usage | @idrinth/api-bench',);
   },);
   it('h1 matches', () => {
-    cy.visit('http://localhost:8080/usage/routes/',);
     cy.get('h1',)
       .invoke('text',)
       .should('eq', 'Routes',);
   },);
   it('link to self exists', () => {
-    cy.visit('http://localhost:8080/usage/routes/',);
     cy.get('header nav a[href="/usage/routes/"]',)
       .invoke('text',)
       .should('eq', 'Routes',);
   },);
   it('breadcrumbs exists', () => {
-    cy.visit('http://localhost:8080/usage/routes',);
     cy.get('nav.breadcrumbs a[href="/"]',)
       .invoke('text',)
       .should('eq', 'Home',);
@@ -32,7 +35,6 @@ describe('usage/route', () => {
       .should('eq', 'Routes',);
   },);
   it('Copy right updated for the current year.', () => {
-    cy.visit('http://localhost:8080/',);
     cy.get('footer span',)
       .invoke('text',)
       .should(

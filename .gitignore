@@ -1,5 +1,9 @@
 # ROOT
 /node_modules
+./cypress.config.ts
+
+# Cypress
+/cypress/support/commands.ts
 
 # Framework
 /framework/node_modules
@@ -28,12 +32,13 @@
 /website/yarn-error.log*
 /website/pnpm-debug.log*
 /website/lerna-debug.log*
+/website/coverage
 /website/cypress/screenshots
 /website/node_modules
 /website/dist
 /website/dist-ssr
 /website/*.local
-/website/coverage
+/website/cypress/fixures/cypress.env.json
 /website/tsconfig.tsbuildinfo
 /website/src/routes.tsx
 /website/src/contributors.json

@@ -1,26 +1,29 @@
+import {
+  BASE_URL,
+  page,
+} from '../fixtures/constants.ts';
+
 describe('support', () => {
+  beforeEach('Navigate to page', () => {
+    cy.visit(page.support,);
+  },);
   it('can be visited', () => {
-    cy.visit('http://localhost:8080/support/',);
-    cy.url().should('eq', 'http://localhost:8080/support/',);
+    cy.url().should('eq', BASE_URL + page.support,);
   },);
   it('title matches', () => {
-    cy.visit('http://localhost:8080/support/',);
     cy.title().should('eq', 'Support | @idrinth/api-bench',);
   },);
   it('h1 matches', () => {
-    cy.visit('http://localhost:8080/support/',);
     cy.get('h1',)
       .invoke('text',)
       .should('eq', 'Support',);
   },);
   it('link to self exists', () => {
-    cy.visit('http://localhost:8080/support/',);
     cy.get('footer a[href="/support/"]',)
       .invoke('text',)
       .should('eq', 'Support',);
   },);
   it('breadcrumbs exists', () => {
-    cy.visit('http://localhost:8080/support',);
     cy.get('nav.breadcrumbs a[href="/"]',)
       .invoke('text',)
       .should('eq', 'Home',);
@@ -29,7 +32,6 @@ describe('support', () => {
       .should('eq', 'Support',);
   },);
   it('Copy right updated for the current year.', () => {
-    cy.visit('http://localhost:8080/',);
     cy.get('footer span',)
       .invoke('text',)
       .should(
