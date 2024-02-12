@@ -1,5 +1,5 @@
 import {
-  BASE_URL,
+  DEFAULT_URL,
   page,
 } from '../fixtures/constants.ts';
 
@@ -8,7 +8,7 @@ describe('imprint', () => {
     cy.visit(page.imprint,);
   },);
   it('can be visited', () => {
-    cy.url().should('eq', BASE_URL + page.imprint,);
+    cy.url().should('eq', DEFAULT_URL + page.imprint,);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Imprint | @idrinth/api-bench',);

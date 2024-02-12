@@ -1,5 +1,5 @@
 import {
-  BASE_URL,
+  DEFAULT_URL,
   page,
 } from '../fixtures/constants.ts';
 
@@ -8,7 +8,7 @@ describe('404', () => {
     cy.visit(page.notFound,);
   },);
   it('can be visited', () => {
-    cy.url().should('eq', BASE_URL + page.notFound,);
+    cy.url().should('eq', DEFAULT_URL + page.notFound,);
   },);
   it('title matches', () => {
     cy.title().should('eq', '404 NOT FOUND | @idrinth/api-bench',);

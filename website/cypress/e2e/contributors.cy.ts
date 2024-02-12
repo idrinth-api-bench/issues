@@ -1,5 +1,5 @@
 import {
-  BASE_URL,
+  DEFAULT_URL,
   page,
 } from '../fixtures/constants.ts';
 
@@ -8,7 +8,7 @@ describe('contributors', () => {
     cy.visit(page.contributors,);
   },);
   it('can be visited', () => {
-    cy.url().should('eq', BASE_URL + page.contributors,);
+    cy.url().should('eq', DEFAULT_URL + page.contributors,);
   },);
   it('title matches', () => {
     cy.title()

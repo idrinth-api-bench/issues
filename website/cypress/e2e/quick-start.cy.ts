@@ -1,5 +1,5 @@
 import {
-  BASE_URL,
+  DEFAULT_URL,
   page,
 } from '../fixtures/constants.ts';
 
@@ -8,7 +8,7 @@ describe('usage/quick-start', () => {
     cy.visit(page.quickStart,);
   },);
   it('can be visited', () => {
-    cy.url().should('eq', BASE_URL + page.quickStart,);
+    cy.url().should('eq', DEFAULT_URL + page.quickStart,);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Quick Start | @idrinth/api-bench',);

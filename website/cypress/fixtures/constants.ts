@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:8080';
+export const DEFAULT_URL = 'http://localhost:8080';
 export const page = {
   autowiring: '/usage/autowiring/',
   contributing: '/contributing/',
