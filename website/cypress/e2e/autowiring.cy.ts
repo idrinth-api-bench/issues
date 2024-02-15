@@ -46,8 +46,6 @@ describe('usage/autowiring', () => {
     const navigation = [
       page.home,
       page.quickStart,
-      page.npm,
-      page.github,
       page.contributing,
       page.usage,
     ];
