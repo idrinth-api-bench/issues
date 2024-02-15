@@ -3,7 +3,7 @@
 start.sh
 
 # Cypress
-/cypress/support/commands.ts
+# /website/cypress/fixtures/cannedTests.ts
 
 # Framework
 /framework/node_modules
