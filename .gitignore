@@ -1,9 +1,9 @@
 # ROOT
 /node_modules
-start.sh
+./cypress.config.ts
 
 # Cypress
-# /website/cypress/fixtures/cannedTests.ts
+/cypress/support/commands.ts
 
 # Framework
 /framework/node_modules

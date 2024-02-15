@@ -1,5 +1,5 @@
 import {
-  DEFAULT_URL,
+  BASE_URL,
   page,
 } from '../fixtures/constants.ts';
 
@@ -8,7 +8,7 @@ describe('usage/middlewares', () => {
     cy.visit(page.middlewares,);
   },);
   it('can be visited', () => {
-    cy.url().should('eq', DEFAULT_URL + page.middlewares,);
+    cy.url().should('eq', BASE_URL + page.middlewares,);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Middlewares | Usage | @idrinth/api-bench',);

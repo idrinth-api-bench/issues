@@ -1,5 +1,5 @@
 import {
-  DEFAULT_URL,
+  BASE_URL,
   page,
 } from '../fixtures/constants.ts';
 
@@ -8,7 +8,7 @@ describe('contributing', () => {
     cy.visit(page.contributing,);
   },);
   it('can be visited', () => {
-    cy.url().should('eq', DEFAULT_URL + page.contributing,);
+    cy.url().should('eq', BASE_URL + page.contributing,);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Contributing | @idrinth/api-bench',);

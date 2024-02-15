@@ -1,16 +1,14 @@
-export const DEFAULT_URL = 'http://localhost:8080';
+export const BASE_URL = 'http://localhost:8080';
 export const page = {
   autowiring: '/usage/autowiring/',
   contributing: '/contributing/',
   contributors: '/contributing/contributors/',
-  github: 'https://github.com/Idrinth/api-bench',
   home: '/',
   imprint: '/imprint/',
   license: '/license/',
   logging: '/usage/logging/',
   middlewares: '/usage/middlewares/',
   notFound: '/404/',
-  npm: 'https://www.npmjs.com/package/@idrinth/api-bench',
   quickStart: '/quick-start/',
   results: '/usage/results/',
   support: '/support/',

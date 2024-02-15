@@ -1,14 +1,10 @@
-import {
-  DEFAULT_URL,
-  page,
-} from '../fixtures/constants.ts';
-
 describe('usage', () => {
   beforeEach('Navigate to page', () => {
     cy.visit(page.usage,);
   },);
   it('can be visited', () => {
-    cy.url().should('eq', DEFAULT_URL + page.usage,);
+    cy.visit('http://localhost:8080/usage/',);
+    cy.url().should('eq', 'http://localhost:8080/usage/',);
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Usage | @idrinth/api-bench',);

@@ -27,7 +27,9 @@
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "eslint": "^8.55.0",
-    "eslint-plugin-json": "^3.1.0"
+    "eslint-plugin-json": "^3.1.0",
+    "markdownlint-cli": "^0.39.0",
+    "spellchecker-cli": "^6.1.1"
   },
   "engines": {
     "node": ">=20"
