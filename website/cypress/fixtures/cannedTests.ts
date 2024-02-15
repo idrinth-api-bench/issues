@@ -4,3 +4,4 @@ export function navigateToPage(urlStr: string) {
     cy.visit(urlStr)
   },);
 };
+ 
