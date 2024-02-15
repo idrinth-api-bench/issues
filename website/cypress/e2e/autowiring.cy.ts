@@ -42,4 +42,21 @@ describe('usage/autowiring', () => {
         `©2020-${ new Date().getFullYear() } Björn Büttner and contributors.`,
       );
   },);
+  it('Navigation links to valid pages.', () => {
+    const navigation = [
+      page.home,
+      page.quickStart,
+      page.npm,
+      page.github,
+      page.contributing,
+      page.usage,
+    ];
+    let i = 0;
+    cy.get('header > nav > ul > li > a').then(links => {
+      cy.wrap(links).each(link => {
+        cy.wrap(link).invoke('attr', 'href',).should('eql', navigation[i],);
+        i++;
+      })
+    });
+  });
 },);

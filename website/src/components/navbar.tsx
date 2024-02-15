@@ -30,7 +30,7 @@ const Navbar = () => <>
         </li>
         <li>
           <ExternalLink
-            to=" https://www.npmjs.com/package/@idrinth/api-bench"
+            to="https://www.npmjs.com/package/@idrinth/api-bench"
             label={'NPMJS'}
           />
         </li>
