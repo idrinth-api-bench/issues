@@ -22,14 +22,12 @@
   },
   "private": true,
   "devDependencies": {
-    "spellchecker-cli": "^6.2.0",
-    "markdownlint-cli": "^0.39.0",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
     "eslint": "^8.55.0",
     "eslint-plugin-json": "^3.1.0",
     "markdownlint-cli": "^0.39.0",
-    "spellchecker-cli": "^6.1.1"
+    "spellchecker-cli": "^6.2.0"
   },
   "engines": {
     "node": ">=20"
