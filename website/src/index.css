@@ -1,10 +1,10 @@
 :root {
   --white: hsla(0deg 0% 100% / 100%);
-  --light-gray: hsla(204deg 8% 76% / 100%);;
+  --light-gray: hsla(204deg 8% 76% / 100%);
   --dark-gray: hsla(0deg 0% 25% / 100%);
   --dark-green: hsla(132deg 33% 29% / 100%);
   --green: hsla(120deg 77% 36% / 100%);
-  --black: hsla(0deg 0% 0% / 100%); 
+  --black: hsla(0deg 0% 0% / 100%);
   --light-green: hsla(99deg 90% 36% / 100%);
   --very-dark-gray: hsla(0deg 0% 12.94% / 100%);
   --darker: hsla(0deg 0% 0% / 5%);
@@ -141,6 +141,7 @@ nav li {
   width: 100%;
   text-align: center;
   padding: 0.5em 0;
+  font-size: 14px;
 }
 
 footer {
@@ -156,7 +157,7 @@ footer ul {
   justify-content: flex-end;
 }
 
-footer  a {
+footer a {
   text-decoration: none;
 }
 
@@ -266,11 +267,11 @@ footer li:last-child::after {
 }
 
 nav.breadcrumbs li::after {
-  content: ' > ';
+  content: " > ";
 }
 
 nav.breadcrumbs li:last-of-type::after {
-  content: '';
+  content: "";
 }
 
 .profile h2,
@@ -282,14 +283,20 @@ nav.breadcrumbs li:last-of-type::after {
   footer {
     grid-template-columns: 1fr 1fr;
     padding: 1rem 0;
-   }
+  }
 
   footer ul {
     margin-right: 4rem;
   }
 
-  header, footer {
-    background-image: linear-gradient(to bottom, hsla(0deg 0% 100% / 10%), hsla(0deg 0% 100% / 15%), hsla(0deg 0% 100% / 5%));
+  header,
+  footer {
+    background-image: linear-gradient(
+      to bottom,
+      hsla(0deg 0% 100% / 10%),
+      hsla(0deg 0% 100% / 15%),
+      hsla(0deg 0% 100% / 5%)
+    );
   }
 
   header div {
@@ -318,7 +325,7 @@ nav.breadcrumbs li:last-of-type::after {
     width: initial;
   }
 
-  nav ul ul{
+  nav ul ul {
     display: none;
   }
 
@@ -405,7 +412,7 @@ nav.breadcrumbs li:last-of-type::after {
   }
 
   pre {
-    background-color: var(--black)
+    background-color: var(--black);
   }
 
   a[target="_blank"] {
