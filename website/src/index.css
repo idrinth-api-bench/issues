@@ -1,10 +1,14 @@
 :root {
   --white: hsla(0deg 0% 100% / 100%);
-  --light-gray: hsla(0deg 0% 95% / 100%);
+  --light-gray: hsla(204deg 8% 76% / 100%);
   --dark-gray: hsla(0deg 0% 25% / 100%);
   --dark-green: hsla(132deg 33% 29% / 100%);
   --green: hsla(120deg 77% 36% / 100%);
   --black: hsla(0deg 0% 0% / 100%);
+  --light-green: hsla(99deg 90% 36% / 100%);
+  --very-dark-gray: hsla(0deg 0% 12.94% / 100%);
+  --darker: hsla(0deg 0% 0% / 5%);
+  --lighter: hsla(0deg 0% 100% / 5%);
 }
 
 html {
@@ -95,6 +99,13 @@ nav a {
   font-size: 130%;
   color: var(--dark-green);
   text-decoration: none;
+  padding: 5px 10px;
+}
+
+header nav a.active {
+  background-color: var(--dark-green);
+  color: var(--white);
+  border-radius: 10px;
 }
 
 ul {
@@ -102,7 +113,12 @@ ul {
 }
 
 nav {
+  font-size: 130%;
   width: 100%;
+}
+
+nav.breadcrumbs {
+  font-size: 70%;
 }
 
 nav ul {
@@ -125,6 +141,7 @@ nav li {
   width: 100%;
   text-align: center;
   padding: 0.5em 0;
+  font-size: 14px;
 }
 
 footer {
@@ -140,7 +157,7 @@ footer ul {
   justify-content: flex-end;
 }
 
-footer  a {
+footer a {
   text-decoration: none;
 }
 
@@ -171,7 +188,7 @@ header strong {
 
 a[target="_blank"] {
   padding-right: 1em;
-  background-image: url("assets/external-link-svgrepo-com.svg");
+  background-image: url("assets/external-link-svgrepo-com.black.svg");
   background-position: right center;
   background-size: 1em 1em;
   background-repeat: no-repeat;
@@ -182,7 +199,44 @@ a[target="_blank"] {
 }
 
 article {
-  min-height: calc(100vh - 6em - 2rem - 3px);
+  min-height: calc(100vh - 6em - 2rem - 2em - 6px);
+}
+
+#loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--darker);
+}
+
+#loader strong {
+  position: absolute;
+  text-align: center;
+  top: calc(50% - 0.5em);
+  width: 100%;
+}
+
+#loader span {
+  position: absolute;
+  background-size: 100% 100%;
+  top: calc(50% - 0.5em - 5em);
+  width: 5em;
+  height: 5em;
+  left: calc(50% - 2.5em);
+  animation: rotate 1s infinite linear 0s;
+  background-image: url("assets/loading-svgrepo-com.black.svg");
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 footer li::after {
@@ -194,18 +248,55 @@ footer li:last-child::after {
   content: "";
 }
 
+.profile,
+.sponsor {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.sponsor img {
+  place-self: center;
+}
+
+.profile img {
+  border-radius: 50%;
+  max-width: 200px;
+  place-self: center center;
+  justify-self: center;
+  border: 1px solid var(--dark-green);
+}
+
+nav.breadcrumbs li::after {
+  content: " > ";
+}
+
+nav.breadcrumbs li:last-of-type::after {
+  content: "";
+}
+
+.profile h2,
+.sponsor h2 {
+  text-align: left;
+}
+
 @media only screen and (width >= 600px) {
   footer {
     grid-template-columns: 1fr 1fr;
     padding: 1rem 0;
-   }
+  }
 
   footer ul {
     margin-right: 4rem;
   }
 
-  header, footer {
-    background-image: linear-gradient(to bottom, hsla(0deg 0% 100% / 10%), hsla(0deg 0% 100% / 15%), hsla(0deg 0% 100% / 5%));
+  header,
+  footer {
+    background-image: linear-gradient(
+      to bottom,
+      hsla(0deg 0% 100% / 10%),
+      hsla(0deg 0% 100% / 15%),
+      hsla(0deg 0% 100% / 5%)
+    );
   }
 
   header div {
@@ -234,8 +325,17 @@ footer li:last-child::after {
     width: initial;
   }
 
-  nav ul ul{
+  nav ul ul {
     display: none;
+  }
+
+  nav.breadcrumbs ul {
+    gap: 0;
+    padding-left: 2.5em;
+  }
+
+  nav.breadcrumbs li::after {
+    padding: 0 0.5em;
   }
 
   footer span {
@@ -267,8 +367,6 @@ footer li:last-child::after {
     padding: 2em 3em;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    align-items: center;
-    justify-content: center;
   }
 }
 
@@ -280,5 +378,55 @@ footer li:last-child::after {
   header div {
     width: 30%;
     max-width: initial;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  html {
+    background-color: var(--dark-gray);
+    color: var(--light-gray);
+  }
+
+  #loader {
+    background-image: var(--lighter);
+  }
+
+  a,
+  nav a,
+  footer a,
+  footer span {
+    color: var(--light-green);
+  }
+
+  #loader span {
+    background-image: url("assets/loading-svgrepo-com.white.svg");
+  }
+
+  header strong {
+    color: var(--white);
+  }
+
+  header,
+  footer {
+    background-color: var(--very-dark-gray);
+  }
+
+  pre {
+    background-color: var(--black);
+  }
+
+  a[target="_blank"] {
+    background-image: url("assets/external-link-svgrepo-com.white.svg");
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) and (width >= 600px) {
+  nav li:hover ul {
+    background-color: var(--very-dark-gray);
+  }
+
+  header,
+  footer {
+    background-color: var(--black);
   }
 }

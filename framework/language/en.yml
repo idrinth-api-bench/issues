@@ -1,4 +1,4 @@
-no_tasks: Can't measure no tasks.
+no_tasks: Can't measure zero tasks.
 duplicate_task_id: The id %1% is shared.
 invalid_key: The given key %1% is invalid.
 finished_analyzing: Analyzation of %1% finished.
@@ -31,3 +31,6 @@ no_openapi_document_given: You need to provide an Open-Api document path.
 no_xml_content_type: The content-type application/jason is not */xml.
 invalid_xml_body: The XML body is invalid.
 too_slow: The response time was above %1% ns.
+maximum_below_threads: Maximum is lower than the initial thread count.
+increment_below_one: You need to increment your threads each iteration, currently increment is below one.
+maximum_below_one: You can not set the maximum below one.

@@ -12,9 +12,31 @@ The style guidelines are provided via eslint. Please try to optimise code for re
 
 While adding functionality, keep in mind to break existing interfaces, entry points and functionality only if absolutely necessary.
 
+### Contribution workflow
+
+- fork the repository
+- create a feature branch (issue-xxx-does-something) from master
+- create a draft pull request
+- mention fixes #xxx in the description (use the appropriate pull request template)
+- make your changes to the branch
+- check if actions are all green
+- mark as ready to review
+- get changes reviewed
+- if review is positive get changes merged, otherwise fix and send back to review
+
 ### Tests
 
 Testing new code is expected and adding tests or improving tests for old code is appreciated. The goal is to find most issues by either static analysis or unit and integration tests.
+
+#### Manual Tests
+
+For manual testing you can run `npm run coai` in the source folder to automatically check out and install all required files for testing.
+
+```bash
+git clone https://github.com/idrinth/api-bench
+cd api-bench
+npm run coai
+```
 
 ### Naming conventions
 
@@ -35,9 +57,7 @@ Run the following commands to create the full project:
 ```sh
 git clone https://github.com/idrinth/api-bench
 cd api-bench
-npm install
-cd website
-npm install
+npm run setup
 ```
 
 ## Documentation
@@ -46,4 +66,4 @@ Documentation is an underrated part of every software. Adding any kind of clarif
 
 ### Examples
 
-For examples please keep in mind, that we don't want to overload any api. Don't use high load tasks, don't use apis that are not for public use. It is expected that examples will be run and they must not damage anyone, including third parties.
+For examples please keep in mind, that we don't want to overload any API. Don't use high load tasks, don't use APIs that are not for public use. It is expected that examples will be run and they must not damage anyone, including third parties.

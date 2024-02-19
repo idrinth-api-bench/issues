@@ -3,9 +3,17 @@ on:
   push:
     branches:
     - master
+    paths:
+    - '**.css'
+    - '**.json'
+    - '.github/workflows/stylelint.yml'
   pull_request:
     branches:
     - master
+    paths:
+    - '**.css'
+    - '**.json'
+    - '.github/workflows/stylelint.yml'
 env:
   PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
@@ -18,6 +26,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            website/package-lock.json
+            package-lock.json
       - run: cd website && npm ci
       - run: cd website && npm run-script lint-styles
   duplicate-style-check:
@@ -28,5 +41,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            website/package-lock.json
+            package-lock.json
       - run: cd website && npm ci
       - run: cd website && npm run-script lint-css

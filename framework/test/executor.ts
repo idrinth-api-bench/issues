@@ -1,10 +1,8 @@
 import executor from '../src/executor.js';
 import Thread from '../src/worker/thread.js';
 import {
-  use as chaiUse,
   expect,
 } from 'chai';
-import chaiAsPromised from 'chai-as-promised';
 import 'mocha';
 import {
   NullLogger,
@@ -29,7 +27,6 @@ import Counter from '../src/counter.js';
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const NOOP = () => {};
 const NONE = 0;
-chaiUse(chaiAsPromised,);
 
 class FakeResult implements Result, ValidationResult, FinishedSet {
 
@@ -177,7 +174,7 @@ describe('executor', () => {
         '/executor',
         new NoProgress(),
       ),
-    ).to.throw('Can\'t measure no tasks.',);
+    ).to.throw('Can\'t measure zero tasks.',);
   },);
   it('should not try to execute no tasks(0 threads)', () => {
     expect(
@@ -193,7 +190,7 @@ describe('executor', () => {
         '/executor',
         new NoProgress(),
       ),
-    ).to.throw('Can\'t measure no tasks.',);
+    ).to.throw('Can\'t measure zero tasks.',);
   },);
   it('should not try to execute no tasks (0 repeats)', () => {
     expect(
@@ -209,6 +206,6 @@ describe('executor', () => {
         '/executor',
         new NoProgress(),
       ),
-    ).to.throw('Can\'t measure no tasks.',);
+    ).to.throw('Can\'t measure zero tasks.',);
   },);
 },);
