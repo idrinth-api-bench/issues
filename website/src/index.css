@@ -320,6 +320,14 @@ nav.breadcrumbs li:last-of-type::after {
     gap: 1.7em;
   }
 
+  header nav > ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    margin-top: 0.5em;
+  }
+
   nav li {
     border: none;
     width: initial;
@@ -428,15 +436,5 @@ nav.breadcrumbs li:last-of-type::after {
   header,
   footer {
     background-color: var(--black);
-  }
-}
-
-@media screen and (width >= 600px) and (width <= 900px) {
-  nav ul {
-       flex-wrap: wrap;
-       justify-content: center;
-       padding-left: 1.5em;
-       padding-right: 1.5em;
-       margin-top: 0.5em;
   }
 }
