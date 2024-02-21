@@ -289,7 +289,7 @@ nav.breadcrumbs li:last-of-type::after {
     margin-right: 4rem;
   }
 
-  header,
+  header, 
   footer {
     background-image: linear-gradient(
       to bottom,
@@ -431,14 +431,12 @@ nav.breadcrumbs li:last-of-type::after {
   }
 }
 
-
-@media screen and (max-width: 900px) {
-
+@media screen and (width <= 900px) {
   nav ul {
        flex-wrap: wrap;
        justify-content: center;
-       padding-left: 0.5em;
-       padding-right: 0.5em;
+       padding-left: 1.5em;
+       padding-right: 1.5em;
        margin-top: 0.5em;
   }
 
