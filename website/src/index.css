@@ -430,3 +430,13 @@ nav.breadcrumbs li:last-of-type::after {
     background-color: var(--black);
   }
 }
+
+@media screen and (width >= 600px) and (width <= 900px) {
+  nav ul {
+       flex-wrap: wrap;
+       justify-content: center;
+       padding-left: 1.5em;
+       padding-right: 1.5em;
+       margin-top: 0.5em;
+  }
+}
