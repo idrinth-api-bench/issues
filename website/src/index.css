@@ -438,3 +438,22 @@ nav.breadcrumbs li:last-of-type::after {
     background-color: var(--black);
   }
 }
+
+@media screen and (width <= 786px) {
+  footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  footer span {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  footer li:last-child::after {
+    content: none;
+  }
+}
