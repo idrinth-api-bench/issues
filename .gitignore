@@ -23,6 +23,9 @@
 /examples/**/result.html
 /examples/**/node_modules
 
+# history microserver
+/history-microservice/node_modules
+
 # Website
 /website/logs
 /website/*.log
