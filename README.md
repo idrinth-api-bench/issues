@@ -17,6 +17,10 @@ This is the repository for the API test framework, it's documentation website an
 
 You can find the documentation on the [Documentation Website](https://idrinth-api-ben.ch).
 
+## Roadmap
+
+Help me decide what to focus on: [Survey](https://de.surveymonkey.com/r/QXPYCCR)
+
 ## Setup
 
 To get your project ready for development you need to run the following commands in order:
