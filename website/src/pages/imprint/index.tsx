@@ -45,7 +45,8 @@ const Index = () => <Layout Outlet={<>
     </div>
     <p>
         We can accept no liability for links to third party sites. At the point
-        of creation we checked that they didn&apos;t break laws, but permanent
+        of creation we checked that they didn&apos;t 
+        break laws, but permanent
         checking is not possible. In case one of those external links breaks
         laws, we will remove them as soon as we are notified of that.
     </p>
