@@ -5,7 +5,6 @@ import {
 } from './lang.tsx';
 import PropTypes from 'prop-types';
 
-
 const Loader = ({
   lnkey,
 },) => <Layout

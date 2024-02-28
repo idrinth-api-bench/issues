@@ -5,7 +5,6 @@ import React from 'react';
 import Breadcrumbs from './breadcrumbs.tsx';
 import PropTypes from 'prop-types';
 
-
 const Layout = ({
   Outlet,
   page = '',

@@ -5,7 +5,6 @@ import {
 } from 'react-i18next';
 import PropTypes from 'prop-types';
 
-
 const DefaultMeta = ({
   page,
   path,
@@ -23,7 +22,6 @@ const DefaultMeta = ({
     <Head.Link rel='canonical' href={'https://idrinth-api-ben.ch' + path}/>
   </Head>;
 };
-
 
 DefaultMeta.propTypes = {
   path: PropTypes.string.isRequired,
