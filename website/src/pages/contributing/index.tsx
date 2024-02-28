@@ -128,7 +128,8 @@ npm run coai
         want to overload any api. Don&apos;t
         use high load tasks,
         don&apos;t
-        use apis that are not for public use. It is expected that examples will be run and they must not damage
+        use apis that are not for public use. It is expected that
+        examples will be run and they must not damage
         anyone, including third parties.
       </p>
     </div>
@@ -136,4 +137,5 @@ npm run coai
   page='contributing'
   path='/contributing'
 />;
+
 export default Index;
