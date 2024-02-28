@@ -8,7 +8,7 @@ import {
 import {
   ONE,
 } from '../constants.ts';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 const build = (
   index: number,
