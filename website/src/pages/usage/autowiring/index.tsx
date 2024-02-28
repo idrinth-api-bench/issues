@@ -13,9 +13,9 @@ const AutoWiring = () => <Layout
           value to get the type from or a comment like /* boolean */ parameter
           added in front of the parameter.
         <br /> Comment types will always win over default value types. If those
-          two don&apos;t 
+          two don&apos;t
           match, you might get weird results. Sadly, a few things
-          can&apos;t 
+          can&apos;t
           be done.
       </p>
     </div>
@@ -23,11 +23,11 @@ const AutoWiring = () => <Layout
       <h2>Limitations</h2>
       <ul>
         <li>
-            Do not use constants for their default values, they can&apos;t 
+            Do not use constants for their default values, they can&apos;t
             be properly analyzed and will throw an Error.
         </li>
         <li>
-            Do not use arrays or objects as default values, they can&apos;t 
+            Do not use arrays or objects as default values, they can&apos;t
             be autowired.
         </li>
         <li>Destructuring is not supported</li>
