@@ -124,8 +124,8 @@ npm run coai
     <div className='card'>
       <h3>Examples</h3>
       <p>
-        For examples please keep in mind, that we don't want to overload any
-        api. Don't use high load tasks, don't use apis that are not for public
+        For examples please keep in mind, that we don&apos;t want to overload any
+        api. Don&apos;t use high load tasks, don&apos;t use apis that are not for public
         use. It is expected that examples will be run and they must not damage
         anyone, including third parties.
       </p>
