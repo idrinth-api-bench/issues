@@ -15,6 +15,8 @@ module.exports = {
   ],
   plugins: ["react-refresh", "react" ], // added react
   rules: {
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
     "react-refresh/only-export-components": [
       "warn",
       { allowConstantExport: true },
