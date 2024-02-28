@@ -34,8 +34,8 @@ const build = (
 };
 
 const Breadcrumbs = ({
-  path,
-},) => {
+  path
+}) => {
   if (path === '*') {
     return '';
   }
