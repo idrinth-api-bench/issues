@@ -20,6 +20,6 @@ export const Lang = ({
 };
 
 Lang.propTypes = {
-  linky: PropTypes.string.isRequired,
+  lnkey: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired,
 };
