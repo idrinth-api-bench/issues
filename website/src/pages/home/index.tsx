@@ -55,6 +55,24 @@ const Index = () => <Layout
           gathering.
       </p>
     </div>
+    <div className='card'>
+      <h2>Frequently Asked Questions</h2>
+      <p>What is benchmarking</p>
+      <p>Benchmarcking is the proces by which the performance of software is assesd for optimization.</p>
+      <p>What is load testing</p>
+      <p>Load testing identifies system behavior under stress conditions and determines
+        if the system meets performance standards.
+      </p>
+      <p>How long does it take to write a test?</p>
+      <p>The amount of time needed to write a test is 2-3 min.
+        For new commers the average time is 15 minutes.
+      </p>
+      <p>How long does it take to setup?</p>
+      <p>By following the steps using the
+        <a href='https://idrinth-api-ben.ch/quick-start/'>Quick Start</a> link,
+        it will only take a few minutes!
+      </p>
+    </div>
   </>}
   page='home'
 />;
