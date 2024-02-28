@@ -14,7 +14,7 @@ const Usage = () => <Layout
       <ul>
         <li>
           <strong>iabr</strong> (or <strong>run-benchmark</strong>)
-          runs the current working directory's project
+          runs the current working directory&apos;s project
           if the routes folder is properly setup
           <ul>
             <li>Argument 1: threads (default 1)</li>

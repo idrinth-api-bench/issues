@@ -3,6 +3,7 @@ import Navbar from './navbar.tsx';
 import Footer from './footer.tsx';
 import React from 'react';
 import Breadcrumbs from './breadcrumbs.tsx';
+import PropTypes from 'prop-types';
 
 const Layout = ({
   Outlet,
@@ -22,6 +23,13 @@ const Layout = ({
     </article>
     <Footer/>
   </>;
+};
+
+Layout.propTypes = {
+  Outlet: PropTypes.element.isRequired,
+  page: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
+  canonical: PropTypes.string.isRequired,
 };
 
 export default Layout;
