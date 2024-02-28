@@ -13,7 +13,7 @@ module.exports = {
     'node_modules',
     'src/routes.tsx',
   ],
-  plugins: ["react-refresh", "react" ], // added react
+  plugins: ["react" ], // added react
   rules: {
     "react-refresh/only-export-components": [
       "warn",
