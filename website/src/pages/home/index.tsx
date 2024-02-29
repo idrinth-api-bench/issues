@@ -70,10 +70,10 @@ const Index = () => <Layout
         For beginners it is about 15 miunutes.
       </p>
       <p>How long does it take to setup?</p>
-      <p>By following the
-        {' '},
-      <NavLink to='/quick-start'>Quick Start</NavLink> link,
-          it only takes a few minutes!
+      <p>
+        By following the {' '},
+        <NavLink to='/quick-start'>Quick Start</NavLink>
+        link,it only takes a few minutes!
       </p>
     </div>
   </>}
