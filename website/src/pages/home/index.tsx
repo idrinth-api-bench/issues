@@ -4,7 +4,9 @@ import {
 } from '../../components/lang.tsx';
 import Layout from '../../components/layout.tsx';
 import ExternalLink from '../../components/external-link.tsx';
-import { NavLink } from 'react-router-dom';
+import {
+  NavLink,
+} from 'react-router-dom';
 
 const Index = () => <Layout
   Outlet={<>
