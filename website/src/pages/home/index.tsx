@@ -4,6 +4,9 @@ import {
 } from '../../components/lang.tsx';
 import Layout from '../../components/layout.tsx';
 import ExternalLink from '../../components/external-link.tsx';
+import {
+  NavLink,
+} from 'react-router-dom';
 
 const Index = () => <Layout
   Outlet={<>
@@ -53,6 +56,27 @@ const Index = () => <Layout
           thread processing the actual requests to further minimize the effect
           of complicated validations or huge response bodies on the data
           gathering.
+      </p>
+    </div>
+    <div className='card'>
+      <h2>Frequently Asked Questions????</h2>
+      <p>What is benchmarking?</p>
+      <p>Benchmarking is the proccess of measuring software performance
+        against established best practices.
+      </p>
+      <p>What is load testing?</p>
+      <p>Performance testing evaluates system behavior under peak
+        or anticipated load conditions.
+      </p>
+      <p>How long does it take to write a test?</p>
+      <p>The average time to write a test is 2-3 minutes.
+        For beginners it is about 15 miunutes.
+      </p>
+      <p>How long does it take to setup?</p>
+      <p>
+        By following the {' '},
+        <NavLink to='/quick-start'>Quick Start</NavLink>
+        link,it only takes a few minutes!
       </p>
     </div>
   </>}
