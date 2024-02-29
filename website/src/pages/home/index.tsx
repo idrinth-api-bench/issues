@@ -71,9 +71,9 @@ const Index = () => <Layout
       </p>
       <p>How long does it take to setup?</p>
       <p>By following the
-        {' '}
+        {' '},
       <NavLink to='/quick-start'>Quick Start</NavLink> link,
-      it only takes a few minutes!
+          it only takes a few minutes!
       </p>
     </div>
   </>}
