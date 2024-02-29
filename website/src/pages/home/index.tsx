@@ -4,6 +4,7 @@ import {
 } from '../../components/lang.tsx';
 import Layout from '../../components/layout.tsx';
 import ExternalLink from '../../components/external-link.tsx';
+import { NavLink } from 'react-router-dom';
 
 const Index = () => <Layout
   Outlet={<>
@@ -69,8 +70,9 @@ const Index = () => <Layout
         For beginners it is about 15 miunutes.
       </p>
       <p>How long does it take to setup?</p>
-      <p>By following the <a href='https://idrinth-api-ben.ch/quick-start/'>
-        Quick Start</a>link, it only takes a few minutes!
+      <p>By following the{' '}
+      <NavLink to='/quick-start'>Quick Start</NavLink> link,
+        it only takes a few minutes!
       </p>
     </div>
   </>}
