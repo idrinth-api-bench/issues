@@ -2,10 +2,8 @@ import mock from 'mock-fs';
 import executor from '../src/executor';
 import Thread from '../src/worker/thread';
 import {
-  use as chaiUse,
   expect,
 } from 'chai';
-import chaiAsPromised from 'chai-as-promised';
 import 'mocha';
 import {
   NullLogger,
@@ -32,7 +30,6 @@ import NoProgress from '../src/progress/no-progress';
 import Counter from '../src/counter';
 
 const NONE = 0;
-chaiUse(chaiAsPromised,);
 
 class FakeResult implements Result, ValidationResult, FinishedSet {
 

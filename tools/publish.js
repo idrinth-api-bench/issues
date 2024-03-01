@@ -8,6 +8,7 @@ import {
 import {
   EXIT_FAILURE,
   EXIT_SUCCESS,
+  INDENTATION,
 } from './src/constants.js';
 
 const rl = readline.createInterface({
@@ -38,7 +39,7 @@ rl.question(
       writeFileSync(
         process.cwd() + file,
         // eslint-disable-next-line no-undefined
-        JSON.stringify(data, undefined, 2,),
+        JSON.stringify(data, undefined, INDENTATION,),
       );
     }
     exec(

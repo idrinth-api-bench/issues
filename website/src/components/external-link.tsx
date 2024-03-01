@@ -5,7 +5,7 @@ const externalLink = ({
 },) => <a
   href={to}
   target='_blank'
-  rel='noopener'
+  rel='noreferrer'
 >{label || to.replace(/^https?:\/\//ui, '',)}</a>;
 
 export default externalLink;

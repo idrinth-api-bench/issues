@@ -30,17 +30,17 @@ describe('validateTasks', () => {
   const none = 0;
   it('it should throw if none executlable is given (0 threads)', () => {
     expect(() => validateTasks(repetitions, none, tasks,),).to.throw(
-      'Can\'t measure no tasks.',
+      'Can\'t measure zero tasks.',
     );
   },);
   it('it should throw if none executlable is given (0 repetitions)', () => {
     expect(() => validateTasks(none, threads, tasks,),).to.throw(
-      'Can\'t measure no tasks.',
+      'Can\'t measure zero tasks.',
     );
   },);
   it('it should throw if none executlable is given (0 tasks)', () => {
     expect(() => validateTasks(repetitions, threads, [],),).to.throw(
-      'Can\'t measure no tasks.',
+      'Can\'t measure zero tasks.',
     );
   },);
   it('it should throw if task ids are duplicated', () => {

@@ -1,28 +1,39 @@
+import {
+  BASE_URL,
+  page,
+} from '../fixtures/constants.ts';
+
 describe('home', () => {
+  beforeEach('Navigate to page', () => {
+    cy.visit(page.home,);
+  },);
   it('can be visited', () => {
-    cy.visit('http://localhost:8080/',);
-    cy.url().should('eq', 'http://localhost:8080/',);
+    cy.url().should('eq', BASE_URL + page.home,);
   },);
   it('title matches', () => {
-    cy.visit('http://localhost:8080/',);
     cy.title().should('eq', 'Home | @idrinth/api-bench',);
   },);
   it('h1 matches', () => {
-    cy.visit('http://localhost:8080/',);
     cy.get('h1',)
       .invoke('text',)
       .should('eq', 'What does this project do?',);
   },);
   it('link to self exists', () => {
-    cy.visit('http://localhost:8080/',);
     cy.get('header nav a[href="/"]',)
       .invoke('text',)
       .should('eq', 'Home',);
   },);
   it('breadcrumbs exists', () => {
-    cy.visit('http://localhost:8080/',);
     cy.get('nav.breadcrumbs li:last-of-type',)
       .invoke('text',)
       .should('eq', 'Home',);
+  },);
+  it('Copy right updated for the current year.', () => {
+    cy.get('footer span',)
+      .invoke('text',)
+      .should(
+        'eq',
+        `©2020-${ new Date().getFullYear() } Björn Büttner and contributors.`,
+      );
   },);
 },);

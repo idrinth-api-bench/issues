@@ -5,6 +5,7 @@ module.exports = {
   },
   extends: [
     "plugin:react-hooks/recommended",
+    "plugin:react/recommended", // new line
   ],
   ignorePatterns: [
     'dist',
@@ -12,7 +13,7 @@ module.exports = {
     'node_modules',
     'src/routes.tsx',
   ],
-  plugins: ["react-refresh"],
+  plugins: ["react-refresh", "react" ], // added react
   rules: {
     "react-refresh/only-export-components": [
       "warn",

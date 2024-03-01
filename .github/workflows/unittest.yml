@@ -29,7 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4.0.1
+        uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.PREVIOUS_NODE_VERSION }}
           cache: 'npm'
@@ -47,13 +47,12 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           flag-name: run ${{ env.PREVIOUS_NODE_VERSION }}
-          fail-on-error: false
   framework-current:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
-        uses: actions/setup-node@v4.0.1
+        uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
           cache: 'npm'
@@ -71,13 +70,12 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           flag-name: run ${{ env.CURRENT_NODE_VERSION }}
-          fail-on-error: false
-  framework-integration-lts:
+  framework-integration-previous:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ env.PREVIOUS_NODE_VERSION }}
-        uses: actions/setup-node@v4.0.1
+        uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.PREVIOUS_NODE_VERSION }}
           cache: 'npm'
@@ -95,13 +93,12 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           flag-name: integration ${{ env.PREVIOUS_NODE_VERSION }}
-          fail-on-error: false
   framework-integration-current:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
-        uses: actions/setup-node@v4.0.1
+        uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
           cache: 'npm'
@@ -119,13 +116,12 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           flag-name: integration ${{ env.CURRENT_NODE_VERSION }}
-          fail-on-error: false
   website:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
-        uses: actions/setup-node@v4.0.1
+        uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
           cache: 'npm'
@@ -143,13 +139,12 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           flag-name: run website
-          fail-on-error: false
   e2e:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
-        uses: actions/setup-node@v4.0.1
+        uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
           cache: 'npm'
@@ -167,7 +162,6 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           flag-name: run e2e
-          fail-on-error: false
   end:
     runs-on: ubuntu-latest
     needs:
@@ -183,4 +177,3 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         parallel-finished: true
-        fail-on-error: false

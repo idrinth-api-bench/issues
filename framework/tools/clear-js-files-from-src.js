@@ -10,7 +10,7 @@ const clearFolder = (folder,) => {
   for (const file of readdirSync(folder, {
     recursive: true,
   },)) {
-    if (file.match(/.*\.js/u,)) {
+    if (file.endsWith('.js',)) {
       rmSync(`${ folder }/${ file }`,);
     }
   }

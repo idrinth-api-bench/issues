@@ -4,6 +4,9 @@ import {
 } from '../../components/lang.tsx';
 import Layout from '../../components/layout.tsx';
 import ExternalLink from '../../components/external-link.tsx';
+import {
+  NavLink,
+} from 'react-router-dom';
 
 const Index = () => <Layout
   Outlet={<>
@@ -21,8 +24,8 @@ const Index = () => <Layout
       <h2>Why use a Benchmark Runner?</h2>
       <p>
           Given that the amount of APIs increase by moving to microservices, we
-          need a way to determine if changes to a service's response times are
-          related to code changes. <br />
+          need a way to determine if changes to a service&apos;s
+          response times are related to code changes. <br />
           For this purpose a defined load with repeatable request seems the most
           useful.
       </p>
@@ -44,14 +47,44 @@ const Index = () => <Layout
           to='https://github.com/jeffbski/bench-rest'
           label='jeffbski/bench-rest'
         />{' '}
-          are all untouched for quite a while and don't provide type definitions
-          for typescript. This makes them less desirable when working with
-          projects where the better static code check is a huge boost in
-          development speed.<br />
+          are all untouched for quite a while and don&apos;t
+          provide type definitions for typescript.
+          This makes them less desirable when working with
+          projects where the better static code check is a huge
+          boost in development speed.<br />
           Additionally, this tool separates the validation thread from the
           thread processing the actual requests to further minimize the effect
           of complicated validations or huge response bodies on the data
           gathering.
+      </p>
+    </div>
+    <div className='card'>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div className='card'>
+      <h3>What is benchmarking?</h3>
+      <p>Benchmarking is the proccess of measuring software performance
+        against established best practices.
+      </p>
+    </div>
+    <div className='card'>
+      <h3>What is load testing?</h3>
+      <p>Load testing evaluates system behavior under peak
+        or anticipated load conditions.
+      </p>
+    </div>
+    <div className='card'>
+      <h3>How long does it take to write a test?</h3>
+      <p>The average time to write a test is 2-3 minutes.
+        For beginners it is about 15 miunutes.
+      </p>
+    </div>
+    <div className='card'>
+      <h3>How long does it take to setup?</h3>
+      <p>
+        By following the {' '},
+        <NavLink to='/quick-start'>Quick Start</NavLink>,
+        it only takes a few minutes!
       </p>
     </div>
   </>}
