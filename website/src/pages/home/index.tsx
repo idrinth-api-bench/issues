@@ -59,24 +59,32 @@ const Index = () => <Layout
       </p>
     </div>
     <div className='card'>
-      <h2>Frequently Asked Questions????</h2>
-      <p>What is benchmarking?</p>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div className='card'>
+      <h3>What is benchmarking?</h3>
       <p>Benchmarking is the proccess of measuring software performance
         against established best practices.
       </p>
-      <p>What is load testing?</p>
-      <p>Performance testing evaluates system behavior under peak
+    </div>
+    <div className='card'>
+      <h3>What is load testing?</h3>
+      <p>Load testing evaluates system behavior under peak
         or anticipated load conditions.
       </p>
-      <p>How long does it take to write a test?</p>
+    </div>
+    <div className='card'>
+      <h3>How long does it take to write a test?</h3>
       <p>The average time to write a test is 2-3 minutes.
         For beginners it is about 15 miunutes.
       </p>
-      <p>How long does it take to setup?</p>
+    </div>
+    <div className='card'>
+      <h3>How long does it take to setup?</h3>
       <p>
         By following the {' '},
-        <NavLink to='/quick-start'>Quick Start</NavLink>
-        link,it only takes a few minutes!
+        <NavLink to='/quick-start'>Quick Start</NavLink>,
+        it only takes a few minutes!
       </p>
     </div>
   </>}
