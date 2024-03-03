@@ -10,19 +10,19 @@ export interface Contributor {
 const ncContributors: Contributor[] = [
   {
     id: 0,
-    name: "Person 1",
-    url: "www.github.com",
+    name: 'Person 1',
+    url: 'www.github.com',
     contributions: 0,
-    location: "unkown",
-    intro: "Please add Intro",
+    location: 'unkown',
+    intro: 'Please add Intro',
   },
   {
     id: 1,
-    name: "Person 2",
-    url: "www.github.com",
+    name: 'Person 2',
+    url: 'www.github.com',
     contributions: 0,
-    location: "unkown",
-    intro: "Please add Intro",
+    location: 'unkown',
+    intro: 'Please add Intro',
   },
 ];
 
