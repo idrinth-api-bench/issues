@@ -7,15 +7,7 @@ import {
   Lang,
 } from '../../../components/lang.tsx';
 import ExternalLink from '../../../components/external-link.tsx';
-import ncContributors from '../contributors/ncContributors.js';
-
-interface ncContributors {
-  name: string;
-  url: string;
-  contributions: string;
-  location: string;
-  intro: string;
-}
+import ncContributors from '../contributors/ncContributors';
 
 const Index = () => {
   // Convert contributors object into array
@@ -48,17 +40,17 @@ const Index = () => {
 
 
   // Create NCC element
-  const ncc: React.JSX.Element[] = ncContributors.map((contributor) => <div
+  const ncc: React.JSX.Element[] = ncContributors.map((item) => <div
     className={'card profile'}
-    key={contributor.username}>
-    <img src={contributor.avatar} alt={contributor.name} />
+    key={item.id}>
+    <img src={'#'} alt={item.name} />
     <div>
       <h2>
-        <ExternalLink to={contributor.url} label={contributor.name} />
+        <ExternalLink to={item.url} label={item.name} />
       </h2>
-      <p>{contributor.bio}</p>
-      <p>Location: {contributor.location}</p>
-      <p>{contributor.contributions} contributions to master</p>
+      <p>{item.intro}</p>
+      <p>Location: {item.location}</p>
+      <p>{item.contributions} contributions to master</p>
     </div>
   </div>
   ,);
