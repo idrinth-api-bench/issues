@@ -34,8 +34,7 @@ const Index = () => {
       <p>Location: {contributor.location}</p>
       <p>{contributor.contributions} contributions to master</p>
     </div>
-  </div>
-        ,);
+  </div>,);
 
   // Create NCC element
   const ncc: React.JSX.Element[] = ncContributors.map((item,) => <div
@@ -50,8 +49,7 @@ const Index = () => {
       <p>Location: {item.location}</p>
       <p>{item.contributions} contributions to master</p>
     </div>
-  </div>
-        ,);
+  </div>,);
 
   return <Layout
     Outlet={<section>
