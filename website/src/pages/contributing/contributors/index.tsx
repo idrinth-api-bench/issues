@@ -45,8 +45,10 @@ const Index = () => {
   </div>
   ,);
 
-    // Create NCC element
-    const ncc: React.JSX.Element[] = ncContributors.map((contributor) => <div
+
+
+  // Create NCC element
+  const ncc: React.JSX.Element[] = ncContributors.map((contributor) => <div
     className={'card profile'}
     key={contributor.username}>
     <img src={contributor.avatar} alt={contributor.name} />
@@ -59,7 +61,7 @@ const Index = () => {
       <p>{contributor.contributions} contributions to master</p>
     </div>
   </div>
-    ,);
+  ,);
 
   return <Layout
     Outlet={<section>
