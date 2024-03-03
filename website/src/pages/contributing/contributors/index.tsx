@@ -37,10 +37,8 @@ const Index = () => {
   </div>
   ,);
 
-
-
   // Create NCC element
-  const ncc: React.JSX.Element[] = ncContributors.map((item) => <div
+  const ncc: React.JSX.Element[] = ncContributors.map((item,) => <div
     className={'card profile'}
     key={item.id}>
     <img src={'#'} alt={item.name} />
