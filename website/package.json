@@ -31,7 +31,7 @@
     "language": "node tools/generate-language.js"
   },
   "dependencies": {
-    "@fontsource/roboto": "^5.0.8",
+    "@fontsource/roboto": "^5.0.12",
     "@types/html-minifier": "^4.0.5",
     "@uiw/react-head": "^1.0.4",
     "html-minifier": "^4.0.0",
