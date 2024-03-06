@@ -29,7 +29,7 @@ const Middlewares = () => <Layout
         <li>cookies</li>
         <li>json-validator</li>
         <li>xml-validator</li>
-        <li>xml-validator</li>
+        <li>silent-server-validator</li>
       </ul>
     </div>
     <div className='card'>

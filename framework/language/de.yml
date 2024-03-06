@@ -34,3 +34,5 @@ too_slow: Die Antwortzeit lag oberhalb von %1% ns.
 maximum_below_threads: Das Maximum ist geringer als die Startzahl der Threads.
 increment_below_one: Jeder Durchlauf muss die Threadzahl verändern. Aktuell ist die Änderung unter eins.
 maximum_below_one: Das Maximum kann nicht kleiner als eins sein.
+server_header_is_set: Der header Server ist gesetzt. Für eine erhöhte Sicherheit sollte dieser entfernt werden.
+powered_by_is_set: Der header X-Powered-By ist gesetzt. Dieser teilt kritische Informationen über die Infrastruktur mit der Welt.
