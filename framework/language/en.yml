@@ -34,3 +34,5 @@ too_slow: The response time was above %1% ns.
 maximum_below_threads: Maximum is lower than the initial thread count.
 increment_below_one: You need to increment your threads each iteration, currently increment is below one.
 maximum_below_one: You can not set the maximum below one.
+server_header_is_set: The header Server is set. Remove this for improved security.
+powered_by_is_set: The header X-Powered-By is set. It shares critical information with the world.
