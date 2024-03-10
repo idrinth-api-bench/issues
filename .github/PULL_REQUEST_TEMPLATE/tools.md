@@ -10,7 +10,9 @@
 
 ## Review points
 
-<!-- List the points you would like to be reviewed in detail and the points you are not confident about. -->
+<!-- List the points to be reviewed in detail 
+and the points you are not confident about. -->
+
 <!-- Delete this section if not needed -->
 
 ## Tools
