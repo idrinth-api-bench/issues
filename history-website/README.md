@@ -1,4 +1,4 @@
-# @idrinth/api-bench/history
+# @idrinth/api-bench/history/ui
 
 ## Description
 
