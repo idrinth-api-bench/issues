@@ -6,4 +6,5 @@ Choose a template by going into `Preview` and then clicking on the link. It will
 - [Tools](?quick_pull=1&template=tools.md) changes to anything in the tools directory or external tools
 - [Translations](?quick_pull=1&template=translations.md) changes to the translation files
 - [Website](?quick_pull=1&template=website.md) changes to the website
+- [History-UI](?quick_pull=1&template=history-ui.md) changes to the history-ui
 - [Full](?quick_pull=1&template=full.md) changes to multiple categories

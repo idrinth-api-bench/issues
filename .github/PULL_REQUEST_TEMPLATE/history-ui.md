@@ -15,11 +15,10 @@ and the points you are not confident about. -->
 
 <!-- Delete this section if not needed -->
 
-## Website
+## History-UI
 
 - [ ] mobile view is usable
 - [ ] desktop view is usable
-- [ ] no a-tags are used directly (NavLink, MailLink, ExternalLink instead)
 - [ ] all new texts are added to the translation files (at least the english one)
 - [ ] tests have been added (if required)
 - [ ] shared code has been extracted in a different file
