@@ -87,6 +87,6 @@ jobs:
             history-ui/package-lock.json
             package-lock.json
       - run: npm ci
-      - run: cd history-ui && npm ci
-      - run: cd history-ui && npm run-script lint
+      - run: cd history-website && npm ci
+      - run: cd history-website && npm run-script lint
 
