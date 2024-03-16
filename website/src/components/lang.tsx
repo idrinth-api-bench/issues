@@ -6,18 +6,13 @@ import {
 
 interface LangProps {
   lnkey: string;
-  children?: string;
 }
 
 export const Lang = ({
   lnkey,
-  ...props
 }: LangProps,) => {
   const {
     t,
   } = useTranslation();
-  if (! props.children) {
-    props.children = lnkey;
-  }
-  return <Trans t={t} i18nKey={lnkey}>{props.children}</Trans>;
+  return <Trans t={t} i18nKey={lnkey}>{lnkey}</Trans>;
 };
