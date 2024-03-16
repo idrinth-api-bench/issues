@@ -8,7 +8,10 @@ import {
 import {
   ONE,
 } from '../constants.ts';
-import PropTypes from 'prop-types';
+
+interface BreadcrumbsProps {
+  path: string
+}
 
 const build = (
   index: number,
@@ -36,7 +39,7 @@ const build = (
 
 const Breadcrumbs = ({
   path,
-},) => {
+}: BreadcrumbsProps,) => {
   if (path === '*') {
     return '';
   }
@@ -50,10 +53,6 @@ const Breadcrumbs = ({
       { nav }
     </ul>
   </nav>;
-};
-
-Breadcrumbs.propTypes = {
-  path: PropTypes.string.isRequired,
 };
 
 export default Breadcrumbs;
