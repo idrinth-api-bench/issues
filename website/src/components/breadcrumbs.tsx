@@ -20,7 +20,7 @@ const build = (
 ) => {
   const name = parts[index] === '' ? 'home' : parts[index];
   if (index === parts.length - ONE) {
-    nav.push(<li>
+    nav.push(<li key={name}>
       <Lang lnkey={name + '.nav'}/>
     </li>,);
     return;
@@ -30,7 +30,7 @@ const build = (
     url += '/' + parts[i];
   }
   url += '/';
-  nav.push(<li>
+  nav.push(<li key={name}>
     <NavLink to={url}>
       <Lang lnkey={name + '.nav'}/>
     </NavLink>
