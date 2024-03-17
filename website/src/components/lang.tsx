@@ -3,22 +3,16 @@ import {
   Trans,
   useTranslation,
 } from 'react-i18next';
-import PropTypes from 'prop-types';
+
+interface LangProps {
+  lnkey: string;
+}
 
 export const Lang = ({
   lnkey,
-  ...props
-},) => {
+}: LangProps,) => {
   const {
     t,
   } = useTranslation();
-  if (! props.children) {
-    props.children = lnkey;
-  }
-  return <Trans t={t} i18nKey={lnkey}>{props.children}</Trans>;
-};
-
-Lang.propTypes = {
-  lnkey: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired,
+  return <Trans t={t} i18nKey={lnkey}>{lnkey}</Trans>;
 };
