@@ -19,12 +19,12 @@ const Navbar = () => {
     const localStorageValue = window.localStorage.getItem("dark-mode");
     if (!localStorageValue) {
       const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      window.localStorage.setItem("dark-mode", JSON.stringify(darkMode))
-      return darkMode
+      window.localStorage.setItem("dark-mode", JSON.stringify(darkMode));
+      return darkMode;
     } else {
       return JSON.parse(localStorageValue);
     }
-  }
+  };
 
   const [isDarkMode, setIsDarkMode] = useState<boolean>(setInitialDarkMode());
 
@@ -141,5 +141,5 @@ const Navbar = () => {
       </button>
     </header>
   </>;
-}
+};
 export default Navbar;
