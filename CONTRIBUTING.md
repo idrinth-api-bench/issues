@@ -1,12 +1,17 @@
 # Contributing
 
-Any and all contributions are encouraged.
+Any and all contributions are encouraged. As a contributor, here are the guidelines we would like you to follow:
 
-## Issues
+- [Issues](#issues)
+- [Code](#code)
+- [Commit Message Guidelines](#commits)
+- [Documentation](#docs)
+
+## <a name="issues"></a>Issues
 
 Any idea and bug report is considered a contribution. Not only do they help improving the code base, they help other people to get more use out of this framework. Please try to stick to the format of predefined issue types to make it easier to filter and handle for anyone interested in the topic.
 
-## Code
+## <a name="code"></a>Code
 
 The style guidelines are provided via eslint. Please try to optimise code for readability, since code will be read way more often than it will be changed.
 
@@ -60,7 +65,112 @@ cd api-bench
 npm run setup
 ```
 
-## Documentation
+## <a name="commits"></a> Commit Message Guidelines
+
+**This specification is inspired by Angular commit messages guidelines.*
+
+These are the rules for how Git commit messages for api-bench should be formatted.
+This format leads to easier to read commit history.
+
+Each commit message consists of a **header**, a **body**, and a **footer**.
+
+```md
+<header>
+<BLANK LINE>
+<body>
+<BLANK LINE>
+<footer>
+```
+
+The `header` is mandatory and should conform to the [Commit Message Header](#commit-header) format.
+
+The `body` is mandatory for all commits except for those of type "docs" or in cases when it's clear from the header summary.  
+They should conform to the [Commit Message Body](#commit-body) format.
+
+The `footer` is optional. The [Commit Message Footer](#commit-footer) format describes what the footer is used for and the structure it must have.
+
+### <a name="commit-header"></a>Commit Message Header
+
+Headers must adhere to the following format:
+```md
+<type>(<scope>): <short summary>
+
+Example:
+build(website): bump follow-redirects from 1.15.4 to 1.15.6
+```
+
+#### Type
+
+The list of supported types:
+
+* `build`: Changes that affect the build system or external dependencies
+* `ci`: Changes to CI configuration files and scripts
+* `docs`: Documentation changes
+* `feature`: A new feature
+* `fix`: A bug fix
+* `perf`: A code change that improves performance
+* `refactor`: A code change that neither fixes a bug nor adds a feature
+* `test`: Adding missing tests or correcting existing tests
+
+#### Scope
+The scope should be the name of the affected part of the project. The list of supported scopes:
+
+- `framework`
+- `website`
+- `history-microservice`
+- `history-website`
+
+#### Summary
+
+The summary field should provide a succinct description of the change. 
+- use the imperative, present tense
+- don't capitalize the first letter
+- no dot (.) at the end
+
+```
+Bad:
+Fixes a bug.
+
+Good:
+fix a bug
+```
+
+### <a name="commit-body"></a>Commit Message Body
+
+Just as in the summary, use the imperative, present tense.
+
+The commit message body should explain _why_ you are making the change. You can include a comparison of the previous behavior with the new behavior in order to illustrate the impact of the change.
+
+### <a name="commit-footer"></a>Commit Message Footer
+
+The footer can contain information about breaking changes and deprecations and is also the place to reference GitHub issues and other PRs that this commit closes or is related to. In case of breaking changes and deprecations the section should start with the phrase "BREAKING CHANGE: " or "DEPRECATED: " respectively followed by a description. For example:
+
+```
+BREAKING CHANGE: users must now provide a valid JWT token to access protected routes.
+
+Closes #123
+```
+
+Here's a complete example of a correct commit message:
+
+```
+fix(framework): resolve issue with string injection from env
+
+Fix a bug where given a function route definition that has a string-typed or untyped parameter, the value would never be injected from the environment.
+
+Closes #294
+```
+
+### Revert commits
+
+If the commit reverts a previous commit, it should begin with `revert: `, followed by the header of the reverted commit.
+
+The content of the commit message body should contain:
+
+- information about the SHA of the commit being reverted in the following format: `This reverts commit <SHA>`,
+- a clear description of the reason for reverting the commit message.
+
+## <a name="docs"></a>Documentation
 
 Documentation is an underrated part of every software. Adding any kind of clarification, example or improvement is highly appreciated and encouraged. The ones writing the documentation are the unsung heroes of open and closed source software.
 
