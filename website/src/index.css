@@ -389,52 +389,52 @@ nav.breadcrumbs li:last-of-type::after {
   }
 }
 
-@media screen and (prefers-color-scheme: dark) {
-  html {
+@media screen {
+  html.dark-mode {
     background-color: var(--dark-gray);
     color: var(--light-gray);
   }
 
-  #loader {
+  .dark-mode #loader {
     background-image: var(--lighter);
   }
 
-  a,
-  nav a,
-  footer a,
-  footer span {
+  .dark-mode a,
+  .dark-mode nav a,
+  .dark-mode footer a,
+  .dark-mode footer span {
     color: var(--light-green);
   }
 
-  #loader span {
+  .dark-mode #loader span {
     background-image: url("assets/loading-svgrepo-com.white.svg");
   }
 
-  header strong {
+  .dark-mode header strong {
     color: var(--white);
   }
 
-  header,
-  footer {
+  .dark-mode header,
+  .dark-mode footer {
     background-color: var(--very-dark-gray);
   }
 
-  pre {
+  .dark-mode pre {
     background-color: var(--black);
   }
 
-  a[target="_blank"] {
+  .dark-mode a[target="_blank"] {
     background-image: url("assets/external-link-svgrepo-com.white.svg");
   }
 }
 
-@media screen and (prefers-color-scheme: dark) and (width >= 600px) {
-  nav li:hover ul {
+@media screen and (width >= 600px) {
+  .dark-mode nav li:hover ul {
     background-color: var(--very-dark-gray);
   }
 
-  header,
-  footer {
+  .dark-mode header,
+  .dark-mode footer {
     background-color: var(--black);
   }
 }
