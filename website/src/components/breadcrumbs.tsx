@@ -8,7 +8,10 @@ import {
 import {
   ONE,
 } from '../constants.ts';
-import PropTypes from 'prop-types';
+
+interface BreadcrumbsProps {
+  path: string
+}
 
 const build = (
   index: number,
@@ -17,7 +20,7 @@ const build = (
 ) => {
   const name = parts[index] === '' ? 'home' : parts[index];
   if (index === parts.length - ONE) {
-    nav.push(<li>
+    nav.push(<li key={name}>
       <Lang lnkey={name + '.nav'}/>
     </li>,);
     return;
@@ -27,7 +30,7 @@ const build = (
     url += '/' + parts[i];
   }
   url += '/';
-  nav.push(<li>
+  nav.push(<li key={name}>
     <NavLink to={url}>
       <Lang lnkey={name + '.nav'}/>
     </NavLink>
@@ -36,7 +39,7 @@ const build = (
 
 const Breadcrumbs = ({
   path,
-},) => {
+}: BreadcrumbsProps,) => {
   if (path === '*') {
     return '';
   }
@@ -50,10 +53,6 @@ const Breadcrumbs = ({
       { nav }
     </ul>
   </nav>;
-};
-
-Breadcrumbs.propTypes = {
-  path: PropTypes.string.isRequired,
 };
 
 export default Breadcrumbs;
