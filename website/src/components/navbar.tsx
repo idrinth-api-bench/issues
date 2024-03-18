@@ -15,34 +15,34 @@ import ExternalLink from './external-link.tsx';
 
 
 const Navbar = () => {
-  const setInitialDarkMode = (): any => {
-    let localStorageValue = localStorage.getItem("dark-mode");
+  const setInitialDarkMode = (): boolean => {
+    const localStorageValue = window.localStorage.getItem("dark-mode");
     if (!localStorageValue) {
-      let darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-      localStorage.setItem("dark-mode", JSON.stringify(darkMode))
+      const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      window.localStorage.setItem("dark-mode", JSON.stringify(darkMode))
       return darkMode
     } else {
-      return JSON.parse(localStorageValue)
+      return JSON.parse(localStorageValue);
     }
   }
 
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(setInitialDarkMode())
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(setInitialDarkMode());
 
   const DarkLightIcon = () => {
     if (isDarkMode) {
       return <img src={darkModeIcon} className="dark-mode-icon" alt="light-dark mode toggle" />;
     }
-    return <img src={lightModeIcon} className="dark-mode-icon" alt="light-dark mode toggle" />;;
-  }
+    return <img src={lightModeIcon} className="dark-mode-icon" alt="light-dark mode toggle" />;
+  };
 
   const toggleLightDarkMode = () => {
-    localStorage.setItem('dark-mode', JSON.stringify(!isDarkMode));
-    setIsDarkMode(!isDarkMode)
-  }
+    window.localStorage.setItem('dark-mode', JSON.stringify(!isDarkMode));
+    setIsDarkMode(!isDarkMode);
+  };
 
   useEffect(() => {
-    document.getElementsByTagName('html')[0].classList.add(isDarkMode ? "dark-mode" : "light-mode")
-    document.getElementsByTagName('html')[0].classList.remove(!isDarkMode ? "dark-mode" : "light-mode")
+    document.getElementsByTagName('html')[0].classList.add(isDarkMode ? "dark-mode" : "light-mode");
+    document.getElementsByTagName('html')[0].classList.remove(!isDarkMode ? "dark-mode" : "light-mode");
   }, [isDarkMode]);
 
   return <>
