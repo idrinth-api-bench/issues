@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import IAB from '../assets/iab.svg';
+import darkModeIcon from '../assets/dark-mode-icon.svg';
+import lightModeIcon from '../assets/light-mode-icon.svg';
 import {
   NavLink,
 } from 'react-router-dom';
@@ -25,6 +27,13 @@ const Navbar = () => {
   }
 
   const [isDarkMode, setIsDarkMode] = useState<boolean>(setInitialDarkMode())
+
+  const DarkLightIcon = () => {
+    if (isDarkMode) {
+      return <img src={darkModeIcon} className="dark-mode-icon" alt="light-dark mode toggle" />;
+    }
+    return <img src={lightModeIcon} className="dark-mode-icon" alt="light-dark mode toggle" />;;
+  }
 
   const toggleLightDarkMode = () => {
     localStorage.setItem('dark-mode', JSON.stringify(!isDarkMode));
@@ -126,8 +135,10 @@ const Navbar = () => {
             </ul>
           </li>
         </ul>
-        <button onClick={toggleLightDarkMode}>light/dark</button>
       </nav>
+      <button onClick={toggleLightDarkMode}>
+        <DarkLightIcon />
+      </button>
     </header>
   </>;
 }

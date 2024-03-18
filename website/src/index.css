@@ -363,6 +363,10 @@ nav.breadcrumbs li:last-of-type::after {
     box-shadow: 1em 1em 1.5em var(--dark-gray);
   }
 
+  header button {
+    padding-right: 1em;
+  }
+
   .title-card {
     display: flex;
     flex-direction: column;
@@ -425,6 +429,16 @@ nav.breadcrumbs li:last-of-type::after {
 
   .dark-mode a[target="_blank"] {
     background-image: url("assets/external-link-svgrepo-com.white.svg");
+  }
+
+  header button {
+    display: flex;
+    justify-content: center;
+  }
+
+  .dark-mode-icon {
+    padding: 0;
+    width: 70%;
   }
 }
 
