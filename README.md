@@ -21,10 +21,6 @@ You can find the documentation on the [Documentation Website](https://idrinth-ap
 
 [Join](https://join.slack.com/t/idrinth-api-bench/shared_invite/zt-2f4zmw2sz-c3etHzCFq3LtZpkR15xXMA) our slack if you need help, want to connect or have questions.
 
-## Roadmap
-
-Help me decide what to focus on: [Survey](https://de.surveymonkey.com/r/QXPYCCR)
-
 ## Setup
 
 To get your project ready for development you need to run the following commands in order:
