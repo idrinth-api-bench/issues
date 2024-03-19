@@ -107,6 +107,7 @@ build(website): bump follow-redirects from 1.15.4 to 1.15.6
 #### Type
 
 The list of supported types:
+
 - `build`: Changes that affect the build system or external dependencies
 - `ci`: Changes to CI configuration files and scripts
 - `docs`: Documentation changes
