@@ -92,6 +92,7 @@ The `footer` is optional. The [Commit Message Footer](#commit-footer) format des
 ### <a name="commit-header"></a>Commit Message Header
 
 Headers must adhere to the following format:
+
 ```md
 <type>(<scope>): <short summary>
 
@@ -103,16 +104,17 @@ build(website): bump follow-redirects from 1.15.4 to 1.15.6
 
 The list of supported types:
 
-* `build`: Changes that affect the build system or external dependencies
-* `ci`: Changes to CI configuration files and scripts
-* `docs`: Documentation changes
-* `feature`: A new feature
-* `fix`: A bug fix
-* `perf`: A code change that improves performance
-* `refactor`: A code change that neither fixes a bug nor adds a feature
-* `test`: Adding missing tests or correcting existing tests
+- `build`: Changes that affect the build system or external dependencies
+- `ci`: Changes to CI configuration files and scripts
+- `docs`: Documentation changes
+- `feature`: A new feature
+- `fix`: A bug fix
+- `perf`: A code change that improves performance
+- `refactor`: A code change that neither fixes a bug nor adds a feature
+- `test`: Adding missing tests or correcting existing tests
 
 #### Scope
+
 The scope should be the name of the affected part of the project. The list of supported scopes:
 
 - `framework`
@@ -122,16 +124,17 @@ The scope should be the name of the affected part of the project. The list of su
 
 #### Summary
 
-The summary field should provide a succinct description of the change. 
+The summary field should provide a succinct description of the change.
+
 - use the imperative, present tense
-- don't capitalize the first letter
+- don't capitalise the first letter
 - no dot (.) at the end
 
-```
-Bad:
+```js
+// Bad:
 Fixes a bug.
 
-Good:
+// Good:
 fix a bug
 ```
 
@@ -139,13 +142,13 @@ fix a bug
 
 Just as in the summary, use the imperative, present tense.
 
-The commit message body should explain _why_ you are making the change. You can include a comparison of the previous behavior with the new behavior in order to illustrate the impact of the change.
+The commit message body should explain *why* you are making the change. You can include a comparison of the previous behaviour with the new behaviour in order to illustrate the impact of the change.
 
 ### <a name="commit-footer"></a>Commit Message Footer
 
-The footer can contain information about breaking changes and deprecations and is also the place to reference GitHub issues and other PRs that this commit closes or is related to. In case of breaking changes and deprecations the section should start with the phrase "BREAKING CHANGE: " or "DEPRECATED: " respectively followed by a description. For example:
+The footer can contain information about breaking changes and deprecation and is also the place to reference GitHub issues and other PR's that this commit closes or is related to. In case of breaking changes and deprecation the section should start with the phrase "BREAKING CHANGE: " or "DEPRECATED: " respectively followed by a description. For example:
 
-```
+```md
 BREAKING CHANGE: users must now provide a valid JWT token to access protected routes.
 
 Closes #123
@@ -153,7 +156,7 @@ Closes #123
 
 Here's a complete example of a correct commit message:
 
-```
+```md
 fix(framework): resolve issue with string injection from env
 
 Fix a bug where given a function route definition that has a string-typed or untyped parameter, the value would never be injected from the environment.
@@ -163,11 +166,11 @@ Closes #294
 
 ### Revert commits
 
-If the commit reverts a previous commit, it should begin with `revert: `, followed by the header of the reverted commit.
+If the commit reverts a previous commit, it should begin with `revert:`, followed by the header of the reverted commit.
 
 The content of the commit message body should contain:
 
-- information about the SHA of the commit being reverted in the following format: `This reverts commit <SHA>`,
+- ID of the commit being reverted in the following format: `This reverts commit <SHA>`,
 - a clear description of the reason for reverting the commit message.
 
 ## <a name="docs"></a>Documentation
