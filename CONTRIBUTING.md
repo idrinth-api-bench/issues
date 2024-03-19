@@ -83,11 +83,11 @@ Each commit message consists of a **header**, a **body**, and a **footer**.
 <footer>
 ```
 
-The `header` is mandatory and should conform to the 
+The `header` is mandatory and should conform to the
 [Commit Message Header](#commit-message-header) format.
 
 The `body` is mandatory for all commits except for those of type "docs"
-or in cases when it's clear from the header summary. They should conform 
+or in cases when it's clear from the header summary. They should conform
 to the [Commit Message Body](#commit-message-body) format.
 
 The `footer` is optional. The [Commit Message Footer](#commit-message-footer)
