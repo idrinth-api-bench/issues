@@ -3,7 +3,7 @@ import {
   expect,
 } from 'chai';
 
-describe('components/footer', () => {
+describe('components/breadcrumbs', () => {
   it('should be a function', () => {
     expect(Breadcrumbs,).to.be.a('function',);
   },);
