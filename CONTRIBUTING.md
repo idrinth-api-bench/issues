@@ -4,14 +4,14 @@ Any and all contributions are encouraged. As a contributor, here are the guideli
 
 - [Issues](#issues)
 - [Code](#code)
-- [Commit Message Guidelines](#commits)
-- [Documentation](#docs)
+- [Commit Message Guidelines](#commit-message-guidelines)
+- [Documentation](#documentation)
 
-## <a name="issues"></a>Issues
+## Issues
 
 Any idea and bug report is considered a contribution. Not only do they help improving the code base, they help other people to get more use out of this framework. Please try to stick to the format of predefined issue types to make it easier to filter and handle for anyone interested in the topic.
 
-## <a name="code"></a>Code
+## Code
 
 The style guidelines are provided via eslint. Please try to optimise code for readability, since code will be read way more often than it will be changed.
 
@@ -65,7 +65,7 @@ cd api-bench
 npm run setup
 ```
 
-## <a name="commits"></a> Commit Message Guidelines
+## Commit Message Guidelines
 
 **This specification is inspired by Angular commit messages guidelines.*
 
@@ -82,14 +82,14 @@ Each commit message consists of a **header**, a **body**, and a **footer**.
 <footer>
 ```
 
-The `header` is mandatory and should conform to the [Commit Message Header](#commit-header) format.
+The `header` is mandatory and should conform to the [Commit Message Header](#commit-message-header) format.
 
 The `body` is mandatory for all commits except for those of type "docs" or in cases when it's clear from the header summary.  
-They should conform to the [Commit Message Body](#commit-body) format.
+They should conform to the [Commit Message Body](#commit-message-body) format.
 
-The `footer` is optional. The [Commit Message Footer](#commit-footer) format describes what the footer is used for and the structure it must have.
+The `footer` is optional. The [Commit Message Footer](#commit-message-footer) format describes what the footer is used for and the structure it must have.
 
-### <a name="commit-header"></a>Commit Message Header
+### Commit Message Header
 
 Headers must adhere to the following format:
 
@@ -138,13 +138,13 @@ Fixes a bug.
 fix a bug
 ```
 
-### <a name="commit-body"></a>Commit Message Body
+### Commit Message Body
 
 Just as in the summary, use the imperative, present tense.
 
 The commit message body should explain *why* you are making the change. You can include a comparison of the previous behaviour with the new behaviour in order to illustrate the impact of the change.
 
-### <a name="commit-footer"></a>Commit Message Footer
+### Commit Message Footer
 
 The footer can contain information about breaking changes and deprecation and is also the place to reference GitHub issues and other PR's that this commit closes or is related to. In case of breaking changes and deprecation the section should start with the phrase "BREAKING CHANGE: " or "DEPRECATED: " respectively followed by a description. For example:
 
@@ -173,7 +173,7 @@ The content of the commit message body should contain:
 - ID of the commit being reverted in the following format: `This reverts commit <SHA>`,
 - a clear description of the reason for reverting the commit message.
 
-## <a name="docs"></a>Documentation
+## Documentation
 
 Documentation is an underrated part of every software. Adding any kind of clarification, example or improvement is highly appreciated and encouraged. The ones writing the documentation are the unsung heroes of open and closed source software.
 
