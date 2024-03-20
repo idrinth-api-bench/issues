@@ -125,13 +125,13 @@ npm run coai
         <p>Each commit message consists of a <strong>header</strong>,
           a <strong>body</strong>, and a <strong>footer</strong>.
         </p>
-        <code className="code-block">
-          <p>&lt;header&gt;</p>
-          <p>&#47;&#47; BLANK LINE</p>
-          <p>&lt;body&gt;</p>
-          <p>&#47;&#47; BLANK LINE</p>
-          <p>&lt;footer&gt;</p>
-        </code>
+        <SyntaxHighlighter language='markdown'>{`
+<header>
+<BLANK LINE>
+<body>
+<BLANK LINE>
+<footer>
+        `}</SyntaxHighlighter>
         <p>The <span className="mono-text">header</span> is mandatory and
           should conform to the Commit Message Header format.
         </p>
@@ -149,12 +149,12 @@ npm run coai
 
         <h3>Commit Message Header</h3>
         <p>Headers must adhere to the following format:</p>
-        <code className="code-block">
-          <p>&lt;type&gt;(&lt;scope&gt;): &lt;short summary&gt;</p>
-          <br />
-          <p>Example:</p>
-          build(website): bump follow-redirects from 1.15.4 to 1.15.6
-        </code>
+        <SyntaxHighlighter language='bash'>{`
+<type>(<scope>): <short summary>
+
+Example:
+build(website): bump follow-redirects from 1.15.4 to 1.15.6
+        `}</SyntaxHighlighter>
         <h4>Type</h4>
         <p>The list of supported types:</p>
         <ul className="card-list">
@@ -205,13 +205,13 @@ npm run coai
           <li>don&apos;t capitalize the first letter</li>
           <li>no dot (.) at the end</li>
         </ul>
-        <code className="code-block">
-          <p>&#47;&#47; Bad:</p>
-          <p>Fixes a bug.</p>
-          <br />
-          <p>&#47;&#47; Good:</p>
-          <p>fix a bug</p>
-        </code>
+        <SyntaxHighlighter language='markdown'>{`
+// Bad:
+Fixes unit tests failing.
+
+// Good:
+fix unit tests failing
+        `}</SyntaxHighlighter>
 
         <h3>Commit Message Body</h3>
         <p>Just as in the summary, use the imperative, present tense.</p>
@@ -233,24 +233,21 @@ npm run coai
           &quot;DEPRECATED: &quot; respectively followed by a description.
           For example:
         </p>
-        <code className="code-block">
-          <p>BREAKING CHANGE: users must now provide a valid JWT token to
-            access protected routes.</p>
-          <br />
-          Closes #123
-        </code>
+        <SyntaxHighlighter language='markdown'>{`
+BREAKING CHANGE: users must now provide a valid JWT token to access
+protected routes.
+
+Closes #123
+        `}</SyntaxHighlighter>
         <p>Here&apos;s a complete example of a correct commit message:</p>
-        <code className="code-block">
-          <p>fix(framework): resolve issue with string injection from env</p>
-          <br />
-          <p>
-            Fix a bug where given a function route definition that has a
-            string-typed or untyped parameter, the value would never be
-            injected from the environment.
-          </p>
-          <br />
-          Closes #294
-        </code>
+        <SyntaxHighlighter language='markdown'>{`
+fix(framework): resolve issue with string injection from env
+
+Fix a bug where given a function route definition that has a string-typed
+or untyped parameter, the value would never be injected from the environment.
+
+Closes #294
+        `}</SyntaxHighlighter>
 
         <h3>Revert commits</h3>
         <p>If the commit reverts a previous commit, it should begin with

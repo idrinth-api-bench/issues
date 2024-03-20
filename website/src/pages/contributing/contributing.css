@@ -7,20 +7,6 @@ html {
   font-style: italic;
 }
 
-.code-block {
-  font-family: monospace;
-  background-color: var(--code-bg);
-  color: var(--code-text);
-  display: block;
-  padding: 1.5rem;
-  border-radius: 4px;
-
-}
-
-.code-block p {
-  padding: 0;
-}
-
 .mono-text {
   font-family: monospace;
   background-color: var(--code-bg);

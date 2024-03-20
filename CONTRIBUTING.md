@@ -135,7 +135,7 @@ The summary field should provide a succinct description of the change.
 - don't capitalise the first letter
 - no dot (.) at the end
 
-```js
+```md
 // Bad:
 Fixes unit tests failing.
 
