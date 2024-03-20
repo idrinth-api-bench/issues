@@ -1,6 +1,6 @@
 :root {
   --white: hsla(0deg 0% 100% / 100%);
-  --light-gray: hsla(204deg 8% 76% / 100%);
+  --light-gray: rgb(70, 149, 202);
   --dark-gray: hsla(0deg 0% 25% / 100%);
   --dark-green: hsla(132deg 33% 29% / 100%);
   --green: hsla(120deg 77% 36% / 100%);
