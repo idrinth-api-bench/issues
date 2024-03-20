@@ -251,7 +251,7 @@ Closes #294
 
         <h3>Revert commits</h3>
         <p>If the commit reverts a previous commit, it should begin with
-          <span className="mono-text">revert: </span>, followed by the header
+          <span className="mono-text">revert:</span>, followed by the header
           of the reverted commit.
         </p>
         <p>The content of the commit message body should contain:</p>
