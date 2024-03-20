@@ -35,4 +35,4 @@ As usual with my projects this is MIT-licensed.
 
 ## Support
 
-Additionally, to support requests via issue, you can reach me via discord at [Idrinth's Discord](https://discord.gg/xHSF8CGPTh). Commercial support and training is provided via [Björn Büttner](https://bjoern-buettner.me).
+Additionally, to support requests via issue, you can reach me via discord at [Idrinth's Discord](https://discord.gg/xHSF8CGPTh) or [Slack](https://join.slack.com/t/idrinth-api-bench/shared_invite/zt-2f4zmw2sz-c3etHzCFq3LtZpkR15xXMA). Commercial support and training is provided via [Björn Büttner](https://bjoern-buettner.me).
