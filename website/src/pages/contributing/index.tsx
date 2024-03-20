@@ -1,6 +1,12 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import Layout from '../../components/layout.tsx';
+import engine from  '../../../../package.json' with {
+  type: 'json'
+};
+
+// website/src/pages/contributing/index.tsx
+// website/package.json
 
 const Index = () => <Layout
   Outlet={<section>
@@ -93,6 +99,8 @@ npm run coai
       <ul>
         <li>
           One of the last two node versions
+          {engine.engines.node}
+
         </li>
         <li>
           OS: Linux / Windows <i>(Other OS were not tested)</i>
