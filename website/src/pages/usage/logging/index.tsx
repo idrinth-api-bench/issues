@@ -1,9 +1,9 @@
 import React from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
 import {
   Lang,
 } from '../../../components/lang.tsx';
 import Layout from '../../../components/layout.tsx';
+import Code from '../../../components/Code.tsx';
 
 const Logging = () => <Layout
   Outlet={<>
@@ -27,7 +27,7 @@ const Logging = () => <Layout
           You can implement the logger interface below and provide any logger
           you want to next to the already provided ones.
         </p>
-        <SyntaxHighlighter language='typescript'>
+        <Code language='typescript'>
           {`interface Logger {
   trace(msg: string, data: Record<string, unknown>): void;
   trace(msg: string): void;
@@ -42,7 +42,7 @@ const Logging = () => <Layout
   fatal(msg: string, data: Record<string, unknown>): void;
   fatal(msg: string): void;
 }`}
-        </SyntaxHighlighter>
+        </Code>
         <p>
           <Lang lnkey={'logging.custom.final'}/>
         </p>

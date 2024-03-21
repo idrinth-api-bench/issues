@@ -1,9 +1,9 @@
 import React from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
 import {
   Lang,
 } from '../../../components/lang.tsx';
 import Layout from '../../../components/layout.tsx';
+import Code from '../../../components/Code.tsx';
 
 const Storage = () => <Layout
   Outlet={<>
@@ -19,12 +19,12 @@ const Storage = () => <Layout
         <p>
           <Lang lnkey='storage.custom.description'/>
         </p>
-        <SyntaxHighlighter language='typescript'>
+        <Code language='typescript'>
           {`interface Storage
 {
   store(data: FinishedSet, now: Date): void;
 }`}
-        </SyntaxHighlighter>
+        </Code>
       </div>
     </div>
   </>}
