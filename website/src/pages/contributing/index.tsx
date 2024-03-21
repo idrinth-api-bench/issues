@@ -1,7 +1,7 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import Layout from '../../components/layout.tsx';
-import engine from  '../../../../package.json' with {
+import engine from '../../../../package.json' with {
   type: 'json'
 };
 import './contributing.css';
