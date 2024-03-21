@@ -1,0 +1,24 @@
+.hljs {
+  background: #dbdbdb;
+  padding: 0.5em;
+}
+
+.dark-mode .hljs {
+   background: #242424;
+}
+
+.hljs .hljs-keyword {
+  color: orange;
+}
+
+.hljs .hljs-built_in {
+  color: darkorange;
+}
+
+.hljs .hljs-string {
+  color: green;
+}
+
+.hljs .hljs-attr {
+  color: blue;
+}

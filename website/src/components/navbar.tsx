@@ -10,8 +10,11 @@ import {
   Lang,
 } from './lang.tsx';
 import ExternalLink from './external-link.tsx';
+import DarkModeButton from './dark-mode-button.tsx';
 
-const Navbar = () => <>
+const Navbar = ({
+  window,
+}: {window: Window},) => <>
   <header>
     <div>
       <img src={IAB} alt="@idrinth/api-bench" />
@@ -102,6 +105,7 @@ const Navbar = () => <>
         </li>
       </ul>
     </nav>
+    <DarkModeButton window={window} />
   </header>
 </>;
 export default Navbar;

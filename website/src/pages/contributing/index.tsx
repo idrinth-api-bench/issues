@@ -1,6 +1,10 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import Layout from '../../components/layout.tsx';
+import engine from '../../../../package.json' with {
+  type: 'json'
+};
+import './contributing.css';
 
 const Index = () => <Layout
   Outlet={<section>
@@ -93,6 +97,7 @@ npm run coai
       <ul>
         <li>
           One of the last two node versions
+          {engine.engines.node}
         </li>
         <li>
           OS: Linux / Windows <i>(Other OS were not tested)</i>
@@ -110,6 +115,159 @@ npm run coai
   cd api-bench
   npm run setup
         `}</SyntaxHighlighter>
+      </div>
+    </div>
+    <div className="card">
+      <h2>Commit Message Guidelines</h2>
+      <div>
+        <p className="preface">*This specification is inspired by Angular commit
+          messages guidelines.
+        </p>
+        <p>These are the rules for how Git commit messages for api-bench should
+          be formatted. This format leads to easier to read commit history.
+        </p>
+        <p>Each commit message consists of a <strong>header</strong>,
+          a <strong>body</strong>, and a <strong>footer</strong>.
+        </p>
+        <SyntaxHighlighter language='markdown'>{`
+<header>
+<BLANK LINE>
+<body>
+<BLANK LINE>
+<footer>
+        `}</SyntaxHighlighter>
+        <p>The <span className="mono-text">header</span> is mandatory and
+          should conform to the Commit Message Header format.
+        </p>
+        <p>
+          The <span className="mono-text">body</span> is mandatory for
+          all commits except for those of type &quot;docs&quot; or in cases when
+          it&apos;s clear from the header summary. They should conform to the
+          Commit Message Body format.
+        </p>
+        <p>
+          The <span className="mono-text">footer</span> is optional.
+          The Commit Message Footer format describes what the footer is used
+          for and the structure it must have.
+        </p>
+
+        <h3>Commit Message Header</h3>
+        <p>Headers must adhere to the following format:</p>
+        <SyntaxHighlighter language='bash'>{`
+<type>(<scope>): <short summary>
+
+Example:
+build(website): bump follow-redirects from 1.15.4 to 1.15.6
+        `}</SyntaxHighlighter>
+        <h4>Type</h4>
+        <p>The list of supported types:</p>
+        <ul className="card-list">
+          <li>
+            <span className="mono-text">build</span>: Changes that affect
+            the build system or external dependencies
+          </li>
+          <li>
+            <span className="mono-text">ci</span>: Changes to CI configuration
+            files and scripts
+          </li>
+          <li>
+            <span className="mono-text">docs</span>: Documentation changes
+          </li>
+          <li>
+            <span className="mono-text">feature</span>: A new feature
+          </li>
+          <li>
+            <span className="mono-text">fix</span>: A bug fix
+          </li>
+          <li>
+            <span className="mono-text">perf</span>: A code change that
+            improves performance
+          </li>
+          <li>
+            <span className="mono-text">refactor</span>: A code change
+            that neither fixes a bug nor adds a feature
+          </li>
+          <li>
+            <span className="mono-text">test</span>: Adding missing tests
+            or correcting existing tests
+          </li>
+        </ul>
+        <h4>Scope</h4>
+        <p>The scope should be the name of the affected part of the project.
+          The list of supported scopes:</p>
+        <ul className="card-list">
+          <li><span className="mono-text">framework</span></li>
+          <li><span className="mono-text">website</span></li>
+          <li><span className="mono-text">history-microservice</span></li>
+          <li><span className="mono-text">history-website</span></li>
+        </ul>
+        <h4>Summary</h4>
+        <p>The summary field should provide a succinct description of
+          the change.</p>
+        <ul className="card-list">
+          <li>use the imperative, present tense</li>
+          <li>don&apos;t capitalize the first letter</li>
+          <li>no dot (.) at the end</li>
+        </ul>
+        <SyntaxHighlighter language='markdown'>{`
+// Bad:
+Fixes unit tests failing.
+
+// Good:
+fix unit tests failing
+        `}</SyntaxHighlighter>
+
+        <h3>Commit Message Body</h3>
+        <p>Just as in the summary, use the imperative, present tense.</p>
+        <p>The commit message body should explain why you are making
+          the change. You can include a comparison of the previous behavior
+          with the new behavior in order to illustrate the impact of the change.
+        </p>
+
+        <h3>Commit Message Footer</h3>
+        <p>
+          The footer can contain information about breaking changes and
+          deprecations and is also the place to reference GitHub issues and
+          other PRs that this commit closes or is related to.
+        </p>
+        <p>
+          In case of
+          breaking changes and deprecations the section should start with
+          the phrase &quot;BREAKING CHANGE: &quot; or
+          &quot;DEPRECATED: &quot; respectively followed by a description.
+          For example:
+        </p>
+        <SyntaxHighlighter language='markdown'>{`
+BREAKING CHANGE: users must now provide a valid JWT token to access
+protected routes.
+
+Closes #123
+        `}</SyntaxHighlighter>
+        <p>Here&apos;s a complete example of a correct commit message:</p>
+        <SyntaxHighlighter language='markdown'>{`
+fix(framework): resolve issue with string injection from env
+
+Fix a bug where given a function route definition that has a string-typed
+or untyped parameter, the value would never be injected from the environment.
+
+Closes #294
+        `}</SyntaxHighlighter>
+
+        <h3>Revert commits</h3>
+        <p>If the commit reverts a previous commit, it should begin with
+          <span className="mono-text">revert:</span>, followed by the header
+          of the reverted commit.
+        </p>
+        <p>The content of the commit message body should contain:</p>
+        <ul className="card-list">
+          <li>information about the SHA of the commit being reverted in
+            the following format: <span className="mono-text">This
+            reverts commit &lt;SHA&gt;</span>
+          </li>
+          <li>
+            a clear description of the reason for reverting the commit message.
+          </li>
+        </ul>
       </div>
     </div>
     <div className='card'>

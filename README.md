@@ -17,9 +17,9 @@ This is the repository for the API test framework, it's documentation website an
 
 You can find the documentation on the [Documentation Website](https://idrinth-api-ben.ch).
 
-## Roadmap
+## Slack
 
-Help me decide what to focus on: [Survey](https://de.surveymonkey.com/r/QXPYCCR)
+[Join](https://join.slack.com/t/idrinth-api-bench/shared_invite/zt-2f4zmw2sz-c3etHzCFq3LtZpkR15xXMA) our slack if you need help, want to connect or have questions.
 
 ## Setup
 
