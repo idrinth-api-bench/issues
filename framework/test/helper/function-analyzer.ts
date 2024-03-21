@@ -67,6 +67,21 @@ describe('helper/function-analyzer', () => {
       type: 'string',
     }, ],);
   },);
+    it("should return an array of params when handling one untyped param", () => {
+      process.env.MY_STRING_OTHER = 'abc';
+      // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars
+      const ret = analyze((myStringOther) => { });
+      expect(ret).to.be.an("array");
+      expect(ret).to.deep.equal([
+        {
+          value: "abc",
+          default: "",
+          envName: "MY_STRING_OTHER",
+          name: "myStringOther",
+          type: "string",
+        },
+      ]);
+    });
   it('should return an array of params when handling two params', () => {
     // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars, no-magic-numbers
     const ret = analyze((myNumber = 11, /*Boolean*/myString = '',) => {},);

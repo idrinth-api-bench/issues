@@ -96,6 +96,7 @@ const parseParameterString = (parameter: string,): Param => {
     case 'string':
     default:
       if (value.default === '') {
+        value.value = getEnv(value.envName, value.default);
         break;
       }
       if (value.default[FIRST] !== '"' && value.default[FIRST] !== '\'') {
@@ -106,7 +107,7 @@ const parseParameterString = (parameter: string,): Param => {
           STRING_LIMITER_REMOVAL_START,
           value.default.length-STRING_LIMITER_REMOVAL_LENGTH,
         );
-      value.value = getEnv(value.envName, value.default,);
+      value.value = getEnv(value.envName, value.default);
       break;
   }
   return value;
