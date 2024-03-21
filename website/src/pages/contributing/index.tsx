@@ -5,9 +5,6 @@ import engine from  '../../../../package.json' with {
   type: 'json'
 };
 
-// website/src/pages/contributing/index.tsx
-// website/package.json
-
 const Index = () => <Layout
   Outlet={<section>
     <div className='title-card'>
