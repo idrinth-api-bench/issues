@@ -3,8 +3,8 @@ import CsvReport from '../../../assets/csv-result.jpg';
 import ApiBenchReport from '../../../assets/html-result.jpg';
 import CliReport from '../../../assets/cli-result.jpg';
 import JsonReport from '../../../assets/json-result.jpg';
-import SyntaxHighlighter from 'react-syntax-highlighter';
 import Layout from '../../../components/layout.tsx';
+import Code from '../../../components/Code.tsx';
 
 const Results = () => <Layout
   Outlet={<>
@@ -65,11 +65,11 @@ const Results = () => <Layout
           It will be called with the complete result after all result
           modifiers have modified the result.
         </p>
-        <SyntaxHighlighter language='typescript'>
+        <Code language='typescript'>
           {`interface Reporter {
   (results: FinishedRun, rootDir: string): void;
 }`}
-        </SyntaxHighlighter>
+        </Code>
       </div>
     </div>
   </>}

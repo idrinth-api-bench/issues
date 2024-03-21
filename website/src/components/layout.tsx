@@ -22,7 +22,7 @@ const Layout = ({
     : '';
   return <>
     {meta}
-    <Navbar/>
+    <Navbar window={window || {}}/>
     <Breadcrumbs path={path}/>
     <article>
       {Outlet}

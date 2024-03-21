@@ -1,6 +1,6 @@
 import React from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
 import Layout from '../../../components/layout.tsx';
+import Code from '../../../components/Code.tsx';
 
 const AutoWiring = () => <Layout
   Outlet={<>
@@ -36,7 +36,7 @@ const AutoWiring = () => <Layout
     </div>
     <div className='card'>
       <h2>Example</h2>
-      <SyntaxHighlighter language='javascript'>
+      <Code language='javascript'>
         {`module.exports = (apiRootUrl, apiEMail, apiPassword) => ({
   id: 'login',
   main: {
@@ -58,7 +58,7 @@ const AutoWiring = () => <Layout
   ],
 });
   `}
-      </SyntaxHighlighter>
+      </Code>
     </div>
   </>}
   page='autowiring'
