@@ -2,8 +2,8 @@ import React from 'react';
 import {
   Lang,
 } from '../../../components/lang.tsx';
-import SyntaxHighlighter from 'react-syntax-highlighter';
 import Layout from '../../../components/layout.tsx';
+import Code from '../../../components/Code.tsx';
 
 const Route = () => <Layout
   Outlet={<>
@@ -15,7 +15,7 @@ const Route = () => <Layout
       <h2><Lang lnkey='routes.example.title'/></h2>
       <div>
         <p><Lang lnkey='routes.example.description'/></p>
-        <SyntaxHighlighter language='typescript'>{`import {
+        <Code language='typescript'>{`import {
   Task,
 } from '@idrinth/api-bench';
   
@@ -25,7 +25,7 @@ export default (apiURL, apiPassword): Task => {
     url: apiURL + '?' + apiPassword,
   },
 };
-      `}</SyntaxHighlighter>
+      `}</Code>
       </div>
     </div>
   </>}

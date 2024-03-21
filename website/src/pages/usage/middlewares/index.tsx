@@ -1,6 +1,6 @@
 import React from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
 import Layout from '../../../components/layout.tsx';
+import Code from '../../../components/Code.tsx';
 
 const Middlewares = () => <Layout
   Outlet={<>
@@ -40,12 +40,12 @@ const Middlewares = () => <Layout
           called before sending a request, process after a request. If an error
           is thrown in process, any further validations are skipped.
         </p>
-        <SyntaxHighlighter language='typescript'>
+        <Code language='typescript'>
           {`interface Middleware {
   process(response: Result): void;
   prepare(request: Request): Request;
 }`}
-        </SyntaxHighlighter>
+        </Code>
       </div>
     </div>
   </>}
