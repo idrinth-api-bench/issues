@@ -100,7 +100,6 @@ npm run coai
         <li>
           One of the last two node versions
           {engine.engines.node}
-
         </li>
         <li>
           OS: Linux / Windows <i>(Other OS were not tested)</i>
