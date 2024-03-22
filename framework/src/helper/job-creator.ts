@@ -9,16 +9,7 @@ import {
   Task,
 } from '../task.js';
 import include from './include-default.js';
-
-const TYPES = [
-  'before',
-  'beforeTask',
-  'beforeEach',
-  'main',
-  'afterEach',
-  'afterTask',
-  'after',
-];
+import taskTypes from "../task-types.js";
 
 export default async(root: string,): Promise<Job> => {
   const job:Job = {
@@ -30,7 +21,7 @@ export default async(root: string,): Promise<Job> => {
     afterTask: [],
     after: [],
   };
-  for (const type of TYPES) {
+  for (const type of taskTypes) {
     const dir = root + '/src/routes/' + snakeCase(type,);
     if (existsSync(dir,)) {
       for (const file of readdirSync(dir,)) {
