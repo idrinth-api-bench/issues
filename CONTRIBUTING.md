@@ -11,12 +11,17 @@ here are the guidelines we would like you to follow:
 
 ## Structure
 
-The project is a mono-repo grouped into multiple subprojects, for example `website`, `framework`, `history-microservice` and `history-website`.
-You can find more detailed instructions for the specific part in the corresponding folder's readme.
+The project is a mono-repo grouped into multiple subprojects, for example
+`website`, `framework`, `history-microservice` and `history-website`.
+You can find more detailed instructions for the specific part in the
+corresponding folder's readme.
 
 ## Issues
 
-Any idea and bug report is considered a contribution. Not only do they help improving the code base, they help other people to get more use out of this framework. Please try to stick to the format of predefined issue types to make it easier to filter and handle for anyone interested in the topic.
+Any idea and bug report is considered a contribution. Not only do they help
+improving the code base, they help other people to get more use out of this
+framework. Please try to stick to the format of predefined issue types to
+make it easier to filter and handle for anyone interested in the topic.
 
 ## Code
 
@@ -198,4 +203,7 @@ Documentation is an underrated part of every software. Adding any kind of clarif
 
 ### Examples
 
-For examples please keep in mind, that we don't want to overload any API. Don't use high load tasks, don't use APIs that are not for public use. It is expected that examples will be run and they must not damage anyone, including third parties.
+For examples please keep in mind, that we don't want to overload any API.
+Don't use high load tasks, don't use APIs that are not for public use.
+It is expected that examples will be run, and they must not damage anyone,
+including third parties.
