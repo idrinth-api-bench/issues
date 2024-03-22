@@ -65,6 +65,16 @@ and the points you are not confident about. -->
 - [ ] the documentation explains used words, that are not common
 - [ ] there are no abbreviations used
 
+## Examples
+
+- [ ] the example works without any additional configuration
+- [ ] the example's target has been informed and has agreed
+
+## Dockerfiles
+
+- [ ] the dockerfiles work
+- [ ] the containers are as small ass possible
+
 ## Notes
 
 <!-- Write any note or comment. You can share your thoughts or ideas. -->
