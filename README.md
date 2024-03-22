@@ -7,9 +7,9 @@ This is the repository for the API test framework, it's documentation website an
 ## Project parts
 
 - [Framework README](/framework/README.md)
-- [Website README](/website/README.md)
+- [Documentation Website README](/documentation-website/README.md)
 - [Examples](/examples)
-- [History Web-UI README](/history-website/README.md)
+- [History Website README](/history-website/README.md)
 - [History Microservice README](/history-microservice/README.md)
 - [Dockerfiles](/containers)
 

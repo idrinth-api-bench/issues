@@ -37,7 +37,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: |
             framework/package-lock.json
-            website/package-lock.json
+            documentation-website/package-lock.json
             history-microservice/package-lock.json
             history-website/package-lock.json
             package-lock.json
@@ -54,14 +54,14 @@ jobs:
           cache: 'npm'
           cache-dependency-path: |
             framework/package-lock.json
-            website/package-lock.json
+            documentation-website/package-lock.json
             history-microservice/package-lock.json
             history-website/package-lock.json
             package-lock.json
       - run: npm ci
       - run: cd framework && npm ci
       - run: cd framework && npm run-script lint
-  website:
+  documentation-website:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -72,13 +72,13 @@ jobs:
           cache: 'npm'
           cache-dependency-path: |
             framework/package-lock.json
-            website/package-lock.json
+            documentation-website/package-lock.json
             history-microservice/package-lock.json
             history-website/package-lock.json
             package-lock.json
       - run: npm ci
-      - run: cd website && npm ci
-      - run: cd website && npm run-script lint
+      - run: cd documentation-website && npm ci
+      - run: cd documentation-website && npm run-script lint
   history-ui:
     runs-on: ubuntu-latest
     steps:
@@ -90,7 +90,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: |
             framework/package-lock.json
-            website/package-lock.json
+            documentation-website/package-lock.json
             history-microservice/package-lock.json
             history-website/package-lock.json
             package-lock.json
@@ -108,7 +108,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: |
             framework/package-lock.json
-            website/package-lock.json
+            documentation-website/package-lock.json
             history-microservice/package-lock.json
             history-website/package-lock.json
             package-lock.json

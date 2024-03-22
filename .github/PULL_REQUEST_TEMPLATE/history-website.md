@@ -15,7 +15,7 @@ Pull Request. -->
 and the points you are not confident about. -->
 <!-- Delete this section if not needed -->
 
-## History-UI
+## History-Website
 
 - [ ] mobile view is usable
 - [ ] desktop view is usable

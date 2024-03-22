@@ -11,8 +11,8 @@ the pull request as good as possible.
 directory or external tools
 - [Translations](?quick_pull=1&template=translations.md) changes to the
 translation files
-- [Website](?quick_pull=1&template=website.md) changes to the website
-- [History-UI](?quick_pull=1&template=history-ui.md) changes to the history-ui
+- [Documentation-Website](?quick_pull=1&template=documentation-website.md) changes to the website
+- [History-Website](?quick_pull=1&template=history-website.md) changes to the history-ui
 - [History-Microservice](?quick_pull=1&template=history-microservice.md) changes to the history-microservice
 - [Documentation](?quick_pull=1&template=documentation.md) changes to a md file
 (Readme for example)
