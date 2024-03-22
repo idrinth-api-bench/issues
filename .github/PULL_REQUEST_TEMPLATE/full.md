@@ -35,16 +35,16 @@ and the points you are not confident about. -->
 - [ ] the translation is appropriate for all audiences
 - [ ] the translation is not an unchecked automatic translation
 
-## Website
+## Documentation-Website
 
-- [ ] mobile view is useable
-- [ ] desktop view is useable
-- [ ] no a-tags are used direktly (NavLink, MailLink, ExternalLink instead)
+- [ ] mobile view is usable
+- [ ] desktop view is usable
+- [ ] no a-tags are used directly (NavLink, MailLink, ExternalLink instead)
 - [ ] all new texts are added to the translation files (at least the english one)
 - [ ] tests have been added (if required)
 - [ ] shared code has been extracted in a different file
 
-## History-UI
+## History-Website
 
 - [ ] mobile view is usable
 - [ ] desktop view is usable
@@ -64,6 +64,16 @@ and the points you are not confident about. -->
 - [ ] all documentation is in correct english
 - [ ] the documentation explains used words, that are not common
 - [ ] there are no abbreviations used
+
+## Examples
+
+- [ ] the example works without any additional configuration
+- [ ] the example's target has been informed and has agreed
+
+## Dockerfiles
+
+- [ ] the dockerfiles work
+- [ ] the containers are as small ass possible
 
 ## Notes
 

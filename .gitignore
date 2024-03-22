@@ -23,31 +23,24 @@
 /examples/**/result.html
 /examples/**/node_modules
 
-# Website
-/website/logs
-/website/*.log
-/website/.nyc_output
-/website/npm-debug.log*
-/website/yarn-debug.log*
-/website/yarn-error.log*
-/website/pnpm-debug.log*
-/website/lerna-debug.log*
-/website/coverage
-/website/cypress/screenshots
-/website/node_modules
-/website/dist
-/website/dist-ssr
-/website/*.local
-/website/cypress/fixures/cypress.env.json
-/website/tsconfig.tsbuildinfo
-/website/src/routes.tsx
-/website/src/contributors.json
-/website/public/sitemap.xml
-/website/public/locales
-/website/public/assets/profile-*.jpg
+# Documentation Website
+/documentation-website/.nyc_output
+/documentation-website/coverage
+/documentation-website/cypress/screenshots
+/documentation-website/node_modules
+/documentation-website/dist
+/documentation-website/dist-ssr
+/documentation-website/*.local
+/documentation-website/cypress/fixures/cypress.env.json
+/documentation-website/tsconfig.tsbuildinfo
+/documentation-website/src/routes.tsx
+/documentation-website/src/contributors.json
+/documentation-website/public/sitemap.xml
+/documentation-website/public/locales
+/documentation-website/public/assets/profile-*.jpg
 
 # History Microservice
-history-microservice/node_modules
+/history-microservice/node_modules
 /history-microservice/coverage
 
 #History Website

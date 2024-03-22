@@ -31,7 +31,7 @@ jobs:
         cache: 'npm'
         cache-dependency-path: |
           framework/package-lock.json
-          website/package-lock.json
+          documentation-website/package-lock.json
           history-microservice/package-lock.json
           history-website/package-lock.json
           package-lock.json

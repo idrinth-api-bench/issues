@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig tsconfig.json",
+    "lint-md": "markdownlint *.md",
     "lint": "eslint . --ext ts,svelte --report-unused-disable-directives --max-warnings 0",
     "lint-fix": "eslint . --ext ts,svelte --report-unused-disable-directives --max-warnings 0 --fix"
   },
@@ -20,7 +21,8 @@
     "typescript": "^5.2.2",
     "vite": "^5.1.4",
     "eslint": "^8.57.0",
-    "eslint-plugin-svelte": "^2.35.1"
+    "eslint-plugin-svelte": "^2.35.1",
+    "markdownlint-cli": "^0.39.0"
   },
   "engines": {
     "node": ">=20"

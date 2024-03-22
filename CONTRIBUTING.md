@@ -12,9 +12,9 @@ here are the guidelines we would like you to follow:
 ## Structure
 
 The project is a mono-repo grouped into multiple subprojects, for example
-`website`, `framework`, `history-microservice` and `history-website`.
-You can find more detailed instructions for the specific part in the
-corresponding folder's readme.
+`documentation-website`, `framework`, `history-microservice` and
+`history-website`. You can find more detailed instructions for the specific
+part in the corresponding folder's readme.
 
 ## Issues
 
@@ -134,9 +134,11 @@ The scope should be the name of the affected part of the project.
 The list of supported scopes:
 
 - `framework`
-- `website`
+- `documentation-website`
 - `history-microservice`
 - `history-website`
+- `dockerfiles`
+- `examples`
 
 #### Summary
 
