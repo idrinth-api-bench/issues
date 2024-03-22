@@ -3,10 +3,16 @@
 Any and all contributions are encouraged. As a contributor,
 here are the guidelines we would like you to follow:
 
+- [Structure](#structure)
 - [Issues](#issues)
 - [Code](#code)
 - [Commit Message Guidelines](#commit-message-guidelines)
 - [Documentation](#documentation)
+
+## Structure
+
+The project is a mono-repo grouped into multiple subprojects, for example `website`, `framework`, `history-microservice` and `history-website`.
+You can find more detailed instructions for the specific part in the corresponding folder's readme.
 
 ## Issues
 
