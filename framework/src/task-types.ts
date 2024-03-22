@@ -1,4 +1,6 @@
-const taskTypes: ('before'|'main'|'after'|'beforeAll'|'afterAll'|'beforeEach'|'afterEach')[] = [
+import taskType from './task-type.js';
+
+const taskTypes: taskType[] = [
   'before',
   'main',
   'after',
