@@ -53,6 +53,8 @@ jobs:
         cache-dependency-path: |
           framework/package-lock.json
           website/package-lock.json
+          history-microservice/package-lock.json
+          history-website/package-lock.json
           package-lock.json
     - name: Build root
       run: npm ci

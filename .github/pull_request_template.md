@@ -13,6 +13,7 @@ directory or external tools
 translation files
 - [Website](?quick_pull=1&template=website.md) changes to the website
 - [History-UI](?quick_pull=1&template=history-ui.md) changes to the history-ui
+- [History-Microservice](?quick_pull=1&template=history-microservice.md) changes to the history-microservice
 - [Documentation](?quick_pull=1&template=documentation.md) changes to a md file
 (Readme for example)
 - [Full](?quick_pull=1&template=full.md) changes to multiple categories

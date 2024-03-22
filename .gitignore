@@ -46,6 +46,16 @@
 /website/public/locales
 /website/public/assets/profile-*.jpg
 
+# History Microservice
+history-microservice/node_modules
+/history-microservice/coverage
+
+#History Website
+/history-website/node_modules
+/history-website/dist
+/history-website/coverage
+/history-website/cypress/screenshots
+
 # Editor directories and files
 .DS_Store
 *.suo
