@@ -4,7 +4,7 @@ import ApiBenchReport from '../../../assets/html-result.jpg';
 import CliReport from '../../../assets/cli-result.jpg';
 import JsonReport from '../../../assets/json-result.jpg';
 import Layout from '../../../components/layout.tsx';
-import Code from '../../../components/Code.tsx';
+import Code from '../../../components/code.tsx';
 
 const Results = () => <Layout
   Outlet={<>
