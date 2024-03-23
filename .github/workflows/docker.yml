@@ -21,4 +21,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - run: cd containers/gitlab-runner && docker build .
+  build-gitea:
+    name: Build Gitea
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - run: cd containers/gitea-action && docker build .
 

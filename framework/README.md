@@ -9,7 +9,7 @@
   - [Why a Benchmark Runner](#why-use-a-benchmark-runner)
   - [Regarding existing libraries](#regarding-existing-libraries)
 - [Usage & Examples](#usage--examples)
-- [CI-Images[#ci-images]
+- [CI-Images](#ci-images)
 - [License](#license)
 - [Support](#support)
 
@@ -35,6 +35,7 @@ Please have a look at the [website](https://idrinth-api-ben.ch) for more informa
 We have ready to be used CI Images:
 
 - [Gitlab Runner](https://hub.docker.com/r/idrinth/api-bench-gitlab-runner)
+- [Gitea Action](https://hub.docker.com/r/idrinth/api-bench-gitea-action)
 
 ## License
 
