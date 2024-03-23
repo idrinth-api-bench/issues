@@ -5,6 +5,7 @@ import engine from '../../../../package.json' with {
   type: 'json'
 };
 import './contributing.css';
+import Card from '../../components/card.tsx';
 
 const Index = () => <Layout
   Outlet={<section>
@@ -36,6 +37,14 @@ const Index = () => <Layout
         topic.
       </p>
     </div>
+    <Card titleText={'Issues'} titleLevel={2}sideMode={true}>
+        Any idea and bug report is considered a contribution.
+        Not only do they help improving the code base,
+        they help other people to get more use out of this framework.
+        Please try to stick to the format of predefined issue types
+        to make it easier to filter and handle for anyone interested in the
+        topic.
+    </Card>
     <div className='card'>
       <h2>Code</h2>
       <div>
