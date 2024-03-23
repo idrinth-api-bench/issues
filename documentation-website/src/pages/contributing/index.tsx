@@ -8,7 +8,6 @@ import './contributing.css';
 import {
   Lang,
 } from '../../components/lang.tsx';
-import Card from '../../components/card.tsx';
 
 const Index = () => <Layout
   Outlet={<section>
@@ -26,20 +25,12 @@ const Index = () => <Layout
         <Lang lnkey={'contributing.structure.description'}/>
       </p>
     </div>
-
-    <Card titleText={'Issues'} titleLevel={2}sideMode={true}>
-      {[ `Any idea and bug report is considered a contribution.
-        Not only do they help improving the code base,
-        they help other people to get more use out of this framework.
-        Please try to stick to the format of predefined issue types
-        to make it easier to filter and handle for anyone interested in the
-        topic.`, `Any idea and bug report is considered a contribution.
-        Not only do they help improving the code base,
-        they help other people to get more use out of this framework.
-        Please try to stick to the format of predefined issue types
-        to make it easier to filter and handle for anyone interested in the
-        topic.`]}
-    </Card>
+    <div className='card'>
+      <h2><Lang lnkey={'contributing.issues.title'}/></h2>
+      <p>
+        <Lang lnkey={'contributing.issues.description'}/>
+      </p>
+    </div>
     <div className='card'>
       <h2><Lang lnkey={'contributing.code.title'}/></h2>
       <div>
