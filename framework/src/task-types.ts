@@ -7,6 +7,6 @@ const taskTypes: taskType[] = [
   'beforeAll',
   'afterAll',
   'beforeEach',
-  'afterEach'
+  'afterEach',
 ];
 export default taskTypes;

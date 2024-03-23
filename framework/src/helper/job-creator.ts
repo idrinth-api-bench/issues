@@ -9,7 +9,7 @@ import {
   Task,
 } from '../task.js';
 import include from './include-default.js';
-import taskTypes from "../task-types.js";
+import taskTypes from '../task-types.js';
 
 export default async(root: string,): Promise<Job> => {
   const job:Job = {

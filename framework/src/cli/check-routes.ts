@@ -1,6 +1,5 @@
 /* eslint no-console: 0 */
 import jobCreator from '../helper/job-creator.js';
-import reqlib from 'app-root-path';
 import language, {
   locale,
 } from '../helper/language.js';
@@ -40,6 +39,12 @@ const checkMiddleware = (type: 'pre'|'post', route: Task,) => {
 
 // eslint-disable-next-line complexity
 const checkType = (job: Job, type: taskType,) => {
+  if (typeof job[type] === 'undefined') {
+    return {
+      errors: 0,
+      warnings: 0,
+    };
+  }
   let errors = 0;
   let warnings = 0;
   if (job[type].length > EMPTY) {
@@ -65,9 +70,9 @@ const checkType = (job: Job, type: taskType,) => {
   };
 };
 
-export default async(args: string[],): Promise<void> => {
+export default async(args: string[], cwd: string): Promise<void> => {
   await locale(args[FIRST_ARGUMENT] || DEFAULT_LANGUAGE,);
-  const job = await jobCreator(`${ reqlib }`,);
+  const job = await jobCreator(cwd,);
   validateTasks(ONE, ONE, job.main,);
   let errors = 0;
   let warnings = 0;
