@@ -1,6 +1,6 @@
 # @idrinth/api-bench + gitlab/gitlab-runner + alpine
 
-This image prepares a runner for use in gitlab, that brings along everything required to run api tests.
+This image prepares a runner for use in gitlab, that brings along everything required to run API tests.
 
 ## Tags
 
