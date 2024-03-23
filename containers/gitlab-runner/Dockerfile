@@ -1,5 +1,3 @@
-LABEL authors="Björn 'Idrinth' Büttner"
-
 ARG ALPINE_VERSION=3.19
 ARG NODE_VERSION=21.7.1
 ARG IDRINTH_API_BENCH_VERSION=2.6.1
@@ -18,5 +16,7 @@ RUN apt-get update \
    && apt-get install -y --no-install-recommends jq procps curl unzip groff libgcrypt20 tar gzip less openssh-client \
    && apt-get clean \
    && rm -rf /var/lib/apt/lists/*
+
+LABEL authors="Björn 'Idrinth' Büttner"
 
 RUN npm install -g @idrinth/api-bench@${IDRINTH_API_BENCH_VERSION}
