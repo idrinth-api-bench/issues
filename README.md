@@ -21,6 +21,12 @@ You can find the documentation on the [Documentation Website](https://idrinth-ap
 
 [Join](https://join.slack.com/t/idrinth-api-bench/shared_invite/zt-2f4zmw2sz-c3etHzCFq3LtZpkR15xXMA) our slack if you need help, want to connect or have questions.
 
+## CI Images
+
+We have ready to be used CI Images:
+
+- [Gitlab Runner](https://hub.docker.com/r/idrinth/api-bench-gitlab-runner)
+
 ## Setup
 
 To get your project ready for development you need to run the following commands in order:
