@@ -4,14 +4,14 @@ on:
     branches:
       - master
     paths:
-      - '/containers/*/Dockerfile'
-      - '.github/workflows/docker-test.yml'
+      - 'containers/*/Dockerfile'
+      - '.github/workflows/docker.yml'
   pull_request:
     branches:
       - master
     paths:
-      - '/containers/*/Dockerfile'
-      - '.github/workflows/docker-test.yml'
+      - 'containers/*/Dockerfile'
+      - '.github/workflows/docker.yml'
 jobs:
   build-gitlab:
     name: Build Image
