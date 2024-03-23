@@ -28,7 +28,8 @@
     "postinstall": "irfbrgr && npm run contributors && npm run language",
     "routes": "irfbrgr",
     "contributors": "node tools/load-contributors.js",
-    "language": "node tools/generate-language.js"
+    "language": "node tools/generate-language.js",
+    "pure-build": "irfbrgr && npm run language && tsc && vite build && irfbrgf"
   },
   "dependencies": {
     "@fontsource/roboto": "^5.0.12",

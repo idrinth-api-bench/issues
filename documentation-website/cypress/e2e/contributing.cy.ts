@@ -16,7 +16,7 @@ describe('contributing', () => {
   it('h1 matches', () => {
     cy.get('h1',)
       .invoke('text',)
-      .should('eq', 'Contributing',);
+      .should('eq', 'Contributing Guidelines',);
   },);
   it('link to self exists', () => {
     cy.get('header nav a[href="/contributing/"]',)

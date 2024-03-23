@@ -59,7 +59,106 @@ contributing:
     title: "Contributing"
     description: "Contribution guidelines for the framework @idrinth/api-bench"
   nav: "Contributing"
-
+  title: "Contributing Guidelines"
+  description: "Any and all contributions are encouraged."
+  structure:
+    title: "Structure"
+    description: "The project is a mono-repo grouped into multiple subprojects, for example website, framework, history-microservice and history-website. You can find more detailed instructions for the specific part in the corresponding folder's readme."
+  issues:
+    title: "Issues"
+    description: "Any idea and bug report is considered a contribution. Not only do they help improving the code base, they help other people to get more use out of this framework. Please try to stick to the format of predefined issue types to make it easier to filter and handle for anyone interested in the topic."
+  code:
+    title: "Code"
+    style: "The style guidelines are provided via eslint. Please try to optimise code for readability, since code will be read way more often than it will be changed."
+    breaking: "While adding functionality, keep in mind to break existing interfaces, entry points and functionality only if absolutely necessary."
+    workflow:
+      title: "Contribution workflow"
+      list_item_1: "fork the repository"
+      list_item_2: "create a feature branch (issue-xxx-does-something) from master"
+      list_item_3: "create a draft pull request"
+      list_item_4: "mention fixes #xxx in the description"
+      list_item_5: "make your changes to the branch"
+      list_item_6: "check if actions are all green"
+      list_item_7: "mark as ready to review"
+      list_item_8: "get changes reviewed"
+      list_item_9: "if review is positive get changes merged otherwise fix and send back to review"
+    tests:
+      title: "Tests"
+      description: "Testing new code is expected and adding tests or improving tests for old code is appreciated. The goal is to find most issues by either static analysis or unit and integration tests."
+      manual:
+        title: "Manual Tests"
+        description: "For manual testing you can run 'npm run coai' in the source folder to automatically check out and install all required files for testing."
+    naming:
+      title: "Naming conventions"
+      list_item_1: "camelCase for variables and functions"
+      list_item_2: "UPPER_SNAKE_CASE for constants"
+      list_item_3: "PascalCase for interfaces and classes"
+      list_item_4: "kebab-case for file names"
+    requirements:
+      title: "Requirements"
+      node: "One of the last two node versions"
+      os: "OS: Linux / Windows / Mac"
+    setup:
+      title: "Setup"
+      description: "Run the following commands to create the full project:"
+    commits:
+      title: "Commit Message Guidelines"
+      preface: "*This specification is inspired by Angular commit messages guidelines."
+      introduction: "These are the rules for how Git commit messages for api-bench should be formatted. This format leads to easier to read commit history."
+      parts: "Each commit message consists of a header, a body, and a footer."
+      header:
+        title: "Commit Message Header"
+        format: "Headers must adhere to the following format:"
+        description: "The header is mandatory and should conform to the Commit Message Header format."
+        type:
+          title: "Type"
+          description: "The list of supported types:"
+          list_item_1: "build: Changes that affect the build system or external dependencies"
+          list_item_2: "ci: Changes to CI configuration files and scripts"
+          list_item_3: "docs: Documentation changes"
+          list_item_4: "feature: A new feature"
+          list_item_5: "fix: A bug fix"
+          list_item_6: "perf: A code change that improves performance"
+          list_item_7: "refactor: A code change that neither fixes a bug nor adds a feature"
+          list_item_8: "test: Adding missing tests or correcting existing tests"
+        scope:
+          title: "Scope"
+          description: "The scope should be the name of the affected part of the project. The list of supported scopes:"
+          list_item_1: "framework"
+          list_item_2: "website"
+          list_item_3: "history-microservice"
+          list_item_4: "history-website"
+        summary:
+          title: "Summary"
+          description: "The summary field should provide a succinct description of the change."
+          list_item_1: "use the imperative, present tense"
+          list_item_2: "don't capitalize the first letter"
+          list_item_3: "no dot (.) at the end"
+      body:
+        title: "Commit Message Body"
+        description: "The body is mandatory for all commits except for those of type 'docs' or in cases when it' clear from the header summary. They should conform to the Commit Message Body format."
+        time: "Just as in the summary, use the imperative, present tense."
+        content: "The commit message body should explain why you are making the change. You can include a comparison of the previous behavior with the new behavior in order to illustrate the impact of the change."
+      footer:
+        title: "Commit Message Footer"
+        description: "The footer is optional. The Commit Message Footer format describes what the footer is used for and the structure it must have."
+        content: "The footer can contain information about breaking changes and deprecations and is also the place to reference GitHub issues and other PRs that this commit closes or is related to."
+        breaking: "In case of breaking changes and deprecations the section should start with the phrase 'BREAKING CHANGE:' or 'DEPRECATED: ' respectively followed by a description. For example:"
+      complete:
+        title: "Complete Commit"
+        description: "Here' a complete example of a correct commit message:"
+      reverts:
+        title: "Revert commits"
+        description: "If the commit reverts a previous commit, it should begin with 'revert:', followed by the header of the reverted commit."
+        content: "The content of the commit message body should contain:"
+        list_item_1: "information about the SHA of the commit being reverted in the following format: 'This reverts commit <SHA>'"
+        list_item_2: "a clear description of the reason for reverting the commit message."
+  documentation:
+    title: "Documentation"
+    description: "Documentation is an underrated part of every software. Adding any kind of clarification, example or improvement is highlyappreciated and encouraged. The ones writing the documentation are the unsung heroes of open and closed source software."
+  examples:
+    title: "Examples"
+    description: "For examples please keep in mind, that we don&apos;t want to overload any api. Don't use high load tasks, don't use apis that are not for public use. It is expected that examples will be run and they must not damage anyone, including third parties."
 license:
   meta:
     title: "License"
