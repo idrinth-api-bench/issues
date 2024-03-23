@@ -1,0 +1,24 @@
+name: Docker
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'containers/*/Dockerfile'
+      - '.github/workflows/docker.yml'
+  pull_request:
+    branches:
+      - master
+    paths:
+      - 'containers/*/Dockerfile'
+      - '.github/workflows/docker.yml'
+jobs:
+  build-gitlab:
+    name: Build Gitlab
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - run: cd containers/gitlab-runner && docker build .
+
