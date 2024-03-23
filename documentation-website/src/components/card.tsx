@@ -21,12 +21,13 @@ const Card = ({
   children,
 }: CardProps) => {
   const TitleTag = `h${titleLevel}` as keyof JSX.IntrinsicElements;
-  const generateContent = (): ReactNode => <p>{children}</p>;
-  // if(Array.isArray(children)){
-  //   children.map((sentences:string , index)=>{
-  //       return <p key={index}>{sentences}</p>
-  //   })
-  // }
+  const generateContent = (): ReactNode => {
+    const content = Array.isArray(children)
+      ? children.map((sentence, index) => <p key={index}>{sentence}</p>)
+      : children;
+    return <div>{content}</div>;
+  };
+
   return (
     <div className={sideMode ? "card" : ""}>
       <TitleTag>{titleText}</TitleTag>
