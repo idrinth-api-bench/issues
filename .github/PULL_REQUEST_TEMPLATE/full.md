@@ -73,7 +73,7 @@ and the points you are not confident about. -->
 ## Dockerfiles
 
 - [ ] the dockerfiles work
-- [ ] the containers are as small ass possible
+- [ ] the containers are as small as possible
 
 ## Notes
 
