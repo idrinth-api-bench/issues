@@ -7,14 +7,6 @@ html {
   font-style: italic;
 }
 
-.mono-text {
-  font-family: monospace;
-  background-color: var(--code-bg);
-  color: var(--code-text);
-  padding: 0 4px;
-  border-radius: 4px;
-}
-
 .card-list > li {
-  margin: .5rem 0;
+  padding: .5rem 0;
 }
