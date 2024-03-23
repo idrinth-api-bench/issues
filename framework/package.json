@@ -74,11 +74,13 @@
     "run-benchmark": "bin/run-benchmark.js",
     "make-benchmark-project": "bin/make-benchmark-project.js",
     "generate-benchmark-from-open-api": "bin/generate-benchmark-from-open-api.js",
+    "check-route-definitions": "bin/check-route-definitions.js",
     "run-loadtest": "bin/run-loadtest.js",
     "iabl": "bin/run-loadtest.js",
     "iabr": "bin/run-benchmark.js",
     "iabmp": "bin/make-benchmark-project.js",
-    "iabgfoa": "bin/generate-benchmark-from-open-api.js"
+    "iabgfoa": "bin/generate-benchmark-from-open-api.js",
+    "iabcrd": "bin/check-route-definitions.js"
   },
   "scripts": {
     "lint": "eslint . --ext .js,.ts,.cjs,.json,.tsx",
