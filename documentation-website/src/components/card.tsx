@@ -1,11 +1,10 @@
 import React, {
   ReactNode,
 } from 'react';
-type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
 interface CardProps {
   titleText: string;
-  titleLevel: HeadingLevel;
+  titleLevel: number;
   sideMode: boolean;
   children: string[];
 }
