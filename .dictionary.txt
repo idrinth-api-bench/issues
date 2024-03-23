@@ -32,3 +32,5 @@ mono-repo
 subprojects
 ci-images
 Gitlab
+gitlab-runner
+gitlab
