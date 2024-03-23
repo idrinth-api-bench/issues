@@ -34,3 +34,5 @@ ci-images
 Gitlab
 gitlab-runner
 gitlab
+gitea
+Gitea
