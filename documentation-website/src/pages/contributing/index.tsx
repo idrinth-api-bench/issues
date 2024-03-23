@@ -1,10 +1,7 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import Layout from '../../components/layout.tsx';
-import {
-  engines,
-  // eslint-disable-next-line indent
-} from '../../../../package.json' with {
+import pkg from '../../../../package.json' with {
   type: 'json'
 };
 import './contributing.css';
@@ -92,7 +89,7 @@ npm run coai
       <ul>
         <li>
           <Lang lnkey={'contributing.code.requirements.node'}/>
-          {engines.node}
+          {pkg.engines.node}
         </li>
         <li>
           <Lang lnkey={'contributing.code.requirements.os'}/>
