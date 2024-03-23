@@ -30,5 +30,5 @@ ui
 readme
 mono-repo
 subprojects
-ci-image
+ci-images
 Gitlab
