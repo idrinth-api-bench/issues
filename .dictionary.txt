@@ -27,3 +27,6 @@ Microservice
 Dockerfiles
 Roadmap
 ui
+readme
+mono-repo
+subprojects

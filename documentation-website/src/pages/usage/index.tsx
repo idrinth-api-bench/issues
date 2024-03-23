@@ -44,6 +44,15 @@ const Usage = () => <Layout
           </ul>
         </li>
         <li>
+          <strong>iabcrd</strong>
+          (or <strong>check-route-definitions</strong>)
+          checks all routes for possible issues, so there are no surprises,
+          when actually running the code.
+          <ul>
+            <li>Argument 1: language(default: en)</li>
+          </ul>
+        </li>
+        <li>
           <strong>iabrl</strong>
           (or <strong>run-loadtest</strong>)
           runs a load test with the given routes up to a limit of threads.

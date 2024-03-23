@@ -15,10 +15,10 @@ Pull Request. -->
 and the points you are not confident about. -->
 <!-- Delete this section if not needed -->
 
-## Translations
+## Examples
 
-- [ ] the translation is appropriate for all audiences
-- [ ] the translation is not an unchecked automatic translation
+- [ ] the example works without any additional configuration
+- [ ] the example's target has been informed and has agreed
 
 ## Notes
 

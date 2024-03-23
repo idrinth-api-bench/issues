@@ -15,10 +15,12 @@ Pull Request. -->
 and the points you are not confident about. -->
 <!-- Delete this section if not needed -->
 
-## Translations
+## History-Microservice
 
-- [ ] the translation is appropriate for all audiences
-- [ ] the translation is not an unchecked automatic translation
+- [ ] no breaking changes have been added to the api
+- [ ] changes have been documented in the open-api.yml
+- [ ] tests have been written(if necessary)
+- [ ] shared code has been extracted in a different file
 
 ## Notes
 

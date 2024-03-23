@@ -1,18 +1,18 @@
 # The Pull Request is ready
 
-- [ ] fixes #ISSUE_ID
+- [ ] fixes #<!-- YOUR ISSUE ID HERE -->
 - [ ] all actions are passing
 - [ ] only fixes a single issue
 
 ## Overview
 
-<!-- Provide a brief description of the changes introduced by this PR. -->
+<!-- Provide a brief description of the changes introduced by this
+Pull Request. -->
 
 ## Review points
 
 <!-- List the points to be reviewed in detail 
 and the points you are not confident about. -->
-
 <!-- Delete this section if not needed -->
 
 ## Framework
@@ -35,14 +35,45 @@ and the points you are not confident about. -->
 - [ ] the translation is appropriate for all audiences
 - [ ] the translation is not an unchecked automatic translation
 
-## Website
+## Documentation-Website
 
-- [ ] mobile view is useable
-- [ ] desktop view is useable
-- [ ] no a-tags are used direktly (NavLink, MailLink, ExternalLink instead)
+- [ ] mobile view is usable
+- [ ] desktop view is usable
+- [ ] no a-tags are used directly (NavLink, MailLink, ExternalLink instead)
 - [ ] all new texts are added to the translation files (at least the english one)
 - [ ] tests have been added (if required)
 - [ ] shared code has been extracted in a different file
+
+## History-Website
+
+- [ ] mobile view is usable
+- [ ] desktop view is usable
+- [ ] all new texts are added to the translation files (at least the english one)
+- [ ] tests have been added (if required)
+- [ ] shared code has been extracted in a different file
+
+## History-Microservice
+
+- [ ] no breaking changes have been added to the api
+- [ ] changes have been documented in the open-api.yml
+- [ ] tests have been written(if necessary)
+- [ ] shared code has been extracted in a different file
+
+## Documentation
+
+- [ ] all documentation is in correct english
+- [ ] the documentation explains used words, that are not common
+- [ ] there are no abbreviations used
+
+## Examples
+
+- [ ] the example works without any additional configuration
+- [ ] the example's target has been informed and has agreed
+
+## Dockerfiles
+
+- [ ] the dockerfiles work
+- [ ] the containers are as small ass possible
 
 ## Notes
 

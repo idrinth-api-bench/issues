@@ -1,21 +1,21 @@
 # The Pull Request is ready
 
-- [ ] fixes #ISSUE_ID
+- [ ] fixes #<!-- YOUR ISSUE ID HERE -->
 - [ ] all actions are passing
 - [ ] only fixes a single issue
 
 ## Overview
 
-<!-- Provide a brief description of the changes introduced by this PR. -->
+<!-- Provide a brief description of the changes introduced by this
+Pull Request. -->
 
 ## Review points
 
 <!-- List the points to be reviewed in detail 
 and the points you are not confident about. -->
-
 <!-- Delete this section if not needed -->
 
-## Website
+## Documentation-Website
 
 - [ ] mobile view is usable
 - [ ] desktop view is usable

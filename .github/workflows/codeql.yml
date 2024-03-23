@@ -52,12 +52,18 @@ jobs:
         cache: 'npm'
         cache-dependency-path: |
           framework/package-lock.json
-          website/package-lock.json
+          documentation-website/package-lock.json
+          history-microservice/package-lock.json
+          history-website/package-lock.json
           package-lock.json
     - name: Build root
       run: npm ci
-    - name: Build website
-      run: cd website && npm ci
+    - name: Build documentation website
+      run: cd documentation-website && npm ci
+    - name: Build history website
+      run: cd history-website && npm ci
+    - name: Build history service
+      run: cd history-microservice && npm ci
     - name: Build framework
       run: cd framework && npm ci
     - name: Perform CodeQL Analysis

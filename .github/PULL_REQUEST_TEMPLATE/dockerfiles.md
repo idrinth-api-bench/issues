@@ -15,10 +15,10 @@ Pull Request. -->
 and the points you are not confident about. -->
 <!-- Delete this section if not needed -->
 
-## Translations
+## Dockerfiles
 
-- [ ] the translation is appropriate for all audiences
-- [ ] the translation is not an unchecked automatic translation
+- [ ] the dockerfiles work
+- [ ] the containers are as small ass possible
 
 ## Notes
 

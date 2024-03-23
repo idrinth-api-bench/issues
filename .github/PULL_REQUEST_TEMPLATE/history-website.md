@@ -15,10 +15,13 @@ Pull Request. -->
 and the points you are not confident about. -->
 <!-- Delete this section if not needed -->
 
-## Translations
+## History-Website
 
-- [ ] the translation is appropriate for all audiences
-- [ ] the translation is not an unchecked automatic translation
+- [ ] mobile view is usable
+- [ ] desktop view is usable
+- [ ] all new texts are added to the translation files (at least the english one)
+- [ ] tests have been added (if required)
+- [ ] shared code has been extracted in a different file
 
 ## Notes
 

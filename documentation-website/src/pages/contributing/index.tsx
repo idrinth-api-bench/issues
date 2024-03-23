@@ -17,6 +17,15 @@ const Index = () => <Layout
       </p>
     </div>
     <div className='card'>
+      <h2>Structure</h2>
+      <p>
+        The project is a mono-repo grouped into multiple subprojects, for
+        example website, framework, history-microservice and history-website.
+        You can find more detailed instructions for the specific part in the
+        corresponding folder&apos;s readme.
+      </p>
+    </div>
+    <div className='card'>
       <h2>Issues</h2>
       <p>
         Any idea and bug report is considered a contribution.
