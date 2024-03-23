@@ -8,40 +8,23 @@ import './contributing.css';
 import {
   Lang,
 } from '../../components/lang.tsx';
+import ContentUnit from '../../components/content-unit.tsx';
 
 const Index = () => <Layout
   Outlet={<section>
-    <div className='title-card'>
-      <h1>
-        <Lang lnkey={'contributing.title'}/>
-      </h1>
-      <p>
-        <Lang lnkey={'contributing.description'}/>
-      </p>
-    </div>
-    <div className='card'>
-      <h2><Lang lnkey={'contributing.structure.title'}/></h2>
-      <p>
-        <Lang lnkey={'contributing.structure.description'}/>
-      </p>
-    </div>
-    <div className='card'>
-      <h2><Lang lnkey={'contributing.issues.title'}/></h2>
-      <p>
-        <Lang lnkey={'contributing.issues.description'}/>
-      </p>
-    </div>
-    <div className='card'>
-      <h2><Lang lnkey={'contributing.code.title'}/></h2>
-      <div>
-        <p>
-          <Lang lnkey={'contributing.code.style'}/>
-        </p>
-        <p>
-          <Lang lnkey={'contributing.code.style'}/>
-        </p>
-      </div>
-    </div>
+    <ContentUnit titleLevel={1} titleText={'contributing.title'}>
+      contributing.description
+    </ContentUnit>
+    <ContentUnit titleLevel={2} titleText={'contributing.structure.title'}>
+      contributing.structure.description
+    </ContentUnit>
+    <ContentUnit titleLevel={2} titleText={'contributing.issues.title'}>
+      contributing.issues.description
+    </ContentUnit>
+    <ContentUnit titleLevel={2} titleText={'contributing.code.title'}>
+      contributing.code.style
+      contributing.code.breaking
+    </ContentUnit>
     <div className='card'>
       <h3><Lang lnkey={'contributing.code.workflow.title'}/></h3>
       <ul>
@@ -56,12 +39,9 @@ const Index = () => <Layout
         <li><Lang lnkey={'contributing.code.workflow.list_item_9'}/></li>
       </ul>
     </div>
-    <div className='card'>
-      <h3><Lang lnkey={'contributing.code.tests.title'}/></h3>
-      <p>
-        <Lang lnkey={'contributing.code.tests.description'}/>
-      </p>
-    </div>
+    <ContentUnit titleLevel={3} titleText={'contributing.code.tests.title'}>
+      contributing.code.tests.description
+    </ContentUnit>
     <div className='card'>
       <h4><Lang lnkey={'contributing.code.tests.manual.title'}/></h4>
       <div>
@@ -85,11 +65,11 @@ npm run coai
       </ul>
     </div>
     <div className='card'>
-      <h3><Lang lnkey={'contributing.code.naming.list_item_4'}/></h3>
+      <h3><Lang lnkey={'contributing.code.requirements.title'}/></h3>
       <ul>
         <li>
           <Lang lnkey={'contributing.code.requirements.node'}/>
-          {pkg.engines.node}
+          {' ('}{pkg.engines.node}{')'}
         </li>
         <li>
           <Lang lnkey={'contributing.code.requirements.os'}/>
@@ -128,8 +108,11 @@ npm run coai
 <BLANK LINE>
 <footer>
         `}</SyntaxHighlighter>
-
-        <h4><Lang lnkey={'contributing.code.commits.header.title'}/></h4>
+      </div>
+    </div>
+    <div className="card">
+      <h4><Lang lnkey={'contributing.code.commits.header.title'}/></h4>
+      <div>
         <p>
           <Lang lnkey={'contributing.code.commits.header.description'}/>
         </p>
@@ -142,39 +125,63 @@ npm run coai
 Example:
 build(website): bump follow-redirects from 1.15.4 to 1.15.6
         `}</SyntaxHighlighter>
-        <h5><Lang lnkey={'contributing.code.commits.header.type.title'}/></h5>
+      </div>
+    </div>
+    <div className={'card'}>
+      <h5><Lang lnkey={'contributing.code.commits.header.type.title'}/></h5>
+      <div>
         <p>
           <Lang lnkey={'contributing.code.commits.header.type.description'}/>
         </p>
         <ul className="card-list">
           <li>
-            <Lang lnkey={'contributing.code.commits.header.type.list_item_1'}/>
+            <Lang
+              lnkey={'contributing.code.commits.header.type.list_item_1'}
+            />
           </li>
           <li>
-            <Lang lnkey={'contributing.code.commits.header.type.list_item_2'}/>
+            <Lang
+              lnkey={'contributing.code.commits.header.type.list_item_2'}
+            />
           </li>
           <li>
-            <Lang lnkey={'contributing.code.commits.header.type.list_item_3'}/>
+            <Lang
+              lnkey={'contributing.code.commits.header.type.list_item_3'}
+            />
           </li>
           <li>
-            <Lang lnkey={'contributing.code.commits.header.type.list_item_4'}/>
+            <Lang
+              lnkey={'contributing.code.commits.header.type.list_item_4'}
+            />
           </li>
           <li>
-            <Lang lnkey={'contributing.code.commits.header.type.list_item_5'}/>
+            <Lang
+              lnkey={'contributing.code.commits.header.type.list_item_5'}
+            />
           </li>
           <li>
-            <Lang lnkey={'contributing.code.commits.header.type.list_item_6'}/>
+            <Lang
+              lnkey={'contributing.code.commits.header.type.list_item_6'}
+            />
           </li>
           <li>
-            <Lang lnkey={'contributing.code.commits.header.type.list_item_7'}/>
+            <Lang
+              lnkey={'contributing.code.commits.header.type.list_item_7'}
+            />
           </li>
           <li>
-            <Lang lnkey={'contributing.code.commits.header.type.list_item_8'}/>
+            <Lang
+              lnkey={'contributing.code.commits.header.type.list_item_8'}
+            />
           </li>
         </ul>
-        <h5>
-          <Lang lnkey={'contributing.code.commits.header.scope.title'}/>
-        </h5>
+      </div>
+    </div>
+    <div className={'card'}>
+      <h5>
+        <Lang lnkey={'contributing.code.commits.header.scope.title'}/>
+      </h5>
+      <div>
         <p>
           <Lang lnkey={'contributing.code.commits.header.scope.description'}/>
         </p>
@@ -192,26 +199,30 @@ build(website): bump follow-redirects from 1.15.4 to 1.15.6
             <Lang lnkey={'contributing.code.commits.header.scope.list_item_4'}/>
           </li>
         </ul>
-        <h5>
-          <Lang lnkey={'contributing.code.commits.header.summary.list_item_4'}/>
-        </h5>
+      </div>
+    </div>
+    <div className={'card'}>
+      <h5>
+        <Lang lnkey={'contributing.code.commits.header.summary.title'}/>
+      </h5>
+      <div>
         <p>
-          <Lang lnkey={'contributing.code.commits.header.summary.list_item_4'}/>
+          <Lang lnkey={'contributing.code.commits.header.summary.description'}/>
         </p>
         <ul className="card-list">
           <li>
             <Lang
-              lnkey={'contributing.code.commits.header.summary.list_item_4'}
+              lnkey={'contributing.code.commits.header.summary.list_item_1'}
             />
           </li>
           <li>
             <Lang
-              lnkey={'contributing.code.commits.header.summary.list_item_4'}
+              lnkey={'contributing.code.commits.header.summary.list_item_2'}
             />
           </li>
           <li>
             <Lang
-              lnkey={'contributing.code.commits.header.summary.list_item_4'}
+              lnkey={'contributing.code.commits.header.summary.list_item_3'}
             />
           </li>
         </ul>
@@ -222,23 +233,21 @@ Fixes bug.
 // Good:
 fix unit tests failing
         `}</SyntaxHighlighter>
-
-        <h4>
-          <Lang lnkey={'contributing.code.commits.body.title'}/>
-        </h4>
-        <p>
-          <Lang lnkey={'contributing.code.commits.body.description'}/>
-        </p>
-        <p>
-          <Lang lnkey={'contributing.code.commits.body.time'}/>
-        </p>
-        <p>
-          <Lang lnkey={'contributing.code.commits.body.content'}/>
-        </p>
-
-        <h4>
-          <Lang lnkey={'contributing.code.commits.footter.title'}/>
-        </h4>
+      </div>
+    </div>
+    <ContentUnit
+      titleLevel={4}
+      titleText={'contributing.code.commits.body.title'}
+    >
+      contributing.code.commits.body.description
+      contributing.code.commits.body.time
+      contributing.code.commits.body.content
+    </ContentUnit>
+    <div className={'card'}>
+      <h4>
+        <Lang lnkey={'contributing.code.commits.footer.title'}/>
+      </h4>
+      <div>
         <p>
           <Lang lnkey={'contributing.code.commits.footer.description'}/>
         </p>
@@ -254,9 +263,13 @@ protected routes.
 
 Closes #123
         `}</SyntaxHighlighter>
-        <h4>
-          <Lang lnkey={'contributing.code.commits.complete.title'}/>
-        </h4>
+      </div>
+    </div>
+    <div className={'card'}>
+      <h4>
+        <Lang lnkey={'contributing.code.commits.complete.title'}/>
+      </h4>
+      <div>
         <p>
           <Lang lnkey={'contributing.code.commits.complete.description'}/>
         </p>
@@ -268,10 +281,13 @@ or untyped parameter, the value would never be injected from the environment.
 
 Closes #294
         `}</SyntaxHighlighter>
-
-        <h4>
-          <Lang lnkey={'contributing.code.commits.reverts.title'}/>
-        </h4>
+      </div>
+    </div>
+    <div className={'card'}>
+      <h4>
+        <Lang lnkey={'contributing.code.commits.reverts.title'}/>
+      </h4>
+      <div>
         <p>
           <Lang lnkey={'contributing.code.commits.reverts.description'}/>
         </p>
@@ -288,22 +304,18 @@ Closes #294
         </ul>
       </div>
     </div>
-    <div className='card'>
-      <h2>
-        <Lang lnkey={'contributing.documentation.title'}/>
-      </h2>
-      <p>
-        <Lang lnkey={'contributing.documentation.description'}/>
-      </p>
-    </div>
-    <div className='card'>
-      <h3>
-        <Lang lnkey={'contributing.examples.title'}/>
-      </h3>
-      <p>
-        <Lang lnkey={'contributing.examples.description'}/>
-      </p>
-    </div>
+    <ContentUnit
+      titleLevel={2}
+      titleText={'contributing.documentation.title'}
+    >
+      contributing.documentation.description
+    </ContentUnit>
+    <ContentUnit
+      titleLevel={3}
+      titleText={'contributing.examples.title'}
+    >
+      contributing.examples.description
+    </ContentUnit>
   </section>}
   page='contributing'
   path='/contributing'

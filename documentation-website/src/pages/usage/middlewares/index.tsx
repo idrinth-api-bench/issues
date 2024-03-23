@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../../../components/layout.tsx';
-import Code from '../../../components/Code.tsx';
+import Code from '../../../components/code.tsx';
 
 const Middlewares = () => <Layout
   Outlet={<>

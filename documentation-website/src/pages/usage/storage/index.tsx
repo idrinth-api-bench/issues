@@ -3,7 +3,7 @@ import {
   Lang,
 } from '../../../components/lang.tsx';
 import Layout from '../../../components/layout.tsx';
-import Code from '../../../components/Code.tsx';
+import Code from '../../../components/code.tsx';
 
 const Storage = () => <Layout
   Outlet={<>
