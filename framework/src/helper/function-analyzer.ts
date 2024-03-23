@@ -95,19 +95,17 @@ const parseParameterString = (parameter: string,): Param => {
       break;
     case 'string':
     default:
-      if (value.default === '') {
-        value.value = getEnv(value.envName, value.default);
-        break;
+      if (value.default !== '') {
+        if (value.default[FIRST] !== '"' && value.default[FIRST] !== '\'') {
+          throw new Error(language('variable_default_value', value.name,),);
+        }
+        value.default = value.default
+          .substring(
+            STRING_LIMITER_REMOVAL_START,
+            value.default.length-STRING_LIMITER_REMOVAL_LENGTH,
+          );
       }
-      if (value.default[FIRST] !== '"' && value.default[FIRST] !== '\'') {
-        throw new Error(language('variable_default_value', value.name,),);
-      }
-      value.default = value.default
-        .substring(
-          STRING_LIMITER_REMOVAL_START,
-          value.default.length-STRING_LIMITER_REMOVAL_LENGTH,
-        );
-      value.value = getEnv(value.envName, value.default);
+      value.value = getEnv(value.envName, value.default,);
       break;
   }
   return value;
