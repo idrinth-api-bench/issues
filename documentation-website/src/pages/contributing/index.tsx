@@ -3,6 +3,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import Layout from '../../components/layout.tsx';
 import {
   engines,
+  // eslint-disable-next-line indent
 } from '../../../../package.json' with {
   type: 'json'
 };
@@ -202,13 +203,19 @@ build(website): bump follow-redirects from 1.15.4 to 1.15.6
         </p>
         <ul className="card-list">
           <li>
-            <Lang lnkey={'contributing.code.commits.header.summary.list_item_4'}/>
+            <Lang
+              lnkey={'contributing.code.commits.header.summary.list_item_4'}
+            />
           </li>
           <li>
-            <Lang lnkey={'contributing.code.commits.header.summary.list_item_4'}/>
+            <Lang
+              lnkey={'contributing.code.commits.header.summary.list_item_4'}
+            />
           </li>
           <li>
-            <Lang lnkey={'contributing.code.commits.header.summary.list_item_4'}/>
+            <Lang
+              lnkey={'contributing.code.commits.header.summary.list_item_4'}
+            />
           </li>
         </ul>
         <SyntaxHighlighter language='markdown'>{`
