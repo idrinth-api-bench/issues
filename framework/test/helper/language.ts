@@ -25,7 +25,9 @@ describe('helper/language', () => {
   },);
   it('no_tasks should return different string if set to german', async() => {
     await locale('de',);
-    expect(language('no_tasks',),).to.not.be.equal('Can\'t measure zero tasks.',);
+    expect(
+      language('no_tasks',),
+    ).to.not.be.equal('Can\'t measure zero tasks.',);
   },);
   it('no_tasks should return english string if set to unknown', async() => {
     await locale('undefinedlanguage',);

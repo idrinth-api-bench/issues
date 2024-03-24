@@ -1,6 +1,6 @@
 import {
   findName,
-} from '../../src/open-api/find-name.js';
+} from '../../src/route-builder/find-name.js';
 import {
   expect,
 } from 'chai';
