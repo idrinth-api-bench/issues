@@ -77,7 +77,7 @@ cd api-bench
 npm run setup
 ```
 
-## Commit Message Guidelines
+### Commit Message Guidelines
 
 **This specification is inspired by Angular commit messages guidelines.*
 
@@ -104,7 +104,7 @@ to the [Commit Message Body](#commit-message-body) format.
 The `footer` is optional. The [Commit Message Footer](#commit-message-footer)
 format describes what the footer is used for and the structure it must have.
 
-### Commit Message Header
+#### Commit Message Header
 
 Headers must adhere to the following format:
 
@@ -115,7 +115,7 @@ Example:
 build(website): bump follow-redirects from 1.15.4 to 1.15.6
 ```
 
-#### Type
+##### Type
 
 The list of supported types:
 
@@ -128,7 +128,7 @@ The list of supported types:
 - `refactor`: A code change that neither fixes a bug nor adds a feature
 - `test`: Adding missing tests or correcting existing tests
 
-#### Scope
+##### Scope
 
 The scope should be the name of the affected part of the project.
 The list of supported scopes:
@@ -140,7 +140,7 @@ The list of supported scopes:
 - `dockerfiles`
 - `examples`
 
-#### Summary
+##### Summary
 
 The summary field should provide a succinct description of the change.
 
@@ -156,7 +156,7 @@ Fixes unit tests failing.
 fix unit tests failing
 ```
 
-### Commit Message Body
+##### Commit Message Body
 
 Just as in the summary, use the imperative, present tense.
 
@@ -164,7 +164,7 @@ The commit message body should explain *why* you are making the change.
 You can include a comparison of the previous behaviour with the new
 behaviour in order to illustrate the impact of the change.
 
-### Commit Message Footer
+##### Commit Message Footer
 
 The footer can contain information about breaking changes and deprecation
 and is also the place to reference GitHub issues and other PR's that this
@@ -189,7 +189,7 @@ or untyped parameter, the value would never be injected from the environment.
 Closes #294
 ```
 
-### Revert commits
+#### Revert commits
 
 If the commit reverts a previous commit, it should begin with `revert:`,
 followed by the header of the reverted commit.
@@ -198,6 +198,12 @@ The content of the commit message body should contain:
 
 - ID of the commit being reverted in the following format: `This reverts commit <SHA>`,
 - a clear description of the reason for reverting the commit message.
+
+### Pull Requests
+
+Please open your pull requests in draft mode.
+When ready to review remove the draft.
+Do not force-push, it just creates additional work.
 
 ## Documentation
 

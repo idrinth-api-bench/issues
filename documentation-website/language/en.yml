@@ -153,6 +153,9 @@ contributing:
         content: "The content of the commit message body should contain:"
         list_item_1: "information about the SHA of the commit being reverted in the following format: 'This reverts commit <SHA>'"
         list_item_2: "a clear description of the reason for reverting the commit message."
+    pull_requests:
+      title: "Pull Requests"
+      description: "Please open your pull requests in draft mode. When ready to review remove the draft. Do not force-push, it just creates additional work."
   documentation:
     title: "Documentation"
     description: "Documentation is an underrated part of every software. Adding any kind of clarification, example or improvement is highlyappreciated and encouraged. The ones writing the documentation are the unsung heroes of open and closed source software."

@@ -305,6 +305,12 @@ Closes #294
       </div>
     </div>
     <ContentUnit
+      titleLevel={3}
+      titleText={'contributing.code.pull_requests.title'}
+    >
+      contributing.code.pull_requests.description
+    </ContentUnit>
+    <ContentUnit
       titleLevel={2}
       titleText={'contributing.documentation.title'}
     >
