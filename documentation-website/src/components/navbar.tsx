@@ -51,7 +51,7 @@ const Navbar = ({
         </li>
         <li>
           <ExternalLink
-            to="https://www.https://idrinth-api-bench.slack.com/join/shared_invite/zt-2f4zmw2sz-c3etHzCFq3LtZpkR15xXMA#/shared-invite/email.com/groups/9588634/"
+            to="https://idrinth-api-bench.slack.com/join/shared_invite/zt-2f4zmw2sz-c3etHzCFq3LtZpkR15xXMA#/shared-invite/email"
             label={'SLACK'}
           />
         </li>
