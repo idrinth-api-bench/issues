@@ -2,12 +2,10 @@ import {
   mkdirSync,
   existsSync,
   writeFileSync,
-  cpSync as copySync,
 } from 'fs';
 import {
   EMPTY,
   FIRST_ARGUMENT,
-  FRAMEWORK_ROOT,
   INDENTATION_SPACES,
 } from '../constants.js';
 import language from '../helper/language.js';
