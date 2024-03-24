@@ -14,7 +14,7 @@ const SocialLink = ({
     rel='noreferrer'
     title={label}
   >
-    <img alt={label} src={'../../public/assets/' + label + '.svg'}/>
+    <img alt={label} src={'/public/assets/' + label + '.svg'}/>
   </a>
 </li>;
 export default SocialLink;
