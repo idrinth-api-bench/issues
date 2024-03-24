@@ -22,6 +22,7 @@ const Index = () => {
 
   // Create els element
   const els: React.JSX.Element[] = contributorsArray.map((contributor,) => <div
+    id={contributor.username}
     className={'card profile'}
     key={contributor.username}>
     <img src={contributor.avatar} alt={contributor.name} />
