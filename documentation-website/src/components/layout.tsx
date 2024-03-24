@@ -1,5 +1,5 @@
 import DefaultMeta from './default-meta.tsx';
-import Navbar from './navbar.tsx';
+import Header from './header.tsx';
 import Footer from './footer.tsx';
 import React from 'react';
 import Breadcrumbs from './breadcrumbs.tsx';
@@ -22,7 +22,7 @@ const Layout = ({
     : '';
   return <>
     {meta}
-    <Navbar window={window || {}}/>
+    <Header window={window || {}}/>
     <Breadcrumbs path={path}/>
     <article>
       {Outlet}

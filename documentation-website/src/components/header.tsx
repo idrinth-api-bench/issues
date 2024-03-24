@@ -9,10 +9,10 @@ import pkg from '../../package.json' with {
 import {
   Lang,
 } from './lang.tsx';
-import ExternalLink from './external-link.tsx';
 import DarkModeButton from './dark-mode-button.tsx';
+import SocialLink from './social-link.tsx';
 
-const Navbar = ({
+const Header = ({
   window,
 }: {window: Window},) => <>
   <header>
@@ -23,6 +23,31 @@ const Navbar = ({
     </div>
     <nav>
       <ul>
+        <SocialLink
+          to="https://www.npmjs.com/package/@idrinth/api-bench"
+          label={'npm'}
+        />
+        <SocialLink
+          to="https://github.com/Idrinth/api-bench"
+          label={'github'}
+        />
+        <SocialLink
+          to="https://www.linkedin.com/groups/9588634/"
+          label={'linkedin'}
+        />
+        <SocialLink
+          to={
+            'https://idrinth-api-bench.slack.com/' +
+            'join/shared_invite/' +
+            'zt-2f4zmw2sz-c3etHzCFq3LtZpkR15xXMA' +
+            '#/shared-invite/email'
+          }
+          label={'slack'}
+        />
+      </ul>
+    </nav>
+    <nav>
+      <ul>
         <li>
           <NavLink to="/"><Lang lnkey='home.nav' /></NavLink>
         </li>
@@ -30,30 +55,6 @@ const Navbar = ({
           <NavLink to="/quick-start/">
             <Lang lnkey='quick-start.nav' />
           </NavLink>
-        </li>
-        <li>
-          <ExternalLink
-            to="https://www.npmjs.com/package/@idrinth/api-bench"
-            label={'NPMJS'}
-          />
-        </li>
-        <li>
-          <ExternalLink
-            to="https://github.com/Idrinth/api-bench"
-            label={'GITHUB'}
-          />
-        </li>
-        <li>
-          <ExternalLink
-            to="https://www.linkedin.com/groups/9588634/"
-            label={'LINKEDIN'}
-          />
-        </li>
-        <li>
-          <ExternalLink
-            to="https://idrinth-api-bench.slack.com/join/shared_invite/zt-2f4zmw2sz-c3etHzCFq3LtZpkR15xXMA#/shared-invite/email"
-            label={'SLACK'}
-          />
         </li>
         <li>
           <NavLink to="/contributing/">
@@ -114,4 +115,4 @@ const Navbar = ({
     <DarkModeButton window={window} />
   </header>
 </>;
-export default Navbar;
+export default Header;
