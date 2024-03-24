@@ -40,11 +40,13 @@ describe('open-api-route-builder', () => {
     setTimeout(() => {
       // eslint-disable-next-line no-unused-expressions
       expect(readFileSync(
-        '/harrb1/src/routes/main/test.ts',
+        '/harrb1/src/routes/main/' +
+        '4ba32986cb4764219ca5c4e32e75829b09083fbfa0b4372aa599e5e3f957940f.ts',
       ) + '',).to.not.be.empty;
       // eslint-disable-next-line no-unused-expressions
       expect(readFileSync(
-        '/harrb1/src/routes/main/get-abc-id.ts',
+        '/harrb1/src/routes/main/' +
+        '0675ed3407ccc995fbccacfc7a09b6c9081fa531f3f0fc6e92a0b7c347536695.ts',
       ) + '',).to.not.be.empty;
       done();
     }, WAIT_TIME,);
