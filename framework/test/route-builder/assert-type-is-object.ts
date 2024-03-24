@@ -1,4 +1,4 @@
-import assertTypeIsObject from '../../src/open-api/assert-type-is-object.js';
+import assertTypeIsObject from '../../src/route-builder/assert-type-is-object.js';
 import {
   expect,
 } from 'chai';

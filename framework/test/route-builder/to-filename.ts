@@ -1,6 +1,6 @@
 import {
   toFilename,
-} from '../../src/open-api/to-filename.js';
+} from '../../src/route-builder/to-filename.js';
 import {
   expect,
 } from 'chai';
