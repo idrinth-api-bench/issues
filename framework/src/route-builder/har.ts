@@ -9,5 +9,5 @@ interface HAR {
       }
     ]
   }
-};
+}
 export default HAR;

@@ -70,7 +70,7 @@ const checkType = (job: Job, type: taskType,) => {
   };
 };
 
-export default async(args: string[], cwd: string): Promise<void> => {
+export default async(args: string[], cwd: string,): Promise<void> => {
   await locale(args[FIRST_ARGUMENT] || DEFAULT_LANGUAGE,);
   const job = await jobCreator(cwd,);
   validateTasks(ONE, ONE, job.main,);
