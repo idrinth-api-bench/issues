@@ -17,7 +17,7 @@ export default class SilentServerValidator {
   }
 
   public static process(result: Result,): void {
-    if (typeof result.response.headers['Server'] !== 'undefined') {
+    if (typeof result.response.headers.Server !== 'undefined') {
       throw Error(language('server_header_is_set',),);
     }
     if (typeof result.response.headers['X-Powered-By'] !== 'undefined') {

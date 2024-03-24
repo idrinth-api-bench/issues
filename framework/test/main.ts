@@ -25,17 +25,17 @@ describe('main', () => {
     try {
       await run({
         taskId: 'example',
-      }, ONE, ONE, [{
+      }, ONE, ONE, [ {
         id: 'wrong',
         main: {
           method: 'get',
           url: 'http://localhost',
         },
-      },],);
+      }, ],);
       // eslint-disable-next-line no-unused-expressions
       expect(false,).to.be.true;
     } catch (e) {
-      expect(`${ e }`).to.equal('Error: Can\'t measure zero tasks.',);
+      expect(`${ e }`,).to.equal('Error: Can\'t measure zero tasks.',);
     }
   },);
 },);

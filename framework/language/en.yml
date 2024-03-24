@@ -41,3 +41,4 @@ validation_warning: There were %1% warnings encountered.
 invalid_pre_definition: The definition of pre on route %1% is not valid.
 invalid_post_definition: The definition of post on route %1% is not valid.
 unknown_route_property: The property %1% on route %1% is unknown.
+no_har_document_given: The  path didn't point to an HAR document.
