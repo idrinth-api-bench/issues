@@ -71,13 +71,16 @@ strong {
 
 header {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 90% 10%;
   background-color: var(--light-gray);
   padding-bottom: 1em;
   padding-top: 1em;
+}
+
+header button {
+  grid-column: 2;
+  grid-row: 1;
 }
 
 header img {
@@ -93,6 +96,7 @@ header div {
   align-items: center;
   text-align: left;
   max-width: 360px;
+  padding-left: 2rem;
 }
 
 nav a {
@@ -178,6 +182,10 @@ nav li ul {
 
 nav li li:last-of-type {
   border-bottom: transparent 0 none;
+}
+
+header nav {
+  grid-column: 1/3
 }
 
 header strong {
@@ -299,8 +307,8 @@ nav.breadcrumbs li:last-of-type::after {
     );
   }
 
-  header div {
-    padding-left: 1em;
+  header {
+    grid-template-columns: 30% auto 5%;
   }
 
   header strong {
@@ -318,6 +326,10 @@ nav.breadcrumbs li:last-of-type::after {
   nav ul {
     flex-direction: row;
     gap: 1.7em;
+  }
+
+  header nav {
+    grid-column: 2;
   }
 
   header nav > ul {
@@ -365,6 +377,7 @@ nav.breadcrumbs li:last-of-type::after {
 
   header button {
     padding-right: 1em;
+    grid-column: 3;
   }
 
   .title-card {
@@ -383,12 +396,7 @@ nav.breadcrumbs li:last-of-type::after {
 }
 
 @media only screen and (width >= 900px) {
-  header {
-    flex-direction: row;
-  }
-
   header div {
-    width: 30%;
     max-width: initial;
   }
 }
