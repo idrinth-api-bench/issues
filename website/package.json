@@ -1,7 +1,7 @@
 {
   "name": "@idrinth/api-bench/website",
   "private": true,
-  "version": "2.6.0",
+  "version": "2.7.2",
   "license": "MIT",
   "homepage": "https://idrinth-api-ben.ch",
   "type": "module",
