@@ -5,6 +5,7 @@ import engine from '../../../../package.json' with {
   type: 'json'
 };
 import './contributing.css';
+import card from '../../components/card.tsx';
 
 const Index = () => <Layout
   Outlet={<section>
@@ -295,5 +296,4 @@ Closes #294
   page='contributing'
   path='/contributing'
 />;
-
 export default Index;
