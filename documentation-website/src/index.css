@@ -505,3 +505,27 @@ nav.breadcrumbs li:last-of-type::after {
     content: none;
   }
 }
+
+.accordion-section{
+  cursor: pointer;
+  display: flex;
+  justify-content:space-between ;
+  align-items: center;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s, max-height 0.5s ease;
+}
+
+.accordion-content.open {
+  opacity: 1;
+  max-height: 500px;
+  transition: opacity 0.5s, max-height 0.8s ease-in;
+}
+
+.accordion-content-body{
+  font-size: 14px;
+}
