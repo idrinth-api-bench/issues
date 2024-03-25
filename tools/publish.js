@@ -1,6 +1,9 @@
 import exec from './src/exec.js';
 import readline from 'readline';
 import {
+  quote,
+} from 'shell-quote';
+import {
   existsSync,
   readFileSync,
   writeFileSync,
@@ -19,7 +22,7 @@ const rl = readline.createInterface({
   output: process.stdout,
 },);
 rl.question(
-  'Enter version to publish',
+  'Enter version to publish: ',
   async(version,) => {
     if (! version.match(/^\d+\.\d+\.\d+$/u,)) {
       console.error('Invalid version.',);
@@ -66,24 +69,44 @@ rl.question(
     await delay(NPM_PULL_DELAY,);
     const main = version.replace(/\..+$/u, '',);
     const feature = version.replace(/\.[^.]+$/u, '',);
-    exec('docker login -u', true,);
-    for (const image of [
-      'api-bench',
-      'api-bench-gitea-action',
-      'api-bench-api-bench-gitlab-runner',
-    ]) {
-      const tags = [
-        `-t idrinth/${ image }:latest`,
-        `-t idrinth/${ image }:${ version }`,
-        `-t idrinth/${ image }:${ feature }`,
-        `-t idrinth/${ image }:${ main }`,
-      ];
-      exec(
-        `cd containers/${ image } && docker build ${ tags.join(' ',) } .`,
-        true,
-      );
-      exec(`docker push -a ${ image }`, true,);
-    }
-    process.exit(EXIT_SUCCESS,);
+    rl.question('Docker password: ', (password,) => {
+      exec(quote([
+        'docker',
+        'login',
+        '-u',
+        'idrinth',
+        '-p',
+        password,
+      ],), true,);
+      for (const image of [
+        'api-bench',
+        'api-bench-gitea-action',
+        'api-bench-api-bench-gitlab-runner',
+      ]) {
+        const tags = [
+          `-t idrinth/${ image }:latest`,
+          `-t idrinth/${ image }:${ version }`,
+          `-t idrinth/${ image }:${ feature }`,
+          `-t idrinth/${ image }:${ main }`,
+        ];
+        writeFileSync(
+          `${ process.cwd() }/containers/${ image }/Dockerfile`,
+          readFileSync(
+            `${ process.cwd() }/containers/${ image }/Dockerfile`,
+            'utf8',
+          )
+            .replace(
+              'ARG IDRINTH_API_BENCH_VERSION',
+              `ARG IDRINTH_API_BENCH_VERSION=${ version }`,
+            ),
+        );
+        exec(
+          `cd containers/${ image } && docker build ${ tags.join(' ',) } .`,
+          true,
+        );
+        exec(`docker push -a ${ image }`, true,);
+      }
+      process.exit(EXIT_SUCCESS,);
+    },);
   },
 );
