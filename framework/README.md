@@ -36,6 +36,7 @@ We have ready to be used CI Images:
 
 - [Gitlab Runner](https://hub.docker.com/r/idrinth/api-bench-gitlab-runner)
 - [Gitea Action](https://hub.docker.com/r/idrinth/api-bench-gitea-action)
+- [Pure Alpine](https://hub.docker.com/r/idrinth/api-bench)
 
 ## License
 
