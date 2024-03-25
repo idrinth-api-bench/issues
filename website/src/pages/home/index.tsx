@@ -57,7 +57,9 @@ const Index = () => <Layout
       </p>
     </div>
     <div className='card'>
-      <h2>Frequently Asked Questions</h2>
+      <h2> 
+        <Lang lnkey='faq.meta.title'/>
+      </h2>
         <Faqs/>
     </div>
   </>}

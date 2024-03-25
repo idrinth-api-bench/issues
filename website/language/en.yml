@@ -146,3 +146,18 @@ loader:
   wait: "Trying to load fresh content for you, please wait."
   offline: "Please go online and then refresh the page."
   reload: "Content has changed, reloading the page for you in a moment."
+
+faq:
+  meta:
+    title: "Frequently Asked Questions"
+  questions:
+    title_1: "What is benchmarking?"
+    description_1: "Benchmarking is the process of measuring software performance against established best practices."
+    title_2: "What is load testing?"
+    description_2: "Load testing evaluates system behavior under peak or anticipated load conditions."
+    title_3: "How long does it take to write a test?"
+    description_3: "The average time to write a test is 2-3 minutes. For beginners, it is about 15 minutes."
+    title_4: "How long does it take to setup?"
+    description_4: "By following the LINK, it only takes a few minutes!"
+    nav_text_4: "Quick Start"
+    nav_4: "/quick-start"

@@ -1,32 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FAQ } from '../constants';
-
-interface AccordionProps {
-  title: string;
-  answer: string;
-  link?: string;
-  linkText?: string; 
-}
+import { useTranslation } from 'react-i18next';
 
 const Faqs = () => {
-  return (
-    <div>
-      {
-        FAQ.map((faq:AccordionProps,index:number)=>(
-         <Accordion key={index} title={faq.title} answer={faq.answer} link={faq.link} linkText={faq.linkText}/>
-        ))
-      }
-    </div>
-  )
-}
+  
+  const faqLength = 4; // change the length if more FAQ is added to the en.yml file.just add the total number of questions.
+  const [isOpen, setIsOpen] = useState(Array(faqLength).fill(false));
+  const { t } = useTranslation();
 
-const Accordion = ({ title,answer,link,linkText }:AccordionProps) => {
-   const [isOpen, setIsOpen] = useState(false);
-   const toggleOpen = () => setIsOpen(!isOpen);
-   
-   const renderAnswer = (text:string,link?:string,linkText?:string) => {
-    const parts = text.split("LINK");
+  const toggleOpen = (index:number) => {
+    const newState = isOpen.map((item, i) => (i === index ? !item : item));
+    setIsOpen(newState);
+  };
+
+  const renderAnswer = (content:any, nav?:any, navText?:any) => {
+    const textContent = t(content);
+    const link = t(nav);
+    const linkText = t(navText);
+    
+    if(textContent.includes('faq.questions'))return
+
+    const parts = textContent.split("LINK");
     const renderedParts = parts.map((part, index) => {
       if (index === parts.length - 1) return part;
       return (
@@ -40,27 +34,33 @@ const Accordion = ({ title,answer,link,linkText }:AccordionProps) => {
     return <>{renderedParts}</>;
   };
 
-   return (
-     <div >
-      <div onClick={toggleOpen} className='accordion'>
-        <div className='accordion-section'>
-          <div className='accordion-title' >
-            <h5>
-              {title} 
-            </h5>
-          </div>
-            <div>
-                <span className="accordion-icon">{isOpen ? <i>&#x23F7;</i> : <i>&#x23F6;</i>}</span>
+  return (
+    <div>
+      {[...Array(faqLength)].map((_, i) => (
+        <div key={i}>
+          <div onClick={() => toggleOpen(i)} className='accordion'>
+            <div className='accordion-section'>
+              <div className='accordion-title'>
+                <h5>
+                  {renderAnswer(`faq.questions.title_${i+1}`)}
+                </h5>
+              </div>
+              <div>
+                <span className="accordion-icon">
+                  {isOpen[i] ? <i>&#x23F6;</i> : <i>&#x23F7;</i>}
+                </span>
+              </div>
             </div>
+          </div>
+          <div className={`accordion-content ${isOpen[i] ? 'open' : ''}`}>
+            <div className='accordion-content-body'>
+              {renderAnswer(`faq.questions.description_${i+1}`,`faq.questions.nav_${i+1}`,`faq.questions.nav_text_${i+1}`)}
+            </div>
+          </div>
         </div>
-      </div>
-      <div className={`accordion-content ${isOpen ? 'open' : ''}`}>
-          <p className='accordion-content-body'>
-            {renderAnswer(answer,link,linkText)}
-          </p>
-       </div>
-     </div>
-   );
- };
+      ))}
+    </div>
+  );
+};
 
 export default Faqs
