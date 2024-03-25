@@ -14,16 +14,21 @@ const Route = () => <Layout
     <div className='card'>
       <h2><Lang lnkey='routes.example.title'/></h2>
       <div>
-        <p><Lang lnkey='routes.example.description'/></p>
+        <p>
+          <Lang lnkey='routes.example.description'/>
+          <Lang lnkey='routes.middleware.description'/>
+        </p>
         <Code language='typescript'>{`import {
   Task,
 } from '@idrinth/api-bench';
-  
+
 export default (apiURL, apiPassword): Task => {
   main: {
     method: 'get',
     url: apiURL + '?' + apiPassword,
   },
+  pre: ['^user-agent',],
+  post: ['^status-2xx','^access-token',],
 };
       `}</Code>
       </div>
