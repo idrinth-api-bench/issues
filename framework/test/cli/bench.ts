@@ -4,7 +4,7 @@ import {
 } from 'chai';
 import 'mocha';
 
-describe('bench', () => {
+describe('cli', () => {
   it('should be a function', () => {
     expect(cli,).to.be.a('function',);
   },);

@@ -9,7 +9,6 @@
   - [Why a Benchmark Runner](#why-use-a-benchmark-runner)
   - [Regarding existing libraries](#regarding-existing-libraries)
 - [Usage & Examples](#usage--examples)
-- [CI-Images](#ci-images)
 - [License](#license)
 - [Support](#support)
 

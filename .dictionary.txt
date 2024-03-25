@@ -27,12 +27,3 @@ Microservice
 Dockerfiles
 Roadmap
 ui
-readme
-mono-repo
-subprojects
-ci-images
-Gitlab
-gitlab-runner
-gitlab
-gitea
-Gitea

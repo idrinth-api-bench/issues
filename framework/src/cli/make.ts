@@ -2,10 +2,12 @@ import {
   mkdirSync,
   existsSync,
   writeFileSync,
+  cpSync as copySync,
 } from 'fs';
 import {
   EMPTY,
   FIRST_ARGUMENT,
+  FRAMEWORK_ROOT,
   INDENTATION_SPACES,
 } from '../constants.js';
 import language from '../helper/language.js';
@@ -89,7 +91,9 @@ export default (args: string[], cwd: string,) => {
       'content-testing: []\n',),
     () => writeFileSync(root + '/.gitignore', '/nbproject\n' +
       '/node_modules\n' +
-      '/result.*\n' +
+      '/result.json\n' +
+      '/result.csv\n' +
+      '/result.html\n' +
       '/src/**/*.js\n' +
       '/.idea\n' +
       '/.vscode\n',),
@@ -271,44 +275,12 @@ export default (args: string[], cwd: string,) => {
       'parserOptions:\n' +
       '  ecmaVersion: 2018\n'
       ,),
-    () => writeFileSync(
+    () => copySync(
+      FRAMEWORK_ROOT + '/../.editorconfig',
       root + '/.editorconfig',
-      'root = true\n' +
-      '\n' +
-      '[*]\n' +
-      'end_of_line = lf\n' +
-      'insert_final_newline = true\n' +
-      'charset = utf-8\n' +
-      'indent_style = space\n' +
-      'indent_size = 2\n',
     ),
-    () => writeFileSync(
-      root + '/.mocharc.cjs',
-      'module.exports = {\n' +
-      '  recursive: true,\n' +
-      '  extension: [\n' +
-      '    \'ts\'\n' +
-      '  ],\n' +
-      '  \'node-option\': [\n' +
-      '    \'experimental-specifier-resolution=node\',\n' +
-      '    \'loader=ts-node/esm\'\n' +
-      '  ],\n' +
-      '  parallel: false\n' +
-      '}',
-    ),
-    () => writeFileSync(
-      root + '/.nycrc.json',
-      '{\n' +
-      '  "require": ["ts-node/register"],\n' +
-      '  "extension" : [".ts", ".tsx"],\n' +
-      '  "reporter": ["lcov", "text-summary"],\n' +
-      '  "all": true,\n' +
-      '  "sourceMap": true,\n' +
-      '  "instrument": true,\n' +
-      '  "exclude": [],\n' +
-      '  "include": ["src/**/*.ts"]\n' +
-      '}\n',
-    ),
+    () => copySync(FRAMEWORK_ROOT + '/.mocharc.cjs', root + '/.mocharc.cjs',),
+    () => copySync(FRAMEWORK_ROOT + '/.nycrc.json', root + '/.nycrc.json',),
     () => execSync('npm install', {
       cwd: root,
     },),

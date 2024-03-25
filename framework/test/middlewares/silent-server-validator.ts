@@ -1,4 +1,4 @@
-import SSV from '../../src/middlewares/silent-server-validator.js';
+import SilentServerValidator from '../../src/middlewares/silent-server-validator.js';
 import {
   expect,
 } from 'chai';
@@ -6,19 +6,17 @@ import 'mocha';
 import {
   NeedleHttpVerbs,
 } from 'needle';
-import {
-  Result,
-} from '../../src/result';
+import {Result} from "../../src/result";
 
 describe('middlewares/silent-server-validator', () => {
   it('should be a class', () => {
-    expect(SSV,).to.be.a('function',);
+    expect(SilentServerValidator,).to.be.a('function',);
   },);
   it('should have a static method prepare', () => {
-    expect(SSV.prepare,).to.be.a('function',);
+    expect(SilentServerValidator.prepare,).to.be.a('function',);
   },);
   it('should have a static method process', () => {
-    expect(SSV.process,).to.be.a('function',);
+    expect(SilentServerValidator.process,).to.be.a('function',);
   },);
   it('process should not throw if there are no headers', () => {
     const input = {
@@ -34,9 +32,7 @@ describe('middlewares/silent-server-validator', () => {
       id: '',
       validators: [],
     };
-    expect(
-      () => SSV.process(input as Result,),
-    ).to.not.throw();
+    expect(() => SilentServerValidator.process(input as Result,),).to.not.throw();
   },);
   it('process should not throw if there is a Server header', () => {
     const input = {
@@ -44,7 +40,7 @@ describe('middlewares/silent-server-validator', () => {
         // eslint-disable-next-line no-undefined
         status: undefined,
         headers: {
-          Server: 'nginx',
+          Server: 'nginx'
         },
         cookies: {},
         body: '',
@@ -54,8 +50,8 @@ describe('middlewares/silent-server-validator', () => {
       id: '',
       validators: [],
     };
-    expect(() => SSV.process(input as Result,),).to.throw(
-      'The header Server is set. Remove this',
+    expect(() => SilentServerValidator.process(input as Result,),).to.throw(
+      'The header Server is set. Remove this'
     );
   },);
   it('process should not throw if there is a X-Powered-By header', () => {
@@ -64,7 +60,7 @@ describe('middlewares/silent-server-validator', () => {
         // eslint-disable-next-line no-undefined
         status: undefined,
         headers: {
-          'X-Powered-By': 'php/8.1.2',
+          'X-Powered-By': 'php/8.1.2'
         },
         cookies: {},
         body: '',
@@ -74,9 +70,8 @@ describe('middlewares/silent-server-validator', () => {
       id: '',
       validators: [],
     };
-    expect(() => SSV.process(input as Result,),).to.throw(
-      'The header X-Powered-By is set. ' +
-      'It shares critical information with the world.',
+    expect(() => SilentServerValidator.process(input as Result,),).to.throw(
+      'The header X-Powered-By is set. It shares critical information with the world.',
     );
   },);
   it('prepare should return input', () => {
@@ -87,6 +82,6 @@ describe('middlewares/silent-server-validator', () => {
       body: 'body',
       url: 'url',
     };
-    expect(SSV.prepare(input,),).to.equal(input,);
+    expect(SilentServerValidator.prepare(input,),).to.equal(input,);
   },);
 },);

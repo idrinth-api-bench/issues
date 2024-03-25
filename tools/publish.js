@@ -25,9 +25,7 @@ rl.question(
     for (const file of [
       '/package.json',
       '/framework/package.json',
-      '/documentation-website/package.json',
-      '/history-website/package.json',
-      '/history-microservice/package.json',
+      '/website/package.json',
     ]) {
       if (! existsSync(process.cwd() + file,)) {
         console.error('File ' + file + ' missing',);
@@ -50,6 +48,10 @@ rl.question(
     );
     exec(
       'cd framework && npm install',
+      true,
+    );
+    exec(
+      'cd website && npm install',
       true,
     );
     writeFileSync(

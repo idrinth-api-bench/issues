@@ -12,6 +12,3 @@ COPY --from=node /usr/local/include /usr/local/include
 COPY --from=node /usr/local/bin /usr/local/bin
 
 LABEL authors="Björn 'Idrinth' Büttner"
-
-RUN npm install -g --omit=dev "@idrinth/api-bench@${IDRINTH_API_BENCH_VERSION}"
-RUN rm /usr/local/lib/node_modules/@idrinth/api-bench/**/*.ts

@@ -11,17 +11,7 @@ updates:
     interval: weekly
   open-pull-requests-limit: 100
 - package-ecosystem: npm
-  directory: "/documentation-website"
-  schedule:
-    interval: weekly
-  open-pull-requests-limit: 100
-- package-ecosystem: npm
-  directory: "/history-website"
-  schedule:
-    interval: weekly
-  open-pull-requests-limit: 100
-- package-ecosystem: npm
-  directory: "/history-microservice"
+  directory: "/website"
   schedule:
     interval: weekly
   open-pull-requests-limit: 100

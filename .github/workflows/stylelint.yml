@@ -18,7 +18,7 @@ env:
   PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
 jobs:
-  documentation-stylelint:
+  stylelint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -29,13 +29,11 @@ jobs:
           cache: 'npm'
           cache-dependency-path: |
             framework/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
+            website/package-lock.json
             package-lock.json
-      - run: cd documentation-website && npm ci
-      - run: cd documentation-website && npm run-script lint-styles
-  documentation-duplicate-style-check:
+      - run: cd website && npm ci
+      - run: cd website && npm run-script lint-styles
+  duplicate-style-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -46,9 +44,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: |
             framework/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
+            website/package-lock.json
             package-lock.json
-      - run: cd documentation-website && npm ci
-      - run: cd documentation-website && npm run-script lint-css
+      - run: cd website && npm ci
+      - run: cd website && npm run-script lint-css
