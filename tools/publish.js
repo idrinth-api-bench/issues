@@ -11,13 +11,16 @@ import {
   INDENTATION,
 } from './src/constants.js';
 
+const delay = (time,) => new Promise((resolve,) => setTimeout(resolve, time,),);
+const NPM_PULL_DELAY = 30000;
+
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 },);
 rl.question(
   'Enter version to publish',
-  (version,) => {
+  async(version,) => {
     if (! version.match(/^\d+\.\d+\.\d+$/u,)) {
       console.error('Invalid version.',);
       process.exit(EXIT_FAILURE,);
@@ -60,6 +63,27 @@ rl.question(
       'cd framework && npm publish',
       true,
     );
+    await delay(NPM_PULL_DELAY,);
+    const main = version.replace(/\..+$/u, '',);
+    const feature = version.replace(/\.[^.]+$/u, '',);
+    exec('docker login -u', true,);
+    for (const image of [
+      'api-bench',
+      'api-bench-gitea-action',
+      'api-bench-api-bench-gitlab-runner',
+    ]) {
+      const tags = [
+        `-t idrinth/${ image }:latest`,
+        `-t idrinth/${ image }:${ version }`,
+        `-t idrinth/${ image }:${ feature }`,
+        `-t idrinth/${ image }:${ main }`,
+      ];
+      exec(
+        `cd containers/${ image } && docker build ${ tags.join(' ',) } .`,
+        true,
+      );
+      exec(`docker push -a ${ image }`, true,);
+    }
     process.exit(EXIT_SUCCESS,);
   },
 );
