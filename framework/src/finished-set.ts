@@ -14,3 +14,5 @@ export interface FinishedSet {
   max80: number;
   msgs?: {[msg: string]: number};
 }
+
+export default FinishedSet;

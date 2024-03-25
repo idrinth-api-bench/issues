@@ -12,3 +12,5 @@ export class NullLogger extends Wrapper {
     // noop
   }
 }
+
+export default NullLogger;

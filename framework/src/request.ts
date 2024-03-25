@@ -24,3 +24,5 @@ export interface Request {
   url: string;
   maxDuration?: number|undefined;
 }
+
+export default Request;

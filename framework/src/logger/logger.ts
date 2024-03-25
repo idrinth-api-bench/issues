@@ -12,3 +12,5 @@ export interface Logger {
   fatal(msg: string, data: Record<string, unknown>): void;
   fatal(msg: string): void;
 }
+
+export default Logger;

@@ -25,3 +25,5 @@ export class WinstonWrapper extends Wrapper {
     this.logger[level](data ? `${ msg } ${ JSON.stringify(data,) }` : msg,);
   }
 }
+
+export default WinstonWrapper;

@@ -4,3 +4,5 @@ export interface ValidationResult {
   success: boolean;
   msg?: string;
 }
+
+export default ValidationResult;
