@@ -18,10 +18,9 @@ const Faqs = () => {
     setIsOpen,
   ] = useState(Array(faqLength,).fill(false,),);
 
-  const toggleOpen = (index:number,) => {
-    const newState = isOpen.map(
-      (item: boolean, i: number,): boolean => i === index ? ! item : item,
-    );
+  const toggleOpen = (index: number,) => {
+    const newState = [...isOpen];
+    newState[index] = ! newState[index];
     setIsOpen(newState,);
   };
 
