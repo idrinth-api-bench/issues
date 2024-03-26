@@ -41,7 +41,6 @@ const Index = () => {
     ,);
 
   const elsTwo: React.JSX.Element[] = noncodecontributors.map((contributor,) =>
-
     <div id={contributor.name} className={'card profile'} key={contributor.name}
     >
       <div>
