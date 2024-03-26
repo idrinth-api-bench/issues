@@ -15,7 +15,7 @@ interface CardProps {
   children: string[]|string;
 }
 
-const hasWhitespace = new RegExp('\\s', 'u',);
+const hasWhitespace = /\s/u;
 
 const ContentUnit = ({
   titleText,

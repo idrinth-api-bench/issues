@@ -13,7 +13,7 @@ import {
 } from '../hashmap.js';
 import store from '../store.js';
 
-const jsonCheck = new RegExp('^application/json', 'ui',);
+const jsonCheck = /^application\/json/ui;
 
 const get = (
   fallback: string,

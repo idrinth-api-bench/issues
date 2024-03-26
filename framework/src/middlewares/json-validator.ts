@@ -10,7 +10,7 @@ import {
 } from '../result.js';
 import language from '../helper/language.js';
 
-const jsonCheck = new RegExp('^application/json', 'ui',);
+const jsonCheck = /^application\/json/ui;
 
 @staticImplements<Middleware>()
 export default class JsonValidator {

@@ -25,7 +25,7 @@ const hash = createHash('sha256',)
   .digest('hex',);
 const id = hash + process.pid;
 const cachefolder: string = tmpdir() + sep + 'api-bench' + sep + '_' + id;
-const keyCheck = new RegExp('^[a-z0-9.]+$', 'u',);
+const keyCheck = /^[a-z0-9.]+$/u;
 
 export default {
   get(key: string, defaulted: string,): string {

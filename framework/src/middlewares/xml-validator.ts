@@ -13,7 +13,7 @@ import {
   XMLValidator,
 } from 'fast-xml-parser';
 
-const xmlCheck = new RegExp('/xml', 'ui',);
+const xmlCheck = /\/xml/ui;
 
 @staticImplements<Middleware>()
 export default class JsonValidator {
