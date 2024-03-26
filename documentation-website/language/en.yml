@@ -222,6 +222,7 @@ routes:
   example:
     title: "Example"
     description: "The code below defines a request to a URL from the environment with GET."
+    middleware: "To apply middlewares add both the pre and post properties as shown in the example. Then proceed to pass in your middleware functions to be executed."
   nav: "Routes"
 
 quick-start:

@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - run: cd containers/gitlab-runner && docker build .
+      - run: cd containers/api-bench-gitlab-runner && docker build .
   build-gitea:
     name: Build Gitea
     runs-on: ubuntu-latest
@@ -28,5 +28,28 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - run: cd containers/gitea-action && docker build .
-
+      - run: cd containers/api-bench-gitea-action && docker build .
+  build-framework:
+    name: Build Framework
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - run: cd containers/api-bench && docker build .
+  build-microservice:
+    name: Build History Microservice
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - run: cd containers/api-bench-history-microservice && docker build .
+  build-website:
+    name: Build History Website
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - run: cd containers/api-bench-history-website && docker build .
