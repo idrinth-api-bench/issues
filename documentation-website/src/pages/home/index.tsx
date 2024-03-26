@@ -58,7 +58,7 @@ const Index = () => <Layout
     </div>
     <div className='card'>
       <h2>
-        <Lang lnkey='faq.meta.title'/>
+        <Lang lnkey='home.faq.title'/>
       </h2>
       <Faqs/>
     </div>
