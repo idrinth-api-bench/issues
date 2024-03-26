@@ -41,7 +41,9 @@ const Index = () => {
     ,);
 
   const elsTwo: React.JSX.Element[] = noncodecontributors.map((contributor,) =>
-    <div id={contributor.name} className={'card profile'} key={contributor.name}>
+
+    <div id={contributor.name} className={'card profile'} key={contributor.name}
+    >
       <div>
         <h2>
           <ExternalLink to={contributor.url} label={contributor.name} />
@@ -50,7 +52,7 @@ const Index = () => {
         <p>Location: {contributor.location}</p>
         <p>Contributions: {contributor.contributions}</p>
       </div>
-  </div>
+    </div>
     ,);
 
   return <Layout
