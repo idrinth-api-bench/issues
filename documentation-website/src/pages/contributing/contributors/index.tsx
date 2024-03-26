@@ -7,7 +7,9 @@ import {
   Lang,
 } from '../../../components/lang.tsx';
 import ExternalLink from '../../../components/external-link.tsx';
-import noncodecontributors from './non-code-contributors.json' with {type: 'json'}
+import noncodecontributors from './non-code-contributors.json' with {
+  type: 'json'
+};
 
 const Index = () => {
   // Convert contributors object into array
@@ -39,18 +41,20 @@ const Index = () => {
     ,);
 
   const elsTwo: React.JSX.Element[] = noncodecontributors.map((contributor,) => <div
-  id={contributor.name} className={'card profile'} key={contributor.name}
-    >
-      <div>
-        <h2>
-          <ExternalLink to={contributor.url} label={contributor.name} />
-        </h2>
-        <p>{contributor.intro}</p>
-        <p>Location: {contributor.location}</p>
-        <p>Contributions: {contributor.contributions}</p>
-      </div>
+    id={contributor.name}
+    className={'card profile'}
+    key={contributor.name}>
+    <div>
+      <h2>
+        <ExternalLink to={contributor.url} label={contributor.name} />
+      </h2>
+      <p>{contributor.intro}</p>
+      <p>Location: {contributor.location}</p>
+      <p>Contributions: {contributor.contributions}</p>
     </div>
-  )
+  </div>
+    ,);
+
   return <Layout
     Outlet={<section>
       <div className='title-card'>
