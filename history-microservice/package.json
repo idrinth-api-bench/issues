@@ -51,7 +51,7 @@
     "markdownlint-cli": "^0.39.0"
   },
   "scripts": {
-    "lint": "eslint . --ext .js,.ts,.cjs,.json,.tsx",
+    "lint": "eslint . --ext .js,.ts,.cjs,.json,.tsx --report-unused-disable-directives --max-warnings 0",
     "lint-fix": "eslint --fix . --ext .js,.ts,.cjs,.json",
     "lint-md": "markdownlint *.md",
     "test": "c8 mocha test",
