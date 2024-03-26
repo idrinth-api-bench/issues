@@ -13,6 +13,8 @@ import {
   XMLValidator,
 } from 'fast-xml-parser';
 
+const xmlCheck = new RegExp('/xml', 'ui',);
+
 @staticImplements<Middleware>()
 export default class JsonValidator {
   public static prepare(request: Request,): Request {
@@ -24,7 +26,7 @@ export default class JsonValidator {
       throw Error(language('no_content_type',),);
     }
     const contentType = result.response.headers['content-type'];
-    if (! contentType.match(/\/xml/ui,)) {
+    if (! xmlCheck.test(contentType,)) {
       throw Error(language('no_xml_content_type', contentType,),);
     }
     if (XMLValidator.validate(result.response.body,) !== true) {

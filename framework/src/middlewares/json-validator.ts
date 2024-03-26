@@ -10,6 +10,8 @@ import {
 } from '../result.js';
 import language from '../helper/language.js';
 
+const jsonCheck = new RegExp('^application/json', 'ui',);
+
 @staticImplements<Middleware>()
 export default class JsonValidator {
   public static prepare(request: Request,): Request {
@@ -21,7 +23,7 @@ export default class JsonValidator {
       throw Error(language('no_content_type',),);
     }
     const contentType = result.response.headers['content-type'];
-    if (! contentType.match(/^application\/json/ui,)) {
+    if (! jsonCheck.test(contentType)) {
       throw Error(language('no_json_content_type', contentType,),);
     }
     try {

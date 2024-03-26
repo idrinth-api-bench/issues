@@ -18,7 +18,7 @@ const Layout = ({
   canonical = '',
 }: LayoutProps,) => {
   const meta = page
-    ? <DefaultMeta page={page} path={canonical ? canonical : path}/>
+    ? <DefaultMeta page={page} path={canonical || path}/>
     : '';
   return <>
     {meta}
