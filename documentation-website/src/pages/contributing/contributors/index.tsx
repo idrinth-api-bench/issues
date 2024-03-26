@@ -7,7 +7,7 @@ import {
   Lang,
 } from '../../../components/lang.tsx';
 import ExternalLink from '../../../components/external-link.tsx';
-import nccontributes from './non-code-contributors.json' with {
+import noncodecontributors from './non-code-contributors.json' with {
   type: 'json'
 };
 
@@ -40,10 +40,11 @@ const Index = () => {
   </div>
     ,);
 
-  const elsTwo: React.JSX.Element[] = nccontributes.map((contributor,) => <div
-    id={contributor.name}
+  const elsTwo: React.JSX.Element[] = noncodecontributors.map((contributor,) => <div
+    id={contributor.id}
     className={'card profile'}
     key={contributor.name}>
+    <img src={contributor.image} alt={contributor.id}/>
     <div>
       <h2>
         <ExternalLink to={contributor.url} label={contributor.name} />

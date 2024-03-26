@@ -1,9 +1,11 @@
 [
     {
-      "name": "Max Mustermann",
-      "url": "https://linkedin.com",
-      "contributions": "Adviced on making the code flow better.",
+      "id": "abriel-shipley",
+      "name": "Abriel Shipley",
+      "url": "https://abrielshipley.com",
+      "image": "'../../../../../documentation-website/public/headshots/headshot_720-1.jpg'",
+      "contributions": "Providing UX guidance on website information and navigation",
       "location": "unknown",
-      "intro": "Max is a nice person, willing to save a cat from a tree if necessary."
+      "intro": "I'm a product design leader and mentor creating human-centered experiences that make a positive impact."
     }
 ]
