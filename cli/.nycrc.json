@@ -1,0 +1,29 @@
+{
+  "require": ["mock-fs", "ts-node/register"],
+  "extension" : [".ts", ".tsx"],
+  "reporter": ["lcov", "text-summary"],
+  "all": true,
+  "sourceMap": true,
+  "instrument": true,
+  "exclude": [
+    "src/validation-result.ts",
+    "src/task.ts",
+    "src/request.ts",
+    "src/middleware.ts",
+    "src/job.ts",
+    "src/hashmap.ts",
+    "src/finished-set.ts",
+    "src/finished-run.ts",
+    "src/worker/thread.ts",
+    "src/worker/worker-constructor.ts",
+    "src/storage/storage.ts",
+    "src/report-modifier/report-modifier.ts",
+    "src/reporter/reporter.ts",
+    "src/progress/progress.ts",
+    "src/logger/logger.ts",
+    "src/helper/static-implements.ts",
+    "src/open-api/open-api.ts",
+    "src/result-map.ts"
+  ],
+  "include": ["src/**/*.ts"]
+}

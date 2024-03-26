@@ -36,3 +36,4 @@ gitlab-runner
 gitlab
 gitea
 Gitea
+history-microservice
