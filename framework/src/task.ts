@@ -8,3 +8,5 @@ export interface Task {
   post?: Array<string>;
   main: Request;
 }
+
+export default Task;

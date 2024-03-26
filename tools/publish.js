@@ -61,6 +61,7 @@ rl.question(
       readFileSync(process.cwd() + '/LICENSE', 'utf8',),
     );
     rl.question('NPM password: ', async(npmPassword,) => {
+      exec('npm logout || true', true,);
       exec(
         'npm adduser <<!\n' +
         'idrinth\n' +
@@ -73,6 +74,8 @@ rl.question(
         'cd framework && npm publish',
         true,
       );
+      exec('git add .',);
+      exec(`git commit -m "release ${ version }"`,);
       await delay(NPM_PULL_DELAY,);
       const main = version.replace(/\..+$/u, '',);
       const feature = version.replace(/\.[^.]+$/u, '',);
@@ -80,7 +83,13 @@ rl.question(
         writeFileSync('./pw', password,);
         exec('cat pw | docker login -u idrinth --password-stdin', true,);
         rmSync('./pw',);
+        const args = [
+          `--build-arg="BUILD_VERSION=${ version }"`,
+          `--build-arg="BUILD_TIME=${ new Date().toISOString() }"`,
+          `--build-arg="BUILD_HASH=${ exec('git rev-parse --short HEAD',) }"`,
+        ];
         for (const image of [
+          'api-bench-build',
           'api-bench',
           'api-bench-gitea-action',
           'api-bench-gitlab-runner',
@@ -91,25 +100,16 @@ rl.question(
             `-t idrinth/${ image }:${ feature }`,
             `-t idrinth/${ image }:${ main }`,
           ];
-          writeFileSync(
-            `${ process.cwd() }/containers/${ image }/Dockerfile`,
-            readFileSync(
-              `${ process.cwd() }/containers/${ image }/Dockerfile`,
-              'utf8',
-            )
-              .replace(
-                /ARG IDRINTH_API_BENCH_VERSION=[0-9]+\.[0-9]+\.[0-9]+/ug,
-                `ARG IDRINTH_API_BENCH_VERSION=${ version }`,
-              ),
-          );
+          const params = [
+            ...args,
+            ...tags,
+          ];
           exec(
-            `cd containers/${ image } && docker build ${ tags.join(' ',) } .`,
+            `cd containers/${ image } && docker build ${ params.join(' ',) } .`,
             true,
           );
           exec(`docker push -a idrinth/${ image }`, true,);
         }
-        exec('git add .',);
-        exec(`git commit -m "release ${ version }"`,);
         process.exit(EXIT_SUCCESS,);
       },);
     },);
