@@ -21,7 +21,7 @@ const rl = readline.createInterface({
 },);
 rl.question(
   'Enter version to publish: ',
-  async(version,) => {
+  (version,) => {
     if (! version.match(/^\d+\.\d+\.\d+$/u,)) {
       console.error('Invalid version.',);
       process.exit(EXIT_FAILURE,);
@@ -60,50 +60,60 @@ rl.question(
       process.cwd() + '/framework/LICENSE',
       readFileSync(process.cwd() + '/LICENSE', 'utf8',),
     );
-    exec(
-      'cd framework && npm publish',
-      true,
-    );
-    await delay(NPM_PULL_DELAY,);
-    const main = version.replace(/\..+$/u, '',);
-    const feature = version.replace(/\.[^.]+$/u, '',);
-    rl.question('Docker password: ', (password,) => {
-      writeFileSync('./pw', password,);
-      exec('cat pw | docker login -u idrinth --password-stdin', true,);
-      rmSync('./pw',);
-      for (const image of [
-        'api-bench',
-        'api-bench-gitea-action',
-        'api-bench-gitlab-runner',
-      ]) {
-        const tags = [
-          `-t idrinth/${ image }:latest`,
-          `-t idrinth/${ image }:${ version }`,
-          `-t idrinth/${ image }:${ feature }`,
-          `-t idrinth/${ image }:${ main }`,
-        ];
-        writeFileSync(
-          `${ process.cwd() }/containers/${ image }/Dockerfile`,
-          readFileSync(
+    rl.question('NPM password: ', async(npmPassword,) => {
+      exec(
+        'npm adduser <<!\n' +
+        'idrinth\n' +
+        npmPassword + '\n' +
+        'webmaster@idrinth.de\n' +
+        '!',
+        true,
+      );
+      exec(
+        'cd framework && npm publish',
+        true,
+      );
+      await delay(NPM_PULL_DELAY,);
+      const main = version.replace(/\..+$/u, '',);
+      const feature = version.replace(/\.[^.]+$/u, '',);
+      rl.question('Docker password: ', (password,) => {
+        writeFileSync('./pw', password,);
+        exec('cat pw | docker login -u idrinth --password-stdin', true,);
+        rmSync('./pw',);
+        for (const image of [
+          'api-bench',
+          'api-bench-gitea-action',
+          'api-bench-gitlab-runner',
+        ]) {
+          const tags = [
+            `-t idrinth/${ image }:latest`,
+            `-t idrinth/${ image }:${ version }`,
+            `-t idrinth/${ image }:${ feature }`,
+            `-t idrinth/${ image }:${ main }`,
+          ];
+          writeFileSync(
             `${ process.cwd() }/containers/${ image }/Dockerfile`,
-            'utf8',
-          )
-            .replace(
-              /ARG IDRINTH_API_BENCH_VERSION=[0-9]+\.[0-9]+\.[0-9]+/ug,
-              `ARG IDRINTH_API_BENCH_VERSION=${ version }`,
-            ),
-        );
-        exec(
-          `cd containers/${ image } && docker build ${ tags.join(' ',) } .`,
-          true,
-        );
-        exec(`docker push -a idrinth/${ image }`, true,);
-      }
-      exec('git add .',);
-      exec(`git commit -m "release ${ version }"`,);
-      exec(`git tag ${ version }`,);
-      exec('git push',);
-      process.exit(EXIT_SUCCESS,);
+            readFileSync(
+              `${ process.cwd() }/containers/${ image }/Dockerfile`,
+              'utf8',
+            )
+              .replace(
+                /ARG IDRINTH_API_BENCH_VERSION=[0-9]+\.[0-9]+\.[0-9]+/ug,
+                `ARG IDRINTH_API_BENCH_VERSION=${ version }`,
+              ),
+          );
+          exec(
+            `cd containers/${ image } && docker build ${ tags.join(' ',) } .`,
+            true,
+          );
+          exec(`docker push -a idrinth/${ image }`, true,);
+        }
+        exec('git add .',);
+        exec(`git commit -m "release ${ version }"`,);
+        exec(`git tag ${ version }`,);
+        exec('git push',);
+        process.exit(EXIT_SUCCESS,);
+      },);
     },);
   },
 );
