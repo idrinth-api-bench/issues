@@ -23,8 +23,8 @@ rl.question('Versions(space separated): ', (versions,) => {
       'api-bench-gitea-action',
       'api-bench-gitlab-runner',
     ]) {
-      for (const version of versions.split(' ')) {
-        if (version && version.match(/^[0-9]+\.[0-9]+\.[0-9]+$/u)) {
+      for (const version of versions.split(' ',)) {
+        if (version && version.match(/^\d+\.\d+\.\d+$/u,)) {
           const main = version.replace(/\..+$/u, '',);
           const feature = version.replace(/\.[^.]+$/u, '',);
           const args = [
