@@ -44,15 +44,15 @@ const Index = () => {
     id={contributor.name}
     className={'card profile'}
     key={contributor.name}>
-      <div>
-        <h2>
-          <ExternalLink to={contributor.url} label={contributor.name} />
-        </h2>
-        <p>{contributor.intro}</p>
-        <p>Location: {contributor.location}</p>
-        <p>Contributions: {contributor.contributions}</p>
-      </div>
+    <div>
+      <h2>
+        <ExternalLink to={contributor.url} label={contributor.name} />
+      </h2>
+      <p>{contributor.intro}</p>
+      <p>Location: {contributor.location}</p>
+      <p>Contributions: {contributor.contributions}</p>
     </div>
+  </div>
     ,);
 
   return <Layout
