@@ -16,3 +16,5 @@ export class ConsoleLogger extends Wrapper {
     console.log(`[${ level }] ${ msg } [${ JSON.stringify(data,) }]`,);
   }
 }
+
+export default ConsoleLogger;

@@ -8,3 +8,5 @@ export const findName = (
   openApi.routes[uri][method].summary ||
   openApi.routes[uri][method].description ||
   method + ' ' + uri;
+
+export default findName;

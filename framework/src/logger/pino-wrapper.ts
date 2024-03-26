@@ -21,3 +21,5 @@ export class PinoWrapper extends Wrapper {
     this.logger[level](data, msg,);
   }
 }
+
+export default PinoWrapper;
