@@ -16,7 +16,9 @@ const Route = () => <Layout
       <div>
         <p>
           <Lang lnkey='routes.example.description'/>
-          <Lang lnkey='routes.middleware.description'/>
+        </p>
+        <p>
+          <Lang lnkey='routes.example.middleware'/>
         </p>
         <Code language='typescript'>{`import {
   Task,
