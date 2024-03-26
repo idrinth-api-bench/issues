@@ -7,7 +7,7 @@ import {
   Lang,
 } from '../../../components/lang.tsx';
 import ExternalLink from '../../../components/external-link.tsx';
-import noncodecontributors from './non-code-contributors.json'
+import noncodecontributors from './non-code-contributors.json' with {type: 'json'}
 
 const Index = () => {
   // Convert contributors object into array
