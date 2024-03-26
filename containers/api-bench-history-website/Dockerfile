@@ -1,7 +1,4 @@
-ARG BUILD_VERSION
-
-FROM idrinth/api-bench-build:${BUILD_VERSION} AS build
-FROM node:21.7.1-alpine AS node
+FROM node:21.7.1-alpine
 
 ARG BUILD_VERSION
 ARG BUILD_TIME
@@ -9,8 +6,8 @@ ARG BUILD_HASH
 
 LABEL author="Björn 'Idrinth' Büttner"
 LABEL maintainer="webmaster@idrinth-api-ben.ch"
-LABEL org.label-schema.name="idrinth/api-bench"
-LABEL org.label-schema.description="An image prepared for api-bench usage via global install."
+LABEL org.label-schema.name="idrinth/api-bench/history-website"
+LABEL org.label-schema.description="A website prepared for monitoring api-bench results."
 LABEL org.label-schema.url="https://idrinth-api-ben.ch"
 LABEL org.label-schema.vcs-url="https://github.com/idrinth/api-bench"
 LABEL org.label-schema.version=$BUILD_VERSION
@@ -27,16 +24,12 @@ LABEL org.opencontainers.image.version=$BUILD_VERSION
 LABEL org.opencontainers.image.revision=$BUILD_HASH
 LABEL org.opencontainers.image.vendor="Björn 'Idrinth' Büttner"
 LABEL org.opencontainers.image.licenses="MIT"
-LABEL org.opencontainers.image.title="idrinth/api-bench"
-LABEL org.opencontainers.image.description="An image prepared for api-bench usage via global install."
+LABEL org.opencontainers.image.title="idrinth/api-bench/history-website"
+LABEL org.opencontainers.image.description="A website prepared for monitoring api-bench results."
 
 ENV IDRINTH_API_BENCH_VERSION=$BUILD_VERSION
 ENV IDRINTH_API_BENCH_BUILT=$BUILD_TIME
 
-RUN mkdir -p /usr/local/lib/node_modules/@idrinth/api-bench
-COPY --from=build /usr/local/lib/node_modules/@idrinth/api-bench /usr/local/lib/node_modules/@idrinth/api-bench
+EXPOSE 80
 
-WORKDIR /project
-VOLUME /project
-
-ENTRYPOINT ["npm"]
+ENTRYPOINT ["node", "/var/microservice/index.js"]

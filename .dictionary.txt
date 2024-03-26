@@ -20,6 +20,7 @@ microservices
 codecheck
 webmaster@idrinth-api-ben.ch
 faq
+npm
 sexualised
 microservice
 Web-UI
@@ -36,3 +37,4 @@ gitlab-runner
 gitlab
 gitea
 Gitea
+history-microservice

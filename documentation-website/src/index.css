@@ -505,3 +505,10 @@ nav.breadcrumbs li:last-of-type::after {
     content: none;
   }
 }
+
+.accordion-section{
+  cursor: pointer;
+  display: flex;
+  justify-content:space-between ;
+  align-items: center;
+}
