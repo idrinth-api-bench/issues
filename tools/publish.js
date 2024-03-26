@@ -1,11 +1,9 @@
 import exec from './src/exec.js';
 import readline from 'readline';
 import {
-  quote,
-} from 'shell-quote';
-import {
   existsSync,
   readFileSync,
+  rmSync,
   writeFileSync,
 } from 'fs';
 import {
@@ -70,18 +68,13 @@ rl.question(
     const main = version.replace(/\..+$/u, '',);
     const feature = version.replace(/\.[^.]+$/u, '',);
     rl.question('Docker password: ', (password,) => {
-      exec(quote([
-        'docker',
-        'login',
-        '-u',
-        'idrinth',
-        '-p',
-        password,
-      ],), true,);
+      writeFileSync('./pw', password,);
+      exec('cat pw | docker login -u idrinth --password-stdin', true,);
+      rmSync('./pw',);
       for (const image of [
         'api-bench',
         'api-bench-gitea-action',
-        'api-bench-api-bench-gitlab-runner',
+        'api-bench-gitlab-runner',
       ]) {
         const tags = [
           `-t idrinth/${ image }:latest`,
@@ -96,7 +89,7 @@ rl.question(
             'utf8',
           )
             .replace(
-              'ARG IDRINTH_API_BENCH_VERSION',
+              /ARG IDRINTH_API_BENCH_VERSION=[0-9]+\.[0-9]+\.[0-9]+/ug,
               `ARG IDRINTH_API_BENCH_VERSION=${ version }`,
             ),
         );
@@ -104,8 +97,12 @@ rl.question(
           `cd containers/${ image } && docker build ${ tags.join(' ',) } .`,
           true,
         );
-        exec(`docker push -a ${ image }`, true,);
+        exec(`docker push -a idrinth/${ image }`, true,);
       }
+      exec('git add .',);
+      exec(`git commit -m "release ${ version }"`,);
+      exec(`git tag ${ version }`,);
+      exec('git push',);
       process.exit(EXIT_SUCCESS,);
     },);
   },

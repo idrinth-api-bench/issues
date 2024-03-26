@@ -32,8 +32,5 @@
   "engines": {
     "node": ">=20"
   },
-  "engineStrict": true,
-  "dependencies": {
-    "shell-quote": "^1.8.1"
-  }
+  "engineStrict": true
 }
