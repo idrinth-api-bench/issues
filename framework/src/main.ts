@@ -108,3 +108,5 @@ export const run = async(
     configuration.blacklist,
   );
 };
+
+export default run;

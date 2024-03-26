@@ -35,3 +35,5 @@ export class ResultSet {
     }
   }
 }
+
+export default ResultSet;
