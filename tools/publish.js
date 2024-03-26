@@ -3,6 +3,7 @@ import readline from 'readline';
 import {
   existsSync,
   readFileSync,
+  rmSync,
   writeFileSync,
 } from 'fs';
 import {
@@ -11,13 +12,16 @@ import {
   INDENTATION,
 } from './src/constants.js';
 
+const delay = (time,) => new Promise((resolve,) => setTimeout(resolve, time,),);
+const NPM_PULL_DELAY = 30000;
+
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 },);
 rl.question(
-  'Enter version to publish',
-  (version,) => {
+  'Enter version to publish: ',
+  async(version,) => {
     if (! version.match(/^\d+\.\d+\.\d+$/u,)) {
       console.error('Invalid version.',);
       process.exit(EXIT_FAILURE,);
@@ -60,6 +64,46 @@ rl.question(
       'cd framework && npm publish',
       true,
     );
-    process.exit(EXIT_SUCCESS,);
+    await delay(NPM_PULL_DELAY,);
+    const main = version.replace(/\..+$/u, '',);
+    const feature = version.replace(/\.[^.]+$/u, '',);
+    rl.question('Docker password: ', (password,) => {
+      writeFileSync('./pw', password,);
+      exec('cat pw | docker login -u idrinth --password-stdin', true,);
+      rmSync('./pw',);
+      for (const image of [
+        'api-bench',
+        'api-bench-gitea-action',
+        'api-bench-gitlab-runner',
+      ]) {
+        const tags = [
+          `-t idrinth/${ image }:latest`,
+          `-t idrinth/${ image }:${ version }`,
+          `-t idrinth/${ image }:${ feature }`,
+          `-t idrinth/${ image }:${ main }`,
+        ];
+        writeFileSync(
+          `${ process.cwd() }/containers/${ image }/Dockerfile`,
+          readFileSync(
+            `${ process.cwd() }/containers/${ image }/Dockerfile`,
+            'utf8',
+          )
+            .replace(
+              /ARG IDRINTH_API_BENCH_VERSION=[0-9]+\.[0-9]+\.[0-9]+/ug,
+              `ARG IDRINTH_API_BENCH_VERSION=${ version }`,
+            ),
+        );
+        exec(
+          `cd containers/${ image } && docker build ${ tags.join(' ',) } .`,
+          true,
+        );
+        exec(`docker push -a idrinth/${ image }`, true,);
+      }
+      exec('git add .',);
+      exec(`git commit -m "release ${ version }"`,);
+      exec(`git tag ${ version }`,);
+      exec('git push',);
+      process.exit(EXIT_SUCCESS,);
+    },);
   },
 );

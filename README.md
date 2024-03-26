@@ -29,6 +29,13 @@ We have ready to be used CI Images:
 - [Gitea Action](https://hub.docker.com/r/idrinth/api-bench-gitea-action)
 - [Pure Alpine](https://hub.docker.com/r/idrinth/api-bench)
 
+## Monitoring
+
+We provide a monitoring solution out of the box.
+
+- [Microservice](https://hub.docker.com/r/idrinth/api-bench-history-microservice)
+- [Website](https://hub.docker.com/r/idrinth/api-bench-history-website)
+
 ## Setup
 
 To get your project ready for development you need to run the following commands in order:

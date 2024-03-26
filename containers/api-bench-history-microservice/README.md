@@ -1,7 +1,7 @@
-# @idrinth/api-bench + alpine
+# @idrinth/api-bench/history-microservice + alpine
 
-This image prepares api-bench for use with a mounted volume
-and brings along everything required to run API tests.
+This image prepares the history microservice for usage with the monitoring
+website.
 
 ## Tags
 

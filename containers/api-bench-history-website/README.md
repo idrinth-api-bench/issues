@@ -1,7 +1,7 @@
-# @idrinth/api-bench + alpine
+# @idrinth/api-bench/history-website + alpine
 
-This image prepares api-bench for use with a mounted volume
-and brings along everything required to run API tests.
+This image prepares the history website for usage with the monitoring
+microservice.
 
 ## Tags
 
