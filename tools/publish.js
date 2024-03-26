@@ -89,6 +89,7 @@ rl.question(
           `--build-arg="BUILD_HASH=${ exec('git rev-parse --short HEAD',) }"`,
         ];
         for (const image of [
+          'api-bench-build',
           'api-bench',
           'api-bench-gitea-action',
           'api-bench-gitlab-runner',
