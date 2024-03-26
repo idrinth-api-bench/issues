@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - run: cd containers/api-bench-gitlab-runner && docker build .
+      - run: cd containers/api-bench-gitlab-runner && docker build --build-arg="BUILD_VERSION=${latest}" --build-arg="BUILD_TIME=now"` --build-arg="BUILD_HASH=${GITHUB_SHA}" .
   build-gitea:
     name: Build Gitea
     runs-on: ubuntu-latest
@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - run: cd containers/api-bench-gitea-action && docker build .
+      - run: cd containers/api-bench-gitea-action && docker build --build-arg="BUILD_VERSION=${latest}" --build-arg="BUILD_TIME=now"` --build-arg="BUILD_HASH=${GITHUB_SHA}" .
   build-framework:
     name: Build Framework
     runs-on: ubuntu-latest
@@ -36,7 +36,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - run: cd containers/api-bench && docker build .
+      - run: cd containers/api-bench && docker build --build-arg="BUILD_VERSION=${latest}" --build-arg="BUILD_TIME=now"` --build-arg="BUILD_HASH=${GITHUB_SHA}" .
   build-microservice:
     name: Build History Microservice
     runs-on: ubuntu-latest
@@ -44,7 +44,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - run: cd containers/api-bench-history-microservice && docker build .
+      - run: cd containers/api-bench-history-microservice && docker build --build-arg="BUILD_VERSION=${latest}" --build-arg="BUILD_TIME=now"` --build-arg="BUILD_HASH=${GITHUB_SHA}" .
   build-website:
     name: Build History Website
     runs-on: ubuntu-latest
@@ -52,4 +52,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - run: cd containers/api-bench-history-website && docker build .
+      - run: cd containers/api-bench-history-website && docker build --build-arg="BUILD_VERSION=${latest}" --build-arg="BUILD_TIME=now"` --build-arg="BUILD_HASH=${GITHUB_SHA}" .
+  build-build:
+    name: Build Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - run: cd containers/api-bench-build && docker build --build-arg="BUILD_VERSION=${latest}" --build-arg="BUILD_TIME=now"` --build-arg="BUILD_HASH=${GITHUB_SHA}" .
