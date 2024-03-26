@@ -110,8 +110,6 @@ rl.question(
         }
         exec('git add .',);
         exec(`git commit -m "release ${ version }"`,);
-        exec(`git tag ${ version }`,);
-        exec('git push',);
         process.exit(EXIT_SUCCESS,);
       },);
     },);
