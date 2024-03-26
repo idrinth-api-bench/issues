@@ -25,10 +25,11 @@ const hash = createHash('sha256',)
   .digest('hex',);
 const id = hash + process.pid;
 const cachefolder: string = tmpdir() + sep + 'api-bench' + sep + '_' + id;
+const keyCheck = /^[a-z0-9.]+$/u;
 
 export default {
   get(key: string, defaulted: string,): string {
-    if (! key.match(/^[a-z0-9.]+$/u,)) {
+    if (! keyCheck.test(key,)) {
       throw new Error(language('invalid_key', key,),);
     }
     if (! existsSync(cachefolder + sep + key,)) {
@@ -37,7 +38,7 @@ export default {
     return readFileSync(cachefolder + sep + key,) + '';
   },
   set(key: string, value: string,): void {
-    if (! key.match(/^[a-z0-9.]+$/u,)) {
+    if (! keyCheck.test(key,)) {
       throw new Error(language('invalid_key', key,),);
     }
     if (! existsSync(cachefolder,)) {
