@@ -23,7 +23,7 @@ jobs:
       - run: sudo apt-get install shellcheck -y
       - run: wget https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64
       - run: sudo mv hadolint-Linux-x86_64 /usr/local/bin/hadolint
-      - run: sudo chmod +x /lusr/local/bin/hadolint
+      - run: sudo chmod +x /usr/local/bin/hadolint
       - run: hadolint containers/api-bench-gitlab-runner/Dockerfile
   lint-gitea:
     name: Gitea
@@ -35,7 +35,7 @@ jobs:
       - run: sudo apt-get install shellcheck -y
       - run: wget https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64
       - run: sudo mv hadolint-Linux-x86_64 /usr/local/bin/hadolint
-      - run: sudo chmod +x /lusr/local/bin/hadolint
+      - run: sudo chmod +x /usr/local/bin/hadolint
       - run: hadolint containers/api-bench-gitea-action/Dockerfile
   lint-framework:
     name: Framework
@@ -47,7 +47,7 @@ jobs:
       - run: sudo apt-get install shellcheck -y
       - run: wget https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64
       - run: sudo mv hadolint-Linux-x86_64 /usr/local/bin/hadolint
-      - run: sudo chmod +x /lusr/local/bin/hadolint
+      - run: sudo chmod +x /usr/local/bin/hadolint
       - run: hadolint containers/api-bench/Dockerfile
   lint-microservice:
     name: History Microservice
@@ -59,7 +59,7 @@ jobs:
       - run: sudo apt-get install shellcheck -y
       - run: wget https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64
       - run: sudo mv hadolint-Linux-x86_64 /usr/local/bin/hadolint
-      - run: sudo chmod +x /lusr/local/bin/hadolint
+      - run: sudo chmod +x /usr/local/bin/hadolint
       - run: hadolint containers/api-bench-history-microservice/Dockerfile
   lint-website:
     name: History Website
@@ -71,7 +71,7 @@ jobs:
       - run: sudo apt-get install shellcheck -y
       - run: wget https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64
       - run: sudo mv hadolint-Linux-x86_64 /usr/local/bin/hadolint
-      - run: sudo chmod +x /lusr/local/bin/hadolint
+      - run: sudo chmod +x /usr/local/bin/hadolint
       - run: hadolint containers/api-bench-history-website/Dockerfile
   lint-build:
     name: Build
@@ -83,5 +83,5 @@ jobs:
       - run: sudo apt-get install shellcheck -y
       - run: wget https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64
       - run: sudo mv hadolint-Linux-x86_64 /usr/local/bin/hadolint
-      - run: sudo chmod +x /lusr/local/bin/hadolint
+      - run: sudo chmod +x /usr/local/bin/hadolint
       - run: hadolint containers/api-bench-build/Dockerfile
