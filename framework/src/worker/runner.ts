@@ -18,9 +18,7 @@ interface Answer {
   success: boolean;
   msg: string;
 }
-interface Callback {
-  (arg: Answer,): void;
-}
+type Callback = (arg: Answer,) => void;
 
 const buildAnswer = (
   result: Result,

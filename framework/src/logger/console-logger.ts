@@ -2,9 +2,6 @@
 import {
   Wrapper,
 } from './wrapper.js';
-import {
-  WriteStream,
-} from 'fs-extra';
 
 export class ConsoleLogger extends Wrapper {
   protected log(

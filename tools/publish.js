@@ -110,6 +110,7 @@ rl.question(
           );
           exec(`docker push -a idrinth/${ image }`, true,);
         }
+        exec('docker image prune --force', true,);
         process.exit(EXIT_SUCCESS,);
       },);
     },);
