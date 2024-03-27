@@ -14,7 +14,6 @@ import NoopStorage from '../src/storage/noop-storage.js';
 import NoProgress from '../src/progress/no-progress.js';
 import Counter from '../src/counter.js';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 const NOOP = () => {};
 const NONE = 0;
 

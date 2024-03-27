@@ -9,7 +9,6 @@ import Counter from '../counter.js';
 import ReportModifier from '../report-modifier/report-modifier.js';
 import Reporter from '../reporter/reporter.js';
 
-// eslint-disable-next-line complexity
 const startResults = (
   logger: Logger,
   calculator: Thread,
