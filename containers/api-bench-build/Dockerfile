@@ -34,7 +34,7 @@ RUN apk add --no-cache "git=2.43.0-r0" \
     && mkdir /api-bench \
     && git clone https://github.com/idrinth/api-bench /api-bench
 WORKDIR /api-bench
-RUN git fetch --all \
+RUN git fetch --tags \
     && git checkout ${BUILD_VERSION}
 
 WORKDIR /api-bench/framework
