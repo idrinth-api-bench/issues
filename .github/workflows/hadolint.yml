@@ -23,7 +23,7 @@ jobs:
           - 'api-bench-gitea-action'
           - 'api-bench-history-website'
           - 'api-bench-history-microservice'
-    name: Lint ${folder}
+    name: Lint ${{ matrix.folder }}
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
@@ -33,4 +33,4 @@ jobs:
       - run: wget https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64
       - run: sudo mv hadolint-Linux-x86_64 /usr/local/bin/hadolint
       - run: sudo chmod +x /usr/local/bin/hadolint
-      - run: hadolint containers/${{ folder }}/Dockerfile
+      - run: hadolint containers/${{ matrix.folder }}/Dockerfile
