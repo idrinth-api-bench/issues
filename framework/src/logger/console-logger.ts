@@ -1,7 +1,5 @@
 /* eslint {"class-methods-use-this":0, "@typescript-eslint/no-unused-vars":0} */
-import {
-  Wrapper,
-} from './wrapper.js';
+import Wrapper from './wrapper.js';
 
 export class ConsoleLogger extends Wrapper {
   protected log(

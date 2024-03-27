@@ -1,15 +1,11 @@
-import {
-  Result,
-} from '../result.js';
+import Result from '../result.js';
 import {
   request,
 } from 'needle';
 import {
   Task,
 } from '../task.js';
-import {
-  Middleware,
-} from '../middleware.js';
+import Middleware from '../middleware.js';
 import load from '../helper/middleware-loader.js';
 
 interface Answer {

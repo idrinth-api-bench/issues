@@ -3,9 +3,7 @@ import {
   expect,
 } from 'chai';
 import 'mocha';
-import {
-  FinishedSet,
-} from '../../src/finished-set';
+import FinishedSet from '../../src/finished-set';
 import getDatabase from '@databases/mysql-test';
 
 let database;

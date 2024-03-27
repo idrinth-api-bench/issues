@@ -1,16 +1,8 @@
-import {
-  Middleware,
-} from '../middleware.js';
-import {
-  Request,
-} from '../request.js';
-import {
-  Result,
-} from '../result.js';
+import Middleware from '../middleware.js';
+import Request from '../request.js';
+import Result from '../result.js';
 import staticImplements from '../helper/static-implements.js';
-import {
-  HashMap,
-} from '../hashmap.js';
+import HashMap from '../hashmap.js';
 import store from '../store.js';
 
 const jsonCheck = /^application\/json/ui;

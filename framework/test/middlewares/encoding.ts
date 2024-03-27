@@ -3,9 +3,7 @@ import {
   expect,
 } from 'chai';
 import 'mocha';
-import {
-  Request,
-} from '../../src/request.js';
+import Request from '../../src/request.js';
 
 describe('middlewares/encoding', () => {
   it('should be a class', () => {

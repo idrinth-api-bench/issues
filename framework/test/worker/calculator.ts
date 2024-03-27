@@ -4,9 +4,7 @@ import {
   expect,
 } from 'chai';
 import 'mocha';
-import {
-  ValidationResult,
-} from '../../src/validation-result.js';
+import ValidationResult from '../../src/validation-result.js';
 
 describe('worker/calculator', () => {
   it('should be a function', () => {

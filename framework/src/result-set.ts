@@ -1,6 +1,4 @@
-import {
-  ValidationResult,
-} from './validation-result.js';
+import ValidationResult from './validation-result.js';
 import {
   INITIAL_ZERO,
 } from './constants.js';
