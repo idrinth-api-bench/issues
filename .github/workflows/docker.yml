@@ -25,10 +25,10 @@ jobs:
           - 'api-bench-gitea-action'
           - 'api-bench-history-website'
           - 'api-bench-history-microservice'
-    name: Build ${folder}
+    name: Build ${{ folder }}
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - run: docker build --build-arg="BUILD_VERSION=${IAB_VERSION}" --build-arg="BUILD_TIME=now" containers/${folder}
+      - run: docker build --build-arg="BUILD_VERSION=${IAB_VERSION}" --build-arg="BUILD_TIME=now" containers/${{ folder }}
