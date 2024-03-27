@@ -49,7 +49,7 @@ class Access {
       return;
     }
     const contentType = response.response.headers['content-type'];
-    if (! jsonCheck.test(contentType)) {
+    if (! jsonCheck.test(contentType,)) {
       return;
     }
     const body = JSON.parse(response.response.body,);

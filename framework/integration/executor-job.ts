@@ -2,7 +2,7 @@ import mock from 'mock-fs';
 import executor from '../src/executor';
 import Thread from '../src/worker/thread';
 import {
-    expect,
+  expect,
 } from 'chai';
 import 'mocha';
 import NullLogger from '../src/logger/null-logger';
@@ -11,7 +11,7 @@ import FinishedSet from '../src/finished-set';
 import Task from '../src/task';
 import ValidationResult from '../src/validation-result';
 import {
-    realpathSync,
+  realpathSync,
 } from 'fs';
 import Job from '../src/job';
 import NoopStorage from '../src/storage/noop-storage';

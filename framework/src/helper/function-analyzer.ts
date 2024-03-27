@@ -133,5 +133,4 @@ export const analyze = (func: Function,): Param[] => {
   return ret;
 };
 
-
 export default analyze;

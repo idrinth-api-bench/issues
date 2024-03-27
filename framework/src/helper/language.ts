@@ -40,15 +40,14 @@ const get = (key: string, ...args: string[]): string => {
 };
 
 export const locale = async(lang: string,) => {
-    if (lang === 'en') {
-        language = english;
-        return;
-    }
-    language = {
-        ...english,
-        ...await read(lang,),
-    };
+  if (lang === 'en') {
+    language = english;
+    return;
+  }
+  language = {
+    ...english,
+    ...await read(lang,),
+  };
 };
-
 
 export default get;
