@@ -30,10 +30,28 @@ LABEL org.opencontainers.image.description="An image building the @idrinth/api-b
 ENV IDRINTH_API_BENCH_VERSION=$BUILD_VERSION
 ENV IDRINTH_API_BENCH_BUILT=$BUILD_TIME
 
-RUN npm install -g --omit=dev "@idrinth/api-bench@${BUILD_VERSION}" \
-    && rm /usr/local/lib/node_modules/@idrinth/api-bench/**/*.ts \
-    && rm /usr/local/lib/node_modules/@idrinth/api-bench/README.md \
-    && rm /usr/local/lib/node_modules/@idrinth/api-bench/index.ts  \
-    && rm /usr/local/lib/node_modules/@idrinth/api-bench/tsconfig.json \
-    && rm -r /usr/local/lib/node_modules/@idrinth/api-bench/typings \
-    && (rm -r /usr/local/lib/node_modules/@idrinth/api-bench/integration || true)
+RUN apk add git \
+    && mkdir /api-bench \
+    && git clone https://github.com/idrinth/api-bench /api-bench \
+    && cd /api-bench \
+    && git fetch --all \
+    && git checkout ${BUILD_VERSION}
+
+RUN cd /api-bench/framework \
+    && npm ci \
+    && npm run tsc \
+    && npm prune --production \
+    && mkdir -p /usr/local/lib/node_modules/@idrinth/api-bench \
+    && cp --recursive /api-bench/framework/* /usr/local/lib/node_modules/@idrinth/api-bench/ \
+    && (rm /usr/local/lib/node_modules/@idrinth/api-bench/**/*.ts || true) \
+    && (rm /usr/local/lib/node_modules/@idrinth/api-bench/README.md || true) \
+    && (rm /usr/local/lib/node_modules/@idrinth/api-bench/index.ts || true) \
+    && (rm /usr/local/lib/node_modules/@idrinth/api-bench/tsconfig.json || true) \
+    && (rm /usr/local/lib/node_modules/@idrinth/api-bench/LICENSE || true) \
+    && (rm -r /usr/local/lib/node_modules/@idrinth/api-bench/typings || true) \
+    && (rm -r /usr/local/lib/node_modules/@idrinth/api-bench/integration || true) \
+    && (rm -r /usr/local/lib/node_modules/@idrinth/api-bench/test || true) \
+    && (rm -r /usr/local/lib/node_modules/@idrinth/api-bench/tools || true) \
+    && (rm -r /usr/local/lib/node_modules/@idrinth/api-bench/fixtures || true)
+
+RUN rm -r /api-bench
