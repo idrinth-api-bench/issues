@@ -1,12 +1,6 @@
-import {
-  Middleware,
-} from '../middleware.js';
-import {
-  Result,
-} from '../result.js';
-import {
-  Request,
-} from '../request.js';
+import Middleware from '../middleware.js';
+import Result from '../result.js';
+import Request from '../request.js';
 import agent from '../helper/user-agent.js';
 import staticImplements from '../helper/static-implements.js';
 

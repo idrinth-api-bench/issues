@@ -1,9 +1,5 @@
-import {
-  HashMap,
-} from '../hashmap.js';
-import {
-  Middleware,
-} from '../middleware.js';
+import HashMap from '../hashmap.js';
+import Middleware from '../middleware.js';
 import reqlib from 'app-root-path';
 import include from './include-default.js';
 import {

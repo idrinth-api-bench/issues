@@ -1,12 +1,6 @@
-import {
-  Task,
-} from './task.js';
-import {
-  Logger,
-} from './logger/logger.js';
-import {
-  NullLogger,
-} from './logger/null-logger.js';
+import Task from './task.js';
+import Logger from './logger/logger.js';
+import NullLogger from './logger/null-logger.js';
 import Reporter from './reporter/reporter.js';
 import defaultReporter from './helper/default-reporter.js';
 import executor from './executor.js';

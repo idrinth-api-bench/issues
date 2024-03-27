@@ -1,6 +1,4 @@
-import {
-  toFilename,
-} from '../../src/route-builder/to-filename.js';
+import toFilename from '../../src/route-builder/to-filename.js';
 import {
   expect,
 } from 'chai';

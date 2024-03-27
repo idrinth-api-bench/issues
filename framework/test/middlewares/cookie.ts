@@ -3,12 +3,8 @@ import {
   expect,
 } from 'chai';
 import 'mocha';
-import {
-  Request,
-} from '../../src/request';
-import {
-  Result,
-} from '../../src/result';
+import Request from '../../src/request';
+import Result from '../../src/result';
 
 describe('middlewares/cookie', () => {
   it('should be a class', () => {

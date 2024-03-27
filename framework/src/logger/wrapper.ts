@@ -1,6 +1,4 @@
-import {
-  Logger,
-} from './logger.js';
+import Logger from './logger.js';
 
 export abstract class Wrapper implements Logger {
   protected abstract log(
@@ -33,3 +31,5 @@ export abstract class Wrapper implements Logger {
     this.log('trace', msg, data || {},);
   }
 }
+
+export default Wrapper;

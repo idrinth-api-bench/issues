@@ -1,6 +1,4 @@
-import {
-  WinstonWrapper,
-} from '../../src/logger/winston-wrapper.js';
+import WinstonWrapper from '../../src/logger/winston-wrapper.js';
 import {
   expect,
 } from 'chai';
