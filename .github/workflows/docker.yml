@@ -17,12 +17,12 @@ jobs:
     strategy:
       matrix:
         folder:
-          #- 'api-bench-gitlab-runner'
-          #- 'api-bench'
+          - 'api-bench-gitlab-runner'
+          - 'api-bench'
           - 'api-bench-build'
-          #- 'api-bench-gitea-action'
-          #- 'api-bench-history-website'
-          #- 'api-bench-history-microservice'
+          - 'api-bench-gitea-action'
+          - 'api-bench-history-website'
+          - 'api-bench-history-microservice'
     name: Build ${{ matrix.folder }}
     runs-on: ubuntu-latest
     timeout-minutes: 360
@@ -30,5 +30,4 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - run: git fetch --all
-      - run: git describe --tags `git rev-list --tags --max-count=1`
-      #- run: docker build --build-arg="BUILD_VERSION=$(git describe --tags `git rev-list --tags --max-count=1`)" --build-arg="BUILD_TIME=now" containers/${{ matrix.folder }}
+      - run: docker build --build-arg="BUILD_VERSION=$(git describe --tags `git rev-list --tags --max-count=1`)" --build-arg="BUILD_TIME=now" containers/${{ matrix.folder }}
