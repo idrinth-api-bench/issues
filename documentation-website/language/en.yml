@@ -43,8 +43,8 @@ contributors:
   nav: "Contributors"
   title: "Contributors"
   description: "A big thank you to everyone who contributed. Below are the ones who contributed code, but other contributions are as valuable."
-  code_contributor: "Code Contributor"
-  none_code_contributor: "None Code Contributor"
+  code_contributors: "Code Contributors"
+  none_code_contributors: "None Code Contributors"
 
 support:
   meta:
