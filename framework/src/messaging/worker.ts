@@ -1,18 +1,10 @@
-import {
-  ValidationResult,
-} from '../validation-result.js';
+import ValidationResult from '../validation-result.js';
 import language from '../helper/language.js';
-import {
-  ResultSet,
-} from '../result-set.js';
+import ResultSet from '../result-set.js';
 import Progress from '../progress/progress.js';
-import {
-  Logger,
-} from '../logger/logger.js';
+import Logger from '../logger/logger.js';
 import Thread from '../worker/thread.js';
-import {
-  Task,
-} from '../task.js';
+import Task from '../task.js';
 import store from '../store.js';
 import Job from '../job.js';
 import Counter from '../counter.js';

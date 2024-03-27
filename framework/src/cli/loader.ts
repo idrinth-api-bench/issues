@@ -10,9 +10,7 @@ import {
 } from '../constants.js';
 import fse from 'fs-extra';
 import reqlib from 'app-root-path';
-import {
-  run,
-} from '../main.js';
+import run from '../main.js';
 import language, {
   locale,
 } from '../helper/language.js';

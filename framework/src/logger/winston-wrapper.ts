@@ -1,9 +1,7 @@
 import {
   Logger,
 } from 'winston';
-import {
-  Wrapper,
-} from './wrapper.js';
+import Wrapper from './wrapper.js';
 
 export class WinstonWrapper extends Wrapper {
   public constructor(private logger: Logger,) {
