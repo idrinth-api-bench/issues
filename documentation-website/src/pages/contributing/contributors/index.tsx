@@ -63,10 +63,10 @@ const Index = () => {
           <Lang lnkey='contributors.description'/>
         </p>
       </div>
-      <h2>Code Contributors</h2>
-      { c }
-      <h2>Non Code Contributors</h2>
+      <h2><Lang lnkey='contributors.none_code_contributors'/></h2>
       { oC }
+      <h2><Lang lnkey='contributors.code_contributors'/></h2>
+      { c }
     </section>}
     page='contributors'
     path='/contributing/contributors'
