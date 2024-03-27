@@ -1,8 +1,10 @@
 import React, {
   useState, useEffect,
 } from 'react';
-import darkModeIcon from '../assets/dark-mode-icon.svg';
-import lightModeIcon from '../assets/light-mode-icon.svg';
+import {
+  IoSunny,
+  IoMoon,
+} from 'react-icons/io5';
 import {
   FIRST_ELEMENT,
 } from '../constants';
@@ -39,17 +41,9 @@ const DarkModeButton = ({
 
   const DarkLightIcon = () => {
     if (isDarkMode) {
-      return <img
-        src={darkModeIcon}
-        className="dark-mode-icon"
-        alt="light-dark mode toggle"
-      />;
+      return <IoSunny />;
     }
-    return <img
-      src={lightModeIcon}
-      className="dark-mode-icon"
-      alt="light-dark mode toggle"
-    />;
+    return <IoMoon />;
   };
 
   const toggleLightDarkMode = () => {
@@ -57,7 +51,8 @@ const DarkModeButton = ({
     setIsDarkMode(! isDarkMode,);
   };
 
-  return <button onClick={toggleLightDarkMode}>
+  return <button className="theme-toggle-btn"
+    onClick={toggleLightDarkMode}>
     <DarkLightIcon />
   </button>;
 };
