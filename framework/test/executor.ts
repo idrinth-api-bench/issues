@@ -4,27 +4,16 @@ import {
   expect,
 } from 'chai';
 import 'mocha';
-import {
-  NullLogger,
-} from '../src/logger/null-logger.js';
-import {
-  Result,
-} from '../src/result.js';
-import {
-  FinishedSet,
-} from '../src/finished-set.js';
-import {
-  Task,
-} from '../src/task.js';
-import {
-  ValidationResult,
-} from '../src/validation-result.js';
+import NullLogger from '../src/logger/null-logger.js';
+import Result from '../src/result.js';
+import FinishedSet from '../src/finished-set.js';
+import Task from '../src/task.js';
+import ValidationResult from '../src/validation-result.js';
 import Job from '../src/job.js';
 import NoopStorage from '../src/storage/noop-storage.js';
 import NoProgress from '../src/progress/no-progress.js';
 import Counter from '../src/counter.js';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 const NOOP = () => {};
 const NONE = 0;
 

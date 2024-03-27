@@ -26,7 +26,7 @@ const Faqs = () => {
 
   return (
     <div>
-      {[ ...Array(faqLength,), ].map((_, i,) => <div key={i}>
+      {[ ...Array(faqLength,), ].map((_, i,) => <div key={`faq${ i }`}>
         <div onClick={() => toggleOpen(i,)}>
           <div className='accordion-section'>
             <div>

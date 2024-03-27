@@ -1,14 +1,10 @@
 import staticImplements from '../helper/static-implements.js';
-import {
-  Middleware,
-} from '../middleware.js';
-import {
-  Request,
-} from '../request.js';
-import {
-  Result,
-} from '../result.js';
+import Middleware from '../middleware.js';
+import Request from '../request.js';
+import Result from '../result.js';
 import language from '../helper/language.js';
+
+const jsonCheck = /^application\/json/ui;
 
 @staticImplements<Middleware>()
 export default class JsonValidator {
@@ -21,7 +17,7 @@ export default class JsonValidator {
       throw Error(language('no_content_type',),);
     }
     const contentType = result.response.headers['content-type'];
-    if (! contentType.match(/^application\/json/ui,)) {
+    if (! jsonCheck.test(contentType,)) {
       throw Error(language('no_json_content_type', contentType,),);
     }
     try {

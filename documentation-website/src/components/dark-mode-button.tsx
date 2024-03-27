@@ -1,11 +1,10 @@
 import React, {
   useState, useEffect,
 } from 'react';
-import darkModeIcon from '../assets/dark-mode-icon.svg';
-import lightModeIcon from '../assets/light-mode-icon.svg';
 import {
   FIRST_ELEMENT,
 } from '../constants';
+import DarkLightIcon from './dark-light-icon.tsx';
 
 const DarkModeButton = ({
   window,
@@ -37,28 +36,13 @@ const DarkModeButton = ({
     );
   }, [ isDarkMode, ],);
 
-  const DarkLightIcon = () => {
-    if (isDarkMode) {
-      return <img
-        src={darkModeIcon}
-        className="dark-mode-icon"
-        alt="light-dark mode toggle"
-      />;
-    }
-    return <img
-      src={lightModeIcon}
-      className="dark-mode-icon"
-      alt="light-dark mode toggle"
-    />;
-  };
-
   const toggleLightDarkMode = () => {
     window.localStorage.setItem('dark-mode', JSON.stringify(! isDarkMode,),);
     setIsDarkMode(! isDarkMode,);
   };
 
   return <button onClick={toggleLightDarkMode}>
-    <DarkLightIcon />
+    <DarkLightIcon isDarkMode={isDarkMode}/>
   </button>;
 };
 export default DarkModeButton;

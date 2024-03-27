@@ -5,21 +5,11 @@ import {
   expect,
 } from 'chai';
 import 'mocha';
-import {
-  NullLogger,
-} from '../src/logger/null-logger';
-import {
-  Result,
-} from '../src/result';
-import {
-  FinishedSet,
-} from '../src/finished-set';
-import {
-  Task,
-} from '../src/task';
-import {
-  ValidationResult,
-} from '../src/validation-result';
+import NullLogger from '../src/logger/null-logger';
+import Result from '../src/result';
+import FinishedSet from '../src/finished-set';
+import Task from '../src/task';
+import ValidationResult from '../src/validation-result';
 import {
   realpathSync,
 } from 'fs';

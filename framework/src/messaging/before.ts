@@ -1,9 +1,7 @@
 import language from '../helper/language.js';
 import Progress from '../progress/progress.js';
 import Job from '../job.js';
-import {
-  Logger,
-} from '../logger/logger.js';
+import Logger from '../logger/logger.js';
 import Thread from '../worker/thread.js';
 import {
   EMPTY,

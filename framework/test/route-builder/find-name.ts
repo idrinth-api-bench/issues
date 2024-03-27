@@ -1,6 +1,4 @@
-import {
-  findName,
-} from '../../src/route-builder/find-name.js';
+import findName from '../../src/route-builder/find-name.js';
 import {
   expect,
 } from 'chai';

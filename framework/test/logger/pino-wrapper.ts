@@ -1,6 +1,4 @@
-import {
-  PinoWrapper,
-} from '../../src/logger/pino-wrapper.js';
+import PinoWrapper from '../../src/logger/pino-wrapper.js';
 import {
   expect,
 } from 'chai';

@@ -1,9 +1,5 @@
-import {
-  ResultSet,
-} from '../result-set.js';
-import {
-  FinishedSet,
-} from '../finished-set.js';
+import ResultSet from '../result-set.js';
+import FinishedSet from '../finished-set.js';
 import {
   ARRAY_LENGTH_OFFSET,
   EMPTY,

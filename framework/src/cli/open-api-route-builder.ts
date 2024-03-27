@@ -10,15 +10,11 @@ import {
 import fse from 'fs-extra';
 import OpenApi from '../route-builder/open-api.js';
 import assertTypeIsObject from '../route-builder/assert-type-is-object.js';
-import {
-  findName,
-} from '../route-builder/find-name.js';
+import findName from '../route-builder/find-name.js';
 import {
   FIRST_ARGUMENT,
 } from '../constants.js';
-import {
-  toFilename,
-} from '../route-builder/to-filename.js';
+import toFilename from '../route-builder/to-filename.js';
 
 const write = (
   projectDir: string,

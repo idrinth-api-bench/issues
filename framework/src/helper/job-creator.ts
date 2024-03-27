@@ -5,9 +5,7 @@ import {
 import {
   snakeCase,
 } from 'change-case';
-import {
-  Task,
-} from '../task.js';
+import Task from '../task.js';
 import include from './include-default.js';
 import taskTypes from '../task-types.js';
 
