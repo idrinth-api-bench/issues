@@ -7,12 +7,11 @@ import {
   Lang,
 } from '../../../components/lang.tsx';
 import ExternalLink from '../../../components/external-link.tsx';
-import otherCcontributors from './non-code-contributors.json' with {
+import otherContributors from './non-code-contributors.json' with {
   type: 'json'
 };
 
 const Index = () => {
-  // Convert contributors object into array
   const contributorsArray = Object.keys(contributors,).map(
     (username,) => ({
       username,
@@ -20,11 +19,9 @@ const Index = () => {
     }),
   );
 
-  // Sort in descending order by number of contributions
   contributorsArray.sort((a, b,) => b.contributions - a.contributions,);
 
-  // Create els element
-  const els: React.JSX.Element[] = contributorsArray.map((contributor,) => <div
+  const c: React.JSX.Element[] = contributorsArray.map((contributor,) => <div
     id={contributor.username}
     className={'card profile'}
     key={contributor.username}>
@@ -40,7 +37,7 @@ const Index = () => {
   </div>
     ,);
 
-  const elsTwo: React.JSX.Element[] = otherContributors.map((person,) => <div
+  const oC: React.JSX.Element[] = otherContributors.map((person,) => <div
     id={person.id}
     className={'card profile'}
     key={person.name}>
@@ -67,9 +64,9 @@ const Index = () => {
         </p>
       </div>
       <h2>Code Contributors</h2>
-      { els }
+      { c }
       <h2>Non Code Contributors</h2>
-      { elsTwo }
+      { oC }
     </section>}
     page='contributors'
     path='/contributing/contributors'
