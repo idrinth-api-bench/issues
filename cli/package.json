@@ -1,0 +1,61 @@
+{
+  "name": "@idrinth/api-bench-cli",
+  "description": "A library to benchmark apis, no matter if rest or soap",
+  "license": "MIT",
+  "version": "2.7.2",
+  "homepage": "https://idrinth-api-ben.ch",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Idrinth/api-bench.git"
+  },
+  "keywords": [
+    "api",
+    "rest",
+    "performance",
+    "benchmarking",
+    "typescript",
+    "cli",
+    "bench",
+    "benchmark",
+    "framework",
+    "typed",
+    "statistics",
+    "parallel",
+    "worker",
+    "async",
+    "loadtest",
+    "load-test",
+    "measure",
+    "open-api"
+  ],
+  "author": "Björn Büttner",
+  "contributors": [],
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "bin": {
+    "make-benchmark-project": "bin/make-benchmark-project.js",
+    "generate-benchmark-from-open-api": "bin/generate-benchmark-from-open-api.js",
+    "generate-benchmark-from-har": "bin/generate-benchmark-from-har.js",
+    "iabgbfh": "bin/generate-benchmark-from-har.js",
+    "iabmp": "bin/make-benchmark-project.js",
+    "iabgfoa": "bin/generate-benchmark-from-open-api.js"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .js,.ts,.cjs,.json,.tsx",
+    "lint-fix": "eslint --fix . --ext .js,.ts,.cjs,.json",
+    "lint-md": "markdownlint *.md",
+    "test": "c8 mocha test",
+    "integration": "c8 mocha integration",
+    "clear": "node tools/clear-js-files-from-src.js",
+    "tsc": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run tsc",
+    "postpublishOnly": "npm run clear"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "engineStrict": true
+}

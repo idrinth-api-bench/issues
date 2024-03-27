@@ -32,6 +32,7 @@ While adding functionality, keep in mind to break existing interfaces, entry poi
 ### Contribution workflow
 
 - fork the repository
+- mention in the issue, that you are working on it(it will be assigned for a few weeks then)
 - create a feature branch (issue-xxx-does-something) from master
 - create a draft pull request
 - mention fixes #xxx in the description (use the appropriate pull request template)

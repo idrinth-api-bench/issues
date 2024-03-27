@@ -34,10 +34,10 @@ import blacklist from './blacklist.js';
 // eslint-disable-next-line complexity
 export const run = async(
   configuration: {
-    reportModifiers?: Array<ReportModifier>|undefined,
-    logger?: Logger|undefined,
-    resultHandler?: Reporter|undefined,
-    resultStorage?: Storage|undefined,
+    reportModifiers?: Array<ReportModifier>,
+    logger?: Logger,
+    resultHandler?: Reporter,
+    resultStorage?: Storage,
     resultOutputDir?: string
     progress?: Progress,
     language?: string,
@@ -88,7 +88,7 @@ export const run = async(
   if (typeof configuration.taskId === 'string') {
     const output: Task[] = [];
     for (const task of job.main || []) {
-      if (task.id && task.id.includes(configuration.taskId,)) {
+      if (task?.id.includes(configuration.taskId,)) {
         output.push(task,);
       }
     }
@@ -108,3 +108,5 @@ export const run = async(
     configuration.blacklist,
   );
 };
+
+export default run;
