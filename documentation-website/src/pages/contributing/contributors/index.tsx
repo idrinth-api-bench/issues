@@ -7,7 +7,7 @@ import {
   Lang,
 } from '../../../components/lang.tsx';
 import ExternalLink from '../../../components/external-link.tsx';
-import noncodecontributors from './non-code-contributors.json' with {
+import otherCcontributors from './non-code-contributors.json' with {
   type: 'json'
 };
 
@@ -40,18 +40,18 @@ const Index = () => {
   </div>
     ,);
 
-  const elsTwo: React.JSX.Element[] = noncodecontributors.map((contributor,) => <div
-    id={contributor.id}
+  const elsTwo: React.JSX.Element[] = otherContributors.map((person,) => <div
+    id={person.id}
     className={'card profile'}
-    key={contributor.name}>
-    <img src={contributor.image} alt={contributor.id}/>
+    key={person.name}>
+    <img src={`/assets/contributors/${ person.id }.jpg`} alt={person.name}/>
     <div>
       <h2>
-        <ExternalLink to={contributor.url} label={contributor.name} />
+        <ExternalLink to={person.url} label={person.name} />
       </h2>
-      <p>{contributor.intro}</p>
-      <p>Location: {contributor.location}</p>
-      <p>Contributions: {contributor.contributions}</p>
+      <p>{person.intro}</p>
+      <p>Location: {person.location}</p>
+      <p>Contributions: {person.contributions}</p>
     </div>
   </div>
     ,);
