@@ -26,7 +26,7 @@ describe('storage/mysql-storage', () => {
       mysqlDb: 'idrinth-api-bench',
     },);
     port = Number.parseInt(
-      database.databaseURL.replace(/[^0-9]/gui, '',),
+      database.databaseURL.replace(/\D/gui, '',),
       RADIX,
     );
   },);
