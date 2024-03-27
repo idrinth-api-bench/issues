@@ -3,12 +3,8 @@ import {
   expect,
 } from 'chai';
 import 'mocha';
-import {
-  Request,
-} from '../../src/request.js';
-import {
-  Result,
-} from '../../src/result.js';
+import Request from '../../src/request.js';
+import Result from '../../src/result.js';
 
 describe('middlewares/csrf-header', () => {
   it('should be a class', () => {

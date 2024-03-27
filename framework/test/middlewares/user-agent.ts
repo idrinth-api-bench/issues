@@ -3,9 +3,7 @@ import {
   expect,
 } from 'chai';
 import 'mocha';
-import {
-  Request,
-} from '../../src/request';
+import Request from '../../src/request';
 
 describe('middlewares/user-agent', () => {
   it('should be a class', () => {

@@ -3,9 +3,7 @@ import {
   expect,
 } from 'chai';
 import 'mocha';
-import {
-  Result,
-} from '../../src/result.js';
+import Result from '../../src/result.js';
 
 describe('middlewares/json-validator', () => {
   it('should be a class', () => {

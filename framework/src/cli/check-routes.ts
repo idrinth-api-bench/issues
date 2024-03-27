@@ -11,9 +11,7 @@ import {
 } from '../constants.js';
 import validateTasks from '../validate-tasks.js';
 import taskTypes from '../task-types.js';
-import {
-  Task,
-} from '../task.js';
+import Task from '../task.js';
 import Job from '../job.js';
 import taskType from '../task-type.js';
 

@@ -1,13 +1,7 @@
 import staticImplements from '../helper/static-implements.js';
-import {
-  Middleware,
-} from '../middleware.js';
-import {
-  Request,
-} from '../request.js';
-import {
-  Result,
-} from '../result.js';
+import Middleware from '../middleware.js';
+import Request from '../request.js';
+import Result from '../result.js';
 import language from '../helper/language.js';
 
 @staticImplements<Middleware>()

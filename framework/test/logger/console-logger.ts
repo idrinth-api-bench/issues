@@ -1,6 +1,4 @@
-import {
-  ConsoleLogger,
-} from '../../src/logger/console-logger.js';
+import ConsoleLogger from '../../src/logger/console-logger.js';
 import {
   expect,
 } from 'chai';

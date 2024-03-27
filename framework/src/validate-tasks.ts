@@ -1,6 +1,4 @@
-import {
-  Task,
-} from './task.js';
+import Task from './task.js';
 import language from './helper/language.js';
 import {
   EMPTY,

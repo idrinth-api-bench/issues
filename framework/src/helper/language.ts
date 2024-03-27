@@ -7,9 +7,7 @@ import {
 import {
   pathExists,
 } from 'fs-extra';
-import {
-  HashMap,
-} from '../hashmap.js';
+import HashMap from '../hashmap.js';
 import {
   FRAMEWORK_ROOT,
 } from '../constants.js';
@@ -40,7 +38,6 @@ const get = (key: string, ...args: string[]): string => {
   }
   return out;
 };
-export default get;
 
 export const locale = async(lang: string,) => {
   if (lang === 'en') {
@@ -52,3 +49,5 @@ export const locale = async(lang: string,) => {
     ...await read(lang,),
   };
 };
+
+export default get;
