@@ -1,4 +1,4 @@
-name: Docker
+name: Hadolint
 on:
   push:
     branches:
@@ -13,8 +13,8 @@ on:
       - 'containers/*/Dockerfile'
       - '.github/workflows/hadolint.yml'
 jobs:
-  build-gitlab:
-    name: HadoLint Gitlab
+  lint-gitlab:
+    name: Gitlab
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
@@ -25,8 +25,8 @@ jobs:
       - run: sudo mv hadolint-Linux-x86_64 /usr/local/bin/hadolint
       - run: sudo chmod +x /lusr/local/bin/hadolint
       - run: hadolint containers/api-bench-gitlab-runner/Dockerfile
-  build-gitea:
-    name: HadoLint Gitea
+  lint-gitea:
+    name: Gitea
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
@@ -37,8 +37,8 @@ jobs:
       - run: sudo mv hadolint-Linux-x86_64 /usr/local/bin/hadolint
       - run: sudo chmod +x /lusr/local/bin/hadolint
       - run: hadolint containers/api-bench-gitea-action/Dockerfile
-  build-framework:
-    name: HadoLint Framework
+  lint-framework:
+    name: Framework
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
@@ -49,8 +49,8 @@ jobs:
       - run: sudo mv hadolint-Linux-x86_64 /usr/local/bin/hadolint
       - run: sudo chmod +x /lusr/local/bin/hadolint
       - run: hadolint containers/api-bench/Dockerfile
-  build-microservice:
-    name: HadoLint History Microservice
+  lint-microservice:
+    name: History Microservice
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
@@ -61,8 +61,8 @@ jobs:
       - run: sudo mv hadolint-Linux-x86_64 /usr/local/bin/hadolint
       - run: sudo chmod +x /lusr/local/bin/hadolint
       - run: hadolint containers/api-bench-history-microservice/Dockerfile
-  build-website:
-    name: HadoLint History Website
+  lint-website:
+    name: History Website
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
@@ -73,8 +73,8 @@ jobs:
       - run: sudo mv hadolint-Linux-x86_64 /usr/local/bin/hadolint
       - run: sudo chmod +x /lusr/local/bin/hadolint
       - run: hadolint containers/api-bench-history-website/Dockerfile
-  build-build:
-    name: HadoLint Build
+  lint-build:
+    name: Build
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
