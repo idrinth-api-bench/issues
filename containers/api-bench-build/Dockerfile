@@ -30,7 +30,7 @@ LABEL org.opencontainers.image.description="An image building the @idrinth/api-b
 ENV IDRINTH_API_BENCH_VERSION=$BUILD_VERSION
 ENV IDRINTH_API_BENCH_BUILT=$BUILD_TIME
 
-RUN apk add --no-cache git~2.43 \
+RUN apk add --no-cache "git=2.43.0-r0" \
     && mkdir /api-bench \
     && git clone https://github.com/idrinth/api-bench /api-bench
 WORKDIR /api-bench
