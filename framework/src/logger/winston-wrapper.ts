@@ -1,9 +1,7 @@
 import {
   Logger,
 } from 'winston';
-import {
-  Wrapper,
-} from './wrapper.js';
+import Wrapper from './wrapper.js';
 
 export class WinstonWrapper extends Wrapper {
   public constructor(private logger: Logger,) {
@@ -25,3 +23,5 @@ export class WinstonWrapper extends Wrapper {
     this.logger[level](data ? `${ msg } ${ JSON.stringify(data,) }` : msg,);
   }
 }
+
+export default WinstonWrapper;

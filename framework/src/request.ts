@@ -1,6 +1,4 @@
-import {
-  HashMap,
-} from './hashmap.js';
+import HashMap from './hashmap.js';
 import {
   NeedleHttpVerbs,
 } from 'needle';
@@ -22,5 +20,7 @@ export interface Request {
   body?: string|FormContent|JsonContent;
   autohandle?: 'json'|'form';
   url: string;
-  maxDuration?: number|undefined;
+  maxDuration?: number;
 }
+
+export default Request;

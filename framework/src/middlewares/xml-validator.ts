@@ -1,17 +1,13 @@
 import staticImplements from '../helper/static-implements.js';
-import {
-  Middleware,
-} from '../middleware.js';
-import {
-  Request,
-} from '../request.js';
-import {
-  Result,
-} from '../result.js';
+import Middleware from '../middleware.js';
+import Request from '../request.js';
+import Result from '../result.js';
 import language from '../helper/language.js';
 import {
   XMLValidator,
 } from 'fast-xml-parser';
+
+const xmlCheck = /\/xml/ui;
 
 @staticImplements<Middleware>()
 export default class JsonValidator {
@@ -24,7 +20,7 @@ export default class JsonValidator {
       throw Error(language('no_content_type',),);
     }
     const contentType = result.response.headers['content-type'];
-    if (! contentType.match(/\/xml/ui,)) {
+    if (! xmlCheck.test(contentType,)) {
       throw Error(language('no_xml_content_type', contentType,),);
     }
     if (XMLValidator.validate(result.response.body,) !== true) {

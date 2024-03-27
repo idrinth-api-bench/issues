@@ -1,7 +1,5 @@
 /* eslint {"class-methods-use-this":0, "@typescript-eslint/no-unused-vars":0} */
-import {
-  Wrapper,
-} from './wrapper.js';
+import Wrapper from './wrapper.js';
 
 export class NullLogger extends Wrapper {
   protected log(
@@ -12,3 +10,5 @@ export class NullLogger extends Wrapper {
     // noop
   }
 }
+
+export default NullLogger;

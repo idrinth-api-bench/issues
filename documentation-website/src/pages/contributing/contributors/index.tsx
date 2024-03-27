@@ -7,9 +7,11 @@ import {
   Lang,
 } from '../../../components/lang.tsx';
 import ExternalLink from '../../../components/external-link.tsx';
+import otherContributors from './non-code-contributors.json' with {
+  type: 'json'
+};
 
 const Index = () => {
-  // Convert contributors object into array
   const contributorsArray = Object.keys(contributors,).map(
     (username,) => ({
       username,
@@ -17,11 +19,9 @@ const Index = () => {
     }),
   );
 
-  // Sort in descending order by number of contributions
   contributorsArray.sort((a, b,) => b.contributions - a.contributions,);
 
-  // Create els element
-  const els: React.JSX.Element[] = contributorsArray.map((contributor,) => <div
+  const c: React.JSX.Element[] = contributorsArray.map((contributor,) => <div
     id={contributor.username}
     className={'card profile'}
     key={contributor.username}>
@@ -37,6 +37,22 @@ const Index = () => {
   </div>
     ,);
 
+  const oC: React.JSX.Element[] = otherContributors.map((person,) => <div
+    id={person.id}
+    className={'card profile'}
+    key={person.name}>
+    <img src={`/assets/contributors/${ person.id }.jpg`} alt={person.name}/>
+    <div>
+      <h2>
+        <ExternalLink to={person.url} label={person.name} />
+      </h2>
+      <p>{person.intro}</p>
+      <p>Location: {person.location}</p>
+      <p>Contributions: {person.contributions}</p>
+    </div>
+  </div>
+    ,);
+
   return <Layout
     Outlet={<section>
       <div className='title-card'>
@@ -47,7 +63,10 @@ const Index = () => {
           <Lang lnkey='contributors.description'/>
         </p>
       </div>
-      { els }
+      <h2><Lang lnkey='contributors.none_code_contributors'/></h2>
+      { oC }
+      <h2><Lang lnkey='contributors.code_contributors'/></h2>
+      { c }
     </section>}
     page='contributors'
     path='/contributing/contributors'

@@ -3,9 +3,7 @@ import {
   expect,
 } from 'chai';
 import 'mocha';
-import {
-  FinishedSet,
-} from '../../src/finished-set';
+import FinishedSet from '../../src/finished-set';
 import getDatabase from '@databases/mysql-test';
 
 let database;
@@ -26,7 +24,7 @@ describe('storage/mysql-storage', () => {
       mysqlDb: 'idrinth-api-bench',
     },);
     port = Number.parseInt(
-      database.databaseURL.replace(/[^0-9]/gui, '',),
+      database.databaseURL.replace(/\D/gui, '',),
       RADIX,
     );
   },);

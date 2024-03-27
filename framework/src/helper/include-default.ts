@@ -1,6 +1,4 @@
-import {
-  analyze,
-} from './function-analyzer.js';
+import analyze from './function-analyzer.js';
 import isCallable from 'is-callable';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

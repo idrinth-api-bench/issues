@@ -1,7 +1,5 @@
 import Storage from './storage.js';
-import {
-  FinishedSet,
-} from '../finished-set.js';
+import FinishedSet from '../finished-set.js';
 import {
   createConnection,
   Connection,

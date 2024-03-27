@@ -4,6 +4,17 @@ home:
     description: "Welcome to the documentation for the framework @idrinth/api-bench"
   nav: "Home"
   title: "What does this project do?"
+  faq:
+    title: "Frequently Asked Questions"
+    questions:
+      title_1: "What is benchmarking?"
+      description_1: "Benchmarking is the process of measuring software performance against established best practices."
+      title_2: "What is load testing?"
+      description_2: "Load testing evaluates system behavior under peak or anticipated load conditions."
+      title_3: "How long does it take to write a test?"
+      description_3: "The average time to write a test is 2-3 minutes. For beginners, it is about 15 minutes."
+      title_4: "How long does it take to setup?"
+      description_4: "By following the Quick Start, it only takes a few minutes!"
 
 imprint:
   meta:
@@ -32,6 +43,8 @@ contributors:
   nav: "Contributors"
   title: "Contributors"
   description: "A big thank you to everyone who contributed. Below are the ones who contributed code, but other contributions are as valuable."
+  code_contributors: "Code Contributors"
+  none_code_contributors: "None Code Contributors"
 
 support:
   meta:

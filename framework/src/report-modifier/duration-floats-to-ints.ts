@@ -1,7 +1,5 @@
 import ReportModifier from './report-modifier.js';
-import {
-  FinishedSet,
-} from '../finished-set.js';
+import FinishedSet from '../finished-set.js';
 
 export class DurationFloatsToInts implements ReportModifier {
   // eslint-disable-next-line class-methods-use-this
