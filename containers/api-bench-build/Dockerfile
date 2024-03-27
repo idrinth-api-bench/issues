@@ -32,7 +32,7 @@ ENV IDRINTH_API_BENCH_BUILT=$BUILD_TIME
 
 RUN apk add git=2.44.0-rc0 --no-cache \
     && mkdir /api-bench \
-    && git clone https://github.com/idrinth/api-bench /api-bench \
+    && git clone https://github.com/idrinth/api-bench /api-bench
 WORKDIR /api-bench
 RUN git fetch --all \
     && git checkout ${BUILD_VERSION}
