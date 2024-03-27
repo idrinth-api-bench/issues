@@ -14,8 +14,6 @@ on:
       - '.github/workflows/docker.yml'
 jobs:
   build:
-    env:
-      IAB_VERSION: $(git describe --tags `git rev-list --tags --max-count=1`)
     strategy:
       matrix:
         folder:
@@ -31,4 +29,4 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - run: docker build --build-arg="BUILD_VERSION=${IAB_VERSION}" --build-arg="BUILD_TIME=now" containers/${{ matrix.folder }}
+      - run: docker build --build-arg="BUILD_VERSION=$(git describe --tags `git rev-list --tags --max-count=1`)" --build-arg="BUILD_TIME=now" containers/${{ matrix.folder }}
