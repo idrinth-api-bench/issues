@@ -12,7 +12,7 @@ export default async(lnkey: languageKey, global?: object,): Promise<string> => {
   const language = (that?.Navigator?.language ?? 'en')
     .replace(/-.*$/u, '',);
   const main = lnkey.split('.',)[FIRST_ELEMENT];
-  if (!files.includes(`en-${main}`,)) {
+  if (! files.includes(`en-${ main }`,)) {
     return lnkey;
   }
   const originals = await import(`../locales/en-${ main }.ts`);

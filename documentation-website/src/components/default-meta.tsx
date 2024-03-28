@@ -1,4 +1,7 @@
-import React, {lazy, Suspense} from 'react';
+import React, {
+  lazy,
+  Suspense,
+} from 'react';
 import Head from '@uiw/react-head';
 import t from './t.ts';
 
