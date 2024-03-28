@@ -11,17 +11,17 @@ const Footer = () => <footer>
   <ul>
     <li>
       <NavLink to="/license/">
-        <Lang lnkey='license.nav'/>
+        <Lang lnkey='nav.license'/>
       </NavLink>
     </li>
     <li>
       <NavLink to="/imprint/">
-        <Lang lnkey='imprint.nav'/>
+        <Lang lnkey='nav.imprint'/>
       </NavLink>
     </li>
     <li>
       <NavLink to="/support/">
-        <Lang lnkey='support.nav'/>
+        <Lang lnkey='nav.support'/>
       </NavLink>
     </li>
   </ul>

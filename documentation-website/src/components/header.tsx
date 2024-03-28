@@ -48,63 +48,63 @@ const Header = ({
   <nav>
     <ul>
       <li>
-        <NavLink to="/"><Lang lnkey='home.nav' /></NavLink>
+        <NavLink to="/"><Lang lnkey='nav.home' /></NavLink>
       </li>
       <li>
         <NavLink to="/quick-start/">
-          <Lang lnkey='quick-start.nav' />
+          <Lang lnkey='nav.quick-start' />
         </NavLink>
       </li>
       <li>
         <NavLink to="/contributing/">
-          <Lang lnkey='contributing.nav' />
+          <Lang lnkey='nav.contributing' />
         </NavLink>
         <ul>
           <li>
             <NavLink to="/contributing/contributors/">
-              <Lang lnkey='contributors.nav' />
+              <Lang lnkey='nav.contributors' />
             </NavLink>
           </li>
           <li>
             <NavLink to="/contributing/sponsors/">
-              <Lang lnkey='sponsors.nav' />
+              <Lang lnkey='nav.sponsors' />
             </NavLink>
           </li>
         </ul>
       </li>
       <li>
         <NavLink to="/usage/">
-          <Lang lnkey='usage.nav' />
+          <Lang lnkey='nav.usage' />
         </NavLink>
         <ul>
           <li>
             <NavLink to="/usage/autowiring/">
-              <Lang lnkey='autowiring.nav' />
+              <Lang lnkey='nav.autowiring' />
             </NavLink>
           </li>
           <li>
             <NavLink to="/usage/results/">
-              <Lang lnkey='results.nav' />
+              <Lang lnkey='nav.results' />
             </NavLink>
           </li>
           <li>
             <NavLink to="/usage/logging/">
-              <Lang lnkey='logging.nav' />
+              <Lang lnkey='nav.logging' />
             </NavLink>
           </li>
           <li>
             <NavLink to="/usage/middlewares/">
-              <Lang lnkey='middlewares.nav' />
+              <Lang lnkey='nav.middlewares' />
             </NavLink>
           </li>
           <li>
             <NavLink to="/usage/storage/">
-              <Lang lnkey='storage.nav' />
+              <Lang lnkey='nav.storage' />
             </NavLink>
           </li>
           <li>
             <NavLink to="/usage/routes/">
-              <Lang lnkey='routes.nav' />
+              <Lang lnkey='nav.routes' />
             </NavLink>
           </li>
         </ul>

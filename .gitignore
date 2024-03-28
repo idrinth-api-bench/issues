@@ -36,7 +36,7 @@
 /documentation-website/src/routes.tsx
 /documentation-website/src/contributors.json
 /documentation-website/public/sitemap.xml
-/documentation-website/public/locales
+/documentation-website/src/locales
 /documentation-website/public/assets/profile-*.jpg
 
 # History Microservice
