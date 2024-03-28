@@ -39,13 +39,6 @@ const DarkModeButton = ({
     );
   }, [ isDarkMode, ],);
 
-  const DarkLightIcon = () => {
-    if (isDarkMode) {
-      return <IoSunny />;
-    }
-    return <IoMoon />;
-  };
-
   const toggleLightDarkMode = () => {
     window.localStorage.setItem('dark-mode', JSON.stringify(! isDarkMode,),);
     setIsDarkMode(! isDarkMode,);
@@ -53,7 +46,7 @@ const DarkModeButton = ({
 
   return <button className="theme-toggle-btn"
     onClick={toggleLightDarkMode}>
-    <DarkLightIcon />
+    {isDarkMode ? <IoSunny /> : <IoMoon />}
   </button>;
 };
 export default DarkModeButton;
