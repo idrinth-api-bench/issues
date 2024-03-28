@@ -1,8 +1,6 @@
 import React, {lazy, Suspense} from 'react';
 import Head from '@uiw/react-head';
-import {
-  t,
-} from './lang.tsx';
+import t from './t.ts';
 
 interface DefaultMetaProps {
   path: string;
