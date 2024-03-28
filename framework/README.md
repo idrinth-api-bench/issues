@@ -74,3 +74,9 @@ Additionally, to support requests via issue, you can reach us via
 
 Commercial support and training is provided via
 [Björn Büttner](https://bjoern-buettner.me).
+
+## Privacy and Compliance
+
+The `@idrinth/api-bench` framework does not collect any kind of information
+about its users or the apis being tested. All data is local to the device
+you run it on or the database server you configure it to dump data in.
