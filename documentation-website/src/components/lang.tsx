@@ -17,9 +17,9 @@ interface LangProps {
 }
 
 // eslint-disable-next-line complexity
-export const t = async(lnkey, global) => {
-  global = global || window;
-  const language = (global?.Navigator?.language ?? 'en')
+export const t = async(lnkey: languageKey, global?: object,): Promise<string> => {
+  const that: Window = (global || window) as Window;
+  const language = (that?.Navigator?.language ?? 'en')
     .replace(/-.*$/u, '',);
   const main = lnkey.split('.',)[FIRST_ELEMENT];
   if (! files.includes(`en-${ main }`,)) {
