@@ -75,5 +75,5 @@ writeFileSync(
 );
 writeFileSync(
   targetDir + '/files.ts',
-  `/* eslint max-len:0 */\nconst files = ${ JSON.stringify(files).replace(/"/ug, '\'',) };\nexport default files;\n`,
+  `/* eslint max-len:0 */\nconst files = ${ JSON.stringify(files, undefined, 2,).replace(/"/ug, '\'',)};\nexport default files;\n`,
 );
