@@ -39,6 +39,7 @@
 /documentation-website/public/sitemap.xml
 /documentation-website/src/locales
 /documentation-website/public/assets/profile-*.jpg
+/documentation-website/public/assets/*-*.css
 
 # History Microservice
 /history-microservice/node_modules

@@ -10,6 +10,7 @@ export default defineConfig({
       input: {
         index: 'index.html',
       },
+      plugins: [],
     },
   },
   plugins: [ react({
