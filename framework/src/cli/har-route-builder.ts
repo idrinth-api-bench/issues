@@ -8,9 +8,7 @@ import assertTypeIsObject from '../route-builder/assert-type-is-object.js';
 import {
   FIRST_ARGUMENT,
 } from '../constants.js';
-import {
-  toFilename,
-} from '../route-builder/to-filename.js';
+import toFilename from '../route-builder/to-filename.js';
 import crypto from 'crypto';
 import HAR from '../route-builder/har.js';
 

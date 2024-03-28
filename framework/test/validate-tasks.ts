@@ -3,9 +3,7 @@ import {
   expect,
 } from 'chai';
 import validateTasks from '../src/validate-tasks.js';
-import {
-  Task,
-} from '../src/task.js';
+import Task from '../src/task.js';
 
 describe('validateTasks', () => {
   it('should be a function', () => {

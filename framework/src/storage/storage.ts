@@ -1,6 +1,4 @@
-import {
-  FinishedSet,
-} from '../finished-set.js';
+import FinishedSet from '../finished-set.js';
 
 export interface Storage
 {

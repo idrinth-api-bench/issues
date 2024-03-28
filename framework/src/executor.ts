@@ -1,15 +1,7 @@
-import {
-  FinishedSet,
-} from './finished-set.js';
-import {
-  ResultSet,
-} from './result-set.js';
-import {
-  ValidationResult,
-} from './validation-result.js';
-import {
-  Logger,
-} from './logger/logger.js';
+import FinishedSet from './finished-set.js';
+import ResultSet from './result-set.js';
+import ValidationResult from './validation-result.js';
+import Logger from './logger/logger.js';
 import Reporter from './reporter/reporter.js';
 import validateTasks from './validate-tasks.js';
 import Job from './job.js';
@@ -28,9 +20,7 @@ import Thread from './worker/thread.js';
 import {
   EMPTY,
 } from './constants.js';
-import {
-  Task,
-} from './task.js';
+import Task from './task.js';
 import buildTaskList from './build-task-list.js';
 
 /* eslint max-params:0 */

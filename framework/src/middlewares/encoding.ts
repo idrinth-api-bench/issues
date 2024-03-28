@@ -1,13 +1,7 @@
-import {
-  Middleware,
-} from '../middleware.js';
-import {
-  Request,
-} from '../request.js';
+import Middleware from '../middleware.js';
+import Request from '../request.js';
 import formUrlEncoded from 'form-urlencoded';
-import {
-  Result,
-} from '../result.js';
+import Result from '../result.js';
 import staticImplements from '../helper/static-implements.js';
 
 const handleForm = (request: Request,): Request => {

@@ -1,9 +1,7 @@
 import {
   Logger,
 } from 'pino';
-import {
-  Wrapper,
-} from './wrapper.js';
+import Wrapper from './wrapper.js';
 
 export class PinoWrapper extends Wrapper {
   public constructor(private logger: Logger,) {

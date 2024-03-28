@@ -1,6 +1,4 @@
-import {
-  HashMap,
-} from './hashmap.js';
+import HashMap from './hashmap.js';
 import {
   NeedleHttpVerbs,
 } from 'needle';

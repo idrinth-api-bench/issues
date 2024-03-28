@@ -1,6 +1,4 @@
-import {
-  run,
-} from '../src/main.js';
+import run from '../src/main.js';
 import {
   expect,
 } from 'chai';
