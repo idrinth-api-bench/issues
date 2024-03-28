@@ -1,18 +1,26 @@
-import React from 'react';
-import {
-  Trans,
-  useTranslation,
-} from 'react-i18next';
+import languageKey from '../locales/language-key.ts';
+import Window from './window.ts';
+import React, {
+  ComponentType,
+  lazy,
+  Suspense,
+} from 'react';
+import t from './t.ts';
 
 interface LangProps {
-  lnkey: string;
+  lnkey: languageKey;
+  global?: Window
 }
 
 export const Lang = ({
   lnkey,
+  global,
 }: LangProps,) => {
-  const {
-    t,
-  } = useTranslation();
-  return <Trans t={t} i18nKey={lnkey}>{lnkey}</Trans>;
+  const LE = lazy(async(): Promise<{default: ComponentType<unknown>;}> => {
+    const text = await t(lnkey, global,);
+    return {
+      default: () => <>{ text }</>,
+    };
+  },);
+  return <Suspense fallback={''}><LE/></Suspense>;
 };

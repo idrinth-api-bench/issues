@@ -31,7 +31,11 @@ const Faqs = () => {
           <div className='accordion-section'>
             <div>
               <h5>
-                <Lang lnkey={`home.faq.questions.title_${ i+ONE }`} />
+                {
+                  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                  // @ts-expect-error
+                  <Lang lnkey={`home.faq.questions.title_${ i+ONE }`} />
+                }
               </h5>
             </div>
             <div>
@@ -45,6 +49,8 @@ const Faqs = () => {
           {isOpen[i] &&
           <p>
             {
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-expect-error
               <Lang lnkey={`home.faq.questions.description_${ i+ONE }`} />
             }
           </p>

@@ -16,12 +16,12 @@ describe('usage', () => {
   it('h1 matches', () => {
     cy.get('h1',)
       .invoke('text',)
-      .should('eq', 'Usage & Examples',);
+      .should('eq', 'Usage',);
   },);
   it('link to self exists', () => {
     cy.get('header nav a[href="/usage/"]',)
       .invoke('text',)
-      .should('eq', 'Usage & Examples',);
+      .should('eq', 'Usage',);
   },);
   it('breadcrumbs exists', () => {
     cy.get('nav.breadcrumbs a[href="/"]',)
@@ -29,7 +29,7 @@ describe('usage', () => {
       .should('eq', 'Home',);
     cy.get('nav.breadcrumbs li:last-of-type',)
       .invoke('text',)
-      .should('eq', 'Usage & Examples',);
+      .should('eq', 'Usage',);
   },);
   it('Copy right updated for the current year.', () => {
     cy.get('footer span',)

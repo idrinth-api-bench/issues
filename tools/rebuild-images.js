@@ -48,7 +48,7 @@ rl.question('Versions(space separated): ', (versions,) => {
         exec(`docker push -a idrinth/${ image }`, true,);
       }
       exec('docker image prune --force', true,);
-      process.emit(EXIT_SUCCESS,);
+      process.exit(EXIT_SUCCESS,);
     },);
   },);
 },);
