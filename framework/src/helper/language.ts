@@ -1,53 +1,38 @@
 import {
-  parse,
-} from 'yaml';
-import {
-  readFileSync,
-} from 'fs';
-import {
-  pathExists,
-} from 'fs-extra';
-import HashMap from '../hashmap.js';
-import {
-  FRAMEWORK_ROOT,
+  DEFAULT_LANGUAGE,
 } from '../constants.js';
+import languages from '../locales/languages.js';
+import languageKey from '../locales/language-key.js';
+import en from '../locales/en.js';
 
 const NEXT = 1;
 
-const read = async(lang: string,) : Promise<HashMap> => {
-  lang = lang.replace(/-.+$/u, '',).replace(/[^a-z]/gu, '',);
-  const file = FRAMEWORK_ROOT + '/language/' + lang + '.yml';
-  if (! await pathExists(file,)) {
-    return {};
+let language = DEFAULT_LANGUAGE;
+let chosen = en;
+const regs = [];
+
+const getReplace = (index: number,) => {
+  if (typeof regs[index] === 'undefined') {
+    regs[index] = new RegExp(`%${ index + NEXT }%`, 'gu',);
   }
-  return parse(readFileSync(file, {
-    encoding: 'utf8',
-  },), ) as HashMap;
+  return regs[index];
 };
 
-const english = await read('en',);
-
-let language = english;
-const get = (key: string, ...args: string[]): string => {
-  if (typeof language[key] !== 'string') {
-    return key;
-  }
-  let out = language[key];
+const get = (key: languageKey, ...args: string[]): string => {
+  let out = chosen[key] || en[key] || key;
   for (let pos = 0; pos < args.length; pos ++) {
-    out = out.replace(new RegExp(`%${ pos + NEXT }%`, 'gu',), args[pos],);
+    out = out.replace(getReplace(pos), args[pos],);
   }
   return out;
 };
 
 export const locale = async(lang: string,) => {
-  if (lang === 'en') {
-    language = english;
-    return;
+  language = DEFAULT_LANGUAGE;
+  chosen = en;
+  if (languages.includes(lang,)) {
+    language = lang;
+    chosen = (await import(`../locales/${ language }.js`,)).default;
   }
-  language = {
-    ...english,
-    ...await read(lang,),
-  };
 };
 
 export default get;

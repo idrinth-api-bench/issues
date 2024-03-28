@@ -93,7 +93,9 @@
     "clear": "node tools/clear-js-files-from-src.js",
     "tsc": "tsc -p tsconfig.json",
     "prepublishOnly": "npm run tsc",
-    "postpublishOnly": "npm run clear"
+    "postpublishOnly": "npm run clear",
+    "language": "node tools/generate-language.js",
+    "postinstall": "node tools/generate-language.js"
   },
   "engines": {
     "node": ">=20"

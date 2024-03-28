@@ -22,7 +22,7 @@ const startResults = (
     return;
   }
   calculator.terminate();
-  logger.info(language('tarting_result',),);
+  logger.info(language('starting_result',),);
   logger.debug(language('data',), finished,);
   for (const reportModifier of reportModifiers) {
     for (const set of Object.keys(finished,)) {
