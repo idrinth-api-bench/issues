@@ -18,11 +18,13 @@ This is the repository for the API test framework, it's documentation website an
 
 ## Documentation
 
-You can find the documentation on the [Documentation Website](https://idrinth-api-ben.ch).
+You can find the documentation on the
+[Documentation Website](https://idrinth-api-ben.ch).
 
 ## Slack
 
-[Join](https://join.slack.com/t/idrinth-api-bench/shared_invite/zt-2f4zmw2sz-c3etHzCFq3LtZpkR15xXMA) our slack if you need help, want to connect or have questions.
+[Join](https://join.slack.com/t/idrinth-api-bench/shared_invite/zt-2f4zmw2sz-c3etHzCFq3LtZpkR15xXMA)
+our slack if you need help, want to connect or have questions.
 
 ## CI Images
 
@@ -41,10 +43,24 @@ We provide a monitoring solution out of the box.
 
 ## Setup
 
-To get your project ready for development you need to run the following commands in order:
+To get your project ready for development you need to run the following
+commands in order:
 
 - `git clone https://github.com/idrinth/api-bench`
 - `cd api-bench`
 - `npm run setup`
 
-Further information about contributing is available in the contribution guidelines [on the website](https://idrinth-api-ben.ch/contributing/) and [in the markdown file](/CONTRIBUTING.md).
+Further information about contributing is available in the contribution
+guidelines [on the website](https://idrinth-api-ben.ch/contributing/) and
+[in the markdown file](/CONTRIBUTING.md).
+
+## Support
+
+Commercial support and training is provided via
+[Björn Büttner](https://bjoern-buettner.me).
+
+## Privacy and Compliance
+
+The `@idrinth/api-bench` framework does not collect any kind of information
+about its users or the APIs being tested. All data is local to the device you
+run it on or the database server you configure it to dump data in.
