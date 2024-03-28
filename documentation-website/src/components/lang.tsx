@@ -16,34 +16,35 @@ interface LangProps {
   global?: Window
 }
 
+// eslint-disable-next-line complexity
+export const t = async(lnkey, global) => {
+  global = global || window;
+  const language = (global?.Navigator?.language ?? 'en')
+    .replace(/-.*$/u, '',);
+  const main = lnkey.split('.',)[FIRST_ELEMENT];
+  if (! files.includes(`en-${ main }`,)) {
+    return lnkey;
+  }
+  const originals = await import(`../locales/en-${ main }.ts`);
+  let output = (files.includes(`${ language }-${ main }`,)
+    ? await import(`../locales/${ language }-${ main }.ts`)
+    : originals).default;
+  let defaultOutput = originals.default;
+  for (const part of lnkey.split('.',).slice(SECOND_ELEMENT,)) {
+    output = output[part] || defaultOutput[part];
+    defaultOutput = defaultOutput[part];
+  }
+  return output || lnkey;
+};
+
 export const Lang = ({
   lnkey,
   global,
 }: LangProps,) => {
-  // eslint-disable-next-line complexity
   const LE = lazy(async(): Promise<{default: ComponentType<unknown>;}> => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    global = global || window;
-    const language = (global?.Navigator?.language ?? 'en')
-      .replace(/-.*$/u, '',);
-    const main = lnkey.split('.',)[FIRST_ELEMENT];
-    if (! files.includes(`en-${ main }`,)) {
-      return {
-        default: () => <>{ lnkey }</>,
-      };
-    }
-    const originals = await import(`../locales/en-${ main }.ts`);
-    let output = (files.includes(`${ language }-${ main }`,)
-      ? await import(`../locales/${ language }-${ main }.ts`)
-      : originals).default;
-    let defaultOutput = originals.default;
-    for (const part of lnkey.split('.',).slice(SECOND_ELEMENT,)) {
-      output = output[part] || defaultOutput[part];
-      defaultOutput = defaultOutput[part];
-    }
+    const text = await t(lnkey, global,);
     return {
-      default: () => <>{output || lnkey}</>,
+      default: () => <>{ text }</>,
     };
   },);
   return <Suspense fallback={''}><LE/></Suspense>;
