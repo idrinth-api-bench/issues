@@ -6,7 +6,6 @@ import {
   mkdirSync
 } from 'fs';
 import yaml from 'yaml';
-import { dirname } from 'path';
 
 const originDir = 'language';
 const targetDir = 'src/locales';
