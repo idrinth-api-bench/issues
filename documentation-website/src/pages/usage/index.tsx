@@ -7,7 +7,7 @@ import Layout from '../../components/layout.tsx';
 const Usage = () => <Layout
   Outlet={<>
     <div className='title-card'>
-      <h1>Usage &amp; Examples</h1>
+      <h1>Usage</h1>
     </div>
     <div className='card'>
       <h2>Binaries</h2>
