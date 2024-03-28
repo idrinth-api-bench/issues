@@ -3,22 +3,23 @@ import {
   readFileSync,
   writeFileSync,
   existsSync,
-  mkdirSync
+  mkdirSync,
 } from 'fs';
 import yaml from 'yaml';
 
 const originDir = 'language';
 const targetDir = 'src/locales';
 
-const yamlFiles = readdirSync('language').filter(file => file.endsWith('.yml'));
+const yamlFiles = readdirSync('language',)
+  .filter(file => file.endsWith('.yml',),);
 
 const files = [];
 yamlFiles.forEach((yamlFile) => {
   const lang = yamlFile.replace('.yml', '');
   const yamlPath = `${originDir}/${yamlFile}`;
 
-  if (!existsSync(targetDir)) {
-    mkdirSync(targetDir, { recursive: true });
+  if (!existsSync(targetDir,)) {
+    mkdirSync(targetDir, { recursive: true },);
   }
 
   const content = readFileSync(yamlPath, 'utf8');

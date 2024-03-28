@@ -10,7 +10,7 @@ import {
 } from '../constants.ts';
 
 interface BreadcrumbsProps {
-  path: string
+  path: string;
 }
 
 const build = (
@@ -21,7 +21,11 @@ const build = (
   const name = parts[index] === '' ? 'home' : parts[index];
   if (index === parts.length - ONE) {
     nav.push(<li key={name}>
-      <Lang lnkey={name + '.nav'}/>
+      {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
+        <Lang lnkey={'nav.' + name}/>
+      }
     </li>,);
     return;
   }
@@ -32,7 +36,11 @@ const build = (
   url += '/';
   nav.push(<li key={name}>
     <NavLink to={url}>
-      <Lang lnkey={name + '.nav'}/>
+      {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
+        <Lang lnkey={'nav.' + name}/>
+      }
     </NavLink>
   </li>,);
 };

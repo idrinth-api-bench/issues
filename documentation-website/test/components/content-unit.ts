@@ -9,6 +9,8 @@ describe('components/card', () => {
   },);
   it('() should be an object', () => {
     const result = ContentUnit({
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-expect-error
       titleText: '',
       titleLevel: 1,
       children: [],
