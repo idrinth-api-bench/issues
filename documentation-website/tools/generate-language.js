@@ -73,7 +73,11 @@ writeFileSync(
   targetDir + '/languages.ts',
   `/* eslint max-len:0 */\nconst languages = ${ languages };\nexport default languages;\n`,
 );
+const file = JSON.stringify(files, undefined, 2,)
+  .replace(/"/ug, '\'',)
+  .replace(/\n/ug, ',\n',)
+  .replace(/,,\n/ug, ',\n',);
 writeFileSync(
   targetDir + '/files.ts',
-  `/* eslint max-len:0 */\nconst files = ${ JSON.stringify(files, undefined, 2,).replace(/"/ug, '\'',)};\nexport default files;\n`,
+  `/* eslint max-len:0 */\nconst files = ${ file };\nexport default files;\n`,
 );

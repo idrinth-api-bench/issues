@@ -20,25 +20,31 @@ export const Lang = ({
   lnkey,
   global,
 }: LangProps,) => {
-  const LazyElement = lazy(async(): Promise<{default: ComponentType<unknown>;}> => {
+  // eslint-disable-next-line complexity
+  const LE = lazy(async(): Promise<{default: ComponentType<unknown>;}> => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
     global = global || window;
-    const language = (global?.Navigator?.language || 'en').replace(/-.*$/u, '');
+    const language = (global?.Navigator?.language ?? 'en')
+      .replace(/-.*$/u, '',);
     const main = lnkey.split('.',)[FIRST_ELEMENT];
-    if (! files.includes(`en-${main}`)) {
-      return {default: () => <>lnkey</>};
+    if (! files.includes(`en-${ main }`,)) {
+      return {
+        default: () => <>{ lnkey }</>,
+      };
     }
-    const originals = await import(`../locales/en-${main}.ts`);
-    let output = (files.includes(`${language}-${main}`,)
-      ? await import(`../locales/${language}-${main}.ts`)
+    const originals = await import(`../locales/en-${ main }.ts`);
+    let output = (files.includes(`${ language }-${ main }`,)
+      ? await import(`../locales/${ language }-${ main }.ts`)
       : originals).default;
     let defaultOutput = originals.default;
-    for (const part of lnkey.split('.',).slice(SECOND_ELEMENT)) {
+    for (const part of lnkey.split('.',).slice(SECOND_ELEMENT,)) {
       output = output[part] || defaultOutput[part];
       defaultOutput = defaultOutput[part];
     }
-    return {default: () => <>{output || lnkey}</>};
+    return {
+      default: () => <>{output || lnkey}</>,
+    };
   },);
-  return <Suspense fallback={''}><LazyElement/></Suspense>;
+  return <Suspense fallback={''}><LE/></Suspense>;
 };
