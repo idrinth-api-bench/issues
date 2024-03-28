@@ -52,6 +52,7 @@ RUN npm ci \
     && (rm -r /usr/local/lib/node_modules/@idrinth/api-bench/integration || true) \
     && (rm -r /usr/local/lib/node_modules/@idrinth/api-bench/test || true) \
     && (rm -r /usr/local/lib/node_modules/@idrinth/api-bench/tools || true) \
-    && (rm -r /usr/local/lib/node_modules/@idrinth/api-bench/fixtures || true)
+    && (rm -r /usr/local/lib/node_modules/@idrinth/api-bench/fixtures || true) \
+    && (rm -r /usr/local/lib/node_modules/@idrinth/api-bench/language || true)
 
 RUN rm -r /api-bench
