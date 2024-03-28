@@ -7,9 +7,10 @@ import {
 import {
   ONE,
 } from '../constants.ts';
+import languageKey from '../locales/language-key.ts';
 
 interface CardProps {
-  titleText: string;
+  titleText: languageKey;
   titleLevel: number;
   sideMode?: boolean;
   children: string[]|string;
@@ -31,6 +32,8 @@ const ContentUnit = ({
         : [ children, ];
     }
     const content = children.map(
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-expect-error
       (sentence,) => <p key={null}><Lang lnkey={sentence}/></p>,
     );
     return <div>{content}</div>;

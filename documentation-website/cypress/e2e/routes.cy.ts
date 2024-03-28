@@ -29,7 +29,7 @@ describe('usage/route', () => {
       .should('eq', 'Home',);
     cy.get('nav.breadcrumbs a[href="/usage/"]',)
       .invoke('text',)
-      .should('eq', 'Usage & Examples',);
+      .should('eq', 'Usage',);
     cy.get('nav.breadcrumbs li:last-of-type',)
       .invoke('text',)
       .should('eq', 'Routes',);
