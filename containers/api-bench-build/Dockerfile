@@ -67,7 +67,6 @@ RUN npm ci \
 WORKDIR /api-bench/history-website
 RUN npm ci \
     && npm run build \
-    && npm prune --production \
     && mkdir -p /project/@idrinth/api-bench/history-website \
     && cp --recursive /api-bench/history-website/dist/* /project/@idrinth/api-bench/history-website/
 
