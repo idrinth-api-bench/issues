@@ -1,29 +1,20 @@
-name: Hadolint
+name: api-bench-gitlab-runner Hadolint
 on:
   push:
     branches:
       - master
     paths:
-      - 'containers/*/Dockerfile'
+      - 'containers/api-bench-gitlab-runner/Dockerfile'
       - '.github/workflows/hadolint.yml'
   pull_request:
     branches:
       - master
     paths:
-      - 'containers/*/Dockerfile'
+      - 'containers/api-bench-gitlab-runner/Dockerfile'
       - '.github/workflows/hadolint.yml'
 jobs:
   lint:
-    strategy:
-      matrix:
-        folder:
-          - 'api-bench-gitlab-runner'
-          - 'api-bench'
-          - 'api-bench-build'
-          - 'api-bench-gitea-action'
-          - 'api-bench-history-website'
-          - 'api-bench-history-microservice'
-    name: Lint ${{ matrix.folder }}
+    name: Lint
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
@@ -33,4 +24,4 @@ jobs:
       - run: wget https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64
       - run: sudo mv hadolint-Linux-x86_64 /usr/local/bin/hadolint
       - run: sudo chmod +x /usr/local/bin/hadolint
-      - run: hadolint containers/${{ matrix.folder }}/Dockerfile
+      - run: hadolint containers/api-bench-gitlab-runner/Dockerfile

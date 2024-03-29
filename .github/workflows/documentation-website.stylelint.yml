@@ -1,4 +1,4 @@
-name: STYLELINT
+name: Documentation Website STYLELINT
 on:
   push:
     branches:
@@ -11,8 +11,8 @@ on:
     branches:
     - master
     paths:
-    - '**.css'
-    - '**.json'
+    - 'documentation-website/**.css'
+    - 'documentation-website/.json'
     - '.github/workflows/stylelint.yml'
 env:
   PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
