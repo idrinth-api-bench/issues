@@ -3,6 +3,7 @@ import Header from './header.tsx';
 import Footer from './footer.tsx';
 import React from 'react';
 import Breadcrumbs from './breadcrumbs.tsx';
+import ScrollToHashElement from './hash-scroll.tsx';
 
 interface LayoutProps {
   Outlet: React.ReactNode,
@@ -28,6 +29,7 @@ const Layout = ({
       {Outlet}
     </article>
     <Footer/>
+    <ScrollToHashElement/>
   </>;
 };
 
