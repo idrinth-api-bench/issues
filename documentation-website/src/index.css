@@ -261,7 +261,6 @@ footer li:last-child::after {
   content: "";
 }
 
-.profile,
 .sponsor {
   display: grid;
   grid-template-columns: 1fr;
@@ -269,14 +268,6 @@ footer li:last-child::after {
 
 .sponsor img {
   place-self: center;
-}
-
-.profile img {
-  border-radius: 50%;
-  max-width: 200px;
-  place-self: center center;
-  justify-self: center;
-  border: 1px solid var(--dark-green);
 }
 
 nav.breadcrumbs li::after {
@@ -287,7 +278,6 @@ nav.breadcrumbs li:last-of-type::after {
   content: "";
 }
 
-.profile h2,
 .sponsor h2 {
   text-align: left;
 }
@@ -504,11 +494,4 @@ nav.breadcrumbs li:last-of-type::after {
   footer li:last-child::after {
     content: none;
   }
-}
-
-.accordion-section{
-  cursor: pointer;
-  display: flex;
-  justify-content:space-between ;
-  align-items: center;
 }

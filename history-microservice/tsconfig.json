@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "module": "NodeNext",
+    "lib": [],
+    "target": "ESNext",
+    "esModuleInterop": true,
+    "moduleResolution": "NodeNext",
+    "resolveJsonModule": true
+  },
+  "typeRoots" : [
+    "./typings",
+    "@types"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "index.ts"
+  ],
+  "ts-node": {
+    "transpileOnly": true,
+    "moduleTypes": {
+      "*.ts": "cjs"
+    }
+  }
+}

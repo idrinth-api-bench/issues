@@ -1,5 +1,5 @@
 {
-  "name": "@idrinth/api-bench/history/ui",
+  "name": "@idrinth/api-bench/history-website",
   "private": true,
   "version": "2.7.4",
   "type": "module",

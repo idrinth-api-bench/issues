@@ -7,7 +7,7 @@
     "@idrinth/api-bench": "*"
   },
   "scripts": {
-    "run": "run-benchmark"
+    "run": "run-benchmark 2 3"
   },
   "engines": {
     "node": ">=20"
