@@ -5,14 +5,14 @@ on:
     - master
     paths:
     - '**.md'
-    - '**.json'
+    - 'package-lock.json'
     - '.github/workflows/spellcheck.yml'
   pull_request:
     branches:
     - master
     paths:
     - '**.md'
-    - '**.json'
+    - 'package-lock.json'
     - '.github/workflows/spellcheck.yml'
 env:
   PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}

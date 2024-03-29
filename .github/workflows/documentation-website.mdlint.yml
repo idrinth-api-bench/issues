@@ -1,0 +1,37 @@
+name: documentation-website MARKDOWN-LINT
+on:
+  push:
+    branches:
+    - master
+    paths:
+    - 'documentation-website/*.md'
+    - 'documentation-website/package-lock.json'
+    - '.github/workflows/documentation-website.mdlint.yml'
+  pull_request:
+    branches:
+    - master
+    paths:
+    - 'documentation-website/*.md'
+    - 'documentation-website/package-lock.json'
+    - '.github/workflows/documentation-website.mdlint.yml'
+env:
+  PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
+  CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.CURRENT_NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            package-lock.json
+      - run: cd documentation-website && npm ci
+      - run: cd documentation-website && npm run-script lint-md

@@ -38,3 +38,5 @@ gitlab
 gitea
 Gitea
 history-microservice
+api-bench-cli
+cli
