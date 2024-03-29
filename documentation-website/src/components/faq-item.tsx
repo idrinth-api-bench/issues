@@ -18,10 +18,16 @@ import React, {
     const toggleOpen = () => {
       setIsOpen(!isOpen);
     };
+
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+      if (e.key === 'Enter') {
+        toggleOpen();
+      }
+    };
   
     return (
         <>
-          <div onClick={() => toggleOpen()}>
+          <div onClick={() => toggleOpen()} onKeyDown={handleKeyDown} tabIndex={0} role="button">
             <div className='accordion-section'>
               <div>
                 <h5>
