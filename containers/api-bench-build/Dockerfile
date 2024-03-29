@@ -55,4 +55,20 @@ RUN npm ci \
     && (rm -r /usr/local/lib/node_modules/@idrinth/api-bench/fixtures || true) \
     && (rm -r /usr/local/lib/node_modules/@idrinth/api-bench/language || true)
 
+WORKDIR /api-bench/history-microservice
+RUN npm ci \
+    && npm run tsc \
+    && npm prune --production \
+    && mkdir -p /project/@idrinth/api-bench/history-microservice \
+    && cp --recursive /api-bench/history-microservice/* /project/@idrinth/api-bench/history-microservice/ \
+    && (rm /project/@idrinth/api-bench/history-microservice/README.md || true)
+    && (rm /project/@idrinth/api-bench/history-microservice/**/*.ts || true)
+
+WORKDIR /api-bench/history-website
+RUN npm ci \
+    && npm run build \
+    && npm prune --production \
+    && mkdir -p /project/@idrinth/api-bench/history-website \
+    && cp --recursive /api-bench/history-website/dist/* /project/@idrinth/api-bench/history-website/
+
 RUN rm -r /api-bench
