@@ -1,7 +1,14 @@
-.faq-item .accordion-section{
+.faq-item {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 0.25em;
+  border-bottom: 1px solid var(--black);
+}
+
+.faq-item .accordion-section {
   cursor: pointer;
   display: flex;
-  justify-content:space-between ;
+  justify-content:space-between;
   align-items: center;
 }
 
@@ -10,7 +17,7 @@
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 12px solid #000;
+  border-bottom: 12px solid var(--black);
 }
 
 .faq-item .down-arrow {
@@ -18,13 +25,17 @@
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-top: 12px solid #000;
+  border-top: 12px solid var(--black);
+}
+
+.dark-mode .faq-item {
+    border-bottom-color: var(--white);
 }
 
 .dark-mode .faq-item .up-arrow {
-  border-bottom-color: #fff;
+  border-bottom-color: var(--white);
 }
 
 .dark-mode .faq-item .down-arrow {
-  border-top-color: #fff;
+  border-top-color: var(--white);
 }
