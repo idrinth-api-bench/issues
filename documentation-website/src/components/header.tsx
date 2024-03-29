@@ -43,6 +43,10 @@ const Header = ({
         }
         label={'slack'}
       />
+      <SocialLink
+        to={'https://www.youtube.com/channel/UCv0TBTkJdFQrdYLH8eR4-YQ'}
+        label={'youtube'}
+      />
     </ul>
   </nav>
   <nav>

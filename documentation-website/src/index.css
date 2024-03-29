@@ -505,26 +505,3 @@ nav.breadcrumbs li:last-of-type::after {
     content: none;
   }
 }
-
-.accordion-section{
-  cursor: pointer;
-  display: flex;
-  justify-content:space-between ;
-  align-items: center;
-}
-
-.up-arrow {
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 12px solid #fff;
-}
-
-.down-arrow {
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-top: 12px solid #fff;
-}

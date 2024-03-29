@@ -1,0 +1,30 @@
+.faq-item .accordion-section{
+  cursor: pointer;
+  display: flex;
+  justify-content:space-between ;
+  align-items: center;
+}
+
+.faq-item .up-arrow {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 12px solid #000;
+}
+
+.faq-item .down-arrow {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid #000;
+}
+
+.dark-mode .faq-item .up-arrow {
+  border-bottom-color: #fff;
+}
+
+.dark-mode .faq-item .down-arrow {
+  border-top-color: #fff;
+}
