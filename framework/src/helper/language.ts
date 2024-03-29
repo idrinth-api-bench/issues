@@ -1,11 +1,10 @@
 import {
   DEFAULT_LANGUAGE,
+  NEXT,
 } from '../constants.js';
 import languages from '../locales/languages.js';
 import languageKey from '../locales/language-key.js';
 import en from '../locales/en.js';
-
-const NEXT = 1;
 
 let language = DEFAULT_LANGUAGE;
 let chosen = en;
