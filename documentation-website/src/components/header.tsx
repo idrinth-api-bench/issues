@@ -11,7 +11,9 @@ import {
 } from './lang.tsx';
 import DarkModeButton from './dark-mode-button.tsx';
 import SocialLink from './social-link.tsx';
-import { MdArrowDropDown } from 'react-icons/md';
+import {
+  MdArrowDropDown,
+} from 'react-icons/md';
 
 const Header = ({
   window,
