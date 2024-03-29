@@ -1,18 +1,11 @@
 import React from 'react';
 import FaqItem from './faq-item';
 
-const Faqs = () => {
-  //change the length if more FAQ is added to the en.yml.
-  //Add the total no. of questions.
-  const faqLength = 4;
-
-  return (
-    <div>
-      {[...Array(faqLength)].map((_, i) => (
-        <FaqItem key={`faq${i}`} index={i} />
-      ))}
-    </div>
-  );
-};
+const Faqs = () => <div>
+  <FaqItem key={'faq0'} index={0} />
+  <FaqItem key={'faq1'} index={1} />
+  <FaqItem key={'faq2'} index={2} />
+  <FaqItem key={'faq4'} index={3} />
+</div>;
 
 export default Faqs;
