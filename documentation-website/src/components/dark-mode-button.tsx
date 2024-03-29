@@ -2,9 +2,12 @@ import React, {
   useState, useEffect,
 } from 'react';
 import {
+  IoSunny,
+  IoMoon,
+} from 'react-icons/io5';
+import {
   FIRST_ELEMENT,
 } from '../constants';
-import DarkLightIcon from './dark-light-icon.tsx';
 
 const DarkModeButton = ({
   window,
@@ -41,8 +44,10 @@ const DarkModeButton = ({
     setIsDarkMode(! isDarkMode,);
   };
 
-  return <button onClick={toggleLightDarkMode}>
-    <DarkLightIcon isDarkMode={isDarkMode}/>
+  return <button className="theme-toggle-btn"
+    onClick={toggleLightDarkMode}
+  >
+    {isDarkMode ? <IoSunny /> : <IoMoon />}
   </button>;
 };
 export default DarkModeButton;

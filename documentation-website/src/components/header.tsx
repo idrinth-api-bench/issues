@@ -11,6 +11,7 @@ import {
 } from './lang.tsx';
 import DarkModeButton from './dark-mode-button.tsx';
 import SocialLink from './social-link.tsx';
+import { MdArrowDropDown } from 'react-icons/md';
 
 const Header = ({
   window,
@@ -60,8 +61,9 @@ const Header = ({
         </NavLink>
       </li>
       <li>
-        <NavLink to="/contributing/">
+        <NavLink className="dropdown-links-heading" to="/contributing/">
           <Lang lnkey='nav.contributing'/>
+          <MdArrowDropDown />
         </NavLink>
         <ul>
           <li>
@@ -77,8 +79,9 @@ const Header = ({
         </ul>
       </li>
       <li>
-        <NavLink to="/usage/">
+        <NavLink className="dropdown-links-heading" to="/usage/">
           <Lang lnkey='nav.usage'/>
+          <MdArrowDropDown />
         </NavLink>
         <ul>
           <li>
