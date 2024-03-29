@@ -1,64 +1,65 @@
 import React, {
-    useState,
-  } from 'react';
-  import {
-    ONE,
-  } from '../constants';
-  import {
-    Lang,
-  } from './lang';
-  
-  const FaqItem = ({index} : {index: number}) => {
+  useState,
+} from 'react';
+import {
+  ONE,
+} from '../constants';
+import {
+  Lang,
+} from './lang';
 
-    const [
-      isOpen,
-      setIsOpen,
-    ] = useState(false);
-  
-    const toggleOpen = () => {
-      setIsOpen(!isOpen);
-    };
+const FaqItem = ({
+  index,
+}: { index: number },) => {
+  const [
+    isOpen,
+    setIsOpen,
+  ] = useState(false,);
 
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-      if (e.key === 'Enter') {
-        toggleOpen();
-      }
-    };
-  
-    return (
-        <>
-          <div onClick={() => toggleOpen()} onKeyDown={handleKeyDown} tabIndex={0} role="button">
-            <div className='accordion-section'>
-              <div>
-                <h5>
-                  {
-                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                    // @ts-expect-error
-                    <Lang lnkey={`home.faq.questions.title_${ index+ONE }`} />
-                  }
-                </h5>
-              </div>
-              <div>
-                <span>
-                  {isOpen ? <i>&#x23F6;</i> : <i>&#x23F7;</i>}
-                </span>
-              </div>
-            </div>
-          </div>
-          <div >
-            {isOpen &&
-            <p>
-              {
-                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                // @ts-expect-error
-                <Lang lnkey={`home.faq.questions.description_${ index+ONE }`} />
-              }
-            </p>
-            }
-          </div>
-        </>
-    );
+  const toggleOpen = () => {
+    setIsOpen(! isOpen,);
   };
-  
-  export default FaqItem;
-  
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>,) => {
+    if (e.key === 'Enter') {
+      toggleOpen();
+    }
+  };
+
+  return (
+    <>
+      <div
+        onClick={() => toggleOpen()}
+        onKeyDown={handleKeyDown}
+        tabIndex={0}
+        role="button"
+      >
+        <div className="accordion-section">
+          <h5>
+            {
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-expect-error
+              <Lang lnkey={`home.faq.questions.title_${ index + ONE }`} />
+            }
+          </h5>
+          {isOpen ?
+            <span className="up-arrow"></span>
+            :
+            <span className="down-arrow"></span>
+          }
+        </div>
+      </div>
+      {isOpen &&
+        <p>
+          {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-expect-error
+            <Lang lnkey={`home.faq.questions.description_${ index + ONE }`} />
+          }
+        </p>
+      }
+    </>
+  );
+};
+
+export default FaqItem;
