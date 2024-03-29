@@ -8,8 +8,9 @@ const Faqs = () => {
 
   return (
     <div>
-      {[ ...Array(faqLength,), ].map((_, i,) => <FaqItem key={`faq${ i }`} index={i} />,
-      )}
+      {[...Array(faqLength)].map((_, i) => (
+        <FaqItem key={`faq${i}`} index={i} />
+      ))}
     </div>
   );
 };
