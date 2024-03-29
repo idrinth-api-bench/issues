@@ -35,13 +35,13 @@ const FaqItem = ({
       role="button"
     >
       <div className="accordion-section">
-        <h5>
+        <h2>
           {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-expect-error
-            <Lang lnkey={`home.faq.questions.title_${ index + ONE }`} />
+            <Lang lnkey={`faq.questions.title_${ index + ONE }`} />
           }
-        </h5>
+        </h2>
         {isOpen ?
           <span className="up-arrow"></span>
           :
@@ -54,7 +54,7 @@ const FaqItem = ({
         {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-expect-error
-          <Lang lnkey={`home.faq.questions.description_${ index + ONE }`} />
+          <Lang lnkey={`faq.questions.description_${ index + ONE }`} />
         }
       </p>
     }

@@ -4,7 +4,6 @@ import {
 } from '../../components/lang.tsx';
 import Layout from '../../components/layout.tsx';
 import ExternalLink from '../../components/external-link.tsx';
-import Faqs from '../../components/faq.tsx';
 
 const Index = () => <Layout
   Outlet={<>
@@ -55,12 +54,6 @@ const Index = () => <Layout
           of complicated validations or huge response bodies on the data
           gathering.
       </p>
-    </div>
-    <div className='card'>
-      <h2>
-        <Lang lnkey='home.faq.title'/>
-      </h2>
-      <Faqs/>
     </div>
   </>}
   page='home'
