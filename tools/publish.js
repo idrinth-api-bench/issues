@@ -69,6 +69,7 @@ rl.question(
         'webmaster@idrinth.de\n' +
         '!',
         true,
+        'npm add user',
       );
       exec(
         'cd framework && npm publish',
