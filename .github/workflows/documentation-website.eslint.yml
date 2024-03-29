@@ -10,7 +10,7 @@ on:
     - 'documentation-website/**.cjs'
     - 'documentation-website/**.json'
     - 'documentation-website/**.svelte'
-    - '.github/workflows/eslint.yml'
+    - '.github/workflows/documentation-website.eslint.yml'
   pull_request:
     branches:
     - master
@@ -21,7 +21,7 @@ on:
     - 'documentation-website/**.cjs'
     - 'documentation-website/**.json'
     - 'documentation-website/**.svelte'
-    - '.github/workflows/eslint.yml'
+    - '.github/workflows/documentation-website.eslint.yml'
 env:
   PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}

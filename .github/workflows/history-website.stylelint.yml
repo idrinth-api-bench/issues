@@ -1,19 +1,19 @@
-name: Documentation Website STYLELINT
+name: History Website STYLELINT
 on:
   push:
     branches:
     - master
     paths:
-    - 'documentation-website/**.css'
-    - 'documentation-website/package-lock.json'
-    - '.github/workflows/documentation-website.stylelint.yml'
+    - 'history-website/**.css'
+    - 'history-website/package-lock.json'
+    - '.github/workflows/history-website.stylelint.yml'
   pull_request:
     branches:
     - master
     paths:
-    - 'documentation-website/**.css'
-    - 'documentation-website/package-lock.json'
-    - '.github/workflows/documentation-website.stylelint.yml'
+    - 'history-website/**.css'
+    - 'history-website/package-lock.json'
+    - '.github/workflows/history-website.stylelint.yml'
 env:
   PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
@@ -33,8 +33,8 @@ jobs:
             history-microservice/package-lock.json
             history-website/package-lock.json
             package-lock.json
-      - run: cd documentation-website && npm ci
-      - run: cd documentation-website && npm run-script lint-styles
+      - run: cd history-website && npm ci
+      - run: cd history-website && npm run-script lint-styles
   duplicate-style-check:
     runs-on: ubuntu-latest
     steps:
@@ -50,5 +50,5 @@ jobs:
             history-microservice/package-lock.json
             history-website/package-lock.json
             package-lock.json
-      - run: cd documentation-website && npm ci
-      - run: cd documentation-website && npm run-script lint-css
+      - run: cd history-website && npm ci
+      - run: cd history-website && npm run-script lint-css

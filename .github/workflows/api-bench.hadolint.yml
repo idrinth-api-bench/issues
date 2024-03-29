@@ -5,13 +5,13 @@ on:
       - master
     paths:
       - 'containers/api-bench/Dockerfile'
-      - '.github/workflows/hadolint.yml'
+      - '.github/workflows/api-bench.hadolint.yml'
   pull_request:
     branches:
       - master
     paths:
       - 'containers/api-bench/Dockerfile'
-      - '.github/workflows/hadolint.yml'
+      - '.github/workflows/api-bench.hadolint.yml'
 jobs:
   lint:
     name: Lint

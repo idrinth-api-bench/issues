@@ -1,17 +1,17 @@
-name: api-bench Hadolint
+name: api-bench-build Hadolint
 on:
   push:
     branches:
       - master
     paths:
-      - 'containers/api-bench/Dockerfile'
-      - '.github/workflows/hadolint.yml'
+      - 'containers/api-bench-build/Dockerfile'
+      - '.github/workflows/api-bench-build.hadolint.yml'
   pull_request:
     branches:
       - master
     paths:
-      - 'containers/api-bench/Dockerfile'
-      - '.github/workflows/hadolint.yml'
+      - 'containers/api-bench-build/Dockerfile'
+      - '.github/workflows/api-bench-build.hadolint.yml'
 jobs:
   lint:
     name: Lint
@@ -24,4 +24,4 @@ jobs:
       - run: wget https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64
       - run: sudo mv hadolint-Linux-x86_64 /usr/local/bin/hadolint
       - run: sudo chmod +x /usr/local/bin/hadolint
-      - run: hadolint containers/api-bench/Dockerfile
+      - run: hadolint containers/api-bench-build/Dockerfile

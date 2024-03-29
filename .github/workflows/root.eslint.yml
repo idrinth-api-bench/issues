@@ -10,7 +10,7 @@ on:
     - 'tools/**.cjs'
     - '*.json'
     - 'tools/**.svelte'
-    - '.github/workflows/eslint.yml'
+    - '.github/workflows/root.eslint.yml'
   pull_request:
     branches:
     - master
@@ -21,7 +21,7 @@ on:
     - 'tools/**.cjs'
     - '*.json'
     - 'tools/**.svelte'
-    - '.github/workflows/eslint.yml'
+    - '.github/workflows/root.eslint.yml'
 env:
   PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}

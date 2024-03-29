@@ -6,14 +6,14 @@ on:
     paths:
     - 'documentation-website/*.md'
     - 'documentation-website/package-lock.json'
-    - '.github/workflows/mdlint.yml'
+    - '.github/workflows/documentation-website.mdlint.yml'
   pull_request:
     branches:
     - master
     paths:
     - 'documentation-website/*.md'
     - 'documentation-website/package-lock.json'
-    - '.github/workflows/mdlint.yml'
+    - '.github/workflows/documentation-website.mdlint.yml'
 env:
   PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
