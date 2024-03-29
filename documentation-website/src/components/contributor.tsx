@@ -24,12 +24,15 @@ const Contributor = ({
   if (typeof contributions === 'number') {
     contributions = `${ contributions } contributions to master`;
   }
+  id = id.toLowerCase();
   return <div
     id={id}
-    className={'card contributor'}>
+    className={'contributor'}>
     <img src={avatar} alt={name}/>
     <div>
       <h2>
+        <a href={`#${ id }`}>#</a>
+        {' '}
         <ExternalLink to={url} label={name}/>
       </h2>
       <p>{bio}</p>
