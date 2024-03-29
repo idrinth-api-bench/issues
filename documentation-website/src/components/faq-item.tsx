@@ -7,6 +7,7 @@ import {
 import {
   Lang,
 } from './lang';
+import './faq-item.css';
 
 const FaqItem = ({
   index,
@@ -26,40 +27,38 @@ const FaqItem = ({
     }
   };
 
-  return (
-    <>
-      <div
-        onClick={() => toggleOpen()}
-        onKeyDown={handleKeyDown}
-        tabIndex={0}
-        role="button"
-      >
-        <div className="accordion-section">
-          <h5>
-            {
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-              // @ts-expect-error
-              <Lang lnkey={`home.faq.questions.title_${ index + ONE }`} />
-            }
-          </h5>
-          {isOpen ?
-            <span className="up-arrow"></span>
-            :
-            <span className="down-arrow"></span>
-          }
-        </div>
-      </div>
-      {isOpen &&
-        <p>
+  return <div className={'faq-item'}>
+    <div
+      onClick={() => toggleOpen()}
+      onKeyDown={handleKeyDown}
+      tabIndex={0}
+      role="button"
+    >
+      <div className="accordion-section">
+        <h5>
           {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-expect-error
-            <Lang lnkey={`home.faq.questions.description_${ index + ONE }`} />
+            <Lang lnkey={`home.faq.questions.title_${ index + ONE }`} />
           }
-        </p>
-      }
-    </>
-  );
+        </h5>
+        {isOpen ?
+          <span className="up-arrow"></span>
+          :
+          <span className="down-arrow"></span>
+        }
+      </div>
+    </div>
+    {isOpen &&
+      <p>
+        {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-expect-error
+          <Lang lnkey={`home.faq.questions.description_${ index + ONE }`} />
+        }
+      </p>
+    }
+  </div>;
 };
 
 export default FaqItem;
