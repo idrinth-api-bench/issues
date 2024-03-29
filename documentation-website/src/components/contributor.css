@@ -14,6 +14,7 @@
 .contributor h2 {
   text-align: left;
 }
+
 @media only screen and (width >= 600px) {
   .contributor {
     padding: 2em 3em;

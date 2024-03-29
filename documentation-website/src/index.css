@@ -199,12 +199,40 @@ header strong {
   font-weight: normal;
 }
 
-a[target="_blank"] {
-  padding-right: 1em;
-  background-image: url("assets/external-link-svgrepo-com.black.svg");
-  background-position: right center;
-  background-size: 1em 1em;
-  background-repeat: no-repeat;
+.dropdown-links-heading {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-links-heading > svg {
+  height: 20px;
+  width: 20px;
+}
+
+.external-link {
+  display: flex;
+  gap: 5px;
+  color: black;
+}
+
+.dark-mode .external-link {
+  color: white;
+}
+
+.theme-toggle-btn {
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.theme-toggle-btn:hover {
+  cursor: pointer;
+}
+
+.theme-toggle-btn > svg {
+  width: 25px;
+  height: 25px;
 }
 
 #root {
