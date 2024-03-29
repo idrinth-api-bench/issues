@@ -235,14 +235,6 @@ header strong {
   height: 25px;
 }
 
-/* a[target="_blank"] {
-  padding-right: 1em;
-  background-image: url("assets/external-link-svgrepo-com.black.svg");
-  background-position: right center;
-  background-size: 1em 1em;
-  background-repeat: no-repeat;
-} */
-
 #root {
   min-height: 100vh;
 }
