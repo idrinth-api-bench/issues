@@ -48,7 +48,7 @@
     "@babel/plugin-syntax-import-attributes": "^7.23.3",
     "@cypress/code-coverage": "^3.12.21",
     "@idrinth/duplicate-style-check": "^1.1.0",
-    "@idrinth/react-file-based-routes": "^1.2.10",
+    "@idrinth/react-file-based-routes": "^1.2.11",
     "@idrinth/rollup-plugin-react-modular-css": "^1.0.4",
     "@types/chai": "^4.3.11",
     "@types/mocha": "^10.0.6",
