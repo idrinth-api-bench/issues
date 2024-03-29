@@ -61,7 +61,7 @@ RUN npm ci \
     && npm prune --production \
     && mkdir -p /project/@idrinth/api-bench/history-microservice \
     && cp --recursive /api-bench/history-microservice/* /project/@idrinth/api-bench/history-microservice/ \
-    && (rm /project/@idrinth/api-bench/history-microservice/README.md || true)
+    && (rm /project/@idrinth/api-bench/history-microservice/README.md || true) \
     && (rm /project/@idrinth/api-bench/history-microservice/**/*.ts || true)
 
 WORKDIR /api-bench/history-website
