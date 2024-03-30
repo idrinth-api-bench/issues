@@ -1,4 +1,4 @@
-module.exports = () => ({
+module.exports = (apiRootUrl) => ({
   id: 'login',
   main: {
     method: 'post',
@@ -7,7 +7,7 @@ module.exports = () => ({
       password: 'cityslicka',
     },
     autohandle: 'json',
-    url: 'https://reqres.in/api/login',
+    url: apiRootUrl + '/login',
   },
   pre: [ '^user-agent', ],
   post: [

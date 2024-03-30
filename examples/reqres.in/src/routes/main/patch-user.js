@@ -1,8 +1,8 @@
-module.exports = () => ({
+module.exports = (apiRootUrl,) => ({
   id: 'patch user',
   main: {
     method: 'patch',
-    url: 'https://reqres.in/api/users/7',
+    url: apiRootUrl + '/users/7',
     autohandle: 'json',
     body: {
       name: 'Winston Churchill',
