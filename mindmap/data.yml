@@ -53,7 +53,12 @@ children:
               - text: bad
                 children:
                   - text: undisclosed costs
-          - text: "@matteofigus/api-benchmark"
+              - text: shared features
+                children:
+                  - load testing
+                  - stress testing
+                  - reporting
+          - text: api-benchmark
             url: https://github.com/matteofigus/api-benchmark
             children:
               - text: good
@@ -65,7 +70,12 @@ children:
                   - text: very outdated
                   - text: limited documentation
                   - text: no type support(DX)
-          - text: "@bvanderlaan/api-bench-runner"
+              - text: shared features
+                children:
+                  - stress testing
+                  - benchmarking
+                  - cli
+          - text: api-bench-runner
             url: https://github.com/bvanderlaan/api-bench-runner
             children:
               - text: good
@@ -78,6 +88,11 @@ children:
                   - text: no type support(DX)
                   - text: limited documentation
                   - text: very limited reporting
+              - text: shared features
+                children:
+                  - stress testing
+                  - benchmarking
+                  - cli
           - text: bench-rest
             url: https://github.com/jeffbski/bench-rest
             children:
@@ -91,6 +106,14 @@ children:
                   - text: no type support(DX)
                   - text: very limited reporting
                   - text: lack of abstraction of used libraries
+              - text: shared features
+                children:
+                  - load testing
+                  - benchmarking
+              - text: shared features
+                children:
+                  - benchmarking
+                  - cli
           - text: JMeter
             url: https://jmeter.apache.org/
             children:
@@ -102,6 +125,10 @@ children:
               - text: bad
                 children:
                   - text: automation is relatively difficult
+              - text: shared features
+                children:
+                  - load testing
+                  - stress testing
       - text: Time
         children:
           - text: Slack channel moderator
