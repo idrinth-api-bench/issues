@@ -34,6 +34,44 @@ children:
     children:
       - text: Competitors
         children:
+          - text: "@matteofigus/api-benchmark"
+            url: https://github.com/matteofigus/api-benchmark
+            children:
+              - text: good
+                children:
+                  - text: compare two different endpoints
+                  - text: graph output of measurements
+              - text: bad
+                children:
+                  - text: very outdated
+                  - text: limited documentation
+                  - text: no type support(DX)
+          - text: "@bvanderlaan/api-bench-runner"
+            url: https://github.com/bvanderlaan/api-bench-runner
+            children:
+              - text: good
+                children:
+                  - text: limit execution by maximum time of a suite
+                  - text: test definition is unit-test like
+              - text: bad
+                children:
+                  - text: very outdated
+                  - text: no type support(DX)
+                  - text: limited documentation
+                  - text: very limited reporting
+          - text: bench-rest
+            url: https://github.com/jeffbski/bench-rest
+            children:
+              - text: good
+                children:
+                  - text: reasonable documentation
+                  - text: very similar interface to us
+              - text: bad
+                children:
+                  - text: very outdated
+                  - text: no type support(DX)
+                  - text: very limited reporting
+                  - text: lack of abstraction of used libraries
           - text: JMeter
             url: https://jmeter.apache.org/
             children:
