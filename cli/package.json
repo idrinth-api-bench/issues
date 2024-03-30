@@ -2,7 +2,7 @@
   "name": "@idrinth/api-bench-cli",
   "description": "A library to benchmark apis, no matter if rest or soap",
   "license": "MIT",
-  "version": "2.7.2",
+  "version": "2.7.4",
   "homepage": "https://idrinth-api-ben.ch",
   "type": "module",
   "repository": {
