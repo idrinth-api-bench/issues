@@ -19,7 +19,7 @@ describe('home', () => {
       .should('eq', 'What does this project do?',);
   },);
   it('link to self exists', () => {
-    cy.get('header div a[href="/"]')
+    cy.get('header div a[href="/"]',)
       .find('img',)
       .should('exist',);
   },);
@@ -37,3 +37,4 @@ describe('home', () => {
       );
   },);
 },);
+
