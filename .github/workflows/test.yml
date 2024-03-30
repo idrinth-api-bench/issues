@@ -9,7 +9,7 @@ on:
     - '**.js'
     - '**.cjs'
     - '**.json'
-    - '.github/workflows/unittest.yml'
+    - '.github/workflows/test.yml'
   pull_request:
     branches:
     - master
@@ -19,7 +19,7 @@ on:
     - '**.js'
     - '**.cjs'
     - '**.json'
-    - '.github/workflows/unittest.yml'
+    - '.github/workflows/test.yml'
 env:
   PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
@@ -38,6 +38,7 @@ jobs:
             documentation-website/package-lock.json
             history-microservice/package-lock.json
             history-website/package-lock.json
+            cli/package-lock.json
             package-lock.json
       - run: cd framework && npm ci
       - run: cd framework && npm run-script test
@@ -63,6 +64,7 @@ jobs:
             documentation-website/package-lock.json
             history-microservice/package-lock.json
             history-website/package-lock.json
+            cli/package-lock.json
             package-lock.json
       - run: cd framework && npm ci
       - run: cd framework && npm run-script test
@@ -74,6 +76,58 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           flag-name: run ${{ env.CURRENT_NODE_VERSION }}
+  cli-previous:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4.0.2
+        with:
+          node-version: ${{ env.PREVIOUS_NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
+      - run: cd cli && npm ci
+      - run: cd cli && npm run-script test
+      - run: mv ./cli/coverage ./
+      - run: sed -i 's/SF:src/SF:cli\/src/' ./coverage/lcov.info
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel: true
+          flag-name: cli ${{ env.PREVIOUS_NODE_VERSION }}
+  cli-current:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
+        uses: actions/setup-node@v4.0.2
+        with:
+          node-version: ${{ env.CURRENT_NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
+      - run: cd cli && npm ci
+      - run: cd cli && npm run-script test
+      - run: mv ./cli/coverage ./
+      - run: sed -i 's/SF:src/SF:cli\/src/' ./coverage/lcov.info
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel: true
+          flag-name: cli ${{ env.CURRENT_NODE_VERSION }}
   framework-integration-previous:
     runs-on: ubuntu-latest
     steps:
@@ -88,6 +142,7 @@ jobs:
             documentation-website/package-lock.json
             history-microservice/package-lock.json
             history-website/package-lock.json
+            cli/package-lock.json
             package-lock.json
       - run: cd framework && npm ci
       - run: cd framework && npm run-script integration
@@ -113,6 +168,7 @@ jobs:
             documentation-website/package-lock.json
             history-microservice/package-lock.json
             history-website/package-lock.json
+            cli/package-lock.json
             package-lock.json
       - run: cd framework && npm ci
       - run: cd framework && npm run-script integration
@@ -138,6 +194,7 @@ jobs:
             documentation-website/package-lock.json
             history-microservice/package-lock.json
             history-website/package-lock.json
+            cli/package-lock.json
             package-lock.json
       - run: cd documentation-website && npm ci
       - run: cd documentation-website && npm run-script test
@@ -163,6 +220,7 @@ jobs:
             documentation-website/package-lock.json
             history-microservice/package-lock.json
             history-website/package-lock.json
+            cli/package-lock.json
             package-lock.json
       - run: cd documentation-website && npm ci
       - run: cd documentation-website && npm run-script e2e
@@ -177,12 +235,14 @@ jobs:
   end:
     runs-on: ubuntu-latest
     needs:
-    - framework-previous
-    - framework-current
-    - framework-integration-current
-    - framework-integration-previous
-    - documentation-website
-    - documentation-e2e
+      - framework-previous
+      - framework-current
+      - cli-previous
+      - cli-current
+      - framework-integration-current
+      - framework-integration-previous
+      - documentation-website
+      - documentation-e2e
     steps:
     - name: Coveralls
       uses: coverallsapp/github-action@master

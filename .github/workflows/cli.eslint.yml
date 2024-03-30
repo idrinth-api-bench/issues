@@ -1,19 +1,27 @@
-name: history-microservice MARKDOWN-LINT
+name: framework ESLINT
 on:
   push:
     branches:
     - master
     paths:
-    - 'history-microservice/*.md'
-    - 'history-microservice/package-lock.json'
-    - '.github/workflows/history-microservice.mdlint.yml'
+    - 'cli/**.ts'
+    - 'cli/**.tsx'
+    - 'cli/**.js'
+    - 'cli/**.cjs'
+    - 'cli/**.json'
+    - 'cli/**.svelte'
+    - '.github/workflows/cli.eslint.yml'
   pull_request:
     branches:
     - master
     paths:
-    - 'history-microservice/*.md'
-    - 'history-microservice/package-lock.json'
-    - '.github/workflows/history-microservice.mdlint.yml'
+    - 'cli/**.ts'
+    - 'cli/**.tsx'
+    - 'cli/**.js'
+    - 'cli/**.cjs'
+    - 'cli/**.json'
+    - 'cli/**.svelte'
+    - '.github/workflows/cli.eslint.yml'
 env:
   PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
@@ -34,5 +42,6 @@ jobs:
             history-website/package-lock.json
             cli/package-lock.json
             package-lock.json
-      - run: cd history-microservice && npm ci
-      - run: cd history-microservice && npm run-script lint-md
+      - run: npm ci
+      - run: cd cli && npm ci
+      - run: cd cli && npm run-script lint

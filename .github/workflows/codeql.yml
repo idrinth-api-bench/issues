@@ -55,6 +55,7 @@ jobs:
           documentation-website/package-lock.json
           history-microservice/package-lock.json
           history-website/package-lock.json
+          cli/package-lock.json
           package-lock.json
     - name: Build root
       run: npm ci

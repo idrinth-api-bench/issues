@@ -33,6 +33,7 @@ rl.question(
       '/history-website/package.json',
       '/history-microservice/package.json',
       '/mindmap/package.json',
+      '/cli/package.json',
     ]) {
       if (! existsSync(process.cwd() + file,)) {
         console.error('File ' + file + ' missing',);
@@ -49,13 +50,27 @@ rl.question(
         JSON.stringify(data, undefined, INDENTATION,),
       );
     }
+    const data = JSON.parse(readFileSync(
+      process.cwd() + '/framework/package.json',
+      'utf8',
+    ),);
+    data.dependencies['@idrinth/api-bench-cli'] = '^' + version;
+    writeFileSync(
+      process.cwd() + '/framework/package.json',
+      // eslint-disable-next-line no-undefined
+      JSON.stringify(data, undefined, INDENTATION,),
+    );
     exec(
       'npm install',
       true,
     );
     exec(
-      'cd framework && npm install',
+      'cd cli && npm install',
       true,
+    );
+    writeFileSync(
+      process.cwd() + '/cli/LICENSE',
+      readFileSync(process.cwd() + '/LICENSE', 'utf8',),
     );
     writeFileSync(
       process.cwd() + '/framework/LICENSE',
@@ -71,6 +86,14 @@ rl.question(
         '!',
         true,
         'npm add user',
+      );
+      exec(
+        'cd cli && npm publish',
+        true,
+      );
+      exec(
+        'cd framework && npm install',
+        true,
       );
       exec(
         'cd framework && npm publish',

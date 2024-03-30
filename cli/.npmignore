@@ -1,12 +1,8 @@
 /test
 .eslintrc.yml
-/result.json
-/result.csv
 /.nyc_output
 /coverage
 /.mocharc.cjs
-/.nycrc.json
-/fixtures
+/.nycrc.jso
 /tools
-/result.html
 /.markdownlint.yaml
