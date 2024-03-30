@@ -21,7 +21,7 @@ describe('home', () => {
   it('link to self exists', () => {
     cy.get('footer a[href="/code-of-conduct/"]',)
       .invoke('text',)
-      .should('eq', 'Code of Conduct',);
+      .should('eq', 'Contributor Code of Conduct',);
   },);
   it('breadcrumbs exists', () => {
     cy.get('nav.breadcrumbs a[href="/"]',)
