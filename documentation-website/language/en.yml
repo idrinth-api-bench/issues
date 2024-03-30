@@ -15,6 +15,12 @@ nav:
   routes: "Routes"
   quick-start: "Quick Start"
   faq: "FAQ"
+  code-of-conduct: "Code of Conduct"
+
+code-of-conduct:
+  meta:
+    title: "Code of Conduct"
+    description: "The Contributor's Code of Conduct for @idrinth/api-bench"
 
 home:
   meta:
