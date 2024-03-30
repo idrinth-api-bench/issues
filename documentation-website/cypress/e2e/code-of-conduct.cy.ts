@@ -16,7 +16,7 @@ describe('home', () => {
   it('h1 matches', () => {
     cy.get('h1',)
       .invoke('text',)
-      .should('eq', 'Contributor Code of Conduct',);
+      .should('eq', 'Contributor Covenant  Code of Conduct',);
   },);
   it('link to self exists', () => {
     cy.get('footer a[href="/code-of-conduct/"]',)
