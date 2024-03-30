@@ -38,11 +38,12 @@
     "yaml": "^2.4.1"
   },
   "devDependencies": {
+    "@types/cli-progress": "^3.11.5",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.12.2",
-    "typescript": "^5.4.3",
     "eslint": "^8.57.0",
-    "markdownlint-cli": "^0.39.0"
+    "markdownlint-cli": "^0.39.0",
+    "typescript": "^5.4.3"
   },
   "bin": {
     "make-benchmark-project": "bin/make-benchmark-project.js",

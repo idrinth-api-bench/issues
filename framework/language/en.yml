@@ -21,13 +21,9 @@ response_status_below_2xx: Request returned status below 200-299 range
 response_status_not_404: Request returned status %1%, not 404
 response_status_not_403: Request returned status %1%, not 403
 variable_default_value: Can't handle variable default value on %1%.
-name_invalid: Invalid project name.
-already_created: Project folder already exists.
-no_content_type: The content-type header is missing.
+o_content_type: The content-type header is missing.
 no_json_content_type: The content-type %1% is not application/json.
 invalid_json_body: The JSON body is invalid. %1%
-openapi_invalid: Your Open-Api document is not valid, please check for errors!
-no_openapi_document_given: You need to provide an Open-Api document path.
 no_xml_content_type: The content-type application/jason is not */xml.
 invalid_xml_body: The XML body is invalid.
 too_slow: The response time was above %1% ns.
@@ -41,7 +37,5 @@ validation_warnings: There were %1% warnings encountered.
 invalid_pre_definition: The definition of pre on route %1% is not valid.
 invalid_post_definition: The definition of post on route %1% is not valid.
 unknown_route_property: The property %1% on route %1% is unknown.
-no_har_document_given: The  path didn't point to an HAR document.
-cant_determine_valid_type: Failed to find a supported file type.
 invalid_request_property: The request property %2% of task %1% is invalid.
 invalid_request: The request task %1% has unknown properties.

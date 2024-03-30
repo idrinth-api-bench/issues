@@ -6,6 +6,8 @@ const lang = {
   cant_determine_valid_type: 'Failed to find a supported file type.',
   invalid_request_property: 'The request property %2% of task %1% is invalid.',
   invalid_request: 'The request task %1% has unknown properties.',
+  name_invalid: 'Invalid project name.',
+  already_created: 'Project folder already exists.',
 };
 
 export default lang;

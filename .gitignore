@@ -6,6 +6,7 @@
 /cli/src/**/*.js
 /cli/src/locales
 /cli/node_modules
+/cli/LICENSE
 
 # Framework
 /framework/node_modules
