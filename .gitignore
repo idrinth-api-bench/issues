@@ -7,6 +7,8 @@
 /cli/src/locales
 /cli/node_modules
 /cli/LICENSE
+/cli/.nyc_output
+/cli/coverage
 
 # Framework
 /framework/node_modules
