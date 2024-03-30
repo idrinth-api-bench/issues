@@ -21,11 +21,13 @@ const FIRST = 0;
 const SECOND = 1;
 const cwd = process.cwd();
 const data = parse(readFileSync(`${ cwd }/data.yml`, 'utf8',),);
-const convert = (node) => {
+const attributes = 'rel=noreferrer target=_blank';
+const convert = (node,) => {
   const nN = {};
+  const title = node.description ? ` title="${ node.description }"` : '';
   nN.content = node.url
-    ? `<a rel=noreferrer href="${ node.url }" target=_blank>${ node.text }</a>`
-    : node.text;
+    ? `<a ${ attributes } href="${ node.url }"${ title }>${ node.text }</a>`
+    : `<span${ title }>${ node.text }</span>`;
   if (node.children) {
     nN.children = [];
     for (const child of node.children) {

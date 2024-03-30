@@ -75,6 +75,17 @@ and the points you are not confident about. -->
 - [ ] the dockerfiles work
 - [ ] the containers are as small as possible
 
+## Mindmap
+
+- [ ] the change has been given a reason in the overview
+- [ ] the change text is reasonable short
+
+## CLI
+
+- [ ] the change works with both supported node versions
+- [ ] the default behaviour did not change
+- [ ] shared code has been extracted in a different file
+
 ## Notes
 
 <!-- Write any note or comment. You can share your thoughts or ideas. -->

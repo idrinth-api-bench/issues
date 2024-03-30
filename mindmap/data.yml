@@ -37,7 +37,38 @@ children:
             children:
               - text: Idrinth
                 url: https://twitch.tv/idrinth
+  - text: Benefits
+    description: Benefits we already have or are already working on
+    children:
+      - text: Developer Experience
+        children:
+        - text: low code configuration
+        - text: autocompletion support
+        - text: easy middleware creation
+        - text: quick  start guide
+        - text: free  support via github
+        - text: good documentation
+        - text: code generators  from common formats
+        - text: stable versions
+        - text: migration tools between stable versions (WIP)
+          url: https://github.com/Idrinth/api-bench/issues/441
+        - text: reusable route definitions
+      - text: business/company support options
+        children:
+        - text: payed support via Björn Büttner
+        - text: payed training via Björn Büttner
+      - text: core features
+        children:
+        - text: monitoring solution (WIP)
+          url: https://github.com/Idrinth/api-bench/issues/279
+        - text: benchmarking
+        - text: load testing
+        - text: content testing/integration testing  (WIP)
+          url: https://github.com/Idrinth/api-bench/issues/154
+        - text: stress testing (WIP)
+          url: https://github.com/Idrinth/api-bench/issues/571
   - text: Challenges
+    description: These are challenges we plan to overcome
     children:
       - text: Competitors
         children:
@@ -47,8 +78,8 @@ children:
               - text: good
                 children:
                   - text: enterprise support
-                  - text: consulting
-                  - text: training
+                  - text: provides consulting
+                  - text: provides training
                   - text: software as a service
               - text: bad
                 children:
@@ -56,8 +87,9 @@ children:
               - text: shared features
                 children:
                   - text: load testing
-                  - text: stress testing
                   - text: reporting
+                  - text: payed support option
+                  - text: payed training option
           - text: api-benchmark
             url: https://github.com/matteofigus/api-benchmark
             children:
@@ -130,7 +162,7 @@ children:
                   - text: load testing
                   - text: stress testing
                   - text: open-source
-      - text: Time
+      - text: Work Distribution
         children:
           - text: Slack channel moderator
           - text: Pull Request Reviewer
