@@ -12,14 +12,16 @@ This is the repository for the API test framework, it's documentation website an
 - [Framework README](/framework/README.md)
 - [Documentation Website README](/documentation-website/README.md)
 - [Examples](/examples)
-- [History Website README](/history-website/README.md)
 - [History Microservice README](/history-microservice/README.md)
 - [Dockerfiles](/containers)
+- [Mindmap](/mindmap)
 
 ## Documentation
 
 You can find the documentation on the
 [Documentation Website](https://idrinth-api-ben.ch).
+Additionally we host the mindmap thhat assists the decision making at the
+[Mindmap Website](https://mindmap.idrinth-api-ben.ch).
 
 ## Slack
 
