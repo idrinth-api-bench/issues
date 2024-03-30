@@ -31,7 +31,7 @@ const Index = () => <Layout
         <p>
           <Lang lnkey='quick-start.step2.description'/>
           <SyntaxHighlighter language='bash'>
-            npx -p @idrinth/api-bench iabmp
+            npx -p @idrinth/api-bench-cli iabmp
           </SyntaxHighlighter>
         </p>
       </div>
