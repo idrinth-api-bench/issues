@@ -55,6 +55,7 @@
 #Mindmap
 /mindmap/node_modules
 /mindmap/dist
+/mindmap/cache
 
 # Editor directories and files
 .DS_Store
