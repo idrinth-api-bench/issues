@@ -16,12 +16,12 @@ describe('home', () => {
   it('h1 matches', () => {
     cy.get('h1',)
       .invoke('text',)
-      .should('eq', 'Code of Conduct',);
+      .should('eq', 'Contributor Code of Conduct',);
   },);
   it('link to self exists', () => {
     cy.get('footer a[href="/code-of-conduct/"]',)
       .invoke('text',)
-      .should('eq', 'Contributor Code of Conduct',);
+      .should('eq', 'Code of Conduct',);
   },);
   it('breadcrumbs exists', () => {
     cy.get('nav.breadcrumbs a[href="/"]',)
