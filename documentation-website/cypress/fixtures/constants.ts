@@ -16,4 +16,5 @@ export const page = {
   sponsors: '/contributing/sponsors/',
   storage: '/usage/storage/',
   usage: '/usage/',
+  'code-of-conduct': '/code-of-conduct/',
 };
