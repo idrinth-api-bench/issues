@@ -69,6 +69,15 @@ children:
           - text: highlight - dark green
           - text: background - dark gray, light gray
           - text: color - white, black
+  - text: Goals
+    children:
+      - text: help personal growth of contributors
+      - text: make  it easy for  anyone to monitor their api
+      - text: reduce the need to duplicate code by design
+      - text: provide sensible defaults
+      - text: provide reporting solutions out of the box
+      - text: improve Developer Experience
+      - text: improve User Experience
   - text: Users
     children:
       - text: Software Engineer
