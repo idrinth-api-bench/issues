@@ -1,0 +1,19 @@
+{
+  "name": "@idrinth/api-bench/mindmap",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "node tools/data.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Idrinth/api-bench.git"
+  },
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "markmap-render": "^0.16.0",
+    "yaml": "^2.4.1",
+    "html-minifier": "^4.0.0"
+  }
+}
