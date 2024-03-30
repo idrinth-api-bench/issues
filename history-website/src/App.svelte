@@ -1,18 +1,15 @@
-<script lang="ts">
+<script lang="ts" context="module">
   import logo from './assets/iab.svg';
-  import Counter from './lib/Counter.svelte';
+  import t from './lib/t.js';
 </script>
 
 <main>
-  <div>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer">
-      <img src={logo} class="logo" alt="Logo" />
-    </a>
-  </div>
-  <h1>Vite + Svelte</h1>
+  <header>
+    <img src={logo} class="logo" alt="Logo" />
+  </header>
+  <h1>{t('overview.title',)}</h1>
 
   <div class="card">
-    <Counter />
   </div>
 </main>
 
