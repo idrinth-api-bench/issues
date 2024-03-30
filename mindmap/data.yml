@@ -1,0 +1,51 @@
+text: "@idrinth/api-bench"
+children:
+  - text: Marketing
+    url: https://github.com/Idrinth/api-bench/labels/marketing
+    children:
+      - text: Youtube
+        url: https://youtube.com/@idrinth-api-bench
+        children:
+          - text: tutorial video
+          - text: version release announcement
+      - text: Medium
+        url: https://medium.com/idrinth-api-bench
+        children:
+          - text: release recaps
+          - text: best practices
+      - text: LinkedIN
+        url: https://www.linkedin.com/groups/9588634/
+        children:
+          - text: Contributor shoutouts
+      - text: Twitch
+        children:
+          - text: live coding
+          - text: channels
+            children:
+              - text: Idrinth
+                url: https://twitch.tv/idrinth
+  - text: Challenges
+    children:
+      - text: Competitors
+        children:
+          - text: JMeter
+            url: https://jmeter.apache.org/
+            children:
+              - text: good
+              - text: bad
+      - text: Time
+        children:
+          - text: Slack channel moderator
+          - text: Pull Request Reviewer
+  - text: Design
+    children:
+      - text: requirements
+        children:
+          - text: dark mode
+          - text: mobile functional
+          - text: desktop functional
+      - text: colors
+        children:
+          - text: highlight
+            children:
+              - text: dark green

@@ -50,6 +50,11 @@
 /history-website/dist
 /history-website/coverage
 /history-website/cypress/screenshots
+/history-website/src/locales
+
+#Mindmap
+/mindmap/node_modules
+/mindmap/dist
 
 # Editor directories and files
 .DS_Store

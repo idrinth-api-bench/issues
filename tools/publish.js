@@ -32,6 +32,7 @@ rl.question(
       '/documentation-website/package.json',
       '/history-website/package.json',
       '/history-microservice/package.json',
+      '/mindmap/package.json',
     ]) {
       if (! existsSync(process.cwd() + file,)) {
         console.error('File ' + file + ' missing',);
