@@ -1,8 +1,8 @@
-module.exports = () => ({
+module.exports = (apiRootUrl,) => ({
   id: 'single user',
   main: {
     method: 'get',
-    url: 'https://reqres.in/api/users/2',
+    url: apiRootUrl + '/users/2',
   },
   pre: [
     '^user-agent',

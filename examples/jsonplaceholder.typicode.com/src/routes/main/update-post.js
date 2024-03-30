@@ -1,8 +1,8 @@
-module.exports = () => ({
+module.exports = (apiRootUrl) => ({
   id: 'update post 1',
   main: {
     method: 'put',
-    url: 'https://jsonplaceholder.typicode.com/posts/1',
+    url: apiRootUrl + '/posts/1',
     autohandle: 'json',
     body: {
       id: 1,

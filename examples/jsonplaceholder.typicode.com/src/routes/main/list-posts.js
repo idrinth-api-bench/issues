@@ -1,8 +1,8 @@
-module.exports = () => ({
+module.exports = (apiRootUrl,) => ({
   id: 'list posts',
   main: {
     method: 'get',
-    url: 'https://jsonplaceholder.typicode.com/posts',
+    url: apiRootUrl + '/posts',
   },
   post: [ '^status-2xx', ],
 });

@@ -1,4 +1,4 @@
-module.exports = () => ({
+module.exports = (apiRootUrl,) => ({
   id: 'patch post 454',
   main: {
     method: 'patch',
@@ -6,7 +6,7 @@ module.exports = () => ({
       title: 'test',
     },
     autohandle: 'json',
-    url: 'https://jsonplaceholder.typicode.com/posts/454',
+    url: apiRootUrl + '/posts/454',
   },
   post: [ '^status-2xx', ],
 });
