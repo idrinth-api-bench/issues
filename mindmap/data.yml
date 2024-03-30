@@ -34,6 +34,18 @@ children:
     children:
       - text: Competitors
         children:
+          - text: Loadrunner
+            url: https://www.opentext.com/products/loadrunner-enterprise
+            children:
+              - text: good
+                children:
+                  - text: enterprise support
+                  - text: consulting
+                  - text: training
+                  - text: software as a service
+              - text: bad
+                children:
+                  - text: undisclosed costs
           - text: "@matteofigus/api-benchmark"
             url: https://github.com/matteofigus/api-benchmark
             children:
