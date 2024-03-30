@@ -4,8 +4,14 @@ import {
 import {
   svelte,
 } from '@sveltejs/vite-plugin-svelte';
+import dynamicImportVariables from '@rollup/plugin-dynamic-import-vars';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [ svelte(), ],
+  plugins: [
+    dynamicImportVariables({
+      include: '*.svelte',
+    },),
+    svelte(),
+  ],
 },);
