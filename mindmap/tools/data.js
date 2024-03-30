@@ -55,6 +55,9 @@ html = minify(
 if (! existsSync(`${ cwd }/dist`,)) {
   mkdirSync(`${ cwd }/dist`,);
 }
+if (! existsSync(`${ cwd }/cache`,)) {
+  mkdirSync(`${ cwd }/cache`,);
+}
 for (const match of html.matchAll(/<style>([^<]+)<\/style>/ug,)) {
   // eslint-disable-next-line no-await-in-loop
   html = html.replace(
@@ -62,17 +65,23 @@ for (const match of html.matchAll(/<style>([^<]+)<\/style>/ug,)) {
     `<style>${ match[SECOND].replace(/\s+/ug, '',) }</style>`,
   );
 }
-const minification = {};
 for (const match of html.matchAll(/<script src=([^ >]+)><\/script>/ug,)) {
   const hash = createHash('sha256',)
     .update(match[SECOND],)
     .digest('hex',);
-  if (! existsSync(`${ cwd }/dist/${ hash }.min.js`,)) {
+  if (! existsSync(`${ cwd }/cache/${ hash }.min.js`,)) {
     // eslint-disable-next-line no-await-in-loop
     const script = await (await fetch(match[SECOND],)).text();
     writeFileSync(
-      `${ cwd }/dist/${ hash }.min.js`,
+      `${ cwd }/cache/${ hash }.min.js`,
       script,
+      'utf8',
+    );
+  }
+  if (! existsSync(`${ cwd }/dist/${ hash }.min.js`,)) {
+    writeFileSync(
+      `${ cwd }/cache/${ hash }.min.js`,
+      readFileSync(`${ cwd }/cache/${ hash }.min.js`, 'utf8',),
       'utf8',
     );
   }
