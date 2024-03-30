@@ -3,6 +3,13 @@ children:
   - text: Marketing
     url: https://github.com/Idrinth/api-bench/labels/marketing
     children:
+      - text: Opensauced
+        url: https://opensauced.pizza
+        children:
+          - text: Pull Request Highlights
+          - text: Sharer
+            children:
+              - text: Idrinth
       - text: Youtube
         url: https://youtube.com/@idrinth-api-bench
         children:
