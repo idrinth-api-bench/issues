@@ -9,13 +9,11 @@ children:
           - text: tutorial videos
           - text: version release announcement
           - text: general performance optimization videos
-          - text: more contributors needed
       - text: Medium
         url: https://medium.com/idrinth-api-bench
         children:
           - text: release recaps
           - text: best practices
-          - text: additional bloggers desired
           - text: bloggers
             children:
               - text: Idrinth
@@ -28,7 +26,6 @@ children:
       - text: Twitch
         children:
           - text: live coding
-          - text: more channels needed
           - text: channels
             children:
               - text: Idrinth
@@ -50,14 +47,15 @@ children:
                   - text: automation is relatively difficult
       - text: Time
         children:
-          - text: done
-            children:
-              - text: Slack channel moderator
-          - text: todo
-            children:
-              - text: Pull Request Reviewer
-              - text: Quality Assurance Support
-              - text: Design support
+          - text: Slack channel moderator
+          - text: Pull Request Reviewer
+          - text: Quality Assurance Support
+          - text: Design support
+      - text: Mentoring
+        children:
+          - text: slack  for help among each other
+          - text: improve contributing guidelines
+          - text: improve continuous integration
   - text: Design
     children:
       - text: requirements
@@ -71,3 +69,24 @@ children:
           - text: highlight - dark green
           - text: background - dark gray, light gray
           - text: color - white, black
+  - text: Users
+    children:
+      - text: Software Engineer
+        children:
+          - text: scripting knowledge good enough to configure framework
+          - text: likely looking to configure the framework deeply
+          - text: sometimes desires code generation
+      - text: Quality Assurance Engineer
+        children:
+          - text: scripting knowledge usually sufficient to configure framework
+          - text: often less familiar with javascript
+          - text: usually desires code generation
+      - text: Operations
+        children:
+          - text: scripting knowledge usually sufficient to configure framework
+          - text: often less familiar with javascript
+          - text: sometimes desires code generation
+      - text: Management
+        children:
+          - text: needs reports for quick overviews
+          - text: often less technical, so graphs help

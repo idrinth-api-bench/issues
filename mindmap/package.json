@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "node tools/data.js"
+    "build": "node tools/data.js",
+    "serve": "http-server ./dist -c-1 --proxy http://localhost:8080? --silent",
+    "start": "npm run build && npm run serve"
   },
   "repository": {
     "type": "git",
@@ -14,6 +16,7 @@
   "dependencies": {
     "markmap-render": "^0.16.0",
     "yaml": "^2.4.1",
-    "html-minifier": "^4.0.0"
+    "html-minifier": "^4.0.0",
+    "http-server": "^14.1.1"
   }
 }
