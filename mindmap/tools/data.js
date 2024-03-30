@@ -60,7 +60,7 @@ if (! existsSync(`${ cwd }/cache`,)) {
 }
 html = html.replace(
   '</head>',
-  '<link rel=icon type=image/svg+xml href=iab.svg/></head>',
+  '<link rel=icon type=image/svg+xml href=iab.svg /></head>',
 );
 for (const match of html.matchAll(/<style>([^<]+)<\/style>/ug,)) {
   // eslint-disable-next-line no-await-in-loop
