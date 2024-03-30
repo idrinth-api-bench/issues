@@ -22,6 +22,11 @@ This project provides a framework for testing restful APIs and websites for
 changes in response times. This helps to detect performance changes in code
 in a quick and simple manner.
 
+### Code Generation
+
+Code generation has been extracted into `@idrinth/api-benchh-cli`, it provided
+with the framework or can be run on it's own.
+
 ### Why use a Benchmark Runner
 
 Given, that the amount of APIs increase by moving to microservices, we need a
