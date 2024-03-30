@@ -31,6 +31,9 @@ ui
 readme
 mono-repo
 subprojects
+mindmap
+Mindmap
+data.yml
 ci-images
 Gitlab
 gitlab-runner

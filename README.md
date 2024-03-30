@@ -20,7 +20,7 @@ This is the repository for the API test framework, it's documentation website an
 
 You can find the documentation on the
 [Documentation Website](https://idrinth-api-ben.ch).
-Additionally we host the mindmap thhat assists the decision making at the
+Additionally we host the mindmap that assists the decision making at the
 [Mindmap Website](https://mindmap.idrinth-api-ben.ch).
 
 ## Slack
