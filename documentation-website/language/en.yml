@@ -21,6 +21,17 @@ home:
     title: "Home"
     description: "Welcome to the documentation for the framework @idrinth/api-bench"
   title: "What does this project do?"
+  what: "This project provides a framework for testing rest-apis and websites for  changes in response times."
+  why: "This helps to detect performance changes in code in a quick and simple manner."
+  benchmark:
+    title: "Why use a Benchmark Runner?"
+    microservices: "Given that the amount of APIs increase by moving to microservices, we need a way to determine if changes to a service's response times are related to code changes."
+    purpose: "For this purpose a defined load with repeatable request seems the most useful."
+  libraries:
+    title: "Regarding existing libraries"
+    description: "Other tools like matteofigus/api-benchmark, bvanderlaan/api-bench-runner, or jeffbski/bench-rest are all untouched for quite a while and don't provide type definitions for typescript. This makes them less desirable when working with projects where the better static code check is a huge boost in development speed."
+    threading: "Additionally, this tool separates the validation thread from the thread processing the actual requests to further minimize the effect of complicated validations or huge response bodies on the data gathering."
+
 
 faq:
   meta:
@@ -199,7 +210,7 @@ contributing:
     description: "Documentation is an underrated part of every software. Adding any kind of clarification, example or improvement is highlyappreciated and encouraged. The ones writing the documentation are the unsung heroes of open and closed source software."
   examples:
     title: "Examples"
-    description: "For examples please keep in mind, that we don&apos;t want to overload any api. Don't use high load tasks, don't use apis that are not for public use. It is expected that examples will be run and they must not damage anyone, including third parties."
+    description: "For examples please keep in mind, that we don't want to overload any api. Don't use high load tasks, don't use apis that are not for public use. It is expected that examples will be run and they must not damage anyone, including third parties."
 license:
   meta:
     title: "License"
