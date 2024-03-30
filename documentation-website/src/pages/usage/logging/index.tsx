@@ -6,29 +6,31 @@ import Layout from '../../../components/layout.tsx';
 import Code from '../../../components/code.tsx';
 
 const Logging = () => <Layout
-  Outlet={<>
-    <div className='title-card'>
-      <h1>Logging</h1>
+  page='logging'
+  path='/usage/logging'
+>
+  <div className='title-card'>
+    <h1>Logging</h1>
+    <p>
+      Any logger that either implements the interface or has a wrapper is an
+      option. Wrappers for pino and winston are available.
+    </p>
+  </div>
+  <div className='card'>
+    <h2>Logging levels used</h2>
+    <p>
+      <Lang lnkey='logging.used.description'/>
+    </p>
+  </div>
+  <div className='card'>
+    <h2>Custom Logger</h2>
+    <div>
       <p>
-          Any logger that either implements the interface or has a wrapper is an
-          option. Wrappers for pino and winston are available.
+        You can implement the logger interface below and provide any logger
+        you want to next to the already provided ones.
       </p>
-    </div>
-    <div className='card'>
-      <h2>Logging levels used</h2>
-      <p>
-        <Lang lnkey='logging.used.description'/>
-      </p>
-    </div>
-    <div className='card'>
-      <h2>Custom Logger</h2>
-      <div>
-        <p>
-          You can implement the logger interface below and provide any logger
-          you want to next to the already provided ones.
-        </p>
-        <Code language='typescript'>
-          {`interface Logger {
+      <Code language='typescript'>
+        {`interface Logger {
   trace(msg: string, data: Record<string, unknown>): void;
   trace(msg: string): void;
   debug(msg: string, data: Record<string, unknown>): void;
@@ -42,15 +44,12 @@ const Logging = () => <Layout
   fatal(msg: string, data: Record<string, unknown>): void;
   fatal(msg: string): void;
 }`}
-        </Code>
-        <p>
-          <Lang lnkey={'logging.custom.final'}/>
-        </p>
-      </div>
+      </Code>
+      <p>
+        <Lang lnkey={'logging.custom.final'}/>
+      </p>
     </div>
-  </>}
-  page='logging'
-  path='/usage/logging'
-/>;
+  </div>
+</Layout>;
 
 export default Logging;
