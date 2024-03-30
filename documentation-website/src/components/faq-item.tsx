@@ -28,7 +28,7 @@ const FaqItem = ({
   };
 
   return (
-    <li tabIndex={index + 1} onKeyDown={handleKeyDown} className={'faq-item'}>
+    <li tabIndex={index + ONE} onKeyDown={handleKeyDown} className={'faq-item'}>
       <div onClick={() => toggleOpen()} role="button">
         <div className="accordion-section">
           <h2>
