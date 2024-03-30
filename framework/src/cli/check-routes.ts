@@ -14,6 +14,7 @@ import taskTypes from '../task-types.js';
 import Task from '../task.js';
 import Job from '../job.js';
 import taskType from '../task-type.js';
+import Request from '../request.js';
 
 // eslint-disable-next-line complexity
 const checkMiddleware = (type: 'pre'|'post', route: Task,) => {
@@ -36,6 +37,77 @@ const checkMiddleware = (type: 'pre'|'post', route: Task,) => {
 };
 
 // eslint-disable-next-line complexity
+const checkRequest = (main: Request, id: string,): {
+  invalid: boolean,
+  risky: boolean,
+} => {
+  const properties = [
+    {
+      name: 'method',
+      type: 'string',
+      required: true,
+    },
+    {
+      name: 'headers',
+      type: 'object',
+      required: false,
+    },
+    {
+      name: 'cookies',
+      type: 'object',
+      required: false,
+    },
+    {
+      name: 'body',
+      type: [
+        'string',
+        'object',
+      ],
+      required: false,
+    },
+    {
+      name: 'autohandle',
+      type: 'string',
+      required: false,
+    },
+    {
+      name: 'url',
+      type: 'string',
+      required: true,
+    },
+    {
+      name: 'maxDuration',
+      type: 'number',
+      required: false,
+    },
+  ];
+  let valid = true;
+  for (const property of properties) {
+    if (property.required && typeof main[property.name] === 'undefined') {
+      console.error(language('invalid_request_property', id, property.name,),);
+      valid = false;
+    } else if (typeof main[property.name] !== property.type) {
+      console.error(language('invalid_request_property', id, property.name,),);
+      valid = false;
+      delete main[property.name];
+    } else {
+      delete main[property.name];
+    }
+  }
+  if (Object.keys(main,).length === EMPTY) {
+    console.warn(language('invalid_request', id,),);
+    return {
+      invalid: ! valid,
+      risky: true,
+    };
+  }
+  return {
+    invalid: ! valid,
+    risky: false,
+  };
+};
+
+// eslint-disable-next-line complexity
 const checkType = (job: Job, type: taskType,) => {
   if (typeof job[type] === 'undefined') {
     return {
@@ -55,6 +127,13 @@ const checkType = (job: Job, type: taskType,) => {
       }
       const id = route.id;
       delete route.id;
+      const result = checkRequest(route.main, id,);
+      if (result.invalid) {
+        errors ++;
+      }
+      if (result.risky) {
+        warnings ++;
+      }
       delete route.main;
       for (const key of Object.keys(route,)) {
         console.warn(language('unknown_route_property', key, id,),);
