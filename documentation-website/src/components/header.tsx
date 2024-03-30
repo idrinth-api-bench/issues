@@ -19,7 +19,9 @@ const Header = ({
   window,
 }: {window: Window},) => <header>
   <div>
-    <img src={IAB} alt="@idrinth/api-bench" />
+    <NavLink to="/">
+      <img src={IAB} alt="@idrinth/api-bench" />
+    </NavLink>
     <strong>@idrinth/api-bench</strong>
     <em>v{pkg.version}</em>
   </div>
@@ -54,9 +56,6 @@ const Header = ({
   </nav>
   <nav>
     <ul>
-      <li>
-        <NavLink to="/"><Lang lnkey='nav.home'/></NavLink>
-      </li>
       <li>
         <NavLink to="/quick-start/">
           <Lang lnkey='nav.quick-start'/>
