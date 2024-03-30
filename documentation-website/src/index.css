@@ -428,6 +428,11 @@ nav.breadcrumbs li:last-of-type::after {
     display: grid;
     grid-template-columns: 1fr 2fr;
   }
+
+  .faq-ul-list {
+    max-width: 600px;
+    width: 600px;
+  }
 }
 
 @media only screen and (width >= 900px) {
