@@ -2,8 +2,10 @@
 /node_modules
 ./cypress.config.ts
 
-# Cypress
-/cypress/support/commands.ts
+# CLI
+/cli/src/**/*.js
+/cli/src/locales
+/cli/node_modules
 
 # Framework
 /framework/node_modules

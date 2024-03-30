@@ -1,0 +1,2 @@
+openapi_invalid: Das Open-Api-Dokument ist ungültig, bitte auf Fehler überprüfen!
+no_openapi_document_given: Es wurde kein Pfad zu einem Open-Api-Dokument angegeben.

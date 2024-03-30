@@ -32,8 +32,17 @@
   "author": "Björn Büttner",
   "contributors": [],
   "dependencies": {
+    "change-case": "^5.4.3",
+    "cli-progress": "^3.12.0",
+    "fs-extra": "^11.2.0",
+    "yaml": "^2.4.1"
   },
   "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.12.2",
+    "typescript": "^5.4.3",
+    "eslint": "^8.57.0",
+    "markdownlint-cli": "^0.39.0"
   },
   "bin": {
     "make-benchmark-project": "bin/make-benchmark-project.js",
@@ -51,7 +60,8 @@
     "integration": "c8 mocha integration",
     "clear": "node tools/clear-js-files-from-src.js",
     "tsc": "tsc -p tsconfig.json",
-    "prepublishOnly": "npm run tsc",
+    "language": "node tools/generate-language.js",
+    "prepublishOnly": "npm run language && npm run tsc",
     "postpublishOnly": "npm run clear"
   },
   "engines": {
