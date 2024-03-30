@@ -55,9 +55,9 @@ children:
                   - text: undisclosed costs
               - text: shared features
                 children:
-                  - load testing
-                  - stress testing
-                  - reporting
+                  - text: load testing
+                  - text: stress testing
+                  - text: reporting
           - text: api-benchmark
             url: https://github.com/matteofigus/api-benchmark
             children:
@@ -72,9 +72,10 @@ children:
                   - text: no type support(DX)
               - text: shared features
                 children:
-                  - stress testing
-                  - benchmarking
-                  - cli
+                  - text: stress testing
+                  - text: benchmarking
+                  - text: cli
+                  - text: open-source
           - text: api-bench-runner
             url: https://github.com/bvanderlaan/api-bench-runner
             children:
@@ -90,9 +91,10 @@ children:
                   - text: very limited reporting
               - text: shared features
                 children:
-                  - stress testing
-                  - benchmarking
-                  - cli
+                  - text: stress testing
+                  - text: benchmarking
+                  - text: cli
+                  - text: open-source
           - text: bench-rest
             url: https://github.com/jeffbski/bench-rest
             children:
@@ -108,12 +110,10 @@ children:
                   - text: lack of abstraction of used libraries
               - text: shared features
                 children:
-                  - load testing
-                  - benchmarking
-              - text: shared features
-                children:
-                  - benchmarking
-                  - cli
+                  - text: load testing
+                  - text: benchmarking
+                  - text: cli
+                  - text: open-source
           - text: JMeter
             url: https://jmeter.apache.org/
             children:
@@ -127,8 +127,9 @@ children:
                   - text: automation is relatively difficult
               - text: shared features
                 children:
-                  - load testing
-                  - stress testing
+                  - text: load testing
+                  - text: stress testing
+                  - text: open-source
       - text: Time
         children:
           - text: Slack channel moderator
