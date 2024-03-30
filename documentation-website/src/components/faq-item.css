@@ -5,6 +5,8 @@
   border-bottom: 1px solid var(--black);
 }
 
+.faq-item:focus {box-shadow: rgb(0, 0, 0) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;}
+
 .faq-item .accordion-section {
   cursor: pointer;
   display: flex;
