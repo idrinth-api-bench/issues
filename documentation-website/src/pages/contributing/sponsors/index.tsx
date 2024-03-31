@@ -8,7 +8,10 @@ import jungwild from '../../../assets/sponsors/jungwild.png';
 import ExternalLink from '../../../components/external-link.tsx';
 
 const Index = () => <Layout
-  Outlet={<section>
+  page='sponsors'
+  path='/contributing/sponsors'
+>
+  <section>
     <div className='title-card'>
       <h1>
         <Lang lnkey='sponsors.title'/>
@@ -49,8 +52,6 @@ const Index = () => <Layout
         <p><Lang lnkey='sponsors.jungwild.sponsoring'/></p>
       </div>
     </div>
-  </section>}
-  page='sponsors'
-  path='/contributing/sponsors'
-/>;
+  </section>
+</Layout>;
 export default Index;

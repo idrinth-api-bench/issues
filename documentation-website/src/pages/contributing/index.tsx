@@ -11,7 +11,10 @@ import {
 import ContentUnit from '../../components/content-unit.tsx';
 
 const Index = () => <Layout
-  Outlet={<section>
+  page='contributing'
+  path='/contributing'
+>
+  <section>
     <ContentUnit titleLevel={1} titleText={'contributing.title'}>
       contributing.description
     </ContentUnit>
@@ -322,9 +325,7 @@ Closes #294
     >
       contributing.examples.description
     </ContentUnit>
-  </section>}
-  page='contributing'
-  path='/contributing'
-/>;
+  </section>
+</Layout>;
 
 export default Index;

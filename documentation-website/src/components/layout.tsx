@@ -6,7 +6,6 @@ import Breadcrumbs from './breadcrumbs.tsx';
 import ScrollToHashElement from './hash-scroll.tsx';
 
 interface LayoutProps {
-  Outlet?: React.ReactNode,
   children?: React.ReactNode|React.ReactNode[],
   page?: string,
   path?: string,
@@ -14,7 +13,6 @@ interface LayoutProps {
 }
 
 const Layout = ({
-  Outlet,
   page = '',
   path = '',
   canonical = '',
@@ -28,7 +26,7 @@ const Layout = ({
     <Header window={window || {}}/>
     <Breadcrumbs path={path}/>
     <article>
-      {children || Outlet}
+      {children}
     </article>
     <Footer/>
     <ScrollToHashElement/>

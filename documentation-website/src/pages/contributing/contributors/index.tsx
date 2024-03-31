@@ -46,7 +46,10 @@ const Index = () => {
     />,);
 
   return <Layout
-    Outlet={<section>
+    page='contributors'
+    path='/contributing/contributors'
+  >
+    <section>
       <div className='title-card'>
         <h1>
           <Lang lnkey='contributors.title'/>
@@ -59,9 +62,7 @@ const Index = () => {
       { oC }
       <h2><Lang lnkey='contributors.code_contributors'/></h2>
       { cC }
-    </section>}
-    page='contributors'
-    path='/contributing/contributors'
-  />;
+    </section>
+  </Layout>;
 };
 export default Index;
