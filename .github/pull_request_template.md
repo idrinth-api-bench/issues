@@ -24,7 +24,7 @@ the pull request as good as possible.
 [HM]: ?quick_pull=1&template=history-microservice.md
 [HW]: ?quick_pull=1&template=history-website.md
 [DW]: ?quick_pull=1&template=documentation-website.md
-[Translations]: ?quick_pull=1&template=translations.md
+[Translations]: ?quick_pull=1&template=translation.md
 [Tools]: ?quick_pull=1&template=tools.md
 [Framework]: ?quick_pull=1&template=framework.md
 [Examples]: ?quick_pull=1&template=examples.md
