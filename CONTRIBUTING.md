@@ -23,7 +23,38 @@ improving the code base, they help other people to get more use out of this
 framework. Please try to stick to the format of predefined issue types to
 make it easier to filter and handle for anyone interested in the topic.
 
-## Mindmap
+## Code
+
+The style guidelines are provided via eslint. Please try to optimise code for readability, since code will be read way more often than it will be changed.
+
+While adding functionality, keep in mind to break existing interfaces, entry points and functionality only if absolutely necessary.
+
+### Picking the right issue
+
+Issues that are good for relatively new coders are marked as
+`Good first issue`, issues marked as `help wanted` require  a bit more
+knowledge about the project.
+
+Within an issue you find the project information on the right hand side,
+opening them up will reveal further estimates about size, difficulty,
+priority and main affected project part.
+
+![Project](/documentation-website/src/assets/api-bench-project.png)
+
+### Contribution workflow
+
+- fork the repository
+- mention in the issue, that you are working on it(it will be assigned for a few weeks then)
+- create a feature branch (issue-xxx-does-something) from master
+- create a draft pull request
+- mention fixes #xxx in the description (use the appropriate pull request template)
+- make your changes to the branch
+- check if actions are all green
+- mark as ready to review
+- get changes reviewed
+- if review is positive get changes merged, otherwise fix and send back to review
+
+### Mindmap
 
 Contributing to the mindmap is  encouraged. The mindmap is build from the
 data.yml in /mindmap and follows the following schema:
@@ -69,27 +100,6 @@ data.yml in /mindmap and follows the following schema:
 
 This means, that nodes  must have text property for displaying them, as well
 as may have a URL, a description and more nodes as children.
-
-The workflow is identical to the code workflow.
-
-## Code
-
-The style guidelines are provided via eslint. Please try to optimise code for readability, since code will be read way more often than it will be changed.
-
-While adding functionality, keep in mind to break existing interfaces, entry points and functionality only if absolutely necessary.
-
-### Contribution workflow
-
-- fork the repository
-- mention in the issue, that you are working on it(it will be assigned for a few weeks then)
-- create a feature branch (issue-xxx-does-something) from master
-- create a draft pull request
-- mention fixes #xxx in the description (use the appropriate pull request template)
-- make your changes to the branch
-- check if actions are all green
-- mark as ready to review
-- get changes reviewed
-- if review is positive get changes merged, otherwise fix and send back to review
 
 ### Tests
 

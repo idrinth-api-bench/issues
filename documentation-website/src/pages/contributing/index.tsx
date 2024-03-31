@@ -15,6 +15,7 @@ import schema from '../../../../mindmap/schema.json' with {
 import {
   INDENTATION_SPACES,
 } from '../../constants.ts';
+import project from '../../assets/api-bench-project.png';
 
 const Index = () => <Layout
   page='contributing'
@@ -34,6 +35,14 @@ const Index = () => <Layout
       contributing.code.style
       contributing.code.breaking
     </ContentUnit>
+    <div className='card'>
+      <h3><Lang lnkey={'contributing.code.picking.title'}/></h3>
+      <div>
+        <p><Lang lnkey={'contributing.code.picking.labels'}/></p>
+        <p><Lang lnkey={'contributing.code.picking.project'}/></p>
+        <img src={project} alt={'project'}/>
+      </div>
+    </div>
     <div className='card'>
       <h3><Lang lnkey={'contributing.code.workflow.title'}/></h3>
       <ul>
@@ -71,7 +80,7 @@ const Index = () => <Layout
 git clone https://github.com/idrinth/api-bench
 cd api-bench
 npm run coai
-      `}</SyntaxHighlighter>
+    `}</SyntaxHighlighter>
       </div>
     </div>
     <div className='card'>
@@ -105,7 +114,7 @@ npm run coai
 git clone https://github.com/idrinth/api-bench
 cd api-bench
 npm run setup
-      `}</SyntaxHighlighter>
+    `}</SyntaxHighlighter>
       </div>
     </div>
     <div className="card">
@@ -126,7 +135,7 @@ npm run setup
 <body>
 <BLANK LINE>
 <footer>
-      `}</SyntaxHighlighter>
+    `}</SyntaxHighlighter>
       </div>
     </div>
     <div className="card">
@@ -143,7 +152,7 @@ npm run setup
 
 Example:
 build(website): bump follow-redirects from 1.15.4 to 1.15.6
-      `}</SyntaxHighlighter>
+    `}</SyntaxHighlighter>
       </div>
     </div>
     <div className={'card'}>
@@ -251,7 +260,7 @@ Fixes bug.
 
 // Good:
 fix unit tests failing
-      `}</SyntaxHighlighter>
+    `}</SyntaxHighlighter>
       </div>
     </div>
     <ContentUnit
@@ -281,7 +290,7 @@ BREAKING CHANGE: users must now provide a valid JWT token to access
 protected routes.
 
 Closes #123
-      `}</SyntaxHighlighter>
+    `}</SyntaxHighlighter>
       </div>
     </div>
     <div className={'card'}>
@@ -299,7 +308,7 @@ Fix a bug where given a function route definition that has a string-typed
 or untyped parameter, the value would never be injected from the environment.
 
 Closes #294
-      `}</SyntaxHighlighter>
+    `}</SyntaxHighlighter>
       </div>
     </div>
     <div className={'card'}>

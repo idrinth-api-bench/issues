@@ -126,6 +126,10 @@ contributing:
     title: "Code"
     style: "The style guidelines are provided via eslint. Please try to optimise code for readability, since code will be read way more often than it will be changed."
     breaking: "While adding functionality, keep in mind to break existing interfaces, entry points and functionality only if absolutely necessary."
+    picking:
+      title: "Picking the right issue"
+      labels: "Issues that are good for relatively new coders are marked as `Good first issue`, issues marked as `help wanted` require a bit more knowledge about the project."
+      project: "Within an issue you find the project information on the right hand side, opening them up will reveal further estimates about size, difficulty, priority and main affected project part"
     workflow:
       title: "Contribution workflow"
       list_item_1: "fork the repository"
