@@ -73,7 +73,7 @@ header {
   width: 100%;
   display: grid;
   grid-template-columns: 90% 10%;
-  background-color: var(--light-gray);
+  background-color: var(--white);
   padding-bottom: 1em;
   padding-top: 1em;
 }
@@ -157,8 +157,13 @@ footer {
   display: grid;
   grid-template-columns: 1fr;
   padding: 1rem 1em;
-  background-color: var(--light-gray);
+  background-color: var(--white);
   width: 100%;
+}
+
+header,
+footer {
+  box-shadow: rgb(0 0 0 / 16%) 0 1px 4px, rgb(51 51 51) 0 0 0 3px;
 }
 
 footer ul {
@@ -400,7 +405,7 @@ nav.breadcrumbs li:last-of-type::after {
     gap: 1em;
     width: auto;
     position: absolute;
-    background: var(--light-gray);
+    background: var(--white);
     padding: 1em;
     box-shadow: 1em 1em 1.5em var(--dark-gray);
   }
@@ -478,6 +483,7 @@ nav.breadcrumbs li:last-of-type::after {
   .dark-mode header,
   .dark-mode footer {
     background-color: var(--very-dark-gray);
+    box-shadow: none;
   }
 
   .dark-mode pre {
