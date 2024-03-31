@@ -351,7 +351,6 @@ Closes #294
       contributing.examples.description
     </ContentUnit>
   </section>
-</Layout>
-;
+</Layout>;
 
 export default Index;
