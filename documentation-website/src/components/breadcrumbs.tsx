@@ -56,7 +56,7 @@ const Breadcrumbs = ({
   for (let index = 0; index < parts.length; index ++) {
     build(index, parts, nav,);
   }
-  return <nav className={'breadcrumbs'}>
+  return <nav aria-label='Breadcrumb' className={'breadcrumbs'}>
     <ul>
       { nav }
     </ul>

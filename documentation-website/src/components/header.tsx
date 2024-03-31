@@ -25,7 +25,7 @@ const Header = ({
     <strong>@idrinth/api-bench</strong>
     <em>v{pkg.version}</em>
   </div>
-  <nav>
+  <nav aria-label='Social Links Menu'>
     <ul>
       <SocialLink
         to="https://www.npmjs.com/package/@idrinth/api-bench"
@@ -54,7 +54,7 @@ const Header = ({
       />
     </ul>
   </nav>
-  <nav>
+  <nav aria-label='Main Menu'>
     <ul>
       <li>
         <NavLink to="/quick-start/">
@@ -62,11 +62,16 @@ const Header = ({
         </NavLink>
       </li>
       <li>
-        <NavLink className="dropdown-links-heading" to="/contributing/">
+        <NavLink
+          aria-expanded="false"
+          id="dropdown-contributing"
+          aria-controls="contributing-menu"
+          className="dropdown-links-heading"
+          to="/contributing/">
           <Lang lnkey='nav.contributing'/>
           <MdArrowDropDown />
         </NavLink>
-        <ul>
+        <ul aria-labelledby="dropdown-contributing" id="contributing-menu" >
           <li>
             <NavLink to="/contributing/contributors/">
               <Lang lnkey='nav.contributors'/>
@@ -80,11 +85,16 @@ const Header = ({
         </ul>
       </li>
       <li>
-        <NavLink className="dropdown-links-heading" to="/usage/">
+        <NavLink
+          id="dropdown-usage-links"
+          aria-controls='usages-menu'
+          className="dropdown-links-heading"
+          aria-expanded="false"
+          to="/usage/">
           <Lang lnkey='nav.usage'/>
           <MdArrowDropDown />
         </NavLink>
-        <ul>
+        <ul id="usages-menu" aria-labelledby="dropdown-usage-links" >
           <li>
             <NavLink to="/usage/autowiring/">
               <Lang lnkey='nav.autowiring'/>
