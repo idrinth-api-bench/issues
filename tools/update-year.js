@@ -21,7 +21,7 @@ exec(
 );
 exec(`git branch -u origin/${ branch }`, true,);
 exec(
-  'git pull',
+  'git pull --force',
   true,
 );
 
