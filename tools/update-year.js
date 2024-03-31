@@ -11,7 +11,7 @@ exec('git config --global user.email "bot@idrinth-api-ben.ch"',);
 exec('git config --global user.name "idrinth api bench bot"',);
 exec(
   // eslint-disable-next-line no-template-curly-in-string
-  'git checkout -b HEAD:${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}',
+  'git checkout -b ${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}',
   true,
 );
 
