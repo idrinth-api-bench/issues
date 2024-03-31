@@ -15,6 +15,12 @@ nav:
   routes: "Routes"
   quick-start: "Quick Start"
   faq: "FAQ"
+  code-of-conduct: "Code of Conduct"
+
+code-of-conduct:
+  meta:
+    title: "Code of Conduct"
+    description: "The Contributor's Code of Conduct for @idrinth/api-bench"
 
 home:
   meta:
@@ -112,7 +118,7 @@ contributing:
   description: "Any and all contributions are encouraged."
   structure:
     title: "Structure"
-    description: "The project is a mono-repo grouped into multiple subprojects, for example website, framework, history-microservice and history-website. You can find more detailed instructions for the specific part in the corresponding folder's readme."
+    description: "The project is a mono-repo grouped into multiple subprojects, for example cli, mindmap, documentation-website, framework, history-microservice and history-website. You can find more detailed instructions for the specific part in the corresponding folder's readme."
   issues:
     title: "Issues"
     description: "Any idea and bug report is considered a contribution. Not only do they help improving the code base, they help other people to get more use out of this framework. Please try to stick to the format of predefined issue types to make it easier to filter and handle for anyone interested in the topic."
@@ -131,6 +137,10 @@ contributing:
       list_item_7: "mark as ready to review"
       list_item_8: "get changes reviewed"
       list_item_9: "if review is positive get changes merged otherwise fix and send back to review"
+    mindmap:
+      title: "Mindmap"
+      nodes: "This means, that nodes  must have text property for displaying them, as well as may have a URL, a description and more nodes as children."
+      introduction: "Contributing to the mindmap is  encouraged. The mindmap is build from the data.yml in /mindmap and follows the following schema:"
     tests:
       title: "Tests"
       description: "Testing new code is expected and adding tests or improving tests for old code is appreciated. The goal is to find most issues by either static analysis or unit and integration tests."
@@ -235,7 +245,11 @@ usage:
   meta:
     title: "Usage"
     description: "Basic usage information for the framework @idrinth/api-bench"
+  title: "Usage"
+  binaries:
+    title: "Binaries"
   programmatically:
+    title: "Programmatically"
     description: "Basically require main/include main and supply the executor method with required parameters. Tasks defined in src/routes-subfolders before, before_task, before_each, main, after_each, after_task, and after will be used to automatically fill the Job processed by the executor. Automatic filling only happens when there are no tasks provided to the function."
 
 logging:
@@ -289,3 +303,32 @@ loader:
   wait: "Trying to load fresh content for you, please wait."
   offline: "Please go online and then refresh the page."
   reload: "Content has changed, reloading the page for you in a moment."
+
+command:
+  or: "or"
+  cli: "Available via the cli package @idrinth/api-bench-api and the framework."
+  iabr:
+    description: "runs the current working directory's project if the routes folder is properly setup"
+    arg_1: "Argument 1: threads (default 1)"
+    arg_2: "Argument 2: repetitions (default 1)"
+    arg_3: "language code (default en)"
+    arg_4: "Argument 4: taskId, that you want to run only (default all)"
+  iabmp:
+    description: "creates a new benchmarking project in a subdirectory of the current working directory"
+    arg_1: "Argument 1: project name (default: benchmark)"
+  iabgfoa:
+    description: "generates test skeletons from an open-api-documentation for a project in the current working directory"
+    arg_1: "Argument 1: path to the open-api-document"
+  iabgfh:
+    description: "generates test skeletons from an har-document for a project in the current working directory"
+    arg_1: "Argument 1: path to the har-document"
+  iabcrd:
+    description: "checks all routes for possible issues, so there are no surprises, when actually running the code."
+    arg_1: "Argument 1: language(default: en)"
+  iabrl:
+    description: "runs a load test with the given routes up to a limit of threads. Stops when the limit is reached or an error is found during response validation."
+    arg_1: "Argument 1: threads (default 1)"
+    arg_2: "Argument 2: repetitions (default 1)"
+    arg_3: "Argument 3: language code (default en)"
+    arg_4: "Argument 4: thread increment (default 1)"
+    arg_5: "Argument 5: maximum threads (default 100)"

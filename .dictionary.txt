@@ -21,6 +21,7 @@ codecheck
 webmaster@idrinth-api-ben.ch
 faq
 npm
+CLI
 sexualised
 microservice
 Web-UI

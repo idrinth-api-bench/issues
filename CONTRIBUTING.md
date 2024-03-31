@@ -12,9 +12,9 @@ here are the guidelines we would like you to follow:
 ## Structure
 
 The project is a mono-repo grouped into multiple subprojects, for example
-`documentation-website`, `framework`, `history-microservice` and
-`history-website`. You can find more detailed instructions for the specific
-part in the corresponding folder's readme.
+`documentation-website`, `framework`, `history-microservice`, `cli`,
+`mindmap`, `history-website`. You can find more detailed instructions for
+the specific part in the corresponding folder's readme.
 
 ## Issues
 
@@ -22,6 +22,55 @@ Any idea and bug report is considered a contribution. Not only do they help
 improving the code base, they help other people to get more use out of this
 framework. Please try to stick to the format of predefined issue types to
 make it easier to filter and handle for anyone interested in the topic.
+
+## Mindmap
+
+Contributing to the mindmap is  encouraged. The mindmap is build from the
+data.yml in /mindmap and follows the following schema:
+
+````json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://mindmap.idrinth-api-ben.ch",
+  "$ref": "#/definitions/node",
+  "definitions": {
+    "node": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "the displayed text of the node"
+        },
+        "description": {
+          "type": "string",
+          "description": "longer form description, that  is displayed when hovering over the node"
+        },
+        "url": {
+          "type": "string",
+          "description": "a url to link to with this node"
+        },
+        "children": {
+          "description": "child nodes, that are connected to the parent",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/node"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
+````
+
+This means, that nodes  must have text property for displaying them, as well
+as may have a URL, a description and more nodes as children.
+
+The workflow is identical to the code workflow.
 
 ## Code
 

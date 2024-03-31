@@ -6,21 +6,23 @@ import Layout from '../../../components/layout.tsx';
 import Code from '../../../components/code.tsx';
 
 const Route = () => <Layout
-  Outlet={<>
-    <div className='title-card'>
-      <h1><Lang lnkey='routes.title'/></h1>
-      <p><Lang lnkey='routes.description'/></p>
-    </div>
-    <div className='card'>
-      <h2><Lang lnkey='routes.example.title'/></h2>
-      <div>
-        <p>
-          <Lang lnkey='routes.example.description'/>
-        </p>
-        <p>
-          <Lang lnkey='routes.example.middleware'/>
-        </p>
-        <Code language='typescript'>{`import {
+  page='routes'
+  path='/usage/routes'
+>
+  <div className='title-card'>
+    <h1><Lang lnkey='routes.title'/></h1>
+    <p><Lang lnkey='routes.description'/></p>
+  </div>
+  <div className='card'>
+    <h2><Lang lnkey='routes.example.title'/></h2>
+    <div>
+      <p>
+        <Lang lnkey='routes.example.description'/>
+      </p>
+      <p>
+        <Lang lnkey='routes.example.middleware'/>
+      </p>
+      <Code language='typescript'>{`import {
   Task,
 } from '@idrinth/api-bench';
 
@@ -33,10 +35,7 @@ export default (apiURL, apiPassword): Task => {
   post: ['^status-2xx','^access-token',],
 };
       `}</Code>
-      </div>
     </div>
-  </>}
-  page='routes'
-  path='/usage/routes'
-/>;
+  </div>
+</Layout>;
 export default Route;

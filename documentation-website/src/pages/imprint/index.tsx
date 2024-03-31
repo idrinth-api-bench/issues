@@ -3,7 +3,10 @@ import Layout from '../../components/layout.tsx';
 import ExternalLink from '../../components/external-link.tsx';
 import MailLink from '../../components/mail-link.tsx';
 
-const Index = () => <Layout Outlet={<>
+const Index = () => <Layout
+  page='imprint'
+  path='/imprint'
+>
   <div className='title-card'>
     <h1>Imprint</h1>
   </div>
@@ -16,7 +19,7 @@ const Index = () => <Layout Outlet={<>
       <meta content='webmaster@idrinth-api-ben.ch' itemProp='email' />
       <p itemProp='address'>
           Björn Büttner
-        <br /> Böllerts Höfe 4<br />
+        <br />Böllerts Höfe 4<br />
           45479 Mülheim an der Ruhr
       </p>
     </div>
@@ -34,7 +37,7 @@ const Index = () => <Layout Outlet={<>
     <h2>Responsible for the content according to § 55 Abs. 2 RStV</h2>
     <p itemProp='address'>
         Björn Büttner
-      <br /> Böllerts Höfe 4<br />
+      <br />Böllerts Höfe 4<br />
         45479 Mülheim an der Ruhr
     </p>
   </div>
@@ -97,8 +100,5 @@ const Index = () => <Layout Outlet={<>
       </em>
     </p>
   </div>
-</>}
-page='imprint'
-path='/imprint'
-/>;
+</Layout>;
 export default Index;

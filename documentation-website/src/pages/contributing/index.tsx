@@ -9,9 +9,18 @@ import {
   Lang,
 } from '../../components/lang.tsx';
 import ContentUnit from '../../components/content-unit.tsx';
+import schema from '../../../../mindmap/schema.json' with {
+  type: 'json',
+};
+import {
+  INDENTATION_SPACES,
+} from '../../constants.ts';
 
 const Index = () => <Layout
-  Outlet={<section>
+  page='contributing'
+  path='/contributing'
+>
+  <section>
     <ContentUnit titleLevel={1} titleText={'contributing.title'}>
       contributing.description
     </ContentUnit>
@@ -39,6 +48,16 @@ const Index = () => <Layout
         <li><Lang lnkey={'contributing.code.workflow.list_item_9'}/></li>
       </ul>
     </div>
+    <div className='card'>
+      <h3><Lang lnkey={'contributing.code.mindmap.title'}/></h3>
+      <div>
+        <p><Lang lnkey={'contributing.code.mindmap.introduction'}/></p>
+        <SyntaxHighlighter language='json'>
+          {JSON.stringify(schema, null, INDENTATION_SPACES,)}
+        </SyntaxHighlighter>
+        <p><Lang lnkey={'contributing.code.mindmap.nodes'}/></p>
+      </div>
+    </div>
     <ContentUnit titleLevel={3} titleText={'contributing.code.tests.title'}>
       contributing.code.tests.description
     </ContentUnit>
@@ -52,7 +71,7 @@ const Index = () => <Layout
 git clone https://github.com/idrinth/api-bench
 cd api-bench
 npm run coai
-        `}</SyntaxHighlighter>
+      `}</SyntaxHighlighter>
       </div>
     </div>
     <div className='card'>
@@ -83,10 +102,10 @@ npm run coai
           <Lang lnkey={'contributing.code.setup.description'}/>
         </p>
         <SyntaxHighlighter language='bash'>{`
-  git clone https://github.com/idrinth/api-bench
-  cd api-bench
-  npm run setup
-        `}</SyntaxHighlighter>
+git clone https://github.com/idrinth/api-bench
+cd api-bench
+npm run setup
+      `}</SyntaxHighlighter>
       </div>
     </div>
     <div className="card">
@@ -107,7 +126,7 @@ npm run coai
 <body>
 <BLANK LINE>
 <footer>
-        `}</SyntaxHighlighter>
+      `}</SyntaxHighlighter>
       </div>
     </div>
     <div className="card">
@@ -124,7 +143,7 @@ npm run coai
 
 Example:
 build(website): bump follow-redirects from 1.15.4 to 1.15.6
-        `}</SyntaxHighlighter>
+      `}</SyntaxHighlighter>
       </div>
     </div>
     <div className={'card'}>
@@ -232,7 +251,7 @@ Fixes bug.
 
 // Good:
 fix unit tests failing
-        `}</SyntaxHighlighter>
+      `}</SyntaxHighlighter>
       </div>
     </div>
     <ContentUnit
@@ -262,7 +281,7 @@ BREAKING CHANGE: users must now provide a valid JWT token to access
 protected routes.
 
 Closes #123
-        `}</SyntaxHighlighter>
+      `}</SyntaxHighlighter>
       </div>
     </div>
     <div className={'card'}>
@@ -280,7 +299,7 @@ Fix a bug where given a function route definition that has a string-typed
 or untyped parameter, the value would never be injected from the environment.
 
 Closes #294
-        `}</SyntaxHighlighter>
+      `}</SyntaxHighlighter>
       </div>
     </div>
     <div className={'card'}>
@@ -322,9 +341,7 @@ Closes #294
     >
       contributing.examples.description
     </ContentUnit>
-  </section>}
-  page='contributing'
-  path='/contributing'
-/>;
+  </section>
+</Layout>;
 
 export default Index;
