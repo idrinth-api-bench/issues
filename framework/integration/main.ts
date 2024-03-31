@@ -13,6 +13,7 @@ import {
 import url from 'url';
 import NoProgress from '../src/progress/no-progress';
 import Counter from '../src/counter';
+import simpleMultiReporter from './simple-multi-reporter';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 const ONE = 1;
@@ -29,7 +30,6 @@ describe('main@job', function() {
     ],);
     const config = {
       '/mocked-main': mock.directory({},),
-      '/tmp/api-bench': mock.directory({},),
     };
     config[process.cwd()] = mock.load(process.cwd(),);
     mock(config, {
@@ -46,6 +46,7 @@ describe('main@job', function() {
     await run({
       resultOutputDir: '/mocked-main',
       progress: new NoProgress(),
+      resultHandler: simpleMultiReporter,
     }, ONE, ONE, [ {
       id: 'example',
       main: {
@@ -59,5 +60,7 @@ describe('main@job', function() {
     expect(readFileSync('/mocked-main/result.csv',) + '',).to.not.be.empty;
     // eslint-disable-next-line no-unused-expressions
     expect(readFileSync('/mocked-main/result.json',) + '',).to.not.be.empty;
+    // eslint-disable-next-line no-unused-expressions
+    expect(readFileSync('/mocked-main/result.html',) + '',).to.not.be.empty;
   },).timeout(WAIT_TEST + WAIT_DELAY,);
 },);
