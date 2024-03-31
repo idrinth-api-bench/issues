@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import cli from '../src/cli/bench.js';
+import bench from '../src/cli/bench.js';
 
-cli(process.argv,);
+bench(process.argv,);
