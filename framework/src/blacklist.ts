@@ -8,7 +8,7 @@ import {
 
 export default (
   cwd: string,
-  mode: 'benchmarking'|'content-testing'|'load-testing',
+  mode: 'benchmarking'|'content-testing'|'load-testing'|'stress-testing',
 ): string[] => {
   const file = cwd + '/.idrinth-api-bench.yml';
   if (! existsSync(file,)) {
