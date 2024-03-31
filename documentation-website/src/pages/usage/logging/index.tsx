@@ -10,24 +10,22 @@ const Logging = () => <Layout
   path='/usage/logging'
 >
   <div className='title-card'>
-    <h1>Logging</h1>
+    <h1><Lang lnkey={'logging.title'}/></h1>
     <p>
-      Any logger that either implements the interface or has a wrapper is an
-      option. Wrappers for pino and winston are available.
+      <Lang lnkey={'logging.description'}/>
     </p>
   </div>
   <div className='card'>
-    <h2>Logging levels used</h2>
+    <h2><Lang lnkey={'logging.used.title'}/></h2>
     <p>
       <Lang lnkey='logging.used.description'/>
     </p>
   </div>
   <div className='card'>
-    <h2>Custom Logger</h2>
+    <h2><Lang lnkey={'logging.custom.title'}/></h2>
     <div>
       <p>
-        You can implement the logger interface below and provide any logger
-        you want to next to the already provided ones.
+        <Lang lnkey={'logging.custom.description'}/>
       </p>
       <Code language='typescript'>
         {`interface Logger {
