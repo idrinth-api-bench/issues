@@ -1,7 +1,9 @@
 import React from 'react';
 import Layout from '../../../components/layout.tsx';
 import Code from '../../../components/code.tsx';
-import {Lang} from "../../../components/lang.tsx";
+import {
+  Lang,
+} from '../../../components/lang.tsx';
 
 const AutoWiring = () => <Layout
   page='autowiring'
@@ -41,7 +43,7 @@ const AutoWiring = () => <Layout
     <div>
       <p><Lang lnkey={'autowiring.example.description'}/></p>
       <Code language='javascript'>
-      {`module.exports = (apiRootUrl, apiEMail, apiPassword) => ({
+        {`module.exports = (apiRootUrl, apiEMail, apiPassword) => ({
   id: 'login',
   main: {
     method: 'post',
