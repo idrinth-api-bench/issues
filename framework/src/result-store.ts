@@ -14,7 +14,8 @@ import {
   sep,
 } from 'path';
 import {
-  FRAMEWORK_ROOT,
+  EMPTY,
+  FRAMEWORK_ROOT, TWO,
 } from './constants.js';
 
 const hash = createHash('sha256',)
@@ -31,10 +32,12 @@ export default {
     return readFileSync(cacheFolder + sep + 'r' + id, 'utf8',) === 'true';
   },
   set(value: boolean,): void {
-    while (! existsSync(cacheFolder,)) {
+    let counter = TWO;
+    while (! existsSync(cacheFolder,) && counter > EMPTY) {
       mkdirSync(cacheFolder, {
         recursive: true,
       },);
+      counter --;
     }
     writeFileSync(
       cacheFolder + sep + 'r' + id,

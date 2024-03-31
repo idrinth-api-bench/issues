@@ -17,7 +17,8 @@ import {
 } from 'path';
 import language from './helper/language.js';
 import {
-  FRAMEWORK_ROOT,
+  EMPTY,
+  FRAMEWORK_ROOT, TWO,
 } from './constants.js';
 
 const hash = createHash('sha256',)
@@ -41,10 +42,12 @@ export default {
     if (! keyCheck.test(key,)) {
       throw new Error(language('invalid_key', key,),);
     }
-    while (! existsSync(cacheFolder,)) {
+    let counter = TWO;
+    while (! existsSync(cacheFolder,) && counter > EMPTY) {
       mkdirSync(cacheFolder, {
         recursive: true,
       },);
+      counter --;
     }
     writeFileSync(cacheFolder + sep + key, value,);
   },
