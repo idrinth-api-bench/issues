@@ -3,31 +3,41 @@ import {
   Lang,
 } from './lang.tsx';
 import languageKey from '../locales/language-key.ts';
+import {
+  DEFAULT_RADIX,
+  ONE,
+} from '../constants.ts';
 
 interface CommandType {
   name: string;
   shortname: string;
-  options: string;
-  description: languageKey;
+  children: string;
+  cli?: boolean;
 }
 
 const Command = ({
   name,
   shortname,
-  options,
-  description,
+  children,
+  cli,
 }: CommandType,) => {
-  const args: languageKey[] = options.split(' ',) as languageKey[];
+  const args = new Array(Number.parseInt(children, DEFAULT_RADIX,),);
   const list = args
-    .map((lnkey,) => <li key={null}>
-      <Lang lnkey={lnkey}/>
+    .map((_, position,) => <li key={null}>
+      <Lang
+        lnkey={`command.${ shortname }.arg_${ position + ONE }` as languageKey}
+      />
     </li>,);
   return <li>
-    <strong>{shortname}</strong> (or <strong>{name}</strong>)
-    {description}
+    <strong>{shortname}</strong>{' '}
+    (<Lang lnkey={'command.or'}/> <strong>{name}</strong>)
+    <p>
+      <Lang lnkey={`command.${ shortname }.description` as languageKey}/>
+    </p>
     <ul>
       {list}
     </ul>
+    {cli ? <p><Lang lnkey={'command.cli'}/></p> : ''}
   </li>;
 };
 export default Command;
