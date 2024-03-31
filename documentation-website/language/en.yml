@@ -269,6 +269,24 @@ middlewares:
   meta:
     title: "Middlewares | Usage"
     description: "The framework @idrinth/api-bench provides default middlewares and allows for custom middlewares"
+  title: "Middlewares"
+  description: "Middlewares use an absolute file path to be loaded. The following characters will be used to expand short forms:"
+  provided:
+    title: "Provided Middlewares"
+    encoding: "json and form encode"
+    access: "access token handling"
+    csrf: "csrf-header handling"
+    2xx: "status 2xx check"
+    403: "status 403 check"
+    404: "status 404 check"
+    user-agent: "user-agent"
+    cookies: "cookies"
+    json: "json-validator"
+    xml: "xml-validator"
+    silent-server-validator: "silent-server-validator"
+  custom:
+    title: "Custom Middleware"
+    description: "For custom middleware, implement the following interface. Prepare is called before sending a request, process after a request. If an error is thrown in process, any further validations are skipped."
 
 results:
   meta:
