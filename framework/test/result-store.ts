@@ -23,13 +23,12 @@ import {
 const hash = createHash('sha256',)
   .update(FRAMEWORK_ROOT,)
   .digest('hex',);
-const id = hash + process.pid;
 const cacheFolder: string = tmpdir() + sep + 'api-bench';
 
 describe('result-store', () => {
   beforeEach(() => {
-    if (existsSync(cacheFolder + sep + 'r' + id,)) {
-      unlinkSync(cacheFolder + sep + 'r' + id,);
+    if (existsSync(cacheFolder + sep + 'r' + hash,)) {
+      unlinkSync(cacheFolder + sep + 'r' + hash,);
     }
   },);
   it('should have a method set', () => {

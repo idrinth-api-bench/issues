@@ -18,14 +18,14 @@ import {
 import language from './helper/language.js';
 import {
   EMPTY,
-  FRAMEWORK_ROOT, TWO,
+  FRAMEWORK_ROOT,
+  TWO,
 } from './constants.js';
 
 const hash = createHash('sha256',)
   .update(FRAMEWORK_ROOT,)
   .digest('hex',);
-const id = hash + process.pid;
-const cacheFolder: string = tmpdir() + sep + 'api-bench' + sep + '_' + id;
+const cacheFolder: string = tmpdir() + sep + 'api-bench' + sep + '_' + hash;
 const keyCheck = /^[a-z0-9.]+$/u;
 
 export default {

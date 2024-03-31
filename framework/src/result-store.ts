@@ -21,15 +21,14 @@ import {
 const hash = createHash('sha256',)
   .update(FRAMEWORK_ROOT,)
   .digest('hex',);
-const id = hash + process.pid;
 const cacheFolder: string = tmpdir() + sep + 'api-bench';
 
 export default {
   get(defaulted: boolean,): boolean {
-    if (! existsSync(cacheFolder + sep + 'r' + id,)) {
+    if (! existsSync(cacheFolder + sep + 'r' + hash,)) {
       return defaulted;
     }
-    return readFileSync(cacheFolder + sep + 'r' + id, 'utf8',) === 'true';
+    return readFileSync(cacheFolder + sep + 'r' + hash, 'utf8',) === 'true';
   },
   set(value: boolean,): void {
     let counter = TWO;
@@ -40,7 +39,7 @@ export default {
       counter --;
     }
     writeFileSync(
-      cacheFolder + sep + 'r' + id,
+      cacheFolder + sep + 'r' + hash,
       value ? 'true' : 'false',
       'utf8',
     );
