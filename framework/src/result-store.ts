@@ -33,7 +33,7 @@ export default {
   },
   set(value: boolean,): void {
     let counter = TWO;
-    while (! existsSync(cacheFolder,) && counter > EMPTY) {
+    while (! existsSync(cacheFolder,) && counter >= EMPTY) {
       mkdirSync(cacheFolder, {
         recursive: true,
       },);

@@ -43,7 +43,7 @@ export default {
       throw new Error(language('invalid_key', key,),);
     }
     let counter = TWO;
-    while (! existsSync(cacheFolder,) && counter > EMPTY) {
+    while (! existsSync(cacheFolder,) && counter >= EMPTY) {
       mkdirSync(cacheFolder, {
         recursive: true,
       },);
