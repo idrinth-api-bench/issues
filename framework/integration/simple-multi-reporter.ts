@@ -5,11 +5,8 @@ import htmlReporter from '../src/reporter/html-reporter.js';
 import Reporter from '../src/reporter/reporter';
 import FinishedRun from '../src/finished-run';
 
-interface ReporterList {
-  addReporter: (reporter: Reporter) => void;
-}
 const reporters: Array<Reporter> = [];
-const multiReporter: Reporter&ReporterList = (
+const multiReporter: Reporter = (
   results: FinishedRun,
   rootDir: string,
 ): void => {
@@ -17,9 +14,9 @@ const multiReporter: Reporter&ReporterList = (
     reporter(results, rootDir,);
   }
 };
-multiReporter.addReporter(csvReporter,);
-multiReporter.addReporter(consoleReporter,);
-multiReporter.addReporter(jsonReporter,);
-multiReporter.addReporter(htmlReporter,);
+reporters.push(csvReporter,);
+reporters.push(consoleReporter,);
+reporters.push(jsonReporter,);
+reporters.push(htmlReporter,);
 
 export default multiReporter;
