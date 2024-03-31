@@ -76,7 +76,6 @@ header {
   background-color: var(--white);
   padding-bottom: 1em;
   padding-top: 1em;
-  box-shadow: rgb(0 0 0 / 16%) 0 1px 4px, rgb(51 51 51) 0 0 0 3px;
 }
 
 header button {
@@ -160,7 +159,11 @@ footer {
   padding: 1rem 1em;
   background-color: var(--white);
   width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+
+header,
+footer {
+  box-shadow: rgb(0 0 0 / 16%) 0 1px 4px, rgb(51 51 51) 0 0 0 3px;
 }
 
 footer ul {
