@@ -36,6 +36,6 @@ export default {
         recursive: true,
       },);
     }
-    writeFileSync(cacheFolder + sep + id, value ? 'true' : 'false',);
+    writeFileSync(cacheFolder + sep + id, value ? 'true' : 'false', 'utf8',);
   },
 };
