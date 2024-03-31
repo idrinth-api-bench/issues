@@ -241,7 +241,11 @@ usage:
   meta:
     title: "Usage"
     description: "Basic usage information for the framework @idrinth/api-bench"
+  title: "Usage"
+  binaries:
+    title: "Binaries"
   programmatically:
+    title: "Programmatically"
     description: "Basically require main/include main and supply the executor method with required parameters. Tasks defined in src/routes-subfolders before, before_task, before_each, main, after_each, after_task, and after will be used to automatically fill the Job processed by the executor. Automatic filling only happens when there are no tasks provided to the function."
 
 logging:
@@ -295,3 +299,32 @@ loader:
   wait: "Trying to load fresh content for you, please wait."
   offline: "Please go online and then refresh the page."
   reload: "Content has changed, reloading the page for you in a moment."
+
+command:
+  or: "or"
+  cli: "Available via the cli package @idrinth/api-bench-api and the framework."
+  iabr:
+    description: "runs the current working directory's project if the routes folder is properly setup"
+    arg_1: "Argument 1: threads (default 1)"
+    arg_2: "Argument 2: repetitions (default 1)"
+    arg_3: "language code (default en)"
+    arg_4: "Argument 4: taskId, that you want to run only (default all)"
+  iabmp:
+    description: "creates a new benchmarking project in a subdirectory of the current working directory"
+    arg_1: "Argument 1: project name (default: benchmark)"
+  iabgfoa:
+    description: "generates test skeletons from an open-api-documentation for a project in the current working directory"
+    arg_1: "Argument 1: path to the open-api-document"
+  iabgfh:
+    description: "generates test skeletons from an har-document for a project in the current working directory"
+    arg_1: "Argument 1: path to the har-document"
+  iabcrd:
+    description: "checks all routes for possible issues, so there are no surprises, when actually running the code."
+    arg_1: "Argument 1: language(default: en)"
+  iabrl:
+    description: "runs a load test with the given routes up to a limit of threads. Stops when the limit is reached or an error is found during response validation."
+    arg_1: "Argument 1: threads (default 1)"
+    arg_2: "Argument 2: repetitions (default 1)"
+    arg_3: "Argument 3: language code (default en)"
+    arg_4: "Argument 4: thread increment (default 1)"
+    arg_5: "Argument 5: maximum threads (default 100)"
