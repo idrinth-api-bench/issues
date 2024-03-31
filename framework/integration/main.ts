@@ -29,7 +29,9 @@ describe('main@job', function() {
     ],);
     const config = {
       '/mocked-main': mock.directory({},),
-      '/tmp': mock.directory({},),
+      '/tmp': mock.directory({
+        'api-bench': mock.directory({},),
+      },),
     };
     config[process.cwd()] = mock.load(process.cwd(),);
     mock(config, {
