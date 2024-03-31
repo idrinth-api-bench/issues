@@ -4,6 +4,12 @@ import {
 } from 'fs';
 import exec from './src/exec.js';
 
+const year = new Date().getFullYear() + 1;
+const previous = new Date().getFullYear();
+
+exec('git config --global user.email "bot@idrinth-api-ben.ch"',);
+exec('git config --global user.name "idrinth api bench bot"',);
+
 for (const file of [
   '/LICENSE',
   '/documentation-website/src/components/footer.tsx',
@@ -11,8 +17,8 @@ for (const file of [
 ]) {
   const content = readFileSync(`${ process.cwd() }${ file }`, 'utf-8',)
     .replace(
-      new RegExp(`2020-${ new Date().getFullYear() }`, 'ug',),
-      `2020-${ new Date().getFullYear() + 1 }`,
+      new RegExp(`2020-${ previous }`, 'ug',),
+      `2020-${ year }`,
     );
   writeFileSync(
     `${ process.cwd() }${ file }`,
@@ -20,5 +26,5 @@ for (const file of [
     'utf-8',
   );
 }
-exec('git commit -m "Update copyright year"', true,);
+exec(`git commit -m "Update copyright year to ${ year }"`, true,);
 exec('git push', true,);
