@@ -17,6 +17,23 @@ nav:
   faq: "FAQ"
   code-of-conduct: "Code of Conduct"
 
+socials:
+  npm-main:
+    title: "@idrinth/api-bench on NPM"
+    alt: "NPM"
+  github:
+    title: "idrinth/api-bench on GitHub"
+    alt: "GitHub"
+  youtube:
+    title: "idrinth-api-bench on youtube"
+    alt: "YouTube"
+  slack:
+    title: "@idrinth/api-bench on slack"
+    alt: "Slack"
+  linkedin:
+    title: "@idrinth/api-bench on LinkedIN"
+    alt: "LinkedIn"
+
 code-of-conduct:
   meta:
     title: "Code of Conduct"

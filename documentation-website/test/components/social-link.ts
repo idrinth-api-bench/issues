@@ -11,6 +11,7 @@ describe('components/social-link', () => {
     const result = SL({
       to: '/',
       label: '',
+      logo: '',
     },);
     expect(result,).to.be.a('object',);
   },);

@@ -29,7 +29,8 @@ const Header = ({
     <ul>
       <SocialLink
         to="https://www.npmjs.com/package/@idrinth/api-bench"
-        label={'npm'}
+        label={'npm-main'}
+        logo={'npm'}
       />
       <SocialLink
         to="https://github.com/Idrinth/api-bench"
