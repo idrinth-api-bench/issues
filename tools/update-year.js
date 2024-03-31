@@ -14,6 +14,10 @@ exec(
   'git checkout -b ${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}',
   true,
 );
+exec(
+  'git pull origin/${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}',
+  true,
+);
 
 for (const file of [
   '/LICENSE',
