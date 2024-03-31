@@ -12,6 +12,10 @@ const branch = exec('echo ${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}');
 exec('git config --global user.email "bot@idrinth-api-ben.ch"',);
 exec('git config --global user.name "idrinth api bench bot"',);
 exec(
+  `git fetch origin ${ branch }`,
+  true,
+);
+exec(
   `git checkout -b ${ branch }`,
   true,
 );
