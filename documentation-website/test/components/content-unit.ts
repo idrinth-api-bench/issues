@@ -13,7 +13,7 @@ describe('components/card', () => {
       // @ts-expect-error
       titleText: '',
       titleLevel: 1,
-      children: [],
+      children: '',
     },);
     expect(result,).to.be.a('object',);
   },);
