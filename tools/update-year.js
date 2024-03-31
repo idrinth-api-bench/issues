@@ -6,7 +6,7 @@ import exec from './src/exec.js';
 
 for (const file of [
   '/LICENSE',
-  '/documentation-website/src/component/footer.tsx',
+  '/documentation-website/src/components/footer.tsx',
   '/documentation-website/src/pages/license.tsx',
 ]) {
   const content = readFileSync(`${ process.cwd() }${ file }`, 'utf-8',)
