@@ -19,7 +19,7 @@ const Header = ({
   window,
 }: {window: Window},) => <header>
   <div>
-    <NavLink to="/">
+    <NavLink id="logo" to="/">
       <img src={IAB} alt="@idrinth/api-bench" />
     </NavLink>
     <strong>@idrinth/api-bench</strong>
@@ -50,7 +50,7 @@ const Header = ({
         label={'slack'}
       />
       <SocialLink
-        to={'https://www.youtube.com/channel/UCv0TBTkJdFQrdYLH8eR4-YQ'}
+        to={'https://www.youtube.com/@idrinth-api-bench'}
         label={'youtube'}
       />
     </ul>

@@ -1,6 +1,7 @@
 .command strong {
   color: var(--dark-green);
 }
+
 .command.deprecated strong {
    color: orange;
  }
