@@ -23,7 +23,7 @@ const Header = ({
     <strong>@idrinth/api-bench</strong>
     <em>v{pkg.version}</em>
   </div>
-  <nav>
+  <nav aria-label='Social Links Menu'>
     <ul>
       <SocialLink
         to="https://www.npmjs.com/package/@idrinth/api-bench"
@@ -52,7 +52,7 @@ const Header = ({
       />
     </ul>
   </nav>
-  <nav>
+  <nav aria-label='Main Menu'>
     <ul>
       <li>
         <NavLink to="/"><Lang lnkey='nav.home'/></NavLink>
