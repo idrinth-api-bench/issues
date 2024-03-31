@@ -1,4 +1,7 @@
-import React, {lazy, Suspense} from 'react';
+import React, {
+  lazy,
+  Suspense,
+} from 'react';
 import {
   FiExternalLink,
 } from 'react-icons/fi';
