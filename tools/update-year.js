@@ -11,7 +11,7 @@ const previous = new Date().getFullYear();
 const branch = exec('echo ${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}');
 exec('git config --global user.email "bot@idrinth-api-ben.ch"',);
 exec('git config --global user.name "idrinth api bench bot"',);
-exec('git config --global git config pull.rebase true',);
+exec('git config --global pull.rebase true',);
 exec(
   `git fetch origin ${ branch }`,
   true,
