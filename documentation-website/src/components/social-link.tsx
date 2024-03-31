@@ -42,7 +42,7 @@ const SocialLink = ({
       rel='noreferrer'
     >
       <img alt={''} src={'/assets/' + (logo ?? label) + '.svg'}/>
-      <FiExternalLink className="external-link-icon" />
+      <FiExternalLink className="external-link-icon"/>
     </a>}><EL/></Suspense>
   </li>;
 };
