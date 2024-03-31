@@ -13,10 +13,8 @@ interface CardProps {
   titleText: languageKey;
   titleLevel: number;
   sideMode?: boolean;
-  children: string[]|string;
+  children: string;
 }
-
-const hasWhitespace = /\s/u;
 
 const ContentUnit = ({
   titleText,
@@ -26,14 +24,8 @@ const ContentUnit = ({
 }: CardProps,) => {
   const TitleTag = `h${ titleLevel }` as keyof JSX.IntrinsicElements;
   const generateContent = (): ReactNode => {
-    if (! Array.isArray(children,)) {
-      children = hasWhitespace.test(children,)
-        ? children.split(' ',)
-        : [ children, ];
-    }
-    const content = children.map(
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error
+    const keys: languageKey[] = children.split(' ',) as languageKey[];
+    const content = keys.map(
       (sentence,) => <p key={null}><Lang lnkey={sentence}/></p>,
     );
     return <div>{content}</div>;
