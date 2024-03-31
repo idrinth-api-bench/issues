@@ -68,7 +68,7 @@ const Results = () => <Layout
         modifiers have modified the result.
       </p>
       <Code language='typescript'>
-          {`interface Reporter {
+        {`interface Reporter {
   (results: FinishedRun, rootDir: string): void;
 }`}
       </Code>
