@@ -118,7 +118,7 @@ contributing:
   description: "Any and all contributions are encouraged."
   structure:
     title: "Structure"
-    description: "The project is a mono-repo grouped into multiple subprojects, for example website, framework, history-microservice and history-website. You can find more detailed instructions for the specific part in the corresponding folder's readme."
+    description: "The project is a mono-repo grouped into multiple subprojects, for example cli, mindmap, documentation-website, framework, history-microservice and history-website. You can find more detailed instructions for the specific part in the corresponding folder's readme."
   issues:
     title: "Issues"
     description: "Any idea and bug report is considered a contribution. Not only do they help improving the code base, they help other people to get more use out of this framework. Please try to stick to the format of predefined issue types to make it easier to filter and handle for anyone interested in the topic."
@@ -137,6 +137,10 @@ contributing:
       list_item_7: "mark as ready to review"
       list_item_8: "get changes reviewed"
       list_item_9: "if review is positive get changes merged otherwise fix and send back to review"
+    mindmap:
+      title: "Mindmap"
+      nodes: "This means, that nodes  must have text property for displaying them, as well as may have a URL, a description and more nodes as children."
+      introduction: "Contributing to the mindmap is  encouraged. The mindmap is build from the data.yml in /mindmap and follows the following schema:"
     tests:
       title: "Tests"
       description: "Testing new code is expected and adding tests or improving tests for old code is appreciated. The goal is to find most issues by either static analysis or unit and integration tests."
