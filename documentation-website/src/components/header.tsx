@@ -64,14 +64,14 @@ const Header = ({
       <li>
         <NavLink
           aria-expanded="false"
-          id="dropdown-contributors"
-          aria-controls="contributors-menu"
+          id="dropdown-contributing"
+          aria-controls="contributing-menu"
           className="dropdown-links-heading"
           to="/contributing/">
           <Lang lnkey='nav.contributing'/>
           <MdArrowDropDown />
         </NavLink>
-        <ul aria-labelledby="dropdown-contributors" id="contributors-menu" >
+        <ul aria-labelledby="dropdown-contributing" id="contributing-menu" >
           <li>
             <NavLink to="/contributing/contributors/">
               <Lang lnkey='nav.contributors'/>
