@@ -9,6 +9,11 @@ const previous = new Date().getFullYear();
 
 exec('git config --global user.email "bot@idrinth-api-ben.ch"',);
 exec('git config --global user.name "idrinth api bench bot"',);
+exec(
+  // eslint-disable-next-line no-template-curly-in-string
+  'git checkout -b HEAD:${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}',
+  true,
+);
 
 for (const file of [
   '/LICENSE',
@@ -30,6 +35,6 @@ exec('git add .',);
 exec(`git commit -m "Update copyright year to ${ year }"`, true,);
 exec(
   // eslint-disable-next-line no-template-curly-in-string
-  'git push origin HEAD:${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}',
+  'git push',
   true,
 );
