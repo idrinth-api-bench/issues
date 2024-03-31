@@ -63,11 +63,16 @@ const Header = ({
         </NavLink>
       </li>
       <li>
-        <NavLink className="dropdown-links-heading" to="/contributing/">
+        <NavLink
+          aria-expanded="false"
+          id="dropdown-contributors"
+          aria-controls="contributors-menu"
+          className="dropdown-links-heading"
+          to="/contributing/">
           <Lang lnkey='nav.contributing'/>
           <MdArrowDropDown />
         </NavLink>
-        <ul>
+        <ul aria-labelledby="dropdown-contributors" id="contributors-menu" >
           <li>
             <NavLink to="/contributing/contributors/">
               <Lang lnkey='nav.contributors'/>
@@ -81,11 +86,16 @@ const Header = ({
         </ul>
       </li>
       <li>
-        <NavLink className="dropdown-links-heading" to="/usage/">
+        <NavLink
+          id="dropdown-usage-links"
+          aria-controls='usages-menu'
+          className="dropdown-links-heading"
+          aria-expanded="false"
+          to="/usage/">
           <Lang lnkey='nav.usage'/>
           <MdArrowDropDown />
         </NavLink>
-        <ul>
+        <ul id="usages-menu" aria-labelledby="dropdown-usage-links" >
           <li>
             <NavLink to="/usage/autowiring/">
               <Lang lnkey='nav.autowiring'/>
