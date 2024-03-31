@@ -32,9 +32,9 @@ export default {
   },
   set(value: boolean,): void {
     if (! existsSync(cacheFolder,)) {
-      mkdirSync(cacheFolder, {
+      console.log(mkdirSync(cacheFolder, {
         recursive: true,
-      },);
+      },),);
     }
     writeFileSync(cacheFolder + sep + id, value ? 'true' : 'false', 'utf8',);
   },
