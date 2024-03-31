@@ -225,13 +225,14 @@ header strong {
   color: black;
 }
 
-.external-link svg {
+.external-link-icon {
   width: 1em;
   height: 1em;
+  color: var(--black);
 }
 
-.dark-mode .external-link {
-  color: white;
+.dark-mode .external-link-icon {
+  color: var(--white);
 }
 
 .theme-toggle-btn {

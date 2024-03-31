@@ -1,4 +1,7 @@
 import React from 'react';
+import {
+  FiExternalLink,
+} from 'react-icons/fi';
 const externalLink = ({
   to,
   label = '',
@@ -6,6 +9,9 @@ const externalLink = ({
   href={to}
   target='_blank'
   rel='noreferrer'
->{label || to.replace(/^https?:\/\//ui, '',)}</a>;
+>
+  {label || to.replace(/^https?:\/\//ui, '',)}
+  <FiExternalLink className="external-link-icon"/>
+</a>;
 
 export default externalLink;
