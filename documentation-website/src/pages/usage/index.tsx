@@ -19,7 +19,11 @@ const Usage = () => <Layout
       <Lang lnkey={'usage.binaries.title'}/>
     </h2>
     <ul>
-      <Command shortname={'iabr'} name={'run-benchmark'}>4</Command>
+      <Command
+        shortname={'iabr'}
+        name={'run-benchmark'}
+        deprecated={true}
+      >4</Command>
       <Command
         shortname={'iabmp'}
         name={'make-benchmark-project'}
@@ -38,11 +42,16 @@ const Usage = () => <Layout
       <Command
         shortname={'iabcrd'}
         name={'check-route-definitions'}
+        deprecated={true}
       >1</Command>
       <Command
         shortname={'iabrl'}
         name={'run-loadtest'}
+        deprecated={true}
       >5</Command>
+      <Command
+        name={'iab'}
+      >6</Command>
     </ul>
   </div>
   <div className='card'>
