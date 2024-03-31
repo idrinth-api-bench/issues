@@ -83,17 +83,6 @@ header button {
   grid-row: 1;
 }
 
-header #logo {
-  grid-row: 1/3;
-  padding-right: 1em;
-  height: 3em;
-}
-
-header #logo img {
-  width: 3em;
-  height: 3em;
-}
-
 header div {
   width: 100%;
   display: grid;
@@ -114,6 +103,12 @@ nav a {
 header nav img {
   max-height: 1em;
   padding: 0;
+}
+
+#logo {
+  grid-row: 1/3;
+  padding-right: 1em;
+  height: 3em;
 }
 
 header nav a.active {
@@ -312,6 +307,11 @@ footer li:last-child::after {
 
 .sponsor img {
   place-self: center;
+}
+
+#logo img {
+  width: 3em;
+  height: 3em;
 }
 
 nav.breadcrumbs li::after {
