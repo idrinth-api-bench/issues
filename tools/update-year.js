@@ -35,6 +35,6 @@ exec('git add .',);
 exec(`git commit -m "Update copyright year to ${ year }"`, true,);
 exec(
   // eslint-disable-next-line no-template-curly-in-string
-  'git push',
+  '--set-upstream origin ${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}',
   true,
 );
