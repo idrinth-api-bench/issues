@@ -25,7 +25,7 @@ const cacheFolder: string = tmpdir() + sep + 'api-bench-result';
 
 export default {
   get(defaulted: boolean,): boolean {
-    if (! existsSync(cacheFolder + sep,)) {
+    if (! existsSync(cacheFolder + sep + id,)) {
       return defaulted;
     }
     return readFileSync(cacheFolder + sep + id, 'utf8',) === 'true';
