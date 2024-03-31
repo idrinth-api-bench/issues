@@ -26,5 +26,6 @@ for (const file of [
     'utf-8',
   );
 }
+exec('git add .',);
 exec(`git commit -m "Update copyright year to ${ year }"`, true,);
 exec('git push', true,);
