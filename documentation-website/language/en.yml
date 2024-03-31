@@ -21,9 +21,15 @@ socials:
   npm-main:
     title: "@idrinth/api-bench on NPM"
     alt: "NPM"
+  npm-cli:
+    title: "@idrinth/api-bench-cli on NPM"
+    alt: "NPM"
   github:
     title: "idrinth/api-bench on GitHub"
     alt: "GitHub"
+  medium:
+    title: "idrinth/api-bench on Medium"
+    alt: "Medium"
   youtube:
     title: "idrinth-api-bench on youtube"
     alt: "YouTube"
@@ -33,6 +39,9 @@ socials:
   linkedin:
     title: "@idrinth/api-bench on LinkedIN"
     alt: "LinkedIn"
+  open-sauced:
+    title: "@idrinth/api-bench projects on OpenSauced"
+    alt: "OpenSauced"
 
 code-of-conduct:
   meta:

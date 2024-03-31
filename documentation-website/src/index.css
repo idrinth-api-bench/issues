@@ -326,6 +326,13 @@ nav.breadcrumbs li:last-of-type::after {
   text-align: left;
 }
 
+header #github img,
+header #medium img {
+  border: 1px solid #fff;
+  background: #fff;
+  border-radius: 50%;
+}
+
 @media only screen and (width >= 600px) {
   footer {
     grid-template-columns: 1fr 1fr;
@@ -372,12 +379,6 @@ nav.breadcrumbs li:last-of-type::after {
     grid-row: 1;
   }
 
-  header #github img {
-    border: 1px solid #fff;
-    background: #fff;
-    border-radius: 50%;
-  }
-
   header nav > ul {
     flex-wrap: wrap;
     justify-content: center;
@@ -386,9 +387,21 @@ nav.breadcrumbs li:last-of-type::after {
     margin-top: 0.5em;
   }
 
+  header nav > ul.socials {
+    display: grid;
+    gap: 0;
+    row-gap: 0.25em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
   nav li {
     border: none;
     width: initial;
+  }
+
+  header nav > ul.socials li,
+  header nav > ul.socials a {
+    padding: 0;
   }
 
   nav ul ul {

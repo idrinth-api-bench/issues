@@ -29,7 +29,7 @@ const SocialLink = ({
         rel='noreferrer'
         title={title}
       >
-        <img alt={alt} src={'/assets/' + (logo ?? label) + '.svg'}/>
+        <img alt={alt} src={'/assets/socials/' + (logo ?? label) + '.svg'}/>
         <FiExternalLink className="external-link-icon"/>
       </a>,
     };
@@ -41,7 +41,7 @@ const SocialLink = ({
       target='_blank'
       rel='noreferrer'
     >
-      <img alt={''} src={'/assets/' + (logo ?? label) + '.svg'}/>
+      <img alt={''} src={'/assets/socials/' + (logo ?? label) + '.svg'}/>
       <FiExternalLink className="external-link-icon"/>
     </a>}><EL/></Suspense>
   </li>;

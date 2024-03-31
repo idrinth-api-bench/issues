@@ -26,10 +26,15 @@ const Header = ({
     <em>v{pkg.version}</em>
   </div>
   <nav aria-label='Social Links Menu'>
-    <ul>
+    <ul className={'socials'}>
       <SocialLink
         to="https://www.npmjs.com/package/@idrinth/api-bench"
         label={'npm-main'}
+        logo={'npm'}
+      />
+      <SocialLink
+        to="https://www.npmjs.com/package/@idrinth/api-bench-cli"
+        label={'npm-cli'}
         logo={'npm'}
       />
       <SocialLink
@@ -52,6 +57,17 @@ const Header = ({
       <SocialLink
         to={'https://www.youtube.com/@idrinth-api-bench'}
         label={'youtube'}
+      />
+      <SocialLink
+        to={'https://medium.com/idrinth-api-bench'}
+        label={'medium'}
+      />
+      <SocialLink
+        to={
+          'https://app.opensauced.pizza/workspaces' +
+          '/b1f1f893-1572-4353-af0c-548ba47007e7'
+        }
+        label={'open-sauced'}
       />
     </ul>
   </nav>
