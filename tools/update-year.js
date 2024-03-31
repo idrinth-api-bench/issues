@@ -15,7 +15,6 @@ exec(
   `git checkout -b ${ branch }`,
   true,
 );
-exec('git remote add origin https://github.com/idrinth/api-bench',);
 exec(`git branch -u origin/${ branch }`, true,);
 exec(
   'git pull',
