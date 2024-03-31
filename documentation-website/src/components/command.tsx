@@ -25,7 +25,7 @@ const Command = ({
   deprecated,
 }: CommandType,) => {
   const args = new Array(Number.parseInt(children, DEFAULT_RADIX,),).fill('',);
-  const id = shortname || name;
+  const id = shortname ?? name;
   const list = args
     .map((_, position,) => <li key={`command.${ id }.${ position }`}>
       <Lang
