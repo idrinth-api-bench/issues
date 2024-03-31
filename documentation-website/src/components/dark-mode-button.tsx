@@ -14,15 +14,14 @@ const DarkModeButton = ({
 }: {window: Window},) => {
   const setInitialDarkMode = (): boolean => {
     const localStorageValue = window.localStorage.getItem('dark-mode',);
-    if (! localStorageValue) {
-      const darkMode = window.matchMedia(
-        '(prefers-color-scheme: dark)',
-      ).matches;
-      window.localStorage.setItem('dark-mode', JSON.stringify(darkMode,),);
-      return darkMode;
-    } else {
+    if (localStorageValue) {
       return JSON.parse(localStorageValue,);
     }
+    const darkMode = window.matchMedia(
+      '(prefers-color-scheme: dark)',
+    ).matches;
+    window.localStorage.setItem('dark-mode', JSON.stringify(darkMode,),);
+    return darkMode;
   };
 
   const [
