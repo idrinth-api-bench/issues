@@ -28,4 +28,8 @@ for (const file of [
 }
 exec('git add .',);
 exec(`git commit -m "Update copyright year to ${ year }"`, true,);
-exec('git push', true,);
+exec(
+  // eslint-disable-next-line no-template-curly-in-string
+  'git push origin HEAD:${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}',
+  true,
+);
