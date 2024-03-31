@@ -5,7 +5,7 @@ import {
 import 'mocha';
 import {
   existsSync,
-  unlinkSync
+  unlinkSync,
 } from 'fs';
 import {
   createHash,
