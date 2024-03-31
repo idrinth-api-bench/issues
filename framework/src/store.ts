@@ -41,7 +41,7 @@ export default {
     if (! keyCheck.test(key,)) {
       throw new Error(language('invalid_key', key,),);
     }
-    if (! existsSync(cacheFolder,)) {
+    while (! existsSync(cacheFolder,)) {
       mkdirSync(cacheFolder, {
         recursive: true,
       },);
