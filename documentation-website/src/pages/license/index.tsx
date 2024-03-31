@@ -8,7 +8,7 @@ const License = () => <Layout
   <div className='title-card'>
     <h1>MIT License</h1>
     <p>
-      Copyright (c)2020-2024 Björn Büttner
+      Copyright (c)2020-2025 Björn Büttner
     </p>
     <p>
       Permission is hereby granted, free of charge, to any person obtaining a

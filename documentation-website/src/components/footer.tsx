@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 
 const Footer = () => <footer>
-  <span>©2020-2024 Björn Büttner and contributors.</span>
+  <span>©2020-2025 Björn Büttner and contributors.</span>
   <ul>
     <li>
       <NavLink to="/license/">
