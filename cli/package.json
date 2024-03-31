@@ -69,7 +69,8 @@
     "tsc": "tsc -p tsconfig.json",
     "language": "node tools/generate-language.js",
     "prepublishOnly": "npm run language && npm run tsc",
-    "postpublishOnly": "npm run clear"
+    "postpublishOnly": "npm run clear",
+    "postinstall": "npm run language"
   },
   "engines": {
     "node": ">=20"
