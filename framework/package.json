@@ -77,7 +77,8 @@
     "run-loadtest": "bin/run-loadtest.js",
     "iabl": "bin/run-loadtest.js",
     "iabr": "bin/run-benchmark.js",
-    "iabcrd": "bin/check-route-definitions.js"
+    "iabcrd": "bin/check-route-definitions.js",
+    "iab": "bin/iab.js"
   },
   "scripts": {
     "lint": "eslint . --ext .js,.ts,.cjs,.json,.tsx --report-unused-disable-directives --max-warnings 0",
