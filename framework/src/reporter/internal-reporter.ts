@@ -7,6 +7,7 @@ import {
 
 const internal: Reporter = (
   results: FinishedRun,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   rootDir: string,
 ): void => {
   let hasError = false;
