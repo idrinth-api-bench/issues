@@ -4,8 +4,9 @@ import {
 } from 'fs';
 import exec from './src/exec.js';
 
-const year = new Date().getFullYear() + 1;
-const previous = new Date().getFullYear();
+const PREVIOUS = 1;
+const year = new Date().getFullYear();
+const previous = year - PREVIOUS;
 
 // eslint-disable-next-line no-template-curly-in-string
 const branch = exec('echo ${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}');
@@ -26,6 +27,7 @@ exec(
   true,
 );
 
+let modified = false;
 for (const file of [
   '/LICENSE',
   '/documentation-website/src/components/footer.tsx',
@@ -34,20 +36,25 @@ for (const file of [
   const content = readFileSync(
     `${ process.cwd() }${ file }`,
     'utf-8',
-  )
-    .replace(
-      new RegExp(`2020-${ previous }`, 'ug',),
-      `2020-${ year }`,
+  );
+  const changed = content.replace(
+    new RegExp(`2020-${ previous }`, 'ug',),
+    `2020-${ year }`,
+  );
+  if (changed !== content) {
+    writeFileSync(
+      `${ process.cwd() }${ file }`,
+      changed,
+      'utf-8',
     );
-  writeFileSync(
-    `${ process.cwd() }${ file }`,
-    content,
-    'utf-8',
+    modified = true;
+  }
+}
+if (modified) {
+  exec('git add .',);
+  exec(`git commit -m "Update copyright year to ${ year }"`, true,);
+  exec(
+    'git push',
+    true,
   );
 }
-exec('git add .',);
-exec(`git commit -m "Update copyright year to ${ year }"`, true,);
-exec(
-  'git push',
-  true,
-);
