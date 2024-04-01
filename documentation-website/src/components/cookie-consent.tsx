@@ -10,7 +10,7 @@ const CookieConsent = () => {
     window._paq.push([accept ? "rememberConsentGiven" : "forgetConsentGiven"]);
     localStorage.setItem("consent-was-asked", "yes");
     setConsentWasClosed(true);
-  };
+  }
 
   return (
     <>
@@ -18,10 +18,10 @@ const CookieConsent = () => {
         <div className={"cookie-consent"}>
           <div className={"cookie-consent-description"}>
             <h2 className={"cookie-title"}>
-            <Lang lnkey={"cookie-consent.title"}/>
+              <Lang lnkey={"cookie-consent.title"} />
             </h2>
-            <p className={"cookie-description"} >
-              <Lang lnkey={"cookie-consent.description"}/>
+            <p className={"cookie-description"}>
+              <Lang lnkey={"cookie-consent.description"} />
             </p>
           </div>
           <div className={"cookie-consent-buttons"}>
@@ -29,13 +29,13 @@ const CookieConsent = () => {
               onClick={() => handleConsent(true)}
               className={"cookie-consent-accept-button"}
             >
-              <Lang lnkey={"cookie-consent.accept"}/>
+              <Lang lnkey={"cookie-consent.accept"} />
             </button>
             <button
               onClick={() => handleConsent(false)}
               className={"cookie-consent-decline-button"}
             >
-              <Lang lnkey={"cookie-consent.decline"}/>
+              <Lang lnkey={"cookie-consent.decline"} />
             </button>
           </div>
         </div>
