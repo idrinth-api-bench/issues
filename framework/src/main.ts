@@ -38,6 +38,7 @@ export const run = async(
     blacklist?: string[],
     mode?: 'benchmarking'|'content-testing'|'load-testing'|'stress-testing',
     taskId?: string,
+    cwd?: string,
   },
   threads = DEFAULT_THREADS,
   repetitions = DEFAULT_REPETITIONS,
@@ -67,7 +68,7 @@ export const run = async(
     );
   }
   if (typeof job === 'undefined') {
-    job = await jobCreator(`${ reqlib }`,);
+    job = await jobCreator(configuration.cwd || process.cwd(),);
   } else if (typeof job === 'object' && Array.isArray(job,)) {
     job = {
       before: [],
