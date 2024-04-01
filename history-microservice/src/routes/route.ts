@@ -15,7 +15,7 @@ const routes = async(
     Headers: GetHeaders,
     Reply: GetReply,
     Body: GetBody,
-  }>('/project/:project', async(request, reply) => {
+  }>('/project/:project', async(request, reply,) => {
     try {
       await request.jwtVerify();
     } catch (err) {

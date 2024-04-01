@@ -15,7 +15,7 @@ const routes = async(
     Headers: PostHeaders,
     Reply: PostReply,
     Body: PostBody,
-  }>('/login', (request, reply) => {
+  }>('/login', (request, reply,) => {
     const token = fastify.jwt.sign({
       username: request.body.username,
     },);

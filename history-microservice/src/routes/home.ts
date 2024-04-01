@@ -18,7 +18,7 @@ const routes = async(
     Headers: GetHeaders,
     Reply: GetReply,
     Body: GetBody,
-  }>('/', (request, reply) => {
+  }>('/', (request, reply,) => {
     reply.send({
       version: pkg.version,
       name: pkg.name,
