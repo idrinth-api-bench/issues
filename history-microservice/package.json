@@ -56,7 +56,6 @@
     "lint-md": "markdownlint *.md",
     "test": "c8 mocha test",
     "integration": "c8 mocha integration",
-    "clear": "node tools/clear-js-files-from-src.js",
     "start": "tsx index.ts"
   },
   "engines": {
