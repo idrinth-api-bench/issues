@@ -22,7 +22,7 @@ const delay = (time,) => new Promise((resolve,) => setTimeout(resolve, time,),);
 describe('iab-cli', function() {
   before(() => {
     spawn('node', [
-      __dirname + '../../fixtures/server.cjs',
+      __dirname + '../fixtures/server.cjs',
       '48912',
     ],);
     const config = {
