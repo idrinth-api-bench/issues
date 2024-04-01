@@ -7,6 +7,9 @@ import url from 'url';
 import {
   realpathSync,
 } from 'fs';
+import {
+  sep,
+} from 'path';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 const basedir = realpathSync(__dirname + '../..',);
@@ -34,9 +37,15 @@ describe('helper/middleware-loader', () => {
       // eslint-disable-next-line no-unused-expressions
       expect(false,).to.be.true;
     } catch (e) {
-      expect(`${ e }`,).to.equal(`Error: Cannot find module '${ basedir }`
-        + '/node_modules/needle/src/middlewares/cookie.js\' '
-        + `imported from ${ basedir }/src/helper/include-default.ts`,);
+      if (sep === '/') {
+        expect(`${ e }`,).to.equal(`Error: Cannot find module '${ basedir }`
+          + '/node_modules/needle/src/middlewares/cookie.ts\' '
+          + `imported from ${ basedir }/src/helper/include-default.ts`,);
+      } else {
+        expect(`${ e }`,).to.equal(`Error: Cannot find module '${ basedir }`
+          + '\\node_modules\\needle\\src\\middlewares\\cookie.ts\' '
+          + `imported from ${ basedir }\\src\\helper\\include-default.ts`,);
+      }
     }
   },);
 },);
