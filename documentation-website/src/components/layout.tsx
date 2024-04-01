@@ -6,7 +6,6 @@ import Breadcrumbs from './breadcrumbs.tsx';
 import ScrollToHashElement from './hash-scroll.tsx';
 import { createPortal } from 'react-dom';
 import CookieConsent from './cookie-consent.tsx';
-import Window from './window.ts';
 
 interface LayoutProps {
   children?: React.ReactNode|React.ReactNode[],
@@ -35,7 +34,7 @@ const Layout = ({
     <Footer/>
     <ScrollToHashElement/>
     {/* @ts-ignore  */}
-    {(!localStorage.getItem('consest-was-asked') && window?._paq) &&
+    {(!localStorage.getItem('consent-was-asked') && window?._paq) &&
     createPortal(<CookieConsent />,document.body)
     }
   </>;
