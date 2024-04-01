@@ -1,4 +1,4 @@
-if (window.location.host === 'idrinth-api-ben.ch') {
+
   const FIRST = 0;
   const d = document;
   const s = d.getElementsByTagName('head',)[FIRST];
@@ -13,6 +13,8 @@ if (window.location.host === 'idrinth-api-ben.ch') {
   window._paq = window._paq || [];
   // @ts-expect-error paq is a new property
   const _paq = window._paq;
+  _paq.push(['requireConsent']);
+
   _paq.push([ 'trackPageView', ],);
   _paq.push([ 'enableLinkTracking', ],);
   (function() {
@@ -35,4 +37,4 @@ if (window.location.host === 'idrinth-api-ben.ch') {
     'event': 'mtm.Start',
   },);
   make('js/container_Mf0xOjsp.js',);
-}
+
