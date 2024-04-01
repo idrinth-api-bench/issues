@@ -4,6 +4,9 @@ import GetQueryString from './projects/GetQueryString.js';
 import GetHeaders from './projects/GetHeaders.js';
 import GetReply from './projects/GetReply.js';
 import GetBody from './projects/GetBody.js';
+import {
+  HTTP_NO_AUTH,
+} from '../constants.js';
 
 const routes = async(
   fastify: Fastify.FastifyInstance,
@@ -20,7 +23,7 @@ const routes = async(
     try {
       await request.jwtVerify();
     } catch (err) {
-      reply.send(err,);
+      reply.status(HTTP_NO_AUTH,).send();
       return;
     }
     reply.send({
