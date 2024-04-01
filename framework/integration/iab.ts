@@ -47,12 +47,6 @@ describe('iab-cli', function() {
     ], process.cwd() + '/fixtures',);
     await delay(WAIT_CHECK,);
     expect(status,).to.be.eq(STATUSCODE_FAILURE,);
-    // eslint-disable-next-line no-unused-expressions
-    /*expect(readFileSync('/mocked-main/result.csv',) + '',).to.not.be.empty;
-    // eslint-disable-next-line no-unused-expressions
-    expect(readFileSync('/mocked-main/result.json',) + '',).to.not.be.empty;
-    // eslint-disable-next-line no-unused-expressions
-    expect(readFileSync('/mocked-main/result.html',) + '',).to.not.be.empty;*/
   },).timeout(WAIT_TEST + WAIT_DELAY,);
   it('content', async() => {
     await delay(WAIT_DELAY,);
@@ -63,11 +57,5 @@ describe('iab-cli', function() {
     ], process.cwd() + '/fixtures',);
     await delay(WAIT_CHECK,);
     expect(status,).to.be.eq(STATUSCODE_FAILURE,);
-    // eslint-disable-next-line no-unused-expressions
-    /*expect(readFileSync('/mocked-main/result.csv',) + '',).to.not.be.empty;
-    // eslint-disable-next-line no-unused-expressions
-    expect(readFileSync('/mocked-main/result.json',) + '',).to.not.be.empty;
-    // eslint-disable-next-line no-unused-expressions
-    expect(readFileSync('/mocked-main/result.html',) + '',).to.not.be.empty;*/
   },).timeout(WAIT_TEST + WAIT_DELAY,);
 },);
