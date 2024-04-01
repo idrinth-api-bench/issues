@@ -2,7 +2,6 @@ import {
   writeFileSync,
   readFileSync,
   existsSync,
-  mkdirSync,
 } from 'fs';
 import {
   createHash,

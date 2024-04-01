@@ -39,7 +39,7 @@ export default {
     writeFileSync(TEMP_DIR + sep + 'api-bench_' + hash + key, value,);
   },
   clean(): void {
-    for (const file of readdirSync(TEMP_DIR, 'utf8')) {
+    for (const file of readdirSync(TEMP_DIR, 'utf8',)) {
       if (file.startsWith('api-bench_' + hash,)) {
         unlinkSync(TEMP_DIR + sep + file,);
       }
