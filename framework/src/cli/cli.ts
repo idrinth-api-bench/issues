@@ -39,6 +39,7 @@ export default async(args: string[], cwd: string,): Promise<number> => {
   const task = args.filter(
     (arg,) => ! arg.startsWith('--',),
   )[FIRST_ARGUMENT] || 'help';
+  resultStore.set(false,);
   switch (task) {
     case 'bench':
       await run({
