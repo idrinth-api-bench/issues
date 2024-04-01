@@ -12,6 +12,8 @@ import Counter from '../src/counter';
 import {
   STATUSCODE_FAILURE,
 } from '../src/constants';
+import './tmpdir';
+
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 const WAIT_CHECK = 7500;

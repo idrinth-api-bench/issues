@@ -14,6 +14,8 @@ import url from 'url';
 import NoProgress from '../src/progress/no-progress';
 import Counter from '../src/counter';
 import simpleMultiReporter from './simple-multi-reporter';
+import './tmpdir';
+
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 const ONE = 1;
