@@ -2,9 +2,6 @@ import React, {
   lazy,
   Suspense,
 } from 'react';
-import {
-  FiExternalLink,
-} from 'react-icons/fi';
 import t from './t.ts';
 import languageKey from '../locales/language-key.ts';
 import {
@@ -72,7 +69,6 @@ const SocialLink = ({
         title={title}
       >
         <img alt={alt} src={'/assets/socials/' + (logo ?? label) + '.svg'}/>
-        <FiExternalLink className="external-link-icon"/>
       </a>,
     };
   },);
@@ -84,7 +80,6 @@ const SocialLink = ({
       rel='noreferrer'
     >
       <img alt={''} src={'/assets/socials/' + (logo ?? label) + '.svg'}/>
-      <FiExternalLink className="external-link-icon"/>
     </a>}><EL/></Suspense>
   </li>;
 };
