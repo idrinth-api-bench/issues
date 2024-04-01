@@ -7,6 +7,7 @@ import {
   DEFAULT_RADIX,
   ONE,
 } from '../constants.ts';
+import CommandBody from './command-body.tsx';
 import './command.css';
 
 interface CommandType {
@@ -24,33 +25,18 @@ const Command = ({
   cli,
   deprecated,
 }: CommandType,) => {
-  const args = new Array(Number.parseInt(children, DEFAULT_RADIX,),).fill('',);
-  const id = shortname ?? name;
-  const list = args
-    .map((_, position,) => <li key={`command.${ id }.${ position }`}>
-      <Lang
-        lnkey={`command.${ id }.arg_${ position + ONE }` as languageKey}
-      />
-    </li>,);
-  const body = <>
-    <p>
-      <Lang lnkey={`command.${ id }.description` as languageKey}/>
-    </p>
-    <ul>
-      {list}
-    </ul>
-    {cli ? <p><Lang lnkey={'command.cli'}/></p> : ''}
-  </>;
   const className = 'card command' + (deprecated ? ' deprecated' : '');
+  const id = shortname ?? name;
   if (! shortname) {
     return <div className={className}>
       <div>
         <h3>{name}</h3>
         { deprecated && <p><Lang lnkey={'command.deprecated'}/></p>}
       </div>
-      <div>
-        {body}
-      </div>
+      <CommandBody
+        id={id}
+        cli={cli}
+      >{children}</CommandBody>
     </div>;
   }
   return <div className={className}>
@@ -59,9 +45,10 @@ const Command = ({
       <p>(<Lang lnkey={'command.or'}/> <strong>{name}</strong>)</p>
       {deprecated && <p><Lang lnkey={'command.deprecated'}/></p>}
     </div>
-    <div>
-      {body}
-    </div>
+    <CommandBody
+      id={id}
+      cli={cli}
+    >{children}</CommandBody>
   </div>;
 };
 export default Command;
