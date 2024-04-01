@@ -10,7 +10,7 @@
   z-index: 100;
   left: 10px;
   max-width: 410px;
-  box-shadow: 0 0 5px rgba(0 0 0 10%);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 10%);
 }
 
 /* Description styles */
@@ -38,9 +38,6 @@
   justify-content: flex-start;
   width: 100%;
 }
-.cookie-consent-accept-button + .cookie-consent-decline-button {
-    margin-left: 10px;
-} 
  
 .cookie-consent-accept-button,
 .cookie-consent-decline-button {
@@ -83,3 +80,7 @@
 .dark-mode .cookie-consent-decline-button:hover {
   opacity: 80%;
 }
+
+.cookie-consent-accept-button + .cookie-consent-decline-button {
+  margin-left: 10px;
+} 

@@ -23,7 +23,6 @@ const Layout = ({
   const meta = page
     ? <DefaultMeta page={page} path={canonical || path}/>
     : '';
-
   return <>
     {meta}
     <Header window={window || {}}/>
@@ -33,7 +32,7 @@ const Layout = ({
     </article>
     <Footer/>
     <ScrollToHashElement/>
-    {/* @ts-ignore  */}
+    {/*@ts-expect-error _paq can be null*/}
     {(!localStorage.getItem('consent-was-asked') && window?._paq) &&
     createPortal(<CookieConsent />,document.body)
     }

@@ -6,7 +6,7 @@ const CookieConsent = () => {
   const [consentWasClosed, setConsentWasClosed] = useState<boolean>(false);
 
   const handleConsent = (accept: boolean) => {
-     {/* @ts-ignore  */}
+    {/*@ts-expect-error _paq can be null on top level*/}
     window._paq.push([accept ? "rememberConsentGiven" : "forgetConsentGiven"]);
     localStorage.setItem("consent-was-asked", "yes");
     setConsentWasClosed(true);
