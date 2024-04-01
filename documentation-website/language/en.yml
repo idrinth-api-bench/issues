@@ -18,12 +18,24 @@ nav:
   code-of-conduct: "Code of Conduct"
 
 socials:
-  npm-main:
-    title: "@idrinth/api-bench on NPM"
+  npm:
+    title0: "@idrinth/api-bench on NPM"
+    text0: "@idrinth/api-bench"
+    title1: "@idrinth/api-bench-cli on NPM"
+    text1: "@idrinth/api-bench-cli"
     alt: "NPM"
-  npm-cli:
-    title: "@idrinth/api-bench-cli on NPM"
-    alt: "NPM"
+  docker:
+    title0: "@idrinth/api-bench on NPM"
+    text0: "Gitlab Runner"
+    title1: "@idrinth/api-bench-cli on NPM"
+    text1: "Gitea Action"
+    title2: "@idrinth/api-bench on NPM"
+    text2: "Pure Alpine"
+    title3: "@idrinth/api-bench-cli on NPM"
+    text3: "History Microservice"
+    title4: "@idrinth/api-bench on NPM"
+    text4: "History Website"
+    alt: "DockerHub"
   github:
     title: "idrinth/api-bench on GitHub"
     alt: "GitHub"

@@ -28,30 +28,25 @@ const Header = ({
   <nav aria-label='Social Links Menu'>
     <ul className={'socials'}>
       <SocialLink
-        to="https://www.npmjs.com/package/@idrinth/api-bench"
-        label={'npm-main'}
-        logo={'npm'}
+        to={[
+          'https://www.npmjs.com/package/@idrinth/api-bench',
+          'https://www.npmjs.com/package/@idrinth/api-bench-cli',
+        ]}
+        label={'npm'}
       />
       <SocialLink
-        to="https://github.com/Idrinth/api-bench"
-        label={'github'}
+        to={[
+          'https://hub.docker.com/r/idrinth/api-bench-gitlab-runner',
+          'https://hub.docker.com/r/idrinth/api-bench-gitea-action',
+          'https://hub.docker.com/r/idrinth/api-bench',
+          'https://hub.docker.com/r/idrinth/api-bench-history-microservice',
+          'https://hub.docker.com/r/idrinth/api-bench-history-website',
+        ]}
+        label={'docker'}
       />
       <SocialLink
         to={'https://www.youtube.com/@idrinth-api-bench'}
         label={'youtube'}
-      />
-      <SocialLink
-        to="https://www.linkedin.com/groups/9588634/"
-        label={'linkedin'}
-      />
-      <SocialLink
-        to="https://www.npmjs.com/package/@idrinth/api-bench-cli"
-        label={'npm-cli'}
-        logo={'npm'}
-      />
-      <SocialLink
-        to={'https://medium.com/idrinth-api-bench'}
-        label={'medium'}
       />
       <SocialLink
         to={
@@ -61,6 +56,10 @@ const Header = ({
         label={'open-sauced'}
       />
       <SocialLink
+        to="https://www.linkedin.com/groups/9588634/"
+        label={'linkedin'}
+      />
+      <SocialLink
         to={
           'https://idrinth-api-bench.slack.com/' +
           'join/shared_invite/' +
@@ -68,6 +67,14 @@ const Header = ({
           '#/shared-invite/email'
         }
         label={'slack'}
+      />
+      <SocialLink
+        to="https://github.com/Idrinth/api-bench"
+        label={'github'}
+      />
+      <SocialLink
+        to={'https://medium.com/idrinth-api-bench'}
+        label={'medium'}
       />
     </ul>
   </nav>

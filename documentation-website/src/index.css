@@ -365,7 +365,8 @@ header #medium img {
     width: auto;
   }
 
-  nav a {
+  nav a,
+  nav span {
     font-size: 1.3em;
   }
 
@@ -400,7 +401,8 @@ header #medium img {
   }
 
   header nav > ul.socials li,
-  header nav > ul.socials a {
+  header nav > ul.socials a,
+  header nav > ul.socials span {
     padding: 0;
   }
 
