@@ -12,14 +12,12 @@ import languageKey from '../locales/language-key.ts';
 interface CardProps {
   titleText: languageKey;
   titleLevel: number;
-  sideMode?: boolean;
   children: string;
 }
 
 const ContentUnit = ({
   titleText,
   titleLevel,
-  sideMode = true,
   children,
 }: CardProps,) => {
   const TitleTag = `h${ titleLevel }` as keyof JSX.IntrinsicElements;
@@ -30,10 +28,7 @@ const ContentUnit = ({
     );
     return <div>{content}</div>;
   };
-  let className = '';
-  if (sideMode) {
-    className = 'card';
-  }
+  let className = 'card';
   if (titleLevel === ONE) {
     className = ('title-' + className).replace(/-$/u, '',);
   }

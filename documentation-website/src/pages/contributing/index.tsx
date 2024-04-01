@@ -1,5 +1,5 @@
 import React from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
+import Code from '../../components/code.tsx';
 import Layout from '../../components/layout.tsx';
 import pkg from '../../../../package.json' with {
   type: 'json'
@@ -61,9 +61,9 @@ const Index = () => <Layout
       <h3><Lang lnkey={'contributing.code.mindmap.title'}/></h3>
       <div>
         <p><Lang lnkey={'contributing.code.mindmap.introduction'}/></p>
-        <SyntaxHighlighter language='json'>
+        <Code language='json'>
           {JSON.stringify(schema, null, INDENTATION_SPACES,)}
-        </SyntaxHighlighter>
+        </Code>
         <p><Lang lnkey={'contributing.code.mindmap.nodes'}/></p>
       </div>
     </div>
@@ -76,11 +76,11 @@ const Index = () => <Layout
         <p>
           <Lang lnkey={'contributing.code.tests.manual.description'}/>
         </p>
-        <SyntaxHighlighter language='bash'>{`
+        <Code language='bash'>{`
 git clone https://github.com/idrinth/api-bench
 cd api-bench
 npm run coai
-    `}</SyntaxHighlighter>
+    `}</Code>
       </div>
     </div>
     <div className='card'>
@@ -110,11 +110,11 @@ npm run coai
         <p>
           <Lang lnkey={'contributing.code.setup.description'}/>
         </p>
-        <SyntaxHighlighter language='bash'>{`
+        <Code language='bash'>{`
 git clone https://github.com/idrinth/api-bench
 cd api-bench
 npm run setup
-    `}</SyntaxHighlighter>
+    `}</Code>
       </div>
     </div>
     <div className="card">
@@ -129,13 +129,13 @@ npm run setup
         <p>
           <Lang lnkey={'contributing.code.commits.parts'}/>
         </p>
-        <SyntaxHighlighter language='markdown'>{`
+        <Code language='markdown'>{`
 <header>
 <BLANK LINE>
 <body>
 <BLANK LINE>
 <footer>
-    `}</SyntaxHighlighter>
+    `}</Code>
       </div>
     </div>
     <div className="card">
@@ -147,12 +147,12 @@ npm run setup
         <p>
           <Lang lnkey={'contributing.code.commits.header.format'}/>
         </p>
-        <SyntaxHighlighter language='markdown'>{`
+        <Code language='markdown'>{`
 <type>(<scope>): <short summary>
 
 Example:
 build(website): bump follow-redirects from 1.15.4 to 1.15.6
-    `}</SyntaxHighlighter>
+    `}</Code>
       </div>
     </div>
     <div className={'card'}>
@@ -254,13 +254,13 @@ build(website): bump follow-redirects from 1.15.4 to 1.15.6
             />
           </li>
         </ul>
-        <SyntaxHighlighter language='markdown'>{`
+        <Code language='markdown'>{`
 // Bad:
 Fixes bug.
 
 // Good:
 fix unit tests failing
-    `}</SyntaxHighlighter>
+    `}</Code>
       </div>
     </div>
     <ContentUnit
@@ -285,12 +285,12 @@ fix unit tests failing
         <p>
           <Lang lnkey={'contributing.code.commits.footer.breaking'}/>
         </p>
-        <SyntaxHighlighter language='markdown'>{`
+        <Code language='markdown'>{`
 BREAKING CHANGE: users must now provide a valid JWT token to access
 protected routes.
 
 Closes #123
-    `}</SyntaxHighlighter>
+    `}</Code>
       </div>
     </div>
     <div className={'card'}>
@@ -301,14 +301,14 @@ Closes #123
         <p>
           <Lang lnkey={'contributing.code.commits.complete.description'}/>
         </p>
-        <SyntaxHighlighter language='markdown'>{`
+        <Code language='markdown'>{`
 fix(framework): resolve issue with string injection from env
 
 Fix a bug where given a function route definition that has a string-typed
 or untyped parameter, the value would never be injected from the environment.
 
 Closes #294
-    `}</SyntaxHighlighter>
+    `}</Code>
       </div>
     </div>
     <div className={'card'}>
