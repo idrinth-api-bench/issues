@@ -30,7 +30,7 @@ export default {
     if (! existsSync(TEMP_DIR + sep + 'api-bench_' + hash + key,)) {
       return defaulted;
     }
-    return readFileSync(TEMP_DIR + sep + key,) + '';
+    return readFileSync(TEMP_DIR + sep + 'api-bench_' + hash + key, 'utf8',);
   },
   set(key: string, value: string,): void {
     if (! keyCheck.test(key,)) {

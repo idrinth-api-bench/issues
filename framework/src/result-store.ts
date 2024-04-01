@@ -25,7 +25,7 @@ export default {
       return defaulted;
     }
     return readFileSync(
-      TEMP_DIR + sep + 'r' + 'api-bench-r' + hash,
+      TEMP_DIR + sep + 'api-bench-r' + hash,
       'utf8',
     ) === 'true';
   },
