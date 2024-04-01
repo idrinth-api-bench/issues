@@ -2,11 +2,7 @@ import React from 'react';
 import {
   Lang,
 } from './lang.tsx';
-import languageKey from '../locales/language-key.ts';
-import {
-  DEFAULT_RADIX,
-  ONE,
-} from '../constants.ts';
+import CommandBody from './command-body.tsx';
 import './command.css';
 
 interface CommandType {
@@ -17,6 +13,7 @@ interface CommandType {
   deprecated?: true;
 }
 
+// eslint-disable-next-line complexity
 const Command = ({
   name,
   shortname,
@@ -24,34 +21,30 @@ const Command = ({
   cli,
   deprecated,
 }: CommandType,) => {
-  const args = new Array(Number.parseInt(children, DEFAULT_RADIX,),).fill('',);
+  const className = 'card command' + (deprecated ? ' deprecated' : '');
   const id = shortname ?? name;
-  const list = args
-    .map((_, position,) => <li key={`command.${ id }.${ position }`}>
-      <Lang
-        lnkey={`command.${ id }.arg_${ position + ONE }` as languageKey}
-      />
-    </li>,);
-  const body = <>
-    <p>
-      <Lang lnkey={`command.${ id }.description` as languageKey}/>
-    </p>
-    <ul>
-      {list}
-    </ul>
-    {cli ? <p><Lang lnkey={'command.cli'}/></p> : ''}
-  </>;
-  const className = 'command' + (deprecated ? ' deprecated' : '');
   if (! shortname) {
-    return <li className={className}>
-      <strong>{name}</strong>
-      {body}
-    </li>;
+    return <div className={className}>
+      <div>
+        <h3>{name}</h3>
+        { deprecated && <p><Lang lnkey={'command.deprecated'}/></p>}
+      </div>
+      <CommandBody
+        id={id}
+        cli={cli}
+      >{children}</CommandBody>
+    </div>;
   }
-  return <li className={className}>
-    <strong>{shortname}</strong>{' '}
-    (<Lang lnkey={'command.or'}/> <strong>{name}</strong>)
-    {body}
-  </li>;
+  return <div className={className}>
+    <div>
+      <h3>{shortname}</h3>
+      <p>(<Lang lnkey={'command.or'}/> <strong>{name}</strong>)</p>
+      {deprecated && <p><Lang lnkey={'command.deprecated'}/></p>}
+    </div>
+    <CommandBody
+      id={id}
+      cli={cli}
+    >{children}</CommandBody>
+  </div>;
 };
 export default Command;

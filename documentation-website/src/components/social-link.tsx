@@ -37,7 +37,7 @@ const SocialLink = ({
             target='_blank'
             title={title}
           >{text}</a>
-        </li>);
+        </li>,);
         pos ++;
       }
       return {

@@ -1,6 +1,11 @@
 .hljs {
   background: #dbdbdb;
   padding: 0.5em;
+  overflow-x: scroll;
+}
+
+.hljs > code {
+  display: block;
 }
 
 .dark-mode .hljs {

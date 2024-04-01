@@ -321,6 +321,7 @@ usage:
   title: "Usage"
   binaries:
     title: "Binaries"
+    description: "The following binaries are available for use via scripts in your package.json."
   programmatically:
     title: "Programmatically"
     description: "Basically require main/include main and supply the executor method with required parameters. Tasks defined in src/routes-subfolders before, before_task, before_each, main, after_each, after_task, and after will be used to automatically fill the Job processed by the executor. Automatic filling only happens when there are no tasks provided to the function."
@@ -384,6 +385,7 @@ loader:
 
 command:
   or: "or"
+  deprecated: "This command is deprecated."
   cli: "Available via the cli package @idrinth/api-bench-api and the framework."
   iabr:
     description: "runs the current working directory's project if the routes folder is properly setup"
