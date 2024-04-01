@@ -481,50 +481,48 @@ header #medium img {
   }
 }
 
-@media screen {
-  html.dark-mode {
-    background-color: var(--dark-gray);
-    color: var(--light-gray);
-  }
+html.dark-mode {
+  background-color: var(--dark-gray);
+  color: var(--white);
+}
 
-  .dark-mode #loader {
-    background-image: var(--lighter);
-  }
+.dark-mode #loader {
+  background-image: var(--lighter);
+}
 
-  .dark-mode a,
-  .dark-mode nav a,
-  .dark-mode footer a,
-  .dark-mode footer span {
-    color: var(--light-green);
-  }
+.dark-mode a,
+.dark-mode nav a,
+.dark-mode footer a,
+.dark-mode footer span {
+  color: var(--light-green);
+}
 
-  .dark-mode #loader span {
-    background-image: url("assets/loading-svgrepo-com.white.svg");
-  }
+.dark-mode #loader span {
+  background-image: url("assets/loading-svgrepo-com.white.svg");
+}
 
-  .dark-mode header strong {
-    color: var(--white);
-  }
+.dark-mode header strong {
+  color: var(--white);
+}
 
-  .dark-mode header,
-  .dark-mode footer {
-    background-color: var(--very-dark-gray);
-    box-shadow: none;
-  }
+.dark-mode header,
+.dark-mode footer {
+  background-color: var(--very-dark-gray);
+  box-shadow: none;
+}
 
-  .dark-mode pre {
-    background-color: var(--black);
-  }
+.dark-mode pre {
+  background-color: var(--black);
+}
 
-  header button {
-    display: flex;
-    justify-content: center;
-  }
+header button {
+  display: flex;
+  justify-content: center;
+}
 
-  .dark-mode-icon {
-    padding: 0;
-    width: 70%;
-  }
+.dark-mode-icon {
+  padding: 0;
+  width: 70%;
 }
 
 @media screen and (width >= 600px) {
