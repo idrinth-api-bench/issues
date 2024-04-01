@@ -31,7 +31,7 @@ export default {
   },
   set(value: boolean,): void {
     writeFileSync(
-      TEMP_DIR + sep + 'api-bench-' + hash,
+      TEMP_DIR + sep + 'api-bench-r' + hash,
       value ? 'true' : 'false',
       'utf8',
     );
