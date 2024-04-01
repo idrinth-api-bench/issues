@@ -10,7 +10,7 @@
   z-index: 100;
   left: 10px;
   max-width: 410px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0 0 0 10%);
 }
 
 /* Description styles */
@@ -65,7 +65,7 @@
 }
 
 .cookie-consent-decline-button:hover {
-  background-color: rgb(167, 173, 179);
+  background-color: rgb(167 173 179);
 }
 
 .dark-mode .cookie-consent {
