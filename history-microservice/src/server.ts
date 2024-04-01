@@ -4,6 +4,7 @@ import fastifyCors from '@fastify/cors';
 import fastifyHelmet from '@fastify/helmet';
 import fastifyJwt from '@fastify/jwt';
 //import fastifyMysql from '@fastify/mysql';
+import fastifyRateLimit from '@fastify/rate-limit';
 import {
   DEFAULT_RADIX,
   EXIT_FAILURE,
@@ -26,6 +27,13 @@ const fastify = Fastify({
 fastify.register(fastifyCors, {
   origin: process.env.FASTIFY_ORIGIN,
 },);
+fastify.register(fastifyRateLimit, {
+  max: Number.parseInt(
+    process.env.FASTIFY_RATE_LIMIT,
+    DEFAULT_RADIX,
+  ),
+  timeWindow: '1 minute',
+},);
 /*fastify.register(fastifyMysql, {
   connectionString: process.env.FASTIFY_MYSQL_CONNECTION,
 },);*/
@@ -34,7 +42,7 @@ fastify.register(fastifyJwt, {
 },);
 fastify.register(fastifyCompress, {
   threshold: Number.parseInt(
-    process.env.FASTIFY_COPRESS_MIN_SIZE,
+    process.env.FASTIFY_COMPRESS_MIN_SIZE,
     DEFAULT_RADIX,
   ),
 },);

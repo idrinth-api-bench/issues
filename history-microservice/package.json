@@ -39,7 +39,8 @@
     "@fastify/mysql": "^4.2.0",
     "@fastify/jwt": "^8.0.0",
     "@fastify/compress": "^7.0.0",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "@fastify/rate-limit": "^9.1.0"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
