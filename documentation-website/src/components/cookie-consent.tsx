@@ -16,8 +16,8 @@ const CookieConsent = () => {
       {!consentWasClosed && (
         <div className={"cookie-consest"}>
           <div className={"cookie-consest-description"}>
-            <h2>We use Cookies</h2>
-            <p>
+            <h2 className={"cookie-title"}>We use Cookies</h2>
+            <p className={"cookie-description"} >
               We use cookies to improve your browsing experience and for
               marketing purposes.
             </p>
