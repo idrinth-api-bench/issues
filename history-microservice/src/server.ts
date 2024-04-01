@@ -58,6 +58,7 @@ fastify.register(routeRoutes,);
 fastify.listen({
   port: Number.parseInt(process.env.FASTIFY_PORT, DEFAULT_RADIX,),
   host: process.env.FASTIFY_HOST,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
 }, (err, address,) => {
   if (err) {
     fastify.log.error(err,);
