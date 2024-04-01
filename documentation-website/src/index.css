@@ -252,6 +252,8 @@ header strong {
 
 article {
   min-height: calc(100vh - 6em - 2rem - 2em - 6px);
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 #loader {
@@ -466,8 +468,8 @@ header #medium img {
   }
 
   .faq-ul-list {
-    max-width: 600px;
-    width: 600px;
+    width: 100%;
+    padding: 0;
   }
 }
 
