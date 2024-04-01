@@ -33,30 +33,21 @@ const Header = ({
         logo={'npm'}
       />
       <SocialLink
-        to="https://www.npmjs.com/package/@idrinth/api-bench-cli"
-        label={'npm-cli'}
-        logo={'npm'}
-      />
-      <SocialLink
         to="https://github.com/Idrinth/api-bench"
         label={'github'}
+      />
+      <SocialLink
+        to={'https://www.youtube.com/@idrinth-api-bench'}
+        label={'youtube'}
       />
       <SocialLink
         to="https://www.linkedin.com/groups/9588634/"
         label={'linkedin'}
       />
       <SocialLink
-        to={
-          'https://idrinth-api-bench.slack.com/' +
-          'join/shared_invite/' +
-          'zt-2f4zmw2sz-c3etHzCFq3LtZpkR15xXMA' +
-          '#/shared-invite/email'
-        }
-        label={'slack'}
-      />
-      <SocialLink
-        to={'https://www.youtube.com/@idrinth-api-bench'}
-        label={'youtube'}
+        to="https://www.npmjs.com/package/@idrinth/api-bench-cli"
+        label={'npm-cli'}
+        logo={'npm'}
       />
       <SocialLink
         to={'https://medium.com/idrinth-api-bench'}
@@ -68,6 +59,15 @@ const Header = ({
           '/b1f1f893-1572-4353-af0c-548ba47007e7'
         }
         label={'open-sauced'}
+      />
+      <SocialLink
+        to={
+          'https://idrinth-api-bench.slack.com/' +
+          'join/shared_invite/' +
+          'zt-2f4zmw2sz-c3etHzCFq3LtZpkR15xXMA' +
+          '#/shared-invite/email'
+        }
+        label={'slack'}
       />
     </ul>
   </nav>
