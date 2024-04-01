@@ -11,6 +11,11 @@
   --lighter: hsla(0deg 0% 100% / 5%);
 }
 
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 html {
   height: 100vh;
 }
@@ -41,23 +46,23 @@ h5 {
 }
 
 h1 {
-  font-size: 150%;
+  font-size: 200%;
 }
 
 h2 {
-  font-size: 140%;
+  font-size: 180%;
 }
 
 h3 {
-  font-size: 130%;
+  font-size: 160%;
 }
 
 h4 {
-  font-size: 120%;
+  font-size: 140%;
 }
 
 h5 {
-  font-size: 110%;
+  font-size: 120%;
 }
 
 a {
@@ -457,14 +462,32 @@ header #medium img {
   }
 
   .card {
-    padding: 2em 3em;
     display: grid;
     grid-template-columns: 1fr 2fr;
+    background: rgba(0,0,0,0.1);
+    box-shadow: rgba(0,0,0,0.5) 0.5em 0.5em 1em;
+    border: var(--dark-green) solid 1px;
+    margin-bottom: 1.5em;
+    border-radius: 0.5em 0 0 0.5em;
   }
 
-  .card:first-child {
+  .card > :nth-child(1) {
     text-align: right;
-    padding-right: 0.5em;
+    padding: 1em;
+    background: rgba(0,0,0,0.1);
+    border-right: var(--dark-green) solid 1px;
+  }
+
+  .card > :nth-child(1) > * {
+    text-align: right;
+  }
+
+  .card > :nth-child(2) {
+    padding: 1.5em 1em;
+  }
+
+  .card > ul:nth-child(2) {
+    padding-left: 2em;
   }
 
   .faq-ul-list {
@@ -516,10 +539,6 @@ html.dark-mode {
 .dark-mode footer {
   background-color: var(--very-dark-gray);
   box-shadow: none;
-}
-
-.dark-mode pre {
-  background-color: var(--black);
 }
 
 header button {

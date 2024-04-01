@@ -41,17 +41,27 @@ const Command = ({
     </ul>
     {cli ? <p><Lang lnkey={'command.cli'}/></p> : ''}
   </>;
-  const className = 'command' + (deprecated ? ' deprecated' : '');
+  const className = 'card command' + (deprecated ? ' deprecated' : '');
   if (! shortname) {
-    return <li className={className}>
-      <strong>{name}</strong>
-      {body}
-    </li>;
+    return <div className={className}>
+      <div>
+        <h3>{name}</h3>
+        { deprecated && <p><Lang lnkey={'command.deprecated'}/></p>}
+      </div>
+      <div>
+        {body}
+      </div>
+    </div>;
   }
-  return <li className={className}>
-    <strong>{shortname}</strong>{' '}
-    (<Lang lnkey={'command.or'}/> <strong>{name}</strong>)
-    {body}
-  </li>;
+  return <div className={className}>
+    <div>
+      <h3>{shortname}</h3>
+      <p>(<Lang lnkey={'command.or'}/> <strong>{name}</strong>)</p>
+      {deprecated && <p><Lang lnkey={'command.deprecated'}/></p>}
+    </div>
+    <div>
+      {body}
+    </div>
+  </div>;
 };
 export default Command;
