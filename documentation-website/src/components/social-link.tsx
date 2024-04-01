@@ -48,7 +48,6 @@ const SocialLink = ({
           className="external-link"
         >
           <img alt={alt} src={'/assets/socials/' + (logo ?? label) + '.svg'}/>
-          <FiExternalLink className="external-link-icon"/>
           <ul>{items}</ul>
         </span>,
       };
@@ -58,7 +57,6 @@ const SocialLink = ({
         className="external-link"
       >
         <img alt={''} src={'/assets/socials/' + (logo ?? label) + '.svg'}/>
-        <FiExternalLink className="external-link-icon"/>
       </span>}><EL/></Suspense>
     </li>;
   }
