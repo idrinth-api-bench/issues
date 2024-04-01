@@ -1,4 +1,4 @@
-
+if (window.location.host === 'idrinth-api-ben.ch') { 
   const FIRST = 0;
   const d = document;
   const s = d.getElementsByTagName('head',)[FIRST];
@@ -37,4 +37,4 @@
     'event': 'mtm.Start',
   },);
   make('js/container_Mf0xOjsp.js',);
-
+}
