@@ -1,14 +1,17 @@
 .faq-item {
   width: 100%;
-  max-width: 600px;
-  border-radius: 0.25em;
+  list-style-type: none;
   border-bottom: 1px solid var(--black);
+}
+
+.faq-item:focus {
+  box-shadow: 0 0 5px rgb(255 255 255);
 }
 
 .faq-item .accordion-section {
   cursor: pointer;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -29,7 +32,7 @@
 }
 
 .dark-mode .faq-item {
-    border-bottom-color: var(--white);
+  border-bottom-color: var(--white);
 }
 
 .dark-mode .faq-item .up-arrow {

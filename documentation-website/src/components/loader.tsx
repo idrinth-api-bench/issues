@@ -11,11 +11,11 @@ interface LoaderProps {
 
 const Loader = ({
   lnkey,
-}: LoaderProps,) => <Layout
-  Outlet={<div id='loader'>
+}: LoaderProps,) => <Layout>
+  <div id='loader'>
     <span></span>
     <strong><Lang lnkey={lnkey}/></strong>
-  </div>}
-/>;
+  </div>
+</Layout>;
 
 export default Loader;

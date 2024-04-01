@@ -11,24 +11,49 @@ import {
 } from './lang.tsx';
 import DarkModeButton from './dark-mode-button.tsx';
 import SocialLink from './social-link.tsx';
+import {
+  MdArrowDropDown,
+} from 'react-icons/md';
 
 const Header = ({
   window,
 }: {window: Window},) => <header>
   <div>
-    <img src={IAB} alt="@idrinth/api-bench" />
+    <NavLink id="logo" to="/">
+      <img src={IAB} alt="@idrinth/api-bench" />
+    </NavLink>
     <strong>@idrinth/api-bench</strong>
     <em>v{pkg.version}</em>
   </div>
-  <nav>
-    <ul>
+  <nav aria-label='Social Links Menu'>
+    <ul className={'socials'}>
       <SocialLink
-        to="https://www.npmjs.com/package/@idrinth/api-bench"
+        to={[
+          'https://www.npmjs.com/package/@idrinth/api-bench',
+          'https://www.npmjs.com/package/@idrinth/api-bench-cli',
+        ]}
         label={'npm'}
       />
       <SocialLink
-        to="https://github.com/Idrinth/api-bench"
-        label={'github'}
+        to={[
+          'https://hub.docker.com/r/idrinth/api-bench-gitlab-runner',
+          'https://hub.docker.com/r/idrinth/api-bench-gitea-action',
+          'https://hub.docker.com/r/idrinth/api-bench',
+          'https://hub.docker.com/r/idrinth/api-bench-history-microservice',
+          'https://hub.docker.com/r/idrinth/api-bench-history-website',
+        ]}
+        label={'docker'}
+      />
+      <SocialLink
+        to={'https://www.youtube.com/@idrinth-api-bench'}
+        label={'youtube'}
+      />
+      <SocialLink
+        to={
+          'https://app.opensauced.pizza/workspaces' +
+          '/b1f1f893-1572-4353-af0c-548ba47007e7'
+        }
+        label={'open-sauced'}
       />
       <SocialLink
         to="https://www.linkedin.com/groups/9588634/"
@@ -44,26 +69,33 @@ const Header = ({
         label={'slack'}
       />
       <SocialLink
-        to={'https://www.youtube.com/channel/UCv0TBTkJdFQrdYLH8eR4-YQ'}
-        label={'youtube'}
+        to="https://github.com/Idrinth/api-bench"
+        label={'github'}
+      />
+      <SocialLink
+        to={'https://medium.com/idrinth-api-bench'}
+        label={'medium'}
       />
     </ul>
   </nav>
-  <nav>
+  <nav aria-label='Main Menu'>
     <ul>
-      <li>
-        <NavLink to="/"><Lang lnkey='nav.home'/></NavLink>
-      </li>
       <li>
         <NavLink to="/quick-start/">
           <Lang lnkey='nav.quick-start'/>
         </NavLink>
       </li>
       <li>
-        <NavLink to="/contributing/">
+        <NavLink
+          aria-expanded="false"
+          id="dropdown-contributing"
+          aria-controls="contributing-menu"
+          className="dropdown-links-heading"
+          to="/contributing/">
           <Lang lnkey='nav.contributing'/>
+          <MdArrowDropDown />
         </NavLink>
-        <ul>
+        <ul aria-labelledby="dropdown-contributing" id="contributing-menu" >
           <li>
             <NavLink to="/contributing/contributors/">
               <Lang lnkey='nav.contributors'/>
@@ -77,10 +109,16 @@ const Header = ({
         </ul>
       </li>
       <li>
-        <NavLink to="/usage/">
+        <NavLink
+          id="dropdown-usage-links"
+          aria-controls='usages-menu'
+          className="dropdown-links-heading"
+          aria-expanded="false"
+          to="/usage/">
           <Lang lnkey='nav.usage'/>
+          <MdArrowDropDown />
         </NavLink>
-        <ul>
+        <ul id="usages-menu" aria-labelledby="dropdown-usage-links" >
           <li>
             <NavLink to="/usage/autowiring/">
               <Lang lnkey='nav.autowiring'/>

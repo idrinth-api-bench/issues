@@ -2,8 +2,13 @@
 /node_modules
 ./cypress.config.ts
 
-# Cypress
-/cypress/support/commands.ts
+# CLI
+/cli/src/**/*.js
+/cli/src/locales
+/cli/node_modules
+/cli/LICENSE
+/cli/.nyc_output
+/cli/coverage
 
 # Framework
 /framework/node_modules
@@ -50,6 +55,12 @@
 /history-website/dist
 /history-website/coverage
 /history-website/cypress/screenshots
+/history-website/src/locales
+
+#Mindmap
+/mindmap/node_modules
+/mindmap/dist
+/mindmap/cache
 
 # Editor directories and files
 .DS_Store

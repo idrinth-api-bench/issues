@@ -1,10 +1,18 @@
 [
-    {
-      "id": "abriel-shipley",
-      "name": "Abriel Shipley",
-      "url": "https://abrielshipley.com",
-      "contributions": "Providing UX guidance on website information and navigation",
-      "location": "unknown",
-      "intro": "I'm a product design leader and mentor creating human-centered experiences that make a positive impact."
-    }
+  {
+    "id": "abriel-shipley",
+    "name": "Abriel Shipley",
+    "url": "https://abrielshipley.com",
+    "contributions": "Providing UX guidance on website information and navigation",
+    "location": "unknown",
+    "intro": "I'm a product design leader and mentor creating human-centered experiences that make a positive impact."
+  },
+  {
+    "id": "david-adams",
+    "name": "David Adams",
+    "url": "https://www.linkedin.com/in/david-adams-576682139/",
+    "contributions": "Providing a full project code review with guidance to project maintenance and internationalisation",
+    "location": "UK",
+    "intro": "Specialist react native software engineer, coach/mentor, creator of 'The Developer Safe Place'- a sanctuary for devs."
+  }
 ]

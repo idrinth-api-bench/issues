@@ -1,55 +1,76 @@
 import React from 'react';
 import Layout from '../../../components/layout.tsx';
 import Code from '../../../components/code.tsx';
+import {
+  Lang,
+} from '../../../components/lang.tsx';
 
 const Middlewares = () => <Layout
-  Outlet={<>
-    <div className='title-card'>
-      <h1>Middlewares</h1>
+  page='middlewares'
+  path='/usage/middlewares'
+>
+  <div className='title-card'>
+    <h1><Lang lnkey={'middlewares.title'}/></h1>
+    <p>
+      <Lang lnkey={'middlewares.description'}/>
+    </p>
+    <ul>
+      <li>{'^abc -> /path/to/this/library/src/middlewares/abc.js'}</li>
+      <li>{'$@some/lib/abc -> @some/lib/src/middlewares/abc.js'}</li>
+      <li>{'#abc -> /path/to/root/src/middlewares/abc.js'}</li>
+    </ul>
+  </div>
+  <div className='card'>
+    <h2><Lang lnkey={'middlewares.provided.title'}/></h2>
+    <ul>
+      <li>
+        <Lang lnkey={'middlewares.provided.encoding'}/>
+      </li>
+      <li>
+        <Lang lnkey={'middlewares.provided.access'}/>
+      </li>
+      <li>
+        <Lang lnkey={'middlewares.provided.csrf'}/>
+      </li>
+      <li>
+        <Lang lnkey={'middlewares.provided.2xx'}/>
+      </li>
+      <li>
+        <Lang lnkey={'middlewares.provided.403'}/>
+      </li>
+      <li>s
+        <Lang lnkey={'middlewares.provided.404'}/>
+      </li>
+      <li>
+        <Lang lnkey={'middlewares.provided.user-agent'}/>
+      </li>
+      <li>
+        <Lang lnkey={'middlewares.provided.cookies'}/>
+      </li>
+      <li>
+        <Lang lnkey={'middlewares.provided.json'}/>
+      </li>
+      <li>
+        <Lang lnkey={'middlewares.provided.xml'}/>
+      </li>
+      <li>
+        <Lang lnkey={'middlewares.provided.silent-server-validator'}/>
+      </li>
+    </ul>
+  </div>
+  <div className='card'>
+    <h2><Lang lnkey={'middlewares.custom.title'}/></h2>
+    <div>
       <p>
-          Middlewares use an absolute file path to be loaded. The following
-          characters will be used to expand short forms:
+        <Lang lnkey={'middlewares.custom.description'}/>
       </p>
-      <ul>
-        <li>{'^abc -> /path/to/this/library/src/middlewares/abc.js'}</li>
-        <li>{'$@some/lib/abc -> @some/lib/src/middlewares/abc.js'}</li>
-        <li>{'#abc -> /path/to/root/src/middlewares/abc.js'}</li>
-      </ul>
-    </div>
-    <div className='card'>
-      <h2>Provided Middlewares</h2>
-      <ul>
-        <li>json and form encode</li>
-        <li>access token handling</li>
-        <li>csrf-header handling</li>
-        <li>status 2xx check</li>
-        <li>status 403 check</li>
-        <li>status 404 check</li>
-        <li>user-agent</li>
-        <li>cookies</li>
-        <li>json-validator</li>
-        <li>xml-validator</li>
-        <li>silent-server-validator</li>
-      </ul>
-    </div>
-    <div className='card'>
-      <h2>Custom Middleware</h2>
-      <div>
-        <p>
-          For custom middleware, implement the following interface. Prepare is
-          called before sending a request, process after a request. If an error
-          is thrown in process, any further validations are skipped.
-        </p>
-        <Code language='typescript'>
-          {`interface Middleware {
+      <Code language='typescript'>
+        {`interface Middleware {
   process(response: Result): void;
   prepare(request: Request): Request;
 }`}
-        </Code>
-      </div>
+      </Code>
     </div>
-  </>}
-  page='middlewares'
-  path='/usage/middlewares'
-/>;
+  </div>
+</Layout>;
 export default Middlewares;

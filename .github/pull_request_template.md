@@ -14,7 +14,9 @@ the pull request as good as possible.
 - [History-Microservice][HM] changes to the history-microservice
 - [Documentation][Documentation] changes to a md file (Readme for example)
 - [Examples][Examples] adding or adjusting examples
-- [DockerFiles][DF] adding or modifying dockerfiles
+- [Dockerfiles][DF] adding or modifying dockerfiles
+- [Mindmap][MM] adding to or modifying the mindmap
+- [CLI][CLI] adding to or modifying the cli
 - [Full][Full] changes to multiple categories
 
 [Full]: ?quick_pull=1&template=full.md
@@ -22,8 +24,10 @@ the pull request as good as possible.
 [HM]: ?quick_pull=1&template=history-microservice.md
 [HW]: ?quick_pull=1&template=history-website.md
 [DW]: ?quick_pull=1&template=documentation-website.md
-[Translations]: ?quick_pull=1&template=translations.md
+[Translations]: ?quick_pull=1&template=translation.md
 [Tools]: ?quick_pull=1&template=tools.md
 [Framework]: ?quick_pull=1&template=framework.md
 [Examples]: ?quick_pull=1&template=examples.md
 [DF]: ?quick_pull=1&template=dockerfiles.md
+[MM]: ?quick_pull=1&template=mindmap.md
+[CLI]: ?quick_pull=1&template=cli.md

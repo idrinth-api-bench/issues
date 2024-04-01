@@ -1,6 +1,11 @@
 .hljs {
   background: #dbdbdb;
   padding: 0.5em;
+  overflow-x: scroll;
+}
+
+.hljs > code {
+  display: block;
 }
 
 .dark-mode .hljs {
@@ -21,4 +26,8 @@
 
 .hljs .hljs-attr {
   color: blue;
+}
+
+.dark-mode .hljs .hljs-attr {
+  color: lightblue;
 }

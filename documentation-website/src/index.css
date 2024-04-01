@@ -11,6 +11,11 @@
   --lighter: hsla(0deg 0% 100% / 5%);
 }
 
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 html {
   height: 100vh;
 }
@@ -41,23 +46,23 @@ h5 {
 }
 
 h1 {
-  font-size: 150%;
+  font-size: 200%;
 }
 
 h2 {
-  font-size: 140%;
+  font-size: 180%;
 }
 
 h3 {
-  font-size: 130%;
+  font-size: 160%;
 }
 
 h4 {
-  font-size: 120%;
+  font-size: 140%;
 }
 
 h5 {
-  font-size: 110%;
+  font-size: 120%;
 }
 
 a {
@@ -73,7 +78,7 @@ header {
   width: 100%;
   display: grid;
   grid-template-columns: 90% 10%;
-  background-color: var(--light-gray);
+  background-color: var(--white);
   padding-bottom: 1em;
   padding-top: 1em;
 }
@@ -81,12 +86,8 @@ header {
 header button {
   grid-column: 2;
   grid-row: 1;
-}
-
-header img {
-  grid-row: 1/3;
-  padding-right: 1em;
-  height: 3em;
+  display: flex;
+  justify-content: center;
 }
 
 header div {
@@ -109,6 +110,12 @@ nav a {
 header nav img {
   max-height: 1em;
   padding: 0;
+}
+
+#logo {
+  grid-row: 1/3;
+  padding-right: 1em;
+  height: 3em;
 }
 
 header nav a.active {
@@ -157,8 +164,13 @@ footer {
   display: grid;
   grid-template-columns: 1fr;
   padding: 1rem 1em;
-  background-color: var(--light-gray);
+  background-color: var(--white);
   width: 100%;
+}
+
+header,
+footer {
+  box-shadow: rgb(0 0 0 / 16%) 0 1px 4px, rgb(51 51 51) 0 0 0 3px;
 }
 
 footer ul {
@@ -199,12 +211,46 @@ header strong {
   font-weight: normal;
 }
 
-a[target="_blank"] {
-  padding-right: 1em;
-  background-image: url("assets/external-link-svgrepo-com.black.svg");
-  background-position: right center;
-  background-size: 1em 1em;
-  background-repeat: no-repeat;
+.dropdown-links-heading {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-links-heading > svg {
+  height: 20px;
+  width: 20px;
+}
+
+.external-link {
+  display: flex;
+  gap: 5px;
+  color: black;
+}
+
+.external-link-icon {
+  width: 1em;
+  height: 1em;
+  color: var(--black);
+}
+
+.dark-mode .external-link-icon {
+  color: var(--white);
+}
+
+.theme-toggle-btn {
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.theme-toggle-btn:hover {
+  cursor: pointer;
+}
+
+.theme-toggle-btn > svg {
+  width: 25px;
+  height: 25px;
 }
 
 #root {
@@ -213,6 +259,8 @@ a[target="_blank"] {
 
 article {
   min-height: calc(100vh - 6em - 2rem - 2em - 6px);
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 #loader {
@@ -222,6 +270,17 @@ article {
   width: 100%;
   height: 100%;
   background-color: var(--darker);
+}
+
+.dark-mode a,
+.dark-mode nav a,
+.dark-mode footer a,
+.dark-mode footer span {
+  color: var(--light-green);
+}
+
+.dark-mode header strong {
+  color: var(--white);
 }
 
 #loader strong {
@@ -270,6 +329,11 @@ footer li:last-child::after {
   place-self: center;
 }
 
+#logo img {
+  width: 3em;
+  height: 3em;
+}
+
 nav.breadcrumbs li::after {
   content: " > ";
 }
@@ -280,6 +344,37 @@ nav.breadcrumbs li:last-of-type::after {
 
 .sponsor h2 {
   text-align: left;
+}
+
+header #github img,
+header #medium img {
+  border: 1px solid #fff;
+  background: #fff;
+  border-radius: 50%;
+}
+
+html.dark-mode {
+  background-color: var(--dark-gray);
+  color: var(--white);
+}
+
+.dark-mode #loader {
+  background-image: var(--lighter);
+}
+
+.dark-mode #loader span {
+  background-image: url("assets/loading-svgrepo-com.white.svg");
+}
+
+.dark-mode header,
+.dark-mode footer {
+  background-color: var(--very-dark-gray);
+  box-shadow: none;
+}
+
+.dark-mode-icon {
+  padding: 0;
+  width: 70%;
 }
 
 @media only screen and (width >= 600px) {
@@ -314,7 +409,8 @@ nav.breadcrumbs li:last-of-type::after {
     width: auto;
   }
 
-  nav a {
+  nav a,
+  nav span {
     font-size: 1.3em;
   }
 
@@ -328,12 +424,6 @@ nav.breadcrumbs li:last-of-type::after {
     grid-row: 1;
   }
 
-  header #github img {
-    border: 1px solid #fff;
-    background: #fff;
-    border-radius: 50%;
-  }
-
   header nav > ul {
     flex-wrap: wrap;
     justify-content: center;
@@ -342,9 +432,28 @@ nav.breadcrumbs li:last-of-type::after {
     margin-top: 0.5em;
   }
 
+  header nav > ul.socials {
+    display: grid;
+    gap: 0;
+    row-gap: 0.25em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
   nav li {
     border: none;
     width: initial;
+  }
+
+  footer span {
+    padding-left: 5rem;
+    max-height: 100%;
+    white-space: nowrap;
+  }
+
+  header nav > ul.socials li,
+  header nav > ul.socials a,
+  header nav > ul.socials span {
+    padding: 0;
   }
 
   nav ul ul {
@@ -360,19 +469,13 @@ nav.breadcrumbs li:last-of-type::after {
     padding: 0 0.5em;
   }
 
-  footer span {
-    padding-left: 5rem;
-    max-height: 100%;
-    white-space: nowrap;
-  }
-
   nav li:hover ul {
     display: flex;
     flex-direction: column;
     gap: 1em;
     width: auto;
     position: absolute;
-    background: var(--light-gray);
+    background: var(--white);
     padding: 1em;
     box-shadow: 1em 1em 1.5em var(--dark-gray);
   }
@@ -396,9 +499,37 @@ nav.breadcrumbs li:last-of-type::after {
   }
 
   .card {
-    padding: 2em 3em;
     display: grid;
     grid-template-columns: 1fr 2fr;
+    background: rgba(0 0 0 / 10%);
+    box-shadow: rgba(0 0 0 / 50%) 0.5em 0.5em 1em;
+    border: var(--dark-green) solid 1px;
+    margin-bottom: 1.5em;
+    border-radius: 0.5em 0 0 0.5em;
+  }
+
+  .card > :nth-child(1) {
+    text-align: right;
+    padding: 1em;
+    background: rgba(0 0 0 / 10%);
+    border-right: var(--dark-green) solid 1px;
+  }
+
+  .card > :nth-child(1) > * {
+    text-align: right;
+  }
+
+  .card > :nth-child(2) {
+    padding: 1.5em 1em;
+  }
+
+  .card > ul:nth-child(2) {
+    padding-left: 2em;
+  }
+
+  .faq-ul-list {
+    width: 100%;
+    padding: 0;
   }
 }
 
@@ -414,55 +545,6 @@ nav.breadcrumbs li:last-of-type::after {
 
   header {
     grid-template-columns: 30% auto auto 5%;
-  }
-}
-
-@media screen {
-  html.dark-mode {
-    background-color: var(--dark-gray);
-    color: var(--light-gray);
-  }
-
-  .dark-mode #loader {
-    background-image: var(--lighter);
-  }
-
-  .dark-mode a,
-  .dark-mode nav a,
-  .dark-mode footer a,
-  .dark-mode footer span {
-    color: var(--light-green);
-  }
-
-  .dark-mode #loader span {
-    background-image: url("assets/loading-svgrepo-com.white.svg");
-  }
-
-  .dark-mode header strong {
-    color: var(--white);
-  }
-
-  .dark-mode header,
-  .dark-mode footer {
-    background-color: var(--very-dark-gray);
-  }
-
-  .dark-mode pre {
-    background-color: var(--black);
-  }
-
-  .dark-mode a[target="_blank"] {
-    background-image: url("assets/external-link-svgrepo-com.white.svg");
-  }
-
-  header button {
-    display: flex;
-    justify-content: center;
-  }
-
-  .dark-mode-icon {
-    padding: 0;
-    width: 70%;
   }
 }
 

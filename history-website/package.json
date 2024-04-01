@@ -10,7 +10,9 @@
     "check": "svelte-check --tsconfig tsconfig.json",
     "lint-md": "markdownlint *.md",
     "lint": "eslint . --ext ts,svelte --report-unused-disable-directives --max-warnings 0",
-    "lint-fix": "eslint . --ext ts,svelte --report-unused-disable-directives --max-warnings 0 --fix"
+    "lint-fix": "eslint . --ext ts,svelte --report-unused-disable-directives --max-warnings 0 --fix",
+    "language": "node tools/generate-language.js",
+    "postinstall": "npm run language"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
@@ -22,7 +24,8 @@
     "vite": "^5.1.4",
     "eslint": "^8.57.0",
     "eslint-plugin-svelte": "^2.35.1",
-    "markdownlint-cli": "^0.39.0"
+    "markdownlint-cli": "^0.39.0",
+    "yaml": "^2.4.1"
   },
   "engines": {
     "node": ">=20"

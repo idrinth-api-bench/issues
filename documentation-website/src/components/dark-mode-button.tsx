@@ -2,24 +2,26 @@ import React, {
   useState, useEffect,
 } from 'react';
 import {
+  IoSunny,
+  IoMoon,
+} from 'react-icons/io5';
+import {
   FIRST_ELEMENT,
 } from '../constants';
-import DarkLightIcon from './dark-light-icon.tsx';
 
 const DarkModeButton = ({
   window,
 }: {window: Window},) => {
   const setInitialDarkMode = (): boolean => {
     const localStorageValue = window.localStorage.getItem('dark-mode',);
-    if (! localStorageValue) {
-      const darkMode = window.matchMedia(
-        '(prefers-color-scheme: dark)',
-      ).matches;
-      window.localStorage.setItem('dark-mode', JSON.stringify(darkMode,),);
-      return darkMode;
-    } else {
+    if (localStorageValue) {
       return JSON.parse(localStorageValue,);
     }
+    const darkMode = window.matchMedia(
+      '(prefers-color-scheme: dark)',
+    ).matches;
+    window.localStorage.setItem('dark-mode', JSON.stringify(darkMode,),);
+    return darkMode;
   };
 
   const [
@@ -41,8 +43,10 @@ const DarkModeButton = ({
     setIsDarkMode(! isDarkMode,);
   };
 
-  return <button onClick={toggleLightDarkMode}>
-    <DarkLightIcon isDarkMode={isDarkMode}/>
+  return <button className="theme-toggle-btn"
+    onClick={toggleLightDarkMode}
+  >
+    {isDarkMode ? <IoSunny /> : <IoMoon />}
   </button>;
 };
 export default DarkModeButton;

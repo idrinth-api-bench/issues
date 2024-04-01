@@ -12,9 +12,9 @@ here are the guidelines we would like you to follow:
 ## Structure
 
 The project is a mono-repo grouped into multiple subprojects, for example
-`documentation-website`, `framework`, `history-microservice` and
-`history-website`. You can find more detailed instructions for the specific
-part in the corresponding folder's readme.
+`documentation-website`, `framework`, `history-microservice`, `cli`,
+`mindmap`, `history-website`. You can find more detailed instructions for
+the specific part in the corresponding folder's readme.
 
 ## Issues
 
@@ -29,6 +29,18 @@ The style guidelines are provided via eslint. Please try to optimise code for re
 
 While adding functionality, keep in mind to break existing interfaces, entry points and functionality only if absolutely necessary.
 
+### Picking the right issue
+
+Issues that are good for relatively new coders are marked as
+`Good first issue`, issues marked as `help wanted` require  a bit more
+knowledge about the project.
+
+Within an issue you find the project information on the right hand side,
+opening them up will reveal further estimates about size, difficulty,
+priority and main affected project part.
+
+![Project](/documentation-website/src/assets/api-bench-project.png)
+
 ### Contribution workflow
 
 - fork the repository
@@ -41,6 +53,53 @@ While adding functionality, keep in mind to break existing interfaces, entry poi
 - mark as ready to review
 - get changes reviewed
 - if review is positive get changes merged, otherwise fix and send back to review
+
+### Mindmap
+
+Contributing to the mindmap is  encouraged. The mindmap is build from the
+data.yml in /mindmap and follows the following schema:
+
+````json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://mindmap.idrinth-api-ben.ch",
+  "$ref": "#/definitions/node",
+  "definitions": {
+    "node": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "the displayed text of the node"
+        },
+        "description": {
+          "type": "string",
+          "description": "longer form description, that  is displayed when hovering over the node"
+        },
+        "url": {
+          "type": "string",
+          "description": "a url to link to with this node"
+        },
+        "children": {
+          "description": "child nodes, that are connected to the parent",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/node"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
+````
+
+This means, that nodes  must have text property for displaying them, as well
+as may have a URL, a description and more nodes as children.
 
 ### Tests
 

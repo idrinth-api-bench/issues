@@ -15,12 +15,67 @@ nav:
   routes: "Routes"
   quick-start: "Quick Start"
   faq: "FAQ"
+  code-of-conduct: "Code of Conduct"
+
+socials:
+  npm:
+    title0: "@idrinth/api-bench on NPM"
+    text0: "@idrinth/api-bench"
+    title1: "@idrinth/api-bench-cli on NPM"
+    text1: "@idrinth/api-bench-cli"
+    alt: "NPM"
+  docker:
+    title0: "idrinth/api-bench-gitlab-runner on DockerHub"
+    text0: "Gitlab Runner"
+    title1: "idrinth/api-bench-gitea-action on DockerHub"
+    text1: "Gitea Action"
+    title2: "idrinth/api-bench on DockerHub"
+    text2: "Pure Alpine"
+    title3: "idrinth/api-bench-history-microservice on DockerHub"
+    text3: "History Microservice"
+    title4: "idrinth/api-bench-history-website on DockerHub"
+    text4: "History Website"
+    alt: "DockerHub"
+  github:
+    title: "idrinth/api-bench on GitHub"
+    alt: "GitHub"
+  medium:
+    title: "idrinth/api-bench on Medium"
+    alt: "Medium"
+  youtube:
+    title: "idrinth-api-bench on youtube"
+    alt: "YouTube"
+  slack:
+    title: "@idrinth/api-bench on slack"
+    alt: "Slack"
+  linkedin:
+    title: "@idrinth/api-bench on LinkedIN"
+    alt: "LinkedIn"
+  open-sauced:
+    title: "@idrinth/api-bench projects on OpenSauced"
+    alt: "OpenSauced"
+
+code-of-conduct:
+  meta:
+    title: "Code of Conduct"
+    description: "The Contributor's Code of Conduct for @idrinth/api-bench"
 
 home:
   meta:
     title: "Home"
     description: "Welcome to the documentation for the framework @idrinth/api-bench"
   title: "What does this project do?"
+  what: "This project provides a framework for testing rest-apis and websites for  changes in response times."
+  why: "This helps to detect performance changes in code in a quick and simple manner."
+  benchmark:
+    title: "Why use a Benchmark Runner?"
+    microservices: "Given that the amount of APIs increase by moving to microservices, we need a way to determine if changes to a service's response times are related to code changes."
+    purpose: "For this purpose a defined load with repeatable request seems the most useful."
+  libraries:
+    title: "Regarding existing libraries"
+    description: "Other tools like matteofigus/api-benchmark, bvanderlaan/api-bench-runner, or jeffbski/bench-rest are all untouched for quite a while and don't provide type definitions for typescript. This makes them less desirable when working with projects where the better static code check is a huge boost in development speed."
+    threading: "Additionally, this tool separates the validation thread from the thread processing the actual requests to further minimize the effect of complicated validations or huge response bodies on the data gathering."
+
 
 faq:
   meta:
@@ -101,7 +156,7 @@ contributing:
   description: "Any and all contributions are encouraged."
   structure:
     title: "Structure"
-    description: "The project is a mono-repo grouped into multiple subprojects, for example website, framework, history-microservice and history-website. You can find more detailed instructions for the specific part in the corresponding folder's readme."
+    description: "The project is a mono-repo grouped into multiple subprojects, for example cli, mindmap, documentation-website, framework, history-microservice and history-website. You can find more detailed instructions for the specific part in the corresponding folder's readme."
   issues:
     title: "Issues"
     description: "Any idea and bug report is considered a contribution. Not only do they help improving the code base, they help other people to get more use out of this framework. Please try to stick to the format of predefined issue types to make it easier to filter and handle for anyone interested in the topic."
@@ -109,6 +164,10 @@ contributing:
     title: "Code"
     style: "The style guidelines are provided via eslint. Please try to optimise code for readability, since code will be read way more often than it will be changed."
     breaking: "While adding functionality, keep in mind to break existing interfaces, entry points and functionality only if absolutely necessary."
+    picking:
+      title: "Picking the right issue"
+      labels: "Issues that are good for relatively new coders are marked as `Good first issue`, issues marked as `help wanted` require a bit more knowledge about the project."
+      project: "Within an issue you find the project information on the right hand side, opening them up will reveal further estimates about size, difficulty, priority and main affected project part"
     workflow:
       title: "Contribution workflow"
       list_item_1: "fork the repository"
@@ -120,6 +179,10 @@ contributing:
       list_item_7: "mark as ready to review"
       list_item_8: "get changes reviewed"
       list_item_9: "if review is positive get changes merged otherwise fix and send back to review"
+    mindmap:
+      title: "Mindmap"
+      nodes: "This means, that nodes  must have text property for displaying them, as well as may have a URL, a description and more nodes as children."
+      introduction: "Contributing to the mindmap is  encouraged. The mindmap is build from the data.yml in /mindmap and follows the following schema:"
     tests:
       title: "Tests"
       description: "Testing new code is expected and adding tests or improving tests for old code is appreciated. The goal is to find most issues by either static analysis or unit and integration tests."
@@ -199,7 +262,7 @@ contributing:
     description: "Documentation is an underrated part of every software. Adding any kind of clarification, example or improvement is highlyappreciated and encouraged. The ones writing the documentation are the unsung heroes of open and closed source software."
   examples:
     title: "Examples"
-    description: "For examples please keep in mind, that we don&apos;t want to overload any api. Don't use high load tasks, don't use apis that are not for public use. It is expected that examples will be run and they must not damage anyone, including third parties."
+    description: "For examples please keep in mind, that we don't want to overload any api. Don't use high load tasks, don't use apis that are not for public use. It is expected that examples will be run and they must not damage anyone, including third parties."
 license:
   meta:
     title: "License"
@@ -209,11 +272,42 @@ autowiring:
   meta:
     title: "Autowiring | Usage"
     description: "The framework @idrinth/api-bench can autowire environment variables into route definitions"
+  title: "Autowiring Route Parameters"
+  limitations: "Comment types will always win over default value types. If those two don't match, you might get weird results. Sadly, a few things can't be done."
+  conversion: "Types will be automatically applied if there is either a default value to get the type from or a comment like /* boolean */ parameter added in front of the parameter."
+  parameters: "Parameters of contained functions will be filled with environment variable values of the respective name (aBc -> A_BC)."
+  limitation:
+    title: "Limitations"
+    constants: "Do not use constants for their default values, they can't be properly analyzed and will throw an Error."
+    objects: "Do not use arrays or objects as default values, they can't be autowired."
+    destructuring: "Destructuring is not supported."
+    mixed: "Default value types NOT of the same type as the parameter."
+  example:
+    title: "Example"
+    description: "Here we autowire three environment variables as string to make the route easy to reuse."
 
 middlewares:
   meta:
     title: "Middlewares | Usage"
     description: "The framework @idrinth/api-bench provides default middlewares and allows for custom middlewares"
+  title: "Middlewares"
+  description: "Middlewares use an absolute file path to be loaded. The following characters will be used to expand short forms:"
+  provided:
+    title: "Provided Middlewares"
+    encoding: "json and form encode"
+    access: "access token handling"
+    csrf: "csrf-header handling"
+    2xx: "status 2xx check"
+    403: "status 403 check"
+    404: "status 404 check"
+    user-agent: "user-agent"
+    cookies: "cookies"
+    json: "json-validator"
+    xml: "xml-validator"
+    silent-server-validator: "silent-server-validator"
+  custom:
+    title: "Custom Middleware"
+    description: "For custom middleware, implement the following interface. Prepare is called before sending a request, process after a request. If an error is thrown in process, any further validations are skipped."
 
 results:
   meta:
@@ -224,17 +318,27 @@ usage:
   meta:
     title: "Usage"
     description: "Basic usage information for the framework @idrinth/api-bench"
+  title: "Usage"
+  binaries:
+    title: "Binaries"
+    description: "The following binaries are available for use via scripts in your package.json."
   programmatically:
+    title: "Programmatically"
     description: "Basically require main/include main and supply the executor method with required parameters. Tasks defined in src/routes-subfolders before, before_task, before_each, main, after_each, after_task, and after will be used to automatically fill the Job processed by the executor. Automatic filling only happens when there are no tasks provided to the function."
 
 logging:
   meta:
     title: "Logging | Usage"
     description: "Information about logging usage and support of the framework @idrinth/api-bench"
+  title: "Logging"
+  description: "Any logger that either implements the interface or has a wrapper is an option. Wrappers for pino and winston are available."
   used:
+    title: "Logging levels used"
     description: "Most log entries are debug level, with the major steps being written to info. Trace is currently not used but may be used for detailed argument printing at some point."
   custom:
+    title: "Custom Logger"
     final: "For ease of use, a wrapper is provided as well, that only requires a log method to be implemented."
+    description: "You can implement the logger interface below and provide any logger you want to next to the already provided ones."
 
 storage:
   meta:
@@ -278,3 +382,41 @@ loader:
   wait: "Trying to load fresh content for you, please wait."
   offline: "Please go online and then refresh the page."
   reload: "Content has changed, reloading the page for you in a moment."
+
+command:
+  or: "or"
+  deprecated: "This command is deprecated."
+  cli: "Available via the cli package @idrinth/api-bench-api and the framework."
+  iabr:
+    description: "runs the current working directory's project if the routes folder is properly setup"
+    arg_1: "Argument 1: threads (default 1)"
+    arg_2: "Argument 2: repetitions (default 1)"
+    arg_3: "Argument 3: language code (default en)"
+    arg_4: "Argument 4: taskId, that you want to run only (default all)"
+  iabmp:
+    description: "creates a new benchmarking project in a subdirectory of the current working directory"
+    arg_1: "Argument 1: project name (default: benchmark)"
+  iabgfoa:
+    description: "generates test skeletons from an open-api-documentation for a project in the current working directory"
+    arg_1: "Argument 1: path to the open-api-document"
+  iabgfh:
+    description: "generates test skeletons from an har-document for a project in the current working directory"
+    arg_1: "Argument 1: path to the har-document"
+  iabcrd:
+    description: "checks all routes for possible issues, so there are no surprises, when actually running the code."
+    arg_1: "Argument 1: language(default: en)"
+  iabrl:
+    description: "runs a load test with the given routes up to a limit of threads. Stops when the limit is reached or an error is found during response validation."
+    arg_1: "Argument 1: threads (default 1)"
+    arg_2: "Argument 2: repetitions (default 1)"
+    arg_3: "Argument 3: language code (default en)"
+    arg_4: "Argument 4: thread increment (default 1)"
+    arg_5: "Argument 5: maximum threads (default 100)"
+  iab:
+    description: "This command is going to replace all other commands with a  more sensible interface in 3.0.0 and is available from 2.8.0"
+    arg_1: "'iab bench --language=en --taskId=test --threads=11 --repetitions=100' runs a benchmark with all options being optional."
+    arg_2: "'iab content --language=en --taskId=test' runs a content tesst/integration test with all options being optional."
+    arg_3: "'iab verify --language=en' runs a route verification with all options being optional."
+    arg_4: "'iab load --language=en --taskId=test --threads=11 --repetitions=100' runs a load test with all options being optional."
+    arg_5: "'iab bench --language=en --taskId=test --threads=11 --repetitions=100' runs a benchmark with all options being optional."
+    arg_6: "'iab stress --language=en --taskId=test --threads=11 --repetitions=100 --duration=60' runs a stress test for the desired duration in seconds with all options being optional."

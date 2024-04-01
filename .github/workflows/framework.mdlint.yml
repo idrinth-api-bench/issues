@@ -32,6 +32,7 @@ jobs:
             documentation-website/package-lock.json
             history-microservice/package-lock.json
             history-website/package-lock.json
+            cli/package-lock.json
             package-lock.json
       - run: cd framework && npm ci
       - run: cd framework && npm run-script lint-md

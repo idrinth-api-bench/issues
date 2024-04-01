@@ -1,41 +1,47 @@
 import React from 'react';
 import Layout from '../../../components/layout.tsx';
 import Code from '../../../components/code.tsx';
+import {
+  Lang,
+} from '../../../components/lang.tsx';
 
 const AutoWiring = () => <Layout
-  Outlet={<>
-    <div className='title-card'>
-      <h1>Autowiring Route Parameters</h1>
-      <p>
-          Parameters of contained functions will be filled with environment
-          variable values of the respective name (aBc {'->'} A_BC).
-        <br /> Types will be automatically applied if there is either a default
-          value to get the type from or a comment like /* boolean */ parameter
-          added in front of the parameter.
-        <br /> Comment types will always win over default value types. If those
-          two don&apos;t
-          match, you might get weird results. Sadly, a few things
-          can&apos;t
-          be done.
-      </p>
-    </div>
-    <div className='card'>
-      <h2>Limitations</h2>
-      <ul>
-        <li>
-            Do not use constants for their default values, they can&apos;t
-            be properly analyzed and will throw an Error.
-        </li>
-        <li>
-            Do not use arrays or objects as default values, they can&apos;t
-            be autowired.
-        </li>
-        <li>Destructuring is not supported</li>
-        <li>Default value types NOT of the same type as the parameter</li>
-      </ul>
-    </div>
-    <div className='card'>
-      <h2>Example</h2>
+  page='autowiring'
+  path='/usage/autowiring'
+>
+  <div className='title-card'>
+    <h1><Lang lnkey={'autowiring.title'}/></h1>
+    <p>
+      <Lang lnkey={'autowiring.parameters'}/>
+    </p>
+    <p>
+      <Lang lnkey={'autowiring.parameters'}/>
+    </p>
+    <p>
+      <Lang lnkey={'autowiring.limitations'}/>
+    </p>
+  </div>
+  <div className='card'>
+    <h2><Lang lnkey={'autowiring.limitation.title'}/></h2>
+    <ul>
+      <li>
+        <Lang lnkey={'autowiring.limitation.constants'}/>
+      </li>
+      <li>
+        <Lang lnkey={'autowiring.limitation.objects'}/>
+      </li>
+      <li>
+        <Lang lnkey={'autowiring.limitation.destructuring'}/>
+      </li>
+      <li>
+        <Lang lnkey={'autowiring.limitation.mixed'}/>
+      </li>
+    </ul>
+  </div>
+  <div className='card'>
+    <h2><Lang lnkey={'autowiring.example.title'}/></h2>
+    <div>
+      <p><Lang lnkey={'autowiring.example.description'}/></p>
       <Code language='javascript'>
         {`module.exports = (apiRootUrl, apiEMail, apiPassword) => ({
   id: 'login',
@@ -60,8 +66,6 @@ const AutoWiring = () => <Layout
   `}
       </Code>
     </div>
-  </>}
-  page='autowiring'
-  path='/usage/autowiring'
-/>;
+  </div>
+</Layout>;
 export default AutoWiring;

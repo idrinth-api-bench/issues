@@ -7,3 +7,4 @@ exec('cd documentation-website && npm run build', true,);
 exec('cd history-website && npm ci', true,);
 exec('cd history-website && npm ci', true,);
 exec('cd history-microservice && npm ci', true,);
+exec('cd mindmap && npm ci', true,);

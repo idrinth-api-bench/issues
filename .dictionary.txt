@@ -21,6 +21,7 @@ codecheck
 webmaster@idrinth-api-ben.ch
 faq
 npm
+CLI
 sexualised
 microservice
 Web-UI
@@ -31,6 +32,9 @@ ui
 readme
 mono-repo
 subprojects
+mindmap
+Mindmap
+data.yml
 ci-images
 Gitlab
 gitlab-runner

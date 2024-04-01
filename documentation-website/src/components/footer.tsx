@@ -24,6 +24,11 @@ const Footer = () => <footer>
         <Lang lnkey='nav.support'/>
       </NavLink>
     </li>
+    <li>
+      <NavLink to="/code-of-conduct/">
+        <Lang lnkey='nav.code-of-conduct'/>
+      </NavLink>
+    </li>
   </ul>
 </footer>;
 

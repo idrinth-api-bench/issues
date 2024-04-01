@@ -3,79 +3,65 @@ import {
   Lang,
 } from '../../components/lang.tsx';
 import Layout from '../../components/layout.tsx';
+import Command from '../../components/command.tsx';
 
 const Usage = () => <Layout
-  Outlet={<>
-    <div className='title-card'>
-      <h1>Usage</h1>
-    </div>
-    <div className='card'>
-      <h2>Binaries</h2>
-      <ul>
-        <li>
-          <strong>iabr</strong> (or <strong>run-benchmark</strong>)
-          runs the current working directory&apos;s project
-          if the routes folder is properly setup
-          <ul>
-            <li>Argument 1: threads (default 1)</li>
-            <li>Argument 2: repetitions (default 1)</li>
-            <li>Argument 3: language code (default en)</li>
-            <li>
-              Argument 4: taskId, that you want to run only (default all)
-            </li>
-          </ul>
-        </li>
-        <li>
-          <strong>iabmp</strong> (or <strong>make-benchmark-project</strong>)
-          creates a new benchmarking project
-          in a subdirectory of the current working directory
-          <ul>
-            <li>Argument 1: project name (default: benchmark)</li>
-          </ul>
-        </li>
-        <li>
-          <strong>iabgfoa</strong>
-          (or <strong>generate-benchmark-from-open-api</strong>)
-          generates test skeletons
-          from an open-api-documentation for a project in the current working
-          directory
-          <ul>
-            <li>Argument 1: path to the open-api-document</li>
-          </ul>
-        </li>
-        <li>
-          <strong>iabcrd</strong>
-          (or <strong>check-route-definitions</strong>)
-          checks all routes for possible issues, so there are no surprises,
-          when actually running the code.
-          <ul>
-            <li>Argument 1: language(default: en)</li>
-          </ul>
-        </li>
-        <li>
-          <strong>iabrl</strong>
-          (or <strong>run-loadtest</strong>)
-          runs a load test with the given routes up to a limit of threads.
-          Stops when the limit is reached or an error is found during
-          response validation.
-          <ul>
-            <li>Argument 1: threads (default 1)</li>
-            <li>Argument 2: repetitions (default 1)</li>
-            <li>Argument 3: language code (default en)</li>
-            <li>Argument 4: thread increment (default 1)</li>
-            <li>Argument 5: maximum threads (default 100)</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div className='card'>
-      <h2>Programmatically</h2>
-      <p>
-        <Lang lnkey='usage.programmatically.description'/>
-      </p>
-    </div>
-  </>}
   page='usage'
   path='/usage'
-/>;
+>
+  <div className='title-card'>
+    <h1>
+      <Lang lnkey={'usage.title'}/>
+    </h1>
+  </div>
+  <div className='card'>
+    <h2>
+      <Lang lnkey={'usage.binaries.title'}/>
+    </h2>
+    <p>
+      <Lang lnkey={'usage.binaries.description'}/>
+    </p>
+  </div>
+  <Command
+    shortname={'iabr'}
+    name={'run-benchmark'}
+    deprecated={true}
+  >4</Command>
+  <Command
+    shortname={'iabmp'}
+    name={'make-benchmark-project'}
+    cli={true}
+  >1</Command>
+  <Command
+    shortname={'iabgfoa'}
+    name={'generate-benchmark-from-open-api'}
+    cli={true}
+  >1</Command>
+  <Command
+    shortname={'iabgfh'}
+    name={'generate-benchmark-from-har'}
+    cli={true}
+  >1</Command>
+  <Command
+    shortname={'iabcrd'}
+    name={'check-route-definitions'}
+    deprecated={true}
+  >1</Command>
+  <Command
+    shortname={'iabrl'}
+    name={'run-loadtest'}
+    deprecated={true}
+  >5</Command>
+  <Command
+    name={'iab'}
+  >6</Command>
+  <div className='card'>
+    <h2>
+      <Lang lnkey='usage.programmatically.title'/>
+    </h2>
+    <p>
+      <Lang lnkey='usage.programmatically.description'/>
+    </p>
+  </div>
+</Layout>;
 export default Usage;

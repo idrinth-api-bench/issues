@@ -15,7 +15,9 @@
     "docker": "node tools/rebuild-images.js",
     "spellcheck": "spellchecker",
     "setup": "node tools/setup.js",
-    "regression": "node tools/regression.js"
+    "regression": "node tools/regression.js",
+    "license": "node tools/update-year.js",
+    "language": "node tools/watch-language.js"
   },
   "repository": {
     "type": "git",

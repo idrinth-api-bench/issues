@@ -1,8 +1,8 @@
-module.exports = () => ({
+module.exports = (apiRootUrl,) => ({
   id: 'create user',
   main: {
     method: 'post',
-    url: 'https://reqres.in/api/users',
+    url: apiRootUrl + '/users',
     autohandle: 'json',
     body: {
       name: 'Winston Churchill',

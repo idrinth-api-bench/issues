@@ -1,8 +1,8 @@
-module.exports = () => ({
+module.exports = (apiRootUrl) => ({
   id: 'delete user',
   main: {
     method: 'delete',
-    url: 'https://reqres.in/api/users/2',
+    url: apiRootUrl + '/users/2',
   },
   pre: [
     '^user-agent',
