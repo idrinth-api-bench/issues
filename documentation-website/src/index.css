@@ -86,6 +86,8 @@ header {
 header button {
   grid-column: 2;
   grid-row: 1;
+  display: flex;
+  justify-content: center;
 }
 
 header div {
@@ -270,6 +272,17 @@ article {
   background-color: var(--darker);
 }
 
+.dark-mode a,
+.dark-mode nav a,
+.dark-mode footer a,
+.dark-mode footer span {
+  color: var(--light-green);
+}
+
+.dark-mode header strong {
+  color: var(--white);
+}
+
 #loader strong {
   position: absolute;
   text-align: center;
@@ -340,6 +353,30 @@ header #medium img {
   border-radius: 50%;
 }
 
+html.dark-mode {
+  background-color: var(--dark-gray);
+  color: var(--white);
+}
+
+.dark-mode #loader {
+  background-image: var(--lighter);
+}
+
+.dark-mode #loader span {
+  background-image: url("assets/loading-svgrepo-com.white.svg");
+}
+
+.dark-mode header,
+.dark-mode footer {
+  background-color: var(--very-dark-gray);
+  box-shadow: none;
+}
+
+.dark-mode-icon {
+  padding: 0;
+  width: 70%;
+}
+
 @media only screen and (width >= 600px) {
   footer {
     grid-template-columns: 1fr 1fr;
@@ -407,6 +444,12 @@ header #medium img {
     width: initial;
   }
 
+  footer span {
+    padding-left: 5rem;
+    max-height: 100%;
+    white-space: nowrap;
+  }
+
   header nav > ul.socials li,
   header nav > ul.socials a,
   header nav > ul.socials span {
@@ -424,12 +467,6 @@ header #medium img {
 
   nav.breadcrumbs li::after {
     padding: 0 0.5em;
-  }
-
-  footer span {
-    padding-left: 5rem;
-    max-height: 100%;
-    white-space: nowrap;
   }
 
   nav li:hover ul {
@@ -464,8 +501,8 @@ header #medium img {
   .card {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    background: rgba(0,0,0,0.1);
-    box-shadow: rgba(0,0,0,0.5) 0.5em 0.5em 1em;
+    background: rgba(0 0 0 / 10%);
+    box-shadow: rgba(0 0 0 / 50%) 0.5em 0.5em 1em;
     border: var(--dark-green) solid 1px;
     margin-bottom: 1.5em;
     border-radius: 0.5em 0 0 0.5em;
@@ -474,7 +511,7 @@ header #medium img {
   .card > :nth-child(1) {
     text-align: right;
     padding: 1em;
-    background: rgba(0,0,0,0.1);
+    background: rgba(0 0 0 / 10%);
     border-right: var(--dark-green) solid 1px;
   }
 
@@ -509,46 +546,6 @@ header #medium img {
   header {
     grid-template-columns: 30% auto auto 5%;
   }
-}
-
-html.dark-mode {
-  background-color: var(--dark-gray);
-  color: var(--white);
-}
-
-.dark-mode #loader {
-  background-image: var(--lighter);
-}
-
-.dark-mode a,
-.dark-mode nav a,
-.dark-mode footer a,
-.dark-mode footer span {
-  color: var(--light-green);
-}
-
-.dark-mode #loader span {
-  background-image: url("assets/loading-svgrepo-com.white.svg");
-}
-
-.dark-mode header strong {
-  color: var(--white);
-}
-
-.dark-mode header,
-.dark-mode footer {
-  background-color: var(--very-dark-gray);
-  box-shadow: none;
-}
-
-header button {
-  display: flex;
-  justify-content: center;
-}
-
-.dark-mode-icon {
-  padding: 0;
-  width: 70%;
 }
 
 @media screen and (width >= 600px) {
