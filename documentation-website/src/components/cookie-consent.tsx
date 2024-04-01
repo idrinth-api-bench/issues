@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import "./cookie-consest.css";
 
 const CookieConsent = () => {
-  const [consentWasClosed, setConsentWasClosed] = useState(false);
+  const [consentWasClosed, setConsentWasClosed] = useState<boolean>(false);
 
   const handleConsent = (accept: boolean) => {
+     {/* @ts-ignore  */}
     window._paq.push([accept ? "rememberConsentGiven" : "forgetConsentGiven"]);
     localStorage.setItem("consest-was-asked", "yes");
     setConsentWasClosed(true);

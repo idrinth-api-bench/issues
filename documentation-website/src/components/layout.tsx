@@ -1,11 +1,12 @@
 import DefaultMeta from './default-meta.tsx';
 import Header from './header.tsx';
 import Footer from './footer.tsx';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Breadcrumbs from './breadcrumbs.tsx';
 import ScrollToHashElement from './hash-scroll.tsx';
 import { createPortal } from 'react-dom';
 import CookieConsent from './cookie-consent.tsx';
+import Window from './window.ts';
 
 interface LayoutProps {
   children?: React.ReactNode|React.ReactNode[],
@@ -33,7 +34,8 @@ const Layout = ({
     </article>
     <Footer/>
     <ScrollToHashElement/>
-    {!localStorage.getItem('consest-was-asked') &&
+    {/* @ts-ignore  */}
+    {(!localStorage.getItem('consest-was-asked') && window?._paq) &&
     createPortal(<CookieConsent />,document.body)
     }
   </>;
