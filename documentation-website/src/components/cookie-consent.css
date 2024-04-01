@@ -67,3 +67,19 @@
 .cookie-consent-decline-button:hover {
   background-color: rgb(167, 173, 179);
 }
+
+.dark-mode .cookie-consent {
+  background-color: var(--black);
+}
+.dark-mode .cookie-description {
+  color: var(--light-gray);
+}
+
+.dark-mode .cookie-consent-decline-button { 
+  color: var(--white);
+  background-color: var(--dark-gray);
+}
+
+.dark-mode .cookie-consent-decline-button:hover {
+  opacity: 80%;
+}
