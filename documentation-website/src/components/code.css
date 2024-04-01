@@ -22,3 +22,7 @@
 .hljs .hljs-attr {
   color: blue;
 }
+
+.dark-mode .hljs .hljs-attr {
+  color: lightblue;
+}
