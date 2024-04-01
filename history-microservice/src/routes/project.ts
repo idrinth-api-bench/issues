@@ -6,6 +6,7 @@ import GetBody from './project/GetBody.js';
 
 const routes = async(
   fastify: Fastify.FastifyInstance,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   options: Fastify.RouteOptions,
   // eslint-disable-next-line require-await
 ) => {
