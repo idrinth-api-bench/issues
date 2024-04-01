@@ -17,6 +17,14 @@ const Index = () => <Layout
     home.benchmark.microservices
     home.benchmark.purpose
   </ContentUnit>
+  <ContentUnit titleText={'home.load-test.title'} titleLevel={2}>
+    home.load-test.microservices
+    home.load-test.purpose
+  </ContentUnit>
+  <ContentUnit titleText={'home.content-test.title'} titleLevel={2}>
+    home.content-test.microservices
+    home.content-test.purpose
+  </ContentUnit>
   <div className='card'>
     <h2>
       <Lang lnkey={'home.libraries.title'}/>
@@ -44,6 +52,9 @@ const Index = () => <Layout
           />
         </li>
       </ul>
+      <p>
+        <Lang lnkey={'home.libraries.reusability'}/>
+      </p>
       <p>
         <Lang lnkey={'home.libraries.threading'}/>
       </p>
