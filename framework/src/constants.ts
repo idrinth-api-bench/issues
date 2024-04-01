@@ -4,6 +4,9 @@ import {
 import {
   realpathSync,
 } from 'fs';
+import {
+  tmpdir,
+} from 'os';
 
 export const EMPTY = 0;
 export const INITIAL_ZERO = 0;
@@ -40,3 +43,6 @@ export const NEXT = 1;
 export const CLI_OPTION_MIN_LENGTH = 3;
 export const STATUSCODE_SUCCESS = 0;
 export const STATUSCODE_FAILURE = 1;
+// Fixes GitHub Action's broken /tmp
+export const TEMP_DIR = process.env.RUNNER_TEMP ?? tmpdir();
+
