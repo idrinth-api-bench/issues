@@ -9,7 +9,6 @@ import {
 } from 'worker_threads';
 import Job from './job.js';
 import jobCreator from './helper/job-creator.js';
-import reqlib from 'app-root-path';
 import ReportModifier from './report-modifier/report-modifier.js';
 import Storage from './storage/storage.js';
 import NoopStorage from './storage/noop-storage.js';
