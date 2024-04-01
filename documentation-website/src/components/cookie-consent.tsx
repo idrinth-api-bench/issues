@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./cookie-consent.css";
+import { Lang } from "./lang";
 
 const CookieConsent = () => {
   const [consentWasClosed, setConsentWasClosed] = useState<boolean>(false);
@@ -16,10 +17,11 @@ const CookieConsent = () => {
       {!consentWasClosed && (
         <div className={"cookie-consent"}>
           <div className={"cookie-consent-description"}>
-            <h2 className={"cookie-title"}>We use Cookies</h2>
+            <h2 className={"cookie-title"}>
+            <Lang lnkey={"cookie-consent.title"}/>
+            </h2>
             <p className={"cookie-description"} >
-              We use cookies to improve your browsing experience and for
-              marketing purposes.
+              <Lang lnkey={"cookie-consent.description"}/>
             </p>
           </div>
           <div className={"cookie-consent-buttons"}>
@@ -27,13 +29,13 @@ const CookieConsent = () => {
               onClick={() => handleConsent(true)}
               className={"cookie-consent-accept-button"}
             >
-              Accept
+              <Lang lnkey={"cookie-consent.accept"}/>
             </button>
             <button
               onClick={() => handleConsent(false)}
               className={"cookie-consent-decline-button"}
             >
-              Decline
+              <Lang lnkey={"cookie-consent.decline"}/>
             </button>
           </div>
         </div>
