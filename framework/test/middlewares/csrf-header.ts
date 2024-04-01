@@ -8,9 +8,8 @@ import Result from '../../src/result.js';
 import store from '../../src/store';
 
 describe('middlewares/csrf-header', () => {
-  before(() => {
-    store.clean();
-  },);
+  before(store.clean,);
+  after(store.clean,);
   it('should be a class', () => {
     expect(CsrfHeader,).to.be.a('function',);
   },);
