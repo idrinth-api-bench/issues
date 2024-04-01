@@ -44,7 +44,7 @@ describe('iab-cli', function() {
       '',
       '',
       'bench',
-    ], process.cwd() + '/fixtures');
+    ], process.cwd() + '/fixtures',);
     await delay(WAIT_CHECK,);
     expect(status,).to.be.eq(STATUSCODE_FAILURE,);
     // eslint-disable-next-line no-unused-expressions
@@ -60,7 +60,7 @@ describe('iab-cli', function() {
       '',
       '',
       'content',
-    ], process.cwd() + '/fixtures');
+    ], process.cwd() + '/fixtures',);
     await delay(WAIT_CHECK,);
     expect(status,).to.be.eq(STATUSCODE_FAILURE,);
     // eslint-disable-next-line no-unused-expressions
