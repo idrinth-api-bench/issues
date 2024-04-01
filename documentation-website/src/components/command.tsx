@@ -2,11 +2,6 @@ import React from 'react';
 import {
   Lang,
 } from './lang.tsx';
-import languageKey from '../locales/language-key.ts';
-import {
-  DEFAULT_RADIX,
-  ONE,
-} from '../constants.ts';
 import CommandBody from './command-body.tsx';
 import './command.css';
 
@@ -18,6 +13,7 @@ interface CommandType {
   deprecated?: true;
 }
 
+// eslint-disable-next-line complexity
 const Command = ({
   name,
   shortname,

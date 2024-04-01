@@ -1,4 +1,7 @@
-import {DEFAULT_RADIX, ONE} from "../constants.ts";
+import {
+  DEFAULT_RADIX,
+  ONE,
+} from '../constants.ts';
 import {
   Lang,
 } from './lang.tsx';
@@ -32,5 +35,5 @@ const CommandBody = ({
     </ul>
     {cli ? <p><Lang lnkey={'command.cli'}/></p> : ''}
   </div>;
-}
+};
 export default CommandBody;
