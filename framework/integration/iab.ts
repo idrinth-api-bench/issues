@@ -5,14 +5,13 @@ import {
 } from 'chai';
 import 'mocha';
 import {
-  readFileSync,
-} from 'fs';
-import {
   spawn,
 } from 'child_process';
 import url from 'url';
 import Counter from '../src/counter';
-import {STATUSCODE_FAILURE} from "../src/constants";
+import {
+  STATUSCODE_FAILURE,
+} from '../src/constants';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 const WAIT_CHECK = 7500;
