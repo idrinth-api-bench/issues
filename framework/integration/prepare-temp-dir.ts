@@ -16,7 +16,7 @@ export default () => {
     if (dir.isDirectory()) {
       for (const file of readdirSync(TEMP_DIR, 'utf8',)) {
         if (file.startsWith('api-bench',) || file.startsWith('result',)) {
-          const f = `${ TEMP_DIR }/${ sfile }`;
+          const f = `${ TEMP_DIR }/${ file }`;
           const stats = statSync(f,);
           // eslint-disable-next-line max-depth
           if (stats.isFile()) {
