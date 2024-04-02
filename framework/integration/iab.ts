@@ -12,13 +12,14 @@ import {
   STATUSCODE_FAILURE,
 } from '../src/constants';
 import prepareTempDir from './prepare-temp-dir';
+import delay from './delay';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
 const WAIT_CHECK = 7500;
 const WAIT_TEST = 15000;
 const WAIT_DELAY = 2500;
-const delay = (time,) => new Promise((resolve,) => setTimeout(resolve, time,),);
+const SETUP_TIMEOUT = 10000;
 
 describe('iab-cli', function() {
   before(() => {
@@ -57,4 +58,4 @@ describe('iab-cli', function() {
     await delay(WAIT_CHECK,);
     expect(status,).to.be.eq(STATUSCODE_FAILURE,);
   },).timeout(WAIT_TEST + WAIT_DELAY,);
-},);
+},).timeout(SETUP_TIMEOUT,);

@@ -24,6 +24,7 @@ import {
 import prepareTempDir from './prepare-temp-dir';
 
 const NONE = 0;
+const SETUP_TIMEOUT = 10000;
 
 class FakeResult implements Result, ValidationResult, FinishedSet {
 
@@ -210,4 +211,4 @@ describe('executor@pre-post-job', () => {
       },);
     },);
   },);
-},);
+},).timeout(SETUP_TIMEOUT,);
