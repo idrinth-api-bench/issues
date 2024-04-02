@@ -39,7 +39,7 @@ describe('main@job', function() {
     mock(config, {
       createCwd: false,
     },);
-    Counter.clear();#
+    Counter.clear();
     mkdir();
   },);
   after(() => {
