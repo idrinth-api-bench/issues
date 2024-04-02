@@ -1,4 +1,3 @@
-import mock from 'mock-fs';
 import run from '../src/cli/cli';
 import {
   expect,
@@ -34,14 +33,8 @@ describe('iab-cli', function() {
   },);
   beforeEach(() => {
     prepareTempDir();
-    const config = {};
-    config[process.cwd()] = mock.load(process.cwd(),);
-    mock(config, {
-      createCwd: false,
-    },);
   },);
   afterEach(() => {
-    mock.restore();
     prepareTempDir();
   },);
   it('bench', async() => {
