@@ -40,13 +40,13 @@ describe('main@job', function() {
       createCwd: false,
     },);
     Counter.clear();
-    mkdir();
   },);
   after(() => {
     mock.restore();
     Counter.clear();
-    mkdir();
   },);
+  beforeEach(mkdir,);
+  afterEach(mkdir,);
   it('should write results', async() => {
     await delay(WAIT_DELAY,);
     await run({

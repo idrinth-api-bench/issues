@@ -139,15 +139,15 @@ describe('executor@job', () => {
     // eslint-disable-next-line no-global-assign
     console = makeConsoleMock();
     Counter.clear();
-    mkdir();
   },);
   after(() => {
     mock.restore();
     // eslint-disable-next-line no-global-assign
     console = oldConsole;
     Counter.clear();
-    mkdir();
   },);
+  beforeEach(mkdir,);
+  afterEach(mkdir,);
   const repeats = 2;
   const threads = 3;
   const setup = 2;

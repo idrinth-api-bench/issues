@@ -33,13 +33,13 @@ describe('iab-cli', function() {
       createCwd: false,
     },);
     Counter.clear();
-    mkdir();
   },);
   after(() => {
     mock.restore();
     Counter.clear();
-    mkdir();
   },);
+  beforeEach(mkdir,);
+  afterEach(mkdir,);
   it('bench', async() => {
     await delay(WAIT_DELAY,);
     const status = await run([

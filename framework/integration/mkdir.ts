@@ -14,12 +14,7 @@ export default () => {
     for (const file of readdirSync(TEMP_DIR,)) {
       const stats = statSync(`${ TEMP_DIR }/${ file }`,);
       if (stats.isFile()) {
-        try {
-          unlinkSync(`${ TEMP_DIR }/${ file }`,);
-        } catch (e) {
-          // eslint-disable-next-line no-console
-          console.error(e,);
-        }
+        unlinkSync(`${ TEMP_DIR }/${ file }`,);
       }
     }
     return;
