@@ -18,6 +18,7 @@ import NoopStorage from '../src/storage/noop-storage';
 import makeConsoleMock from 'consolemock';
 import NoProgress from '../src/progress/no-progress';
 import Counter from '../src/counter';
+import {TEMP_DIR} from "../src/constants";
 
 const NONE = 0;
 
@@ -125,10 +126,9 @@ class FakeWorker implements Thread {
 describe('executor@job', () => {
   let oldConsole;
   before(() => {
-    const config = {
-      '/executor': mock.directory({},),
-    };
+    const config = {};
     config[process.cwd()] = mock.load(process.cwd(),);
+    config[`${ TEMP_DIR }/executor-j`] = mock.directory({},);
     mock(config, {
       createCwd: false,
     },);
@@ -174,7 +174,7 @@ describe('executor@job', () => {
         FakeWorker,
         [],
         new NoopStorage(),
-        '/executor',
+        `${ TEMP_DIR }/executor-j`,
         new NoProgress(),
         [],
       ),

@@ -14,6 +14,9 @@ import url from 'url';
 import NoProgress from '../src/progress/no-progress';
 import Counter from '../src/counter';
 import simpleMultiReporter from './simple-multi-reporter';
+import {
+  TEMP_DIR,
+} from '../src/constants';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
@@ -29,9 +32,8 @@ describe('main@job', function() {
       __dirname + '../../fixtures/server.cjs',
       '48912',
     ],);
-    const config = {
-      '/mocked-main': mock.directory({},),
-    };
+    const config = {};
+    config[`${ TEMP_DIR }/mocked-main`] = mock.directory({},);
     config[process.cwd()] = mock.load(process.cwd(),);
     mock(config, {
       createCwd: false,
@@ -45,7 +47,7 @@ describe('main@job', function() {
   it('should write results', async() => {
     await delay(WAIT_DELAY,);
     await run({
-      resultOutputDir: '/mocked-main',
+      resultOutputDir: `${ TEMP_DIR }/mocked-main`,
       progress: new NoProgress(),
       resultHandler: simpleMultiReporter,
     }, ONE, ONE, [ {
@@ -58,10 +60,16 @@ describe('main@job', function() {
     }, ],);
     await delay(WAIT_CHECK,);
     // eslint-disable-next-line no-unused-expressions
-    expect(readFileSync('/mocked-main/result.csv',) + '',).to.not.be.empty;
+    expect(
+      readFileSync(`${ TEMP_DIR }/mocked-main/result.csv`, 'utf8',),
+    ).to.not.be.empty;
     // eslint-disable-next-line no-unused-expressions
-    expect(readFileSync('/mocked-main/result.json',) + '',).to.not.be.empty;
+    expect(
+      readFileSync(`${ TEMP_DIR }/mocked-main/result.json`, 'utf8',),
+    ).to.not.be.empty;
     // eslint-disable-next-line no-unused-expressions
-    expect(readFileSync('/mocked-main/result.html',) + '',).to.not.be.empty;
+    expect(
+      readFileSync(`${ TEMP_DIR }/mocked-main/result.html`, 'utf8',),
+    ).to.not.be.empty;
   },).timeout(WAIT_TEST + WAIT_DELAY,);
 },);
