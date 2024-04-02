@@ -10,13 +10,13 @@ const Storage = () => <Layout
   path='/usage/storage'
 >
   <div className='title-card'>
-    <h1>Storage</h1>
+    <h1><Lang lnkey='storage.title'/></h1>
     <p>
       <Lang lnkey='storage.description'/>
     </p>
   </div>
   <div className='card'>
-    <h2>Custom Storage</h2>
+    <h2><Lang lnkey='storage.custom.title'/></h2>
     <div>
       <p>
         <Lang lnkey='storage.custom.description'/>
