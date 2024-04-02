@@ -5,8 +5,11 @@ import {
 import 'mocha';
 import Request from '../../src/request';
 import Result from '../../src/result';
+import store from '../../src/store';
 
 describe('middlewares/cookie', () => {
+  before(store.clean,);
+  after(store.clean,);
   it('should be a class', () => {
     expect(Cookie,).to.be.a('function',);
   },);

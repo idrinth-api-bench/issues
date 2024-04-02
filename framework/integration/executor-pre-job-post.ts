@@ -18,6 +18,10 @@ import NoopStorage from '../src/storage/noop-storage';
 import makeConsoleMock from 'consolemock';
 import NoProgress from '../src/progress/no-progress';
 import Counter from '../src/counter';
+import {
+  TEMP_DIR,
+} from '../src/constants';
+import prepareTempDir from './prepare-temp-dir';
 
 const NONE = 0;
 
@@ -125,23 +129,28 @@ class FakeWorker implements Thread {
 describe('executor@pre-post-job', () => {
   let oldConsole;
   before(() => {
-    const config = {
-      '/executor': mock.directory({},),
-    };
-    config[process.cwd()] = mock.load(process.cwd(),);
-    mock(config, {
-      createCwd: false,
-    },);
     oldConsole = console;
     // eslint-disable-next-line no-global-assign
     console = makeConsoleMock();
     Counter.clear();
   },);
   after(() => {
-    mock.restore();
     // eslint-disable-next-line no-global-assign
     console = oldConsole;
     Counter.clear();
+  },);
+  beforeEach(() => {
+    prepareTempDir();
+    const config = {};
+    config[process.cwd()] = mock.load(process.cwd(),);
+    config[`${ TEMP_DIR }/executor-ppj`] = mock.directory({},);
+    mock(config, {
+      createCwd: false,
+    },);
+  },);
+  afterEach(() => {
+    mock.restore();
+    prepareTempDir();
   },);
   const repeats = 2;
   const threads = 3;
@@ -181,7 +190,7 @@ describe('executor@pre-post-job', () => {
         FakeWorker,
         [],
         new NoopStorage(),
-        '/executor',
+        `${ TEMP_DIR }/executor-ppj`,
         new NoProgress(),
         [],
       ),
