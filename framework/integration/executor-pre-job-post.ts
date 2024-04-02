@@ -24,6 +24,7 @@ import {
 import prepareTempDir from './prepare-temp-dir';
 
 const NONE = 0;
+const SETUP_TIMEOUT = 10000;
 
 class FakeResult implements Result, ValidationResult, FinishedSet {
 
@@ -127,6 +128,8 @@ class FakeWorker implements Thread {
 }
 
 describe('executor@pre-post-job', () => {
+  // eslint-disable-next-line no-invalid-this
+  this.timeout(SETUP_TIMEOUT,);
   let oldConsole;
   before(() => {
     oldConsole = console;
