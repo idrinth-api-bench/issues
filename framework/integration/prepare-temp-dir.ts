@@ -15,10 +15,13 @@ export default () => {
     const dir = statSync(TEMP_DIR,);
     if (dir.isDirectory()) {
       for (const file of readdirSync(TEMP_DIR, 'utf8',)) {
-        const f = `${ TEMP_DIR }/${ file }`;
-        const stats = statSync(f,);
-        if (stats.isFile() && file.startsWith('api-bench',)) {
-          unlinkSync(f,);
+        if (file.startsWith('api-bench',) || file.startsWith('result',)) {
+          const f = `${TEMP_DIR}/${file}`;
+          const stats = statSync(f,);
+          // eslint-disable-next-line max-depth
+          if (stats.isFile()) {
+            unlinkSync(f,);
+          }
         }
       }
     }

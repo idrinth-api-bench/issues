@@ -40,16 +40,12 @@ describe('main@job', function() {
   },);
   beforeEach(() => {
     prepareTempDir();
-    mkdirSync(`${ TEMP_DIR }/mocked-main`, {
-      recursive: true,
-      mode: 777,
-    },);
   },);
   afterEach(prepareTempDir,);
   it('should write results', async() => {
     await delay(WAIT_DELAY,);
     await run({
-      resultOutputDir: `${ TEMP_DIR }/mocked-main`,
+      resultOutputDir: `${ TEMP_DIR }`,
       progress: new NoProgress(),
       resultHandler: simpleMultiReporter,
     }, ONE, ONE, [ {
@@ -63,15 +59,15 @@ describe('main@job', function() {
     await delay(WAIT_CHECK,);
     // eslint-disable-next-line no-unused-expressions
     expect(
-      readFileSync(`${ TEMP_DIR }/mocked-main/result.csv`, 'utf8',),
+      readFileSync(`${ TEMP_DIR }/result.csv`, 'utf8',),
     ).to.not.be.empty;
     // eslint-disable-next-line no-unused-expressions
     expect(
-      readFileSync(`${ TEMP_DIR }/mocked-main/result.json`, 'utf8',),
+      readFileSync(`${ TEMP_DIR }/result.json`, 'utf8',),
     ).to.not.be.empty;
     // eslint-disable-next-line no-unused-expressions
     expect(
-      readFileSync(`${ TEMP_DIR }/mocked-main/result.html`, 'utf8',),
+      readFileSync(`${ TEMP_DIR }/result.html`, 'utf8',),
     ).to.not.be.empty;
   },).timeout(WAIT_TEST + WAIT_DELAY,);
 },);
