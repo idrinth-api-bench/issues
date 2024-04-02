@@ -77,10 +77,10 @@
   background-color: var(--dark-gray);
 }
 
-.dark-mode .cookie-consent-decline-button:hover {
-  opacity: 80%;
-}
-
 .cookie-consent-accept-button + .cookie-consent-decline-button {
   margin-left: 10px;
 } 
+
+.dark-mode .cookie-consent-decline-button:hover {
+  opacity: 80%;
+}
