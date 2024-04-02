@@ -11,10 +11,16 @@ import {
 
 export default () => {
   if (existsSync(TEMP_DIR,)) {
-    for (const file of readdirSync(TEMP_DIR,)) {
-      const stats = statSync(`${ TEMP_DIR }/${ file }`,);
-      if (stats.isFile()) {
-        unlinkSync(`${ TEMP_DIR }/${ file }`,);
+    const dir = statSync(TEMP_DIR,);
+    if (dir.isDirectory()) {
+      for (const file of readdirSync(TEMP_DIR, {
+        recursive: true,
+      },)) {
+        const f = `${ TEMP_DIR }/${ file }`;
+        const stats = statSync(f,);
+        if (stats.isFile()) {
+          unlinkSync(f,);
+        }
       }
     }
     return;
