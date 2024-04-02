@@ -19,40 +19,40 @@ nav:
 
 socials:
   npm:
-    title0: "@idrinth/api-bench on NPM"
+    title0: "@idrinth/api-bench auf NPM"
     text0: "@idrinth/api-bench"
-    title1: "@idrinth/api-bench-cli on NPM"
+    title1: "@idrinth/api-bench-cli auf NPM"
     text1: "@idrinth/api-bench-cli"
     alt: "NPM"
   docker:
-    title0: "idrinth/api-bench-gitlab-runner on DockerHub"
+    title0: "idrinth/api-bench-gitlab-runner auf DockerHub"
     text0: "Gitlab Runner"
-    title1: "idrinth/api-bench-gitea-action on DockerHub"
+    title1: "idrinth/api-bench-gitea-action auf DockerHub"
     text1: "Gitea Action"
-    title2: "idrinth/api-bench on DockerHub"
+    title2: "idrinth/api-bench auf DockerHub"
     text2: "Pure Alpine"
-    title3: "idrinth/api-bench-history-microservice on DockerHub"
-    text3: "History Microservice"
-    title4: "idrinth/api-bench-history-website on DockerHub"
-    text4: "History Website"
+    title3: "idrinth/api-bench-history-microservice auf DockerHub"
+    text3: "Historie Microservice"
+    title4: "idrinth/api-bench-history-website auf DockerHub"
+    text4: "Historie Website"
     alt: "DockerHub"
   github:
-    title: "idrinth/api-bench on GitHub"
+    title: "idrinth/api-bench auf GitHub"
     alt: "GitHub"
   medium:
-    title: "idrinth/api-bench on Medium"
+    title: "idrinth/api-bench auf Medium"
     alt: "Medium"
   youtube:
-    title: "idrinth-api-bench on youtube"
+    title: "idrinth-api-bench auf youtube"
     alt: "YouTube"
   slack:
-    title: "@idrinth/api-bench on slack"
+    title: "@idrinth/api-bench auf slack"
     alt: "Slack"
   linkedin:
-    title: "@idrinth/api-bench on LinkedIN"
+    title: "@idrinth/api-bench auf LinkedIN"
     alt: "LinkedIn"
   open-sauced:
-    title: "@idrinth/api-bench projects on OpenSauced"
+    title: "@idrinth/api-bench projects auf OpenSauced"
     alt: "OpenSauced"
 
 code-of-conduct:
