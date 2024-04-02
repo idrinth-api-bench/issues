@@ -128,8 +128,6 @@ class FakeWorker implements Thread {
 }
 
 describe('executor@pre-post-job', () => {
-  // eslint-disable-next-line no-invalid-this
-  this.timeout(SETUP_TIMEOUT,);
   let oldConsole;
   before(() => {
     oldConsole = console;
@@ -213,4 +211,4 @@ describe('executor@pre-post-job', () => {
       },);
     },);
   },);
-},);
+},).timeout(SETUP_TIMEOUT,);
