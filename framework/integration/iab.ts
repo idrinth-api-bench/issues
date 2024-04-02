@@ -27,9 +27,7 @@ describe('iab-cli', function() {
       __dirname + '../fixtures/server.cjs',
       '48912',
     ],);
-    const config = {
-      '/mocked-cli': mock.directory({},),
-    };
+    const config = {};
     config[process.cwd()] = mock.load(process.cwd(),);
     mock(config, {
       createCwd: false,
