@@ -1,7 +1,11 @@
 import run from '../src/cli/cli';
-import {expect,} from 'chai';
+import {
+  expect,
+} from 'chai';
 import 'mocha';
-import {spawn,} from 'child_process';
+import {
+  spawn,
+} from 'child_process';
 import url from 'url';
 import Counter from '../src/counter';
 import {STATUSCODE_FAILURE,} from '../src/constants';
