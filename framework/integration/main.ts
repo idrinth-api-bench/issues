@@ -17,7 +17,7 @@ import simpleMultiReporter from './simple-multi-reporter';
 import {
   TEMP_DIR,
 } from '../src/constants';
-import './mkdir';
+import mkdir from './mkdir';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
@@ -39,11 +39,13 @@ describe('main@job', function() {
     mock(config, {
       createCwd: false,
     },);
-    Counter.clear();
+    Counter.clear();#
+    mkdir();
   },);
   after(() => {
     mock.restore();
     Counter.clear();
+    mkdir();
   },);
   it('should write results', async() => {
     await delay(WAIT_DELAY,);

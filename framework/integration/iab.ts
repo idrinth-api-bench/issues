@@ -12,7 +12,7 @@ import Counter from '../src/counter';
 import {
   STATUSCODE_FAILURE,
 } from '../src/constants';
-import './mkdir';
+import mkdir from './mkdir';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
@@ -33,10 +33,12 @@ describe('iab-cli', function() {
       createCwd: false,
     },);
     Counter.clear();
+    mkdir();
   },);
   after(() => {
     mock.restore();
     Counter.clear();
+    mkdir();
   },);
   it('bench', async() => {
     await delay(WAIT_DELAY,);

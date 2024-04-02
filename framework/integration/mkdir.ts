@@ -2,9 +2,23 @@ import {
   TEMP_DIR,
 } from '../src/constants';
 import {
+  existsSync,
   mkdirSync,
+  readdirSync,
+  unlinkSync,
 } from 'fs';
 
-mkdirSync(TEMP_DIR, {
-  recursive: true,
-},);
+export default () => {
+  if (existsSync(TEMP_DIR,)) {
+    for (const file of readdirSync(TEMP_DIR,)) {
+      try {
+        unlinkSync(`${ TEMP_DIR }/${ file }`,);
+      } catch(e) {
+        console.error(e,);
+      }
+    }
+  }
+  mkdirSync(TEMP_DIR, {
+    recursive: true,
+  },);
+};

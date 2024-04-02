@@ -21,7 +21,7 @@ import Counter from '../src/counter';
 import {
   TEMP_DIR,
 } from '../src/constants';
-import './mkdir';
+import mkdir from './mkdir';
 
 const NONE = 0;
 
@@ -139,12 +139,14 @@ describe('executor@pre-post-job', () => {
     // eslint-disable-next-line no-global-assign
     console = makeConsoleMock();
     Counter.clear();
+    mkdir();
   },);
   after(() => {
     mock.restore();
     // eslint-disable-next-line no-global-assign
     console = oldConsole;
     Counter.clear();
+    mkdir();
   },);
   const repeats = 2;
   const threads = 3;
