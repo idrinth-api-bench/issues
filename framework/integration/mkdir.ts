@@ -18,6 +18,7 @@ export default () => {
         console.error(e,);
       }
     }
+    return;
   }
   mkdirSync(TEMP_DIR, {
     recursive: true,
