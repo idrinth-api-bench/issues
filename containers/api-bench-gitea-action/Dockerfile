@@ -2,7 +2,7 @@ ARG BUILD_VERSION
 
 FROM node:21.7.1-alpine AS node
 FROM idrinth/api-bench-build:${BUILD_VERSION} AS build
-FROM gitea/act_runner:0.2.8 AS gitea
+FROM gitea/act_runner:0.2.9 AS gitea
 
 COPY --from=node /usr/lib /usr/lib
 COPY --from=node /usr/local/lib /usr/local/lib
