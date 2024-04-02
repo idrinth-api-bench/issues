@@ -22,5 +22,6 @@ export default () => {
   }
   mkdirSync(TEMP_DIR, {
     recursive: true,
+    mode: 777,
   },);
 };
