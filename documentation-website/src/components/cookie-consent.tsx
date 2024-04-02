@@ -10,19 +10,22 @@ const CookieConsent = () => {
   const [
     consentWasClosed,
     setConsentWasClosed,
-  ] = useState<boolean>(false);
+  ] = useState<boolean>(false,);
 
-  function handleConsent(accept: boolean) {
+  const handleConsent = (accept: boolean,) => {
+    const action = accept ? 'rememberConsentGiven' : 'forgetConsentGiven';
     { /*@ts-expect-error _paq can be null*/ }
-    window._paq.push([ accept ? 'rememberConsentGiven' : 'forgetConsentGiven', ]);
-    localStorage.setItem('consent-was-asked', 'yes');
-    setConsentWasClosed(true);
-  }
+    window?._paq.push([ action, ],);
+    localStorage.setItem('consent-was-asked', 'yes',);
+    setConsentWasClosed(true,);
+  };
 
   return (
     <>
-      {/*@ts-expect-error _paq can be null*/}
-      {!consentWasClosed && (!localStorage.getItem('consent-was-asked') && window?._paq) &&
+      {! consentWasClosed &&
+      //@ts-expect-error _paq can be null
+      (! localStorage.getItem('consent-was-asked',) && window?._paq)
+      &&
         <div className={'cookie-consent'}>
           <div className={'cookie-consent-description'}>
             <h2 className={'cookie-title'}>
