@@ -21,6 +21,7 @@ import Counter from '../src/counter';
 import {
   TEMP_DIR,
 } from '../src/constants';
+import './mkdir';
 
 const NONE = 0;
 

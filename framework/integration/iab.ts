@@ -12,6 +12,7 @@ import Counter from '../src/counter';
 import {
   STATUSCODE_FAILURE,
 } from '../src/constants';
+import './mkdir';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 

@@ -17,6 +17,7 @@ import simpleMultiReporter from './simple-multi-reporter';
 import {
   TEMP_DIR,
 } from '../src/constants';
+import './mkdir';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
