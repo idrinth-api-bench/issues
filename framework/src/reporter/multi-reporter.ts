@@ -5,8 +5,11 @@ interface ReporterList {
   addReporter: (reporter: Reporter) => void;
 }
 
+interface MultiReporterType extends ReporterList, Reporter {
+}
+
 const reporters: Array<Reporter> = [];
-const multi: Reporter&ReporterList = (
+const multi: MultiReporterType = (
   results: FinishedRun,
   rootDir: string,
 ): void => {
