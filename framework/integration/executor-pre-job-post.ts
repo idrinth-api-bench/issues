@@ -18,7 +18,9 @@ import NoopStorage from '../src/storage/noop-storage';
 import makeConsoleMock from 'consolemock';
 import NoProgress from '../src/progress/no-progress';
 import Counter from '../src/counter';
-import {TEMP_DIR} from "../src/constants";
+import {
+  TEMP_DIR,
+} from '../src/constants';
 
 const NONE = 0;
 
