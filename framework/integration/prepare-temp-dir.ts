@@ -9,6 +9,7 @@ import {
   statSync,
 } from 'fs';
 
+// eslint-disable-next-line complexity
 export default () => {
   if (existsSync(TEMP_DIR,)) {
     const dir = statSync(TEMP_DIR,);
