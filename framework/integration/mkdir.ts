@@ -13,7 +13,8 @@ export default () => {
     for (const file of readdirSync(TEMP_DIR,)) {
       try {
         unlinkSync(`${ TEMP_DIR }/${ file }`,);
-      } catch(e) {
+      } catch (e) {
+        // eslint-disable-next-line no-console
         console.error(e,);
       }
     }
