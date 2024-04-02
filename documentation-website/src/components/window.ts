@@ -5,6 +5,6 @@ interface Window {
   },
   Navigator: {
     language: string,
-  } 
+  }
 }
 export default Window;
