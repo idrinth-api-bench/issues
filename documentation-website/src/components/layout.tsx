@@ -32,10 +32,7 @@ const Layout = ({
     </article>
     <Footer/>
     <ScrollToHashElement/>
-    {/*@ts-expect-error _paq can be null*/}
-    {(!localStorage.getItem('consent-was-asked') && window?._paq) &&
-    createPortal(<CookieConsent />,document.body)
-    }
+    {createPortal(<CookieConsent />,document.body)}
   </>;
 };
 
