@@ -5,7 +5,6 @@ import {
 import 'mocha';
 import {
   readFileSync,
-  mkdirSync,
 } from 'fs';
 import {
   spawn,
@@ -38,9 +37,7 @@ describe('main@job', function() {
   after(() => {
     Counter.clear();
   },);
-  beforeEach(() => {
-    prepareTempDir();
-  },);
+  beforeEach(prepareTempDir,);
   afterEach(prepareTempDir,);
   it('should write results', async() => {
     await delay(WAIT_DELAY,);
