@@ -5,7 +5,9 @@ import CliReport from '../../../assets/cli-result.jpg';
 import JsonReport from '../../../assets/json-result.jpg';
 import Layout from '../../../components/layout.tsx';
 import Code from '../../../components/code.tsx';
-import {Lang} from "../../../components/lang.tsx";
+import {
+  Lang,
+} from '../../../components/lang.tsx';
 
 const Results = () => <Layout
   page='results'
