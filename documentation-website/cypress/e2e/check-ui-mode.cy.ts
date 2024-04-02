@@ -10,11 +10,11 @@ describe('UI Mode Test', () => {
         '(prefers-color-scheme: dark)',).matches;
       if (prefersDarkMode) {
         cy.get('html',).should('have.class', 'dark-mode',);
-        cy.get('.dark-mode-icon',).click();
+        cy.get('.theme-toggle-btn',).click();
         cy.get('html',).should('not.have.class', 'dark-mode',);
       } else {
         cy.get('html',).should('not.have.class', 'dark-mode',);
-        cy.get('.dark-mode-icon',).click();
+        cy.get('.theme-toggle-btn',).click();
         cy.get('html',).should('have.class', 'dark-mode',);
       }
     },);
