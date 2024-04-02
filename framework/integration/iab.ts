@@ -8,7 +8,9 @@ import {
 } from 'child_process';
 import url from 'url';
 import Counter from '../src/counter';
-import {STATUSCODE_FAILURE,} from '../src/constants';
+import {
+  STATUSCODE_FAILURE,
+} from '../src/constants';
 import prepareTempDir from './prepare-temp-dir';
 import delay from './delay';
 
