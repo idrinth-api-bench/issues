@@ -57,13 +57,13 @@ socials:
 
 code-of-conduct:
   meta:
-    title: "Code of Conduct"
-    description: "The Contributor's Code of Conduct for @idrinth/api-bench"
+    title: "Verhaltenskodex"
+    description: "Der Verhaltenskodex für Beitragende des @idrinth/api-bench"
 
 home:
   meta:
-    title: "Home"
-    description: "Welcome to the documentation for the framework @idrinth/api-bench"
+    title: "Startseite"
+    description: "Willkommen in der Dokumentation für das Framework @idrinth/api-bench"
   title: "What does this project do?"
   what: "This project provides a framework for testing rest-apis and websites for  changes in response times."
   why: "This helps to detect performance changes in code in a quick and simple manner."
