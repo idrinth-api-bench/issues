@@ -1,4 +1,3 @@
-import 'mock-fs';
 import {
   TEMP_DIR,
 } from '../src/constants';

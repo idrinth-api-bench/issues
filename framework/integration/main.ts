@@ -1,4 +1,3 @@
-import mock from 'mock-fs';
 import run from '../src/main';
 import {
   expect,
@@ -6,6 +5,7 @@ import {
 import 'mocha';
 import {
   readFileSync,
+  mkdirSync,
 } from 'fs';
 import {
   spawn,
@@ -40,17 +40,12 @@ describe('main@job', function() {
   },);
   beforeEach(() => {
     prepareTempDir();
-    const config = {};
-    config[`${ TEMP_DIR }/mocked-main`] = mock.directory({},);
-    config[process.cwd()] = mock.load(process.cwd(),);
-    mock(config, {
-      createCwd: false,
+    mkdirSync(`${ TEMP_DIR }/mocked-main`, {
+      recursive: true,
+      mode: 777,
     },);
   },);
-  afterEach(() => {
-    mock.restore();
-    prepareTempDir();
-  },);
+  afterEach(prepareTempDir,);
   it('should write results', async() => {
     await delay(WAIT_DELAY,);
     await run({
