@@ -12,7 +12,7 @@ import Counter from '../src/counter';
 import {
   STATUSCODE_FAILURE,
 } from '../src/constants';
-import mkdir from './mkdir';
+import prepareTempDir from './prepare-temp-dir';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
@@ -27,19 +27,23 @@ describe('iab-cli', function() {
       __dirname + '../fixtures/server.cjs',
       '48912',
     ],);
+    Counter.clear();
+  },);
+  after(() => {
+    Counter.clear();
+  },);
+  beforeEach(() => {
+    prepareTempDir();
     const config = {};
     config[process.cwd()] = mock.load(process.cwd(),);
     mock(config, {
       createCwd: false,
     },);
-    Counter.clear();
   },);
-  after(() => {
+  afterEach(() => {
     mock.restore();
-    Counter.clear();
+    prepareTempDir();
   },);
-  beforeEach(mkdir,);
-  afterEach(mkdir,);
   it('bench', async() => {
     await delay(WAIT_DELAY,);
     const status = await run([

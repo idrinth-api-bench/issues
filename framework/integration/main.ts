@@ -17,7 +17,7 @@ import simpleMultiReporter from './simple-multi-reporter';
 import {
   TEMP_DIR,
 } from '../src/constants';
-import mkdir from './mkdir';
+import prepareTempDir from './prepare-temp-dir';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url,),);
 
@@ -33,20 +33,24 @@ describe('main@job', function() {
       __dirname + '../fixtures/server.cjs',
       '48912',
     ],);
+    Counter.clear();
+  },);
+  after(() => {
+    Counter.clear();
+  },);
+  beforeEach(() => {
+    prepareTempDir();
     const config = {};
     config[`${ TEMP_DIR }/mocked-main`] = mock.directory({},);
     config[process.cwd()] = mock.load(process.cwd(),);
     mock(config, {
       createCwd: false,
     },);
-    Counter.clear();
   },);
-  after(() => {
+  afterEach(() => {
     mock.restore();
-    Counter.clear();
+    prepareTempDir();
   },);
-  beforeEach(mkdir,);
-  afterEach(mkdir,);
   it('should write results', async() => {
     await delay(WAIT_DELAY,);
     await run({
