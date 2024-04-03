@@ -17,7 +17,8 @@
     "setup": "node tools/setup.js",
     "regression": "node tools/regression.js",
     "license": "node tools/update-year.js",
-    "language": "itlfy watch cli framework documentation-website history-website"
+    "language": "itlfy watch cli framework documentation-website history-website",
+    "check-language": "itlfy check"
   },
   "repository": {
     "type": "git",

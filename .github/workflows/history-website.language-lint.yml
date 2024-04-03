@@ -33,4 +33,4 @@ jobs:
             cli/package-lock.json
             package-lock.json
       - run: npm ci
-      - run: itlfy check history-website
+      - run: npm run check-language -- check history-website
