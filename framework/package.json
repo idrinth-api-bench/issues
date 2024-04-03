@@ -43,10 +43,10 @@
     "needle": "^3.2.0",
     "fs-extra": "^11.2.0",
     "is-callable": "^1.2.7",
-    "yaml": "^2.3.4",
     "dotenv": "^16.3.1",
     "fast-xml-parser": "^4.3.2",
-    "mysql2": "^3.6.5"
+    "mysql2": "^3.6.5",
+    "@idrinth/typescript-language-from-yaml": "^1.0.2"
   },
   "devDependencies": {
     "@databases/mysql-test": "^4.0.2",

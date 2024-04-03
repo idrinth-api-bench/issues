@@ -17,7 +17,7 @@
     "setup": "node tools/setup.js",
     "regression": "node tools/regression.js",
     "license": "node tools/update-year.js",
-    "language": "node tools/watch-language.js"
+    "language": "itlfy watch cli framework documentation-website history-website"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
     "eslint-plugin-json": "^3.1.0",
     "markdownlint-cli": "^0.39.0",
     "spellchecker-cli": "^6.2.0",
-    "yaml": "^2.4.1"
+    "@idrinth/typescript-language-from-yaml": "^1.0.1"
   },
   "engines": {
     "node": ">=20"
