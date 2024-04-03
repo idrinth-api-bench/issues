@@ -44,5 +44,5 @@ jobs:
             package-lock.json
       - run: npm ci
       - run: cd cli && npm ci
-      - run: npm run language
-      - run: cd cli && npm run-script lint
+      - run: cd cli && npm run language
+      - run: cd cli && npm run lint

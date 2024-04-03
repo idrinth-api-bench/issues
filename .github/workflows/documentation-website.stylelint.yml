@@ -35,8 +35,7 @@ jobs:
             cli/package-lock.json
             package-lock.json
       - run: cd documentation-website && npm ci
-      - run: npm run language
-      - run: cd documentation-website && npm run-script lint-styles
+      - run: cd documentation-website && npm run lint-styles
   duplicate-style-check:
     runs-on: ubuntu-latest
     steps:
@@ -54,5 +53,4 @@ jobs:
             cli/package-lock.json
             package-lock.json
       - run: cd documentation-website && npm ci
-      - run: npm run language
-      - run: cd documentation-website && npm run-script lint-css
+      - run: cd documentation-website && npm run lint-css

@@ -33,5 +33,4 @@ jobs:
             cli/package-lock.json
             package-lock.json
       - run: npm ci
-      - run: npm run language
       - run: iltfy check documentation-website

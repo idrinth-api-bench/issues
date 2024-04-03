@@ -35,5 +35,4 @@ jobs:
             cli/package-lock.json
             package-lock.json
       - run: cd documentation-website && npm ci
-      - run: npm run language
-      - run: cd documentation-website && npm run-script lint-md
+      - run: cd documentation-website && npm run lint-md
