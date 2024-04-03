@@ -2,6 +2,7 @@ import exec from './exec.js';
 
 export default (command,) => {
   exec(command, true,);
+  exec(`cd cli && ${ command }`, true,);
   exec(`cd framework && ${ command }`, true,);
   exec(`cd documentation-website && ${ command }`, true,);
   exec(`cd history-website && ${ command }`, true,);
