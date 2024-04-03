@@ -24,7 +24,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-svelte": "^2.35.1",
     "markdownlint-cli": "^0.39.0",
-    "@idrinth/typescript-language-from-yaml": "^1.0.1"
+    "@idrinth/typescript-language-from-yaml": "^1.0.3"
   },
   "engines": {
     "node": ">=20"
