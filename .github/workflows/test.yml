@@ -40,7 +40,8 @@ jobs:
             history-website/package-lock.json
             cli/package-lock.json
             package-lock.json
-      - run: cd framework && npm ci && npm run language
+      - run: cd framework && npm ci
+      - run: npm run language
       - run: cd framework && npm run-script test
       - run: mv ./framework/coverage ./
       - run: sed -i 's/SF:src/SF:framework\/src/' ./coverage/lcov.info
@@ -66,7 +67,8 @@ jobs:
             history-website/package-lock.json
             cli/package-lock.json
             package-lock.json
-      - run: cd framework && npm ci && npm run language
+      - run: cd framework && npm ci
+      - run: npm run language
       - run: cd framework && npm run-script test
       - run: mv ./framework/coverage ./
       - run: sed -i 's/SF:src/SF:framework\/src/' ./coverage/lcov.info
@@ -92,7 +94,8 @@ jobs:
             history-website/package-lock.json
             cli/package-lock.json
             package-lock.json
-      - run: cd cli && npm ci && npm run language
+      - run: cd cli && npm ci
+      - run: npm run language
       - run: cd cli && npm run-script test
       - run: mv ./cli/coverage ./
       - run: sed -i 's/SF:src/SF:cli\/src/' ./coverage/lcov.info
@@ -118,7 +121,8 @@ jobs:
             history-website/package-lock.json
             cli/package-lock.json
             package-lock.json
-      - run: cd cli && npm ci && npm run language
+      - run: cd cli && npm ci
+      - run: npm run language
       - run: cd cli && npm run-script test
       - run: mv ./cli/coverage ./
       - run: sed -i 's/SF:src/SF:cli\/src/' ./coverage/lcov.info
@@ -144,7 +148,8 @@ jobs:
             history-website/package-lock.json
             cli/package-lock.json
             package-lock.json
-      - run: cd framework && npm ci && npm run language
+      - run: cd framework && npm ci
+      - run: npm run language
       - run: cd framework && npm run-script integration
       - run: mv ./framework/coverage ./
       - run: sed -i 's/SF:src/SF:framework\/src/' ./coverage/lcov.info
@@ -170,7 +175,8 @@ jobs:
             history-website/package-lock.json
             cli/package-lock.json
             package-lock.json
-      - run: cd framework && npm ci && npm run language
+      - run: cd framework && npm ci
+      - run: npm run language
       - run: cd framework && npm run-script integration
       - run: mv ./framework/coverage ./
       - run: sed -i 's/SF:src/SF:framework\/src/' ./coverage/lcov.info
@@ -196,7 +202,8 @@ jobs:
             history-website/package-lock.json
             cli/package-lock.json
             package-lock.json
-      - run: cd documentation-website && npm ci && npm run language
+      - run: cd documentation-website && npm ci
+      - run: npm run language
       - run: cd documentation-website && npm run-script test
       - run: mv ./documentation-website/coverage ./
       - run: sed -i 's/SF:src/SF:documentation-website\/src/' ./coverage/lcov.info
@@ -222,7 +229,8 @@ jobs:
             history-website/package-lock.json
             cli/package-lock.json
             package-lock.json
-      - run: cd documentation-website && npm ci && npm run language
+      - run: cd documentation-website && npm ci
+      - run: npm run language
       - run: cd documentation-website && npm run-script e2e
       - run: mv ./documentation-website/coverage ./
       - run: sed -i 's/SF:src/SF:documentation-website\/src/' ./coverage/lcov.info

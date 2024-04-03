@@ -34,5 +34,6 @@ jobs:
             history-website/package-lock.json
             cli/package-lock.json
             package-lock.json
-      - run: cd framework && npm ci && npm run language
+      - run: cd framework && npm ci
+      - run: npm run language
       - run: cd framework && npm run-script lint-md

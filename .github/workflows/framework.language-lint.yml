@@ -32,5 +32,6 @@ jobs:
             history-website/package-lock.json
             cli/package-lock.json
             package-lock.json
-      - run: npm ci && npm run language
+      - run: npm ci
+      - run: npm run language
       - run: iltfy check framework

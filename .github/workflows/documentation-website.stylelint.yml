@@ -34,7 +34,8 @@ jobs:
             history-website/package-lock.json
             cli/package-lock.json
             package-lock.json
-      - run: cd documentation-website && npm ci && npm run language
+      - run: cd documentation-website && npm ci
+      - run: npm run language
       - run: cd documentation-website && npm run-script lint-styles
   duplicate-style-check:
     runs-on: ubuntu-latest
@@ -52,5 +53,6 @@ jobs:
             history-website/package-lock.json
             cli/package-lock.json
             package-lock.json
-      - run: cd documentation-website && npm ci && npm run language
+      - run: cd documentation-website && npm ci
+      - run: npm run language
       - run: cd documentation-website && npm run-script lint-css

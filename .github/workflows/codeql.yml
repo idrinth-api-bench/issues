@@ -60,15 +60,19 @@ jobs:
     - name: Build root
       run: npm ci
     - name: Build documentation website
-      run: cd documentation-website && npm ci && npm run language
+      run: cd documentation-website && npm ci
+    - run: npm run language
     - name: Build history website
-      run: cd history-website && npm ci && npm run language
+      run: cd history-website && npm ci
+        - run: npm run language
     - name: Build history service
       run: cd history-microservice && npm ci
     - name: Build framework
-      run: cd framework && npm ci && npm run language
+      run: cd framework && npm ci
+    - run: npm run language
     - name: Build cli
-      run: cd cli && npm ci && npm run language
+      run: cd cli && npm ci
+    - run: npm run language
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
       with:

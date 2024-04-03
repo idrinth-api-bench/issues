@@ -43,5 +43,6 @@ jobs:
             cli/package-lock.json
             package-lock.json
       - run: npm ci
-      - run: cd framework && npm ci && npm run language
+      - run: cd framework && npm ci
+      - run: npm run language
       - run: cd framework && npm run-script lint
