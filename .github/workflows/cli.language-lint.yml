@@ -33,4 +33,4 @@ jobs:
             cli/package-lock.json
             package-lock.json
       - run: npm ci
-      - run: npm run check-language -- check cli
+      - run: npm run check-language -- cli
