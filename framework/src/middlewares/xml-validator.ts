@@ -4,13 +4,13 @@ import Request from '../request.js';
 import Result from '../result.js';
 import language from '../helper/language.js';
 import {
-  XMLValidator,
+  XMLValidator as FastXMLValidator,
 } from 'fast-xml-parser';
 
 const xmlCheck = /\/xml/ui;
 
 @staticImplements<Middleware>()
-export default class JsonValidator {
+export default class XMLValidator {
   public static prepare(request: Request,): Request {
     return request;
   }
@@ -23,7 +23,7 @@ export default class JsonValidator {
     if (! xmlCheck.test(contentType,)) {
       throw Error(language('no_xml_content_type', contentType,),);
     }
-    if (XMLValidator.validate(result.response.body,) !== true) {
+    if (FastXMLValidator.validate(result.response.body,) !== true) {
       throw Error(language('invalid_xml_body',),);
     }
   }
