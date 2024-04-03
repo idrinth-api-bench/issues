@@ -1,4 +1,5 @@
 text: "@idrinth/api-bench"
+$schema: ./schema.json
 children:
   - text: Marketing
     url: https://github.com/Idrinth/api-bench/labels/marketing
