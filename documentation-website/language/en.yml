@@ -70,12 +70,20 @@ home:
   benchmark:
     title: "Why use a Benchmark Runner?"
     microservices: "Given that the amount of APIs increase by moving to microservices, we need a way to determine if changes to a service's response times are related to code changes."
-    purpose: "For this purpose a defined load with repeatable request seems the most useful."
+    purpose: "For this purpose a defined load with repeatable requests with a medium amount of checks seems the most useful."
+  load-test:
+    title: "Why use a Load Test Runner?"
+    microservices: "For planning and scaling purposes, we need to know how many users we can handle with a given amount of microservice instances."
+    purpose: "For this purpose a defined growing load with repeatable requests with few checks seems the most useful."
+  content-test:
+    title: "Why use a Content Test Runner?"
+    microservices: "With the amount of APIs skyrocketing, the need to test them quickly and with as little effort as possible is required."
+    purpose: "For this purpose repeatable requests with many checks seems the most useful."
   libraries:
     title: "Regarding existing libraries"
     description: "Other tools like matteofigus/api-benchmark, bvanderlaan/api-bench-runner, or jeffbski/bench-rest are all untouched for quite a while and don't provide type definitions for typescript. This makes them less desirable when working with projects where the better static code check is a huge boost in development speed."
+    reusability: "A huge benefit of using this framework is writing route definitions once and reusing them across all desired test types."
     threading: "Additionally, this tool separates the validation thread from the thread processing the actual requests to further minimize the effect of complicated validations or huge response bodies on the data gathering."
-
 
 faq:
   meta:
@@ -313,6 +321,19 @@ results:
   meta:
     title: "Results | Usage"
     description: "The framework @idrinth/api-bench provides default result handlers and allows for additional custom result handlers"
+  title: "Results"
+  description: "By default, all possible result formats are provided. The files are created in the application root, but that can be overwritten programmatically."
+  csv:
+    description: "This provides a file, that can easily opened by excel or handled programmatically."
+  html:
+    description: "This provides a simple html file, that could be sent by email for example."
+  cli:
+    description: "This provides a small table in the command line, that shows most of the data."
+  json:
+    description: "This provides a file easily handled via other software. By default, it is not formatted for readability."
+  custom:
+    title: "Custom Results"
+    description: "You can provide a custom reporter instance as part of your configuration in programmatically accessing the framework. It will be called with the complete result after all result modifiers have modified the result."
 
 usage:
   meta:
@@ -344,8 +365,10 @@ storage:
   meta:
     title: "Storage | Usage"
     description: "Information about the provided mysql storage and how to create custom storage implementations for @idrinth/api-bench"
+  title:  "Storage"
   description: "Storage classes store each finished set of the run. By default, nothing is stored, but a mysql storage is provided for those wanting it."
   custom:
+    title: "Custom Storage"
     description: "To provide a custom storage, implement the interface below. The method will be called once per task."
 
 routes:

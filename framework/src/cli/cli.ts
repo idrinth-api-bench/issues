@@ -8,7 +8,7 @@ import {
   STATUSCODE_FAILURE,
   ONE,
   TWO,
-  BASE_10_RADIX,
+  BASE_10_RADIX, DEFAULT_THREADS, DEFAULT_REPETITIONS,
 } from '../constants.js';
 import resultStore from '../result-store.js';
 import run from '../main.js';
@@ -25,6 +25,8 @@ export default async(args: string[], cwd: string,): Promise<number> => {
   );
   const config: Config = {
     cwd,
+    threads: DEFAULT_THREADS,
+    repetitions: DEFAULT_REPETITIONS,
   };
   for (const option of options) {
     const parts = option.split('=',);
@@ -37,12 +39,14 @@ export default async(args: string[], cwd: string,): Promise<number> => {
   const task = args.filter(
     (arg,) => ! arg.startsWith('--',),
   )[FIRST_ARGUMENT] || 'help';
+  resultStore.set(false,);
   switch (task) {
     case 'bench':
       await run({
         mode: 'benchmarking',
         taskId: config.taskId,
         language: config.language,
+        cwd: config.cwd,
       }, config.threads, config.repetitions,);
       break;
     case 'content':
@@ -50,6 +54,7 @@ export default async(args: string[], cwd: string,): Promise<number> => {
         mode: 'content-testing',
         taskId: config.taskId,
         language: config.language,
+        cwd: config.cwd,
       }, ONE, ONE,);
       break;
     case 'load':

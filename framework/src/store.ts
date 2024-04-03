@@ -2,13 +2,9 @@ import {
   writeFileSync,
   readFileSync,
   existsSync,
-  mkdirSync,
-  rmdirSync,
+  readdirSync,
+  unlinkSync,
 } from 'fs';
-import fsExtra from 'fs-extra/esm';
-import {
-  tmpdir,
-} from 'os';
 import {
   createHash,
 } from 'crypto';
@@ -17,15 +13,13 @@ import {
 } from 'path';
 import language from './helper/language.js';
 import {
-  EMPTY,
   FRAMEWORK_ROOT,
-  TWO,
+  TEMP_DIR,
 } from './constants.js';
 
 const hash = createHash('sha256',)
   .update(FRAMEWORK_ROOT,)
   .digest('hex',);
-const cacheFolder: string = tmpdir() + sep + 'api-bench' + sep + '_' + hash;
 const keyCheck = /^[a-z0-9.]+$/u;
 
 export default {
@@ -33,28 +27,22 @@ export default {
     if (! keyCheck.test(key,)) {
       throw new Error(language('invalid_key', key,),);
     }
-    if (! existsSync(cacheFolder + sep + key,)) {
+    if (! existsSync(TEMP_DIR + sep + 'api-bench_' + hash + key,)) {
       return defaulted;
     }
-    return readFileSync(cacheFolder + sep + key,) + '';
+    return readFileSync(TEMP_DIR + sep + 'api-bench_' + hash + key, 'utf8',);
   },
   set(key: string, value: string,): void {
     if (! keyCheck.test(key,)) {
       throw new Error(language('invalid_key', key,),);
     }
-    let counter = TWO;
-    while (! existsSync(cacheFolder,) && counter >= EMPTY) {
-      mkdirSync(cacheFolder, {
-        recursive: true,
-      },);
-      counter --;
-    }
-    writeFileSync(cacheFolder + sep + key, value,);
+    writeFileSync(TEMP_DIR + sep + 'api-bench_' + hash + key, value,);
   },
-  async clean(): Promise<void> {
-    if (existsSync(cacheFolder,)) {
-      await fsExtra.emptyDir(cacheFolder,);
-      rmdirSync(cacheFolder,);
+  clean(): void {
+    for (const file of readdirSync(TEMP_DIR, 'utf8',)) {
+      if (file.startsWith('api-bench_' + hash,)) {
+        unlinkSync(TEMP_DIR + sep + file,);
+      }
     }
   },
 };

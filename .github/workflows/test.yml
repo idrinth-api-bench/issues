@@ -41,7 +41,8 @@ jobs:
             cli/package-lock.json
             package-lock.json
       - run: cd framework && npm ci
-      - run: cd framework && npm run-script test
+      - run: cd framework && npm run language
+      - run: cd framework && npm run test
       - run: mv ./framework/coverage ./
       - run: sed -i 's/SF:src/SF:framework\/src/' ./coverage/lcov.info
       - name: Coveralls
@@ -67,7 +68,8 @@ jobs:
             cli/package-lock.json
             package-lock.json
       - run: cd framework && npm ci
-      - run: cd framework && npm run-script test
+      - run: cd framework && npm run language
+      - run: cd framework && npm run test
       - run: mv ./framework/coverage ./
       - run: sed -i 's/SF:src/SF:framework\/src/' ./coverage/lcov.info
       - name: Coveralls
@@ -93,7 +95,8 @@ jobs:
             cli/package-lock.json
             package-lock.json
       - run: cd cli && npm ci
-      - run: cd cli && npm run-script test
+      - run: cd cli && npm run language
+      - run: cd cli && npm run test
       - run: mv ./cli/coverage ./
       - run: sed -i 's/SF:src/SF:cli\/src/' ./coverage/lcov.info
       - name: Coveralls
@@ -119,7 +122,8 @@ jobs:
             cli/package-lock.json
             package-lock.json
       - run: cd cli && npm ci
-      - run: cd cli && npm run-script test
+      - run: cd cli && npm run language
+      - run: cd cli && npm run test
       - run: mv ./cli/coverage ./
       - run: sed -i 's/SF:src/SF:cli\/src/' ./coverage/lcov.info
       - name: Coveralls
@@ -145,7 +149,8 @@ jobs:
             cli/package-lock.json
             package-lock.json
       - run: cd framework && npm ci
-      - run: cd framework && npm run-script integration
+      - run: cd framework && npm run language
+      - run: cd framework && npm run integration
       - run: mv ./framework/coverage ./
       - run: sed -i 's/SF:src/SF:framework\/src/' ./coverage/lcov.info
       - name: Coveralls
@@ -171,7 +176,8 @@ jobs:
             cli/package-lock.json
             package-lock.json
       - run: cd framework && npm ci
-      - run: cd framework && npm run-script integration
+      - run: cd framework && npm run language
+      - run: cd framework && npm run integration
       - run: mv ./framework/coverage ./
       - run: sed -i 's/SF:src/SF:framework\/src/' ./coverage/lcov.info
       - name: Coveralls
@@ -197,7 +203,8 @@ jobs:
             cli/package-lock.json
             package-lock.json
       - run: cd documentation-website && npm ci
-      - run: cd documentation-website && npm run-script test
+      - run: cd documentation-website && npm run language
+      - run: cd documentation-website && npm run test
       - run: mv ./documentation-website/coverage ./
       - run: sed -i 's/SF:src/SF:documentation-website\/src/' ./coverage/lcov.info
       - name: Coveralls
@@ -223,7 +230,8 @@ jobs:
             cli/package-lock.json
             package-lock.json
       - run: cd documentation-website && npm ci
-      - run: cd documentation-website && npm run-script e2e
+      - run: cd documentation-website && npm run language
+      - run: cd documentation-website && npm run e2e
       - run: mv ./documentation-website/coverage ./
       - run: sed -i 's/SF:src/SF:documentation-website\/src/' ./coverage/lcov.info
       - name: Coveralls

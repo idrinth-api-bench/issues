@@ -5,7 +5,7 @@ import {
 import 'mocha';
 import Result from '../../src/result.js';
 
-describe('middlewares/json-validator', () => {
+describe('middlewares/xml-validator', () => {
   it('should be a class', () => {
     expect(XMLValidator,).to.be.a('function',);
   },);
@@ -41,7 +41,7 @@ describe('middlewares/json-validator', () => {
       expect(() => XMLValidator.process(response,),)
         .to.throw('The content-type header is missing.',);
     },);
-    it('should throw if the type is not json', () => {
+    it('should throw if the type is not xml', () => {
       const response: Result = {
         id: 'example',
         validators: [],
@@ -61,7 +61,7 @@ describe('middlewares/json-validator', () => {
           'The content-type application/jason is not */xml.',
         );
     },);
-    it('should throw if the body is not json', () => {
+    it('should throw if the body is not xml', () => {
       const response: Result = {
         id: 'example',
         validators: [],

@@ -1,12 +1,10 @@
 import Reporter from './reporter.js';
 import FinishedRun from '../finished-run.js';
-
-interface ReporterList {
-  addReporter: (reporter: Reporter) => void;
-}
+import MultiReporterType from './multi-reporter-type.js';
 
 const reporters: Array<Reporter> = [];
-const multi: Reporter&ReporterList = (
+
+const multi: MultiReporterType = (
   results: FinishedRun,
   rootDir: string,
 ): void => {

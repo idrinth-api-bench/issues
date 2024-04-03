@@ -5,8 +5,11 @@ import {
 import 'mocha';
 import Request from '../../src/request.js';
 import Result from '../../src/result.js';
+import store from '../../src/store';
 
 describe('middlewares/csrf-header', () => {
+  before(store.clean,);
+  after(store.clean,);
   it('should be a class', () => {
     expect(Access,).to.be.a('function',);
   },);

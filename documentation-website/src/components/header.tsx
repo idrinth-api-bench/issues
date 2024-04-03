@@ -45,10 +45,6 @@ const Header = ({
         label={'docker'}
       />
       <SocialLink
-        to={'https://www.youtube.com/@idrinth-api-bench'}
-        label={'youtube'}
-      />
-      <SocialLink
         to={
           'https://app.opensauced.pizza/workspaces' +
           '/b1f1f893-1572-4353-af0c-548ba47007e7'
@@ -58,6 +54,10 @@ const Header = ({
       <SocialLink
         to="https://www.linkedin.com/groups/9588634/"
         label={'linkedin'}
+      />
+      <SocialLink
+        to={'https://www.youtube.com/@idrinth-api-bench'}
+        label={'youtube'}
       />
       <SocialLink
         to={

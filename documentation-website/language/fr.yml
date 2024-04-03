@@ -56,7 +56,7 @@ storage:
   description: "Les classes de stockage stockent chaque ensemble terminé de l'exécution. Par défaut, rien n'est stocké, mais un stockage mysql est prévu pour ceux qui le souhaitent."
   custom:
     description: "Pour fournir un stockage personnalisé, implémentez l'interface ci-dessous. La méthode sera appelée une fois par tâche."
-route:
+routes:
   meta:
     title: "Route | Usage"
     description: "Informations sur la création de test route définitions avec le framework @idrinth/api-bench"

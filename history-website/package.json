@@ -11,8 +11,7 @@
     "lint-md": "markdownlint *.md",
     "lint": "eslint . --ext ts,svelte --report-unused-disable-directives --max-warnings 0",
     "lint-fix": "eslint . --ext ts,svelte --report-unused-disable-directives --max-warnings 0 --fix",
-    "language": "node tools/generate-language.js",
-    "postinstall": "npm run language"
+    "language": "itlfy generate --verbatimModuleSyntax --split"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
@@ -25,7 +24,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-svelte": "^2.35.1",
     "markdownlint-cli": "^0.39.0",
-    "yaml": "^2.4.1"
+    "@idrinth/typescript-language-from-yaml": "^1.0.7"
   },
   "engines": {
     "node": ">=20"

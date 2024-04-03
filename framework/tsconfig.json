@@ -17,9 +17,6 @@
     "index.ts"
   ],
   "ts-node": {
-    "transpileOnly": true,
-    "moduleTypes": {
-      "*.ts": "cjs"
-    }
+    "transpileOnly": true
   }
 }
