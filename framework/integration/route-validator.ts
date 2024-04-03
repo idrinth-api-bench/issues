@@ -10,7 +10,7 @@ const WAIT_TEST = 15000;
 
 describe('route-validation', function() {
   it('should execute', async() => {
-    await checkRoutes([], __dirname + '../fixtures',);
+    await checkRoutes([], __dirname + '../fixtures/test-group-1',);
     // eslint-disable-next-line no-unused-expressions
     expect(true,).to.be.true;
   },).timeout(WAIT_TEST,);
