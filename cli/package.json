@@ -34,8 +34,7 @@
   "dependencies": {
     "change-case": "^5.4.3",
     "cli-progress": "^3.12.0",
-    "fs-extra": "^11.2.0",
-    "yaml": "^2.4.1"
+    "fs-extra": "^11.2.0"
   },
   "devDependencies": {
     "@types/chai": "^4.3.14",
@@ -50,7 +49,8 @@
     "mocha": "^10.2.0",
     "mock-fs": "^5.2.0",
     "ts-node": "^10.9.1",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.3",
+    "@idrinth/typescript-language-from-yaml": "^1.2.4"
   },
   "bin": {
     "make-benchmark-project": "bin/make-benchmark-project.js",
@@ -67,10 +67,9 @@
     "test": "c8 mocha test",
     "clear": "node tools/clear-js-files-from-src.js",
     "tsc": "tsc -p tsconfig.json",
-    "language": "node tools/generate-language.js",
+    "language": "itlfy generate",
     "prepublishOnly": "npm run language && npm run tsc",
-    "postpublishOnly": "npm run clear",
-    "postinstall": "npm run language"
+    "postpublishOnly": "npm run clear"
   },
   "engines": {
     "node": ">=20"
