@@ -69,8 +69,7 @@
     "tsc": "tsc -p tsconfig.json",
     "language": "itlfy generate",
     "prepublishOnly": "npm run language && npm run tsc",
-    "postpublishOnly": "npm run clear",
-    "postinstall": "npm run language"
+    "postpublishOnly": "npm run clear"
   },
   "engines": {
     "node": ">=20"

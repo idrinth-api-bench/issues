@@ -25,7 +25,7 @@
     "lint-styles": "stylelint src/index.css src/**/**/*.css",
     "lint-css": "ilcd",
     "lint-md": "markdownlint *.md",
-    "postinstall": "irfbrgr && npm run contributors && npm run language",
+    "postinstall": "irfbrgr && npm run contributors",
     "routes": "irfbrgr",
     "contributors": "node tools/load-contributors.js",
     "language": "itlfy generate --split",

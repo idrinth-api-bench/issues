@@ -11,8 +11,7 @@
     "lint-md": "markdownlint *.md",
     "lint": "eslint . --ext ts,svelte --report-unused-disable-directives --max-warnings 0",
     "lint-fix": "eslint . --ext ts,svelte --report-unused-disable-directives --max-warnings 0 --fix",
-    "language": "itlfy generate --verbatimModuleSyntax --split",
-    "postinstall": "npm run language"
+    "language": "itlfy generate --verbatimModuleSyntax --split"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.0.2",

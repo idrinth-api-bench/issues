@@ -90,8 +90,7 @@
     "tsc": "tsc -p tsconfig.json",
     "prepublishOnly": "npm run tsc",
     "postpublishOnly": "npm run clear",
-    "language": "node tools/generate-language.js",
-    "postinstall": "node tools/generate-language.js"
+    "language": "itlfy generate"
   },
   "engines": {
     "node": ">=20"
