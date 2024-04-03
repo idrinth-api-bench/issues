@@ -1,6 +1,6 @@
 .cookie-consent {
   background-color: var(--white);
-  padding: 20px;
+  padding: 1.25em;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -12,74 +12,67 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 10%);
 }
 
-/* Description styles */
-.cookie-consent-description {
-  text-align: left !important;
+.cookie-consent .cookie-consent-description {
+  text-align: left;
   width: 100%;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 0.75em;
 }
 
-.cookie-title {
+.cookie-consent .cookie-title {
   margin: 0;
   text-align: left;
-  font-size: 18px;
+  font-size: 1.2em;
 }
 
-.cookie-description {
-  font-size: 14px;
-  color: var(--dark-gray);
-}
-
-/* Button styles */
-.cookie-consent-buttons {
+.cookie-consent .cookie-consent-buttons {
   display: flex;
   justify-content: flex-start;
   width: 100%;
 }
- 
-.cookie-consent-accept-button,
-.cookie-consent-decline-button {
-    padding: 20px;
-    border-radius: 10px;
-    cursor: pointer;
+
+.cookie-consent .cookie-consent-accept-button,
+.cookie-consent .cookie-consent-decline-button {
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-
-.cookie-consent-accept-button {
+.cookie-consent .cookie-consent-accept-button {
   background-color: var(--green);
   color: #fff;
 }
 
-.cookie-consent-accept-button:hover {
+.cookie-consent .cookie-consent-accept-button:hover {
   background-color: var(--light-green);
 }
 
-.cookie-consent-decline-button {
+.cookie-consent .cookie-consent-decline-button {
   background-color: var(--light-gray);
-  color:  --black;
+  color: --black;
 }
 
-.cookie-consent-decline-button:hover {
+.cookie-consent .cookie-consent-decline-button:hover {
   background-color: rgb(167 173 179);
 }
 
 .dark-mode .cookie-consent {
   background-color: var(--black);
 }
-.dark-mode .cookie-description {
+
+.dark-mode .cookie-consent .cookie-description {
   color: var(--light-gray);
 }
 
-.dark-mode .cookie-consent-decline-button { 
+.dark-mode .cookie-consent .cookie-consent-decline-button {
   color: var(--white);
   background-color: var(--dark-gray);
 }
 
-.cookie-consent-accept-button + .cookie-consent-decline-button {
+.cookie-consent .cookie-consent-decline-button {
   margin-left: 10px;
-} 
+}
 
-.dark-mode .cookie-consent-decline-button:hover {
+.dark-mode .cookie-consent .cookie-consent-decline-button:hover {
   opacity: 80%;
 }
