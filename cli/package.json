@@ -50,7 +50,7 @@
     "mock-fs": "^5.2.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.4.3",
-    "@idrinth/typescript-language-from-yaml": "^1.0.7"
+    "@idrinth/typescript-language-from-yaml": "^1.2.0"
   },
   "bin": {
     "make-benchmark-project": "bin/make-benchmark-project.js",
