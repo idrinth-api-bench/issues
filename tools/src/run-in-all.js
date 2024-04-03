@@ -1,4 +1,4 @@
-import exec from './src/exec.js';
+import exec from './exec.js';
 
 export default (command,) => {
   exec(command, true,);
