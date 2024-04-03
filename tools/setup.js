@@ -1,10 +1,5 @@
 import exec from './src/exec.js';
+import runInAll from "./src/run-in-all.js";
 
-exec('npm ci', true,);
-exec('cd framework && npm ci', true,);
-exec('cd documentation-website && npm ci', true,);
+runInAll('npm install',);
 exec('cd documentation-website && npm run build', true,);
-exec('cd history-website && npm ci', true,);
-exec('cd history-website && npm ci', true,);
-exec('cd history-microservice && npm ci', true,);
-exec('cd mindmap && npm ci', true,);

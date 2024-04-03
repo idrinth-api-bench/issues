@@ -15,6 +15,7 @@
     "docker": "node tools/rebuild-images.js",
     "spellcheck": "spellchecker",
     "setup": "node tools/setup.js",
+    "update": "node tools/update.js",
     "regression": "node tools/regression.js",
     "license": "node tools/update-year.js",
     "language": "itlfy watch cli framework documentation-website history-website",
@@ -32,7 +33,7 @@
     "eslint-plugin-json": "^3.1.0",
     "markdownlint-cli": "^0.39.0",
     "spellchecker-cli": "^6.2.0",
-    "@idrinth/typescript-language-from-yaml": "^1.0.6"
+    "@idrinth/typescript-language-from-yaml": "^1.0.7"
   },
   "engines": {
     "node": ">=20"
