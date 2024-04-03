@@ -1,7 +1,38 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "https://mindmap.idrinth-api-ben.ch",
-  "$ref": "#/definitions/node",
+  "type": "object",
+  "properties": {
+    "text": {
+      "type": "string",
+      "description": "the displayed text of the node"
+    },
+    "description": {
+      "type": "string",
+      "description": "longer form description, that is displayed when hovering over the node"
+    },
+    "url": {
+      "type": "string",
+      "description": "a url to link to with this node"
+    },
+    "$schema": {
+      "type": "string",
+      "description": "the schema this one uses"
+    },
+    "children": {
+      "description": "child nodes, that are connected to the parent",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/node"
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "text",
+    "$schema"
+  ],
+  "additionalProperties": false,
   "definitions": {
     "node": {
       "type": "object",
