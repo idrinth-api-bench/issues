@@ -175,11 +175,11 @@ contributing:
     picking:
       title: "Picking the right issue"
       labels: "Issues that are good for relatively new coders are marked as `Good first issue`, issues marked as `help wanted` require a bit more knowledge about the project."
-      project: "Within an issue you find the project information on the right hand side, opening them up will reveal further estimates about size, difficulty, priority and main affected project part"
+      project: "Within an issue, you find the project information on the right-hand side, opening them up will reveal further estimates about size, difficulty, priority and main affected project part"
     workflow:
       title: "Contribution workflow"
       list_item_1: "fork the repository"
-      list_item_2: "mention in the issue, that you are working on it(it will be assigned for a few weeks then)"
+      list_item_2: "mention in the issue, that you are working on it (it will be assigned for a few weeks then)"
       list_item_3: "create a feature branch (issue-xxx-does-something) from master"
       list_item_4: "create a draft pull request"
       list_item_5: "mention fixes #xxx in the description"
@@ -191,7 +191,7 @@ contributing:
     mindmap:
       title: "Mindmap"
       introduction: "Contributing to the mindmap is encouraged. The mindmap is built from data.yml in /mindmap and follows the following schema:"
-      nodes: "This means, that nodes must have a text property for displaying them. They may also have a URL, a description, and more nodes as children."
+      nodes: "This means that nodes must have a text property for displaying them. They may also have a URL, a description, and more nodes as children."
     tests:
       title: "Tests"
       description: "Testing new code is expected and adding tests or improving tests for old code is appreciated. The goal is to find most issues by either static analysis or unit and integration tests."
@@ -207,7 +207,7 @@ contributing:
     requirements:
       title: "Requirements"
       node: "One of the last two node versions is required."
-      os:  "OS: Linux / Windows / Mac"
+      os:  "Supported Operating Systems: Linux, Windows, and macOS."
     setup:
       title: "Setup"
       description: "Run the following commands to create the full project:"
@@ -273,7 +273,7 @@ contributing:
     description: "Documentation is an underrated part of every software. Adding any kind of clarification, example or improvement is highly appreciated and encouraged. The ones writing the documentation are the unsung heroes of open and closed source software."
   examples:
     title: "Examples"
-    description: "For examples please keep in mind, that we don't want to overload any API. Don't use high load tasks, don't use APIs that are not for public use. It is expected that examples will be run. They must not damage anyone. Including third parties."
+    description: "For examples, please keep in mind, that we don't want to overload any API. Don't use high load tasks, don't use APIs that are not for public use. It is expected that examples will be run. They must not damage anyone, including third parties."
 license:
   meta:
     title: "License"

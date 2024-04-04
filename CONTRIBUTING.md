@@ -32,10 +32,10 @@ While adding functionality, keep in mind to break existing interfaces, entry poi
 ### Picking the right issue
 
 Issues that are good for relatively new coders are marked as
-`Good first issue`, issues marked as `help wanted` require  a bit more
+`Good first issue`, issues marked as `help wanted` require a bit more
 knowledge about the project.
 
-Within an issue you find the project information on the right hand side,
+Within an issue, you find the project information on the right-hand side,
 opening them up will reveal further estimates about size, difficulty,
 priority and main affected project part.
 
@@ -44,7 +44,7 @@ priority and main affected project part.
 ### Contribution workflow
 
 - fork the repository
-- mention in the issue, that you are working on it(it will be assigned for a few weeks then)
+- mention in the issue, that you are working on it (it will be assigned for a few weeks then)
 - create a feature branch (issue-xxx-does-something) from master
 - create a draft pull request
 - mention fixes #xxx in the description (use the appropriate pull request template)
@@ -98,7 +98,7 @@ data.yml in /mindmap and follows the following schema:
 }
 ````
 
-This means, that nodes must have a text property for displaying them. They may also have a URL, a description, and more nodes as children.
+This means that nodes must have a text property for displaying them. They may also have a URL, a description, and more nodes as children.
 
 ### Tests
 
@@ -124,7 +124,7 @@ npm run coai
 ### Requirements
 
 - One of the last two node versions is required.
-- OS: Linux / Windows / Mac
+- Supported Operating Systems: Linux, Windows, and macOS.
 
 ### Setup
 
@@ -226,7 +226,7 @@ behaviour in order to illustrate the impact of the change.
 ##### Commit Message Footer
 
 The footer can contain information about breaking changes and deprecation
-and is also the place to reference GitHub issues and other PR's that this
+and is also the place to reference GitHub issues and other PRs that this
 commit closes or is related to. In case of breaking changes and deprecation
 the section should start with the phrase "BREAKING CHANGE: " or "DEPRECATED: "
 respectively followed by a description. For example:
@@ -270,6 +270,6 @@ Documentation is an underrated part of every software. Adding any kind of clarif
 
 ### Examples
 
-For examples please keep in mind, that we don't want to overload any API.
+For examples, please keep in mind, that we don't want to overload any API.
 Don't use high load tasks, don't use APIs that are not for public use.
-It is expected that examples will be run. They must not damage anyone. Including third parties.
+It is expected that examples will be run. They must not damage anyone, including third parties.
