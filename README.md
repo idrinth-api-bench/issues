@@ -9,7 +9,7 @@
 |Framework|[![npm version](https://badge.fury.io/js/@idrinth%2Fapi-bench.svg)](https://badge.fury.io/js/@idrinth%2Fapi-bench)|
 |CLI|[![npm version](https://badge.fury.io/js/@idrinth%2Fapi-bench-cli.svg)](https://badge.fury.io/js/@idrinth%2Fapi-bench)|
 
-This is the repository for the API test framework, it's CLI, it's
+This is the repository for the API test framework, its CLI, it's
 documentation website and other related tooling.
 
 ## Project parts
@@ -102,7 +102,7 @@ Commercial support and training is provided via
 
 ## Privacy and Compliance
 
-The `@idrinth/api-bench` framework  and it's CLI do not collect any kind of
+The `@idrinth/api-bench` framework  and its CLI do not collect any kind of
 information  about its users or the APIs being tested. All data is local to
 the device you run it on or the database server you configure it to dump data
 in.
