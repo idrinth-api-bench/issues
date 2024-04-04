@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Light as SyntaxHighlighter,
+  LightAsync as SyntaxHighlighter,
 } from 'react-syntax-highlighter';
 import './code.css';
 
