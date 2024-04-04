@@ -1,6 +1,4 @@
-import {
-  Lang,
-} from './lang.tsx';
+import Lang from './lang.tsx';
 import {
   FiExternalLink,
 } from 'react-icons/fi';

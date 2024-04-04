@@ -2,9 +2,7 @@ import {
   DEFAULT_RADIX,
   ONE,
 } from '../constants.ts';
-import {
-  Lang,
-} from './lang.tsx';
+import Lang from './lang.tsx';
 import languageKey from '../locales/language-key.ts';
 import React from 'react';
 

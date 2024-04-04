@@ -9,14 +9,12 @@ import typescript from 'react-syntax-highlighter/dist/esm/languages/hljs/typescr
 // eslint-disable-next-line max-len
 import markdown from 'react-syntax-highlighter/dist/esm/languages/hljs/markdown';
 
-SyntaxHighlighter.registerLanguage('javascript', typescript,);
 SyntaxHighlighter.registerLanguage('typescript', typescript,);
 SyntaxHighlighter.registerLanguage('bash', bash,);
 SyntaxHighlighter.registerLanguage('markdown', markdown,);
-SyntaxHighlighter.registerLanguage('json', typescript,);
 
 interface CodeType {
-  language: 'bash'|'typescript'|'javascript'|'markdown'|'json',
+  language: 'bash'|'typescript'|'markdown',
   children: string|string[],
 }
 
