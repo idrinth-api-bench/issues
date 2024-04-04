@@ -99,7 +99,6 @@ data.yml in /mindmap and follows the following schema:
 ````
 
 In order to display nodes, they must have a text property. They may also have; a URL, description, and child nodes. 
-This means that nodes must have a text property for displaying them. They may also have a URL, a description, and more nodes as children.
 
 ### Tests
 
