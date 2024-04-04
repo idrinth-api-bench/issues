@@ -443,3 +443,9 @@ command:
     arg_4: "'iab load --language=en --taskId=test --threads=11 --repetitions=100' runs a load test with all options being optional."
     arg_5: "'iab bench --language=en --taskId=test --threads=11 --repetitions=100' runs a benchmark with all options being optional."
     arg_6: "'iab stress --language=en --taskId=test --threads=11 --repetitions=100 --duration=60' runs a stress test for the desired duration in seconds with all options being optional."
+
+cookie-consent:
+  title: "We use cookies"
+  description: "We use cookies to ensure you get the best experience on our website."
+  accept: "Accept"
+  decline: "Decline"
