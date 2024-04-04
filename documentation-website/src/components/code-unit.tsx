@@ -18,16 +18,9 @@ const CodeUnit = ({
   children,
   language,
   prefix,
-}: CardProps,) => {
-  if (prefix) {
-    return <Content level={level} text={text}>
-      <p><Lang lnkey={prefix}/></p>
-      <Code language={language}>{children}</Code>
-    </Content>;
-  }
-  return <Content level={level} text={text}>
-    <Code language={language}>{children}</Code>
-  </Content>;
-};
+}: CardProps,) => <Content level={level} text={text}>
+  {prefix && <p><Lang lnkey={prefix}/></p>}
+  <Code language={language}>{children}</Code>
+</Content>;
 
 export default CodeUnit;
