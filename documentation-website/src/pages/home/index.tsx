@@ -5,6 +5,7 @@ import {
 import Layout from '../../components/layout.tsx';
 import ExternalLink from '../../components/external-link.tsx';
 import ContentUnit from '../../components/content-unit.tsx';
+import Youtube from '../../components/youtube.tsx';
 
 const Index = () => <Layout
   page='home'
@@ -25,6 +26,7 @@ const Index = () => <Layout
     home.content-test.microservices
     home.content-test.purpose
   </ContentUnit>
+  <Youtube lnkey={'home.demo.youtube'} level={'h2'}>gdm7kI0aSmo</Youtube>
   <div className='card'>
     <h2>
       <Lang lnkey={'home.libraries.title'}/>
