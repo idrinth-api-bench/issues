@@ -1,5 +1,7 @@
 import React from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
+import {
+  Light as SyntaxHighlighter,
+} from 'react-syntax-highlighter';
 import './code.css';
 
 interface CodeType {
