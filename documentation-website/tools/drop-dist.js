@@ -2,7 +2,8 @@ import {
   unlinkSync,
   readdirSync,
   rmdirSync,
-  statSync, existsSync
+  statSync,
+  existsSync,
 } from 'fs';
 
 const del = (path,) => {
