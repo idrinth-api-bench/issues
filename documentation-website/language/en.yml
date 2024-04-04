@@ -187,11 +187,11 @@ contributing:
       list_item_7: "check if actions are all green"
       list_item_8: "mark as ready to review"
       list_item_9: "get changes reviewed"
-      list_item_10: "if review is positive get changes merged otherwise fix and send back to review"
+      list_item_10: "if review is positive get changes merged otherwise fix and sIt is expected that examples will be run. Theend back to review"
     mindmap:
       title: "Mindmap"
       introduction: "Contributing to the mindmap is encouraged. The mindmap is built from data.yml in /mindmap and follows the following schema:"
-      nodes: "This means that nodes must have a text property for displaying them. They may also have a URL, a description, and more nodes as children."
+      nodes: "In order to display nodes, they must have a text property. They may also have; a URL, description, and child nodes. "
     tests:
       title: "Tests"
       description: "Testing new code is expected and adding tests or improving tests for old code is appreciated. The goal is to find most issues by either static analysis or unit and integration tests."
@@ -273,7 +273,7 @@ contributing:
     description: "Documentation is an underrated part of every software. Adding any kind of clarification, example or improvement is highly appreciated and encouraged. The ones writing the documentation are the unsung heroes of open and closed source software."
   examples:
     title: "Examples"
-    description: "For examples, please keep in mind, that we don't want to overload any API. Don't use high load tasks, don't use APIs that are not for public use. It is expected that examples will be run. They must not damage anyone, including third parties."
+    description: "For examples, please keep in mind, that we don't want to overload any API. Don't use high load tasks, don't use APIs that are not for public use. Examples are expected to run without damaging anyone, including third parties."
 license:
   meta:
     title: "License"

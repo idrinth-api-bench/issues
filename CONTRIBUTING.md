@@ -98,6 +98,7 @@ data.yml in /mindmap and follows the following schema:
 }
 ````
 
+In order to display nodes, they must have a text property. They may also have; a URL, description, and child nodes. 
 This means that nodes must have a text property for displaying them. They may also have a URL, a description, and more nodes as children.
 
 ### Tests
@@ -226,7 +227,7 @@ behaviour in order to illustrate the impact of the change.
 ##### Commit Message Footer
 
 The footer can contain information about breaking changes and deprecation
-and is also the place to reference GitHub issues and other PRs that this
+and is also the place to reference GitHub issues and other Pull Requests that this
 commit closes or is related to. In case of breaking changes and deprecation
 the section should start with the phrase "BREAKING CHANGE: " or "DEPRECATED: "
 respectively followed by a description. For example:
@@ -272,4 +273,4 @@ Documentation is an underrated part of every software. Adding any kind of clarif
 
 For examples, please keep in mind, that we don't want to overload any API.
 Don't use high load tasks, don't use APIs that are not for public use.
-It is expected that examples will be run. They must not damage anyone, including third parties.
+Examples are expected to run without damaging anyone, including third parties.
