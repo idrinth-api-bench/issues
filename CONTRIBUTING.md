@@ -56,7 +56,7 @@ priority and main affected project part.
 
 ### Mindmap
 
-Contributing to the mindmap is  encouraged. The mindmap is build from the
+Contributing to the mindmap is encouraged. The mindmap is built from
 data.yml in /mindmap and follows the following schema:
 
 ````json
@@ -98,8 +98,7 @@ data.yml in /mindmap and follows the following schema:
 }
 ````
 
-This means, that nodes  must have text property for displaying them, as well
-as may have a URL, a description and more nodes as children.
+This means, that nodes must have a text property for displaying them. They may also have a URL, a description, and more nodes as children.
 
 ### Tests
 
@@ -273,5 +272,4 @@ Documentation is an underrated part of every software. Adding any kind of clarif
 
 For examples please keep in mind, that we don't want to overload any API.
 Don't use high load tasks, don't use APIs that are not for public use.
-It is expected that examples will be run, and they must not damage anyone,
-including third parties.
+It is expected that examples will be run. They must not damage anyone. Including third parties.

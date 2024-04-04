@@ -55,6 +55,7 @@ const Index = () => <Layout
         <li><Lang lnkey={'contributing.code.workflow.list_item_7'}/></li>
         <li><Lang lnkey={'contributing.code.workflow.list_item_8'}/></li>
         <li><Lang lnkey={'contributing.code.workflow.list_item_9'}/></li>
+        <li><Lang lnkey={'contributing.code.workflow.list_item_10'}/></li>
       </ul>
     </div>
     <div className='card'>
@@ -225,6 +226,12 @@ build(website): bump follow-redirects from 1.15.4 to 1.15.6
           </li>
           <li>
             <Lang lnkey={'contributing.code.commits.header.scope.list_item_4'}/>
+          </li>
+          <li>
+            <Lang lnkey={'contributing.code.commits.header.scope.list_item_5'}/>
+          </li>
+          <li>
+            <Lang lnkey={'contributing.code.commits.header.scope.list_item_6'}/>
           </li>
         </ul>
       </div>
