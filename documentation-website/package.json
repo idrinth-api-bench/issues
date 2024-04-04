@@ -14,7 +14,7 @@
   "scripts": {
     "start": "npm run build && npm run serve",
     "dev": "irfbrgr && vite",
-    "build": "irfbrgr && npm run language && npm run contributors && tsc && vite build && irfbrgf",
+    "build": "npm run drop-dist && irfbrgr && npm run language && npm run contributors && tsc && vite build && irfbrgf",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint-fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",
@@ -29,7 +29,8 @@
     "routes": "irfbrgr",
     "contributors": "node tools/load-contributors.js",
     "language": "itlfy generate",
-    "pure-build": "irfbrgr && npm run language && tsc && vite build && irfbrgf"
+    "pure-build": "npm run drop-dist && irfbrgr && npm run language && tsc && vite build && irfbrgf",
+    "drop-dist": "node tools/drop-dist.js"
   },
   "dependencies": {
     "@fontsource/roboto": "^5.0.12",
