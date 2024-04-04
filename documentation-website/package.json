@@ -14,7 +14,7 @@
   "scripts": {
     "start": "npm run build && npm run serve",
     "dev": "irfbrgr && vite",
-    "build": "irfbrgr && npm run language && npm run contributors && tsc && vite build && irfbrgf",
+    "build": "npm run drop-dist && npm run routes && npm run language && npm run contributors && tsc && vite build && irfbrgf",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint-fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",
@@ -29,7 +29,8 @@
     "routes": "irfbrgr",
     "contributors": "node tools/load-contributors.js",
     "language": "itlfy generate",
-    "pure-build": "irfbrgr && npm run language && tsc && vite build && irfbrgf"
+    "pure-build": "npm run drop-dist && npm run routes && npm run language && tsc && vite build && irfbrgf",
+    "drop-dist": "node tools/drop-dist.js"
   },
   "dependencies": {
     "@fontsource/roboto": "^5.0.12",
@@ -51,6 +52,7 @@
     "@idrinth/duplicate-style-check": "^1.1.0",
     "@idrinth/react-file-based-routes": "^1.2.12",
     "@idrinth/rollup-plugin-react-modular-css": "^1.0.4",
+    "@idrinth/typescript-language-from-yaml": "^1.2.4",
     "@types/chai": "^4.3.11",
     "@types/mocha": "^10.0.6",
     "@types/react": "^18.2.69",
@@ -78,8 +80,7 @@
     "stylelint-config-standard": "^36.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.3.3",
-    "vite": "^5.1.1",
-    "@idrinth/typescript-language-from-yaml": "^1.2.4"
+    "vite": "^5.1.1"
   },
   "engines": {
     "node": ">=20"

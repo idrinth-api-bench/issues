@@ -6,9 +6,7 @@ import {
 import pkg from '../../package.json' with {
   type: 'json'
 };
-import {
-  Lang,
-} from './lang.tsx';
+import Lang from './lang.tsx';
 import DarkModeButton from './dark-mode-button.tsx';
 import SocialLink from './social-link.tsx';
 import {

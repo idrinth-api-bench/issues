@@ -1,18 +1,16 @@
 import React from 'react';
-import {
-  Lang,
-} from '../../../components/lang.tsx';
+import Lang from '../../../components/lang.tsx';
 import Layout from '../../../components/layout.tsx';
 import Code from '../../../components/code.tsx';
+import ContentUnit from '../../../components/content-unit.tsx';
 
 const Route = () => <Layout
   page='routes'
   path='/usage/routes'
 >
-  <div className='title-card'>
-    <h1><Lang lnkey='routes.title'/></h1>
-    <p><Lang lnkey='routes.description'/></p>
-  </div>
+  <ContentUnit
+    text={'routes.title'}
+    level={'h1'}>routes.description</ContentUnit>
   <div className='card'>
     <h2><Lang lnkey='routes.example.title'/></h2>
     <div>

@@ -1,30 +1,30 @@
 import React from 'react';
-import {
-  Lang,
-} from '../../components/lang.tsx';
+import Lang from '../../components/lang.tsx';
 import Layout from '../../components/layout.tsx';
 import ExternalLink from '../../components/external-link.tsx';
 import ContentUnit from '../../components/content-unit.tsx';
+import Youtube from '../../components/youtube.tsx';
 
 const Index = () => <Layout
   page='home'
 >
-  <ContentUnit titleText={'home.title'} titleLevel={1}>
+  <ContentUnit text={'home.title'} level={'h1'}>
     home.what
     home.why
   </ContentUnit>
-  <ContentUnit titleText={'home.benchmark.title'} titleLevel={2}>
+  <ContentUnit text={'home.benchmark.title'} level={'h2'}>
     home.benchmark.microservices
     home.benchmark.purpose
   </ContentUnit>
-  <ContentUnit titleText={'home.load-test.title'} titleLevel={2}>
+  <ContentUnit text={'home.load-test.title'} level={'h2'}>
     home.load-test.microservices
     home.load-test.purpose
   </ContentUnit>
-  <ContentUnit titleText={'home.content-test.title'} titleLevel={2}>
+  <ContentUnit text={'home.content-test.title'} level={'h2'}>
     home.content-test.microservices
     home.content-test.purpose
   </ContentUnit>
+  <Youtube lnkey={'home.demo.youtube'} level={'h2'}>gdm7kI0aSmo</Youtube>
   <div className='card'>
     <h2>
       <Lang lnkey={'home.libraries.title'}/>

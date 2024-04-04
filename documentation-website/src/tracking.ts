@@ -13,6 +13,7 @@ if (window.location.host === 'idrinth-api-ben.ch') {
   window._paq = window._paq || [];
   // @ts-expect-error paq is a new property
   const _paq = window._paq;
+  _paq.push([ 'requireConsent', ],);
   _paq.push([ 'trackPageView', ],);
   _paq.push([ 'enableLinkTracking', ],);
   (function() {

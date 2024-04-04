@@ -1,14 +1,16 @@
 import React from 'react';
-import {
-  Lang,
-} from './lang.tsx';
+import Lang from './lang.tsx';
 import {
   NavLink,
 } from 'react-router-dom';
+import CookieConsent from './cookie-consent.tsx';
 
 const Footer = () => <footer>
   <span>©2020-2024 Björn Büttner and contributors.</span>
   <ul>
+    <li>
+      <CookieConsent />
+    </li>
     <li>
       <NavLink to="/license/">
         <Lang lnkey='nav.license'/>

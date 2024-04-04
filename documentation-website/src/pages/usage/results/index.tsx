@@ -4,21 +4,17 @@ import ApiBenchReport from '../../../assets/html-result.jpg';
 import CliReport from '../../../assets/cli-result.jpg';
 import JsonReport from '../../../assets/json-result.jpg';
 import Layout from '../../../components/layout.tsx';
-import Code from '../../../components/code.tsx';
-import {
-  Lang,
-} from '../../../components/lang.tsx';
+import Lang from '../../../components/lang.tsx';
+import CodeUnit from '../../../components/code-unit.tsx';
+import ContentUnit from '../../../components/content-unit.tsx';
 
 const Results = () => <Layout
   page='results'
   path='/usage/results'
 >
-  <div className='title-card'>
-    <h1><Lang lnkey={'results.title'}/></h1>
-    <p>
-      <Lang lnkey={'results.description'}/>
-    </p>
-  </div>
+  <ContentUnit
+    text={'results.title'}
+    level={'h1'}>results.description</ContentUnit>
   <div className='card'>
     <h2>CSV</h2>
     <div>
@@ -55,18 +51,11 @@ const Results = () => <Layout
       <img src={JsonReport} alt='json-report' />
     </div>
   </div>
-  <div className='card'>
-    <h2><Lang lnkey={'results.custom.title'}/></h2>
-    <div>
-      <p>
-        <Lang lnkey={'results.custom.description'}/>
-      </p>
-      <Code language='typescript'>
-        {`interface Reporter {
+  <CodeUnit
+    text={'results.custom.title'}
+    level={'h2'}
+    language={'typescript'}>{`interface Reporter {
   (results: FinishedRun, rootDir: string): void;
-}`}
-      </Code>
-    </div>
-  </div>
+}`}</CodeUnit>
 </Layout>;
 export default Results;

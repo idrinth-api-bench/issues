@@ -3,9 +3,7 @@ import Layout from '../../../components/layout.tsx';
 import codeContributors from '../../../contributors.json' with {
   type: 'json'
 };
-import {
-  Lang,
-} from '../../../components/lang.tsx';
+import Lang from '../../../components/lang.tsx';
 import otherContributors from './non-code-contributors.json' with {
   type: 'json'
 };
@@ -49,20 +47,18 @@ const Index = () => {
     page='contributors'
     path='/contributing/contributors'
   >
-    <section>
-      <div className='title-card'>
-        <h1>
-          <Lang lnkey='contributors.title'/>
-        </h1>
-        <p>
-          <Lang lnkey='contributors.description'/>
-        </p>
-      </div>
-      <h2><Lang lnkey='contributors.none_code_contributors'/></h2>
-      { oC }
-      <h2><Lang lnkey='contributors.code_contributors'/></h2>
-      { cC }
-    </section>
+    <div className='title-card'>
+      <h1>
+        <Lang lnkey='contributors.title'/>
+      </h1>
+      <p>
+        <Lang lnkey='contributors.description'/>
+      </p>
+    </div>
+    <h2><Lang lnkey='contributors.none_code_contributors'/></h2>
+    { oC }
+    <h2><Lang lnkey='contributors.code_contributors'/></h2>
+    { cC }
   </Layout>;
 };
 export default Index;

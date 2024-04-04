@@ -11,20 +11,21 @@ interface CardProps {
   children: string|languageKey;
 }
 
-const ContentUnit = ({
+const ListUnit = ({
   text,
   level,
   children,
 }: CardProps,) => {
   const GenerateContent = (): ReactNode => {
     const keys: languageKey[] = children.split(' ',) as languageKey[];
-    return keys.map(
-      (sentence,) => <p key={sentence}><Lang lnkey={sentence}/></p>,
+    const content = keys.map(
+      (sentence,) => <li key={sentence}><Lang lnkey={sentence}/></li>,
     );
+    return <ul>{content}</ul>;
   };
   return <Content level={level} text={text}>
     <GenerateContent/>
   </Content>;
 };
 
-export default ContentUnit;
+export default ListUnit;

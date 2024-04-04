@@ -1,26 +1,19 @@
 import React from 'react';
-import {
-  Lang,
-} from '../../../components/lang.tsx';
+import Lang from '../../../components/lang.tsx';
 import Layout from '../../../components/layout.tsx';
 import Code from '../../../components/code.tsx';
+import ContentUnit from '../../../components/content-unit.tsx';
 
 const Logging = () => <Layout
   page='logging'
   path='/usage/logging'
 >
-  <div className='title-card'>
-    <h1><Lang lnkey={'logging.title'}/></h1>
-    <p>
-      <Lang lnkey={'logging.description'}/>
-    </p>
-  </div>
-  <div className='card'>
-    <h2><Lang lnkey={'logging.used.title'}/></h2>
-    <p>
-      <Lang lnkey='logging.used.description'/>
-    </p>
-  </div>
+  <ContentUnit
+    text={'logging.title'}
+    level={'h1'}>logging.description</ContentUnit>
+  <ContentUnit
+    text={'logging.used.title'}
+    level={'h2'}>logging.used.description</ContentUnit>
   <div className='card'>
     <h2><Lang lnkey={'logging.custom.title'}/></h2>
     <div>
