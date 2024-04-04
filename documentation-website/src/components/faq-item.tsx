@@ -4,9 +4,7 @@ import React, {
 import {
   ONE,
 } from '../constants';
-import {
-  Lang,
-} from './lang';
+import Lang from './lang';
 import './faq-item.css';
 
 const FaqItem = ({

@@ -2,9 +2,7 @@ import React, {
   useState,
 } from 'react';
 import './cookie-consent.css';
-import {
-  Lang,
-} from './lang';
+import Lang from './lang';
 import {
   createPortal,
 } from 'react-dom';

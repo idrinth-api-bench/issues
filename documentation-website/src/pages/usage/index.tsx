@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  Lang,
-} from '../../components/lang.tsx';
+import Lang from '../../components/lang.tsx';
 import Layout from '../../components/layout.tsx';
 import Command from '../../components/command.tsx';
 

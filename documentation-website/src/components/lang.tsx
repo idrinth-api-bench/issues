@@ -12,7 +12,7 @@ interface LangProps {
   global?: Window
 }
 
-export const Lang = ({
+const Lang = ({
   lnkey,
   global,
 }: LangProps,) => {
@@ -24,3 +24,4 @@ export const Lang = ({
   },);
   return <Suspense fallback={''}><LE/></Suspense>;
 };
+export default Lang;
