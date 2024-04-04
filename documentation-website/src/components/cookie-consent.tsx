@@ -9,6 +9,7 @@ import {
   createPortal,
 } from 'react-dom';
 
+// eslint-disable-next-line complexity
 const CookieConsent = () => {
   const [
     consentWasClosed,
@@ -67,7 +68,7 @@ const CookieConsent = () => {
         <Lang lnkey={'cookie-consent.decline'} />
       </button>
     </div>
-  </div>, document.body);
+  </div>, document.body,);
 };
 
 export default CookieConsent;
