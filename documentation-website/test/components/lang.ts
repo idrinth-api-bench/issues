@@ -1,6 +1,4 @@
-import {
-  Lang,
-} from '../../src/components/lang.jsx';
+import Lang from '../../src/components/lang.jsx';
 import {
   expect,
 } from 'chai';

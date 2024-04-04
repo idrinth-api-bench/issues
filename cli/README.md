@@ -14,7 +14,7 @@
 
 ## What does this project do?
 
-This project provides a cli tool for @idrinth/api-bench to generate code.
+This project provides a CLI tool for @idrinth/api-bench to generate code.
 
 ## Usage & Examples
 
@@ -35,6 +35,7 @@ Commercial support and training is provided via
 
 ## Privacy and Compliance
 
-The `@idrinth/api-bench-cli` project does not collect any kind of information
-about its users or the APIs being tested. All data is local to the device
-you run it on or the database server you configure it to dump data in.
+The `@idrinth/api-bench` framework and its CLI do not collect any kind of
+information about its users or the APIs being tested. All data is local to
+the device you run it on or the database server you configure it to dump data
+in.
