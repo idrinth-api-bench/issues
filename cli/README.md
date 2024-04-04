@@ -35,7 +35,7 @@ Commercial support and training is provided via
 
 ## Privacy and Compliance
 
-The `@idrinth/api-bench` framework  and its CLI do not collect any kind of
-information  about its users or the APIs being tested. All data is local to
+The `@idrinth/api-bench` framework and its CLI do not collect any kind of
+information about its users or the APIs being tested. All data is local to
 the device you run it on or the database server you configure it to dump data
 in.
