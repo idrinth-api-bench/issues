@@ -207,7 +207,7 @@ contributing:
     requirements:
       title: "Requirements"
       node: "One of the last two node versions is required."
-      os: "OS: Linux / Windows *(Other OS were not tested)*"
+      os:  "OS: Linux / Windows / Mac"
     setup:
       title: "Setup"
       description: "Run the following commands to create the full project:"

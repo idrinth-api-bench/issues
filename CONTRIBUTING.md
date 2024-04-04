@@ -124,7 +124,7 @@ npm run coai
 ### Requirements
 
 - One of the last two node versions is required.
-- OS: Linux / Windows *(Other OS were not tested)*
+- OS: Linux / Windows / Mac
 
 ### Setup
 
