@@ -16,6 +16,7 @@ import {
   INDENTATION_SPACES,
 } from '../../constants.ts';
 import project from '../../assets/api-bench-project.png';
+import Youtube from '../../components/youtube.tsx';
 
 const Index = () => <Layout
   page='contributing'
@@ -25,6 +26,7 @@ const Index = () => <Layout
     <ContentUnit titleLevel={1} titleText={'contributing.title'}>
       contributing.description
     </ContentUnit>
+    <Youtube lnkey={'contributing.youtube'} level={'h2'}>y-4ZxUshe4U</Youtube>
     <ContentUnit titleLevel={2} titleText={'contributing.structure.title'}>
       contributing.structure.description
     </ContentUnit>
@@ -57,6 +59,10 @@ const Index = () => <Layout
         <li><Lang lnkey={'contributing.code.workflow.list_item_9'}/></li>
       </ul>
     </div>
+    <Youtube
+      lnkey={'contributing.code.translation.youtube'}
+      level={'h3'}
+    >FEYIeMCrrbk</Youtube>
     <div className='card'>
       <h3><Lang lnkey={'contributing.code.mindmap.title'}/></h3>
       <div>
@@ -67,6 +73,10 @@ const Index = () => <Layout
         <p><Lang lnkey={'contributing.code.mindmap.nodes'}/></p>
       </div>
     </div>
+    <Youtube
+      lnkey={'contributing.code.mindmap.youtube'}
+      level={'h4'}
+    >lz3zCCLgxDQ</Youtube>
     <ContentUnit titleLevel={3} titleText={'contributing.code.tests.title'}>
       contributing.code.tests.description
     </ContentUnit>

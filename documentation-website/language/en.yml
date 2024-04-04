@@ -43,7 +43,7 @@ socials:
     title: "idrinth/api-bench on Medium"
     alt: "Medium"
   youtube:
-    title: "idrinth-api-bench on youtube"
+    title: "idrinth-api-bench on YouTube"
     alt: "YouTube"
   slack:
     title: "@idrinth/api-bench on slack"
@@ -67,6 +67,8 @@ home:
   title: "What does this project do?"
   what: "This project provides a framework for testing rest-apis and websites for  changes in response times."
   why: "This helps to detect performance changes in code in a quick and simple manner."
+  demo:
+    youtube: "Version 2.7.4 Demo"
   benchmark:
     title: "Why use a Benchmark Runner?"
     microservices: "Given that the amount of APIs increase by moving to microservices, we need a way to determine if changes to a service's response times are related to code changes."
@@ -84,6 +86,11 @@ home:
     description: "Other tools like matteofigus/api-benchmark, bvanderlaan/api-bench-runner, or jeffbski/bench-rest are all untouched for quite a while and don't provide type definitions for typescript. This makes them less desirable when working with projects where the better static code check is a huge boost in development speed."
     reusability: "A huge benefit of using this framework is writing route definitions once and reusing them across all desired test types."
     threading: "Additionally, this tool separates the validation thread from the thread processing the actual requests to further minimize the effect of complicated validations or huge response bodies on the data gathering."
+
+youtube:
+  on: "See video on YouTube"
+  content: "Watch more about this"
+  player: "YouTube Video Player"
 
 faq:
   meta:
@@ -162,6 +169,7 @@ contributing:
     description: "Contribution guidelines for the framework @idrinth/api-bench"
   title: "Contributing Guidelines"
   description: "Any and all contributions are encouraged."
+  youtube: "Structure Overview on YouTube"
   structure:
     title: "Structure"
     description: "The project is a mono-repo grouped into multiple subprojects, for example cli, mindmap, documentation-website, framework, history-microservice and history-website. You can find more detailed instructions for the specific part in the corresponding folder's readme."
@@ -187,8 +195,11 @@ contributing:
       list_item_7: "mark as ready to review"
       list_item_8: "get changes reviewed"
       list_item_9: "if review is positive get changes merged otherwise fix and send back to review"
+    translation:
+      youtube: "Short Translation YouTube Tutorial"
     mindmap:
       title: "Mindmap"
+      youtube: "Short Mindmap YouTube Tutorial"
       nodes: "This means, that nodes  must have text property for displaying them, as well as may have a URL, a description and more nodes as children."
       introduction: "Contributing to the mindmap is  encouraged. The mindmap is build from the data.yml in /mindmap and follows the following schema:"
     tests:
@@ -446,6 +457,7 @@ command:
 
 cookie-consent:
   title: "We use cookies"
+  open: "Settings"
   description: "We use cookies to ensure you get the best experience on our website."
   accept: "Accept"
   decline: "Decline"

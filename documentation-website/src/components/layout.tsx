@@ -4,10 +4,6 @@ import Footer from './footer.tsx';
 import React from 'react';
 import Breadcrumbs from './breadcrumbs.tsx';
 import ScrollToHashElement from './hash-scroll.tsx';
-import {
-  createPortal,
-} from 'react-dom';
-import CookieConsent from './cookie-consent.tsx';
 
 interface LayoutProps {
   children?: React.ReactNode|React.ReactNode[],
@@ -34,7 +30,6 @@ const Layout = ({
     </article>
     <Footer/>
     <ScrollToHashElement/>
-    {createPortal(<CookieConsent />, document.body,)}
   </>;
 };
 
