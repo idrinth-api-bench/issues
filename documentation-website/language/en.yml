@@ -169,7 +169,7 @@ contributing:
     description: "Contribution guidelines for the framework @idrinth/api-bench"
   title: "Contributing Guidelines"
   description: "Any and all contributions are encouraged."
-  youtube: "Structure Overview"
+  youtube: "Structure Overview on YouTube"
   structure:
     title: "Structure"
     description: "The project is a mono-repo grouped into multiple subprojects, for example cli, mindmap, documentation-website, framework, history-microservice and history-website. You can find more detailed instructions for the specific part in the corresponding folder's readme."
