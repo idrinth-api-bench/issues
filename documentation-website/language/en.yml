@@ -54,6 +54,9 @@ socials:
   open-sauced:
     title: "@idrinth/api-bench projects on OpenSauced"
     alt: "OpenSauced"
+  reddit:
+    title: "@idrinth/api-bench on reddit"
+    alt: "Reddit"
 
 code-of-conduct:
   meta:

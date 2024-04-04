@@ -436,7 +436,7 @@ html.dark-mode {
     display: grid;
     gap: 0;
     row-gap: 0.25em;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
   }
 
   nav li {
