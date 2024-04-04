@@ -1,7 +1,7 @@
 ARG BUILD_VERSION
 
 FROM idrinth/api-bench-build:${BUILD_VERSION} AS build
-FROM node:21.7.1-alpine AS node
+FROM node:21.7.2-alpine AS node
 FROM gitlab/gitlab-runner:alpine3.19-v16.10.0 AS gitlab
 
 COPY --from=node /usr/lib /usr/lib
