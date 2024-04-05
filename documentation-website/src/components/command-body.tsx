@@ -21,7 +21,7 @@ const CommandBody = ({
   const commands = children.split(', ',).slice(ONE,);
   const args = new Array(
     Number.parseInt(
-      children.split(',',).shift() || '0',
+      children.split(',',).shift() ?? '0',
       DEFAULT_RADIX,
     ),
   ).fill('',);
