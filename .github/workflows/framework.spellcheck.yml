@@ -1,4 +1,4 @@
-name: framework language lint
+name: framework spellcheck
 on:
   push:
     branches:

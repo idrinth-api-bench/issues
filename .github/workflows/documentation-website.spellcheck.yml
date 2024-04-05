@@ -1,4 +1,4 @@
-name: documentation-website language lint
+name: documentation-website spellcheck
 on:
   push:
     branches:

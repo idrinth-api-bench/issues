@@ -1,4 +1,4 @@
-name: history-website language lint
+name: history-website spellcheck
 on:
   push:
     branches:
