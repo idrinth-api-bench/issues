@@ -64,8 +64,7 @@ children:
           url: https://github.com/Idrinth/api-bench/issues/279
         - text: benchmarking
         - text: load testing
-        - text: content testing/integration testing  (WIP)
-          url: https://github.com/Idrinth/api-bench/issues/154
+        - text: content testing/integration testing
         - text: stress testing (WIP)
           url: https://github.com/Idrinth/api-bench/issues/571
   - text: Challenges
