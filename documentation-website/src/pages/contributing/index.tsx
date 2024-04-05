@@ -54,6 +54,7 @@ const Index = () => <Layout
     contributing.code.workflow.list_item_7
     contributing.code.workflow.list_item_8
     contributing.code.workflow.list_item_9
+    contributing.code.workflow.list_item_10
   </ListUnit>
   <Youtube
     lnkey={'contributing.code.translation.youtube'}
@@ -207,29 +208,35 @@ build(website): bump follow-redirects from 1.15.4 to 1.15.6
         </li>
       </ul>
     </div>
-  </div>
-  <div className={'card'}>
-    <h5>
-      <Lang lnkey={'contributing.code.commits.header.scope.title'}/>
-    </h5>
-    <div>
-      <p>
-        <Lang lnkey={'contributing.code.commits.header.scope.description'}/>
-      </p>
-      <ul className="card-list">
-        <li>
-          <Lang lnkey={'contributing.code.commits.header.scope.list_item_1'}/>
-        </li>
-        <li>
-          <Lang lnkey={'contributing.code.commits.header.scope.list_item_2'}/>
-        </li>
-        <li>
-          <Lang lnkey={'contributing.code.commits.header.scope.list_item_3'}/>
-        </li>
-        <li>
-          <Lang lnkey={'contributing.code.commits.header.scope.list_item_4'}/>
-        </li>
-      </ul>
+    <div className={'card'}>
+      <h5>
+        <Lang lnkey={'contributing.code.commits.header.scope.title'}/>
+      </h5>
+      <div>
+        <p>
+          <Lang lnkey={'contributing.code.commits.header.scope.description'}/>
+        </p>
+        <ul className="card-list">
+          <li>
+            <Lang lnkey={'contributing.code.commits.header.scope.list_item_1'}/>
+          </li>
+          <li>
+            <Lang lnkey={'contributing.code.commits.header.scope.list_item_2'}/>
+          </li>
+          <li>
+            <Lang lnkey={'contributing.code.commits.header.scope.list_item_3'}/>
+          </li>
+          <li>
+            <Lang lnkey={'contributing.code.commits.header.scope.list_item_4'}/>
+          </li>
+          <li>
+            <Lang lnkey={'contributing.code.commits.header.scope.list_item_5'}/>
+          </li>
+          <li>
+            <Lang lnkey={'contributing.code.commits.header.scope.list_item_6'}/>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
   <div className={'card'}>

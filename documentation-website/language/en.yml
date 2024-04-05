@@ -172,7 +172,7 @@ contributing:
   youtube: "Structure Overview on YouTube"
   structure:
     title: "Structure"
-    description: "The project is a mono-repo grouped into multiple subprojects, for example cli, mindmap, documentation-website, framework, history-microservice and history-website. You can find more detailed instructions for the specific part in the corresponding folder's readme."
+    description: "The project is a mono-repo grouped into multiple subprojects, for example documentation-website, framework, history-microservice, CLI, mindmap, history-website. You can find more detailed instructions for the specific part in the corresponding folder's readme."
   issues:
     title: "Issues"
     description: "Any idea and bug report is considered a contribution. Not only do they help improving the code base, they help other people to get more use out of this framework. Please try to stick to the format of predefined issue types to make it easier to filter and handle for anyone interested in the topic."
@@ -183,25 +183,26 @@ contributing:
     picking:
       title: "Picking the right issue"
       labels: "Issues that are good for relatively new coders are marked as `Good first issue`, issues marked as `help wanted` require a bit more knowledge about the project."
-      project: "Within an issue you find the project information on the right hand side, opening them up will reveal further estimates about size, difficulty, priority and main affected project part"
+      project: "Within an issue, you find the project information on the right-hand side, opening them up will reveal further estimates about size, difficulty, priority and main affected project part"
     workflow:
       title: "Contribution workflow"
       list_item_1: "fork the repository"
-      list_item_2: "create a feature branch (issue-xxx-does-something) from master"
-      list_item_3: "create a draft pull request"
-      list_item_4: "mention fixes #xxx in the description"
-      list_item_5: "make your changes to the branch"
-      list_item_6: "check if actions are all green"
-      list_item_7: "mark as ready to review"
-      list_item_8: "get changes reviewed"
-      list_item_9: "if review is positive get changes merged otherwise fix and send back to review"
+      list_item_2: "mention in the issue, that you are working on it (it will be assigned for a few weeks then)"
+      list_item_3: "create a feature branch (issue-xxx-does-something) from master"
+      list_item_4: "create a draft pull request"
+      list_item_5: "mention fixes #xxx in the description"
+      list_item_6: "make your changes to the branch"
+      list_item_7: "check if actions are all green"
+      list_item_8: "mark as ready to review"
+      list_item_9: "get changes reviewed"
+      list_item_10: "if review is positive get changes merged otherwise fix and sIt is expected that examples will be run. Theend back to review"
     translation:
       youtube: "Short Translation YouTube Tutorial"
     mindmap:
       title: "Mindmap"
       youtube: "Short Mindmap YouTube Tutorial"
-      nodes: "This means, that nodes  must have text property for displaying them, as well as may have a URL, a description and more nodes as children."
-      introduction: "Contributing to the mindmap is  encouraged. The mindmap is build from the data.yml in /mindmap and follows the following schema:"
+      introduction: "Contributing to the mindmap is encouraged. The mindmap is built from data.yml in /mindmap and follows the following schema:"
+      nodes: "In order to display nodes, they must have a text property. They may also have; a URL, description, and child nodes."
     tests:
       title: "Tests"
       description: "Testing new code is expected and adding tests or improving tests for old code is appreciated. The goal is to find most issues by either static analysis or unit and integration tests."
@@ -216,8 +217,8 @@ contributing:
       list_item_4: "kebab-case for file names"
     requirements:
       title: "Requirements"
-      node: "One of the last two node versions"
-      os: "OS: Linux / Windows / Mac"
+      node: "One of the last two node versions is required."
+      os:  "Supported Operating Systems: Linux, Windows, and macOS."
     setup:
       title: "Setup"
       description: "Run the following commands to create the full project:"
@@ -248,6 +249,8 @@ contributing:
           list_item_2: "website"
           list_item_3: "history-microservice"
           list_item_4: "history-website"
+          list_item_5: "dockerfiles"
+          list_item_6: "examples"
         summary:
           title: "Summary"
           description: "The summary field should provide a succinct description of the change."
@@ -257,8 +260,8 @@ contributing:
       body:
         title: "Commit Message Body"
         description: "The body is mandatory for all commits except for those of type 'docs' or in cases when it' clear from the header summary. They should conform to the Commit Message Body format."
+        content: "The commit message body should explain *why* you are making the change. You can include a comparison of the previous behavior with the new behavior in order to illustrate the impact of the change."
         time: "Just as in the summary, use the imperative, present tense."
-        content: "The commit message body should explain why you are making the change. You can include a comparison of the previous behavior with the new behavior in order to illustrate the impact of the change."
       footer:
         title: "Commit Message Footer"
         description: "The footer is optional. The Commit Message Footer format describes what the footer is used for and the structure it must have."
@@ -271,17 +274,17 @@ contributing:
         title: "Revert commits"
         description: "If the commit reverts a previous commit, it should begin with 'revert:', followed by the header of the reverted commit."
         content: "The content of the commit message body should contain:"
-        list_item_1: "information about the SHA of the commit being reverted in the following format: 'This reverts commit <SHA>'"
+        list_item_1: "ID of the commit being reverted in the following format: `This reverts commit <SHA>`"
         list_item_2: "a clear description of the reason for reverting the commit message."
     pull_requests:
       title: "Pull Requests"
       description: "Please open your pull requests in draft mode. When ready to review remove the draft. Do not force-push, it just creates additional work."
   documentation:
     title: "Documentation"
-    description: "Documentation is an underrated part of every software. Adding any kind of clarification, example or improvement is highlyappreciated and encouraged. The ones writing the documentation are the unsung heroes of open and closed source software."
+    description: "Documentation is an underrated part of every software. Adding any kind of clarification, example or improvement is highly appreciated and encouraged. The ones writing the documentation are the unsung heroes of open and closed source software."
   examples:
     title: "Examples"
-    description: "For examples please keep in mind, that we don't want to overload any api. Don't use high load tasks, don't use apis that are not for public use. It is expected that examples will be run and they must not damage anyone, including third parties."
+    description: "For examples, please keep in mind, that we don't want to overload any API. Don't use high load tasks, don't use APIs that are not for public use. Examples are expected to run without damaging anyone, including third parties."
 license:
   meta:
     title: "License"
