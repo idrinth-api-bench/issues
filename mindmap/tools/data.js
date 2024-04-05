@@ -103,6 +103,7 @@ for (const match of html.matchAll(/<script src=([^ >]+)><\/script>/ug,)) {
         );
     }
     if (! match[SECOND].match(/\.min\.js$/u,)) {
+      // eslint-disable-next-line no-await-in-loop
       script = (await jminify(script,)).code;
     }
     writeFileSync(
@@ -138,7 +139,6 @@ for (const match of html.matchAll(/<script>((.|\n)+?)<\/script>/ug,)) {
           return darkMode ? 'white' : 'black';
         })()`,
       );
-    // eslint-disable-next-line no-await-in-loop
     writeFileSync(
       `${ cwd }/cache/${ hash }.min.js`,
       // eslint-disable-next-line no-await-in-loop
