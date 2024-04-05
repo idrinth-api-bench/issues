@@ -44,5 +44,4 @@ jobs:
             package-lock.json
       - run: npm ci
       - run: cd mindmap && npm ci
-      - run: cd mindmap && npm run language
       - run: cd mindmap && npm run lint
