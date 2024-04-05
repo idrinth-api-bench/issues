@@ -1,0 +1,10 @@
+files:
+- 'language/data.yml'
+language: en-GB
+plugins:
+- spell
+- indefinite-article
+- repeated-words
+quiet: true
+dictionaries:
+- ../.dictionary.txt
