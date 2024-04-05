@@ -8,3 +8,43 @@ svg {
   width: 100vw;
   height: 100vh;
 }
+
+span,
+a {
+  padding: 0.25em;
+  border-radius: 0.5em;
+}
+
+a,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  color: hsla(132deg 33% 29% / 100%);
+}
+
+span:hover,
+span:focus {
+  color: hsla(132deg 33% 29% / 100%);
+}
+
+span:hover,
+span:focus,
+a:hover,
+a:focus {
+  background: #000;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  html {
+    background: #000;
+    color: #fff;
+  }
+
+  span:hover,
+  span:focus,
+  a:hover,
+  a:focus {
+    background: #fff;
+  }
+}
