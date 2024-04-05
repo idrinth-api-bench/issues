@@ -76,7 +76,7 @@ const Header = ({
         to={'https://medium.com/idrinth-api-bench'}
         label={'medium'}
       />
-       <SocialLink
+      <SocialLink
         to={'https://www.reddit.com/r/IdrinthApiBench'}
         label={'reddit'}
       />
