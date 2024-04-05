@@ -5,7 +5,7 @@ import {
 import Lang from './lang.tsx';
 import languageKey from '../locales/language-key.ts';
 import React from 'react';
-import Code from "./code.tsx";
+import Code from './code.tsx';
 
 interface CommandBodyType {
   id: string;
