@@ -1,4 +1,4 @@
-name: mindmap language lint
+name: mindmap spellcheck
 on:
   push:
     branches:
