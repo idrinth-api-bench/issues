@@ -19,7 +19,8 @@
     "regression": "node tools/regression.js",
     "license": "node tools/update-year.js",
     "language": "itlfy watch cli framework documentation-website history-website",
-    "check-language": "itlfy check"
+    "check-language": "itlfy check",
+    "dictionary": "node tools/dictionary.js"
   },
   "repository": {
     "type": "git",
