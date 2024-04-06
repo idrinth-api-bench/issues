@@ -21,7 +21,6 @@ for failure scenarios:
   "error_code": 1308,
 }
 */
-const SUCCESS = 'success';
 
 @staticImplements<Middleware>()
 export default class FailureCheck {
@@ -36,7 +35,7 @@ export default class FailureCheck {
     } catch (e) {
       throw Error(language('invalid_json_body', `${ e }`,),);
     }
-    if (response.status === SUCCESS) {
+    if (response.status === 'success') {
       throw new Error(
         language('response_not_failure', 'status', `${ response.status }`,),
       );

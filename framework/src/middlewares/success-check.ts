@@ -21,9 +21,6 @@ for success scenarios :
 }
 */
 
-const FAIL = 'fail';
-const ERROR = 'error';
-
 @staticImplements<Middleware>()
 export default class SuccessCheck {
   public static prepare(request: Request,): Request {
@@ -38,7 +35,7 @@ export default class SuccessCheck {
       throw Error(language('invalid_json_body', `${ e }`,),);
     }
 
-    if (response.status === FAIL || response.status === ERROR) {
+    if (response.status === 'fail' || response.status === 'error') {
       throw new Error(
         language('response_not_success', 'status', `${ response.status }`,),
       );
