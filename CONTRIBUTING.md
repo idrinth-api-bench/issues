@@ -139,9 +139,11 @@ npm run setup
 #### Language
 
 If you'd like to test translations, there's an auto-rebuild in the project root:
+
 ```bash
 npm run language
 ```
+
 Languages can be found in their respective project folder.
 \
 Example:
