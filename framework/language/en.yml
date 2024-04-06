@@ -39,3 +39,5 @@ invalid_post_definition: The definition of post on route %1% is not valid.
 unknown_route_property: The property %1% on route %1% is unknown.
 invalid_request_property: The request property %2% of task %1% is invalid.
 invalid_request: The request task %1% has unknown properties.
+response_not_success: 'The response was not success, %1% field was %2%'
+response_not_failure: 'The response was not failure, %1% field was %2%'
