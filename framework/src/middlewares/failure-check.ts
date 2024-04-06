@@ -4,6 +4,23 @@ import Result from '../result.js';
 import language from '../helper/language.js';
 import StandardResponse from '../standard-response.js';
 
+/*
+Below Document Defines the standards upon which most apis will be constructed
+for failure scenarios:
+
+1) JSEND - https://github.com/omniti-labs/jsend
+{
+  "status": "fail/error",
+  "message":"Present only when status is error"
+}
+
+2) Another Common Format
+{
+  "success": false,
+  "message": "Used mostly in case of error message,
+  "error_code": 1308,
+}
+*/
 const SUCCESS = 'success';
 
 @staticImplements<Middleware>()

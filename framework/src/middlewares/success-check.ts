@@ -4,6 +4,23 @@ import Result from '../result.js';
 import language from '../helper/language.js';
 import StandardResponse from '../standard-response.js';
 
+/*
+Below Document Defines the standards upon which most apis will be constructed
+for success scenarios :
+
+1) JSEND - https://github.com/omniti-labs/jsend
+{
+  "status": "success",
+  "data":{},
+}
+
+2) Another Common Format
+{
+  "success": true,
+  "data": {}
+}
+*/
+
 const FAIL = 'fail';
 const ERROR = 'error';
 
@@ -35,21 +52,3 @@ export default class SuccessCheck {
   }
 }
 
-/*
-Below Document Defines the standards upon which most apis will be constructed
-
-1) JSEND - https://github.com/omniti-labs/jsend
-{
-  "status": "success/fail/error",
-  "data":{},
-  "message":"Present only when status is error"
-}
-
-2) Another Common Format
-{
-  "success": false/true,
-  "message": "Used mostly in case of error message,
-  "error_code": 1308,
-  "data": {}
-}
-*/
