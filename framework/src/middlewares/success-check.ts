@@ -4,7 +4,8 @@ import Result from '../result.js';
 import language from '../helper/language.js';
 import StandardResponse from '../standard-response.js';
 
-const SUCCESS = 'success';
+const FAIL = 'fail';
+const ERROR = 'error';
 
 @staticImplements<Middleware>()
 export default class SuccessCheck {
@@ -20,13 +21,13 @@ export default class SuccessCheck {
       throw Error(language('invalid_json_body', `${ e }`,),);
     }
 
-    if (response.status !== SUCCESS) {
+    if (response.status === FAIL || response.status === ERROR) {
       throw new Error(
         language('response_not_success', 'status', `${ response.status }`,),
       );
     }
 
-    if (response.success !== true) {
+    if (response.success === false) {
       throw new Error(
         language('response_not_success', 'success', `${ response.success }`,),
       );
