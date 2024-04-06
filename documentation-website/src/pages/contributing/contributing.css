@@ -6,7 +6,3 @@ html {
 .preface {
   font-style: italic;
 }
-
-.card-list > li {
-  padding: .5rem 0;
-}
