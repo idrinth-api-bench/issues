@@ -31,6 +31,8 @@ const Middlewares = () => <Layout
     middlewares.provided.json
     middlewares.provided.xml
     middlewares.provided.silent-server-validator
+    middlewares.provided.success-check
+    middlewares.provided.failure-check
   </ListUnit>
   <CodeUnit
     text={'middlewares.custom.title'}
