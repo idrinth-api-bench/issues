@@ -128,9 +128,9 @@ npm run language
       `}</Code>
       <p>
         <Lang lnkey={'contributing.code.translation.path'}/>
-          <p>
+        <p>
           <Lang lnkey={'contributing.code.translation.example'}/>
-          </p>
+        </p>
       </p>
       <Code language='bash'>{`
   /documentation-website/language/EXAMPLE.yml    
