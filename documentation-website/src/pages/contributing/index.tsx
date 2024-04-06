@@ -159,86 +159,32 @@ build(website): bump follow-redirects from 1.15.4 to 1.15.6
   `}</Code>
     </div>
   </div>
-  <div className={'card'}>
-    <h5><Lang lnkey={'contributing.code.commits.header.type.title'}/></h5>
-    <div>
-      <p>
-        <Lang lnkey={'contributing.code.commits.header.type.description'}/>
-      </p>
-      <ul className="card-list">
-        <li>
-          <Lang
-            lnkey={'contributing.code.commits.header.type.list_item_1'}
-          />
-        </li>
-        <li>
-          <Lang
-            lnkey={'contributing.code.commits.header.type.list_item_2'}
-          />
-        </li>
-        <li>
-          <Lang
-            lnkey={'contributing.code.commits.header.type.list_item_3'}
-          />
-        </li>
-        <li>
-          <Lang
-            lnkey={'contributing.code.commits.header.type.list_item_4'}
-          />
-        </li>
-        <li>
-          <Lang
-            lnkey={'contributing.code.commits.header.type.list_item_5'}
-          />
-        </li>
-        <li>
-          <Lang
-            lnkey={'contributing.code.commits.header.type.list_item_6'}
-          />
-        </li>
-        <li>
-          <Lang
-            lnkey={'contributing.code.commits.header.type.list_item_7'}
-          />
-        </li>
-        <li>
-          <Lang
-            lnkey={'contributing.code.commits.header.type.list_item_8'}
-          />
-        </li>
-      </ul>
-    </div>
-    <div className={'card'}>
-      <h5>
-        <Lang lnkey={'contributing.code.commits.header.scope.title'}/>
-      </h5>
-      <div>
-        <p>
-          <Lang lnkey={'contributing.code.commits.header.scope.description'}/>
-        </p>
-        <ul className="card-list">
-          <li>
-            <Lang lnkey={'contributing.code.commits.header.scope.list_item_1'}/>
-          </li>
-          <li>
-            <Lang lnkey={'contributing.code.commits.header.scope.list_item_2'}/>
-          </li>
-          <li>
-            <Lang lnkey={'contributing.code.commits.header.scope.list_item_3'}/>
-          </li>
-          <li>
-            <Lang lnkey={'contributing.code.commits.header.scope.list_item_4'}/>
-          </li>
-          <li>
-            <Lang lnkey={'contributing.code.commits.header.scope.list_item_5'}/>
-          </li>
-          <li>
-            <Lang lnkey={'contributing.code.commits.header.scope.list_item_6'}/>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <ListUnit
+    text={'contributing.code.commits.header.type.title'}
+    level={'h5'}
+    prefix={'contributing.code.commits.header.type.description'}
+  >
+    contributing.code.commits.header.type.list_item_1
+    contributing.code.commits.header.type.list_item_2
+    contributing.code.commits.header.type.list_item_3
+    contributing.code.commits.header.type.list_item_4
+    contributing.code.commits.header.type.list_item_5
+    contributing.code.commits.header.type.list_item_6
+    contributing.code.commits.header.type.list_item_7
+    contributing.code.commits.header.type.list_item_8
+  </ListUnit>
+  <ListUnit
+    text={'contributing.code.commits.header.scope.title'}
+    level={'h5'}
+    prefix={'contributing.code.commits.header.scope.description'}
+  >
+    contributing.code.commits.header.scope.list_item_1
+    contributing.code.commits.header.scope.list_item_2
+    contributing.code.commits.header.scope.list_item_3
+    contributing.code.commits.header.scope.list_item_4
+    contributing.code.commits.header.scope.list_item_5
+    contributing.code.commits.header.scope.list_item_6
+  </ListUnit>
   <div className={'card'}>
     <h5>
       <Lang lnkey={'contributing.code.commits.header.summary.title'}/>
@@ -247,7 +193,7 @@ build(website): bump follow-redirects from 1.15.4 to 1.15.6
       <p>
         <Lang lnkey={'contributing.code.commits.header.summary.description'}/>
       </p>
-      <ul className="card-list">
+      <ul>
         <li>
           <Lang
             lnkey={'contributing.code.commits.header.summary.list_item_1'}
@@ -326,7 +272,7 @@ Closes #294
       <p>
         <Lang lnkey={'contributing.code.commits.reverts.content'}/>
       </p>
-      <ul className="card-list">
+      <ul>
         <li>
           <Lang lnkey={'contributing.code.commits.reverts.list_item_1'}/>
         </li>
