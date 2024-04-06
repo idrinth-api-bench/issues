@@ -6,28 +6,64 @@ import Lang from './lang';
 import {
   createPortal,
 } from 'react-dom';
+import {
+  EMPTY,
+} from '../constants.ts';
+import {
+  has,
+  get,
+  set,
+} from './local-consent-storage.ts';
+import CookieConsentService from "./cookie-consent-service.tsx";
 
 // eslint-disable-next-line complexity
 const CookieConsent = () => {
+  const types = [
+    'youtube',
+    'tracking',
+  ];
+  let wasAllAnswered = true;
+  for (const type of types) {
+    wasAllAnswered = wasAllAnswered && has(type,);
+  }
   const [
     consentWasClosed,
     setConsentWasClosed,
-  ] = useState<boolean>(!! localStorage.getItem('consent',),);
+  ] = useState<boolean>(wasAllAnswered,);
   if (consentWasClosed) {
     //@ts-expect-error _paq can be null
     window._paq = window?._paq || [];
     //@ts-expect-error _paq can be null
-    window._paq.push([ localStorage.getItem('consent',) === 'true'
+    window._paq.push([ get('tracking',)
       ? 'rememberConsentGiven'
       : 'forgetConsentGiven', ],);
   }
 
-  const handleConsent = (accept: boolean,) => {
+  const handleConsent = (accept: null|boolean,) => {
+    if (typeof accept === 'boolean') {
+      const elements = document
+        .getElementById('consent-choices',)
+        ?.getElementsByTagName('input',);
+      for (let i = 0; i < (elements?.length ?? EMPTY); i ++) {
+        const element = elements?.item(i,);
+        if (element) {
+          element.checked = accept;
+        }
+      }
+      accept = null;
+    }
+    for  (const type  of types) {
+      const allow = document
+        .getElementById(type + '-consent',)
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
+        ?.checked;
+      set(type, allow);
+    }
     //@ts-expect-error _paq can be null
-    window?._paq?.push([ accept
+    window?._paq?.push([ get('tracking',)
       ? 'rememberConsentGiven'
       : 'forgetConsentGiven', ],);
-    localStorage.setItem('consent', accept ? 'true' : 'false',);
     setConsentWasClosed(true,);
   };
 
@@ -52,18 +88,28 @@ const CookieConsent = () => {
         <Lang lnkey={'cookie-consent.description'} />
       </p>
     </div>
+    <ul id={'consent-choices'}>
+      <CookieConsentService>tracking</CookieConsentService>
+      <CookieConsentService>youtube</CookieConsentService>
+    </ul>
     <div className={'cookie-consent-buttons'}>
       <button
         onClick={() => handleConsent(true,)}
         className={'cookie-consent-accept-button'}
       >
-        <Lang lnkey={'cookie-consent.accept'} />
+        <Lang lnkey={'cookie-consent.accept'}/>
+      </button>
+      <button
+        onClick={() => handleConsent(null,)}
+        className={'cookie-consent-custom-button'}
+      >
+        <Lang lnkey={'cookie-consent.custom'}/>
       </button>
       <button
         onClick={() => handleConsent(false,)}
         className={'cookie-consent-decline-button'}
       >
-        <Lang lnkey={'cookie-consent.decline'} />
+        <Lang lnkey={'cookie-consent.decline'}/>
       </button>
     </div>
   </div>, document.body,);

@@ -469,3 +469,11 @@ cookie-consent:
   description: "We use cookies to ensure you get the best experience on our website."
   accept: "Accept"
   decline: "Decline"
+  custom: "As above"
+  service:
+    tracking:
+      title: "Matomo tracking"
+      description: "We will track your visit via tracking.bjoern-buettner.me to improve out content."
+    youtube:
+      title: "YouTube"
+      description: "We will load videos from www.youtube-nocookie.com to directly play on the site."
