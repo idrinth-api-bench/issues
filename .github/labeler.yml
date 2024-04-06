@@ -34,7 +34,7 @@ research:
   - changed-files:
       - any-glob-to-any-file:
           - mindmap/**/*
-tools:
+tooling:
   - changed-files:
       - any-glob-to-any-file:
           - tools/**/*
