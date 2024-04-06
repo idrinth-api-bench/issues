@@ -1,0 +1,6 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "entry": [".mocharc.cjs", "src/locales/*.ts", "tools/**/*.js", "bin/*.js", "test/**/*.ts"],
+  "project": ["src/**/*.ts", "tools/**/*.js", "test/**/*.ts"],
+  "ignoreDependencies": ["ts-node"]
+}
