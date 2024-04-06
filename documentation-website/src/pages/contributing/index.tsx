@@ -126,12 +126,12 @@ npm run setup
       <Code language='bash'>{`
 npm run language
       `}</Code>
-    <p>
-      <Lang lnkey={'contributing.code.translation.path'}/>
-    </p>
-    <Code language='bash'>{`
-/documentation-website/language/EXAMPLE.yml    
-    `}</Code>
+      <p>
+        <Lang lnkey={'contributing.code.translation.path'}/>
+      </p>
+      <Code language='bash'>{`
+  /documentation-website/language/EXAMPLE.yml    
+      `}</Code>
     </div>
   </div>
   <Youtube
