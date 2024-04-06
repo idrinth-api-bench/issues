@@ -44,5 +44,4 @@ jobs:
             package-lock.json
       - run: npm ci
       - run: cd history-microservice && npm ci
-      - run: cd history-microservice && npm run language
       - run: cd history-microservice && npm run knip
