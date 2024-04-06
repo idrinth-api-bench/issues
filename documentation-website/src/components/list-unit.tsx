@@ -9,12 +9,14 @@ interface CardProps {
   text: languageKey;
   level: 'h1'|'h2'|'h3'|'h4'|'h5'|'h6';
   children: string|languageKey;
+  prefix?: languageKey;
 }
 
 const ListUnit = ({
   text,
   level,
   children,
+  prefix,
 }: CardProps,) => {
   const GenerateContent = (): ReactNode => {
     const keys: languageKey[] = children.split(' ',) as languageKey[];
@@ -24,6 +26,7 @@ const ListUnit = ({
     return <ul>{content}</ul>;
   };
   return <Content level={level} text={text}>
+    {prefix && <p><Lang lnkey={prefix}/></p>}
     <GenerateContent/>
   </Content>;
 };
