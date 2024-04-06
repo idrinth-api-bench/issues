@@ -330,6 +330,8 @@ middlewares:
     json: "json-validator"
     xml: "xml-validator"
     silent-server-validator: "silent-server-validator"
+    success-check: "check response for success"
+    failure-check: "check response for failure"
   custom:
     title: "Custom Middleware"
     description: "For custom middleware, implement the following interface. Prepare is called before sending a request, process after a request. If an error is thrown in process, any further validations are skipped."
