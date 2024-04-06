@@ -200,9 +200,10 @@ contributing:
       list_item_9: "get changes reviewed"
       list_item_10: "if review is positive get changes merged otherwise fix and the send back to review"
     translation:
-      title: 'Translation'
-      setup: "If you'd like to test translations theres an auto rebuild in the project root:"
-      path: 'Languages can be found in:'
+      title: "Translation"
+      setup: "If you'd like to test translations, there's an auto-rebuild in the project root:"
+      path: "Languages can be found in their respective project folder."
+      example: "example:"
       youtube: "Translation YouTube tutorial"
     mindmap:
       title: "Mindmap"

@@ -128,6 +128,9 @@ npm run language
       `}</Code>
       <p>
         <Lang lnkey={'contributing.code.translation.path'}/>
+        <p>
+        <Lang lnkey={'contributing.code.translation.example'}/>
+        </p>
       </p>
       <Code language='bash'>{`
   /documentation-website/language/EXAMPLE.yml    
@@ -136,7 +139,7 @@ npm run language
   </div>
   <Youtube
     lnkey={'contributing.code.translation.youtube'}
-    level={'h3'}
+    level={'h4'}
   >FEYIeMCrrbk</Youtube>
   <div className="card">
     <h3><Lang lnkey={'contributing.code.commits.title'}/></h3>
