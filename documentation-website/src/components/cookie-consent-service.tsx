@@ -36,7 +36,7 @@ const CookieConsentService = ({
     <Suspense fallback={<label
       htmlFor={children + '-consent'}
     >
-      <Lang lnkey={`cookie-consent.service.${children
+      <Lang lnkey={`cookie-consent.service.${ children
       }.title` as languageKey}/>
     </label>}><EL/></Suspense>
   </li>;

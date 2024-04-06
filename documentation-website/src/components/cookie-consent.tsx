@@ -14,7 +14,7 @@ import {
   get,
   set,
 } from './local-consent-storage.ts';
-import CookieConsentService from "./cookie-consent-service.tsx";
+import CookieConsentService from './cookie-consent-service.tsx';
 
 // eslint-disable-next-line complexity
 const CookieConsent = () => {
@@ -39,6 +39,7 @@ const CookieConsent = () => {
       : 'forgetConsentGiven', ],);
   }
 
+  // eslint-disable-next-line complexity
   const handleConsent = (accept: null|boolean,) => {
     if (typeof accept === 'boolean') {
       const elements = document
@@ -52,13 +53,13 @@ const CookieConsent = () => {
       }
       accept = null;
     }
-    for  (const type  of types) {
+    for (const type of types) {
       const allow = document
         .getElementById(type + '-consent',)
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-expect-error
         ?.checked;
-      set(type, allow);
+      set(type, allow,);
     }
     //@ts-expect-error _paq can be null
     window?._paq?.push([ get('tracking',)
