@@ -9,7 +9,7 @@
   z-index: 100;
   left: 10px;
   max-width: 410px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 10%);
+  box-shadow: 0 0 5px hsla(0deg 0% 0% / 10%);
 }
 
 .cookie-consent .cookie-consent-description {
@@ -100,5 +100,5 @@
 
 .dark-mode .cookie-consent .cookie-consent-decline-button:hover,
 .dark-mode .cookie-consent .cookie-consent-ccustom-button:hover {
-  opacity: 80%;
+  opacity: 0.8;
 }
