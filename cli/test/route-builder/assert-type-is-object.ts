@@ -15,19 +15,19 @@ describe('open-api/asset-type-is-object', () => {
   it('should throw on null', () => {
     expect(() => assertIsObject(null,),)
       .to.throw(
-        'Your Open-Api document is not valid, please check for errors!',
+        'Your OpenApi document is not valid, please check for errors!',
       );
   },);
   it('should throw on string', () => {
     expect(() => assertIsObject('',),)
       .to.throw(
-        'Your Open-Api document is not valid, please check for errors!',
+        'Your OpenApi document is not valid, please check for errors!',
       );
   },);
   it('should throw on number', () => {
     expect(() => assertIsObject(Math.random(),),)
       .to.throw(
-        'Your Open-Api document is not valid, please check for errors!',
+        'Your OpenApi document is not valid, please check for errors!',
       );
   },);
 },);

@@ -26,6 +26,10 @@ history-website:
   - changed-files:
       - any-glob-to-any-file:
           - history-website/**/*
+translation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '*/language/*.yml'
 research:
   - changed-files:
       - any-glob-to-any-file:

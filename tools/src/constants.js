@@ -4,3 +4,4 @@ export const ARRAY_SECOND = 1;
 export const EXIT_SUCCESS = 0;
 export const EXIT_FAILURE = 1;
 export const INDENTATION = 2;
+export const EMPTY = 0;

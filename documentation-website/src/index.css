@@ -161,8 +161,10 @@ nav li {
 }
 
 footer {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
   padding: 1rem 1em;
   background-color: var(--white);
   width: 100%;
@@ -175,7 +177,7 @@ footer {
 
 footer ul {
   display: flex;
-  justify-content: flex-end;
+  padding-left: 0;
 }
 
 footer a {
@@ -184,7 +186,6 @@ footer a {
 
 footer li {
   display: flex;
-  padding-left: 10px;
 }
 
 a:hover,
@@ -311,13 +312,9 @@ article {
   }
 }
 
-footer li::after {
+footer li:not(:last-child)::after {
   content: " | ";
-  padding-left: 1rem;
-}
-
-footer li:last-child::after {
-  content: "";
+  padding-inline: 1rem;
 }
 
 .sponsor {
@@ -378,15 +375,6 @@ html.dark-mode {
 }
 
 @media only screen and (width >= 600px) {
-  footer {
-    grid-template-columns: 1fr 1fr;
-    padding: 1rem 0;
-  }
-
-  footer ul {
-    margin-right: 4rem;
-  }
-
   header,
   footer {
     background-image: linear-gradient(
@@ -436,7 +424,7 @@ html.dark-mode {
     display: grid;
     gap: 0;
     row-gap: 0.25em;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
   }
 
   nav li {
@@ -445,7 +433,6 @@ html.dark-mode {
   }
 
   footer span {
-    padding-left: 5rem;
     max-height: 100%;
     white-space: nowrap;
   }
@@ -531,6 +518,15 @@ html.dark-mode {
     width: 100%;
     padding: 0;
   }
+
+  .dark-mode nav li:hover ul {
+    background-color: var(--very-dark-gray);
+  }
+
+  .dark-mode header,
+  .dark-mode footer {
+    background-color: var(--black);
+  }
 }
 
 @media only screen and (width >= 900px) {
@@ -546,34 +542,10 @@ html.dark-mode {
   header {
     grid-template-columns: 30% auto auto 5%;
   }
-}
 
-@media screen and (width >= 600px) {
-  .dark-mode nav li:hover ul {
-    background-color: var(--very-dark-gray);
-  }
-
-  .dark-mode header,
-  .dark-mode footer {
-    background-color: var(--black);
-  }
-}
-
-@media screen and (width <= 786px) {
   footer {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 1rem;
-    gap: 1rem;
-  }
-
-  footer span {
-    padding-left: 0;
-    text-align: center;
-  }
-
-  footer li:last-child::after {
-    content: none;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-inline: 2rem;
   }
 }

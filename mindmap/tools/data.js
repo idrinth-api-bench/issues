@@ -44,6 +44,11 @@ const convert = (node,) => {
 let html = fillTemplate(
   convert(data,),
   {},
+  {
+    jsonOptions: {
+      color: [ '###REPLACE-ME-COLOUR###', ],
+    },
+  },
 );
 html = html.replace(
   '<title>Markmap</title>',
@@ -89,7 +94,18 @@ for (const match of html.matchAll(/<script src=([^ >]+)><\/script>/ug,)) {
     .digest('hex',);
   if (! existsSync(`${ cwd }/cache/${ hash }.min.js`,)) {
     // eslint-disable-next-line no-await-in-loop
-    const script = await (await fetch(match[SECOND],)).text();
+    let script = await (await fetch(match[SECOND],)).text();
+    if (match[SECOND].match(/markmap-view/u,)) {
+      script = script
+        .replace(
+          /(const mm = new Markmap\(svg, opts\);)/u,
+          'opts.embedGlobalCSS=false;$1',
+        );
+    }
+    if (! match[SECOND].match(/\.min\.js$/u,)) {
+      // eslint-disable-next-line no-await-in-loop
+      script = (await jminify(script,)).code;
+    }
     writeFileSync(
       `${ cwd }/cache/${ hash }.min.js`,
       script,
@@ -113,11 +129,20 @@ for (const match of html.matchAll(/<script>((.|\n)+?)<\/script>/ug,)) {
     .update(match[SECOND],)
     .digest('hex',);
   if (! existsSync(`${ cwd }/cache/${ hash }.min.js`,)) {
-    // eslint-disable-next-line no-await-in-loop
+    const script = match[SECOND]
+      .replace(
+        '"###REPLACE-ME-COLOUR###"',
+        `(() => {
+          const darkMode = window
+            .matchMedia('(prefers-color-scheme: dark)',)
+            .matches;
+          return darkMode ? 'white' : 'black';
+        })()`,
+      );
     writeFileSync(
       `${ cwd }/cache/${ hash }.min.js`,
       // eslint-disable-next-line no-await-in-loop
-      (await jminify(match[SECOND],)).code,
+      (await jminify(script,)).code,
       'utf8',
     );
   }
