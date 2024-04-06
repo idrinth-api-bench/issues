@@ -13,6 +13,20 @@ import {
   MdArrowDropDown,
 } from 'react-icons/md';
 
+const preventOpenLink = (e,) => {
+  const ev = event ?? e;
+  ev.preventDefault();
+  ev.stopPropagation();
+  const target = ev.target ?? ev.currentTarget;
+  target.parentElement.setAttribute(
+    'aria-expanded',
+    target.parentElement.getAttribute('aria-expanded',) === 'true'
+      ? 'false'
+      : 'true',
+  );
+  return false;
+};
+
 const Header = ({
   window,
 }: {window: Window},) => <header>
@@ -95,7 +109,7 @@ const Header = ({
           className="dropdown-links-heading"
           to="/contributing/">
           <Lang lnkey='nav.contributing'/>
-          <MdArrowDropDown />
+          <MdArrowDropDown onClick={preventOpenLink} />
         </NavLink>
         <ul aria-labelledby="dropdown-contributing" id="contributing-menu" >
           <li>
@@ -118,7 +132,7 @@ const Header = ({
           aria-expanded="false"
           to="/usage/">
           <Lang lnkey='nav.usage'/>
-          <MdArrowDropDown />
+          <MdArrowDropDown onClick={preventOpenLink} />
         </NavLink>
         <ul id="usages-menu" aria-labelledby="dropdown-usage-links" >
           <li>

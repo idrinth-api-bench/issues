@@ -456,7 +456,8 @@ html.dark-mode {
     padding: 0 0.5em;
   }
 
-  nav li:hover ul {
+  nav li:hover ul,
+  nav li a[aria-expanded="true"] + ul {
     display: flex;
     flex-direction: column;
     gap: 1em;
