@@ -24,6 +24,7 @@ body {
   font-family: Roboto, sans-serif;
   font-size: 16px;
   min-height: 100vh;
+  padding-bottom: 2em;
 }
 
 h1,
@@ -374,10 +375,6 @@ html.dark-mode {
   width: 70%;
 }
 
-body {
-  padding-bottom: 2em;
-}
-
 .socials {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -619,7 +616,6 @@ body {
 }
 
 @media only screen and (width >= 1250px) {
-
   .theme-toggle-btn {
     grid-column: 4;
     grid-row: 1 / 3;
