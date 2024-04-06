@@ -589,6 +589,10 @@ html.dark-mode {
     row-gap: 0.25em;
   }
 
+  .socials li:nth-of-type(n):hover ul {
+    bottom: auto;
+  }
+
   .theme-toggle-btn {
     grid-column: 3;
     grid-row: 1 / 3;
