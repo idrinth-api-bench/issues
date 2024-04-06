@@ -398,11 +398,11 @@ html.dark-mode {
   bottom: 2em;
 }
 
-.socials li:nth-child(0):hover ul,
 .socials li:nth-child(1):hover ul,
 .socials li:nth-child(2):hover ul,
 .socials li:nth-child(3):hover ul,
-.socials li:nth-child(4):hover ul {
+.socials li:nth-child(4):hover ul,
+.socials li:nth-child(5):hover ul {
   bottom: 1em;
 }
 
