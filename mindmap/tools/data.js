@@ -85,6 +85,20 @@ html = html.replace(
   `<link rel=stylesheet type=text/css href=${ ch }.min.css />` +
   '</head>',
 );
+html = html
+  .replace(
+    /(<\/body>)/u,
+    '<div id=markmap>' +
+    '<img src=markmap.png alt=Markmap />' +
+    '<span>Powered by</span>' +
+    `<a href=https://markmap.js.org/ ${ attributes }>Markmap</a>` +
+    '</div>' +
+    '<div id=iab>' +
+    `<a href=https://idrinth-api-ben.ch/ ${ attributes }>` +
+    '<img src=iab.svg alt="@idrinth/api-bench" />' +
+    '</a>' +
+    '</div>$1',
+  );
 for (const match of html.matchAll(/<style>([^<]+)<\/style>/ug,)) {
   html = html.replace(match[FIRST], '',);
 }
@@ -158,11 +172,13 @@ for (const match of html.matchAll(/<script>((.|\n)+?)<\/script>/ug,)) {
     `<script src=${ hash }.min.js></script>`,
   );
 }
-writeFileSync(
-  `${ cwd }/dist/iab.svg`,
-  readFileSync(`${ cwd }/assets/iab.svg`, 'utf8',),
-  'utf8',
-);
+for (const file of readdirSync(`${ cwd }/assets`,)) {
+  writeFileSync(
+    `${ cwd }/dist/${ file }`,
+    readFileSync(`${ cwd }/assets/${ file }`, 'binary',),
+    'binary',
+  );
+}
 writeFileSync(
   `${ cwd }/dist/index.html`,
   html,

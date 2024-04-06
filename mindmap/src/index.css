@@ -17,22 +17,51 @@ a {
 
 a,
 a:visited,
-a:hover,
-a:active,
-a:focus {
+a:active {
+  color: #000;
+}
+
+svg a:hover,
+svg a:focus
+svg span:hover,
+svg span:focus {
   color: hsla(132deg 33% 29% / 100%);
 }
 
-span:hover,
-span:focus {
-  color: hsla(132deg 33% 29% / 100%);
-}
-
-span:hover,
-span:focus,
-a:hover,
-a:focus {
+svg span:hover,
+svg span:focus,
+svg a:hover,
+svg a:focus {
   background: #000;
+}
+
+#markmap {
+  position: absolute;
+  right: 0.25em;
+  bottom: 0.25em;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+#markmap a:hover,
+#markmap a:focus {
+  color: #000;
+}
+
+#iab {
+  position: absolute;
+  left: 0.25em;
+  top: 0.25em;
+}
+
+#iab img {
+  height: 2em;
+}
+
+#markmap img {
+  height: 2em;
+  align-self: center;
+  grid-row: 1 / 3;
 }
 
 @media screen and (prefers-color-scheme: dark) {
@@ -41,10 +70,21 @@ a:focus {
     color: #fff;
   }
 
-  span:hover,
-  span:focus,
-  a:hover,
-  a:focus {
+  a,
+  a:visited,
+  a:active {
+    color: #fff;
+  }
+
+  #markmap a:hover,
+  #markmap a:focus {
+    color: #fff;
+  }
+
+  svg span:hover,
+  svg span:focus,
+  svg a:hover,
+  svg a:focus {
     background: #fff;
   }
 }
