@@ -136,6 +136,14 @@ cd api-bench
 npm run setup
 ```
 
+#### Language
+
+If you'd like to test translations theres an auto rebuild in the project root:
+```bash
+npm run language
+```
+Languages can be found in ```/documentation-website/language/EXAMPLE.yml```
+
 ### Commit Message Guidelines
 
 **This specification is inspired by Angular commit messages guidelines.*

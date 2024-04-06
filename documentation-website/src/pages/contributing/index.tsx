@@ -56,10 +56,6 @@ const Index = () => <Layout
     contributing.code.workflow.list_item_9
     contributing.code.workflow.list_item_10
   </ListUnit>
-  <Youtube
-    lnkey={'contributing.code.translation.youtube'}
-    level={'h3'}
-  >FEYIeMCrrbk</Youtube>
   <div className='card'>
     <h3><Lang lnkey={'contributing.code.mindmap.title'}/></h3>
     <div>
@@ -121,6 +117,27 @@ npm run setup
   `}</Code>
     </div>
   </div>
+  <div className='card'>
+    <h3><Lang lnkey={'contributing.code.translation.title'}/></h3>
+    <div>
+      <p>
+        <Lang lnkey={'contributing.code.translation.setup'}/>
+      </p>
+      <Code language='bash'>{`
+npm run language
+      `}</Code>
+    <p>
+      <Lang lnkey={'contributing.code.translation.path'}/>
+    </p>
+    <Code language='bash'>{`
+/documentation-website/language/EXAMPLE.yml    
+    `}</Code>
+    </div>
+  </div>
+  <Youtube
+    lnkey={'contributing.code.translation.youtube'}
+    level={'h3'}
+  >FEYIeMCrrbk</Youtube>
   <div className="card">
     <h3><Lang lnkey={'contributing.code.commits.title'}/></h3>
     <div>
