@@ -143,9 +143,9 @@ If you'd like to test translations, there's an auto-rebuild in the project root:
 npm run language
 ```
 Languages can be found in their respective project folder.
-<br></br>
-example:
-<br></br>
+\
+Example:
+\
 `/documentation-website/language/EXAMPLE.yml`
 
 ### Commit Message Guidelines

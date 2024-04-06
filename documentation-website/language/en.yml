@@ -203,7 +203,7 @@ contributing:
       title: "Translation"
       setup: "If you'd like to test translations, there's an auto-rebuild in the project root:"
       path: "Languages can be found in their respective project folder."
-      example: "example:"
+      example: "Example:"
       youtube: "Translation YouTube tutorial"
     mindmap:
       title: "Mindmap"
