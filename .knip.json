@@ -1,5 +1,6 @@
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
   "entry": ["tools/**/*.js"],
-  "project": ["tools/**/*.js"]
+  "project": ["tools/**/*.js"],
+  "ignoreDependencies": ["fta-cli"]
 }
