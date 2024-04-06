@@ -17,7 +17,7 @@ describe('middlewares/success-check', () => {
   it('should have a static method process', () => {
     expect(SuccessCheck.process,).to.be.a('function',);
   },);
-  const bodyForFail : Array<StandardResponse> = [
+  const bodyForFailureResponse : Array<StandardResponse> = [
     {
       success: false,
     },
@@ -28,7 +28,7 @@ describe('middlewares/success-check', () => {
       status: 'error',
     },
   ];
-  for (const bodyObject of bodyForFail) {
+  for (const bodyObject of bodyForFailureResponse) {
     const input : Result = {
       response: {
         status: 200,
@@ -56,7 +56,7 @@ describe('middlewares/success-check', () => {
 
   }
 
-  const bodyForSuccess : Array<StandardResponse> = [
+  const bodyForSuccessResponse : Array<StandardResponse> = [
     {
       success: true,
     },
@@ -64,7 +64,7 @@ describe('middlewares/success-check', () => {
       status: 'success',
     },
   ];
-  for (const bodyObject of bodyForSuccess) {
+  for (const bodyObject of bodyForSuccessResponse) {
     const input : Result = {
       response: {
         status: 200,

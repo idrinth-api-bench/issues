@@ -17,7 +17,7 @@ describe('middlewares/failure-check', () => {
   it('should have a static method process', () => {
     expect(FailureCheck.process,).to.be.a('function',);
   },);
-  const bodyForFail : Array<StandardResponse> = [
+  const bodyForSuccessResponse : Array<StandardResponse> = [
     {
       success: true,
     },
@@ -25,7 +25,7 @@ describe('middlewares/failure-check', () => {
       status: 'success',
     },
   ];
-  for (const bodyObject of bodyForFail) {
+  for (const bodyObject of bodyForSuccessResponse) {
     const input : Result = {
       response: {
         status: 200,
@@ -39,9 +39,9 @@ describe('middlewares/failure-check', () => {
       validators: [],
       maxDuration: 1000,
     };
-    let field = 'success';
-    if (! bodyObject.success) {
-      field = 'status';
+    let field = 'status';
+    if (! bodyObject.status) {
+      field = 'success';
     }
 
     it(`process should throw error for ${ field } field as ${ bodyObject[field] } `,
@@ -53,7 +53,7 @@ describe('middlewares/failure-check', () => {
 
   }
 
-  const bodyForSuccess : Array<StandardResponse> = [
+  const bodyForFailureResponse : Array<StandardResponse> = [
     {
       success: false,
     },
@@ -64,7 +64,7 @@ describe('middlewares/failure-check', () => {
       status: 'fail',
     },
   ];
-  for (const bodyObject of bodyForSuccess) {
+  for (const bodyObject of bodyForFailureResponse) {
     const input : Result = {
       response: {
         status: 200,
@@ -78,9 +78,9 @@ describe('middlewares/failure-check', () => {
       validators: [],
       maxDuration: 1000,
     };
-    let field = 'success';
-    if (! bodyObject.success) {
-      field = 'status';
+    let field = 'status';
+    if (! bodyObject.status) {
+      field = 'success';
     }
 
     it(`process should not throw error for ${ field } field as ${ bodyObject[field] } `,
