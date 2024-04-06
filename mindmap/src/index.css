@@ -22,16 +22,10 @@ a:active {
 }
 
 svg a:hover,
-svg a:focus
+svg a:focus,
 svg span:hover,
 svg span:focus {
   color: hsla(132deg 33% 29% / 100%);
-}
-
-svg span:hover,
-svg span:focus,
-svg a:hover,
-svg a:focus {
   background: #000;
 }
 
