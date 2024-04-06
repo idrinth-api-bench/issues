@@ -5,6 +5,8 @@ import react from '@vitejs/plugin-react';
 import {
   plugin,
 } from '@idrinth/rollup-plugin-react-modular-css';
+import attributes from '@babel/plugin-syntax-import-attributes';
+import istanbul from 'babel-plugin-istanbul';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,8 +21,8 @@ export default defineConfig({
   plugins: [ react({
     babel: {
       plugins: [
-        '@babel/plugin-syntax-import-attributes',
-        'istanbul',
+        attributes,
+        istanbul,
       ],
     },
   },), ],

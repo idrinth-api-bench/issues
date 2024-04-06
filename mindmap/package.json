@@ -10,7 +10,8 @@
     "lint": "eslint . --ext .js,.ts,.cjs,.json,.tsx --report-unused-disable-directives --max-warnings 0",
     "lint-fix": "eslint . --ext .js,.ts,.cjs,.json,.tsx --fix",
     "lint-styles": "stylelint src/index.css",
-    "lint-css": "ilcd"
+    "lint-css": "ilcd",
+    "knip": "knip"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "terser": "^5.30.0"
   },
   "devDependencies": {
+    "knip": "^5.8.0",
     "@types/node": "^20.12.2",
     "eslint": "^8.57.0",
     "spellchecker-cli": "^6.2.0",
