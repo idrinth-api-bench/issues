@@ -70,15 +70,15 @@ svg span:focus {
     color: #fff;
   }
 
-  #markmap a:hover,
-  #markmap a:focus {
-    color: #fff;
-  }
-
   svg span:hover,
   svg span:focus,
   svg a:hover,
   svg a:focus {
     background: #fff;
+  }
+
+  #markmap a:hover,
+  #markmap a:focus {
+    color: #fff;
   }
 }
