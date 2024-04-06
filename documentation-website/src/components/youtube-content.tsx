@@ -12,6 +12,9 @@ import {
   YOUTUBE_DEFAULT_WIDTH,
   YOUTUBE_RECHECK_TIME,
 } from '../constants.ts';
+import {
+  get,
+} from './local-consent-storage.ts';
 
 interface YoutubeContentType {
   children: string;
@@ -34,7 +37,7 @@ const YoutubeContent = ({
   ] = useState<boolean>(localStorage.getItem('consent-was-given',) === 'true',);
   if (! allowed) {
     const interval = setInterval(() => {
-      if (localStorage.getItem('consent',) === 'true') {
+      if (get('youtube',)) {
         clearInterval(interval,);
         setAllowed(true,);
       }

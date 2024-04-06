@@ -25,14 +25,40 @@
   font-size: 1.2em;
 }
 
+.cookie-consent ul,
+.cookie-consent li {
+  display: block;
+}
+
+.cookie-consent ul {
+  padding: 1em 0;
+}
+
+.cookie-consent li.service {
+  display: flex;
+  gap: 1em;
+}
+
+.cookie-consent li.service input {
+  width: 1em;
+  height: 1em;
+  border: 1px solid var(--dark-green);
+}
+
+.cookie-consent li.service input:checked {
+  background: var(--dark-green);
+}
+
 .cookie-consent .cookie-consent-buttons {
   display: flex;
   justify-content: flex-start;
   width: 100%;
+  gap: 0.5em;
 }
 
 .cookie-consent .cookie-consent-accept-button,
-.cookie-consent .cookie-consent-decline-button {
+.cookie-consent .cookie-consent-decline-button ,
+.cookie-consent .cookie-consent-custom-button {
   padding: 20px;
   border-radius: 10px;
   cursor: pointer;
@@ -47,12 +73,14 @@
   background-color: var(--light-green);
 }
 
-.cookie-consent .cookie-consent-decline-button {
+.cookie-consent .cookie-consent-decline-button,
+.cookie-consent .cookie-consent-custom-button {
   background-color: var(--light-gray);
-  color: --black;
+  color: var(--black);
 }
 
-.cookie-consent .cookie-consent-decline-button:hover {
+.cookie-consent .cookie-consent-decline-button:hover,
+.cookie-consent .cookie-consent-custom-button:hover {
   background-color: rgb(167 173 179);
 }
 
@@ -64,15 +92,13 @@
   color: var(--light-gray);
 }
 
-.dark-mode .cookie-consent .cookie-consent-decline-button {
+.dark-mode .cookie-consent .cookie-consent-decline-button,
+.dark-mode .cookie-consent .cookie-consent-custom-button {
   color: var(--white);
   background-color: var(--dark-gray);
 }
 
-.cookie-consent .cookie-consent-decline-button {
-  margin-left: 10px;
-}
-
-.dark-mode .cookie-consent .cookie-consent-decline-button:hover {
+.dark-mode .cookie-consent .cookie-consent-decline-button:hover,
+.dark-mode .cookie-consent .cookie-consent-ccustom-button:hover {
   opacity: 80%;
 }
