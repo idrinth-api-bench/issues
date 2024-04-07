@@ -107,7 +107,7 @@ const scripts = [];
 for (const match of html.matchAll(/<script src=([^ >]+)><\/script>/ug,)) {
   scripts.push(match,);
 }
-scripts.map(async(match,) => {
+await Promise.all(scripts.map(async(match,) => {
   const hash = createHash('sha256',)
     .update(match[SECOND],)
     .digest('hex',);
@@ -142,7 +142,7 @@ scripts.map(async(match,) => {
     match[FIRST],
     `<script src=${ hash }.min.js></script>`,
   );
-},);
+},),);
 for (const match of html.matchAll(/<script>((.|\n)+?)<\/script>/ug,)) {
   const hash = createHash('sha256',)
     .update(match[SECOND],)
@@ -184,7 +184,6 @@ for (const file of readdirSync(`${ cwd }/assets`,)) {
     'binary',
   );
 }
-await Promise.all(scripts,);
 writeFileSync(
   `${ cwd }/dist/index.html`,
   html,
