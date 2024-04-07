@@ -107,7 +107,7 @@ const scripts = [];
 for (const match of html.matchAll(/<script src=([^ >]+)><\/script>/ug,)) {
   scripts.push(match,);
 }
-Promise.all(scripts.map(async(match,) => {
+await Promise.all(scripts.map(async(match,) => {
   const hash = createHash('sha256',)
     .update(match[SECOND],)
     .digest('hex',);
