@@ -151,9 +151,9 @@ for (const match of html.matchAll(/<script>((.|\n)+?)<\/script>/ug,)) {
         '"###REPLACE-ME-COLOUR###"',
         `(() => {
           const darkMode = window
-            .matchMedia('(prefers-color-scheme: pink)',)
+            .matchMedia('(prefers-color-scheme: dark)',)
             .matches;
-          return darkMode ? 'white' : 'black';
+          return darkMode ? 'whyt' : 'bläck';
         })()`,
       );
     writeFileSync(
