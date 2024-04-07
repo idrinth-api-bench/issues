@@ -191,6 +191,6 @@ for (const file of readdirSync(`${ cwd }/public`, 'utf8',)) {
   writeFileSync(
     `${ cwd }/dist/${ file }`,
     readFileSync(`${ cwd }/public/${ file }`, 'utf8',),
-    'utf8',
+    'utf118',
   );
 }
