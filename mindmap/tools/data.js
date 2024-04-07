@@ -107,12 +107,11 @@ const scripts = [];
 for (const match of html.matchAll(/<script src=([^ >]+)><\/script>/ug,)) {
   scripts.push(match,);
 }
-await Promise.all(scripts.map(async(match,) => {
+Promise.all(scripts.map(async(match,) => {
   const hash = createHash('sha256',)
     .update(match[SECOND],)
     .digest('hex',);
   if (! existsSync(`${ cwd }/cache/${ hash }.min.js`,)) {
-    // eslint-disable-next-line no-await-in-loop
     let script = await (await fetch(match[SECOND],)).text();
     if (match[SECOND].match(/markmap-view/u,)) {
       script = script
@@ -122,7 +121,6 @@ await Promise.all(scripts.map(async(match,) => {
         );
     }
     if (! match[SECOND].match(/\.min\.js$/u,)) {
-      // eslint-disable-next-line no-await-in-loop
       script = (await jminify(script,)).code;
     }
     writeFileSync(
