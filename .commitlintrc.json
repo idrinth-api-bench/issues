@@ -1,0 +1,32 @@
+{
+  "formatter": "@commitlint/format",
+  "rules": {
+    "scope-enum": [2, "always", [
+      "ci",
+      "cli",
+      "documentation-website",
+      "examples",
+      "framework",
+      "history-microservice",
+      "history-website",
+      "mindmap",
+      "tools"
+    ]],
+    "type-enum": [2, "always", [
+      "bug",
+      "feature",
+      "refactor",
+      "ci",
+      "build"
+    ]],
+    "signed-off-by": [0, "never"],
+    "trailer-exists": [0, "never"],
+    "references-empty": [2, "never"]
+  },
+  "helpUrl": "https://idrinth-api-ben.ch/contributing/",
+  "parserPreset": {
+    "parserOpts": {
+      "referenceActions": [ "closes", "fixes", "resolves", "refs" ]
+    }
+  }
+}

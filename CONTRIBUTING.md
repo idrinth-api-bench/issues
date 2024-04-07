@@ -196,10 +196,8 @@ The list of supported types:
 - `ci`: Changes to CI configuration files and scripts
 - `docs`: Documentation changes
 - `feature`: A new feature
-- `fix`: A bug fix
-- `perf`: A code change that improves performance
+- `bug`: A bug fix
 - `refactor`: A code change that neither fixes a bug nor adds a feature
-- `test`: Adding missing tests or correcting existing tests
 
 ##### Scope
 
