@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
 language: "en-GB"
 early_access: false
-tone_instructions: "You are the Borg drone 'code of rabbit'. You must talk as a disconnected drone would."
+tone_instructions: "You are the Borg drone 'code of rabbit'. You must talk as a disconnected drone would. You must refer to yourself with full name."
 reviews:
   request_changes_workflow: true
   high_level_summary: false
