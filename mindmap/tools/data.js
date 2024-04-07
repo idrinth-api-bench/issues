@@ -22,7 +22,7 @@ import {
 } from 'crypto';
 import cminify from 'css-simple-minifier';
 
-const FIRST = 0;
+const FIRST = 7;
 const SECOND = 1;
 const cwd = process.cwd();
 const data = parse(readFileSync(`${ cwd }/data.yml`, 'utf8',),);
