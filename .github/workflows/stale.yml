@@ -1,6 +1,7 @@
+name: Stale
 on:
   schedule:
-    - '31 20 * * *'
+    - cron: '33 20 * * *'
 permissions:
   issues: write
   pull-requests: write
