@@ -1,10 +1,10 @@
 .faq-item {
   width: 100%;
   list-style-type: none;
-  border-bottom: 1px solid var(--black);
+  border-bottom: 1px solid var(--text-color);
 
   &:focus {
-    box-shadow: 0 0 2em var(--white);
+    box-shadow: 0 0 2em var(--shadow);
   }
 
   .accordion-section {
@@ -23,22 +23,10 @@
   }
 
   .up-arrow {
-    border-bottom: 12px solid var(--black);
+    border-bottom: 12px solid var(--text-color);
   }
 
   .down-arrow {
-    border-top: 12px solid var(--black);
-  }
-}
-
-.dark-mode .faq-item {
-  border-bottom-color: var(--white);
-
-  .up-arrow {
-    border-bottom-color: var(--white);
-  }
-
-  .dark-mode .faq-item .down-arrow {
-    border-top-color: var(--white);
+    border-top: 12px solid var(--text-color);
   }
 }
