@@ -417,12 +417,18 @@ quick-start:
   step2:
     title: "Setup"
     description: "Run the creation command to create a new benchmark project in a folder within your current working directory:"
+    result: "Now you have a ready to use but empty project, that already contains the expected folder structure."
   step3:
     title: "Case creation"
     description: "Go into the newly created project and create a new file at src/routes/main/first-test.ts. Fill it with the following example content:"
+    result: "This will test, that the url in main returns a 2xx Status Code and send the user agent with the request."
   step4:
     title: "First run"
     description: "With the following command you can run the example against a public test API to see it in action. Please don't try to create a service denial scenario and keep the thread count low."
+  step5:
+    title: "Create a route of your own"
+    description: "Create a small route of your own. Most of the work with the framework is route creation, so this will show you how quickly it can be done. Refer to the Usage section for help."
+    result: "You now have an idea of how to use iab, go ahead and use it for good!"
 
 loader:
   wait: "Trying to load fresh content for you, please wait."

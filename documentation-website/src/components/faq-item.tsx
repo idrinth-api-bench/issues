@@ -5,7 +5,7 @@ import {
   ONE,
 } from '../constants';
 import Lang from './lang';
-import './faq-item.css';
+import './faq-item.scss';
 
 const FaqItem = ({
   index,
