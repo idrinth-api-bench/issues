@@ -86,7 +86,7 @@ home:
     purpose: "For this purpose repeatable requests with many checks seems the most useful."
   libraries:
     title: "Regarding existing libraries"
-    description: "Other tools like matteofigus/api-benchmark, bvanderlaan/api-bench-runner, or jeffbski/bench-rest are all untouched for quite a while and don't provide type definitions for typescript. This makes them less desirable when working with projects where the better static code check is a huge boost in development speed."
+    description: "Other tools are all either untouched for quite a while and don't provide type definitions for typescript. This makes them less desirable when working with projects where the better static code check is a huge boost in development speed."
     reusability: "A huge benefit of using this framework is writing route definitions once and reusing them across all desired test types."
     threading: "Additionally, this tool separates the validation thread from the thread processing the actual requests to further minimise the effect of complicated validations or huge response bodies on the data gathering."
 
