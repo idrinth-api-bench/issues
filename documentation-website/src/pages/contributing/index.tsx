@@ -4,7 +4,6 @@ import Layout from '../../components/layout.tsx';
 import pkg from '../../../../package.json' with {
   type: 'json'
 };
-import './contributing.css';
 import Lang from '../../components/lang.tsx';
 import ContentUnit from '../../components/content-unit.tsx';
 import schema from '../../../../mindmap/schema.json' with {

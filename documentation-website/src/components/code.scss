@@ -1,0 +1,33 @@
+.hljs {
+  background: var(--light-gray);
+  padding: 0.5em;
+  overflow-x: scroll;
+
+  > code {
+    display: block;
+  }
+
+  .hljs-keyword {
+    color: orange;
+  }
+
+  .hljs-built_in {
+    color: darkorange;
+  }
+
+  .hljs-string {
+    color: green;
+  }
+
+  .hljs-attr {
+    color: blue;
+  }
+}
+
+.dark-mode .hljs {
+  background: var(--dark-gray);
+
+  .hljs-attr {
+    color: lightblue;
+  }
+}
