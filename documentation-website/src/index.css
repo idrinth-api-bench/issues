@@ -594,6 +594,10 @@ html.dark-mode {
     background: transparent;
   }
 
+  .dark-mode header nav > ul.socials {
+    background: transparent;
+  }
+
   .socials li:nth-of-type(n):hover ul {
     bottom: auto;
   }
