@@ -417,7 +417,7 @@ quick-start:
   step2:
     title: "Setup"
     description: "Run the creation command to create a new benchmark project in a folder within your current working directory:"
-    result: "Your project is now set up with the necessary folder structure, ready for further customization."
+    result: "Your project is now set up with the necessary folder structure, ready for further customisation."
   step3:
     title: "Case creation"
     description: "Go into the newly created project and create a new file at src/routes/main/first-test.ts. Fill it with the following example content:"
