@@ -2,7 +2,7 @@ import React from 'react';
 import YoutubeContent from './youtube-content.tsx';
 import Lang from './lang.tsx';
 import languageKey from '../locales/language-key.ts';
-import './youtube.css';
+import './youtube.scss';
 
 interface YoutubeType {
   children: string;

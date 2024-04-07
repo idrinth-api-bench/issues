@@ -1,6 +1,6 @@
 import ExternalLink from './external-link.tsx';
 import React from 'react';
-import './contributor.css';
+import './contributor.scss';
 
 interface ContributorType {
   id: string;

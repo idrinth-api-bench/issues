@@ -1,4 +1,18 @@
-:root {
+.light-mode {
+  --white: hsla(0deg 0% 100% / 100%);
+  --light-gray: hsla(204deg 8% 76% / 100%);
+  --dark-gray: hsla(0deg 0% 25% / 100%);
+  --dark-green: hsla(132deg 33% 29% / 100%);
+  --green: hsla(120deg 77% 36% / 100%);
+  --black: hsla(0deg 0% 0% / 100%);
+  --light-green: hsla(99deg 90% 36% / 100%);
+  --very-dark-gray: hsla(0deg 0% 12.94% / 100%);
+  --darker: hsla(0deg 0% 0% / 5%);
+  --lighter: hsla(0deg 0% 100% / 5%);
+}
+
+.dark-mode {
+  /* redefine variables here */
   --white: hsla(0deg 0% 100% / 100%);
   --light-gray: hsla(204deg 8% 76% / 100%);
   --dark-gray: hsla(0deg 0% 25% / 100%);
@@ -499,6 +513,10 @@ html.dark-mode {
 
   nav.breadcrumbs li::after {
     padding: 0 0.5em;
+  }
+
+  .preface {
+    font-style: italic;
   }
 
   nav li:hover ul,

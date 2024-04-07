@@ -10,6 +10,7 @@ interface CardProps {
   children: string;
   language: 'bash' | 'typescript' | 'markdown';
   prefix?: languageKey;
+  postfix?: languageKey;
 }
 
 const CodeUnit = ({
@@ -18,9 +19,11 @@ const CodeUnit = ({
   children,
   language,
   prefix,
+  postfix,
 }: CardProps,) => <Content level={level} text={text}>
   {prefix && <p><Lang lnkey={prefix}/></p>}
   <Code language={language}>{children}</Code>
+  {postfix && <p><Lang lnkey={postfix}/></p>}
 </Content>;
 
 export default CodeUnit;

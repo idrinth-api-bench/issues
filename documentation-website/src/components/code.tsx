@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Light as SyntaxHighlighter,
 } from 'react-syntax-highlighter';
-import './code.css';
+import './code.scss';
 import bash from 'react-syntax-highlighter/dist/esm/languages/hljs/bash';
 // eslint-disable-next-line max-len
 import typescript from 'react-syntax-highlighter/dist/esm/languages/hljs/typescript';
