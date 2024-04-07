@@ -21,6 +21,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Unassign contributor after days of inactivity
-      uses: BoundfoxStudios/action-unassign-contributor-after-days-of-inactivity@v1.0.2
+      uses: BoundfoxStudios/action-unassign-contributor-after-days-of-inactivity@v1.0.3
       with:
         last-activity: 14
