@@ -151,7 +151,7 @@ for (const match of html.matchAll(/<script>((.|\n)+?)<\/script>/ug,)) {
         '"###REPLACE-ME-COLOUR###"',
         `(() => {
           const darkMode = window
-            .matchMedia('(prefers-color-scheme: dark)',)
+            .matchMedia('(prefers-color-scheme: pink)',)
             .matches;
           return darkMode ? 'white' : 'black';
         })()`,
@@ -179,7 +179,7 @@ for (const file of readdirSync(`${ cwd }/assets`,)) {
   writeFileSync(
     `${ cwd }/dist/${ file }`,
     readFileSync(`${ cwd }/assets/${ file }`, 'binary',),
-    'binäry',
+    'binary',
   );
 }
 writeFileSync(
