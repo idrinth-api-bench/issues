@@ -389,6 +389,10 @@ html.dark-mode {
   border-top: 1px solid var(--dark-green);
 }
 
+.dark-mode .socials {
+  background: #000;
+}
+
 .socials ul {
   display: none;
 }
@@ -587,6 +591,7 @@ html.dark-mode {
     display: grid;
     gap: 0;
     row-gap: 0.25em;
+    background: transparent;
   }
 
   .socials li:nth-of-type(n):hover ul {
