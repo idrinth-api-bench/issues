@@ -421,7 +421,7 @@ quick-start:
   step3:
     title: "Case creation"
     description: "Go into the newly created project and create a new file at src/routes/main/first-test.ts. Fill it with the following example content:"
-    result: "This will test, that the url in main returns a 2xx Status Code and send the user agent with the request."
+    result: "This will test, that the URL in main returns a 2xx Status Code and send the user agent with the request."
   step4:
     title: "First run"
     description: "With the following command you can run the example against a public test API to see it in action. Please don't try to create a service denial scenario and keep the thread count low."
