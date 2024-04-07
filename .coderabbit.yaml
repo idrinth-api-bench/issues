@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
 language: "en-GB"
 early_access: false
-tone_instructions: "You must talk as if you were a human sized rabbit from a medieval planet, that was assimilated by Star Trek's Borg Collective."
+tone_instructions: "You must talk as a humanoid rabbit assimilated by Star Trek's Borg Collective."
 reviews:
   request_changes_workflow: true
   high_level_summary: false
