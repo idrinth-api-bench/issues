@@ -4,14 +4,14 @@ on:
     branches:
     - master
     paths:
-    - 'documentation-website/**.css'
+    - 'documentation-website/**.scss'
     - 'documentation-website/package-lock.json'
     - '.github/workflows/documentation-website.stylelint.yml'
   pull_request:
     branches:
     - master
     paths:
-    - 'documentation-website/**.css'
+    - 'documentation-website/**.scss'
     - 'documentation-website/package-lock.json'
     - '.github/workflows/documentation-website.stylelint.yml'
 env:
