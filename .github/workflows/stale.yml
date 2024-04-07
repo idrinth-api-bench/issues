@@ -17,6 +17,7 @@ jobs:
           include-only-assigned: true
           days-before-issue-close: 21
           stale-issue-message: "Due to inactivity you will be unassigned soon and the issue be freed."
+          exempt-issue-labels: "shoutout"
   remove-assignee:
     runs-on: ubuntu-latest
     steps:
