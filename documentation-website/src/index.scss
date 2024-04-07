@@ -243,18 +243,6 @@ header strong {
   width: 20px;
 }
 
-.external-link {
-  display: flex;
-  gap: 5px;
-  color: black;
-}
-
-.external-link-icon {
-  width: 1em;
-  height: 1em;
-  color: var(--text-color);
-}
-
 .theme-toggle-btn {
   justify-content: center;
   align-items: center;
@@ -323,15 +311,6 @@ footer li:not(:last-child)::after {
   padding-inline: 1em;
 }
 
-.sponsor {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-.sponsor img {
-  place-self: center;
-}
-
 #logo img {
   width: 3em;
   height: 3em;
@@ -343,10 +322,6 @@ nav.breadcrumbs li::after {
 
 nav.breadcrumbs li:last-of-type::after {
   content: "";
-}
-
-.sponsor h2 {
-  text-align: left;
 }
 
 header #github img,
@@ -394,16 +369,6 @@ header #medium img {
 }
 
 @media only screen and (width >= 600px) {
-  header,
-  footer {
-    background-image: linear-gradient(
-      to bottom,
-      hsla(0deg 0% 100% / 10%),
-      hsla(0deg 0% 100% / 15%),
-      hsla(0deg 0% 100% / 5%)
-    );
-  }
-
   header {
     grid-template-columns: 90% 10%;
   }

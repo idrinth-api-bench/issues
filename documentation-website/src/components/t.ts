@@ -20,9 +20,19 @@ export default async(lnkey: languageKey, global?: object,): Promise<string> => {
     ? await import(`../locales/${ language }-${ main }.ts`)
     : originals).default;
   let defaultOutput = originals.default;
-  for (const part of lnkey.split('.',).slice(SECOND_ELEMENT,)) {
-    output = output[part] || defaultOutput[part];
-    defaultOutput = defaultOutput[part];
+  if (! output) {
+    output = defaultOutput;
   }
-  return output || lnkey;
+  if (! defaultOutput) {
+    return lnkey;
+  }
+  try {
+    for (const part of lnkey.split('.',).slice(SECOND_ELEMENT,)) {
+      output = output[part] || defaultOutput[part];
+      defaultOutput = defaultOutput[part];
+    }
+    return output || lnkey;
+  } catch (E) {
+    return lnkey;
+  }
 };
