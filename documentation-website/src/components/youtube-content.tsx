@@ -10,7 +10,6 @@ import {
   STRING_START,
   YOUTUBE_DEFAULT_HEIGHT,
   YOUTUBE_DEFAULT_WIDTH,
-  YOUTUBE_RECHECK_TIME,
 } from '../constants.ts';
 import {
   get,
@@ -34,14 +33,17 @@ const YoutubeContent = ({
   const [
     allowed,
     setAllowed,
-  ] = useState<boolean>(localStorage.getItem('consent-was-given',) === 'true',);
+  ] = useState<boolean>(get('youtube',),);
   if (! allowed) {
-    const interval = setInterval(() => {
-      if (get('youtube',)) {
-        clearInterval(interval,);
-        setAllowed(true,);
+    document.body.addEventListener('consentChanged', (event,) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-expect-error
+      if (event?.detail?.key === 'youtube') {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
+        setAllowed(event?.detail?.value ?? false,);
       }
-    }, YOUTUBE_RECHECK_TIME,);
+    },);
     return <YoutubeLink>{children}</YoutubeLink>;
   }
   const EL = lazy(async() => {
