@@ -64,32 +64,32 @@ home:
   meta:
     title: "Startseite"
     description: "Willkommen in der Dokumentation für das Framework @idrinth/api-bench"
-  title: "What does this project do?"
-  what: "This project provides a framework for testing rest-apis and websites for  changes in response times."
-  why: "This helps to detect performance changes in code in a quick and simple manner."
+  title: "Was macht das Profjekt?"
+  what: "Dieses Pojektbietet ein Framework zur Überprüfung von REST-APIs und Websites auf Änderungen der Antwortzeilen"
+  why:"Dies hilft dabei, Leistungsänderungen im code schnell und einfach zu erkennen"
   benchmark:
-    title: "Why use a Benchmark Runner?"
-    microservices: "Given that the amount of APIs increase by moving to microservices, we need a way to determine if changes to a service's response times are related to code changes."
-    purpose: "For this purpose a defined load with repeatable requests with a medium amount of checks seems the most useful."
+    title: "Warum einen benschmakr-Runner verwenden?"
+    microservices: "Angesichts der zunehmenden Anzahl von APIs durch den Wechsel zu Mikroservices müssen wir herausfinden, ob Änderungen an den Antwortzeiten eines Dienstes mit Codeänderungen zusammenhängen."
+    purpose: "Für diesen Zweck scheint eine definierte Last mit wiederholbaren Anfragen und einer mittleren Anzahl von Überprüfungen am nützlichsten zu sein."
   load-test:
-    title: "Why use a Load Test Runner?"
-    microservices: "For planning and scaling purposes, we need to know how many users we can handle with a given amount of microservice instances."
-    purpose: "For this purpose a defined growing load with repeatable requests with few checks seems the most useful."
+    title: "Warum einen Lasttest-Runner verwenden?"
+    microservices: "Für Planungs- und Skalierungszwecke müssen wir wissen, wie viele Benutzer wir mit einer bestimmten Anzahl von Mikroservice-Instanzen bewältigen können."
+    purpose: "Für diesen Zweck scheint eine definierte wachsende Last mit wiederholbaren Anfragen und wenigen Überprüfungen am nützlichsten zu sein."
   content-test:
-    title: "Why use a Content Test Runner?"
-    microservices: "With the amount of APIs skyrocketing, the need to test them quickly and with as little effort as possible is required."
-    purpose: "For this purpose repeatable requests with many checks seems the most useful."
+    title: "Warum einen Inhaltest-Runner verwenden?"
+    microservices: "Mit der steigenden Anzahl von APIs ist es erforderlich, sie schnell und mit möglichst wenig Aufwand zu testen."
+    purpose: "Für diesen Zweck scheinen wiederholbare Anfragen mit vielen Überprüfungen am nützlichsten zu sein."
   libraries:
-    title: "Regarding existing libraries"
-    description: "Other tools like matteofigus/api-benchmark, bvanderlaan/api-bench-runner, or jeffbski/bench-rest are all untouched for quite a while and don't provide type definitions for typescript. This makes them less desirable when working with projects where the better static code check is a huge boost in development speed."
-    reusability: "A huge benefit of using this framework is writing route definitions once and reusing them across all desired test types."
-    threading: "Additionally, this tool separates the validation thread from the thread processing the actual requests to further minimize the effect of complicated validations or huge response bodies on the data gathering."
+    title: "Zu bestehenden Bibliotheken"
+    description: "Andere Tools wie matteofigus/api-benchmark, bvanderlaan/api-bench-runner oder jeffbski/bench-rest wurden seit geraumer Zeit nicht mehr aktualisiert und bieten keine Typdefinitionen für TypeScript. Dies macht sie weniger attraktiv für Projekte, in denen eine bessere statische Codeprüfung die Entwicklungsgeschwindigkeit erheblich erhöht."
+    reusability: "Ein großer Vorteil der Verwendung dieses Frameworks besteht darin, dass Routendefinitionen einmal geschrieben und für alle gewünschten Testtypen wiederverwendet werden können."
+    threading: "Darüber hinaus trennt dieses Tool den Validierungsthread vom Thread, der die tatsächlichen Anfragen verarbeitet, um den Effekt komplizierter Validierungen oder großer Antwortdatenmengen auf die Datenerfassung weiter zu minimieren."
 
 faq:
   meta:
     title: "FAQ"
-    description: "frequently asked questions about @idrinth/api-bench"
-  title: "Frequently Asked Questions"
+    description: "Häufig gestellte Fragen zu @idrinth/api-bench"
+  title: "Häufig gestellte Fragen"
   description: "If your question is not yet answered, head over to slack, linkedin or github and leave it there. We will address it as quickly as possible."
   questions:
     title_1: "What is benchmarking?"
