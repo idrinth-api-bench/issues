@@ -115,7 +115,7 @@ npm run coai
 ```
 #### Running Tests Locally
 
-`npm run local` will now output any ci task you can run locally with the command you need to use. Add that as an option to test ahead of committing or when an action fails.
+To see a list of available CI tasks and their corresponding commands to run them locally you can run `npm run local` in the source folder.This is particularly useful for testing specific CI tasks before committing your changes.
 
 ```bash
 git clone https://github.com/idrinth/api-bench
