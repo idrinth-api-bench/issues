@@ -23,4 +23,5 @@ jobs:
             cli/package-lock.json
             package-lock.json
       - run: npm install -g check-pr-length
+      - run: git fetch origin master
       - run: check-pr-length --max=500 --base=master --exclude="package-lock.json;*/package-lock.json"
