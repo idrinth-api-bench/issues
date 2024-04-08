@@ -22,7 +22,7 @@ jobs:
             history-website/package-lock.json
             cli/package-lock.json
             package-lock.json
-      - run: npm install -g https://github.com/Idrinth/check-pr-length@patch-1
+      - run: npm install -g "https://github.com/Idrinth/check-pr-length.git#patch-1"
       - run: git remote add base https://github.com/idrinth/api-bench.git
       - run: git fetch base master
       - run: git switch master
