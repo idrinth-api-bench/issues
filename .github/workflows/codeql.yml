@@ -36,7 +36,15 @@ jobs:
       fail-fast: false
       matrix:
         language:
-        - javascript-typescript
+          - javascript-typescript
+        folder:
+          - tools
+          - cli
+          - mindmap
+          - framework
+          - documentation-website
+          - history-website
+          - history-microsservice
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -45,6 +53,8 @@ jobs:
       with:
         languages: ${{ matrix.language }}
         query: security-and-quality
+        queries: security-extended
+        paths: ${{ matrix.folder }}
     - name: Setup Node.js environment ${{ env.CURRENT_NODE_VERSION }}
       uses: actions/setup-node@v4
       with:
