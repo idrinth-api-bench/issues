@@ -31,7 +31,7 @@ ENV IDRINTH_API_BENCH_VERSION=$BUILD_VERSION
 ENV IDRINTH_API_BENCH_BUILT=$BUILD_TIME
 
 RUN apk add --no-cache "git=2.43.0-r0" \
-    && npm install -g clean-modules \
+    && npm install -g clean-modules@3.0.5 \
     && mkdir /api-bench \
     && git clone https://github.com/idrinth/api-bench /api-bench
 WORKDIR /api-bench
