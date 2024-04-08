@@ -25,6 +25,6 @@ jobs:
       - run: npm install -g check-pr-length
       - run: git remote add base https://github.com/idrinth/api-bench.git
       - run: git fetch origin "${GITHUB_HEAD_REF}"
-      - run: git switch -c $GITHUB_HEAD_REF "origin/${GITHUB_HEAD_REF}"
+      - run: git switch -c $GITHUB_HEAD_REF
       - run: git fetch base master
       - run: check-pr-length --max=500 --base=base/master --exclude="package-lock.json;*/package-lock.json"
