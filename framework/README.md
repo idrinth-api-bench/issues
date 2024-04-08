@@ -24,8 +24,8 @@ in a quick and simple manner.
 
 ### Code Generation
 
-Code generation has been extracted into `@idrinth/api-benchh-cli`, it provided
-with the framework or can be run on it's own.
+Code generation has been extracted into `@idrinth/api-bench-cli`, it provided
+with the framework or can be run on its own.
 
 ### Why use a Benchmark Runner
 
@@ -74,7 +74,7 @@ As usual with my projects this is MIT-licensed.
 
 ## Support
 
-Additionally, to support requests via issue, you can reach us via
+Additionally, to support requests via GitHub issue, you can reach us via
 [Slack](https://join.slack.com/t/idrinth-api-bench/shared_invite/zt-2f4zmw2sz-c3etHzCFq3LtZpkR15xXMA).
 
 Commercial support and training is provided via

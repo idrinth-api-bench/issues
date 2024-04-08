@@ -15,23 +15,40 @@
     "docker": "node tools/rebuild-images.js",
     "spellcheck": "spellchecker",
     "setup": "node tools/setup.js",
+    "update": "node tools/update.js",
     "regression": "node tools/regression.js",
     "license": "node tools/update-year.js",
-    "language": "node tools/watch-language.js"
+    "language": "itlfy watch cli framework documentation-website history-website",
+    "check-language": "itlfy check",
+    "dictionary": "node tools/dictionary.js",
+    "knip": "knip --exclude binaries",
+    "fta": "node tools/fta.js",
+    "commitlint-ci": "commitlint --last",
+    "commitlint": "commitlint --edit",
+    "postinstall": "npm run simple-git-hooks",
+    "simple-git-hooks": "simple-git-hooks"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Idrinth/api-bench.git"
   },
+  "simple-git-hooks": {
+    "commit-msg": "npm run commitlint",
+    "pre-push": "npm run commitlint-ci"
+  },
   "private": true,
   "devDependencies": {
+    "@commitlint/cli": "^19.2.1",
+    "@idrinth/typescript-language-from-yaml": "^1.3.0",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
     "eslint": "^8.57.0",
     "eslint-plugin-json": "^3.1.0",
+    "fta-cli": "^2.0.0",
+    "knip": "^5.8.0",
     "markdownlint-cli": "^0.39.0",
-    "spellchecker-cli": "^6.2.0",
-    "yaml": "^2.4.1"
+    "simple-git-hooks": "^2.11.1",
+    "spellchecker-cli": "^6.2.0"
   },
   "engines": {
     "node": ">=20"

@@ -1,33 +1,24 @@
 import React from 'react';
-import {
-  Lang,
-} from '../../../components/lang.tsx';
 import Layout from '../../../components/layout.tsx';
-import Code from '../../../components/code.tsx';
+import CodeUnit from '../../../components/code-unit.tsx';
+import ContentUnit from '../../../components/content-unit.tsx';
 
 const Storage = () => <Layout
   page='storage'
   path='/usage/storage'
 >
-  <div className='title-card'>
-    <h1><Lang lnkey='storage.title'/></h1>
-    <p>
-      <Lang lnkey='storage.description'/>
-    </p>
-  </div>
-  <div className='card'>
-    <h2><Lang lnkey='storage.custom.title'/></h2>
-    <div>
-      <p>
-        <Lang lnkey='storage.custom.description'/>
-      </p>
-      <Code language='typescript'>
-        {`interface Storage
+  <ContentUnit
+    text={'storage.title'}
+    level={'h1'}
+  >storage.description</ContentUnit>
+  <CodeUnit
+    text={'storage.custom.title'}
+    level={'h2'}
+    language={'typescript'}
+    prefix={'storage.custom.description'}
+  >{`interface Storage
 {
   store(data: FinishedSet, now: Date): void;
-}`}
-      </Code>
-    </div>
-  </div>
+}`}</CodeUnit>
 </Layout>;
 export default Storage;

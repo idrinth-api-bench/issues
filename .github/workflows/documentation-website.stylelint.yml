@@ -4,14 +4,14 @@ on:
     branches:
     - master
     paths:
-    - 'documentation-website/**.css'
+    - 'documentation-website/**.scss'
     - 'documentation-website/package-lock.json'
     - '.github/workflows/documentation-website.stylelint.yml'
   pull_request:
     branches:
     - master
     paths:
-    - 'documentation-website/**.css'
+    - 'documentation-website/**.scss'
     - 'documentation-website/package-lock.json'
     - '.github/workflows/documentation-website.stylelint.yml'
 env:
@@ -35,7 +35,7 @@ jobs:
             cli/package-lock.json
             package-lock.json
       - run: cd documentation-website && npm ci
-      - run: cd documentation-website && npm run-script lint-styles
+      - run: cd documentation-website && npm run lint-styles
   duplicate-style-check:
     runs-on: ubuntu-latest
     steps:
@@ -53,4 +53,4 @@ jobs:
             cli/package-lock.json
             package-lock.json
       - run: cd documentation-website && npm ci
-      - run: cd documentation-website && npm run-script lint-css
+      - run: cd documentation-website && npm run lint-css

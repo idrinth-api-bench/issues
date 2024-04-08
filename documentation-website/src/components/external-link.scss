@@ -1,0 +1,11 @@
+.external-link {
+  display: flex;
+  gap: 5px;
+  color: var(--text-color);
+
+  .external-link-icon {
+    width: 1em;
+    height: 1em;
+    color: var(--text-color);
+  }
+}

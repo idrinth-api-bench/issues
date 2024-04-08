@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  Lang,
-} from '../../components/lang.tsx';
+import Lang from '../../components/lang.tsx';
 import Layout from '../../components/layout.tsx';
 import Command from '../../components/command.tsx';
 
@@ -54,7 +52,15 @@ const Usage = () => <Layout
   >5</Command>
   <Command
     name={'iab'}
-  >6</Command>
+  >6,
+    iab bench --language=en --taskId=test --threads=11 --repetitions=100,
+    iab content --language=en --taskId=test,
+    iab verify --language=en,
+    iab load --language=en --taskId=test --threads=11 --repetitions=100,
+    iab bench --language=en --taskId=test --threads=11 --repetitions=100,
+    iab stress --language=en --taskId=test --threads=11 --repetitions=100
+    --duration=60
+  </Command>
   <div className='card'>
     <h2>
       <Lang lnkey='usage.programmatically.title'/>

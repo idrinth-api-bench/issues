@@ -2,9 +2,7 @@ import React from 'react';
 import {
   NavLink,
 } from 'react-router-dom';
-import {
-  Lang,
-} from './lang.tsx';
+import Lang from './lang.tsx';
 import {
   ONE,
 } from '../constants.ts';

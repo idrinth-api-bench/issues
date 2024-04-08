@@ -1,9 +1,8 @@
 import React from 'react';
 import Layout from '../../../components/layout.tsx';
-import Code from '../../../components/code.tsx';
-import {
-  Lang,
-} from '../../../components/lang.tsx';
+import Lang from '../../../components/lang.tsx';
+import CodeUnit from '../../../components/code-unit.tsx';
+import ListUnit from '../../../components/list-unit.tsx';
 
 const Middlewares = () => <Layout
   page='middlewares'
@@ -20,57 +19,28 @@ const Middlewares = () => <Layout
       <li>{'#abc -> /path/to/root/src/middlewares/abc.js'}</li>
     </ul>
   </div>
-  <div className='card'>
-    <h2><Lang lnkey={'middlewares.provided.title'}/></h2>
-    <ul>
-      <li>
-        <Lang lnkey={'middlewares.provided.encoding'}/>
-      </li>
-      <li>
-        <Lang lnkey={'middlewares.provided.access'}/>
-      </li>
-      <li>
-        <Lang lnkey={'middlewares.provided.csrf'}/>
-      </li>
-      <li>
-        <Lang lnkey={'middlewares.provided.2xx'}/>
-      </li>
-      <li>
-        <Lang lnkey={'middlewares.provided.403'}/>
-      </li>
-      <li>s
-        <Lang lnkey={'middlewares.provided.404'}/>
-      </li>
-      <li>
-        <Lang lnkey={'middlewares.provided.user-agent'}/>
-      </li>
-      <li>
-        <Lang lnkey={'middlewares.provided.cookies'}/>
-      </li>
-      <li>
-        <Lang lnkey={'middlewares.provided.json'}/>
-      </li>
-      <li>
-        <Lang lnkey={'middlewares.provided.xml'}/>
-      </li>
-      <li>
-        <Lang lnkey={'middlewares.provided.silent-server-validator'}/>
-      </li>
-    </ul>
-  </div>
-  <div className='card'>
-    <h2><Lang lnkey={'middlewares.custom.title'}/></h2>
-    <div>
-      <p>
-        <Lang lnkey={'middlewares.custom.description'}/>
-      </p>
-      <Code language='typescript'>
-        {`interface Middleware {
-  process(response: Result): void;
-  prepare(request: Request): Request;
-}`}
-      </Code>
-    </div>
-  </div>
+  <ListUnit text={'middlewares.provided.title'} level={'h2'}>
+    middlewares.provided.encoding
+    middlewares.provided.access
+    middlewares.provided.csrf
+    middlewares.provided.2xx
+    middlewares.provided.403
+    middlewares.provided.404
+    middlewares.provided.user-agent
+    middlewares.provided.cookies
+    middlewares.provided.json
+    middlewares.provided.xml
+    middlewares.provided.silent-server-validator
+    middlewares.provided.success-check
+    middlewares.provided.failure-check
+  </ListUnit>
+  <CodeUnit
+    text={'middlewares.custom.title'}
+    language={'typescript'}
+    prefix={'middlewares.custom.description'}
+    level={'h2'}>{`interface Middleware {
+    process(response: Result): void;
+    prepare(request: Request): Request;
+  }`}</CodeUnit>
 </Layout>;
 export default Middlewares;

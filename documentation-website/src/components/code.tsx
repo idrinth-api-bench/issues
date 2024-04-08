@@ -1,9 +1,20 @@
 import React from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import './code.css';
+import {
+  Light as SyntaxHighlighter,
+} from 'react-syntax-highlighter';
+import './code.scss';
+import bash from 'react-syntax-highlighter/dist/esm/languages/hljs/bash';
+// eslint-disable-next-line max-len
+import typescript from 'react-syntax-highlighter/dist/esm/languages/hljs/typescript';
+// eslint-disable-next-line max-len
+import markdown from 'react-syntax-highlighter/dist/esm/languages/hljs/markdown';
+
+SyntaxHighlighter.registerLanguage('typescript', typescript,);
+SyntaxHighlighter.registerLanguage('bash', bash,);
+SyntaxHighlighter.registerLanguage('markdown', markdown,);
 
 interface CodeType {
-  language: string,
+  language: 'bash'|'typescript'|'markdown',
   children: string|string[],
 }
 

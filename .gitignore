@@ -9,6 +9,7 @@
 /cli/LICENSE
 /cli/.nyc_output
 /cli/coverage
+/cli/dump.txt
 
 # Framework
 /framework/node_modules
@@ -21,6 +22,7 @@
 /framework/index.js
 /framework/LICENSE
 /framework/src/locales
+/framework/dump.txt
 
 # Examples
 /examples/**/package-lock.json
@@ -45,6 +47,7 @@
 /documentation-website/src/locales
 /documentation-website/public/assets/profile-*.jpg
 /documentation-website/public/assets/*-*.min.css
+/documentation-website/dump.txt
 
 # History Microservice
 /history-microservice/node_modules
@@ -56,6 +59,7 @@
 /history-website/coverage
 /history-website/cypress/screenshots
 /history-website/src/locales
+/history-website/dump.txt
 
 #Mindmap
 /mindmap/node_modules

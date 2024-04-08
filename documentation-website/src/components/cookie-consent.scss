@@ -1,0 +1,86 @@
+.cookie-consent {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 1.25em;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 20px;
+  z-index: 100;
+  left: 10px;
+  max-width: 410px;
+  box-shadow: 0 0 5px var(--shadow);
+
+  .cookie-consent-description {
+    text-align: left;
+    width: 100%;
+    display: block;
+    margin-bottom: 0.75em;
+  }
+
+  .cookie-title {
+    margin: 0;
+    text-align: left;
+    font-size: 1.2em;
+  }
+
+  ul,
+  li {
+    display: block;
+  }
+
+  ul {
+    padding: 1em 0;
+  }
+
+  li.service {
+    display: flex;
+    gap: 1em;
+  }
+
+  li.service input {
+    width: 1em;
+    height: 1em;
+    border: 1px solid var(--highlight-color);
+  }
+
+  li.service input:checked {
+    background: var(--highlight-hover);
+  }
+
+  .cookie-consent-buttons {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 0.5em;
+  }
+
+  .cookie-consent-accept-button,
+  .cookie-consent-decline-button,
+  .cookie-consent-custom-button {
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .cookie-consent-accept-button {
+    background-color: var(--highlight-color);
+    color: var(--highlight-text);
+  }
+
+  .cookie-consent-accept-button:hover {
+    background-color: var(--highlight-hover);
+  }
+
+  .cookie-consent-decline-button,
+  .cookie-consent-custom-button {
+    background-color: var(--background-offset);
+    color: var(--text-color);
+  }
+
+  .cookie-consent-decline-button:hover,
+  .cookie-consent-custom-button:hover {
+    background-color: var(--background-color);
+  }
+}

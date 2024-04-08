@@ -11,7 +11,7 @@ describe('helper/job-creator', () => {
     expect(jobCreator,).to.be.a('function',);
   },);
   it('should be match expectations', async() => {
-    const result = await jobCreator(__dirname + '../../fixtures',);
+    const result = await jobCreator(__dirname + '../../fixtures/test-group-1',);
     expect(result,).to.deep.equal({
       'after': [],
       'afterEach': [],

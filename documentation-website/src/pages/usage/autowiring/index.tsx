@@ -1,49 +1,29 @@
 import React from 'react';
 import Layout from '../../../components/layout.tsx';
-import Code from '../../../components/code.tsx';
-import {
-  Lang,
-} from '../../../components/lang.tsx';
+import ContentUnit from '../../../components/content-unit.tsx';
+import ListUnit from '../../../components/list-unit.tsx';
+import CodeUnit from '../../../components/code-unit.tsx';
 
 const AutoWiring = () => <Layout
   page='autowiring'
   path='/usage/autowiring'
 >
-  <div className='title-card'>
-    <h1><Lang lnkey={'autowiring.title'}/></h1>
-    <p>
-      <Lang lnkey={'autowiring.parameters'}/>
-    </p>
-    <p>
-      <Lang lnkey={'autowiring.parameters'}/>
-    </p>
-    <p>
-      <Lang lnkey={'autowiring.limitations'}/>
-    </p>
-  </div>
-  <div className='card'>
-    <h2><Lang lnkey={'autowiring.limitation.title'}/></h2>
-    <ul>
-      <li>
-        <Lang lnkey={'autowiring.limitation.constants'}/>
-      </li>
-      <li>
-        <Lang lnkey={'autowiring.limitation.objects'}/>
-      </li>
-      <li>
-        <Lang lnkey={'autowiring.limitation.destructuring'}/>
-      </li>
-      <li>
-        <Lang lnkey={'autowiring.limitation.mixed'}/>
-      </li>
-    </ul>
-  </div>
-  <div className='card'>
-    <h2><Lang lnkey={'autowiring.example.title'}/></h2>
-    <div>
-      <p><Lang lnkey={'autowiring.example.description'}/></p>
-      <Code language='javascript'>
-        {`module.exports = (apiRootUrl, apiEMail, apiPassword) => ({
+  <ContentUnit text={'autowiring.title'} level={'h1'}>
+    autowiring.parameters
+    autowiring.conversion
+    autowiring.limitations
+  </ContentUnit>
+  <ListUnit text={'autowiring.limitation.title'} level={'h2'}>
+    autowiring.limitation.constants
+    autowiring.limitation.objects
+    autowiring.limitation.destructuring
+    autowiring.limitation.mixed
+  </ListUnit>
+  <CodeUnit
+    text={'autowiring.example.title'}
+    level={'h2'}
+    language={'typescript'}>
+    {`module.exports = (apiRootUrl, apiEMail, apiPassword) => ({
   id: 'login',
   main: {
     method: 'post',
@@ -63,9 +43,6 @@ const AutoWiring = () => <Layout
     '^access-token',
   ],
 });
-  `}
-      </Code>
-    </div>
-  </div>
+  `}</CodeUnit>
 </Layout>;
 export default AutoWiring;

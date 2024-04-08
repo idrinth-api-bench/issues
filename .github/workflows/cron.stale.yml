@@ -1,0 +1,27 @@
+name: Stale
+on:
+  schedule:
+    - cron: '37 * * * *'
+permissions:
+  issues: write
+  pull-requests: write
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v9
+        with:
+          days-before-pr-stale: 7
+          days-before-issue-stale: 7
+          close-pr-message: "Due to lack of activity this has been closed for now. Feel free to reopen once you are back."
+          include-only-assigned: true
+          days-before-issue-close: 21
+          stale-issue-message: "Due to inactivity you will be unassigned soon and the issue be freed."
+          exempt-issue-labels: "shoutout"
+  remove-assignee:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Unassign contributor after days of inactivity
+      uses: BoundfoxStudios/action-unassign-contributor-after-days-of-inactivity@v1.0.3
+      with:
+        last-activity: 14
