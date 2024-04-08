@@ -1,0 +1,33 @@
+name: pull request size
+on:
+  pull_request:
+    branches:
+      - master
+env:
+  CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.CURRENT_NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
+      - run: npm install -g "https://github.com/Idrinth/check-pr-length.git#patch-1"
+      - run: git remote add base https://github.com/idrinth/api-bench.git
+      - run: git config --global user.email "prs@example.com"
+      - run: git config --global user.name "PRS"
+      - run: git fetch base master
+      - run: git switch master
+      - run: git fetch origin "${GITHUB_HEAD_REF}"
+      - run: git switch $GITHUB_HEAD_REF
+      - run: check-pr-length --max=350 --total=500 --base=master --silent=false --exclude="package-lock.json;*/package-lock.json"
