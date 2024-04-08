@@ -113,6 +113,15 @@ git clone https://github.com/idrinth/api-bench
 cd api-bench
 npm run coai
 ```
+#### Running Tests Locally
+
+`npm run local` will now output any ci task you can run locally with the command you need to use. Add that as an option to test ahead of committing or when an action fails.
+
+```bash
+git clone https://github.com/idrinth/api-bench
+cd api-bench
+npm run local
+```
 
 ### Naming conventions
 
