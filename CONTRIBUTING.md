@@ -116,8 +116,8 @@ npm run coai
 
 #### Running Tests Locally
 
-To see a list of available CI tasks and their corresponding commands to run them 
-locally, you can run `npm run local` in the source folder. This is particularly 
+To see a list of available CI tasks and their corresponding commands to run them
+locally, you can run `npm run local` in the source folder. This is particularly
 useful for testing specific CI tasks before committing your changes.
 
 ### Naming conventions
