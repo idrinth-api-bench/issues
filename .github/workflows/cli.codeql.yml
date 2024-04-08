@@ -1,7 +1,25 @@
-name: CodeQL
+name: cli CodeQL
 on:
-  schedule:
-    - cron: '29 14 * * 4'
+  push:
+    branches:
+    - master
+    paths:
+      - 'cli/**.ts'
+      - 'cli/**.tsx'
+      - 'cli/**.js'
+      - 'cli/**.cjs'
+      - 'cli/package-lock.json'
+      - '.github/workflows/cli.codeql.yml'
+  pull_request:
+    branches:
+    - master
+    paths:
+      - 'cli/**.ts'
+      - 'cli/**.tsx'
+      - 'cli/**.js'
+      - 'cli/**.cjs'
+      - 'cli/package-lock.json'
+      - '.github/workflows/cli.codeql.yml'
 env:
   PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
@@ -18,13 +36,7 @@ jobs:
         language:
           - javascript-typescript
         folder:
-          - tools
           - cli
-          - mindmap
-          - framework
-          - documentation-website
-          - history-website
-          - history-microservice
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -46,24 +58,9 @@ jobs:
           history-website/package-lock.json
           cli/package-lock.json
           package-lock.json
-    - name: Build root
-      run: npm ci
-    - name: Build documentation website
-      run: cd documentation-website && npm ci
-    - run: cd documentation-website && npm run language
-    - name: Build history website
-      run: cd history-website && npm ci
-    - run: cd history-website && npm run language
-    - name: Build history service
-      run: cd history-microservice && npm ci
-    - name: Build framework
-      run: cd framework && npm ci
-    - run: cd framework && npm run language
     - name: Build cli
       run: cd cli && npm ci
     - run: cd cli && npm run language
-    - name: Build mindmap
-      run: cd mindmap && npm ci
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
       with:

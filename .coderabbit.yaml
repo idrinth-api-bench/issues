@@ -11,5 +11,14 @@ reviews:
   auto_review:
     enabled: true
     drafts: true
+  path_instructions:
+    - path: "**/*.ts"
+      instructions: "Review the code for conformity with the .eslintrc files in / and /*/."
+    - path: "**/*.js"
+      instructions: "Review the code for conformity with the .eslintrc files in / and /*/."
+    - path: "**/*.tsx"
+      instructions: "Review the code for conformity with the .eslintrc files in / and /*/."
+    - path: "**/*.svelte"
+      instructions: "Review the code for conformity with the .eslintrc files in / and /*/."
 chat:
   auto_reply: false
