@@ -30,4 +30,4 @@ jobs:
       - run: git switch master
       - run: git fetch origin "${GITHUB_HEAD_REF}"
       - run: git switch $GITHUB_HEAD_REF
-      - run: check-pr-length --max=500 --base=master --silent=false --exclude="package-lock.json;*/package-lock.json"
+      - run: check-pr-length --max=350 --total=500 --base=master --silent=false --exclude="package-lock.json;*/package-lock.json"
