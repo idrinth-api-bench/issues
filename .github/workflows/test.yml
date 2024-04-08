@@ -217,7 +217,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SPLIT: 5
-      SPLIT_INDEX: 1
+      SPLIT_INDEX: 0
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
@@ -247,7 +247,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SPLIT: 5
-      SPLIT_INDEX: 2
+      SPLIT_INDEX: 1
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
@@ -277,7 +277,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SPLIT: 5
-      SPLIT_INDEX: 3
+      SPLIT_INDEX: 2
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
@@ -307,7 +307,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SPLIT: 5
-      SPLIT_INDEX: 4
+      SPLIT_INDEX: 3
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
@@ -337,7 +337,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SPLIT: 5
-      SPLIT_INDEX: 5
+      SPLIT_INDEX: 4
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
