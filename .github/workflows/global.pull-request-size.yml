@@ -24,6 +24,8 @@ jobs:
             package-lock.json
       - run: npm install -g "https://github.com/Idrinth/check-pr-length.git#patch-1"
       - run: git remote add base https://github.com/idrinth/api-bench.git
+      - run: git config --global user.email "prs@example.com"
+      - run: git config --global user.name "PRS"
       - run: git fetch base master
       - run: git switch master
       - run: git fetch origin "${GITHUB_HEAD_REF}"
