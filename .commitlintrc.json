@@ -10,7 +10,8 @@
       "history-microservice",
       "history-website",
       "mindmap",
-      "tools"
+      "tools",
+      "containers"
     ]],
     "type-enum": [2, "always", [
       "bug",
