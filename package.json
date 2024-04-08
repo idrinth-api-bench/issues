@@ -23,6 +23,7 @@
     "dictionary": "node tools/dictionary.js",
     "knip": "knip --exclude binaries",
     "fta": "node tools/fta.js",
+    "local": "node tools/print-ci.js",
     "commitlint-ci": "commitlint --last",
     "commitlint": "commitlint --edit",
     "postinstall": "npm run simple-git-hooks",
