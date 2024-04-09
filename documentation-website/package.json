@@ -77,7 +77,8 @@
     "stylelint-config-standard": "^36.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.3.3",
-    "vite": "^5.1.1"
+    "vite": "^5.1.1",
+    "cypress-split": "^1.21.2"
   },
   "engines": {
     "node": ">=20"

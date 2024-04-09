@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "node tools/data.js",
+    "build": "npm run tsc && node tools/data.js",
     "serve": "http-server ./dist -c-1 --proxy http://localhost:8080? --silent",
     "start": "npm run build && npm run serve",
     "spellcheck": "spellchecker",
@@ -13,6 +13,7 @@
     "lint-css": "ilcd",
     "knip": "knip",
     "test": "c8 mocha test"
+    "tsc": "tsc -p tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -37,7 +38,8 @@
     "mocha": "^10.4.0",
     "spellchecker-cli": "^6.2.0",
     "stylelint": "^16.2.1",
-    "stylelint-config-standard": "^36.0.0"
+    "stylelint-config-standard": "^36.0.0",
+    "typescript": "^5.4.4"
   },
   "engines": {
     "node": ">=20"

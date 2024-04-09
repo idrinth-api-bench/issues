@@ -1,13 +1,9 @@
-name: Commit Message Lint
+name: Release
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+  milestone:
+    types:
+      - closed
 env:
-  PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
 jobs:
   lint:
@@ -26,5 +22,6 @@ jobs:
             history-website/package-lock.json
             cli/package-lock.json
             package-lock.json
-      - run: npm ci
-      - run: npm run commitlint-ci
+      - run: echo "VERSION_TO_PUBLISH=$(jq --raw-output .milestone.title $GITHUB_EVENT_PATH)" >> $GITHUB_ENV
+      - run: npm run setup
+      - run: npm run publish

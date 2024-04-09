@@ -38,5 +38,3 @@ COPY --from=build /usr/local/lib/node_modules/@idrinth/api-bench /usr/local/lib/
 
 WORKDIR /project
 VOLUME /project
-
-ENTRYPOINT ["npm"]

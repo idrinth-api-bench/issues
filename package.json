@@ -23,6 +23,7 @@
     "dictionary": "node tools/dictionary.js",
     "knip": "knip --exclude binaries",
     "fta": "node tools/fta.js",
+    "local": "node tools/print-ci.js",
     "commitlint-ci": "commitlint --last",
     "commitlint": "commitlint --edit",
     "postinstall": "npm run simple-git-hooks",
@@ -46,6 +47,7 @@
     "eslint-plugin-json": "^3.1.0",
     "fta-cli": "^2.0.0",
     "knip": "^5.8.0",
+    "yaml": "^2.4.1",
     "markdownlint-cli": "^0.39.0",
     "simple-git-hooks": "^2.11.1",
     "spellchecker-cli": "^6.2.0"

@@ -1,10 +1,9 @@
-name: Release
+name: pull request size
 on:
-  milestone:
-    types:
-      - closed
+  pull_request:
+    branches:
+      - master
 env:
-  PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
 jobs:
   lint:
@@ -23,6 +22,12 @@ jobs:
             history-website/package-lock.json
             cli/package-lock.json
             package-lock.json
-      - run: echo "VERSION_TO_PUBLISH=$(jq --raw-output .milestone.title $GITHUB_EVENT_PATH)" >> $GITHUB_ENV
-      - run: npm run setup
-      - run: npm run publish
+      - run: npm install -g "https://github.com/Idrinth/check-pr-length.git#patch-1"
+      - run: git remote add base https://github.com/idrinth/api-bench.git
+      - run: git config --global user.email "prs@example.com"
+      - run: git config --global user.name "PRS"
+      - run: git fetch base master
+      - run: git switch master
+      - run: git fetch origin "${GITHUB_HEAD_REF}"
+      - run: git switch $GITHUB_HEAD_REF
+      - run: check-pr-length --max=350 --total=500 --base=master --silent=false --exclude="package-lock.json;*/package-lock.json"

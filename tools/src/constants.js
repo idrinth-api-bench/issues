@@ -3,6 +3,7 @@ export const ARRAY_FIRST = 0;
 export const ARRAY_SECOND = 1;
 export const EXIT_SUCCESS = 0;
 export const EXIT_FAILURE = 1;
+export const ARRAY_LENGTH_OFFSET = 1;
 export const INDENTATION = 2;
 export const EMPTY = 0;
 export const ERROR_FTA_SCORE = 60;
