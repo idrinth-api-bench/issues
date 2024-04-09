@@ -40,7 +40,11 @@
     "spellchecker-cli": "^6.2.0",
     "stylelint": "^16.2.1",
     "stylelint-config-standard": "^36.0.0",
-    "typescript": "^5.4.4"
+    "typescript": "^5.4.4",
+    "c8": "^9.1.0",
+    "ts-node": "^10.9.2",
+    "@types/mocha": "^10.0.6",
+    "@types/chai": "^4.3.14"
   },
   "engines": {
     "node": ">=20"
