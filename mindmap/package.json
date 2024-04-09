@@ -13,7 +13,8 @@
     "lint-css": "ilcd",
     "knip": "knip",
     "test": "c8 mocha test",
-    "tsc": "tsc -p tsconfig.json"
+    "tsc": "tsc -p tsconfig.json",
+    "validate": "node tools/validate.js"
   },
   "repository": {
     "type": "git",
