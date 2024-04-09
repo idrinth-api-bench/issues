@@ -101,7 +101,7 @@ html = html.replace(
   '</head>',
   '<link rel=icon type=image/svg+xml href=iab.svg />' +
   `<link rel=stylesheet type=text/css href=${ ch }.min.css />` +
-  `<script src=${ jsh }.min.js ></script>` +
+  `<script type=module src=${ jsh }.min.js ></script>` +
   '</head>',
 );
 html = html
