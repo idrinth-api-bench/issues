@@ -78,26 +78,31 @@ describe('Build process should run correctly', () => {
     },);
   },);
 
-  describe('Verify index.html file content', () => {
-    const html = readFileSync(`${ process.cwd() }/dist/index.html`,).toString();
-    for (const file of readdirSync(`${ process.cwd() }/dist`, 'utf8',)) {
-      if (file.endsWith('.css',)) {
-        it(`index.html should have ${ file }`, () => {
-          // eslint-disable-next-line no-unused-expressions
-          expect(
-            // eslint-disable-next-line max-len
-            html.includes(`<link rel=stylesheet type=text/css href=${ file } />`,),
-          ).to.be.true;
-        },);
-      } else if (file.endsWith('.js',)) {
-        it(`index.html should have ${ file }`, () => {
-          // eslint-disable-next-line no-unused-expressions
-          expect(
-            html.includes(`<script src=${ file }></script>`,)
-            || html.includes(`<script type=module src=${ file } ></script>`,),
-          ).to.be.true;
-        },);
+  it('index.html should have been created', () => {
+    // eslint-disable-next-line no-unused-expressions
+    expect(existsSync(`${ process.cwd() }/dist/index.html`,),).to.be.true;
+
+    describe('Verify index.html file content', () => {
+      const html = readFileSync(`${ process.cwd() }/dist/index.html`, 'utf8',);
+      for (const file of readdirSync(`${ process.cwd() }/dist`, 'utf8',)) {
+        if (file.endsWith('.css',)) {
+          it(`index.html should have ${ file }`, () => {
+            // eslint-disable-next-line no-unused-expressions
+            expect(
+              // eslint-disable-next-line max-len
+              html.includes(`<link rel=stylesheet type=text/css href=${ file } />`,),
+            ).to.be.true;
+          },);
+        } else if (file.endsWith('.js',)) {
+          it(`index.html should have ${ file }`, () => {
+            // eslint-disable-next-line no-unused-expressions
+            expect(
+              html.includes(`<script src=${ file }></script>`,)
+              || html.includes(`<script type=module src=${ file } ></script>`,),
+            ).to.be.true;
+          },);
+        }
       }
-    }
+    },);
   },);
 },);
