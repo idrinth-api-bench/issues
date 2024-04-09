@@ -1,4 +1,4 @@
-// eslint-disable-next-line func-style
+// eslint-disable-next-line func-style,@typescript-eslint/no-unused-vars
 function show(element,) {
   if (! element || ! element.hasAttribute('data-image',)) {
     return;
@@ -11,7 +11,7 @@ function show(element,) {
   }
   if (element.hasAttribute('href',)) {
     const a = document.createElement('a',);
-    a.setAttribute('href', element.getAttribute('href',));
+    a.setAttribute('href', element.getAttribute('href',),);
     a.setAttribute('target', '_blank',);
     a.setAttribute('rel', 'noreferrer',);
     a.setAttribute('class', 'modal',);
