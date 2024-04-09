@@ -1,5 +1,6 @@
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
-  "entry": ["tools/*.js", "test/**/*.ts"],
-  "project": ["tools/**/*.js", "src/**/*.ts", "test/**/*.ts"]
+  "entry": ["tools/*.js", "test/**/*.ts", "src/**/*.ts"],
+  "project": ["tools/**/*.js", "src/**/*.ts", "test/**/*.ts"],
+  "ignoreDependencies": ["ts-node"]
 }
