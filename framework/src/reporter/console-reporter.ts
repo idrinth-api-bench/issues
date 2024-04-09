@@ -1,7 +1,7 @@
 import Reporter from './reporter.js';
 import Table from 'cli-table3';
 import FinishedRun from '../finished-run.js';
-import logSymbols from 'log-symbols'
+import logSymbols from 'log-symbols';
 import {
   EMPTY,
 } from '../constants.js';

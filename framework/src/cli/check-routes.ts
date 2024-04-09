@@ -156,6 +156,7 @@ const checkType = (job: Job, type: taskType,) => {
   };
 };
 
+// eslint-disable-next-line complexity
 export default async(args: string[], cwd: string,): Promise<void> => {
   await locale(args[FIRST_ARGUMENT] || DEFAULT_LANGUAGE,);
   const job = await jobCreator(cwd,);
