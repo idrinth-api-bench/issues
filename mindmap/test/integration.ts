@@ -13,9 +13,14 @@ import {
 } from 'fs';
 
 const TIMEOUT = 30000;
+const WAIT = 2500;
+const delay = (duration,) => new Promise((resolve,) => setTimeout(
+  resolve,
+  duration,
+),);
 
 describe('Build process should run correctly', () => {
-  before(function() {
+  before(async function() {
     // eslint-disable-next-line no-invalid-this
     this.timeout(TIMEOUT,);
     for (const folder of [
@@ -30,6 +35,7 @@ describe('Build process should run correctly', () => {
       }
     }
     execSync('npm run build',);
+    await delay(WAIT,);
   },);
 
   it('should create dist directory', () => {
