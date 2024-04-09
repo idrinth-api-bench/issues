@@ -12,7 +12,8 @@
     "lint-styles": "stylelint src/index.css",
     "lint-css": "ilcd",
     "knip": "knip",
-    "tsc": "tsc -p tsconfig.json"
+    "tsc": "tsc -p tsconfig.json",
+    "validate": "node tools/validate.js"
   },
   "repository": {
     "type": "git",
