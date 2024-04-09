@@ -1,25 +1,22 @@
 import {
   describe,
   it,
-} from 'node:test';
-import assert from 'node:assert/strict';
+} from 'mocha';
 import {
-  exec,
+  assert,
+} from 'chai';
+import {
+  execSync,
 } from 'child_process';
-import {
-  promisify,
-} from 'util';
+
 import {
   rmSync,
   existsSync,
   readdirSync,
-} from 'fs';
-import {
   readFileSync,
-} from 'node:fs';
+} from 'fs';
 
-const executeCommand = promisify(exec,);
-
+// prepare for tests (beforeAll) , should be synchronous !!
 rmSync('cache', {
   recursive: true,
   force: true,
@@ -28,22 +25,21 @@ rmSync('dist', {
   recursive: true,
   force: true,
 },);
+execSync('npm run build',);
 
-await describe('Build process should run correctly', async() => {
-  it('npm run build should not throw error', async() => {
-    await executeCommand('npm run build',);
-  },);
+describe('Build process should run correctly', () => {
 
-  await it('should create dist directory', () => {
+  it('should create dist directory', () => {
     assert.equal(existsSync('dist',), true,);
   },);
 
-  await it('should create cache directory', () => {
+  it('should create cache directory', () => {
     assert.equal(existsSync('cache',), true,);
   },);
 },);
 
 describe('Verify content of dist directory', () => {
+
   const fileNames = [];
   for (const file of readdirSync('public', 'utf8',)) {
     fileNames.push(file,);
@@ -66,7 +62,7 @@ describe('Verify content of cache directory', () => {
   for (const file of readdirSync('cache', 'utf8',)) {
     if (file.endsWith('.js',)) {
       it(`${ file } should match pattern`, () => {
-        assert.match(file, /[a-f0-9]+\.min\.js/u,);
+        assert.match(file, /[a-f0-9]+\.min\.js/ug,);
       },);
     }
   }
