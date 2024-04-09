@@ -9,6 +9,16 @@ svg {
   height: 100vh;
 }
 
+img.modal {
+  max-width: 90vw;
+  max-height: 90vh;
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 5%;
+  margin: auto;
+}
+
 span,
 a {
   padding: 0.25em;
