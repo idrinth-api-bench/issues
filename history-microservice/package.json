@@ -55,8 +55,8 @@
     "lint": "eslint . --ext .js,.ts,.cjs,.json,.tsx --report-unused-disable-directives --max-warnings 0",
     "lint-fix": "eslint --fix . --ext .js,.ts,.cjs,.json",
     "lint-md": "markdownlint *.md",
-    "test": "c8 --reporter=text --reporter=lcov mocha test",
-    "integration": "c8 --reporter=text --reporter=lcov mocha integration",
+    "test": "c8 mocha test",
+    "integration": "c8 mocha integration",
     "start": "tsx index.ts",
     "knip": "knip"
   },

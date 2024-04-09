@@ -67,7 +67,7 @@
     "lint": "eslint . --ext .js,.ts,.cjs,.json,.tsx",
     "lint-fix": "eslint --fix . --ext .js,.ts,.cjs,.json",
     "lint-md": "markdownlint *.md",
-    "test": "c8 --reporter=text --reporter=lcov mocha test",
+    "test": "c8 mocha test",
     "clear": "node tools/clear-js-files-from-src.js",
     "tsc": "tsc -p tsconfig.json",
     "language": "itlfy generate",
