@@ -24,7 +24,34 @@ env:
   PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
 jobs:
-  mindmap-integration:
+  mindmap-integration-previous:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4.0.2
+        with:
+          node-version: ${{ env.PREVIOUS_NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
+      - run: cd mindmap && npm ci
+      - run: cd mindmap && npm run test
+      - run: mv ./mindmap/coverage ./
+      - run: sed -i 's/SF:tools/SF:mindmap\/tools/' ./coverage/lcov.info
+      - run: sed -i 's/SF:src/SF:mindmap\/src/' ./coverage/lcov.info
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel: true
+          flag-name: mindmap integration ${{ env.PREVIOUS_NODE_VERSION }}
+  mindmap-integration-current:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -405,6 +432,8 @@ jobs:
       - documentation-e2e-3
       - documentation-e2e-4
       - documentation-e2e-5
+      - mindmap-integration-current
+      - mindmap-integration-previous
     steps:
     - name: Coveralls
       uses: coverallsapp/github-action@master
