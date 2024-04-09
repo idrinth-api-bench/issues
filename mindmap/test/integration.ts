@@ -35,42 +35,41 @@ describe('Build process should run correctly', () => {
   it('should create dist directory', () => {
     // eslint-disable-next-line no-unused-expressions
     expect(existsSync(`${ process.cwd() }/dist`,),).to.be.true;
+
+    describe('Verify content of dist directory', () => {
+      const fileNames = [];
+      for (const file of readdirSync(`${ process.cwd() }/public`, 'utf8',)) {
+        fileNames.push(file,);
+      }
+      for (const file of readdirSync(`${ process.cwd() }/assets`, 'utf8',)) {
+        fileNames.push(file,);
+      }
+      for (const file of readdirSync(`${ process.cwd() }/cache`, 'utf8',)) {
+        fileNames.push(file,);
+      }
+
+      for (const file of fileNames) {
+        it(`should have ${ file }`, () => {
+          // eslint-disable-next-line no-unused-expressions
+          expect(existsSync(`${ process.cwd() }/dist/${ file }`,),).to.be.true;
+        },);
+      }
+    },);
   },);
 
   it('should create cache directory', () => {
     // eslint-disable-next-line no-unused-expressions
     expect(existsSync(`${ process.cwd() }/cache`,),).to.be.true;
-  },);
 
-  describe('Verify content of dist directory', () => {
-
-    const fileNames = [];
-    for (const file of readdirSync(`${ process.cwd() }/public`, 'utf8',)) {
-      fileNames.push(file,);
-    }
-    for (const file of readdirSync(`${ process.cwd() }/assets`, 'utf8',)) {
-      fileNames.push(file,);
-    }
-    for (const file of readdirSync(`${ process.cwd() }/cache`, 'utf8',)) {
-      fileNames.push(file,);
-    }
-
-    for (const file of fileNames) {
-      it(`should have ${ file }`, () => {
-        // eslint-disable-next-line no-unused-expressions
-        expect(existsSync(`${ process.cwd() }/dist/${ file }`,),).to.be.true;
-      },);
-    }
-  },);
-
-  describe('Verify content of cache directory', () => {
-    for (const file of readdirSync(`${ process.cwd() }/cache`, 'utf8',)) {
-      if (file.endsWith('.js',)) {
-        it(`${ file } should match pattern`, () => {
-          expect(file,).to.match(/[a-f0-9]+\.min\.js/ug,);
-        },);
+    describe('Verify content of cache directory', () => {
+      for (const file of readdirSync(`${ process.cwd() }/cache`, 'utf8',)) {
+        if (file.endsWith('.js',)) {
+          it(`${ file } should match pattern`, () => {
+            expect(file,).to.match(/[a-f0-9]+\.min\.js/ug,);
+          },);
+        }
       }
-    }
+    },);
   },);
 
   describe('Verify index.html file content', () => {
