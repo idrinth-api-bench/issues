@@ -269,6 +269,12 @@ children:
           - text: scripting knowledge good enough to configure framework
           - text: likely looking to configure the framework deeply
           - text: sometimes desires code generation
+          - text: priorities (linkedin survey)
+            children:
+              - text: documentation (48%)
+              - text: available support (23%)
+              - text: type(hints) (18%)
+              - text: code generation (11%)
       - text: Quality Assurance Engineer
         children:
           - text: scripting knowledge usually sufficient to configure framework
