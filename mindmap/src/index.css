@@ -9,7 +9,7 @@ svg {
   height: 100vh;
 }
 
-img.modal {
+.modal {
   max-width: 90vw;
   max-height: 90vh;
   position: absolute;
