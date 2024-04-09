@@ -12,7 +12,7 @@
     "lint-styles": "stylelint src/index.css",
     "lint-css": "ilcd",
     "knip": "knip",
-    "test": "c8 mocha test",
+    "test": "c8 --reporter=text --reporter=lcov mocha test",
     "tsc": "tsc -p tsconfig.json",
     "validate": "node tools/validate.js"
   },
