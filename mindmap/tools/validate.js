@@ -1,3 +1,4 @@
+/* eslint no-console: 0 */
 import {
   parse,
 } from 'yaml';
@@ -47,10 +48,10 @@ const check = (prefix, index, node) => {
       console.error(`[${prefix}${node.text}] The image property is not correct.`,);
       hasErrors = true;
     } else {
-      let index = 0;
+      let pos = 0;
       for (const child of node.children) {
-        hasErrors = check(`${prefix}${node.text}/`, index, child) || hasErrors;
-        index ++;
+        hasErrors = check(`${prefix}${node.text}/`, pos, child) || hasErrors;
+        pos ++;
       }
     }
   }
@@ -66,7 +67,7 @@ const check = (prefix, index, node) => {
     hasErrors = true;
   }
   return hasErrors;
-}
+};
 
 try {
   const data = parse(readFileSync(process.cwd() + '/data.yml', 'utf8',));
