@@ -28,7 +28,7 @@ jobs:
       - run: git config --global user.name "PRS"
       - run: git fetch base master
       - run: git switch master
-      - run: git remote add pull https://github.com/${{github.event.pull_request.head.repo.full_name}} 
-      - run: git fetch pull "${GITHUB_HEAD_REF}"
+      - run: git remote add pullrequest "https://github.com/${{github.event.pull_request.head.repo.full_name}}"
+      - run: git fetch pullrequest "${GITHUB_HEAD_REF}"
       - run: git switch $GITHUB_HEAD_REF
       - run: check-pr-length --max=350 --total=500 --base=master --silent=false --exclude="package-lock.json;*/package-lock.json"
