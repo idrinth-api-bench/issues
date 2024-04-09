@@ -7,82 +7,115 @@ import {
   readFileSync,
 } from 'fs';
 
-const check = (prefix, index, node) => {
+const HUMAN_OFFSET = 1;
+const EMPTY = 0;
+const EXIT_FAILURE = 1;
+const TOP_LEVEL_PROPERTY_COUNT = 3;
+const isFilledArray = (value,) => typeof value === 'object'
+  && Array.isArray(value,)
+  && value.length !== EMPTY;
+const isFilledString = (value,) => typeof value === 'string'
+  && value.length !== EMPTY;
+// eslint-disable-next-line complexity
+const check = (prefix, index, node,) => {
+  const path = `${ prefix }${ index + HUMAN_OFFSET }`;
   if (typeof node !== 'object') {
-    console.error(`[${prefix}${index + 1}] Failed handling node, it's not an object.`,);
-    return true;
+    console.error(`[${ path }] Failed handling node, it's not an object.`,);
+    return;
   }
   const properties = Object.keys(node,);
-  if (! properties.includes('text')) {
-    console.error(`[${prefix}${index + 1}] Failed handling node, it doesn't contain a text property.`,);
-    return true;
+  if (! properties.includes('text',)) {
+    console.error(
+      `[${ path }] Failed handling node, it doesn't contain a text property`,
+    );
+    return;
   }
-  if (typeof node.text !== 'string' || node.text.length === 0) {
-    console.error(`[${prefix}${index + 1}] Failed handling node, it doesn't contain a correct text property.`,);
-    return true;
+  if (! isFilledString(node.text,)) {
+    console.error(
+      `[${ path }] text needs to be a filled string`,
+    );
+    return;
   }
-  let hasErrors = false;
+  const name = `${ prefix }${ node.text }`;
   if (properties.includes('url',)) {
-    if (typeof node.url !== 'string' || node.url.length === 0) {
-      console.error(`[${prefix}${node.text}] The url property is not correct.`,);
-      hasErrors = true;
+    if (! isFilledString(node.url,)) {
+      console.error(`[${ name }] The url property is not a filled string`,);
+      process.exitCode = EXIT_FAILURE;
     }
   }
   if (properties.includes('description',)) {
-    if (typeof node.description !== 'string' || node.description.length === 0) {
-      console.error(`[${prefix}${node.text}] The description property is not correct.`,);
-      hasErrors = true;
+    if (! isFilledString(node.description,)) {
+      console.error(
+        `[${ name }] The description property is not a filled string.`,
+      );
+      process.exitCode = EXIT_FAILURE;
     }
   }
   if (properties.includes('image',)) {
-    if (typeof node.image !== 'string' || node.image.length === 0) {
-      console.error(`[${prefix}${node.text}] The image property is not correct.`,);
-      hasErrors = true;
-    } else if (! existsSync(`${ process.cwd() }/assets/${ node.image }`)) {
-      console.error(`[${prefix}${node.text}] The image ${ node.image } couldn't be found in assets.`,);
-      hasErrors = true;
+    if (! isFilledString(node.image,)) {
+      console.error(`[${ name }] The image property is not a filled string.`,);
+      process.exitCode = EXIT_FAILURE;
+    } else if (! existsSync(`${ process.cwd() }/assets/${ node.image }`,)) {
+      console.error(
+        `[${ name }] The image ${ node.image } couldn't be found in assets.`,
+      );
+      process.exitCode = EXIT_FAILURE;
     }
   }
   if (properties.includes('children',)) {
-    if (typeof node.children !== 'object' || ! Array.isArray(node.children) || node.children.length === 0) {
-      console.error(`[${prefix}${node.text}] The image property is not correct.`,);
-      hasErrors = true;
+    if (! isFilledArray(node.children,)) {
+      console.error(`[${ name }] The children property is not a filled list`,);
+      process.exitCode = EXIT_FAILURE;
     } else {
       let pos = 0;
       for (const child of node.children) {
-        hasErrors = check(`${prefix}${node.text}/`, pos, child) || hasErrors;
+        check(`${ name }/`, pos, child,);
         pos ++;
       }
     }
   }
-  const allowedProperties = [
+  const allowed = [
     'text',
     'description',
     'children',
     'url',
-    'image'
+    'image',
   ];
-  if (properties.filter((name,) => ! allowedProperties.includes(name)).length) {
-    console.error(`[${prefix}${node.text}] There are additional properties that are unknown.`,);
-    hasErrors = true;
+  if (properties.filter((prop,) => ! allowed.includes(prop,),).length) {
+    console.error(
+      `[${ name }] There are additional properties that are unknown.`,
+    );
+    process.exitCode = EXIT_FAILURE;
   }
-  return hasErrors;
 };
 
 try {
-  const data = parse(readFileSync(process.cwd() + '/data.yml', 'utf8',));
-  if (Object.keys(data).length !== 3 || ! data.text || ! data.children || ! data['$schema']) {
-    console.error('You must have three elements at top level: text, $schema and children',);
-    process.exit(1);
+  const data = parse(readFileSync(process.cwd() + '/data.yml', 'utf8',),);
+  if (Object.keys(data,).length !== TOP_LEVEL_PROPERTY_COUNT) {
+    console.error(
+      'You must have three elements at top level: text, $schema and children',
+    );
+    process.exitCode = EXIT_FAILURE;
   }
-  let index = 0;
-  let hasErrors = false;
-  for (const child of data.children) {
-    hasErrors = check(data.text + '/', index, child,) || hasErrors;
-    index ++;
+  if (! isFilledString(data.text,)) {
+    console.error('text has to be a string',);
+    process.exitCode = EXIT_FAILURE;
   }
-  process.exit(hasErrors ? 1 : 0,);
-} catch(e) {
+  if ( ! isFilledString(data.$schema,)) {
+    console.error('$schema has to be a string',);
+    process.exitCode = EXIT_FAILURE;
+  }
+  if (! isFilledArray(data.children,)) {
+    console.error('children have to be a list',);
+    process.exitCode = EXIT_FAILURE;
+  } else {
+    let index = 0;
+    for (const child of data.children ?? []) {
+      check(data.text + '/', index, child,);
+      index ++;
+    }
+  }
+} catch (e) {
   console.error(`Your YAML is invalid: ${ e }`,);
-  process.exit(1);
+  process.exitCode = EXIT_FAILURE;
 }
