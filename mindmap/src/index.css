@@ -17,6 +17,8 @@ svg {
   right: 5%;
   top: 5%;
   margin: auto;
+  display: block;
+  overflow: hidden;
 }
 
 span,
