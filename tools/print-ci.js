@@ -3,7 +3,8 @@ import {
   stringify,
 } from 'yaml';
 import {
-  readdirSync, readFileSync,
+  readdirSync,
+  readFileSync,
 } from 'fs';
 import {
   EMPTY,
@@ -45,32 +46,35 @@ const allRuns = (data, key,) => {
 };
 
 const jobs = {};
+let total = 0;
+let provided = 0;
 
 // eslint-disable-next-line max-params
 const addCombination = (combination, type, name, key, runs,) => {
-  jobs[type][`${ name }|${ combination }`] = {
-    on: jobs[type][name].on,
-  };
+  jobs[type][`${ name }|${ combination }`] = {};
   const nm = `${ name }|${ combination }`;
-  jobs[type][nm].jobs = jobs[type][nm].jobs || {};
-  jobs[type][nm].jobs[key] = runs[runs.length - ARRAY_LENGTH_OFFSET];
+  jobs[type][nm] = jobs[type][nm] || {};
+  jobs[type][nm][key] = runs[runs.length - ARRAY_LENGTH_OFFSET];
 };
 // eslint-disable-next-line max-params
 const addSimple = (type, name, key, runs,) => {
-  jobs[type][name].jobs = jobs[type][name].jobs || {};
-  jobs[type][name].jobs[key] = runs[runs.length - ARRAY_LENGTH_OFFSET];
+  jobs[type][name] = jobs[type][name] || {};
+  jobs[type][name][key] = runs[runs.length - ARRAY_LENGTH_OFFSET];
 };
 // eslint-disable-next-line max-params
 const handleJob = (data, key, type, name,) => {
   const runs = allRuns(data, key,);
   if (runs.length === EMPTY) {
+    total ++;
     return;
   }
   if (! data.jobs[key].strategy || ! data.jobs[key].strategy.matrix) {
     addSimple(type, name, key, runs,);
+    total ++;
     return;
   }
   for (const combination of allCombinations(data, key,)) {
+    total ++;
     addCombination(combination, type, name, key, runs,);
   }
 };
@@ -79,9 +83,6 @@ const handleFile = (file,) => {
     type,
     name,
   ] = file.split('.',);
-  if (name === 'codeql') {
-    return;
-  }
   jobs[type] = jobs[type] ?? {};
   jobs[type][name] = {};
   const data = parse(
@@ -90,6 +91,9 @@ const handleFile = (file,) => {
   for (const key of Object.keys(data.jobs,)) {
     handleJob(data, key, type, name,);
   }
+  if (name === 'codeql') {
+    delete jobs[type][name];
+  }
 };
 
 for (const file of readdirSync(process.cwd() + '/.github/workflows',)) {
@@ -97,12 +101,16 @@ for (const file of readdirSync(process.cwd() + '/.github/workflows',)) {
 }
 for (const type of Object.keys(jobs,)) {
   for (const job of Object.keys(jobs[type],)) {
-    if (! jobs[type][job].jobs) {
+    if (! jobs[type][job] || Object.keys(jobs[type][job],).length === EMPTY ) {
       delete jobs[type][job];
+    } else {
+      provided += Object.keys(jobs[type][job],).length;
     }
   }
   if (Object.keys(jobs[type],).length === EMPTY) {
     delete jobs[type];
   }
 }
+console.log(`You can run these ${ provided } of ${ total } jobs locally:`,);
+console.log('',);
 console.log(stringify(jobs,),);
