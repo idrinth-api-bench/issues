@@ -18,14 +18,17 @@ describe('Build process should run correctly', () => {
   before(function() {
     // eslint-disable-next-line no-invalid-this
     this.timeout(TIMEOUT,);
-    rmSync(`${ process.cwd() }/cache`, {
-      recursive: true,
-      force: true,
-    },);
-    rmSync(`${ process.cwd() }/dist`, {
-      recursive: true,
-      force: true,
-    },);
+    for (const folder of [
+      'cache',
+      'dist',
+    ]) {
+      if (existsSync(`${ process.cwd() }/${ folder }`,)) {
+        rmSync(`${ process.cwd() }/${ folder }`, {
+          recursive: true,
+          force: true,
+        },);
+      }
+    }
     execSync('npm run build',);
   },);
 
