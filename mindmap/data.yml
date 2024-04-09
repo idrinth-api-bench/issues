@@ -247,6 +247,12 @@ children:
           - text: Documentation Website
             image: website-screenshot.png
             url: https://idrinth-api-ben.ch
+          - text: Logo
+            image: iab.svg
+      - text: work in progress
+        children:
+          - text: Logo
+            image: new-logo.png
       - text: requirements
         children:
           - text: dark mode

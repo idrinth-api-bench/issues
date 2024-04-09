@@ -38,7 +38,9 @@ const convert = (node,) => {
   const icon = img ? '&#128444;' : '';
   const url = node.url;
   nN.content = node.url
-    ? `<a ${ attributes }${ img } href="${ url }"${ title }>${ text }${ icon }</a>`
+    ? `<a
+${ attributes }${ img }
+href="${ url }"${ title }>${ text }${ icon }</a>`
     : `<span${ title }${ img }>${ text }${ icon }</span>`;
   if (node.children) {
     nN.children = [];
