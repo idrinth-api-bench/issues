@@ -67,6 +67,19 @@ children:
         - text: content testing/integration testing
         - text: stress testing (WIP)
           url: https://github.com/Idrinth/api-bench/issues/571
+        - text: Multi lingual
+          children:
+            - text: guaranteed
+              children:
+              - text: english
+              - text: german
+              - text: french
+            - text: likely
+              children:
+              - text: spanish
+              - text: hindi
+              - text: arabic
+              - text: portuguese
   - text: Challenges
     description: These are challenges we plan to overcome
     children:
