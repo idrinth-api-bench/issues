@@ -242,6 +242,11 @@ children:
           - text: improve continuous integration
   - text: Design
     children:
+      - text: current
+        children:
+          - text: Documentation Website
+            image: website-screenshot.png
+            url: https://idrinth-api-ben.ch
       - text: requirements
         children:
           - text: dark mode

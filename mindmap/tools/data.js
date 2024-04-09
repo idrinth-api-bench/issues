@@ -27,12 +27,19 @@ const SECOND = 1;
 const cwd = process.cwd();
 const data = parse(readFileSync(`${ cwd }/data.yml`, 'utf8',),);
 const attributes = 'rel=noreferrer target=_blank';
+// eslint-disable-next-line complexity
 const convert = (node,) => {
   const nN = {};
   const title = node.description ? ` title="${ node.description }"` : '';
+  const img = node.image
+    ? ` data-image=${ node.image } onmouseover="show(this)"`
+    : '';
+  const text = node.text;
+  const icon = img ? '&#128444;' : '';
+  const url = node.url;
   nN.content = node.url
-    ? `<a ${ attributes } href="${ node.url }"${ title }>${ node.text }</a>`
-    : `<span${ title }>${ node.text }</span>`;
+    ? `<a ${ attributes }${ img } href="${ url }"${ title }>${ text }${ icon }</a>`
+    : `<span${ title }${ img }>${ text }${ icon }</span>`;
   if (node.children) {
     nN.children = [];
     for (const child of node.children) {
@@ -79,10 +86,20 @@ writeFileSync(
   cminify(css,),
   'utf8',
 );
+const js = readFileSync(`${ cwd }/src/show.js`, 'utf8',);
+const jsh = createHash('sha256',)
+  .update(js,)
+  .digest('hex',);
+writeFileSync(
+  `${ cwd }/dist/${ jsh }.min.js`,
+  (await jminify(js,)).code,
+  'utf8',
+);
 html = html.replace(
   '</head>',
   '<link rel=icon type=image/svg+xml href=iab.svg />' +
   `<link rel=stylesheet type=text/css href=${ ch }.min.css />` +
+  `<script src=${ jsh }.min.js ></script>` +
   '</head>',
 );
 html = html
