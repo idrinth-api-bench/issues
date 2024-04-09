@@ -15,6 +15,15 @@ import Task from '../task.js';
 import Job from '../job.js';
 import taskType from '../task-type.js';
 import Request from '../request.js';
+import logSymbols from 'log-symbols';
+import languageKey from '../locales/language-key.js';
+
+const warn = (key: languageKey, ...argList: string[]) => {
+  console.warn(logSymbols.warning + ' ' + language(key, ...argList,),);
+};
+const error = (key: languageKey, ...argList: string[]) => {
+  console.error(logSymbols.error + ' ' + language(key, ...argList,),);
+};
 
 // eslint-disable-next-line complexity
 const checkMiddleware = (type: 'pre'|'post', route: Task,) => {
@@ -24,12 +33,12 @@ const checkMiddleware = (type: 'pre'|'post', route: Task,) => {
   const data = route[type];
   delete route[type];
   if (typeof data !== 'object' || ! Array.isArray(data,)) {
-    console.error(language(`invalid_${ type }_definition`, route.id,),);
+    error(`invalid_${ type }_definition`, route.id,);
     return false;
   }
   for (const middleware of data) {
     if (typeof middleware !== 'string') {
-      console.error(language(`invalid_${ type }_definition`, route.id,),);
+      error(`invalid_${ type }_definition`, route.id,);
       return false;
     }
   }
@@ -84,10 +93,10 @@ const checkRequest = (main: Request, id: string,): {
   let valid = true;
   for (const property of properties) {
     if (property.required && typeof main[property.name] === 'undefined') {
-      console.error(language('invalid_request_property', id, property.name,),);
+      error('invalid_request_property', id, property.name,);
       valid = false;
     } else if (typeof main[property.name] !== property.type) {
-      console.error(language('invalid_request_property', id, property.name,),);
+      error('invalid_request_property', id, property.name,);
       valid = false;
       delete main[property.name];
     } else {
@@ -95,7 +104,7 @@ const checkRequest = (main: Request, id: string,): {
     }
   }
   if (Object.keys(main,).length === EMPTY) {
-    console.warn(language('invalid_request', id,),);
+    warn('invalid_request', id,);
     return {
       invalid: ! valid,
       risky: true,
@@ -136,7 +145,7 @@ const checkType = (job: Job, type: taskType,) => {
       }
       delete route.main;
       for (const key of Object.keys(route,)) {
-        console.warn(language('unknown_route_property', key, id,),);
+        warn('unknown_route_property', key, id,);
         warnings ++;
       }
     }
@@ -159,9 +168,12 @@ export default async(args: string[], cwd: string,): Promise<void> => {
     warnings += result.warnings;
   }
   if (errors > EMPTY) {
-    console.error(language('validation_errors', `${ errors }`,),);
+    error('validation_errors', `${ errors }`,);
   }
   if (warnings > EMPTY) {
-    console.error(language('validation_warnings', `${ warnings }`,),);
+    error('validation_warnings', `${ warnings }`,);
+  }
+  if (warnings === EMPTY && errors === EMPTY) {
+    console.log(logSymbols.success + ' ' + language('no_errors_warnings',),);
   }
 };
