@@ -19,7 +19,7 @@ const isFilledString = (value,) => typeof value === 'string'
 // eslint-disable-next-line complexity
 const check = (prefix, index, node,) => {
   const path = `${ prefix }${ index + HUMAN_OFFSET }`;
-  if (typeof node !== 'object') {
+  if (typeof node !== 'object' || node === null) {
     console.error(`[${ path }] Failed handling node, it's not an object.`,);
     return;
   }
@@ -37,16 +37,13 @@ const check = (prefix, index, node,) => {
     return;
   }
   const name = `${ prefix }${ node.text }`;
-  if (properties.includes('url',)) {
-    if (! isFilledString(node.url,)) {
-      console.error(`[${ name }] The url property is not a filled string`,);
-      process.exitCode = EXIT_FAILURE;
-    }
-  }
-  if (properties.includes('description',)) {
-    if (! isFilledString(node.description,)) {
+  for (const prop of [
+    'url',
+    'description',
+  ]) {
+    if (properties.includes(prop,) && ! isFilledString(node[prop],)) {
       console.error(
-        `[${ name }] The description property is not a filled string.`,
+        `[${ name }] The ${ prop } property is not a filled string`,
       );
       process.exitCode = EXIT_FAILURE;
     }
