@@ -28,7 +28,7 @@ jobs:
       - run: git config --global user.name "PRS"
       - run: git fetch base master
       - run: git switch master
-      - run: echo $GITHUB_REPOSITORY
+      - run: echo ${{github.event.pull_request.head.repo.full_name}}
       - run: git fetch origin "${GITHUB_HEAD_REF}"
       - run: git switch $GITHUB_HEAD_REF
       - run: check-pr-length --max=350 --total=500 --base=master --silent=false --exclude="package-lock.json;*/package-lock.json"
