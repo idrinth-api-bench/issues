@@ -6,5 +6,5 @@
   "sourceMap": true,
   "instrument": true,
   "exclude": [],
-  "include": ["src/**/*.ts", "tools/**/*.js"]
+  "include": ["src/**/*.ts", "tools/*.js"]
 }
