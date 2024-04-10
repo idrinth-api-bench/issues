@@ -99,6 +99,7 @@ header {
   background-color: var(--background-color);
   padding-bottom: 1em;
   padding-top: 1em;
+  border-bottom: 1px solid var(--highlight-color);
 }
 
 header button {
@@ -185,6 +186,7 @@ footer {
   padding: 1rem 1em;
   background-color: var(--background-color);
   width: 100%;
+  border-top: 1px solid var(--highlight-color);
 }
 
 footer ul {
