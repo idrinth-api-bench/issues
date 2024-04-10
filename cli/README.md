@@ -6,11 +6,14 @@
 
 ## Contents
 
-- [Contents](#contents)
-- [What does this Project do?](#what-does-this-project-do)
-- [Usage & Examples](#usage--examples)
-- [License](#license)
-- [Support](#support)
+- [@idrinth/api-bench-cli](#idrinthapi-bench-cli)
+  - [Contents](#contents)
+  - [What does this project do?](#what-does-this-project-do)
+  - [Usage \& Examples](#usage--examples)
+  - [License](#license)
+  - [Socials](#socials)
+  - [Support](#support)
+  - [Privacy and Compliance](#privacy-and-compliance)
 
 ## What does this project do?
 
@@ -25,10 +28,14 @@ information.
 
 As usual with my projects this is MIT-licensed.
 
-## Support
 
-Additionally, to support requests via issue, you can reach us via
-[Slack](https://join.slack.com/t/idrinth-api-bench/shared_invite/zt-2f4zmw2sz-c3etHzCFq3LtZpkR15xXMA).
+## Socials
+
+Additionally, to support requests via GitHub issue, you can reach us via
+
+[![GitHub URL](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Idrinth/api-bench)&nbsp;&nbsp;&nbsp;&nbsp;[![LinkedIn URL](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/groups/9588634/)&nbsp;&nbsp;&nbsp;&nbsp;[![Slack URL](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)](https://idrinth-api-bench.slack.com/join/shared_invite/zt-2f4zmw2sz-c3etHzCFq3LtZpkR15xXMA#/shared-invite/email)
+
+## Support
 
 Commercial support and training is provided via
 [Björn Büttner](https://bjoern-buettner.me).
