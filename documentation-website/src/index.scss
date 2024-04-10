@@ -5,7 +5,7 @@
   --highlight-text: hsla(0deg 0% 100% / 100%);
   --highlight-hover: hsla(120deg 77% 36% / 100%);
   --background-loader: hsla(0deg 0% 0% / 5%);
-  --shadow: rgb(51 51 51);
+  --shadow: rgba(0 0 0 / 50%);
   --background-offset: hsla(204deg 8% 76% / 100%);
   --code-keyword: hsla(31deg 100% 40% / 100%);
   --code-attribute: hsla(219deg 100% 40% / 100%);
@@ -20,7 +20,7 @@
   --highlight-color: hsla(120deg 77% 36% / 100%);
   --highlight-hover: hsla(132deg 33% 29% / 100%);
   --background-offset: hsla(0deg 0% 25% / 100%);
-  --shadow: rgb(199 199 199);
+  --shadow: rgba(255 255 255 / 50%);
   --code-keyword: hsla(31deg 100% 60% / 100%);
   --code-attribute: hsla(219deg 100% 60% / 100%);
   --code-string: hsla(130deg 100% 60% / 100%);
@@ -185,11 +185,6 @@ footer {
   padding: 1rem 1em;
   background-color: var(--background-color);
   width: 100%;
-}
-
-header,
-footer {
-  box-shadow: var(--shadow) 0 1px 4px, var(--shadow) 0 0 0 3px;
 }
 
 footer ul {
@@ -462,7 +457,7 @@ header #medium img {
     position: absolute;
     background: var(--background-color);
     padding: 1em;
-    box-shadow: 1em 1em 1.5em var(--shadow);
+    box-shadow: var(--shadow) 0.25em 0.25em 0.5em;
   }
 
   header button {
@@ -487,7 +482,7 @@ header #medium img {
     display: grid;
     grid-template-columns: 1fr minmax(100px, 2fr);
     background: rgba(0 0 0 / 10%);
-    box-shadow: rgba(0 0 0 / 50%) 0.5em 0.5em 1em;
+    box-shadow: var(--shadow) 0.25em 0.25em 0.5em;
     border: var(--highlight-color) solid 1px;
     margin-bottom: 1.5em;
     border-radius: 0.5em 0 0 0.5em;
