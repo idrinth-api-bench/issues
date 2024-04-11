@@ -15,4 +15,4 @@ jobs:
       uses: actions/checkout@v4
     - uses: actions/setup-go@v3
     - run: go install github.com/editorconfig-checker/editorconfig-checker/v2/cmd/editorconfig-checker@latest
-    - run: ~/go/bin/editorconfig-checker/ec
+    - run: ~/go/bin/editorconfig-checker
