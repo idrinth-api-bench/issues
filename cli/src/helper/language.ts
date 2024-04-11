@@ -18,6 +18,11 @@ const getReplace = (index: number,) => {
 };
 
 const get = (key: languageKey, ...args: string[]): string => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
+  if (key === '__proto__') {
+    return key;
+  }
   let out = chosen[key] || en[key] || key;
   for (let pos = 0; pos < args.length; pos ++) {
     out = out.replace(getReplace(pos,), args[pos],);

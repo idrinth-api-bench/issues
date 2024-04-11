@@ -8,6 +8,9 @@ import files from '../locales/files.ts';
 
 // eslint-disable-next-line complexity
 export default async(lnkey: languageKey, global?: object,): Promise<string> => {
+  if (lnkey.match(/(^|\.)__proto__(\.|$)/u,)) {
+    return lnkey;
+  }
   const that: Window = (global ?? window) as Window;
   const language = (that?.Navigator?.language ?? 'en')
     .replace(/-.*$/u, '',);
