@@ -13,6 +13,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-    - uses: actions/setup-go@v3
+    - uses: actions/setup-go@v5
     - run: go install github.com/editorconfig-checker/editorconfig-checker/v2/cmd/editorconfig-checker@latest
     - run: ~/go/bin/editorconfig-checker
