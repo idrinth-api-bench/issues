@@ -8,8 +8,8 @@ import translations from '../locales/translations.js';
 
 // eslint-disable-next-line complexity
 export default (lnkey: languageKey,): string => {
-  if (lnkey.match(/(^|\.)__proto__(\.|$)/u,)) {
-    return lnkey;
+  if (lnkey.match(/(^|\.)(__proto__|valueOf|toString)(\.|$)/u,)) {
+    return '';
   }
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-expect-error
