@@ -13,6 +13,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-    - run: apt-get install golang
+    - run: sudo apt-get install golang
     - run: go install github.com/editorconfig-checker/editorconfig-checker/v2/cmd/editorconfig-checker@latest
     - run: editorconfig-checker
