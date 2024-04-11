@@ -13,9 +13,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-    - run: wget https://go.dev/dl/go1.21.6.linux-amd64.tar.gz
-    - run: sudo tar -xvf go1.22.2.linux-amd64.tar.gz -C /usr/local
-    - run: echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.profile
-    - run: source ~/.profile
+    - uses: actions/setup-go@v3
     - run: go install github.com/editorconfig-checker/editorconfig-checker/v2/cmd/editorconfig-checker@latest
     - run: editorconfig-checker
