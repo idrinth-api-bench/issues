@@ -48,17 +48,17 @@ const FaqItem = ({
           <span className="down-arrow"></span>
         }
       </div>
-    {isOpen &&
-      <p>
-        {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-expect-error
-          <Lang lnkey={`faq.questions.description_${ index + ONE }`} />
-        }
-      </p>
-    }
-  </li>
-);
+      {isOpen &&
+        <p>
+          {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-expect-error
+            <Lang lnkey={`faq.questions.description_${ index + ONE }`} />
+          }
+        </p>
+      }
+    </li>
+  );
 };
 
 export default FaqItem;
