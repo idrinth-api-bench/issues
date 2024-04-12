@@ -26,8 +26,14 @@ const FaqItem = ({
   };
 
   return (
-    <li tabIndex={index + ONE} onKeyDown={handleKeyDown} className={'faq-item'}>
-      <div onClick={() => toggleOpen()} role="button">
+    <li
+      tabIndex={index + 1}
+      onKeyDown={handleKeyDown}
+      className={`faq-item ${isOpen ? 'open' : ''}`}
+      aria-expanded={isOpen}
+      role="button"
+      onClick={() => toggleOpen()}
+    >
         <div className="accordion-section">
           <h2>
             {
@@ -42,7 +48,6 @@ const FaqItem = ({
             <span className="down-arrow"></span>
           }
         </div>
-      </div>
       {isOpen &&
         <p>
           {
