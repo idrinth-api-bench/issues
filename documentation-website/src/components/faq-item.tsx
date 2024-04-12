@@ -26,14 +26,14 @@ const FaqItem = ({
   };
 
   return (
-    <li
-      tabIndex={index + 1}
-      onKeyDown={handleKeyDown}
-      className={`faq-item ${isOpen ? 'faq-item-open' : ''}`}
-      aria-expanded={isOpen}
-      role="button"
-      onClick={() => toggleOpen()}
-    >
+      <li
+        tabIndex={index + ONE}
+        onKeyDown={handleKeyDown}
+        className={'faq-item'}
+        aria-expanded={isOpen}
+        role="button"
+        onClick={() => toggleOpen()}
+      >
         <div className="accordion-section">
           <h2>
             {
