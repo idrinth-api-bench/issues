@@ -26,7 +26,7 @@ children:
             children:
               - text: Idrinth
                 url: https://medium.com/@idrinth
-      - text: LinkedIN
+      - text: LinkedIn
         url: https://www.linkedin.com/groups/9588634/
         children:
           - text: Contributor shoutouts

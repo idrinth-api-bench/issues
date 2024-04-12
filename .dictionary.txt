@@ -16,8 +16,7 @@ HAR
 Idrinth's
 JSON
 Javascript
-LinkedIN
-LinkdIn
+LinkedIn
 Matomo
 Microservice
 Middleware

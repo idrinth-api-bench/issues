@@ -49,7 +49,7 @@ socials:
     title: "@idrinth/api-bench on slack"
     alt: "Slack"
   linkedin:
-    title: "@idrinth/api-bench on LinkedIN"
+    title: "@idrinth/api-bench on LinkedIn"
     alt: "LinkedIn"
   open-sauced:
     title: "@idrinth/api-bench projects on OpenSauced"
@@ -100,7 +100,7 @@ faq:
     title: "FAQ"
     description: "frequently asked questions about @idrinth/api-bench"
   title: "Frequently Asked Questions"
-  description: "If your question is not yet answered, head over to slack, LinkedIN or GitHub and leave it there. We will address it as quickly as possible."
+  description: "If your question is not yet answered, head over to slack, LinkedIn or GitHub and leave it there. We will address it as quickly as possible."
   questions:
     title_1: "What is benchmarking?"
     description_1: "Benchmarking is the process of measuring software performance against established best practices."
