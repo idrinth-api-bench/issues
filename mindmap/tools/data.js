@@ -99,7 +99,7 @@ writeFileSync(
 );
 html = html.replace(
   '</head>',
-  '<link rel=icon type=image/svg+xml href=iab.svg />' +
+  '<link rel=icon type=image/svg+xml href=favicon.svg />' +
   `<link rel=stylesheet type=text/css href=${ ch }.min.css />` +
   `<script type=module src=${ jsh }.min.js ></script>` +
   '</head>',
@@ -114,7 +114,7 @@ html = html
     '</div>' +
     '<div id=iab>' +
     `<a href=https://idrinth-api-ben.ch/ ${ attributes }>` +
-    '<img src=iab.svg alt="@idrinth/api-bench" />' +
+    '<img src=../assets/iab.svg alt="@idrinth/api-bench" />' +
     '</a>' +
     '</div>$1',
   );
