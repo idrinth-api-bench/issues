@@ -29,7 +29,7 @@ const FaqItem = ({
     <li
       tabIndex={index + 1}
       onKeyDown={handleKeyDown}
-      className={`faq-item ${isOpen ? 'open' : ''}`}
+      className={`faq-item ${isOpen ? 'faq-item-open' : ''}`}
       aria-expanded={isOpen}
       role="button"
       onClick={() => toggleOpen()}
