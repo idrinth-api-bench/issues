@@ -14,7 +14,7 @@
   "scripts": {
     "start": "npm run build && npm run serve",
     "dev": "irfbrgr && vite",
-    "build": "node ../tools/copy-assets.js && npm run drop-dist && npm run routes && npm run language && npm run contributors && tsc && vite build && irfbrgf",
+    "build": "node tools/copy-assets.js && npm run drop-dist && npm run routes && npm run language && npm run contributors && tsc && vite build && irfbrgf",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint-fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "node ../tools/copy-assets.js && npm run tsc && node tools/data.js",
+    "build": "node tools/copy-assets.js && npm run tsc && node tools/data.js",
     "serve": "http-server ./dist -c-1 --proxy http://localhost:8080? --silent",
     "start": "npm run build && npm run serve",
     "spellcheck": "spellchecker",
