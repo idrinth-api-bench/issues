@@ -34,4 +34,5 @@ jobs:
             mindmap/package-lock.json
             package-lock.json
       - run: cd mindmap && npm ci
+      - run: cd mindmap && npm run assets
       - run: cd mindmap && npm run validate

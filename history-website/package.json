@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node tools/copy-assets.js && npm run language && vite build",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig tsconfig.json",
     "lint-md": "markdownlint *.md",
