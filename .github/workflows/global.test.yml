@@ -240,6 +240,33 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           flag-name: integration ${{ env.CURRENT_NODE_VERSION }}
+  framework-property:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
+        uses: actions/setup-node@v4.0.2
+        with:
+          node-version: ${{ env.CURRENT_NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
+      - run: cd framework && npm ci
+      - run: cd framework && npm run language
+      - run: cd framework && npm run property
+      - run: mv ./framework/coverage ./
+      - run: sed -i 's/SF:src/SF:framework\/src/' ./coverage/lcov.info
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel: true
+          flag-name: property ${{ env.CURRENT_NODE_VERSION }}
   documentation-website:
     runs-on: ubuntu-latest
     steps:
@@ -434,6 +461,7 @@ jobs:
       - documentation-e2e-5
       - mindmap-integration-current
       - mindmap-integration-previous
+      - framework-property
     steps:
     - name: Coveralls
       uses: coverallsapp/github-action@master

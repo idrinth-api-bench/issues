@@ -1,10 +1,10 @@
 {
   "require": ["mock-fs", "ts-node/register"],
-  "extension" : [".ts", ".tsx"],
+  "extension" : [".ts", ".tsx", "js"],
   "reporter": ["lcov", "text-summary"],
   "all": true,
   "sourceMap": true,
   "instrument": true,
   "exclude": [],
-  "include": ["src/**/*.ts", "tools/**/*.js"]
+  "include": ["src/**/*.ts", "tools/*.js"]
 }

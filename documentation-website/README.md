@@ -7,7 +7,7 @@ Website made using React to show the ideas behind the API benchmark implementati
 ## Installation
 
 ```bash
- npm install
+npm install
 ```
 
 ## Running the app
