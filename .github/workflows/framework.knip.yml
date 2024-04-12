@@ -23,7 +23,6 @@ on:
     - 'framework/**.svelte'
     - '.github/workflows/framework.knip.yml'
 env:
-  PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
 jobs:
   lint:

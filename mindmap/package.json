@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "node tools/data.js",
+    "build": "npm run tsc && node tools/data.js",
     "serve": "http-server ./dist -c-1 --proxy http://localhost:8080? --silent",
     "start": "npm run build && npm run serve",
     "spellcheck": "spellchecker",
@@ -11,7 +11,10 @@
     "lint-fix": "eslint . --ext .js,.ts,.cjs,.json,.tsx --fix",
     "lint-styles": "stylelint src/index.css",
     "lint-css": "ilcd",
-    "knip": "knip"
+    "knip": "knip",
+    "test": "c8 mocha test",
+    "tsc": "tsc -p tsconfig.json",
+    "validate": "node tools/validate.js"
   },
   "repository": {
     "type": "git",
@@ -20,21 +23,28 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "markmap-render": "^0.16.0",
-    "yaml": "^2.4.1",
+    "css-simple-minifier": "^2.0.0",
     "html-minifier": "^4.0.0",
     "http-server": "^14.1.1",
-    "css-simple-minifier": "^2.0.0",
-    "terser": "^5.30.0"
+    "markmap-render": "^0.16.0",
+    "terser": "^5.30.0",
+    "yaml": "^2.4.1"
   },
   "devDependencies": {
-    "knip": "^5.8.0",
-    "@types/node": "^20.12.2",
-    "eslint": "^8.57.0",
-    "spellchecker-cli": "^6.2.0",
     "@idrinth/duplicate-style-check": "^1.1.0",
+    "@types/node": "^20.12.2",
+    "chai": "^5.1.0",
+    "eslint": "^8.57.0",
+    "knip": "^5.8.0",
+    "mocha": "^10.4.0",
+    "spellchecker-cli": "^6.2.0",
     "stylelint": "^16.2.1",
-    "stylelint-config-standard": "^36.0.0"
+    "stylelint-config-standard": "^36.0.0",
+    "typescript": "^5.4.4",
+    "c8": "^9.1.0",
+    "ts-node": "^10.9.2",
+    "@types/mocha": "^10.0.6",
+    "@types/chai": "^4.3.14"
   },
   "engines": {
     "node": ">=20"

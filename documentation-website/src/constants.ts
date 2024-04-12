@@ -8,5 +8,5 @@ export const INITIAL_ZERO = 0;
 export const YOUTUBE_DEFAULT_WIDTH =560;
 export const YOUTUBE_DEFAULT_HEIGHT= 315;
 export const STRING_START = 0;
-export const STRING_PX_OFFSET = 3;
+export const STRING_PX_OFFSET = 2;
 export const EMPTY = 0;

@@ -26,7 +26,7 @@ children:
             children:
               - text: Idrinth
                 url: https://medium.com/@idrinth
-      - text: LinkedIN
+      - text: LinkedIn
         url: https://www.linkedin.com/groups/9588634/
         children:
           - text: Contributor shoutouts
@@ -67,6 +67,19 @@ children:
         - text: content testing/integration testing
         - text: stress testing (WIP)
           url: https://github.com/Idrinth/api-bench/issues/571
+        - text: Multi lingual
+          children:
+            - text: guaranteed
+              children:
+              - text: english
+              - text: german
+              - text: french
+            - text: likely
+              children:
+              - text: spanish
+              - text: hindi
+              - text: arabic
+              - text: portuguese
   - text: Challenges
     description: These are challenges we plan to overcome
     children:
@@ -242,6 +255,19 @@ children:
           - text: improve continuous integration
   - text: Design
     children:
+      - text: current
+        children:
+          - text: Documentation Website
+            image: website-screenshot.png
+            url: https://idrinth-api-ben.ch
+          - text: Mindmap
+          - text: Logo
+            image: iab.svg
+      - text: work in progress
+        children:
+          - text: Logo
+            image: new-logo.png
+          - text: History Website
       - text: requirements
         children:
           - text: dark mode
@@ -269,6 +295,12 @@ children:
           - text: scripting knowledge good enough to configure framework
           - text: likely looking to configure the framework deeply
           - text: sometimes desires code generation
+          - text: priorities (linkedin survey)
+            children:
+              - text: documentation (48%)
+              - text: available support (23%)
+              - text: type(hints) (18%)
+              - text: code generation (11%)
       - text: Quality Assurance Engineer
         children:
           - text: scripting knowledge usually sufficient to configure framework
