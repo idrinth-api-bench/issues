@@ -26,39 +26,39 @@ const FaqItem = ({
   };
 
   return (
-      <li
-        tabIndex={index + ONE}
-        onKeyDown={handleKeyDown}
-        className={'faq-item'}
-        aria-expanded={isOpen}
-        role="button"
-        onClick={() => toggleOpen()}
-      >
-        <div className="accordion-section">
-          <h2>
-            {
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-              // @ts-expect-error
-              <Lang lnkey={`faq.questions.title_${ index + ONE }`} />
-            }
-          </h2>
-          {isOpen ?
-            <span className="up-arrow"></span>
-            :
-            <span className="down-arrow"></span>
-          }
-        </div>
-      {isOpen &&
-        <p>
+    <li
+      tabIndex={index + ONE}
+      onKeyDown={handleKeyDown}
+      className={'faq-item'}
+      aria-expanded={isOpen}
+      role="button"
+      onClick={() => toggleOpen()}
+    >
+      <div className="accordion-section">
+        <h2>
           {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-expect-error
-            <Lang lnkey={`faq.questions.description_${ index + ONE }`} />
+            <Lang lnkey={`faq.questions.title_${ index + ONE }`} />
           }
-        </p>
-      }
-    </li>
-  );
+        </h2>
+        {isOpen ?
+          <span className="up-arrow"></span>
+          :
+          <span className="down-arrow"></span>
+        }
+      </div>
+    {isOpen &&
+      <p>
+        {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-expect-error
+          <Lang lnkey={`faq.questions.description_${ index + ONE }`} />
+        }
+      </p>
+    }
+  </li>
+);
 };
 
 export default FaqItem;
