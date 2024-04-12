@@ -9,7 +9,7 @@ import {
 
 const target = '/assets';
 
-for (const file of readdirSync(process.cwd() + '/../assets',)) {
+for (const file of readdirSync(process.cwd() + '/../assets', 'utf8',)) {
   if (! existsSync(process.cwd() + target,)) {
     mkdirSync(process.cwd() + target,);
   }
