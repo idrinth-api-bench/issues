@@ -14,7 +14,7 @@
   "scripts": {
     "start": "npm run build && npm run serve",
     "dev": "irfbrgr && vite",
-    "build": "node tools/copy-assets.js && npm run drop-dist && npm run routes && npm run language && npm run contributors && tsc && vite build && irfbrgf",
+    "build": "npm run assets && npm run drop-dist && npm run routes && npm run language && npm run contributors && tsc && vite build && irfbrgf",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint-fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",
@@ -32,7 +32,8 @@
     "pure-build": "npm run drop-dist && npm run routes && npm run language && tsc && vite build && irfbrgf",
     "drop-dist": "node tools/drop-dist.js",
     "spellcheck": "itlfy dump && spellchecker",
-    "knip": "knip"
+    "knip": "knip",
+    "assets": "node tools/copy-assets.js"
   },
   "dependencies": {
     "@fontsource/roboto": "^5.0.12",
