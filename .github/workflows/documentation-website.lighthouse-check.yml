@@ -9,7 +9,7 @@ on:
       - 'documentation-website/**.js'
       - 'documentation-website/**.cjs'
       - 'documentation-website/package-lock.json'
-      - '.github/workflows/documentation-website.codeql.yml'
+      - '.github/workflows/documentation-website.lighthouse-check.yml'
   pull_request:
     branches:
     - master
@@ -19,7 +19,7 @@ on:
       - 'documentation-website/**.js'
       - 'documentation-website/**.cjs'
       - 'documentation-website/package-lock.json'
-      - '.github/workflows/documentation-website.codeql.yml'
+      - '.github/workflows/documentation-website.lighthouse-check.yml'
 env:
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
 jobs:
@@ -50,5 +50,5 @@ jobs:
           history-website/package-lock.json
           cli/package-lock.json
           package-lock.json
-    - run: cd documentation-website && npm run dev
+    - run: cd documentation-website && npm run start
     - run: cd documentation-website && npm run lighthouse
