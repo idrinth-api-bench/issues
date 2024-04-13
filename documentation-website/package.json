@@ -71,7 +71,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "http-server": "^14.1.1",
-    "jsonpath": "^1.1.1",
     "knip": "^5.8.0",
     "lighthouse": "^11.7.1",
     "markdownlint-cli": "^0.39.0",
