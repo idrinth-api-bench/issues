@@ -50,5 +50,5 @@ jobs:
           history-website/package-lock.json
           cli/package-lock.json
           package-lock.json
-    - run: cd documentation-website && npm run start
-    - run: cd documentation-website && npm run lighthouse
+    - run: cd documentation-website && npm install
+    - run: cd documentation-website && npm run ci-lighthouse
