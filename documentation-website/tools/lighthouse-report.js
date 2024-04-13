@@ -38,7 +38,7 @@ try {
     if (! devMetricScore) {
       throw new Error(
         // eslint-disable-next-line max-len
-        `Failure in fetching metric score for current site, found ${ metricField.name } to be null`,
+        `Failure in fetching metric score for current site, found ${ metricField } to be null`,
       );
     }
 
@@ -46,7 +46,7 @@ try {
       // eslint-disable-next-line no-console
       console.error(
         // eslint-disable-next-line max-len
-        `${ metricField.name } score reduced to ${ devMetricScore } from ${ prodMetricScore }`,
+        `${ metricField } score reduced to ${ devMetricScore } from ${ prodMetricScore }`,
       );
       process.exitCode = EXIT_FAILURE;
     }
@@ -56,3 +56,5 @@ try {
   console.error(err,);
   process.exitCode = EXIT_FAILURE;
 }
+
+process.exit();
