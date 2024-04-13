@@ -114,7 +114,7 @@ html = html
     '</div>' +
     '<div id=iab>' +
     `<a href=https://idrinth-api-ben.ch/ ${ attributes }>` +
-    '<img src=../assets/iab.svg alt="@idrinth/api-bench" />' +
+    '<img src=iab.svg alt="@idrinth/api-bench" />' +
     '</a>' +
     '</div>$1',
   );
