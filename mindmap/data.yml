@@ -56,8 +56,8 @@ children:
         - text: reusable route definitions
       - text: business/company support options
         children:
-        - text: payed support via Björn Büttner
-        - text: payed training via Björn Büttner
+        - text: paid support via Björn Büttner
+        - text: paid training via Björn Büttner
       - text: core features
         children:
         - text: monitoring solution (WIP)
@@ -120,7 +120,7 @@ children:
                 children:
                   - text: paywalled distributed testing
                   - text: test definitions in java/kotlin/scala
-                  - text: steep learning
+                  - text: steep learning curve
                   - text: incomplete documentation
               - text: shared features
                 children:
@@ -142,7 +142,7 @@ children:
                 children:
                   - text: limited customization
                   - text: small user base
-                  - text: payed tool
+                  - text: paid tool
               - text: shared features
                 children:
                   - text: low code
@@ -151,7 +151,7 @@ children:
           - text: NeoLoad
             url: https://www.tricentis.com/products/performance-testing-neoload
             children:
-              - text: text types
+              - text: test types
                 children:
                   - text: load testing
                   - text: stress testing
@@ -263,8 +263,8 @@ children:
               - text: shared features
                 children:
                   - text: reporting
-                  - text: payed support option
-                  - text: payed training option
+                  - text: paid support option
+                  - text: paid training option
           - text: api-benchmark
             url: https://github.com/matteofigus/api-benchmark
             children:
