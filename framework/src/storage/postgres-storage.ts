@@ -12,7 +12,7 @@ const project: string = reqlib
   .name.replace(/[^a-z0-9\-_]/gu, '_',);
 
 export class PostgresStorage implements Storage {
-  private connection: postgres.Sql<{}>;
+  private connection: postgres.Sql<Record<string, unknown>>;
 
   // eslint-disable-next-line max-params
   constructor(
@@ -22,15 +22,13 @@ export class PostgresStorage implements Storage {
     user: string = 'idrinth-api-bench',
     database: string = 'idrinth-api-bench',
   ) {
-    this.connection = postgres({
+    this.connection = postgres('', {
       host,
       user,
       password,
       database,
       port,
       max: 1,
-      idleTimeoutMillis: 30000,
-      connectionTimeoutMillis: 2000,
     });
     this.connection.unsafe(
       // eslint-disable-next-line max-len
