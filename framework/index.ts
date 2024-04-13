@@ -47,6 +47,9 @@ import {
   MssqlStorage as MSSQLS,
 } from './src/storage/mssql-storage.js';
 import {
+  PostgresStorage as PGSQL,
+} from './src/storage/postgres-storage.js';
+import {
   Job as J,
 } from './src/job.js';
 import {
@@ -74,6 +77,7 @@ export type DurationsTimeScaleReductionReportModifier = DTSRRM;
 export type Storage = S;
 export const MysqlStorage = MYSQLS;
 export const MssqlStorage = MSSQLS;
+export const PostgresStorage = PGSQL;
 export type Job = J;
 export type Task = T;
 export const internalReporter = iR;
