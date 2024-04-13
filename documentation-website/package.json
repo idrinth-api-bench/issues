@@ -33,8 +33,7 @@
     "drop-dist": "node tools/drop-dist.js",
     "spellcheck": "itlfy dump && spellchecker",
     "knip": "knip",
-    "lighthouse-ci": "npm run build && start-server-and-test serve http://localhost:8080 'node tools/lighthouse-report.js'",
-    "lighthouse": "node tools/lighthouse-report.js",
+    "lighthouse": "npm run build && start-server-and-test serve http://localhost:8080 'node tools/lighthouse-report.js'",
     "assets": "node tools/copy-assets.js"
   },
   "dependencies": {
