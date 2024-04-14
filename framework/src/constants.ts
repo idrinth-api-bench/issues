@@ -9,6 +9,9 @@ import {
   tmpdir,
 } from 'os';
 
+export const STARTED = new Date();
+export const FIRST_MATCH = 1;
+export const INDENTATION_SPACES = 2;
 export const EMPTY = 0;
 export const INITIAL_ZERO = 0;
 export const FIRST_ARGUMENT = 2;
