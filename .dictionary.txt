@@ -16,6 +16,7 @@ HAR
 Idrinth's
 JSON
 Javascript
+Jira
 LinkedIn
 Matomo
 Microservice
@@ -33,6 +34,13 @@ Roadmap
 SHA
 Web-UI
 XML
+XRAY_CLIENT_ID
+XRAY_CLIENT_SECRET
+XRAY_ENDPOINT
+XRAY_PASSWORD
+XRAY_TEST_PLAN_KEY
+XRAY_USER_NAME
+XRay
 aBc
 api-bench
 api-bench-cli
