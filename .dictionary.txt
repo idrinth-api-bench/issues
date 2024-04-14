@@ -9,6 +9,7 @@ Codacy
 Destructuring
 DockerHub
 Dockerfiles
+ENV
 Fastify
 Gitea
 Gitlab
@@ -18,6 +19,7 @@ JSON
 Javascript
 Jira
 LinkedIn
+MSSQL
 Matomo
 Microservice
 Middleware
@@ -28,6 +30,7 @@ Node.js
 OpenApi
 OpenSauced
 PascalCase
+Postgres
 README
 Reddit
 Roadmap
