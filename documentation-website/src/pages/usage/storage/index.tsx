@@ -11,6 +11,10 @@ const Storage = () => <Layout
     text={'storage.title'}
     level={'h1'}
   >storage.description</ContentUnit>
+  <ContentUnit
+    text={'storage.experimental.title'}
+    level={'h2'}
+  >storage.experimental.description</ContentUnit>
   <CodeUnit
     text={'storage.custom.title'}
     level={'h2'}
