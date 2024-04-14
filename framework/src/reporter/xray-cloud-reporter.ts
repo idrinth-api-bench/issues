@@ -6,10 +6,7 @@ import {
   INDENTATION_SPACES,
   STARTED,
 } from '../constants.js';
-
-const formatDate = (date: Date,) => date
-  .toISOString()
-  .replace(/\.[0-9]+Z$/u, '+00:00',);
+import formatDate from '../helper/format-date.js';
 
 // eslint-disable-next-line complexity
 const xray: Reporter = async(
