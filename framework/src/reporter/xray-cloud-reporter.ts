@@ -37,7 +37,7 @@ const xray: Reporter = async(
     },);
   }
   const token = await (await fetch(
-    process.env.XRAY_ENDPOINT + '/api/v2/autheticate',
+    process.env.XRAY_ENDPOINT + '/api/v2/authenticate',
     {
       method: 'POST',
       body: JSON.stringify({
