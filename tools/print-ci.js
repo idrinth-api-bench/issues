@@ -94,6 +94,9 @@ const handleFile = (file,) => {
   if (name === 'codeql') {
     delete jobs[type][name];
   }
+  if (type === 'cron') {
+    delete jobs[type];
+  }
 };
 
 for (const file of readdirSync(process.cwd() + '/.github/workflows',)) {
