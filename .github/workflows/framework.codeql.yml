@@ -50,8 +50,7 @@ jobs:
           history-website/package-lock.json
           cli/package-lock.json
           package-lock.json
-    - name: Build framework
-      run: cd framework && npm ci
+    - run: cd framework && npm ci
     - run: cd framework && npm run language
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
