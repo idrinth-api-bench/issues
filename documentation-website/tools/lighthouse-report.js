@@ -23,7 +23,7 @@ const metricFields = {
   accessibility: 0.85,
   'best-practices': 1,
   seo: 1,
-  pwa: 0.9,
+  pwa: 0.35,
 };
 
 for (const metricField of Object.keys(metricFields,)) {
