@@ -50,8 +50,7 @@ jobs:
           history-website/package-lock.json
           cli/package-lock.json
           package-lock.json
-    - name: Build root
-      run: npm ci
+    - run: npm ci
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
       with:
