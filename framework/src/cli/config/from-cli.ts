@@ -7,7 +7,6 @@ import {
 import Config from './config.js';
 import toValue from './to-value.js';
 
-// eslint-disable-next-line complexity
 export default (config: Config, args: string[],) => {
   const options = args.filter(
     (option,) => option.startsWith('--',)

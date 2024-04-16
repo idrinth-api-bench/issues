@@ -8,7 +8,6 @@ import {
 } from 'change-case';
 import toValue from './to-value.js';
 
-// eslint-disable-next-line complexity
 export default (config: Config, env: Hashmap,) => {
   for (const key of Object.keys(env,)) {
     if (key.startsWith('IAB_',)) {

@@ -8,7 +8,6 @@ import Config from './config.js';
 import fromEnv from './from-env.js';
 import fromCli from './from-cli.js';
 
-// eslint-disable-next-line complexity
 export default (cwd: string, args: string[], env: Hashmap,) => {
   const config: Config = {
     cwd,
