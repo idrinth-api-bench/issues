@@ -42,6 +42,7 @@ export const MONTH_OFFSET = 1;
 export const TEN = 10;
 export const ONE = 1;
 export const TWO = 2;
+export const FIVE = 5;
 export const NEXT = 1;
 export const CLI_OPTION_MIN_LENGTH = 3;
 export const STATUSCODE_SUCCESS = 0;
