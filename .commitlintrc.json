@@ -10,14 +10,16 @@
       "history-microservice",
       "history-website",
       "mindmap",
-      "tools"
+      "tools",
+      "containers"
     ]],
     "type-enum": [2, "always", [
       "bug",
       "feature",
       "refactor",
       "ci",
-      "build"
+      "build",
+      "documentation"
     ]],
     "signed-off-by": [0, "never"],
     "trailer-exists": [0, "never"],

@@ -30,7 +30,7 @@ translation:
   - changed-files:
       - any-glob-to-any-file:
           - '*/language/*.yml'
-research:
+mindmap:
   - changed-files:
       - any-glob-to-any-file:
           - mindmap/**/*

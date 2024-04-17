@@ -1,46 +1,21 @@
 /* eslint no-console: 0 */
 import {
-  CLI_OPTION_MIN_LENGTH,
-  FIRST_ARGUMENT,
-  FIRST,
-  SECOND,
   STATUSCODE_SUCCESS,
   STATUSCODE_FAILURE,
   ONE,
-  TWO,
-  BASE_10_RADIX, DEFAULT_THREADS, DEFAULT_REPETITIONS,
 } from '../constants.js';
 import resultStore from '../result-store.js';
 import run from '../main.js';
 import pkg from '../../package.json' with {
   type: 'json',
 };
-import Config from './config.js';
+import factory from './config/factory.js';
 
 // eslint-disable-next-line complexity
 export default async(args: string[], cwd: string,): Promise<number> => {
-  const options = args.filter(
-    (option,) => option.startsWith('--',)
-      && option.length >= CLI_OPTION_MIN_LENGTH,
-  );
-  const config: Config = {
-    cwd,
-    threads: DEFAULT_THREADS,
-    repetitions: DEFAULT_REPETITIONS,
-  };
-  for (const option of options) {
-    const parts = option.split('=',);
-    if (parts.length === TWO) {
-      config[parts[FIRST]] = parts[SECOND].match(/^\d+$/u,)
-        ? Number.parseInt(parts[SECOND], BASE_10_RADIX,)
-        : parts[SECOND];
-    }
-  }
-  const task = args.filter(
-    (arg,) => ! arg.startsWith('--',),
-  )[FIRST_ARGUMENT] || 'help';
+  const config = factory(cwd, args, process.env,);
   resultStore.set(false,);
-  switch (task) {
+  switch (config.task) {
     case 'bench':
       await run({
         mode: 'benchmarking',
