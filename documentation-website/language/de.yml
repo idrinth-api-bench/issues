@@ -65,8 +65,8 @@ home:
     title: "Startseite"
     description: "Willkommen in der Dokumentation für das Framework @idrinth/api-bench"
   title: "Was macht das Projekt?"
-  what: "Dieses Pojektbietet ein Framework zur Überprüfung von REST-APIs und Websites auf Änderungen der Antwortzeilen"
-  why:"Dies hilft dabei, Leistungsänderungen im code schnell und einfach zu erkennen"
+  what: "Dieses Pojekt bietet ein Framework zur Überprüfung von REST-APIs und Websites auf Änderungen der Antwortzeilen"
+  why:"Dies hilft dabei, Leistungsänderungen im Code schnell und einfach zu erkennen"
   benchmark:
     title: "Warum einen benschmakr-Runner verwenden?"
     microservices: "Angesichts der zunehmenden Anzahl von APIs durch den Wechsel zu Mikroservices müssen wir herausfinden, ob Änderungen an den Antwortzeiten eines Dienstes mit Codeänderungen zusammenhängen."
