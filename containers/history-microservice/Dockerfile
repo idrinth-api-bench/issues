@@ -1,7 +1,7 @@
 ARG BUILD_VERSION
 
 FROM idrinth/api-bench-build:${BUILD_VERSION} AS build
-FROM nginx:stable-alpine3.17-slim AS nginx
+FROM node:21.7.2-alpine AS node
 
 ARG BUILD_VERSION
 ARG BUILD_TIME
@@ -9,8 +9,8 @@ ARG BUILD_HASH
 
 LABEL author="Björn 'Idrinth' Büttner"
 LABEL maintainer="webmaster@idrinth-api-ben.ch"
-LABEL org.label-schema.name="idrinth/api-bench/history-website"
-LABEL org.label-schema.description="A website prepared for monitoring api-bench results."
+LABEL org.label-schema.name="idrinth/api-bench/history-microservice"
+LABEL org.label-schema.description="A microservice prepared for monitoring api-bench results."
 LABEL org.label-schema.url="https://idrinth-api-ben.ch"
 LABEL org.label-schema.vcs-url="https://github.com/idrinth/api-bench"
 LABEL org.label-schema.version=$BUILD_VERSION
@@ -27,17 +27,15 @@ LABEL org.opencontainers.image.version=$BUILD_VERSION
 LABEL org.opencontainers.image.revision=$BUILD_HASH
 LABEL org.opencontainers.image.vendor="Björn 'Idrinth' Büttner"
 LABEL org.opencontainers.image.licenses="MIT"
-LABEL org.opencontainers.image.title="idrinth/api-bench/history-website"
-LABEL org.opencontainers.image.description="A website prepared for monitoring api-bench results."
+LABEL org.opencontainers.image.title="idrinth/api-bench/history-microservice"
+LABEL org.opencontainers.image.description="A microservice prepared for monitoring api-bench results."
 
 ENV IDRINTH_API_BENCH_VERSION=$BUILD_VERSION
 ENV IDRINTH_API_BENCH_BUILT=$BUILD_TIME
 
-COPY nginx.conf /etc/nginx/nginx.conf
-
-WORKDIR /var/www/html
-COPY --from=build /project/@idrinth/api-bench/history-website /var/www/html
+WORKDIR /project
+COPY --from=build /project/@idrinth/api-bench/history-microservice /project
 
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["node", "/project/index.js"]
