@@ -38,4 +38,4 @@ COPY --from=build /project/@idrinth/api-bench/history-microservice /project
 
 EXPOSE 80
 
-ENTRYPOINT ["node", “/project/index.js”]
+ENTRYPOINT ["node", "/project/index.js"]
