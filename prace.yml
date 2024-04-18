@@ -5,5 +5,5 @@ body:
   error: The body has to include an issue reference like `#0`
 branch:
   patterns:
-    - 'issue-\d+-.+'
+    - 'issue-\d{1,}-[a-z0-9-]+'
   error: Branch must be called `issue-{id}-{short description}`
