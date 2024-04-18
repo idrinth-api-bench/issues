@@ -8,8 +8,7 @@ jobs:
   conflibot:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - run: git fetch --all
+      - uses: actions/checkout@v4
       - name: Warn potential conflicts
         uses: wktk/conflibot@v1
         with:
