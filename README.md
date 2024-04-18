@@ -3,6 +3,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/Idrinth/api-bench/badge.svg?branch=master)](https://coveralls.io/github/Idrinth/api-bench?branch=master)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Idrinth_api-bench&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Idrinth_api-bench)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/3171affc728048da8df4fe36b6d4771e)](https://app.codacy.com/gh/Idrinth/api-bench/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+[![Code Factor](https://www.codefactor.io/repository/github/idrinth/api-bench/badge/master)](https://www.codefactor.io/repository/github/idrinth/api-bench/overview/master)
 
 | Tool |Version|
 |-|-|
@@ -62,11 +63,6 @@ You can find the documentation on the
 Additionally, we host the mindmap that assists the decision-making at the
 [Mindmap Website](https://mindmap.idrinth-api-ben.ch).
 
-## Slack
-
-[Join](https://join.slack.com/t/idrinth-api-bench/shared_invite/zt-2f4zmw2sz-c3etHzCFq3LtZpkR15xXMA)
-our Slack if you need help, want to connect or have questions.
-
 ## CI Images
 
 We have ready-to-be-used CI Images:
@@ -94,6 +90,12 @@ commands in order:
 Further information about contributing is available in the contribution
 guidelines [on the website](https://idrinth-api-ben.ch/contributing/) and
 [in the markdown file](/CONTRIBUTING.md).
+
+## Socials
+
+Please follow my socials to be updated on the project:
+
+[![idrinth Profile URL](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/~idrinth)&nbsp;&nbsp;&nbsp;&nbsp;[![LinkedIn URL](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/groups/9588634/)&nbsp;&nbsp;&nbsp;&nbsp;[![Slack URL](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)](https://idrinth-api-bench.slack.com/join/shared_invite/zt-2f4zmw2sz-c3etHzCFq3LtZpkR15xXMA#/shared-invite/email)
 
 ## Support
 

@@ -1,6 +1,10 @@
 import Reporter from './reporter.js';
 import Table from 'cli-table3';
 import FinishedRun from '../finished-run.js';
+import logSymbols from 'log-symbols';
+import {
+  EMPTY,
+} from '../constants.js';
 
 const cli: Reporter = (
   results: FinishedRun,
@@ -26,8 +30,11 @@ const cli: Reporter = (
   },);
   const formatter = new Intl.NumberFormat();
   for (const id of Object.getOwnPropertyNames(results,)) {
+    const symbol = results[id].errors > EMPTY
+      ? logSymbols.error
+      : logSymbols.success;
     table.push([
-      results[id].id,
+      symbol + ' ' +results[id].id,
       formatter.format(results[id].errors,),
       formatter.format(results[id].count,),
       formatter.format(results[id].avg100,),

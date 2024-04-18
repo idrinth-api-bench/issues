@@ -1,0 +1,54 @@
+name: documentation-website lighthouse check
+on:
+  push:
+    branches:
+    - master
+    paths:
+      - 'documentation-website/**.ts'
+      - 'documentation-website/**.tsx'
+      - 'documentation-website/**.js'
+      - 'documentation-website/**.cjs'
+      - 'documentation-website/package-lock.json'
+      - '.github/workflows/documentation-website.lighthouse-check.yml'
+  pull_request:
+    branches:
+    - master
+    paths:
+      - 'documentation-website/**.ts'
+      - 'documentation-website/**.tsx'
+      - 'documentation-website/**.js'
+      - 'documentation-website/**.cjs'
+      - 'documentation-website/package-lock.json'
+      - '.github/workflows/documentation-website.lighthouse-check.yml'
+env:
+  CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    permissions:
+      security-events: write
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: javascript-typescript
+        queries: security-and-quality
+        source-root: documentation-website
+    - name: Setup Node.js environment ${{ env.CURRENT_NODE_VERSION }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.CURRENT_NODE_VERSION }}
+        cache: 'npm'
+        cache-dependency-path: |
+          framework/package-lock.json
+          documentation-website/package-lock.json
+          history-microservice/package-lock.json
+          history-website/package-lock.json
+          cli/package-lock.json
+          package-lock.json
+    - run: cd documentation-website && npm install
+    - run: cd documentation-website && npm run lighthouse

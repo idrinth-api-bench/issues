@@ -23,7 +23,6 @@ on:
       - 'history-website/package-lock.json'
       - '.github/workflows/history-website.codeql.yml'
 env:
-  PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
 jobs:
   analyze:
@@ -53,8 +52,7 @@ jobs:
           history-website/package-lock.json
           cli/package-lock.json
           package-lock.json
-    - name: Build history website
-      run: cd history-website && npm ci
+    - run: cd history-website && npm ci
     - run: cd history-website && npm run language
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3

@@ -1,0 +1,19 @@
+name: Prace.js
+on:
+  pull_request:
+    branches:
+      - master
+    types:
+      - opened
+      - edited
+      - reopened
+
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: innerspacetrainings/Prace.js@master
+        with:
+          configuration-path: .github/prace.yml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

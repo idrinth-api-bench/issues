@@ -18,6 +18,13 @@ const getReplace = (index: number,) => {
 };
 
 const get = (key: languageKey, ...args: string[]): string => {
+  if ([
+    '__proto__',
+    'valueOf',
+    'toString',
+  ].includes(key,)) {
+    return '';
+  }
   let out = chosen[key] || en[key] || key;
   for (let pos = 0; pos < args.length; pos ++) {
     out = out.replace(getReplace(pos,), args[pos],);

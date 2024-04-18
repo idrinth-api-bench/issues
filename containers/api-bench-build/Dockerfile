@@ -1,4 +1,4 @@
-FROM node:21.7.2-alpine AS node
+FROM node:21.7.3-alpine AS node
 
 ARG BUILD_VERSION
 ARG BUILD_TIME
@@ -52,6 +52,7 @@ RUN npm ci \
     && (rm ./LICENSE || true) \
     && (rm -r ./typings || true) \
     && (rm -r ./integration || true) \
+    && (rm -r ./property || true) \
     && (rm -r ./test || true) \
     && (rm -r ./tools || true) \
     && (rm -r ./fixtures || true) \
