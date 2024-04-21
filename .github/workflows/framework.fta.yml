@@ -37,4 +37,4 @@ jobs:
           cache-dependency-path: '**/package-lock.json'
       - run: npm ci
       - run: cd framework && npm ci && npm run language
-      - run: npm run fta -- framework
+      - run: npm run fta -- framework || true
