@@ -1,15 +1,10 @@
 name: mindmap validate
 on:
-  push:
-    branches:
-    - master
-    paths:
-      - 'mindmap/data.yml'
-      - 'mindmap/assets/*'
-      - '.github/workflows/mindmap.validate.yml'
-  pull_request:
-    branches:
-    - master
+  workflow_run:
+    types:
+      - completed
+    workflows:
+      - NPM Cache
     paths:
       - 'mindmap/data.yml'
       - 'mindmap/assets/*'
@@ -25,14 +20,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-          cache: 'npm'
-          cache-dependency-path: |
-            framework/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
-            mindmap/package-lock.json
-            package-lock.json
+      - name: Restore Builds
+        id: cache-builds-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.npm
+          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
       - run: cd mindmap && npm ci
       - run: cd mindmap && npm run assets
       - run: cd mindmap && npm run validate

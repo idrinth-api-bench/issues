@@ -1,6 +1,6 @@
 name: conflibot
 on:
-  pull_request_target:
+  pull_request:
     branches:
       - master
 
@@ -8,9 +8,9 @@ jobs:
   conflibot:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Warn potential conflicts
-        uses: wktk/conflibot@v1
+        uses: idrinth/conflibot@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           exclude: |

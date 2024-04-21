@@ -1,0 +1,59 @@
+name: NPM Cache
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+concurrency:
+  group: 'preparation'
+env:
+  CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
+jobs:
+  prepare:
+    name: Build full npm cache
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js environment ${{ env.CURRENT_NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.CURRENT_NODE_VERSION }}
+      - name: Restore Builds
+        id: cache-builds-restore
+        uses: actions/cache/restore@v4
+        with:
+          lookup-only: true
+          path: ~/.npm
+          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
+      - name: Build root
+        if: steps.cache-builds-restore.outputs.cache-hit != 'true'
+        run: npm ci
+      - name: Build documentation website
+        if: steps.cache-builds-restore.outputs.cache-hit != 'true'
+        run: cd documentation-website && npm ci
+      - name: Build history website
+        if: steps.cache-builds-restore.outputs.cache-hit != 'true'
+        run: cd history-website && npm ci
+      - name: Build history service
+        if: steps.cache-builds-restore.outputs.cache-hit != 'true'
+        run: cd history-microservice && npm ci
+      - name: Build framework
+        if: steps.cache-builds-restore.outputs.cache-hit != 'true'
+        run: cd framework && npm ci
+      - name: Build cli
+        run: cd cli && npm ci
+        if: steps.cache-builds-restore.outputs.cache-hit != 'true'
+      - name: Build mindmap
+        if: steps.cache-builds-restore.outputs.cache-hit != 'true'
+        run: cd mindmap && npm ci
+      - name: Save Builds
+        if: steps.cache-builds-restore.outputs.cache-hit != 'true'
+        id: cache-builds-save
+        uses: actions/cache/save@v4
+        with:
+          path: ~/.npm
+          key: ${{ steps.cache-builds-restore.outputs.cache-primary-key }}
