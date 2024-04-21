@@ -1,3 +1,4 @@
+name: NPM Cache
 on:
   push:
     branches:
