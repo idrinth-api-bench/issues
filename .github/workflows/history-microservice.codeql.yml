@@ -1,18 +1,10 @@
 name: history-microservice CodeQL
 on:
-  push:
-    branches:
-    - master
-    paths:
-      - 'history-microservice/**.ts'
-      - 'history-microservice/**.tsx'
-      - 'history-microservice/**.js'
-      - 'history-microservice/**.cjs'
-      - 'history-microservice/package-lock.json'
-      - '.github/workflows/history-microservice.codeql.yml'
-  pull_request:
-    branches:
-    - master
+  workflow_run:
+    types:
+      - completed
+    workflows:
+      - NPM Cache
     paths:
       - 'history-microservice/**.ts'
       - 'history-microservice/**.tsx'
@@ -42,7 +34,7 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ env.CURRENT_NODE_VERSION }}
-    - name: Wait for cache to be build
+    - name: Wait for cache to be built
       uses: lewagon/wait-on-check-action@v1.3.4
       with:
         ref: ${{ github.ref }}

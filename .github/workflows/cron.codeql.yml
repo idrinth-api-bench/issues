@@ -37,7 +37,7 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ env.CURRENT_NODE_VERSION }}
-    - name: Wait for cache to be build
+    - name: Wait for cache to be built
       uses: lewagon/wait-on-check-action@v1.3.4
       with:
         ref: ${{ github.ref }}

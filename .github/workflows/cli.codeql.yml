@@ -1,18 +1,10 @@
 name: cli CodeQL
 on:
-  push:
-    branches:
-    - master
-    paths:
-      - 'cli/**.ts'
-      - 'cli/**.tsx'
-      - 'cli/**.js'
-      - 'cli/**.cjs'
-      - 'cli/package-lock.json'
-      - '.github/workflows/cli.codeql.yml'
-  pull_request:
-    branches:
-    - master
+  workflow_run:
+    types:
+      - completed
+    workflows:
+      - NPM Cache
     paths:
       - 'cli/**.ts'
       - 'cli/**.tsx'
@@ -42,7 +34,7 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ env.CURRENT_NODE_VERSION }}
-    - name: Wait for cache to be build
+    - name: Wait for cache to be built
       uses: lewagon/wait-on-check-action@v1.3.4
       with:
         ref: ${{ github.ref }}

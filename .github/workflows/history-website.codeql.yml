@@ -1,19 +1,10 @@
 name: history-website CodeQL
 on:
-  push:
-    branches:
-    - master
-    paths:
-      - 'history-website/**.ts'
-      - 'history-website/**.tsx'
-      - 'history-website/**.js'
-      - 'history-website/**.cjs'
-      - 'history-website/**.svelte'
-      - 'history-website/package-lock.json'
-      - '.github/workflows/history-website.codeql.yml'
-  pull_request:
-    branches:
-    - master
+  workflow_run:
+    types:
+      - completed
+    workflows:
+      - NPM Cache
     paths:
       - 'history-website/**.ts'
       - 'history-website/**.tsx'
@@ -44,7 +35,7 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ env.CURRENT_NODE_VERSION }}
-    - name: Wait for cache to be build
+    - name: Wait for cache to be built
       uses: lewagon/wait-on-check-action@v1.3.4
       with:
         ref: ${{ github.ref }}

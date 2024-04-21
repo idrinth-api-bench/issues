@@ -1,15 +1,10 @@
 name: Spellcheck
 on:
-  push:
-    branches:
-    - master
-    paths:
-    - '**.md'
-    - 'package-lock.json'
-    - '.github/workflows/spellcheck.yml'
-  pull_request:
-    branches:
-    - master
+  workflow_run:
+    types:
+      - completed
+    workflows:
+      - NPM Cache
     paths:
     - '**.md'
     - 'package-lock.json'
@@ -27,7 +22,7 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ env.CURRENT_NODE_VERSION }}
-    - name: Wait for cache to be build
+    - name: Wait for cache to be built
       uses: lewagon/wait-on-check-action@v1.3.4
       with:
         ref: ${{ github.ref }}

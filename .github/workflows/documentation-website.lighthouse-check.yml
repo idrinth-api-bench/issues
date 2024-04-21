@@ -1,18 +1,10 @@
 name: documentation-website lighthouse check
 on:
-  push:
-    branches:
-    - master
-    paths:
-      - 'documentation-website/**.ts'
-      - 'documentation-website/**.tsx'
-      - 'documentation-website/**.js'
-      - 'documentation-website/**.cjs'
-      - 'documentation-website/package-lock.json'
-      - '.github/workflows/documentation-website.lighthouse-check.yml'
-  pull_request:
-    branches:
-    - master
+  workflow_run:
+    types:
+      - completed
+    workflows:
+      - NPM Cache
     paths:
       - 'documentation-website/**.ts'
       - 'documentation-website/**.tsx'
@@ -42,7 +34,7 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ env.CURRENT_NODE_VERSION }}
-    - name: Wait for cache to be build
+    - name: Wait for cache to be built
       uses: lewagon/wait-on-check-action@v1.3.4
       with:
         ref: ${{ github.ref }}

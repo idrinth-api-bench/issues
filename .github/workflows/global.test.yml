@@ -1,18 +1,10 @@
 name: TEST
 on:
-  push:
-    branches:
-    - master
-    paths:
-    - '**.ts'
-    - '**.tsx'
-    - '**.js'
-    - '**.cjs'
-    - '**.json'
-    - '.github/workflows/test.yml'
-  pull_request:
-    branches:
-    - master
+  workflow_run:
+    types:
+      - completed
+    workflows:
+      - NPM Cache
     paths:
     - '**.ts'
     - '**.tsx'
@@ -32,13 +24,6 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.PREVIOUS_NODE_VERSION }}
-      - name: Wait for cache to be build
-        uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: ${{ github.ref }}
-          check-name: 'Build full npm cache'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
       - name: Restore Builds
         id: cache-builds-restore
         uses: actions/cache/restore@v4
@@ -64,13 +49,6 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Wait for cache to be build
-        uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: ${{ github.ref }}
-          check-name: 'Build full npm cache'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
       - name: Restore Builds
         id: cache-builds-restore
         uses: actions/cache/restore@v4
@@ -96,13 +74,6 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.PREVIOUS_NODE_VERSION }}
-      - name: Wait for cache to be build
-        uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: ${{ github.ref }}
-          check-name: 'Build full npm cache'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
       - name: Restore Builds
         id: cache-builds-restore
         uses: actions/cache/restore@v4
@@ -128,13 +99,6 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Wait for cache to be build
-        uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: ${{ github.ref }}
-          check-name: 'Build full npm cache'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
       - name: Restore Builds
         id: cache-builds-restore
         uses: actions/cache/restore@v4
@@ -160,13 +124,6 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.PREVIOUS_NODE_VERSION }}
-      - name: Wait for cache to be build
-        uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: ${{ github.ref }}
-          check-name: 'Build full npm cache'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
       - name: Restore Builds
         id: cache-builds-restore
         uses: actions/cache/restore@v4
@@ -192,13 +149,6 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Wait for cache to be build
-        uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: ${{ github.ref }}
-          check-name: 'Build full npm cache'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
       - name: Restore Builds
         id: cache-builds-restore
         uses: actions/cache/restore@v4
@@ -224,13 +174,6 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.PREVIOUS_NODE_VERSION }}
-      - name: Wait for cache to be build
-        uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: ${{ github.ref }}
-          check-name: 'Build full npm cache'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
       - name: Restore Builds
         id: cache-builds-restore
         uses: actions/cache/restore@v4
@@ -256,13 +199,6 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Wait for cache to be build
-        uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: ${{ github.ref }}
-          check-name: 'Build full npm cache'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
       - name: Restore Builds
         id: cache-builds-restore
         uses: actions/cache/restore@v4
@@ -288,13 +224,6 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Wait for cache to be build
-        uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: ${{ github.ref }}
-          check-name: 'Build full npm cache'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
       - name: Restore Builds
         id: cache-builds-restore
         uses: actions/cache/restore@v4
@@ -320,13 +249,6 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Wait for cache to be build
-        uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: ${{ github.ref }}
-          check-name: 'Build full npm cache'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
       - name: Restore Builds
         id: cache-builds-restore
         uses: actions/cache/restore@v4
@@ -356,13 +278,6 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Wait for cache to be build
-        uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: ${{ github.ref }}
-          check-name: 'Build full npm cache'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
       - name: Restore Builds
         id: cache-builds-restore
         uses: actions/cache/restore@v4
@@ -391,13 +306,6 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Wait for cache to be build
-        uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: ${{ github.ref }}
-          check-name: 'Build full npm cache'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
       - name: Restore Builds
         id: cache-builds-restore
         uses: actions/cache/restore@v4
@@ -426,13 +334,6 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Wait for cache to be build
-        uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: ${{ github.ref }}
-          check-name: 'Build full npm cache'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
       - name: Restore Builds
         id: cache-builds-restore
         uses: actions/cache/restore@v4
@@ -461,13 +362,6 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Wait for cache to be build
-        uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: ${{ github.ref }}
-          check-name: 'Build full npm cache'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
       - name: Restore Builds
         id: cache-builds-restore
         uses: actions/cache/restore@v4
@@ -496,13 +390,6 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Wait for cache to be build
-        uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: ${{ github.ref }}
-          check-name: 'Build full npm cache'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
       - name: Restore Builds
         id: cache-builds-restore
         uses: actions/cache/restore@v4
