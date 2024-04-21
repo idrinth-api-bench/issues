@@ -33,16 +33,36 @@ export default (args: string[], cwd: string,) => {
   }
   const bar = new SingleBar({
     stopOnComplete: true,
-    clearOnComplete: true,
+    format: 'progress [{bar}] {value}/{total} {task}',
   },);
+  const mkdir = (path: string,) => {
+    bar.update({
+      task: `Creating ${ path }`,
+    },);
+    mkdirSync(root + path,);
+  };
+  const write = (path: string, data: string) => {
+    bar.update({
+      task: `Creating ${ path }`,
+    },);
+    writeFileSync(root + '/package.json', data, 'utf8',);
+  };
+  const exec = (command: string) => {
+    bar.update({
+      task: `executing '${ command }'`,
+    },);
+    execSync(command, {
+      cwd: root,
+    },);
+  };
   const tasks = [
-    () => mkdirSync(root,),
-    () => mkdirSync(root + '/src',),
-    () => mkdirSync(root + '/test',),
-    () => mkdirSync(root + '/src/routes',),
-    () => mkdirSync(root + '/src/routes/main',),
-    () => mkdirSync(root + '/src/routes/before',),
-    () => writeFileSync(root + '/package.json', JSON.stringify({
+    () => mkdir('',),
+    () => mkdir('/src',),
+    () => mkdir('/test',),
+    () => mkdir('/src/routes',),
+    () => mkdir('/src/routes/main',),
+    () => mkdir('/src/routes/before',),
+    () => write('/package.json', JSON.stringify({
       name,
       private: true,
       type: 'module',
@@ -57,6 +77,8 @@ export default (args: string[], cwd: string,) => {
         c8: '^8.0.1',
         eslint: '^8.55.0',
         'eslint-plugin-json': '^3.1.0',
+        '@typescript-eslint/eslint-plugin': '^7.0.0',
+        '@typescript-eslint/parser': '^7.0.0',
       },
       scripts: {
         start: 'tsc -p tsconfig.json && run-benchmark',
@@ -271,8 +293,11 @@ export default (args: string[], cwd: string,) => {
       'parserOptions:\n' +
       '  ecmaVersion: 2018\n'
       ,),
-    () => writeFileSync(
-      root + '/.editorconfig',
+    () => write('/test/.eslintrc.yml', 'env:\n' +
+      '  mocha: true\n'
+      ,),
+    () => write(
+      '/.editorconfig',
       'root = true\n' +
       '\n' +
       '[*]\n' +
@@ -282,8 +307,8 @@ export default (args: string[], cwd: string,) => {
       'indent_style = space\n' +
       'indent_size = 2\n',
     ),
-    () => writeFileSync(
-      root + '/.mocharc.cjs',
+    () => write(
+      '/.mocharc.cjs',
       'module.exports = {\n' +
       '  recursive: true,\n' +
       '  extension: [\n' +
@@ -296,8 +321,8 @@ export default (args: string[], cwd: string,) => {
       '  parallel: false\n' +
       '}',
     ),
-    () => writeFileSync(
-      root + '/.nycrc.json',
+    () => write(
+      '/.nycrc.json',
       '{\n' +
       '  "require": ["ts-node/register"],\n' +
       '  "extension" : [".ts", ".tsx"],\n' +
@@ -309,16 +334,15 @@ export default (args: string[], cwd: string,) => {
       '  "include": ["src/**/*.ts"]\n' +
       '}\n',
     ),
-    () => execSync('npm install', {
-      cwd: root,
-    },),
-    () => execSync('git init --initial-branch=master', {
-      cwd: root,
-    },),
+    () => exec('npm install',),
+    () => exec('git init --initial-branch=master',),
   ];
   bar.start(tasks.length, EMPTY,);
   for (const task of tasks) {
     task();
+    bar.update({
+      task: '',
+    },);
     bar.increment();
   }
 };
