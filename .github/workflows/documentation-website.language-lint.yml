@@ -45,7 +45,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           sha: ${{ steps.sharef.outputs.sha }}
           repo: ${{ steps.reporef.outputs.ref }}
-          allowForks: true
           status: pending
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
@@ -65,7 +64,6 @@ jobs:
         if: always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          allowForks: true
           status: ${{ job.status }}
           repo: ${{ steps.reporef.outputs.ref }}
           sha: ${{ steps.sharef.outputs.sha }}
