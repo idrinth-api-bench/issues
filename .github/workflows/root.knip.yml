@@ -34,12 +34,6 @@ jobs:
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: |
-            framework/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
-            tools/package-lock.json
-            package-lock.json
+          cache-dependency-path: '**/package-lock.json'
       - run: npm ci
       - run: npm run knip

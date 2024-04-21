@@ -33,13 +33,7 @@ jobs:
         with:
           node-version: ${{ env.PREVIOUS_NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: |
-            framework/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
-            cli/package-lock.json
-            package-lock.json
+          cache-dependency-path: '**/package-lock.json'
       - run: cd mindmap && npm ci
       - run: cd mindmap && npm run test
       - run: mv ./mindmap/coverage ./
@@ -60,13 +54,7 @@ jobs:
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: |
-            framework/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
-            cli/package-lock.json
-            package-lock.json
+          cache-dependency-path: '**/package-lock.json'
       - run: cd mindmap && npm ci
       - run: cd mindmap && npm run test
       - run: mv ./mindmap/coverage ./
@@ -87,13 +75,7 @@ jobs:
         with:
           node-version: ${{ env.PREVIOUS_NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: |
-            framework/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
-            cli/package-lock.json
-            package-lock.json
+          cache-dependency-path: '**/package-lock.json'
       - run: cd framework && npm ci
       - run: cd framework && npm run language
       - run: cd framework && npm run test
@@ -114,13 +96,7 @@ jobs:
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: |
-            framework/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
-            cli/package-lock.json
-            package-lock.json
+          cache-dependency-path: '**/package-lock.json'
       - run: cd framework && npm ci
       - run: cd framework && npm run language
       - run: cd framework && npm run test
@@ -141,13 +117,7 @@ jobs:
         with:
           node-version: ${{ env.PREVIOUS_NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: |
-            framework/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
-            cli/package-lock.json
-            package-lock.json
+          cache-dependency-path: '**/package-lock.json'
       - run: cd cli && npm ci
       - run: cd cli && npm run language
       - run: cd cli && npm run test
@@ -168,13 +138,7 @@ jobs:
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: |
-            framework/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
-            cli/package-lock.json
-            package-lock.json
+          cache-dependency-path: '**/package-lock.json'
       - run: cd cli && npm ci
       - run: cd cli && npm run language
       - run: cd cli && npm run test
@@ -195,13 +159,7 @@ jobs:
         with:
           node-version: ${{ env.PREVIOUS_NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: |
-            framework/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
-            cli/package-lock.json
-            package-lock.json
+          cache-dependency-path: '**/package-lock.json'
       - run: cd framework && npm ci
       - run: cd framework && npm run language
       - run: cd framework && npm run integration
@@ -222,13 +180,7 @@ jobs:
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: |
-            framework/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
-            cli/package-lock.json
-            package-lock.json
+          cache-dependency-path: '**/package-lock.json'
       - run: cd framework && npm ci
       - run: cd framework && npm run language
       - run: cd framework && npm run integration
@@ -249,13 +201,7 @@ jobs:
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: |
-            framework/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
-            cli/package-lock.json
-            package-lock.json
+          cache-dependency-path: '**/package-lock.json'
       - run: cd framework && npm ci
       - run: cd framework && npm run language
       - run: cd framework && npm run property
@@ -276,13 +222,7 @@ jobs:
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: |
-            framework/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
-            cli/package-lock.json
-            package-lock.json
+          cache-dependency-path: '**/package-lock.json'
       - run: cd documentation-website && npm ci
       - run: cd documentation-website && npm run language
       - run: cd documentation-website && npm run assets
@@ -307,13 +247,7 @@ jobs:
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: |
-            framework/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
-            cli/package-lock.json
-            package-lock.json
+          cache-dependency-path: '**/package-lock.json'
       - run: cd documentation-website && npm ci
       - run: cd documentation-website && npm run language
       - run: cd documentation-website && npm run e2e
@@ -337,13 +271,7 @@ jobs:
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: |
-            framework/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
-            cli/package-lock.json
-            package-lock.json
+          cache-dependency-path: '**/package-lock.json'
       - run: cd documentation-website && npm ci
       - run: cd documentation-website && npm run language
       - run: cd documentation-website && npm run e2e
@@ -367,13 +295,7 @@ jobs:
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: |
-            framework/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
-            cli/package-lock.json
-            package-lock.json
+          cache-dependency-path: '**/package-lock.json'
       - run: cd documentation-website && npm ci
       - run: cd documentation-website && npm run language
       - run: cd documentation-website && npm run e2e
@@ -397,13 +319,7 @@ jobs:
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: |
-            framework/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
-            cli/package-lock.json
-            package-lock.json
+          cache-dependency-path: '**/package-lock.json'
       - run: cd documentation-website && npm ci
       - run: cd documentation-website && npm run language
       - run: cd documentation-website && npm run e2e
@@ -427,13 +343,7 @@ jobs:
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: |
-            framework/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
-            cli/package-lock.json
-            package-lock.json
+          cache-dependency-path: '**/package-lock.json'
       - run: cd documentation-website && npm ci
       - run: cd documentation-website && npm run language
       - run: cd documentation-website && npm run e2e
