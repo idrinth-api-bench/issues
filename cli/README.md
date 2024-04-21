@@ -29,7 +29,6 @@ information.
 
 As usual with my projects this is MIT-licensed.
 
-
 ## Socials
 
 Additionally, to support requests via GitHub issue, you can reach us via
