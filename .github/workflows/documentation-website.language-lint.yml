@@ -14,6 +14,24 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
+      - name: Recognize sha ref
+        id: sharef
+        run: |
+          if [ "$EVENT" == 'pull_request' ]
+          then
+            echo "::set-output name=sha::$(echo ${{github.event.pull_request.head.sha}})"
+          elif [ "$EVENT" == 'workflow_run' ]
+          then
+            echo "::set-output name=sha::$(echo ${{github.event.workflow_run.head_sha}})"
+          else
+            echo "::set-output name=sha::$(echo $GITHUB_SHA)"
+          fi
+      - name: Set commit status as pending
+        uses: myrotvorets/set-commit-status-action@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          sha: ${{ steps.sharef.outputs.sha }}
+          status: pending
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
         uses: actions/setup-node@v4
@@ -27,3 +45,11 @@ jobs:
           key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
       - run: npm ci
       - run: npm run check-language -- documentation-website
+      - name: Set final commit status
+        uses: myrotvorets/set-commit-status-action@master
+        if: always()
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: ${{ job.status }}
+          context: Publish NPM package
+          sha: ${{ steps.sharef.outputs.sha }}
