@@ -106,16 +106,16 @@ export default (args: string[], cwd: string,) => {
         },
       },
     }, null, INDENTATION_SPACES,),),
-    () => writeFileSync(root + '/.idrinth-api-bench.yml', 'benchmarking: []\n' +
+    () => write('/.idrinth-api-bench.yml', 'benchmarking: []\n' +
       'load-testing: []\n' +
       'content-testing: []\n',),
-    () => writeFileSync(root + '/.gitignore', '/nbproject\n' +
+    () => write('/.gitignore', '/nbproject\n' +
       '/node_modules\n' +
       '/result.*\n' +
       '/src/**/*.js\n' +
       '/.idea\n' +
       '/.vscode\n',),
-    () => writeFileSync(root + '/.eslintrc.yml', 'extends:\n' +
+    () => write('/.eslintrc.yml', 'extends:\n' +
       '- eslint:recommended\n' +
       '- "plugin:json/recommended"\n' +
       '- "plugin:@typescript-eslint/recommended"\n' +
