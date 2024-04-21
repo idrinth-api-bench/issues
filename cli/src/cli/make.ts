@@ -41,13 +41,13 @@ export default (args: string[], cwd: string,) => {
     },);
     mkdirSync(root + path,);
   };
-  const write = (path: string, data: string) => {
+  const write = (path: string, data: string,) => {
     bar.update({
       task: `Creating ${ path }`,
     },);
     writeFileSync(root + '/package.json', data, 'utf8',);
   };
-  const exec = (command: string) => {
+  const exec = (command: string,) => {
     bar.update({
       task: `executing '${ command }'`,
     },);
