@@ -29,13 +29,16 @@ jobs:
       - name: Recognize repo ref
         id: reporef
         run: |
-          if [ "$EVENT" == 'workflow_run' ]
+          if [ "$EVENT" == 'pull_request' ]
           then
-            echo "::set-output name=ref::$(echo ${{github.event.workflow_run.repository}})"
+            echo "::set-output name=sha::$(echo ${{github.event.pull_request.head.repo.full_name}}"
+          elif [ "$EVENT" == 'workflow_run' ]
+          then
+            echo "::set-output name=ref::$(echo ${{github.event.workflow_run.repository.full_name}})"
           else
-            echo "::set-output name=ref::$(echo ${{github.repository}})"
+            echo "::set-output name=ref::$(echo ${GITHUB_HEAD_REF})"
           fi
-      - run: "Running for ${{ steps.reporef.outputs.ref }}#${{ steps.sharef.outputs.sha }}"
+      - run: echo "Running for ${{ steps.reporef.outputs.ref }}#${{ steps.sharef.outputs.sha }}"
       - name: Set commit status as pending
         uses: myrotvorets/set-commit-status-action@master
         with:
