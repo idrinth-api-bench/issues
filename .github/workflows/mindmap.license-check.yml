@@ -23,7 +23,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
+      - name: Wait for cache to be build
+        uses: lewagon/wait-on-check-action@v1.3.4
+        with:
+          ref: ${{ github.ref }}
+          check-name: 'Build full npm cache'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 10
+      - name: Restore Builds
+        id: cache-builds-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.npm
+          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
       - run: cd mindmap && npm ci
       - run: cd mindmap && npx license-checker -- --production --onlyAllow="MIT;ISC;Apache-2.0;BSD-2-Clause;BSD-3-Clause;Python-2.0;LGPL-2.1;GPL-2.0;BlueOak-1.0.0;CC0-1.0;0BSD;WTFPL;Unlicense"

@@ -33,8 +33,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
+      - name: Wait for cache to be build
+        uses: lewagon/wait-on-check-action@v1.3.4
+        with:
+          ref: ${{ github.ref }}
+          check-name: 'Build full npm cache'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 10
+      - name: Restore Builds
+        id: cache-builds-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.npm
+          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
       - run: npm ci
       - run: cd cli && npm ci && npm run language
       - run: npm run fta -- cli

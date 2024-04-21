@@ -1,0 +1,51 @@
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+env:
+  CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
+jobs:
+  prepare:
+    name: Build full npm cache
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js environment ${{ env.CURRENT_NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.CURRENT_NODE_VERSION }}
+      - name: Restore Builds
+        id: cache-builds-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.npm
+          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
+      - name: Build root
+        run: npm ci
+      - name: Build documentation website
+        run: cd documentation-website && npm ci
+      - run: cd documentation-website && npm run language
+      - name: Build history website
+        run: cd history-website && npm ci
+      - run: cd history-website && npm run language
+      - name: Build history service
+        run: cd history-microservice && npm ci
+      - name: Build framework
+        run: cd framework && npm ci
+      - run: cd framework && npm run language
+      - name: Build cli
+        run: cd cli && npm ci
+      - run: cd cli && npm run language
+      - name: Build mindmap
+        run: cd mindmap && npm ci
+      - name: Save Builds
+        id: cache-builds-save
+        uses: actions/cache/save@v4
+        with:
+          path: ~/.npm
+          key: ${{ steps.cache-builds-restore.outputs.cache-primary-key }}
