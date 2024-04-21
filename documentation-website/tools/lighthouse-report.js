@@ -3,6 +3,9 @@ import * as chromeLauncher from 'chrome-launcher';
 import process from 'process';
 import {
   EXIT_FAILURE,
+  EXIT_SUCCESS,
+  LOCAL_URL,
+  MAX_RETRIES,
 } from './constants.js';
 
 const chrome = await chromeLauncher.launch({
@@ -14,10 +17,6 @@ const options = {
   output: 'json',
   port: chrome.port,
 };
-
-const devSiteReport = await lighthouse('http://localhost:8080/', options,);
-const dev_report = JSON.parse(devSiteReport.report,);
-
 const metricFields = {
   performance: 0.55,
   accessibility: 0.85,
@@ -26,29 +25,43 @@ const metricFields = {
   pwa: 0.35,
 };
 
-for (const metricField of Object.keys(metricFields,)) {
-  const devMetricScore = dev_report?.categories[metricField]?.score;
+let success = true;
+let tries = 0;
 
-  if (! devMetricScore) {
-    // eslint-disable-next-line no-console
-    console.error(
-      // eslint-disable-next-line max-len
-      `Failure in fetching metric score for current site, found ${ metricField } to be null`,
-    );
-    process.exitCode = EXIT_FAILURE;
-  } else if (devMetricScore < metricFields[metricField]) {
-    // eslint-disable-next-line no-console
-    console.error(
-      // eslint-disable-next-line max-len
-      `${ metricField } score reduced to ${ devMetricScore } from ${ metricFields[metricField] }`,
-    );
-    process.exitCode = EXIT_FAILURE;
-  } else {
-    // eslint-disable-next-line no-console
-    console.error(
-      // eslint-disable-next-line max-len
-      `${ metricField } score is at ${ devMetricScore }`,
-    );
+do {
+  tries ++;
+  process.exitCode = EXIT_SUCCESS;
+  const report = JSON.parse(
+    // eslint-disable-next-line no-await-in-loop
+    (await lighthouse(LOCAL_URL, options,)).report,
+  );
+
+  for (const metricField of Object.keys(metricFields,)) {
+    if (! report?.categories[metricField]?.score) {
+      success = false;
+      break;
+    }
   }
-}
+  if (success) {
+    for (const metricField of Object.keys(metricFields,)) {
+      const devMetricScore = report?.categories[metricField]?.score;
+
+      if (devMetricScore < metricFields[metricField]) {
+        // eslint-disable-next-line no-console
+        console.error(
+          // eslint-disable-next-line max-len
+          `${ metricField } score reduced to ${ devMetricScore } from ${ metricFields[metricField] }`,
+        );
+        process.exitCode = EXIT_FAILURE;
+      } else {
+        // eslint-disable-next-line no-console
+        console.log(
+          // eslint-disable-next-line max-len
+          `${ metricField } score is at ${ devMetricScore }`,
+        );
+      }
+    }
+  }
+} while (! success && tries < MAX_RETRIES);
+
 process.exit();

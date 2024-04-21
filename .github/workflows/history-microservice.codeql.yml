@@ -1,18 +1,10 @@
 name: history-microservice CodeQL
 on:
-  push:
-    branches:
-    - master
-    paths:
-      - 'history-microservice/**.ts'
-      - 'history-microservice/**.tsx'
-      - 'history-microservice/**.js'
-      - 'history-microservice/**.cjs'
-      - 'history-microservice/package-lock.json'
-      - '.github/workflows/history-microservice.codeql.yml'
-  pull_request:
-    branches:
-    - master
+  workflow_run:
+    types:
+      - completed
+    workflows:
+      - NPM Cache
     paths:
       - 'history-microservice/**.ts'
       - 'history-microservice/**.tsx'
@@ -42,14 +34,19 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ env.CURRENT_NODE_VERSION }}
-        cache: 'npm'
-        cache-dependency-path: |
-          framework/package-lock.json
-          documentation-website/package-lock.json
-          history-microservice/package-lock.json
-          history-website/package-lock.json
-          cli/package-lock.json
-          package-lock.json
+    - name: Wait for cache to be built
+      uses: lewagon/wait-on-check-action@v1.3.4
+      with:
+        ref: ${{ github.ref }}
+        check-name: 'Build full npm cache'
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        wait-interval: 10
+    - name: Restore Builds
+      id: cache-builds-restore
+      uses: actions/cache/restore@v4
+      with:
+        path: ~/.npm
+        key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
     - run: cd history-microservice && npm ci
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3

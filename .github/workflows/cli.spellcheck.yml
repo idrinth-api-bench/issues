@@ -1,15 +1,10 @@
 name: cli spellcheck
 on:
-  push:
-    branches:
-    - master
-    paths:
-    - 'cli/language/en.yml'
-    - '.github/workflows/cli.spellcheck.yml'
-    - '.dictionary.txt'
-  pull_request:
-    branches:
-    - master
+  workflow_run:
+    types:
+      - completed
+    workflows:
+      - NPM Cache
     paths:
     - 'cli/language/en.yml'
     - '.github/workflows/cli.spellcheck.yml'
@@ -25,13 +20,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-          cache: 'npm'
-          cache-dependency-path: |
-            framework/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
-            cli/package-lock.json
-            package-lock.json
+      - name: Restore Builds
+        id: cache-builds-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.npm
+          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
       - run: cd cli && npm ci
       - run: cd cli && npm run spellcheck

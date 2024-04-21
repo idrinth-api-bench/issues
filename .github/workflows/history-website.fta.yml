@@ -1,19 +1,10 @@
 name: history-website FTA
 on:
-  push:
-    branches:
-    - master
-    paths:
-    - 'history-website/**.ts'
-    - 'history-website/**.tsx'
-    - 'history-website/**.js'
-    - 'history-website/**.cjs'
-    - 'history-website/**.json'
-    - 'history-website/**.svelte'
-    - '.github/workflows/history-website.fta.yml'
-  pull_request:
-    branches:
-    - master
+  workflow_run:
+    types:
+      - completed
+    workflows:
+      - NPM Cache
     paths:
     - 'history-website/**.ts'
     - 'history-website/**.tsx'
@@ -33,14 +24,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-          cache: 'npm'
-          cache-dependency-path: |
-            framework/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
-            cli/package-lock.json
-            package-lock.json
+      - name: Restore Builds
+        id: cache-builds-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.npm
+          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
       - run: npm ci
       - run: cd history-website && npm ci && npm run language
-      - run: npm run fta -- history-website || true
+      - run: npm run fta -- history-website

@@ -1,4 +1,4 @@
-name: framework license lint
+name: mindmap FTA
 on:
   workflow_run:
     types:
@@ -6,8 +6,13 @@ on:
     workflows:
       - NPM Cache
     paths:
-      - 'framework/package-lock.json'
-      - '.github/workflows/framework.license-check.yml'
+    - 'mindmap/**.ts'
+    - 'mindmap/**.tsx'
+    - 'mindmap/**.js'
+    - 'mindmap/**.cjs'
+    - 'mindmap/**.json'
+    - 'mindmap/**.svelte'
+    - '.github/workflows/mindmap.fta.yml'
 env:
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
 jobs:
@@ -25,5 +30,6 @@ jobs:
         with:
           path: ~/.npm
           key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
-      - run: cd framework && npm ci
-      - run: cd framework && npx license-checker -- --production --onlyAllow="MIT;ISC;Apache-2.0;BSD-2-Clause;BSD-3-Clause;Python-2.0;LGPL-2.1;GPL-2.0;BlueOak-1.0.0;CC0-1.0;0BSD;WTFPL;Unlicense"
+      - run: npm ci
+      - run: cd mindmap && npm ci
+      - run: npm run fta -- mindmap

@@ -1,14 +1,10 @@
 name: documentation-website license lint
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - 'documentation-website/package-lock.json'
-      - '.github/workflows/documentation-website.license-check.yml'
-  pull_request:
-    branches:
-      - master
+  workflow_run:
+    types:
+      - completed
+    workflows:
+      - NPM Cache
     paths:
       - 'documentation-website/package-lock.json'
       - '.github/workflows/documentation-website.license-check.yml'
@@ -23,13 +19,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-          cache: 'npm'
-          cache-dependency-path: |
-            documentation-website/package-lock.json
-            documentation-website/package-lock.json
-            history-microservice/package-lock.json
-            history-website/package-lock.json
-            documentation-website/package-lock.json
-            package-lock.json
+      - name: Restore Builds
+        id: cache-builds-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.npm
+          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
       - run: cd documentation-website && npm ci
       - run: cd documentation-website && npx license-checker -- --production --onlyAllow="MIT;ISC;Apache-2.0;BSD-2-Clause;BSD-3-Clause;Python-2.0;LGPL-2.1;GPL-2.0;BlueOak-1.0.0;CC0-1.0;0BSD;WTFPL;Unlicense"
