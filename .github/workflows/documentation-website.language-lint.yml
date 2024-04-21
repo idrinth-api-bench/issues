@@ -29,11 +29,14 @@ jobs:
       - name: Recognize repo ref
         id: reporef
         run: |
-          if [ "$EVENT" == 'workflow_run' ]
+          if [ "$EVENT" == 'pull_request' ]
+          then
+            echo "::set-output name=ref::$(echo ${{github.repository})"
+          elif [ "$EVENT" == 'workflow_run' ]
           then
             echo "::set-output name=ref::$(echo ${{github.event.workflow_run.repository}})"
           else
-            echo "::set-output name=ref::$(echo ${{github.repository}})"
+            echo "::set-output name=ref::$(echo $GITHUB_REF)"
           fi
       - name: Set commit status as pending
         uses: myrotvorets/set-commit-status-action@master
