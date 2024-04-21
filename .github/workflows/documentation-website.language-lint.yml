@@ -35,7 +35,6 @@ jobs:
           else
             echo "::set-output name=ref::$(echo ${{github.repository}})"
           fi
-      - run: "Running for ${{ steps.reporef.outputs.ref }}#${{ steps.sharef.outputs.sha }}"
       - name: Set commit status as pending
         uses: myrotvorets/set-commit-status-action@master
         with:
@@ -62,5 +61,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           status: ${{ job.status }}
+          context: Publish NPM package
           repo: ${{ steps.reporef.outputs.ref }}
           sha: ${{ steps.sharef.outputs.sha }}
