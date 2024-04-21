@@ -34,7 +34,7 @@ jobs:
             echo "::set-output name=sha::$(echo ${{github.event.pull_request.head.repo.full_name}})"
           elif [ "$EVENT" == 'workflow_run' ]
           then
-            echo "::set-output name=ref::$(echo ${{github.event.workflow_run.repository_full_name}})"
+            echo "::set-output name=ref::$(echo ${{github.event.workflow_run.repository.full_name}})"
           else
             echo "::set-output name=ref::$(echo ${GITHUB_HEAD_REF})"
           fi
