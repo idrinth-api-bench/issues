@@ -27,7 +27,7 @@
     "css-simple-minifier": "^2.0.0",
     "html-minifier": "^4.0.0",
     "http-server": "^14.1.1",
-    "markmap-render": "^0.16.0",
+    "markmap-render": "^0.17.0",
     "terser": "^5.30.0",
     "yaml": "^2.4.1"
   },
