@@ -65,4 +65,5 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           status: ${{ job.status }}
           context: Publish NPM package
+          repo: ${{ steps.reporef.outputs.ref }}
           sha: ${{ steps.sharef.outputs.sha }}
