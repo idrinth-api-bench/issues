@@ -34,6 +34,8 @@ jobs:
           else
             echo "::set-output name=sha::$(echo $GITHUB_SHA)"
           fi
+        env:
+          REF: ${{ github.ref }}
       - name: Set commit status as pending
         uses: myrotvorets/set-commit-status-action@master
         with:
