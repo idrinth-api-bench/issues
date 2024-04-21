@@ -60,6 +60,7 @@
     "make-benchmark-project": "bin/make-benchmark-project.js",
     "generate-benchmark-from-open-api": "bin/generate-benchmark-from-open-api.js",
     "generate-benchmark-from-har": "bin/generate-benchmark-from-har.js",
+    "generate-benchmark-from-curl": "bin/generate-benchmark-from-curl.js",
     "iabgbfh": "bin/generate-benchmark-from-har.js",
     "iabmp": "bin/make-benchmark-project.js",
     "iabgfoa": "bin/generate-benchmark-from-open-api.js"
