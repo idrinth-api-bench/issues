@@ -15,7 +15,11 @@ import {
   emptyDir,
 } from 'fs-extra';
 
+const delay = (ms: number,) => new Promise(
+  (resolve,) => setTimeout(resolve, ms,),
+);
 const THIRTY_SECONDS = 300000;
+const FILE_SYSTEM_DELAY = 10000;
 
 describe('make', () => {
   const tmp = tmpdir();
@@ -26,19 +30,13 @@ describe('make', () => {
     await emptyDir(tmp + '/benchmark',);
     rmdirSync(tmp + '/benchmark',);
   },);
-  after(async() => {
-    if (! existsSync(tmp + '/benchmark',)) {
-      return;
-    }
-    await emptyDir(tmp + '/benchmark',);
-    rmdirSync(tmp + '/benchmark',);
-  },);
   it('should be a function', () => {
     expect(make,).to.be.a('function',);
   },);
   describe('make()', () => {
-    it('should not throw', () => {
+    it('should not throw', async() => {
       expect(() => make([], tmp,),).to.not.throw();
+      await delay(FILE_SYSTEM_DELAY,);
     },).timeout(THIRTY_SECONDS,);
     it('should create a package.json', () => {
       // eslint-disable-next-line no-unused-expressions
