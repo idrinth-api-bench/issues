@@ -26,11 +26,24 @@ jobs:
           else
             echo "::set-output name=sha::$(echo $GITHUB_SHA)"
           fi
+      - name: Recognize repo ref
+        id: reporef
+        run: |
+          if [ "$EVENT" == 'pull_request' ]
+          then
+            echo "::set-output name=ref::$(echo ${{github.repository})"
+          elif [ "$EVENT" == 'workflow_run' ]
+          then
+            echo "::set-output name=ref::$(echo ${{github.event.workflow_run.repository}})"
+          else
+            echo "::set-output name=ref::$(echo $GITHUB_REF)"
+          fi
       - name: Set commit status as pending
         uses: myrotvorets/set-commit-status-action@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           sha: ${{ steps.sharef.outputs.sha }}
+          repo: ${{ steps.reporef.outputs.ref }}
           status: pending
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
@@ -52,4 +65,5 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           status: ${{ job.status }}
           context: Publish NPM package
+          repo: ${{ steps.reporef.outputs.ref }}
           sha: ${{ steps.sharef.outputs.sha }}
