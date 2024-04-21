@@ -26,6 +26,15 @@ const getEnv = (name: string, defaultValue: string,): string => {
 };
 
 // eslint-disable-next-line complexity
+const buildRegExp1=/\/\*.+\*\/.+=.+/u;
+const buildRegExp2=/\/\*.+\*\/.+/u;
+const buildRegExp3=/.+=.+/u;
+const nameRegExp1=/\/\*.+\*\/|=.+$/gu;
+const nameRegExp2=/\s*/gu;
+const defaultRegExp1=/^.+=/u;
+const defaultRegExp2=/^\s*|\s*$/gu;
+const typeRegExp1=/^.*\/\*|\*\/.+$/gu;
+const typeRegExp2=/\s*/gu;
 const buildParameter = (parameter: string,): Param => {
   const value: Param = {
     name: '',
@@ -34,27 +43,27 @@ const buildParameter = (parameter: string,): Param => {
     value: '',
     envName: '',
   };
-  if (parameter.match(/\/\*.+\*\/.+=.+/u,)) {
+  if (buildRegExp1.exec(parameter,)) {
     value.name = parameter
-      .replace(/\/\*.+\*\/|=.+$/gu, '',)
-      .replace(/\s*/gu, '',);
+      .replace(nameRegExp1, '',)
+      .replace(nameRegExp2, '',);
     value.default = parameter
-      .replace(/^.+=/u, '',)
-      .replace(/^\s*|\s*$/gu, '',);
+      .replace(defaultRegExp1, '',)
+      .replace(defaultRegExp2, '',);
     value.type = parameter
-      .replace(/^.*\/\*|\*\/.+$/gu, '',)
-      .replace(/\s*/gu, '',)
+      .replace(typeRegExp1, '',)
+      .replace(typeRegExp2, '',)
       .toLowerCase();
     return value;
   }
-  if (parameter.match(/\/\*.+\*\/.+/u,)) {
+  if (buildRegExp2.exec(parameter,)) {
     value.name = parameter
-      .replace(/\/\*.+\*\/|=.+$/gu, '',)
-      .replace(/\s*/gu, '',);
+      .replace(nameRegExp1, '',)
+      .replace(nameRegExp2, '',);
     value.default = '';
     value.type = parameter
-      .replace(/^.*\/\*|\*\/.+$/gu, '',)
-      .replace(/\s*/gu, '',)
+      .replace(typeRegExp1, '',)
+      .replace(typeRegExp2, '',)
       .toLowerCase();
     if (value.type === 'boolean') {
       value.default = 'false';
@@ -63,13 +72,13 @@ const buildParameter = (parameter: string,): Param => {
     }
     return value;
   }
-  if (parameter.match(/.+=.+/u,)) {
+  if (buildRegExp3.exec(parameter,)) {
     value.name = parameter
-      .replace(/\/\*.+\*\/|=.+$/gu, '',)
-      .replace(/\s*/gu, '',);
+      .replace(nameRegExp1, '',)
+      .replace(nameRegExp2, '',);
     value.default = parameter
-      .replace(/^.+=/u, '',)
-      .replace(/^\s*|\s*$/gu, '',);
+      .replace(defaultRegExp1, '',)
+      .replace(defaultRegExp2, '',);
     if (! Number.isNaN(Number.parseFloat(value.default,),)) {
       value.type = 'number';
     } else if (value.default === 'true' || value.default === 'false') {
@@ -77,7 +86,7 @@ const buildParameter = (parameter: string,): Param => {
     }
     return value;
   }
-  value.name = parameter.replace(/\s*/gu, '',);
+  value.name = parameter.replace(nameRegExp2, '',);
   return value;
 };
 // eslint-disable-next-line complexity
@@ -111,10 +120,11 @@ const parseParameterString = (parameter: string,): Param => {
   return value;
 };
 // eslint-disable-next-line @typescript-eslint/ban-types
+const analyzeRegExp=/\s*function\s*/u;
 export const analyze = (func: Function,): Param[] => {
   const parameters: string[] = ((): string[] => {
     const fun: string = func.toString().replace(/[\r\n]/gu, ' ',);
-    if (fun.match(/\s*function\s*/u,)) {
+    if (analyzeRegExp.exec(fun,)) {
       return fun
         .replace(/^function\s*\(|\)\s*\{.*\}\s*$/gu, '',)
         .split(',',);
