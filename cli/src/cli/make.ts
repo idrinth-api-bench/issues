@@ -35,6 +35,9 @@ export default (args: string[], cwd: string,) => {
     stopOnComplete: true,
     format: 'progress [{bar}] {value}/{total} {task}',
   },);
+  bar.update({
+    task: '',
+  },);
   const mkdir = (path: string,) => {
     bar.update({
       task: `Creating ${ path }`,
@@ -45,7 +48,7 @@ export default (args: string[], cwd: string,) => {
     bar.update({
       task: `Creating ${ path }`,
     },);
-    writeFileSync(root + '/package.json', data, 'utf8',);
+    writeFileSync(root + path, data, 'utf8',);
   };
   const exec = (command: string,) => {
     bar.update({
