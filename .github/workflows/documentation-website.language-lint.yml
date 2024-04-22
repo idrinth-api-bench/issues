@@ -1,10 +1,14 @@
 name: documentation-website language lint
 on:
-  workflow_run:
-    types:
-      - completed
-    workflows:
-      - NPM Cache
+  push:
+    branches:
+    - master
+    paths:
+    - 'documentation-website/language/*.yml'
+    - '.github/workflows/documentation-website.language-lint.yml'
+  pull_request:
+    branches:
+    - master
     paths:
     - 'documentation-website/language/*.yml'
     - '.github/workflows/documentation-website.language-lint.yml'
@@ -14,56 +18,18 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Recognize sha ref
-        id: sharef
-        run: |
-          if [ "$EVENT" == 'pull_request' ]
-          then
-            echo "::set-output name=sha::$(echo ${{github.event.pull_request.head.sha}})"
-          elif [ "$EVENT" == 'workflow_run' ]
-          then
-            echo "::set-output name=sha::$(echo ${{github.event.workflow_run.head_sha}})"
-          else
-            echo "::set-output name=sha::$(echo $GITHUB_SHA)"
-          fi
-      - name: Recognize repo ref
-        id: reporef
-        run: |
-          if [ "$EVENT" == 'pull_request' ]
-          then
-            echo "::set-output name=sha::$(echo ${{github.event.pull_request.head.repo.full_name}})"
-          elif [ "$EVENT" == 'workflow_run' ]
-          then
-            echo "::set-output name=ref::$(echo ${{github.event.workflow_run.repository.full_name}})"
-          else
-            echo "::set-output name=ref::$(echo ${GITHUB_HEAD_REF})"
-          fi
-      - run: echo "Running for ${{ steps.reporef.outputs.ref }}#${{ steps.sharef.outputs.sha }}"
-      - name: Set commit status as pending
-        uses: myrotvorets/set-commit-status-action@master
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          sha: ${{ steps.sharef.outputs.sha }}
-          repo: ${{ steps.reporef.outputs.ref }}
-          status: pending
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Restore Builds
-        id: cache-builds-restore
-        uses: actions/cache/restore@v4
-        with:
-          path: ~/.npm
-          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
       - run: npm ci
       - run: npm run check-language -- documentation-website
-      - name: Set final commit status
-        uses: myrotvorets/set-commit-status-action@master
-        if: always()
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          status: ${{ job.status }}
-          repo: ${{ steps.reporef.outputs.ref }}
-          sha: ${{ steps.sharef.outputs.sha }}
