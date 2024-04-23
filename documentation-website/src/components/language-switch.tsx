@@ -7,9 +7,8 @@ import Window from './window.ts';
 import './language-switch.scss';
 import t from './t.ts';
 
-const that: Window = window as unknown as Window;
-
 const LanguageSwitch = () => {
+  const that: Window = window as unknown as Window;
   const [
     language,
     setLanguage,
