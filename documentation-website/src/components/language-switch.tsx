@@ -1,14 +1,18 @@
 import React, {
-  lazy, Suspense,
+  lazy,
+  Suspense,
   useState,
 } from 'react';
+import Lang from './lang.tsx';
 import languages from '../locales/languages';
+import languageKey from '../locales/language-key.ts';
+import t from './t.ts';
 import Window from './window.ts';
 import './language-switch.scss';
-import t from './t.ts';
 
 const LanguageSwitch = () => {
   const that: Window = window as unknown as Window;
+
   const [
     language,
     setLanguage,
@@ -29,10 +33,15 @@ const LanguageSwitch = () => {
         aria-label={ ariaLabel }
         value={ language }
         onChange={ (event,) => changeLanguage(event.target.value,) }
-      >{ languages.map((lang,) => <option
-          key={ lang }
-          value={ lang }
-        >{ lang }</option>,) }</select>,
+      >{
+          languages.map((lang,) => <option
+            key={ lang }
+            value={ lang }
+          >
+            <Lang lnkey={`languages.${ lang }` as languageKey}/>
+          </option>,)
+        }
+      </select>,
     };
   },);
 

@@ -12,11 +12,15 @@ export default async(lnkey: languageKey, global?: object,): Promise<string> => {
     return '';
   }
   const that: Window = (global ?? window) as Window;
-  const language = (
-    that?.localStorage?.getItem('language',)
+  /*const language = (
+    (that?.localStorage?.getItem('language',) || 'en')
     ?? that?.Navigator?.language
     ?? 'en'
-  ).replace(/-.*$/u, '',);
+  ).replace(/-.*$/u, '',);*/
+  let language = (
+    that?.localStorage?.getItem('language',) || 'en')
+    ?? that?.Navigator?.language ?? 'en';
+  language = language.split('-',)[FIRST_ELEMENT];
   const main = lnkey.split('.',)[FIRST_ELEMENT];
   if (! files.includes(`en-${ main }`,)) {
     return lnkey;

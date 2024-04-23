@@ -503,3 +503,7 @@ cookie-consent:
 
 language-switch:
   aria: "Language switch"
+
+languages:
+  en: "English"
+  fr: "Français"
