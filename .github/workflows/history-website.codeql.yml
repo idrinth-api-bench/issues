@@ -1,10 +1,19 @@
 name: history-website CodeQL
 on:
-  workflow_run:
-    types:
-      - completed
-    workflows:
-      - NPM Cache
+  push:
+    branches:
+    - master
+    paths:
+      - 'history-website/**.ts'
+      - 'history-website/**.tsx'
+      - 'history-website/**.js'
+      - 'history-website/**.cjs'
+      - 'history-website/**.svelte'
+      - 'history-website/package-lock.json'
+      - '.github/workflows/history-website.codeql.yml'
+  pull_request:
+    branches:
+    - master
     paths:
       - 'history-website/**.ts'
       - 'history-website/**.tsx'
@@ -35,12 +44,14 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ env.CURRENT_NODE_VERSION }}
-    - name: Restore Builds
-      id: cache-builds-restore
-      uses: actions/cache/restore@v4
-      with:
-        path: ~/.npm
-        key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
+        cache: 'npm'
+        cache-dependency-path: |
+          framework/package-lock.json
+          documentation-website/package-lock.json
+          history-microservice/package-lock.json
+          history-website/package-lock.json
+          cli/package-lock.json
+          package-lock.json
     - run: cd history-website && npm ci
     - run: cd history-website && npm run language
     - name: Perform CodeQL Analysis

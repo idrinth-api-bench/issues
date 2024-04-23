@@ -53,6 +53,7 @@
 # History Microservice
 /history-microservice/node_modules
 /history-microservice/coverage
+/history-microservice/.env
 
 #History Website
 /history-website/node_modules

@@ -1,18 +1,27 @@
 name: mindmap FTA
 on:
-  workflow_run:
-    types:
-      - completed
-    workflows:
-      - NPM Cache
+  push:
+    branches:
+      - master
     paths:
-    - 'mindmap/**.ts'
-    - 'mindmap/**.tsx'
-    - 'mindmap/**.js'
-    - 'mindmap/**.cjs'
-    - 'mindmap/**.json'
-    - 'mindmap/**.svelte'
-    - '.github/workflows/mindmap.fta.yml'
+      - 'mindmap/**.ts'
+      - 'mindmap/**.tsx'
+      - 'mindmap/**.js'
+      - 'mindmap/**.cjs'
+      - 'mindmap/**.json'
+      - 'mindmap/**.svelte'
+      - '.github/workflows/mindmap.fta.yml'
+  pull_request:
+    branches:
+      - master
+    paths:
+      - 'mindmap/**.ts'
+      - 'mindmap/**.tsx'
+      - 'mindmap/**.js'
+      - 'mindmap/**.cjs'
+      - 'mindmap/**.json'
+      - 'mindmap/**.svelte'
+      - '.github/workflows/mindmap.fta.yml'
 env:
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
 jobs:

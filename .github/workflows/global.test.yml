@@ -1,10 +1,18 @@
 name: TEST
 on:
-  workflow_run:
-    types:
-      - completed
-    workflows:
-      - NPM Cache
+  push:
+    branches:
+    - master
+    paths:
+    - '**.ts'
+    - '**.tsx'
+    - '**.js'
+    - '**.cjs'
+    - '**.json'
+    - '.github/workflows/test.yml'
+  pull_request:
+    branches:
+    - master
     paths:
     - '**.ts'
     - '**.tsx'
@@ -24,12 +32,14 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.PREVIOUS_NODE_VERSION }}
-      - name: Restore Builds
-        id: cache-builds-restore
-        uses: actions/cache/restore@v4
-        with:
-          path: ~/.npm
-          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
       - run: cd mindmap && npm ci
       - run: cd mindmap && npm run test
       - run: mv ./mindmap/coverage ./
@@ -49,12 +59,14 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Restore Builds
-        id: cache-builds-restore
-        uses: actions/cache/restore@v4
-        with:
-          path: ~/.npm
-          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
       - run: cd mindmap && npm ci
       - run: cd mindmap && npm run test
       - run: mv ./mindmap/coverage ./
@@ -74,12 +86,14 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.PREVIOUS_NODE_VERSION }}
-      - name: Restore Builds
-        id: cache-builds-restore
-        uses: actions/cache/restore@v4
-        with:
-          path: ~/.npm
-          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
       - run: cd framework && npm ci
       - run: cd framework && npm run language
       - run: cd framework && npm run test
@@ -99,12 +113,14 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Restore Builds
-        id: cache-builds-restore
-        uses: actions/cache/restore@v4
-        with:
-          path: ~/.npm
-          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
       - run: cd framework && npm ci
       - run: cd framework && npm run language
       - run: cd framework && npm run test
@@ -124,12 +140,14 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.PREVIOUS_NODE_VERSION }}
-      - name: Restore Builds
-        id: cache-builds-restore
-        uses: actions/cache/restore@v4
-        with:
-          path: ~/.npm
-          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
       - run: cd cli && npm ci
       - run: cd cli && npm run language
       - run: cd cli && npm run test
@@ -149,12 +167,14 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Restore Builds
-        id: cache-builds-restore
-        uses: actions/cache/restore@v4
-        with:
-          path: ~/.npm
-          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
       - run: cd cli && npm ci
       - run: cd cli && npm run language
       - run: cd cli && npm run test
@@ -174,12 +194,14 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.PREVIOUS_NODE_VERSION }}
-      - name: Restore Builds
-        id: cache-builds-restore
-        uses: actions/cache/restore@v4
-        with:
-          path: ~/.npm
-          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
       - run: cd framework && npm ci
       - run: cd framework && npm run language
       - run: cd framework && npm run integration
@@ -199,12 +221,14 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Restore Builds
-        id: cache-builds-restore
-        uses: actions/cache/restore@v4
-        with:
-          path: ~/.npm
-          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
       - run: cd framework && npm ci
       - run: cd framework && npm run language
       - run: cd framework && npm run integration
@@ -224,12 +248,14 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Restore Builds
-        id: cache-builds-restore
-        uses: actions/cache/restore@v4
-        with:
-          path: ~/.npm
-          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
       - run: cd framework && npm ci
       - run: cd framework && npm run language
       - run: cd framework && npm run property
@@ -249,12 +275,14 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Restore Builds
-        id: cache-builds-restore
-        uses: actions/cache/restore@v4
-        with:
-          path: ~/.npm
-          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
       - run: cd documentation-website && npm ci
       - run: cd documentation-website && npm run language
       - run: cd documentation-website && npm run assets
@@ -278,12 +306,14 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Restore Builds
-        id: cache-builds-restore
-        uses: actions/cache/restore@v4
-        with:
-          path: ~/.npm
-          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
       - run: cd documentation-website && npm ci
       - run: cd documentation-website && npm run language
       - run: cd documentation-website && npm run e2e
@@ -306,12 +336,14 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Restore Builds
-        id: cache-builds-restore
-        uses: actions/cache/restore@v4
-        with:
-          path: ~/.npm
-          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
       - run: cd documentation-website && npm ci
       - run: cd documentation-website && npm run language
       - run: cd documentation-website && npm run e2e
@@ -334,12 +366,14 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Restore Builds
-        id: cache-builds-restore
-        uses: actions/cache/restore@v4
-        with:
-          path: ~/.npm
-          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
       - run: cd documentation-website && npm ci
       - run: cd documentation-website && npm run language
       - run: cd documentation-website && npm run e2e
@@ -362,12 +396,14 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Restore Builds
-        id: cache-builds-restore
-        uses: actions/cache/restore@v4
-        with:
-          path: ~/.npm
-          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
       - run: cd documentation-website && npm ci
       - run: cd documentation-website && npm run language
       - run: cd documentation-website && npm run e2e
@@ -390,12 +426,14 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-      - name: Restore Builds
-        id: cache-builds-restore
-        uses: actions/cache/restore@v4
-        with:
-          path: ~/.npm
-          key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
       - run: cd documentation-website && npm ci
       - run: cd documentation-website && npm run language
       - run: cd documentation-website && npm run e2e
