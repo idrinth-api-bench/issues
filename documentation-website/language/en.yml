@@ -500,3 +500,10 @@ cookie-consent:
     youtube:
       title: "YouTube"
       description: "We will load videos from www.youtube-nocookie.com to directly play on the site."
+
+language-switch:
+  aria: "Language switch"
+
+languages:
+  en: "English"
+  fr: "Français"
