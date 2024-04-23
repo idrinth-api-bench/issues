@@ -3,7 +3,6 @@ import fastifyCompress from '@fastify/compress';
 import fastifyCors from '@fastify/cors';
 import fastifyHelmet from '@fastify/helmet';
 import fastifyJwt from '@fastify/jwt';
-//import fastifyMysql from '@fastify/mysql';
 import fastifyRateLimit from '@fastify/rate-limit';
 import {
   DEFAULT_RADIX,
@@ -25,24 +24,21 @@ const fastify = Fastify({
 },);
 
 fastify.register(fastifyCors, {
-  origin: process.env.FASTIFY_ORIGIN,
+  origin: process.env.FASTIFY_ORIGIN ?? '*',
 },);
 fastify.register(fastifyRateLimit, {
   max: Number.parseInt(
-    process.env.FASTIFY_RATE_LIMIT,
+    process.env.FASTIFY_RATE_LIMIT ?? '120',
     DEFAULT_RADIX,
   ),
   timeWindow: '1 minute',
 },);
-/*fastify.register(fastifyMysql, {
-  connectionString: process.env.FASTIFY_MYSQL_CONNECTION,
-},);*/
 fastify.register(fastifyJwt, {
-  secret: process.env.JWT_SECRET,
+  secret: process.env.JWT_SECRET ?? 'SOMEsecretTObeReplaced',
 },);
 fastify.register(fastifyCompress, {
   threshold: Number.parseInt(
-    process.env.FASTIFY_COMPRESS_MIN_SIZE,
+    process.env.FASTIFY_COMPRESS_MIN_SIZE ?? '1024',
     DEFAULT_RADIX,
   ),
 },);
@@ -56,8 +52,8 @@ fastify.register(routeRoutes,);
 
 // Run the server!
 fastify.listen({
-  port: Number.parseInt(process.env.FASTIFY_PORT, DEFAULT_RADIX,),
-  host: process.env.FASTIFY_HOST,
+  port: Number.parseInt(process.env.FASTIFY_PORT ?? '3003', DEFAULT_RADIX,),
+  host: process.env.FASTIFY_HOST ?? '127.0.0.1',
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
 }, (err, address,) => {
   if (err) {

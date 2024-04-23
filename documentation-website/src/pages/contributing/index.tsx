@@ -85,6 +85,14 @@ npm run coai
   `}</Code>
     </div>
   </div>
+  <div className='card'>
+    <h4><Lang lnkey={'contributing.code.tests.locally.title'}/></h4>
+    <div>
+      <p>
+        <Lang lnkey={'contributing.code.tests.locally.description'}/>
+      </p>
+    </div>
+  </div>
   <ListUnit text={'contributing.code.naming.title'} level={'h3'}>
     contributing.code.naming.list_item_1
     contributing.code.naming.list_item_2
