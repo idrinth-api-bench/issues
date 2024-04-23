@@ -36,24 +36,24 @@ const buildParameter = (parameter: string,): Param => {
   };
   if (parameter.match(/\/\*.+\*\/.+=.+/u,)) {
     value.name = parameter
-      .replace(/\/\*.+\*\/|=.+$/gu, '',)
+      .replace(/(\/\*.+\*\/)|(=.+$)/gu, '',)
       .replace(/\s*/gu, '',);
     value.default = parameter
       .replace(/^.+=/u, '',)
-      .replace(/^\s*|\s*$/gu, '',);
+      .replace(/(^\s*)|(\s*$)/gu, '',);
     value.type = parameter
-      .replace(/^.*\/\*|\*\/.+$/gu, '',)
+      .replace(/(^.*\/\*)|(\*\/.+$)/gu, '',)
       .replace(/\s*/gu, '',)
       .toLowerCase();
     return value;
   }
   if (parameter.match(/\/\*.+\*\/.+/u,)) {
     value.name = parameter
-      .replace(/\/\*.+\*\/|=.+$/gu, '',)
+      .replace(/(\/\*.+\*\/)|(=.+$)/gu, '',)
       .replace(/\s*/gu, '',);
     value.default = '';
     value.type = parameter
-      .replace(/^.*\/\*|\*\/.+$/gu, '',)
+      .replace(/(^.*\/\*)|(\*\/.+$)/gu, '',)
       .replace(/\s*/gu, '',)
       .toLowerCase();
     if (value.type === 'boolean') {
@@ -65,11 +65,11 @@ const buildParameter = (parameter: string,): Param => {
   }
   if (parameter.match(/.+=.+/u,)) {
     value.name = parameter
-      .replace(/\/\*.+\*\/|=.+$/gu, '',)
+      .replace(/(\/\*.+\*\/)|(=.+$)/gu, '',)
       .replace(/\s*/gu, '',);
     value.default = parameter
       .replace(/^.+=/u, '',)
-      .replace(/^\s*|\s*$/gu, '',);
+      .replace(/(^\s*)|(\s*$)/gu, '',);
     if (! Number.isNaN(Number.parseFloat(value.default,),)) {
       value.type = 'number';
     } else if (value.default === 'true' || value.default === 'false') {
@@ -116,11 +116,11 @@ export const analyze = (func: Function,): Param[] => {
     const fun: string = func.toString().replace(/[\r\n]/gu, ' ',);
     if (fun.match(/\s*function\s*/u,)) {
       return fun
-        .replace(/^function\s*\(|\)\s*\{.*\}\s*$/gu, '',)
+        .replace(/(^function\s*\()|(\)\s*\{.*\}\s*$)/gu, '',)
         .split(',',);
     }
     return fun
-      .replace(/^\s*\(|\)\s*=>\s*.*$/gu, '',)
+      .replace(/(^\s*\()|(\)\s*=>\s*.*$)/gu, '',)
       .split(',',);
   })();
   const ret: Param[] = [];
