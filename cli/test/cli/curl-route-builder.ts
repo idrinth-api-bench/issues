@@ -39,7 +39,7 @@ describe('curl-route-builder', () => {
       // eslint-disable-next-line no-unused-expressions
       expect(readFileSync(
         '/curl/src/routes/main/' +
-        'de6bce8728a2de1111cc48f61a8eaa56f7c459542938b68df96bc8d9136ce611.ts',
+        'f503ae6d6407e3ed83e1729c394ec88736499534cb0931b38d4aa3362e2d2c52.ts',
       ) + '',).to.not.be.empty;
       done();
     }, WAIT_TIME,);
@@ -61,7 +61,7 @@ describe('curl-route-builder', () => {
       // eslint-disable-next-line no-unused-expressions
       expect(readFileSync(
         '/curl/src/routes/main/' +
-        'b7e70e6fd9434a454f37c23867338fa41a885007d7f539d84fcb184fd6920da7.ts',
+        '27cfa601aacb8eb25cfaf24d866c395e6c5674a599f3df055f463f693dbc4f2b.ts',
       ) + '',).to.not.be.empty;
       done();
     }, WAIT_TIME,);
@@ -83,9 +83,64 @@ describe('curl-route-builder', () => {
       // eslint-disable-next-line no-unused-expressions
       expect(readFileSync(
         '/curl/src/routes/main/' +
-        '8fd0745204bec361171d098c8794852ed9221ad32c906f8f7eece532d83070f5.ts',
+        'c439b0f1e6bc41f299c1756a630bd42b29010c7ce62742675a35dedb7d34113a.ts',
       ) + '',).to.not.be.empty;
       done();
     }, WAIT_TIME,);
+  },);
+  it('should create from curl with custom cookies', (done,) => {
+    buildRoutes(
+      [
+        'node',
+        'create.js',
+        '-b',
+        'id:1;name:jon',
+        'https://jsonplaceholder.typicode.com/posts',
+      ],
+      '/curl',
+    );
+    setTimeout(() => {
+      // eslint-disable-next-line no-unused-expressions
+      expect(readFileSync(
+        '/curl/src/routes/main/' +
+        'f503ae6d6407e3ed83e1729c394ec88736499534cb0931b38d4aa3362e2d2c52.ts',
+      ) + '',).to.not.be.empty;
+      done();
+    }, WAIT_TIME,);
+  },);
+  it('should create from curl with timeout flag', (done,) => {
+    buildRoutes(
+      [
+        'node',
+        'create.js',
+        '--max-time',
+        '3',
+        'https://jsonplaceholder.typicode.com/posts',
+      ],
+      '/curl',
+    );
+    setTimeout(() => {
+      // eslint-disable-next-line no-unused-expressions
+      expect(readFileSync(
+        '/curl/src/routes/main/' +
+        '7e53b9febcc37b7344f67bc1589633b55b3c710a7df5b79909f12601ac21cb51.ts',
+      ) + '',).to.not.be.empty;
+      done();
+    }, WAIT_TIME,);
+  },);
+  it('should throw error with no url', () => {
+    expect(() => {
+      buildRoutes(
+        [
+          'node',
+          'create.js',
+          '-H',
+          'X-MyHeader: 123',
+          '-d',
+          '{}',
+        ],
+        '/curl',
+      );
+    },).to.throw('No url specified.',);
   },);
 },);

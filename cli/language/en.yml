@@ -6,3 +6,4 @@ invalid_request_property: The request property %2% of task %1% is invalid.
 invalid_request: The request task %1% has unknown properties.
 name_invalid: Invalid project name.
 already_created: Project folder already exists.
+no_url_given: No url specified.
