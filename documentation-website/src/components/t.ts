@@ -12,8 +12,11 @@ export default async(lnkey: languageKey, global?: object,): Promise<string> => {
     return '';
   }
   const that: Window = (global ?? window) as Window;
-  const language = (that?.Navigator?.language ?? 'en')
-    .replace(/-.*$/u, '',);
+  const language = (
+    that?.localStorage?.getItem('language',)
+    ?? that?.Navigator?.language
+    ?? 'en'
+  ).replace(/-.*$/u, '',);
   const main = lnkey.split('.',)[FIRST_ELEMENT];
   if (! files.includes(`en-${ main }`,)) {
     return lnkey;
