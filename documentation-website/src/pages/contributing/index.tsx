@@ -86,10 +86,10 @@ npm run coai
     </div>
   </div>
   <div className='card'>
-    <h4><Lang lnkey={'contributing.code.tests.running tests locally.title'}/></h4>
+    <h4><Lang lnkey={'contributing.code.tests.locally.title'}/></h4>
     <div>
       <p>
-        <Lang lnkey={'contributing.code.tests.running tests locally.description'}/>
+        <Lang lnkey={'contributing.code.tests.locally.description'}/>
       </p>
     </div>
   </div>
