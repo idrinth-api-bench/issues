@@ -141,6 +141,6 @@ describe('curl-route-builder', () => {
         ],
         '/curl',
       );
-    },).to.throw('No url specified.',);
+    },).to.throw('No URL specified.',);
   },);
 },);
