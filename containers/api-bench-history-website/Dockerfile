@@ -1,4 +1,7 @@
-FROM node:21.7.2-alpine
+ARG BUILD_VERSION
+
+FROM idrinth/api-bench-build:${BUILD_VERSION} AS build
+FROM nginx:stable-alpine3.17-slim AS nginx
 
 ARG BUILD_VERSION
 ARG BUILD_TIME
@@ -30,6 +33,11 @@ LABEL org.opencontainers.image.description="A website prepared for monitoring ap
 ENV IDRINTH_API_BENCH_VERSION=$BUILD_VERSION
 ENV IDRINTH_API_BENCH_BUILT=$BUILD_TIME
 
+COPY nginx.conf /etc/nginx/nginx.conf
+
+WORKDIR /var/www/html
+COPY --from=build /project/@idrinth/api-bench/history-website /var/www/html
+
 EXPOSE 80
 
-ENTRYPOINT ["node", "/var/microservice/index.js"]
+CMD ["nginx", "-g", "daemon off;"]

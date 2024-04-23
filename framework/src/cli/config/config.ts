@@ -7,5 +7,6 @@ interface Config {
   maximum?: number;
   increment?: number;
   duration?: number;
+  task: string;
 }
 export default Config;

@@ -15,7 +15,6 @@ on:
     - 'history-website/package-lock.json.json'
     - '.github/workflows/history.mdlint.yml'
 env:
-  PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
 jobs:
   lint:

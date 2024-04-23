@@ -13,14 +13,13 @@ import {
   MdArrowDropDown,
 } from 'react-icons/md';
 
-const preventOpenLink = (e,) => {
-  const ev = event ?? e;
-  ev.preventDefault();
-  ev.stopPropagation();
-  const target = ev.target ?? ev.currentTarget;
-  target.parentElement.setAttribute(
+const preventOpenLink = (event: React.MouseEvent<SVGElement, MouseEvent>,) => {
+  event.preventDefault();
+  event.stopPropagation();
+  const target = (event.target ?? event.currentTarget) as SVGElement;
+  target.parentElement?.setAttribute(
     'aria-expanded',
-    target.parentElement.getAttribute('aria-expanded',) === 'true'
+    target.parentElement?.getAttribute('aria-expanded',) === 'true'
       ? 'false'
       : 'true',
   );

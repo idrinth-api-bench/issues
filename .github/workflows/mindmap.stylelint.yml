@@ -15,7 +15,6 @@ on:
       - 'mindmap/package-lock.json'
       - '.github/workflows/mindmap.stylelint.yml'
 env:
-  PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
 jobs:
   stylelint:

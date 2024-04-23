@@ -15,7 +15,6 @@ on:
     - '.github/workflows/cli.spellcheck.yml'
     - '.dictionary.txt'
 env:
-  PREVIOUS_NODE_VERSION: ${{ vars.PREVIOUS_NODE_VERSION || 'lts/*' }}
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
 jobs:
   lint:
