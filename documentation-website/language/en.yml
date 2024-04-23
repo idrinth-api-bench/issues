@@ -216,7 +216,7 @@ contributing:
       manual:
         title: "Manual Tests"
         description: "For manual testing you can run 'npm run coai' in the source folder to automatically check out and install all required files for testing."
-      running tests locally:
+      locally:
         title: "Running Tests Locally"
         description: "To see a list of available CI tasks and their corresponding commands to run them locally, you can run 'npm run local' in the source folder. This is particularly useful for testing specific CI tasks before committing your changes."
     naming:
