@@ -14,7 +14,7 @@
   "scripts": {
     "start": "npm run build && npm run serve",
     "dev": "irfbrgr && vite",
-    "build": "npm run drop-dist && npm run routes && npm run language && npm run contributors && tsc && vite build && irfbrgf",
+    "build": "npm run assets && npm run drop-dist && npm run routes && npm run language && npm run contributors && tsc && vite build && irfbrgf",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint-fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",
@@ -32,7 +32,9 @@
     "pure-build": "npm run drop-dist && npm run routes && npm run language && tsc && vite build && irfbrgf",
     "drop-dist": "node tools/drop-dist.js",
     "spellcheck": "itlfy dump && spellchecker",
-    "knip": "knip"
+    "knip": "knip",
+    "lighthouse": "npm run build && start-server-and-test serve http://localhost:8080 'node tools/lighthouse-report.js'",
+    "assets": "node tools/copy-assets.js"
   },
   "dependencies": {
     "@fontsource/roboto": "^5.0.12",
@@ -61,24 +63,26 @@
     "@vitejs/plugin-react": "^4.2.1",
     "babel-plugin-istanbul": "^6.1.1",
     "c8": "^9.1.0",
-    "knip": "^5.8.0",
-    "spellchecker-cli": "^6.2.0",
     "chai": "^5.0.3",
     "cypress": "^13.6.4",
+    "cypress-split": "^1.21.2",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "http-server": "^14.1.1",
+    "knip": "^5.8.0",
+    "lighthouse": "^12.0.0",
     "markdownlint-cli": "^0.39.0",
     "mocha": "^10.3.0",
+    "spellchecker-cli": "^6.2.0",
     "start-server-and-test": "^2.0.3",
     "stylelint": "^16.2.1",
     "stylelint-config-standard": "^36.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.3.3",
     "vite": "^5.1.1",
-    "cypress-split": "^1.21.2"
+    "chrome-launcher": "^1.1.1"
   },
   "engines": {
     "node": ">=20"

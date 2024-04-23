@@ -56,8 +56,8 @@ children:
         - text: reusable route definitions
       - text: business/company support options
         children:
-        - text: payed support via Björn Büttner
-        - text: payed training via Björn Büttner
+        - text: paid support via Björn Büttner
+        - text: paid training via Björn Büttner
       - text: core features
         children:
         - text: monitoring solution (WIP)
@@ -115,13 +115,109 @@ children:
                   - text: HTML report
                   - text: detailed dashboard
                   - text: distributed testing
+                  - text: open source
               - text: bad
                 children:
                   - text: paywalled distributed testing
                   - text: test definitions in java/kotlin/scala
+                  - text: steep learning curve
+                  - text: incomplete documentation
               - text: shared features
                 children:
                   - text: HTML report
+          - text: LoadNinja
+            url: https://loadninja.com/
+            children:
+              - text: test types
+                children:
+                  - text: load testing
+              - text: good
+                children:
+                  - text: record and replay
+                  - text: low coding
+                  - text: A/B test comparisons
+                  - text: uses real browsers
+                  - text: SaaS
+              - text: bad
+                children:
+                  - text: limited customization
+                  - text: small user base
+                  - text: paid tool
+              - text: shared features
+                children:
+                  - text: low code
+                  - text: small community
+                  - text: load testing
+          - text: NeoLoad
+            url: https://www.tricentis.com/products/performance-testing-neoload
+            children:
+              - text: test types
+                children:
+                  - text: load testing
+                  - text: stress testing
+                  - text: stability testing
+              - text: good
+                children:
+                  - text: user friendly interface
+                  - text: multiple protocol support
+                  - text: runs almost anywhere
+                  - text: good reports
+              - text: bad
+                children:
+                  - text: commercial
+                  - text: relatively hard to learn
+              - text: shared features
+                children:
+                  - text: load testing
+                  - text: runs almost anywhere
+          - text: WebLOAD
+            url: https://www.radview.com/webload-overview/
+            children:
+              - text: test types
+                children:
+                  - text: load testing
+                  - text: stress testing
+              - text: good
+                children:
+                  - text: scripting capabilities
+                  - text: reporting is good
+                  - text: analysis is well supported
+                  - text: scalable, including multi origin
+                  - text: friendly UI
+              - text: bad
+                children:
+                  - text: small community
+                  - text: steep learning curve for scripting
+                  - text: expensive
+              - text: shared features
+                children:
+                  - text: load testing
+          - text: Artillery
+            url: https://artillery.io/
+            children:
+              - text: test types
+                children:
+                  - text: load testing
+              - text: good
+                children:
+                  - text: flexible configuration
+                  - text: flexible scripting
+                  - text: extensible
+                  - text: real time monitoring of tests
+                  - text: open source
+                  - text: free
+              - text: bad
+                children:
+                  - text: limited GUI
+                  - text: small community
+                  - text: no reporting by default
+                  - text: limited documentation
+              - text: shared features
+                children:
+                  - text: load testing
+                  - text: small community
+                  - text: open source
+                  - text: free
           - text: Locust
             url: https://locust.io/
             children:
@@ -132,16 +228,21 @@ children:
                 children:
                   - text: distributed testing
                   - text: developer friendly
+                  - text: simple syntax
                   - text: extensible
+                  - text: open source
                   - text: live report in browser
               - text: bad
                 children:
                   - text: python test definitions
+                  - text: lack of reporting
+                  - text: hard to learn
               - text: shared features
                 children:
                   - text: http(s) support only
                   - text: developer friendly
                   - text: extensible
+                  - text: open source
           - text: Loadrunner
             url: https://www.opentext.com/products/loadrunner-enterprise
             children:
@@ -157,11 +258,13 @@ children:
               - text: bad
                 children:
                   - text: undisclosed costs
+                  - text: high hardware requirements
+                  - text: Limited to Windows
               - text: shared features
                 children:
                   - text: reporting
-                  - text: payed support option
-                  - text: payed training option
+                  - text: paid support option
+                  - text: paid training option
           - text: api-benchmark
             url: https://github.com/matteofigus/api-benchmark
             children:
@@ -224,6 +327,21 @@ children:
                 children:
                   - text: cli
                   - text: open-source
+          - text: Apidog
+            url: https://apidog.com
+            children:
+              - text: test types
+                children:
+                  - text: load testing
+              - text: good
+                children:
+                  - text: graphical user interface
+                  - text: free
+                  - text: JMeter config export
+              - text: bad
+                children:
+                  - text: can't handle all load testing scenarios
+                  - text: limited reporting
           - text: JMeter
             url: https://jmeter.apache.org/
             children:
@@ -265,8 +383,6 @@ children:
             image: iab.svg
       - text: work in progress
         children:
-          - text: Logo
-            image: new-logo.png
           - text: History Website
       - text: requirements
         children:

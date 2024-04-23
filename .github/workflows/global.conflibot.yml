@@ -1,0 +1,17 @@
+name: conflibot
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  conflibot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Warn potential conflicts
+        uses: idrinth/conflibot@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          exclude: |
+            **/package-lock.json

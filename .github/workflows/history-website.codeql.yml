@@ -52,8 +52,7 @@ jobs:
           history-website/package-lock.json
           cli/package-lock.json
           package-lock.json
-    - name: Build history website
-      run: cd history-website && npm ci
+    - run: cd history-website && npm ci
     - run: cd history-website && npm run language
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3

@@ -285,6 +285,7 @@ jobs:
             package-lock.json
       - run: cd documentation-website && npm ci
       - run: cd documentation-website && npm run language
+      - run: cd documentation-website && npm run assets
       - run: cd documentation-website && npm run test
       - run: mv ./documentation-website/coverage ./
       - run: sed -i 's/SF:src/SF:documentation-website\/src/' ./coverage/lcov.info

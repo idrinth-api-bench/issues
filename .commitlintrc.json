@@ -18,7 +18,8 @@
       "feature",
       "refactor",
       "ci",
-      "build"
+      "build",
+      "documentation"
     ]],
     "signed-off-by": [0, "never"],
     "trailer-exists": [0, "never"],
