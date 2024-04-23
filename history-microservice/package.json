@@ -58,8 +58,7 @@
     "test": "c8 mocha test",
     "integration": "c8 mocha integration",
     "start": "tsx index.ts",
-    "knip": "knip",
-    "postinstall": "cp .env.example .env"
+    "knip": "knip"
   },
   "engines": {
     "node": ">=20"
