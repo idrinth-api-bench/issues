@@ -22,7 +22,7 @@
     "svelte-check": "^3.6.4",
     "typescript": "^5.2.2",
     "vite": "^5.1.4",
-    "eslint": "^8.57.0",
+    "eslint": "^9.1.1",
     "eslint-plugin-svelte": "^2.35.1",
     "svelte-eslint-parser": "^0.35.0",
     "markdownlint-cli": "^0.39.0",
