@@ -1,0 +1,44 @@
+no_tasks: Non è possibile analizzare zero task.
+duplicate_task_id: L'id %1% è già in uso.
+invalid_key: La chiave %1% non è valida.
+finished_analyzing: L'analisi di %1% è terminata.
+initialization: Inizializzazione dei task in modo che abbiano %1% thread x %2% ripetizioni da eseguire
+starting_result: Avvio del result handler fornito.
+data: Dati
+done: Completato
+starting_workers: Avvio di %1% Workers.
+starting_after: In avvio dopo la richiesta.
+no_after: Nessuna richiesta a seguire, fatto.
+finished_requests: Finito di richiedere tutti e %1%.
+starting_analyzation: Avvio dell'analisi di %1%.
+next_request: Avviando la prossima richiesta.
+starting_validation: Avvio della validazione di %1%.
+end_thread: Tutte le richieste sono state completate, thread terminato.
+after_done: Richieste downstream completate.
+no_response_status: La richiesta non ha ritornato alcuno status
+response_status_above_2xx: La richiesta ha restituito uno stato superiore all'intervallo 200-299
+response_status_below_2xx: La richiesta ha restituito uno stato inferiore all'intervallo 200-299
+response_status_not_404: La richiesta ha restituito lo stato %1%, non 404
+response_status_not_403: La richiesta ha restituito lo stato %1%, non 403
+variable_default_value: Impossibile gestire il valore predefinito della variabile su %1%.
+no_content_type: Manca il content-type header.
+no_json_content_type: Il content-type %1% non è application/json.
+invalid_json_body: Il corpo JSON non è valido. %1%
+no_xml_content_type: Il content-type %1% non è */xml.
+invalid_xml_body: Il corpo XML non è valido.
+too_slow: Il tempo di risposta è stato superiore a %1% ns.
+maximum_below_threads: Il massimo è inferiore al numero di thread iniziale.
+increment_below_one: Devi incrementare i tuoi thread ad ogni iterazione, attualmente l'incremento è inferiore a uno.
+maximum_below_one: Non è possibile impostare il massimo al di sotto di uno.
+server_header_is_set: Considera di rimuovere l'header Server per migliorare la sicurezza, se non necessario.
+powered_by_is_set: L'header X-Powered-By è impostato. Condivide informazioni critiche con il mondo.
+validation_errors: Sono stati rilevati %1% errori.
+validation_warnings: Sono stati rilevati %1% warning.
+invalid_pre_definition: La definizione di pre-sulla rotta %1% non è valida.
+invalid_post_definition: La definizione di post sulla rotta %1% non è valida.
+unknown_route_property: La proprietà %1% sulla rotta %1% è sconosciuta.
+invalid_request_property: La proprietà della richiesta %2% del task %1% non è valida.
+invalid_request: Il task di richiesta %1% ha proprietà sconosciute.
+response_not_success: 'La risposta non è andata a buon fine, il campo %1% era %2%'
+response_not_failure: 'La risposta non è stata un errore, il campo %1% era %2%'
+no_errors_warnings: Nessun errore o avviso trovato.
