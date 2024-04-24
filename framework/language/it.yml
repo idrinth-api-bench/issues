@@ -1,5 +1,5 @@
 no_tasks: Non è possibile analizzare zero task.
-duplicate_task_id: L'id %1% è condiviso.
+duplicate_task_id: L'id %1% è già in uso.
 invalid_key: La chiave %1% non è valida.
 finished_analyzing: L'analisi di %1% è terminata.
 initialization: Inizializzazione dei task in modo che abbiano %1% thread x %2% ripetizioni da eseguire
