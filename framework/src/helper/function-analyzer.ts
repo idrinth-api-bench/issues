@@ -120,7 +120,7 @@ const parseParameterString = (parameter: string,): Param => {
 };
 // eslint-disable-next-line @typescript-eslint/ban-types
 const functionWhitespaceRegExp=/\s*function\s*/u;
-export const analyze = (func: Function,): Param[] => {
+export const analyze = (func: MyFunction,): Param[] => {
   const parameters: string[] = ((): string[] => {
     const fun: string = func.toString().replace(/[\r\n]/gu, ' ',);
     if (functionWhitespaceRegExp.exec(fun,)) {
