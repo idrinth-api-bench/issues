@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Warn potential conflicts
-        uses: idrinth/conflibot@the-one
+        uses: idrinth/conflibot@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           exclude: |

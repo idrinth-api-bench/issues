@@ -12,7 +12,7 @@ jobs:
   linting:
     runs-on: ubuntu-latest
     steps:
-      - uses: innerspacetrainings/Prace.js@the-one
+      - uses: innerspacetrainings/Prace.js@master
         with:
           configuration-path: .github/prace.yml
         env:
