@@ -218,7 +218,7 @@ contributing:
         description: "Per i test manuali è possibile eseguire \"npm run coai\" nella cartella di origine per estrarre e installare automaticamente tutti i file richiesti per il test."
       locally:
         title: "Esecuzione di Test Localmente"
-        description: "Per visualizzare un elenco di task CI disponibili e i comandi corrispondenti per eseguirle localmente, è possibile eseguire \"npm run local\" nella cartella di origine. Ciò è particolarmente utile per testare task CI specifici prima di confermare le modifiche."
+        description: "Per visualizzare un elenco di task CI disponibili e i comandi corrispondenti per eseguirle localmente, è possibile eseguire 'npm run local' nella cartella di origine. Ciò è particolarmente utile per testare task CI specifici prima di confermare le modifiche."
     naming:
       title: "Convenzioni di naming"
       list_item_1: "camelCase per le variabili e le funzioni"
@@ -276,15 +276,15 @@ contributing:
         title: "Piè di Pagina del Messaggio di Commit"
         description: "Il piè di pagina è facoltativo. Il formato del messaggio di commit del footer descrive lo scopo per cui viene utilizzato il footer e la struttura che deve avere."
         content: "Il piè di pagina può contenere informazioni su modifiche sostanziali e deprecazioni ed è anche il luogo in cui fare riferimento ai problemi di GitHub e ad altre richieste pull chiuse da questo commit o a cui è correlato."
-        breaking: "In caso di modifiche sostanziali e deprecazioni, la sezione deve iniziare rispettivamente con la frase \"BREAKING CHANGE:\" o \"DEPRECATED:\" seguita rispettivamente da una descrizione. Per esempio:"
+        breaking: "In caso di modifiche sostanziali e deprecazioni, la sezione deve iniziare rispettivamente con la frase 'BREAKING CHANGE:' o 'DEPRECATED:' seguita rispettivamente da una descrizione. Per esempio:"
       complete:
         title: "Commit Completo"
         description: "Ecco un esempio completo di un messaggio di commit corretto:"
       reverts:
         title: "Fare Revert dei Commit"
-        description: "Se il commit ripristina un commit precedente, dovrebbe iniziare con \"revert:\", seguito dall'intestazione del commit ripristinato."
+        description: "Se il commit ripristina un commit precedente, dovrebbe iniziare con 'revert:', seguito dall'intestazione del commit ripristinato."
         content: "Il contenuto del corpo del messaggio di commit dovrebbe contenere:"
-        list_item_1: "ID del commit ripristinato nel seguente formato: \"This reverts commit <SHA>\"."
+        list_item_1: "ID del commit ripristinato nel seguente formato: 'This reverts commit <SHA>'."
         list_item_2: "una descrizione chiara del motivo per cui è stato ripristinato il messaggio di commit."
     pull_requests:
       title: "Pull Requests"
