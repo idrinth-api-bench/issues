@@ -44,8 +44,8 @@ const buildParameter = (parameter: string,): Param => {
   };
   if (commentAndAssignmentRegExp.exec(parameter,)) {
     value.name = parameter
-      .replace(commentOrAssignmentAtEndRegExp , '',)
-      .replace(whitespaceRegExp , '',);
+      .replace(commentOrAssignmentAtEndRegExp, '',)
+      .replace(whitespaceRegExp, '',);
     value.default = parameter
       .replace(beginningAssignmentRegExp, '',)
       .replace(leadingOrTrailingWhitespaceRegExp, '',);
@@ -57,8 +57,8 @@ const buildParameter = (parameter: string,): Param => {
   }
   if (commentRegExp.exec(parameter,)) {
     value.name = parameter
-      .replace(commentOrAssignmentAtEndRegExp , '',)
-      .replace(whitespaceRegExp , '',);
+      .replace(commentOrAssignmentAtEndRegExp, '',)
+      .replace(whitespaceRegExp, '',);
     value.default = '';
     value.type = parameter
       .replace(commentBlockOrWhitespaceRegExp, '',)
@@ -73,8 +73,8 @@ const buildParameter = (parameter: string,): Param => {
   }
   if (assignmentRegExp.exec(parameter,)) {
     value.name = parameter
-      .replace(commentOrAssignmentAtEndRegExp , '',)
-      .replace(whitespaceRegExp , '',);
+      .replace(commentOrAssignmentAtEndRegExp, '',)
+      .replace(whitespaceRegExp, '',);
     value.default = parameter
       .replace(beginningAssignmentRegExp, '',)
       .replace(leadingOrTrailingWhitespaceRegExp, '',);
@@ -85,7 +85,7 @@ const buildParameter = (parameter: string,): Param => {
     }
     return value;
   }
-  value.name = parameter.replace(whitespaceRegExp , '',);
+  value.name = parameter.replace(whitespaceRegExp, '',);
   return value;
 };
 // eslint-disable-next-line complexity
