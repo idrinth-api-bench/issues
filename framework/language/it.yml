@@ -30,7 +30,7 @@ too_slow: Il tempo di risposta è stato superiore a %1% ns.
 maximum_below_threads: Il massimo è inferiore al numero di thread iniziale.
 increment_below_one: Devi incrementare i tuoi thread ad ogni iterazione, attualmente l'incremento è inferiore a uno.
 maximum_below_one: Non è possibile impostare il massimo al di sotto di uno.
-server_header_is_set: L'header Server è impostato. Rimuovilo per una maggiore sicurezza.
+server_header_is_set: Considera di rimuovere l'header Server per migliorare la sicurezza, se non necessario.
 powered_by_is_set: L'header X-Powered-By è impostato. Condivide informazioni critiche con il mondo.
 validation_errors: Sono stati rilevati %1% errori.
 validation_warnings: Sono stati rilevati %1% warning.
