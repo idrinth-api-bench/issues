@@ -26,15 +26,14 @@ const getEnv = (name: string, defaultValue: string,): string => {
 };
 
 // eslint-disable-next-line complexity
-const buildRegExp1=/\/\*.+\*\/.+=.+/u;
-const buildRegExp2=/\/\*.+\*\/.+/u;
-const buildRegExp3=/.+=.+/u;
-const nameRegExp1=/\/\*.+\*\/|=.+$/gu;
-const nameRegExp2=/\s*/gu;
-const defaultRegExp1=/^.+=/u;
-const defaultRegExp2=/^\s*|\s*$/gu;
-const typeRegExp1=/^.*\/\*|\*\/.+$/gu;
-const typeRegExp2=/\s*/gu;
+const commentAndAssignmentRegExp=/\/\*.+\*\/.+=.+/u;
+const commentRegExp=/\/\*.+\*\/.+/u;
+const assignmentRegExp=/.+=.+/u;
+const commentOrAssignmentAtEndRegExp =/\/\*.+\*\/|=.+$/gu;
+const whitespaceRegExp =/\s*/gu;
+const beginningAssignmentRegExp=/^.+=/u;
+const leadingOrTrailingWhitespaceRegExp=/^\s*|\s*$/gu;
+const commentBlockOrWhitespaceRegExp=/^.*\/\*|\*\/.+$/gu;
 const buildParameter = (parameter: string,): Param => {
   const value: Param = {
     name: '',
@@ -43,27 +42,27 @@ const buildParameter = (parameter: string,): Param => {
     value: '',
     envName: '',
   };
-  if (buildRegExp1.exec(parameter,)) {
+  if (commentAndAssignmentRegExp.exec(parameter,)) {
     value.name = parameter
-      .replace(nameRegExp1, '',)
-      .replace(nameRegExp2, '',);
+      .replace(commentOrAssignmentAtEndRegExp , '',)
+      .replace(whitespaceRegExp , '',);
     value.default = parameter
-      .replace(defaultRegExp1, '',)
-      .replace(defaultRegExp2, '',);
+      .replace(beginningAssignmentRegExp, '',)
+      .replace(leadingOrTrailingWhitespaceRegExp, '',);
     value.type = parameter
-      .replace(typeRegExp1, '',)
-      .replace(typeRegExp2, '',)
+      .replace(commentBlockOrWhitespaceRegExp, '',)
+      .replace(whitespaceRegExp, '',)
       .toLowerCase();
     return value;
   }
-  if (buildRegExp2.exec(parameter,)) {
+  if (commentRegExp.exec(parameter,)) {
     value.name = parameter
-      .replace(nameRegExp1, '',)
-      .replace(nameRegExp2, '',);
+      .replace(commentOrAssignmentAtEndRegExp , '',)
+      .replace(whitespaceRegExp , '',);
     value.default = '';
     value.type = parameter
-      .replace(typeRegExp1, '',)
-      .replace(typeRegExp2, '',)
+      .replace(commentBlockOrWhitespaceRegExp, '',)
+      .replace(whitespaceRegExp, '',)
       .toLowerCase();
     if (value.type === 'boolean') {
       value.default = 'false';
@@ -72,13 +71,13 @@ const buildParameter = (parameter: string,): Param => {
     }
     return value;
   }
-  if (buildRegExp3.exec(parameter,)) {
+  if (assignmentRegExp.exec(parameter,)) {
     value.name = parameter
-      .replace(nameRegExp1, '',)
-      .replace(nameRegExp2, '',);
+      .replace(commentOrAssignmentAtEndRegExp , '',)
+      .replace(whitespaceRegExp , '',);
     value.default = parameter
-      .replace(defaultRegExp1, '',)
-      .replace(defaultRegExp2, '',);
+      .replace(beginningAssignmentRegExp, '',)
+      .replace(leadingOrTrailingWhitespaceRegExp, '',);
     if (! Number.isNaN(Number.parseFloat(value.default,),)) {
       value.type = 'number';
     } else if (value.default === 'true' || value.default === 'false') {
@@ -86,7 +85,7 @@ const buildParameter = (parameter: string,): Param => {
     }
     return value;
   }
-  value.name = parameter.replace(nameRegExp2, '',);
+  value.name = parameter.replace(whitespaceRegExp , '',);
   return value;
 };
 // eslint-disable-next-line complexity
@@ -120,11 +119,11 @@ const parseParameterString = (parameter: string,): Param => {
   return value;
 };
 // eslint-disable-next-line @typescript-eslint/ban-types
-const analyzeRegExp=/\s*function\s*/u;
+const functionWhitespaceRegExp=/\s*function\s*/u;
 export const analyze = (func: Function,): Param[] => {
   const parameters: string[] = ((): string[] => {
     const fun: string = func.toString().replace(/[\r\n]/gu, ' ',);
-    if (analyzeRegExp.exec(fun,)) {
+    if (functionWhitespaceRegExp.exec(fun,)) {
       return fun
         .replace(/^function\s*\(|\)\s*\{.*\}\s*$/gu, '',)
         .split(',',);
