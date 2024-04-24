@@ -2,14 +2,14 @@ name: MARKDOWN-LINT
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
     - 'framework/**.md'
     - 'framework/package-lock.json'
     - '.github/workflows/framework.mdlint.yml'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
     - 'framework/**.md'
     - 'framework/package-lock.json'

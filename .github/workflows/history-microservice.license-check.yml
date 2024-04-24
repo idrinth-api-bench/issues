@@ -2,13 +2,13 @@ name: history-microservice license lint
 on:
   push:
     branches:
-      - master
+      - the-one
     paths:
       - 'history-microservice/package-lock.json'
       - '.github/workflows/history-microservice.license-check.yml'
   pull_request:
     branches:
-      - master
+      - the-one
     paths:
       - 'history-microservice/package-lock.json'
       - '.github/workflows/history-microservice.license-check.yml'

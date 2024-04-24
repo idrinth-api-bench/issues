@@ -2,14 +2,14 @@ name: MARKDOWN-LINT
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
     - 'cli/**.md'
     - 'cli/package-lock.json'
     - '.github/workflows/cli.mdlint.yml'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
     - 'cli/**.md'
     - 'cli/package-lock.json'

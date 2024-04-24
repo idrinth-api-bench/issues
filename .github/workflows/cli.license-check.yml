@@ -2,13 +2,13 @@ name: cli license lint
 on:
   push:
     branches:
-      - master
+      - the-one
     paths:
       - 'cli/package-lock.json'
       - '.github/workflows/cli.license-check.yml'
   pull_request:
     branches:
-      - master
+      - the-one
     paths:
       - 'cli/package-lock.json'
       - '.github/workflows/cli.license-check.yml'

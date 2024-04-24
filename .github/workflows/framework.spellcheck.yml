@@ -2,14 +2,14 @@ name: framework spellcheck
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
     - 'framework/language/en.yml'
     - '.github/workflows/framework.spellcheck.yml'
     - '.dictionary.txt'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
     - 'framework/language/en.yml'
     - '.github/workflows/framework.spellcheck.yml'

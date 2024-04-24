@@ -2,7 +2,7 @@ name: TEST
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
     - '**.ts'
     - '**.tsx'
@@ -12,7 +12,7 @@ on:
     - '.github/workflows/test.yml'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
     - '**.ts'
     - '**.tsx'
@@ -46,7 +46,7 @@ jobs:
       - run: sed -i 's/SF:tools/SF:mindmap\/tools/' ./coverage/lcov.info
       - run: sed -i 's/SF:src/SF:mindmap\/src/' ./coverage/lcov.info
       - name: Coveralls
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@the-one
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
@@ -73,7 +73,7 @@ jobs:
       - run: sed -i 's/SF:tools/SF:mindmap\/tools/' ./coverage/lcov.info
       - run: sed -i 's/SF:src/SF:mindmap\/src/' ./coverage/lcov.info
       - name: Coveralls
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@the-one
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
@@ -100,7 +100,7 @@ jobs:
       - run: mv ./framework/coverage ./
       - run: sed -i 's/SF:src/SF:framework\/src/' ./coverage/lcov.info
       - name: Coveralls
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@the-one
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
@@ -127,7 +127,7 @@ jobs:
       - run: mv ./framework/coverage ./
       - run: sed -i 's/SF:src/SF:framework\/src/' ./coverage/lcov.info
       - name: Coveralls
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@the-one
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
@@ -154,7 +154,7 @@ jobs:
       - run: mv ./cli/coverage ./
       - run: sed -i 's/SF:src/SF:cli\/src/' ./coverage/lcov.info
       - name: Coveralls
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@the-one
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
@@ -181,7 +181,7 @@ jobs:
       - run: mv ./cli/coverage ./
       - run: sed -i 's/SF:src/SF:cli\/src/' ./coverage/lcov.info
       - name: Coveralls
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@the-one
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
@@ -208,7 +208,7 @@ jobs:
       - run: mv ./framework/coverage ./
       - run: sed -i 's/SF:src/SF:framework\/src/' ./coverage/lcov.info
       - name: Coveralls
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@the-one
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
@@ -235,7 +235,7 @@ jobs:
       - run: mv ./framework/coverage ./
       - run: sed -i 's/SF:src/SF:framework\/src/' ./coverage/lcov.info
       - name: Coveralls
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@the-one
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
@@ -262,7 +262,7 @@ jobs:
       - run: mv ./framework/coverage ./
       - run: sed -i 's/SF:src/SF:framework\/src/' ./coverage/lcov.info
       - name: Coveralls
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@the-one
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
@@ -290,7 +290,7 @@ jobs:
       - run: mv ./documentation-website/coverage ./
       - run: sed -i 's/SF:src/SF:documentation-website\/src/' ./coverage/lcov.info
       - name: Coveralls
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@the-one
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
@@ -320,7 +320,7 @@ jobs:
       - run: mv ./documentation-website/coverage ./
       - run: sed -i 's/SF:src/SF:documentation-website\/src/' ./coverage/lcov.info
       - name: Coveralls
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@the-one
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
@@ -350,7 +350,7 @@ jobs:
       - run: mv ./documentation-website/coverage ./
       - run: sed -i 's/SF:src/SF:documentation-website\/src/' ./coverage/lcov.info
       - name: Coveralls
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@the-one
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
@@ -380,7 +380,7 @@ jobs:
       - run: mv ./documentation-website/coverage ./
       - run: sed -i 's/SF:src/SF:documentation-website\/src/' ./coverage/lcov.info
       - name: Coveralls
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@the-one
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
@@ -410,7 +410,7 @@ jobs:
       - run: mv ./documentation-website/coverage ./
       - run: sed -i 's/SF:src/SF:documentation-website\/src/' ./coverage/lcov.info
       - name: Coveralls
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@the-one
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
@@ -440,7 +440,7 @@ jobs:
       - run: mv ./documentation-website/coverage ./
       - run: sed -i 's/SF:src/SF:documentation-website\/src/' ./coverage/lcov.info
       - name: Coveralls
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@the-one
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
@@ -465,7 +465,7 @@ jobs:
       - framework-property
     steps:
     - name: Coveralls
-      uses: coverallsapp/github-action@master
+      uses: coverallsapp/github-action@the-one
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         parallel-finished: true

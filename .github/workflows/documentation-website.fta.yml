@@ -2,7 +2,7 @@ name: documentation-website FTA
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
     - 'documentation-website/**.ts'
     - 'documentation-website/**.tsx'
@@ -13,7 +13,7 @@ on:
     - '.github/workflows/documentation-website.fta.yml'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
     - 'documentation-website/**.ts'
     - 'documentation-website/**.tsx'

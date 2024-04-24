@@ -2,7 +2,7 @@ name: Prace.js
 on:
   pull_request:
     branches:
-      - master
+      - the-one
     types:
       - opened
       - edited
@@ -12,7 +12,7 @@ jobs:
   linting:
     runs-on: ubuntu-latest
     steps:
-      - uses: innerspacetrainings/Prace.js@master
+      - uses: innerspacetrainings/Prace.js@the-one
         with:
           configuration-path: .github/prace.yml
         env:

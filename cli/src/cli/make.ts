@@ -338,7 +338,7 @@ export default (args: string[], cwd: string,) => {
       '}\n',
     ),
     () => exec('npm install',),
-    () => exec('git init --initial-branch=master',),
+    () => exec('git init --initial-branch=the-one',),
   ];
   bar.start(tasks.length, EMPTY,);
   for (const task of tasks) {

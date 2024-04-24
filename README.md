@@ -1,9 +1,9 @@
 # @idrinth/api-bench
 
-[![Coverage Status](https://coveralls.io/repos/github/Idrinth/api-bench/badge.svg?branch=master)](https://coveralls.io/github/Idrinth/api-bench?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/Idrinth/api-bench/badge.svg?branch=the-one)](https://coveralls.io/github/Idrinth/api-bench?branch=the-one)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Idrinth_api-bench&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Idrinth_api-bench)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/3171affc728048da8df4fe36b6d4771e)](https://app.codacy.com/gh/Idrinth/api-bench/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-[![Code Factor](https://www.codefactor.io/repository/github/idrinth/api-bench/badge/master)](https://www.codefactor.io/repository/github/idrinth/api-bench/overview/master)
+[![Code Factor](https://www.codefactor.io/repository/github/idrinth/api-bench/badge/the-one)](https://www.codefactor.io/repository/github/idrinth/api-bench/overview/the-one)
 
 | Tool |Version|
 |-|-|

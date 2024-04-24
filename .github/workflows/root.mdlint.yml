@@ -2,7 +2,7 @@ name: MARKDOWN-LINT
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
     - '*.md'
     - '.github/**.md'
@@ -11,7 +11,7 @@ on:
     - '.github/workflows/root.mdlint.yml'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
     - '*.md'
     - '.github/**.md'

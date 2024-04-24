@@ -2,14 +2,14 @@ name: documentation-website MARKDOWN-LINT
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
     - 'documentation-website/*.md'
     - 'documentation-website/package-lock.json'
     - '.github/workflows/documentation-website.mdlint.yml'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
     - 'documentation-website/*.md'
     - 'documentation-website/package-lock.json'

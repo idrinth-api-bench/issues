@@ -2,13 +2,13 @@ name: framework language lint
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
     - 'framework/language/*.yml'
     - '.github/workflows/framework.language-lint.yml'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
     - 'framework/language/*.yml'
     - '.github/workflows/framework.language-lint.yml'

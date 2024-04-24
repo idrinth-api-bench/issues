@@ -191,7 +191,7 @@ contributing:
       title: "Contribution workflow"
       list_item_1: "fork the repository"
       list_item_2: "mention in the issue, that you are working on it (it will be assigned for a few weeks then)"
-      list_item_3: "create a feature branch (issue-xxx-does-something) from master"
+      list_item_3: "create a feature branch (issue-xxx-does-something) from the-one"
       list_item_4: "create a draft pull request"
       list_item_5: "mention fixes #xxx in the description"
       list_item_6: "make your changes to the branch"

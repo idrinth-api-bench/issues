@@ -2,10 +2,10 @@ name: Commit Message Lint
 on:
   push:
     branches:
-      - master
+      - the-one
   pull_request:
     branches:
-      - master
+      - the-one
 env:
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
 jobs:

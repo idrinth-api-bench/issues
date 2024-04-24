@@ -2,13 +2,13 @@ name: documentation-website license lint
 on:
   push:
     branches:
-      - master
+      - the-one
     paths:
       - 'documentation-website/package-lock.json'
       - '.github/workflows/documentation-website.license-check.yml'
   pull_request:
     branches:
-      - master
+      - the-one
     paths:
       - 'documentation-website/package-lock.json'
       - '.github/workflows/documentation-website.license-check.yml'

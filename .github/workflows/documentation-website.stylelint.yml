@@ -2,14 +2,14 @@ name: Documentation Website STYLELINT
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
     - 'documentation-website/**.scss'
     - 'documentation-website/package-lock.json'
     - '.github/workflows/documentation-website.stylelint.yml'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
     - 'documentation-website/**.scss'
     - 'documentation-website/package-lock.json'

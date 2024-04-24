@@ -2,7 +2,7 @@ name: framework  CodeQL
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
     - 'framework/**.ts'
     - 'framework/**.tsx'
@@ -12,7 +12,7 @@ on:
     - '.github/workflows/framework.codeql.yml'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
       - 'framework/**.ts'
       - 'framework/**.tsx'

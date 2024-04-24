@@ -2,7 +2,7 @@ name: conflibot
 on:
   pull_request:
     branches:
-      - master
+      - the-one
 
 jobs:
   conflibot:
@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Warn potential conflicts
-        uses: idrinth/conflibot@master
+        uses: idrinth/conflibot@the-one
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           exclude: |

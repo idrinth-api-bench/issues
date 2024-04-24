@@ -2,7 +2,7 @@ name: cli FTA
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
     - 'cli/**.ts'
     - 'cli/**.tsx'
@@ -13,7 +13,7 @@ on:
     - '.github/workflows/cli.fta.yml'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
     - 'cli/**.ts'
     - 'cli/**.tsx'
