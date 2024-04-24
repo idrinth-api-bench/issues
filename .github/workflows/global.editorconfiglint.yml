@@ -2,10 +2,10 @@ name: Editor Config Lint
 on:
   push:
     branches:
-    - master
+    - the-one
   pull_request:
     branches:
-    - master
+    - the-one
 jobs:
   analyze:
     name: Analyze

@@ -2,7 +2,7 @@ name: root ESLINT
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
     - 'tools/**.ts'
     - 'tools/**.tsx'
@@ -13,7 +13,7 @@ on:
     - '.github/workflows/root.eslint.yml'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
     - 'tools/**.ts'
     - 'tools/**.tsx'

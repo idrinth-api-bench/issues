@@ -39,7 +39,7 @@ const allRuns = (data, key,) => {
       && ! step.run.match(/npm ci/u,)
       && ! step.run.endsWith('|| true',)
     ) {
-      runs.push(step.run.replace(/^ *| *$/ug, '',),);
+      runs.push(step.run.replace(/(^ *)|( *$)/ug, '',),);
     }
   }
   return runs;

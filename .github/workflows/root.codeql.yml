@@ -2,7 +2,7 @@ name: root CodeQL
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
     - 'tools/**.ts'
     - 'tools/**.tsx'
@@ -12,7 +12,7 @@ on:
     - '.github/workflows/root.codeql.yml'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
     - 'tools/**.ts'
     - 'tools/**.tsx'

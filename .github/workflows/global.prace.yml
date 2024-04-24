@@ -2,7 +2,7 @@ name: Prace.js
 on:
   pull_request:
     branches:
-      - master
+      - the-one
     types:
       - opened
       - edited

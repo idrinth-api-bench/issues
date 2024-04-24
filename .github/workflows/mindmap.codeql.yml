@@ -2,7 +2,7 @@ name: mindmap CodeQL
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
       - 'mindmap/**.ts'
       - 'mindmap/**.tsx'
@@ -12,7 +12,7 @@ on:
       - '.github/workflows/mindmap.codeql.yml'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
       - 'mindmap/**.ts'
       - 'mindmap/**.tsx'

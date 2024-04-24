@@ -2,14 +2,14 @@ name: Spellcheck
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
     - '**.md'
     - 'package-lock.json'
     - '.github/workflows/spellcheck.yml'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
     - '**.md'
     - 'package-lock.json'

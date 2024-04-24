@@ -2,13 +2,13 @@ name: api-bench-gitea-action Hadolint
 on:
   push:
     branches:
-      - master
+      - the-one
     paths:
       - 'containers/api-bench-gitea-action/Dockerfile'
       - '.github/workflows/api-bench-gitea-action.hadolint.yml'
   pull_request:
     branches:
-      - master
+      - the-one
     paths:
       - 'containers/api-bench-gitea-action/Dockerfile'
       - '.github/workflows/api-bench-gitea-action.hadolint.yml'

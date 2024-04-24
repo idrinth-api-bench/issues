@@ -2,7 +2,7 @@ name: documentation-website CodeQL
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
       - 'documentation-website/**.ts'
       - 'documentation-website/**.tsx'
@@ -12,7 +12,7 @@ on:
       - '.github/workflows/documentation-website.codeql.yml'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
       - 'documentation-website/**.ts'
       - 'documentation-website/**.tsx'

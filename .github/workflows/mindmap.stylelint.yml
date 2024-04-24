@@ -2,14 +2,14 @@ name: mindmap STYLELINT
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
     - 'mindmap/**.css'
     - 'mindmap/package-lock.json'
     - '.github/workflows/mindmap.stylelint.yml'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
       - 'mindmap/**.css'
       - 'mindmap/package-lock.json'

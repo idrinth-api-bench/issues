@@ -22,7 +22,7 @@ const Contributor = ({
   contributions,
 }: ContributorType,) => {
   if (typeof contributions === 'number') {
-    contributions = `${ contributions } contributions to master`;
+    contributions = `${ contributions } contributions to the-one`;
   }
   id = id.toLowerCase();
   return <div

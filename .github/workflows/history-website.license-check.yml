@@ -2,13 +2,13 @@ name: history-website license lint
 on:
   push:
     branches:
-      - master
+      - the-one
     paths:
       - 'history-website/package-lock.json'
       - '.github/workflows/history-website.license-check.yml'
   pull_request:
     branches:
-      - master
+      - the-one
     paths:
       - 'history-website/package-lock.json'
       - '.github/workflows/history-website.license-check.yml'
