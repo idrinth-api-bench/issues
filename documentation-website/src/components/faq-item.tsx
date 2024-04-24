@@ -32,7 +32,7 @@ const FaqItem = ({
       className={'faq-item'}
       aria-expanded={isOpen}
       role="button"
-      onClick={() => toggleOpen()}
+      onClick={(e) => { e.preventDefault(); toggleOpen(); }}
     >
       <div className="accordion-section">
         <h2>
