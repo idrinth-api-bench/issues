@@ -9,16 +9,16 @@ import NoopStorage from '../../src/storage/noop-storage';
 
 let database;
 let port = 3307;
-const WAIT_MEDIUM = 1000;
 const WAIT_LONG = 25000;
 const RADIX = 10;
 
 const delay = (time,) => new Promise((resolve,) => setTimeout(resolve, time,),);
 
 describe('storage/storage-factory', () => {
-  before(async function() {
-    // eslint-disable-next-line no-invalid-this
-    this.timeout(WAIT_LONG,);
+  it('should be a function', () => {
+    expect(storageFactory,).to.be.a('function',);
+  },);
+  it('(mysql) should not throw an error', async() => {
     database = await getDatabase.default({
       mysqlUser: 'idrinth-api-bench',
       mysqlPassword: 'mysqlTestPassword',
@@ -28,15 +28,6 @@ describe('storage/storage-factory', () => {
       database.databaseURL.replace(/\D/gui, '',),
       RADIX,
     );
-  },);
-  after(async() => {
-    await delay(WAIT_MEDIUM,);
-    database.kill();
-  },);
-  it('should be a function', () => {
-    expect(storageFactory,).to.be.a('function',);
-  },);
-  it('(mysql) should not throw an error', function() {
     const storage = storageFactory({
       databaseUser: 'idrinth-api-bench',
       databasePassword: 'mysqlTestPassword',
@@ -47,7 +38,8 @@ describe('storage/storage-factory', () => {
       task: 'bench',
     },);
     expect(storage,).to.be.an.instanceof(MysqlStorage,);
-  },);
+    database.kill();
+  },).timeout(WAIT_LONG,);
   it('(noop) should not throw an error', function() {
     const storage = storageFactory({
       cwd: '',

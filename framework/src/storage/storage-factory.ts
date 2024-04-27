@@ -35,6 +35,9 @@ export default (config: Config,): Storage => {
         config.databaseTrustedConnection === 'true',
       );
     default:
+      if (config.database) {
+        throw new Error(`Database type ${ config.database } is unknown.`,);
+      }
       return new NoopStorage();
   }
 };
