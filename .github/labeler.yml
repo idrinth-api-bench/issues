@@ -39,4 +39,7 @@ tooling:
       - any-glob-to-any-file:
           - tools/**/*
           - "*/tools/**/*"
+continuous-integration:
+  - changed-files:
+    - any-glob-to-any-file:
           - ".github/workflows/*"
