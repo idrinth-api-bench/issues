@@ -3,6 +3,8 @@
   "private": true,
   "version": "2.7.4",
   "type": "module",
+  "description": "This is a wrapper for framework execution. It provides applications for multiple desktop platforms to previously created run tests.",
+  "author": "Björn Büttner",
   "scripts": {
     "build": "npm run drop-dist && npm run copy-assets && vue-tsc && vite build && node tools/fix-index.js && node tools/copy-starter.js",
     "start": "npm run build && node dist/run.js start",
@@ -13,32 +15,16 @@
     "postinstall": "npm run copy-assets"
   },
   "dependencies": {
-    "electron-compile": "^6.4.4",
-    "electron-squirrel-startup": "^1.0.0",
-    "vue": "^3.4.21",
-    "electron": "^30.0.1"
+    "vue": "^3.4.21"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
-    "babel-plugin-transform-async-to-generator": "^6.24.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "@electron-forge/cli": "^7.4.0",
-    "electron-prebuilt-compile": "8.2.0",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vue-tsc": "^2.0.6"
   },
-  "main": "dist/index.js",
-  "config": {
-    "forge": {
-      "electronPackagerConfig": {
-        "packageManager": "npm"
-      },
-      "github_repository": {
-        "owner": "Björn 'Idrinth' Büttner",
-        "name": "idrinth/api-bench"
-      }
-    }
-  }
+  "engines": {
+    "node": ">=20"
+  },
+  "engineStrict": true
 }
