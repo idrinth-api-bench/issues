@@ -12,8 +12,6 @@ let port = 3307;
 const WAIT_LONG = 25000;
 const RADIX = 10;
 
-const delay = (time,) => new Promise((resolve,) => setTimeout(resolve, time,),);
-
 describe('storage/storage-factory', () => {
   it('should be a function', () => {
     expect(storageFactory,).to.be.a('function',);
@@ -38,7 +36,7 @@ describe('storage/storage-factory', () => {
       task: 'bench',
     },);
     expect(storage,).to.be.an.instanceof(MysqlStorage,);
-    database.kill();
+    await database.kill();
   },).timeout(WAIT_LONG,);
   it('(noop) should not throw an error', function() {
     const storage = storageFactory({

@@ -30,7 +30,7 @@ describe('storage/mysql-storage', () => {
   },);
   after(async() => {
     await delay(WAIT_MEDIUM,);
-    database.kill();
+    await database.kill();
   },);
   it('should be a class', () => {
     expect(MysqlStorage,).to.be.a('function',);
