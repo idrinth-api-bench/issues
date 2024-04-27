@@ -10,6 +10,18 @@
 /cli/coverage
 /cli/dump.txt
 
+# Desktop
+/desktop/src/**/*.js
+/desktop/src/locales
+/desktop/node_modules
+/desktop/LICENSE
+/desktop/.nyc_output
+/desktopcoverage
+/desktop/dump.txt
+/desktop/dist
+/desktop/src/assets/iab.svg
+/desktop/src/assets/favicon.svg
+
 # Framework
 /framework/node_modules
 /framework/result.json
