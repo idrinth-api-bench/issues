@@ -22,6 +22,8 @@ describe('storage/mysql-storage', () => {
       mysqlUser: 'idrinth-api-bench',
       mysqlPassword: 'mysqlTestPassword',
       mysqlDb: 'idrinth-api-bench',
+      containerName: 'storage-mysql',
+      defaultExternalPort: 3337,
     },);
     port = Number.parseInt(
       database.databaseURL.replace(/\D/gui, '',),

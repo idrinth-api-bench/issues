@@ -6,10 +6,10 @@ import 'mocha';
 import storageFactory from '../../src/storage/storage-factory';
 import getDatabase from '@databases/mysql-test';
 import NoopStorage from '../../src/storage/noop-storage';
+import delay from '../delay';
 
-let database;
-let port = 3307;
 const WAIT_LONG = 25000;
+const WAIT_MEDIUM = 1000;
 const RADIX = 10;
 
 describe('storage/storage-factory', () => {
@@ -17,12 +17,17 @@ describe('storage/storage-factory', () => {
     expect(storageFactory,).to.be.a('function',);
   },);
   it('(mysql) should not throw an error', async() => {
-    database = await getDatabase.default({
+    const database: {
+      databaseURL: string;
+      kill: () => Promise<void>;
+    } = await getDatabase.default({
       mysqlUser: 'idrinth-api-bench',
       mysqlPassword: 'mysqlTestPassword',
       mysqlDb: 'idrinth-api-bench',
+      containerName: 'storage-factory-mysql',
+      defaultExternalPort: 3338,
     },);
-    port = Number.parseInt(
+    const port = Number.parseInt(
       database.databaseURL.replace(/\D/gui, '',),
       RADIX,
     );
@@ -34,8 +39,10 @@ describe('storage/storage-factory', () => {
       database: 'mysql',
       cwd: '',
       task: 'bench',
-    },);
+    },) as MysqlStorage;
     expect(storage,).to.be.an.instanceof(MysqlStorage,);
+    storage.close();
+    await delay(WAIT_MEDIUM,);
     await database.kill();
   },).timeout(WAIT_LONG,);
   it('(noop) should not throw an error', function() {
