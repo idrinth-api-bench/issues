@@ -25,6 +25,11 @@ in Typescript and runs on Node.js.
 This command line tool is free of frameworks and runs on Node.js. It
 serves as a tool to generate code for use with the framework.
 
+### [Desktop](/desktop/README.md)
+
+This vue and electron tool wraps the framework to provide a nicer,
+easier to use UI for framework execution.
+
 ### [Documentation Website](/documentation-website/README.md)
 
 The documentation website is a React application written in Typescript.
