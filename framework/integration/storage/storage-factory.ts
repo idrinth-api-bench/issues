@@ -41,8 +41,8 @@ describe('storage/storage-factory', () => {
       task: 'bench',
     },) as MysqlStorage;
     expect(storage,).to.be.an.instanceof(MysqlStorage,);
-    storage.close();
     await delay(WAIT_MEDIUM,);
+    storage.close();
     await database.kill();
   },).timeout(WAIT_LONG,);
   it('(noop) should not throw an error', function() {
