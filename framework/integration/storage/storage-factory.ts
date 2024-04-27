@@ -37,8 +37,6 @@ describe('storage/storage-factory', () => {
     expect(storageFactory,).to.be.a('function',);
   },);
   it('(mysql) should not throw an error', function() {
-    // eslint-disable-next-line no-invalid-this
-    this.timeout(WAIT_LONG,);
     const storage = storageFactory({
       databaseUser: 'idrinth-api-bench',
       databasePassword: 'mysqlTestPassword',
@@ -51,8 +49,6 @@ describe('storage/storage-factory', () => {
     expect(storage,).to.be.an.instanceof(MysqlStorage,);
   },);
   it('(noop) should not throw an error', function() {
-    // eslint-disable-next-line no-invalid-this
-    this.timeout(WAIT_LONG,);
     const storage = storageFactory({
       cwd: '',
       task: 'bench',
