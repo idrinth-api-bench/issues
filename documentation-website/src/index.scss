@@ -86,62 +86,62 @@ h5 {
 a {
   color: var(--highlight-color);
   text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    color: var(--highlight-hover);
+    text-decoration: underline;
+  }
 }
 
 strong {
   font-weight: bold;
 }
 
-nav a {
-  font-size: 130%;
-  text-decoration: none;
-  padding: 5px 10px;
-}
-
 ul {
   padding-left: 1.5em;
-}
-
-nav {
-  font-size: 130%;
-  width: 100%;
-}
-
-nav ul {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  padding-left: 0;
 }
 
 li {
   list-style: disc;
 }
 
-nav li {
-  list-style: none;
-  border-left: var(--highlight-color) 5px solid;
-  border-bottom: var(--highlight-color) 1px solid;
-  border-bottom-left-radius: 0.25em;
+nav {
+  font-size: 130%;
   width: 100%;
-  text-align: center;
-  padding: 0.5em 0;
-  font-size: 14px;
-}
 
-a:hover,
-a:focus {
-  color: var(--highlight-hover);
-  text-decoration: underline;
-}
+  a {
+    font-size: 130%;
+    padding: 5px 10px;
+    text-decoration: none;
+  }
 
-nav li ul {
-  padding-left: 0.1em;
-}
+  ul {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    width: 100%;
+  }
 
-nav li li:last-of-type {
-  border-bottom: transparent 0 none;
+  li {
+    border-bottom-left-radius: 0.25em;
+    border-bottom: var(--highlight-color) 1px solid;
+    border-left: var(--highlight-color) 5px solid;
+    font-size: 14px;
+    list-style: none;
+    padding: 0.5em 0;
+    text-align: center;
+    width: 100%;
+
+    ul {
+      padding-left: 0.1em;
+    }
+
+    li:last-of-type {
+      border-bottom: transparent 0 none;
+    }
+  }
 }
 
 .theme-toggle-btn {
@@ -225,41 +225,41 @@ article {
 
   nav {
     width: auto;
-  }
 
-  nav a,
-  nav span {
-    font-size: 1.3em;
-  }
+    a,
+    span {
+      font-size: 1.3em;
+    }
 
-  nav ul {
-    flex-direction: row;
-    gap: 1.7em;
-  }
+    ul {
+      flex-direction: row;
+      gap: 1.7em;
 
-  nav li {
-    border: none;
-    width: initial;
-  }
+      ul {
+        display: none;
+      }
+    }
 
-  nav ul ul {
-    display: none;
+    li {
+      border: none;
+      width: initial;
+
+      &:hover ul,
+      a[aria-expanded='true'] + ul{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        width: auto;
+        position: absolute;
+        background: var(--background-color);
+        padding: 1em;
+        box-shadow: var(--shadow) 0.25em 0.25em 0.5em;
+      }
+    }
   }
 
   .preface {
     font-style: italic;
-  }
-
-  nav li:hover ul,
-  nav li a[aria-expanded='true'] + ul {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    width: auto;
-    position: absolute;
-    background: var(--background-color);
-    padding: 1em;
-    box-shadow: var(--shadow) 0.25em 0.25em 0.5em;
   }
 
   .title-card {
