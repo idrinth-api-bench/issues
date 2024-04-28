@@ -8,6 +8,7 @@ import {
 import {
   FIRST_ELEMENT,
 } from '../constants';
+import './dark-mode-button.scss';
 
 const DarkModeButton = ({
   window,
