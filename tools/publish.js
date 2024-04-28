@@ -48,6 +48,7 @@ for (const file of [
   '/history-microservice/package.json',
   '/mindmap/package.json',
   '/cli/package.json',
+  '/desktop/package.json',
 ]) {
   if (! existsSync(process.cwd() + file,)) {
     console.error('File ' + file + ' missing',);
@@ -90,6 +91,9 @@ writeFileSync(
   process.cwd() + '/framework/LICENSE',
   readFileSync(process.cwd() + '/LICENSE', 'utf8',),
 );
+exec('git add .',);
+exec(`git commit -m "release ${ version }"`,);
+exec('git push || true',);
 if (npmPassword.match(/^npm_/u,)) {
   writeFileSync(
     '~/.npmrc',
@@ -113,11 +117,7 @@ exec(
   true,
 );
 exec(
-  'cd framework && npm install',
-  true,
-);
-exec(
-  'cd framework && npm publish',
+  'cd framework && npm install && npm publish',
   true,
 );
 await delay(NPM_PULL_DELAY,);
@@ -154,7 +154,4 @@ for (const image of [
   exec(`docker push -a idrinth/${ image }`, true,);
 }
 exec('docker image prune --force', true,);
-exec('git add .',);
-exec(`git commit -m "release ${ version }"`,);
-exec('git push || true',);
 process.exit(EXIT_SUCCESS,);
