@@ -2,7 +2,7 @@ name: history-microservice CodeQL
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
       - 'history-microservice/**.ts'
       - 'history-microservice/**.tsx'
@@ -12,7 +12,7 @@ on:
       - '.github/workflows/history-microservice.codeql.yml'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
       - 'history-microservice/**.ts'
       - 'history-microservice/**.tsx'

@@ -2,7 +2,7 @@ name: history-microservice ESLINT
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
     - 'history-microservice/**.ts'
     - 'history-microservice/**.tsx'
@@ -13,7 +13,7 @@ on:
     - '.github/workflows/history-microservice.eslint.yml'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
     - 'history-microservice/**.ts'
     - 'history-microservice/**.tsx'

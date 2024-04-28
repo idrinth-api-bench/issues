@@ -125,11 +125,11 @@ export const analyze = (func: MyFunction,): Param[] => {
     const fun: string = func.toString().replace(/[\r\n]/gu, ' ',);
     if (functionWhitespaceRegExp.exec(fun,)) {
       return fun
-        .replace(/^function\s*\(|\)\s*\{.*\}\s*$/gu, '',)
+        .replace(/(^function\s*\()|(\)\s*\{.*\}\s*$)/gu, '',)
         .split(',',);
     }
     return fun
-      .replace(/^\s*\(|\)\s*=>\s*.*$/gu, '',)
+      .replace(/(^\s*\()|(\)\s*=>\s*.*$)/gu, '',)
       .split(',',);
   })();
   const ret: Param[] = [];

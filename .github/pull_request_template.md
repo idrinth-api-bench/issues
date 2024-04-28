@@ -17,6 +17,7 @@ the pull request as good as possible.
 - [Dockerfiles][DF] adding or modifying dockerfiles
 - [Mindmap][MM] adding to or modifying the mindmap
 - [CLI][CLI] adding to or modifying the cli
+- [Desktop][Desktop] changes to the desktop application
 - [Full][Full] changes to multiple categories
 
 [Full]: ?quick_pull=1&template=full.md
@@ -31,3 +32,4 @@ the pull request as good as possible.
 [DF]: ?quick_pull=1&template=dockerfiles.md
 [MM]: ?quick_pull=1&template=mindmap.md
 [CLI]: ?quick_pull=1&template=cli.md
+[Desktop]: ?quick_pull=1&template=desktop.md

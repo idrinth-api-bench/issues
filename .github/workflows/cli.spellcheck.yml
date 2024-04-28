@@ -2,14 +2,14 @@ name: cli spellcheck
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
     - 'cli/language/en.yml'
     - '.github/workflows/cli.spellcheck.yml'
     - '.dictionary.txt'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
     - 'cli/language/en.yml'
     - '.github/workflows/cli.spellcheck.yml'

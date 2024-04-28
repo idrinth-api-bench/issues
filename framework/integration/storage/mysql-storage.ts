@@ -22,6 +22,8 @@ describe('storage/mysql-storage', () => {
       mysqlUser: 'idrinth-api-bench',
       mysqlPassword: 'mysqlTestPassword',
       mysqlDb: 'idrinth-api-bench',
+      containerName: 'storage-mysql',
+      defaultExternalPort: 3337,
     },);
     port = Number.parseInt(
       database.databaseURL.replace(/\D/gui, '',),
@@ -30,7 +32,7 @@ describe('storage/mysql-storage', () => {
   },);
   after(async() => {
     await delay(WAIT_MEDIUM,);
-    database.kill();
+    await database.kill();
   },);
   it('should be a class', () => {
     expect(MysqlStorage,).to.be.a('function',);

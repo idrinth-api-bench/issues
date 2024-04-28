@@ -2,14 +2,14 @@ name: mindmap validate
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
       - 'mindmap/data.yml'
       - 'mindmap/assets/*'
       - '.github/workflows/mindmap.validate.yml'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
       - 'mindmap/data.yml'
       - 'mindmap/assets/*'

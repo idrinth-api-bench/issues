@@ -2,13 +2,13 @@ name: framework license lint
 on:
   push:
     branches:
-      - master
+      - the-one
     paths:
       - 'framework/package-lock.json'
       - '.github/workflows/framework.license-check.yml'
   pull_request:
     branches:
-      - master
+      - the-one
     paths:
       - 'framework/package-lock.json'
       - '.github/workflows/framework.license-check.yml'

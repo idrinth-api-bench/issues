@@ -2,13 +2,13 @@ name: mindmap license lint
 on:
   push:
     branches:
-      - master
+      - the-one
     paths:
       - 'mindmap/package-lock.json'
       - '.github/workflows/mindmap.license-check.yml'
   pull_request:
     branches:
-      - master
+      - the-one
     paths:
       - 'mindmap/package-lock.json'
       - '.github/workflows/mindmap.license-check.yml'

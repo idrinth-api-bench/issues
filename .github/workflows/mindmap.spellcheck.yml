@@ -2,14 +2,14 @@ name: mindmap spellcheck
 on:
   push:
     branches:
-    - master
+    - the-one
     paths:
     - 'mindmap/data.yml'
     - '.github/workflows/mindmap.spellcheck.yml'
     - '.dictionary.txt'
   pull_request:
     branches:
-    - master
+    - the-one
     paths:
     - 'mindmap/data.yml'
     - '.github/workflows/mindmap.spellcheck.yml'
