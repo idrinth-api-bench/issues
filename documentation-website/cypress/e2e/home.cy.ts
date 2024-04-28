@@ -50,7 +50,7 @@ describe('home', () => {
     cy.get('@choices',)
       .find('li.service',)
       .then(
-        li => {
+        (li,) => {
           cy.wrap(li,)
             .get('input',)
             .as('input',)
@@ -62,7 +62,7 @@ describe('home', () => {
           cy.get('@input',)
             .click(multiple,)
             .should('not.be.checked',);
-    },);
+            },);
     cy.get('@choices',)
       .contains('Matomo tracking',)
       .should('exist',);
