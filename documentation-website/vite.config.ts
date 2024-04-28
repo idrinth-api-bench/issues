@@ -10,9 +10,6 @@ import istanbul from 'babel-plugin-istanbul';
 export default defineConfig({
   build: {
     rollupOptions: {
-      input: {
-        index: 'index.html',
-      },
       plugins: [ plugin(), ],
     },
   },
