@@ -39,7 +39,8 @@ describe('home', () => {
       );
   },);
   it('Cookie consent form', () => {
-    cy.get('div.cookie-consent', flakeTimeout,);
+    cy.get('div.cookie-consent', flakeTimeout,)
+      .should('not.exist',);
     cy.get('form.cookie-consent', flakeTimeout,)
       .as('form',);
     cy.get('ul#consent-choices', flakeTimeout,)
