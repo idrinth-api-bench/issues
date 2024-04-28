@@ -40,10 +40,15 @@ describe('home', () => {
   },);
   it('Cookie consent form', () => {
     cy.get('div.cookie-consent', flakeTimeout);
-    cy.get('form.cookie-consent', flakeTimeout).as('form');
-    cy.get('ul#consent-choices', flakeTimeout).as('choices')
-    cy.get('@choices').should('exist');
-    cy.get('@choices').find('li.service').then(li => {
+    cy.get('form.cookie-consent', flakeTimeout)
+      .as('form');
+    cy.get('ul#consent-choices', flakeTimeout)
+      .as('choices');
+    cy.get('@choices')
+      .should('exist');
+    cy.get('@choices')
+      .find('li.service')
+      .then(li => {
       cy.wrap(li)
         .get('input')
         .as('input')
