@@ -85,19 +85,19 @@ describe('home', () => {
       .as('custom',)
       .contains('As above',)
       .should('exist',);
-      cy.get('@custom',)
-        .click();
-      cy.get('div.cookie-consent',)
-        .should('not.exist',);
+    cy.get('@custom',)
+      .click();
+    cy.get('div.cookie-consent',)
+      .should('not.exist',);
   },);
   it('cookie consent custom', () => {
     cy.get('button.cookie-consent-decline-button',)
       .as('decline',)
       .contains('Decline',)
       .should('exist',);
-      cy.get('@decline',)
-        .click();
-      cy.get('div.cookie-consent',)
-        .should('not.exist',);
+    cy.get('@decline',)
+      .click();
+    cy.get('div.cookie-consent',)
+      .should('not.exist',);
   },);
 },);
