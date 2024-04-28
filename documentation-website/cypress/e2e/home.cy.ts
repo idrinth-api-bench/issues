@@ -95,9 +95,9 @@ describe('home', () => {
       .as('decline',)
       .contains('Decline',)
       .should('exist',);
-      cy.get('@decline',)
-        .click();
-      cy.get('div.cookie-consent',)
-        .should('not.exist',);
+    cy.get('@decline',)
+      .click();
+    cy.get('div.cookie-consent',)
+      .should('not.exist',);
   },);
 },);
