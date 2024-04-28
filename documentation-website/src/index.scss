@@ -107,10 +107,6 @@ nav {
   width: 100%;
 }
 
-nav.breadcrumbs {
-  font-size: 70%;
-}
-
 nav ul {
   display: flex;
   align-items: center;
@@ -240,13 +236,7 @@ footer li:not(:last-child)::after {
   padding-inline: 1em;
 }
 
-nav.breadcrumbs li::after {
-  content: ' > ';
-}
 
-nav.breadcrumbs li:last-of-type::after {
-  content: '';
-}
 
 .dark-mode #loader span {
   background-image: url('assets/loading-svgrepo-com.white.svg');
@@ -290,15 +280,6 @@ nav.breadcrumbs li:last-of-type::after {
 
   nav ul ul {
     display: none;
-  }
-
-  nav.breadcrumbs ul {
-    gap: 0;
-    padding-left: 2.5em;
-  }
-
-  nav.breadcrumbs li::after {
-    padding: 0 0.5em;
   }
 
   .preface {
