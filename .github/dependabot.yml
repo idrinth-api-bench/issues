@@ -25,3 +25,18 @@ updates:
   schedule:
     interval: weekly
   open-pull-requests-limit: 100
+- package-ecosystem: npm
+  directory: "/mindmap"
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 100
+- package-ecosystem: npm
+  directory: "/desktop"
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 100
+- package-ecosystem: npm
+  directory: "/desktop/public"
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 100
