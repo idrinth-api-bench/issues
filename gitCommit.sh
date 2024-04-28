@@ -1,4 +1,5 @@
-#! Commit changes form for easy commits
+#!/bin/bash
+# Commit changes form for easy commits
 
 read -rp "Enter your task type: " task
 read -rp "Enter the task scope: " scope
