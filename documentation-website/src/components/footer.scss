@@ -14,7 +14,7 @@ footer.footer {
 
   li {
     display: flex;
-    
+
     &i:not(:last-child)::after {
       content: ' | ';
       padding-inline: 1em;
@@ -25,17 +25,18 @@ footer.footer {
     display: flex;
     padding-left: 0;
   }
-}
 
-@media only screen and (width >= 600px) {
-  span {
-    max-height: 100%;
-    white-space: nowrap;
+  @media only screen and (width >= 600px) {
+    span {
+      max-height: 100%;
+      white-space: nowrap;
+    }
+  }
+
+  @media only screen and (width >= 950px) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-inline: 2rem;
   }
 }
 
-@media only screen and (width >= 950px) {
-  flex-direction: row;
-  justify-content: space-between;
-  padding-inline: 2rem;
-}
