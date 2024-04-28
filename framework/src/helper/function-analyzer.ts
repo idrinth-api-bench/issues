@@ -32,59 +32,65 @@ const whitespaceRegExp =/\s*/gu;
 const beginningAssignmentRegExp=/^.+=/u;
 const leadingOrTrailingWhitespaceRegExp=/^\s*|\s*$/gu;
 const commentBlockOrWhitespaceRegExp=/^.*\/\*|\*\/.+$/gu;
-const buildParameter = (parameter: string,): Param => {
-  const value: Param = {
-    name: '',
-    type: 'string',
-    default: '',
-    value: '',
-    envName: '',
-  };
-  if (commentAndAssignmentRegExp.exec(parameter,)) {
-    value.name = parameter
-      .replace(commentOrAssignmentAtEndRegExp, '',)
-      .replace(whitespaceRegExp, '',);
-    value.default = parameter
-      .replace(beginningAssignmentRegExp, '',)
-      .replace(leadingOrTrailingWhitespaceRegExp, '',);
-    value.type = parameter
-      .replace(commentBlockOrWhitespaceRegExp, '',)
-      .replace(whitespaceRegExp, '',)
-      .toLowerCase();
+const buildParameter = (parameter: string): Param => {
+    const value: Param = {
+        name: '',
+        type: 'string',
+        default: '',
+        value: '',
+        envName: '',
+    };
+    if (commentAndAssignmentRegExp.exec(parameter,)) {
+        processCommentAndAssignment(parameter, value);
+    } else if (commentRegExp.exec(parameter)) {
+        processComment(parameter, value);
+    } else if (assignmentRegExp.exec(parameter)) {
+        processAssignment(parameter, value);
+    } else {
+        value.name = parameter.replace(whitespaceRegExp, '');
+    }
     return value;
-  }
-  if (commentRegExp.exec(parameter,)) {
+};
+
+const processCommentAndAssignment = (parameter: string, value: Param) => {
     value.name = parameter
-      .replace(commentOrAssignmentAtEndRegExp, '',)
-      .replace(whitespaceRegExp, '',);
+        .replace(commentOrAssignmentAtEndRegExp, '',)
+        .replace(whitespaceRegExp, '',);
+    value.default = parameter
+        .replace(beginningAssignmentRegExp, '',)
+        .replace(leadingOrTrailingWhitespaceRegExp, '',);
+    value.type = parameter
+        .replace(commentBlockOrWhitespaceRegExp, '',)
+        .replace(whitespaceRegExp, '',)
+        .toLowerCase();
+};
+const processComment = (parameter: string, value: Param) => {
+    value.name = parameter
+        .replace(commentOrAssignmentAtEndRegExp, '',)
+        .replace(whitespaceRegExp, '',);
     value.default = '';
     value.type = parameter
-      .replace(commentBlockOrWhitespaceRegExp, '',)
-      .replace(whitespaceRegExp, '',)
-      .toLowerCase();
+        .replace(commentBlockOrWhitespaceRegExp, '',)
+        .replace(whitespaceRegExp, '',)
+        .toLowerCase();
     if (value.type === 'boolean') {
-      value.default = 'false';
+        value.default = 'false';
     } else if (value.type === 'number') {
-      value.default = '0';
+        value.default = '0';
     }
-    return value;
-  }
-  if (assignmentRegExp.exec(parameter,)) {
+};
+const processAssignment = (parameter: string, value: Param) => {
     value.name = parameter
-      .replace(commentOrAssignmentAtEndRegExp, '',)
-      .replace(whitespaceRegExp, '',);
+        .replace(commentOrAssignmentAtEndRegExp, '',)
+        .replace(whitespaceRegExp, '',);
     value.default = parameter
-      .replace(beginningAssignmentRegExp, '',)
-      .replace(leadingOrTrailingWhitespaceRegExp, '',);
+        .replace(beginningAssignmentRegExp, '',)
+        .replace(leadingOrTrailingWhitespaceRegExp, '',);
     if (! Number.isNaN(Number.parseFloat(value.default,),)) {
-      value.type = 'number';
+        value.type = 'number';
     } else if (value.default === 'true' || value.default === 'false') {
-      value.type = 'boolean';
+        value.type = 'boolean';
     }
-    return value;
-  }
-  value.name = parameter.replace(whitespaceRegExp, '',);
-  return value;
 };
 // eslint-disable-next-line complexity
 const parseParameterString = (parameter: string,): Param => {
