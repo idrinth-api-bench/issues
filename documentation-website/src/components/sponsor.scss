@@ -1,12 +1,6 @@
 .sponsor {
   display: grid;
-  grid-template-columns: 1fr;
-
-  img {
-    place-self: center;
-  }
-
-  h2 {
-    text-align: left;
-  }
+  justify-items: center;
+  align-items: center;
+  row-gap: 1ch;
 }
