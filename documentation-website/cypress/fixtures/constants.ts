@@ -18,3 +18,9 @@ export const page = {
   usage: '/usage/',
   'code-of-conduct': '/code-of-conduct/',
 };
+export const flakeTimeout = {
+  timeout: 6000}
+;
+export const multiple = {
+  multiple: true
+};
