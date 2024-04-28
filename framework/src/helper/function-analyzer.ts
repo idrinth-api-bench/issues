@@ -24,8 +24,6 @@ const getEnv = (name: string, defaultValue: string,): string => {
   }
   return defaultValue;
 };
-
-// eslint-disable-next-line complexity
 const commentAndAssignmentRegExp=/\/\*.+\*\/.+=.+/u;
 const commentRegExp=/\/\*.+\*\/.+/u;
 const assignmentRegExp=/.+=.+/u;
@@ -118,7 +116,6 @@ const parseParameterString = (parameter: string,): Param => {
   }
   return value;
 };
-// eslint-disable-next-line @typescript-eslint/ban-types
 const functionWhitespaceRegExp=/\s*function\s*/u;
 export const analyze = (func: MyFunction,): Param[] => {
   const parameters: string[] = ((): string[] => {
