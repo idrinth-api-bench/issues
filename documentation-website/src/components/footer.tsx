@@ -6,11 +6,13 @@ import CookieConsent from './cookie-consent.tsx';
 import Lang from './lang.tsx';
 import LanguageSwitch from './language-switch.tsx';
 
-const Footer = () => <footer>
+const Footer = ({
+  window,
+}: { window: Window },) => <footer>
   <span>©2020-2024 Björn Büttner and contributors.</span>
   <ul>
     <li>
-      <LanguageSwitch window={window} />
+      <LanguageSwitch window={window || {}} />
     </li>
     <li>
       <CookieConsent />
