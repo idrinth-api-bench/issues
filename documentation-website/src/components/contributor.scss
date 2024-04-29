@@ -5,9 +5,9 @@
   img {
     border-radius: 50%;
     border: 1px solid var(--highlight-color);
+    place-self: center center;
     justify-self: center;
     max-width: 200px;
-    place-self: center center;
   }
 
   h2 {

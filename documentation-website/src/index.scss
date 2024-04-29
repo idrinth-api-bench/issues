@@ -110,6 +110,7 @@ nav {
   font-size: 130%;
   width: 100%;
 
+  /* stylelint-disable-next-line no-descending-specificity */
   a {
     font-size: 130%;
     padding: 5px 10px;
@@ -159,7 +160,6 @@ article {
 }
 
 .dark-mode-icon {
-  // unused
   color: var(--text-color);
   padding: 0;
   width: 70%;
