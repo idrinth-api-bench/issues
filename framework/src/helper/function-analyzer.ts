@@ -64,7 +64,7 @@ const buildParameter = (parameter: string,): Param => {
     if (value.type === 'boolean') {
       value.default = 'false';
     } else if (value.type === 'number') {
-        value.default = '0';
+       value.default = '0';
     }
   };
   const processAssignment = () => {
@@ -77,17 +77,17 @@ const buildParameter = (parameter: string,): Param => {
     if (! Number.isNaN(Number.parseFloat(value.default,),)) {
       value.type = 'number';
     } else if (value.default === 'true' || value.default === 'false') {
-       value.type = 'boolean';
+      value.type = 'boolean';
     }
   };
   if (commentAndAssignmentRegExp.exec(parameter,)) {
     processCommentAndAssignment(parameter, value,);
   } else if (commentRegExp.exec(parameter,)) {
-     processComment(parameter, value,);
+    processComment(parameter, value,);
   } else if (assignmentRegExp.exec(parameter,)) {
-     processAssignment(parameter, value,);
+    processAssignment(parameter, value,);
   } else {
-     value.name = parameter.replace(whitespaceRegExp, '',);
+    value.name = parameter.replace(whitespaceRegExp, '',);
   }
   return value;
 };
