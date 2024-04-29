@@ -32,7 +32,7 @@ const whitespaceRegExp =/\s*/gu;
 const beginningAssignmentRegExp=/^.+=/u;
 const leadingOrTrailingWhitespaceRegExp=/^\s*|\s*$/gu;
 const commentBlockOrWhitespaceRegExp=/^.*\/\*|\*\/.+$/gu;
-const buildParameter = (parameter: string): Param => {
+const buildParameter = (parameter: string,): Param => {
   const value: Param = {
     name: '',
     type: 'string',
@@ -40,7 +40,7 @@ const buildParameter = (parameter: string): Param => {
     value: '',
     envName: '',
   };
-  const processCommentAndAssignment = (parameter: string, value: Param) => {
+  const processCommentAndAssignment = () => {
     value.name = parameter
       .replace(commentOrAssignmentAtEndRegExp, '',)
       .replace(whitespaceRegExp, '',);
@@ -52,7 +52,7 @@ const buildParameter = (parameter: string): Param => {
       .replace(whitespaceRegExp, '',)
       .toLowerCase();
   };
-  const processComment = (parameter: string, value: Param) => {
+  const processComment = () => {
     value.name = parameter
       .replace(commentOrAssignmentAtEndRegExp, '',)
       .replace(whitespaceRegExp, '',);
@@ -67,7 +67,7 @@ const buildParameter = (parameter: string): Param => {
         value.default = '0';
     }
   };
-  const processAssignment = (parameter: string, value: Param) => {
+  const processAssignment = () => {
     value.name = parameter
       .replace(commentOrAssignmentAtEndRegExp, '',)
       .replace(whitespaceRegExp, '',);
@@ -77,19 +77,19 @@ const buildParameter = (parameter: string): Param => {
     if (! Number.isNaN(Number.parseFloat(value.default,),)) {
       value.type = 'number';
     } else if (value.default === 'true' || value.default === 'false') {
-        value.type = 'boolean';
+       value.type = 'boolean';
     }
   };
   if (commentAndAssignmentRegExp.exec(parameter,)) {
-    processCommentAndAssignment(parameter, value);
-  } else if (commentRegExp.exec(parameter)) {
-      processComment(parameter, value);
-  } else if (assignmentRegExp.exec(parameter)) {
-      processAssignment(parameter, value);
+    processCommentAndAssignment(parameter, value,);
+  } else if (commentRegExp.exec(parameter,)) {
+     processComment(parameter, value,);
+  } else if (assignmentRegExp.exec(parameter,)) {
+     processAssignment(parameter, value,);
   } else {
-      value.name = parameter.replace(whitespaceRegExp, '');
+     value.name = parameter.replace(whitespaceRegExp, '',);
   }
-    return value;
+  return value;
 };
 // eslint-disable-next-line complexity
 const parseParameterString = (parameter: string,): Param => {
