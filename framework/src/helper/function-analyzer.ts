@@ -64,7 +64,7 @@ const buildParameter = (parameter: string,): Param => {
     if (value.type === 'boolean') {
       value.default = 'false';
     } else if (value.type === 'number') {
-       value.default = '0';
+      value.default = '0';
     }
   };
   const processAssignment = () => {
