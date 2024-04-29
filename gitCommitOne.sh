@@ -8,9 +8,9 @@ read -rp "Enter the task summary: " summary
 read -rp "Enter the task description: " description
 read -rp "What issue number does this address? " issue
 
+git pull
 git add .
 git commit -m "$task($scope): $summary \n $description \n closes #$issue"
-git pull
 git push
 
 git checkout the-one
