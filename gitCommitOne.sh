@@ -1,6 +1,8 @@
 #!/bin/bash
 # Commit changes form for easy commits
 
+read -rp "Enter the name of your working branch: " branch
+
 echo ""
 echo "Task types:"
 echo ""
