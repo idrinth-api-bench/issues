@@ -9,8 +9,8 @@
   }
 
   & > svg {
-    width: 25px;
     height: 25px;
+    width: 25px;
   }
 
   @media only screen and (width >= 600px) {
@@ -24,9 +24,5 @@
 
   @media only screen and (width >= 1250px) {
     grid-column: 4;
-    grid-row: 1 / 3;
   }
 }
-
-
-

@@ -29,7 +29,7 @@ const preventOpenLink = (event: React.MouseEvent<SVGElement, MouseEvent>,) => {
 
 const Header = ({
   window,
-}: {window: Window},) => <header className={'header'}>
+}: {window: Window},) => <header>
   <div>
     <NavLink id="logo" to="/">
       <img src={IAB} alt="@idrinth/api-bench" />

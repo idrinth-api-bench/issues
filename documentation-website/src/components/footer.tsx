@@ -7,7 +7,7 @@ import CookieConsent from './cookie-consent.tsx';
 import LanguageSwitch from './language-switch.tsx';
 import './footer.scss';
 
-const Footer = () => <footer className={'footer'}>
+const Footer = () => <footer>
   <span>©2020-2024 Björn Büttner and contributors.</span>
   <ul>
     <li>
