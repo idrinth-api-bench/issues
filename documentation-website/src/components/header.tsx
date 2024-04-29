@@ -1,17 +1,18 @@
 import React from 'react';
-import IAB from '../assets/iab.svg';
+import {
+  MdArrowDropDown,
+} from 'react-icons/md';
 import {
   NavLink,
 } from 'react-router-dom';
 import pkg from '../../package.json' with {
   type: 'json'
 };
-import Lang from './lang.tsx';
+import IAB from '../assets/iab.svg';
 import DarkModeButton from './dark-mode-button.tsx';
+import './header.scss';
+import Lang from './lang.tsx';
 import SocialLink from './social-link.tsx';
-import {
-  MdArrowDropDown,
-} from 'react-icons/md';
 
 const preventOpenLink = (event: React.MouseEvent<SVGElement, MouseEvent>,) => {
   event.preventDefault();

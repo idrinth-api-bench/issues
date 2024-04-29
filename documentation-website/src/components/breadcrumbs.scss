@@ -1,0 +1,26 @@
+nav.breadcrumbs {
+  font-size: 70%;
+
+  li {
+    &::after {
+      content: ' > ';
+    }
+
+    &:last-of-type::after {
+      content: '';
+    }
+  }
+
+  @media only screen and (width >= 600px) {
+    li::after {
+      padding: 0 0.5em;
+    }
+
+    ul {
+      gap: 0;
+      padding-left: 2.5em;
+    }
+  }
+}
+
+

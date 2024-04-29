@@ -5,6 +5,7 @@ import {
 import CookieConsent from './cookie-consent.tsx';
 import Lang from './lang.tsx';
 import LanguageSwitch from './language-switch.tsx';
+import './footer.scss';
 
 const Footer = ({
   window,
