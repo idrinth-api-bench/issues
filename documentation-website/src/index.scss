@@ -188,7 +188,7 @@ article {
       width: initial;
 
       &:hover ul,
-      a[aria-expanded='true'] + ul{
+      a[aria-expanded='true'] + ul {
         display: flex;
         flex-direction: column;
         gap: 1em;
@@ -214,32 +214,32 @@ article {
   }
 
   .card {
+    background: rgba(0 0 0 / 10%);
+    border-radius: 0.5em 0 0 0.5em;
+    border: var(--highlight-color) solid 1px;
+    box-shadow: var(--shadow) 0.25em 0.25em 0.5em;
     display: grid;
     grid-template-columns: 1fr minmax(100px, 2fr);
-    background: rgba(0 0 0 / 10%);
-    box-shadow: var(--shadow) 0.25em 0.25em 0.5em;
-    border: var(--highlight-color) solid 1px;
     margin-bottom: 1.5em;
-    border-radius: 0.5em 0 0 0.5em;
-  }
 
-  .card > :nth-child(1) {
-    text-align: right;
-    padding: 1em;
-    background: rgba(0 0 0 / 10%);
-    border-right: var(--highlight-color) solid 1px;
-  }
+    & > :nth-child(1) {
+      background: rgba(0 0 0 / 10%);
+      border-right: var(--highlight-color) solid 1px;
+      padding: 1em;
+      text-align: right;
 
-  .card > :nth-child(1) > * {
-    text-align: right;
-  }
+      & > * {
+        text-align: right;
+      }
+    }
 
-  .card > :nth-child(2) {
-    padding: 1.5em 1em;
-  }
+    & > :nth-child(2) {
+      padding: 1.5em 1em;
+    }
 
-  .card > ul:nth-child(2) {
-    padding-left: 2em;
+    & > ul:nth-child(2) {
+      padding-left: 2em;
+    }
   }
 
   .faq-ul-list {
@@ -256,7 +256,4 @@ article {
   .dark-mode header nav > ul.socials {
     background: transparent;
   }
-}
-
-@media only screen and (width >= 1250px) {
 }
