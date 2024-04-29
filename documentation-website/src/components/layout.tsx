@@ -1,15 +1,15 @@
-import DefaultMeta from './default-meta.tsx';
-import Header from './header.tsx';
-import Footer from './footer.tsx';
 import React from 'react';
 import Breadcrumbs from './breadcrumbs.tsx';
+import DefaultMeta from './default-meta.tsx';
+import Footer from './footer.tsx';
 import ScrollToHashElement from './hash-scroll.tsx';
+import Header from './header.tsx';
 
 interface LayoutProps {
-  children?: React.ReactNode|React.ReactNode[],
-  page?: string,
-  path?: string,
-  canonical?: string,
+  children?: React.ReactNode | React.ReactNode[];
+  page?: string;
+  path?: string;
+  canonical?: string;
 }
 
 const Layout = ({
@@ -18,19 +18,23 @@ const Layout = ({
   canonical = '',
   children,
 }: LayoutProps,) => {
-  const meta = page
-    ? <DefaultMeta page={page} path={canonical || path}/>
-    : '';
-  return <>
-    {meta}
-    <Header window={window || {}}/>
-    <Breadcrumbs path={path}/>
-    <article>
-      {children}
-    </article>
-    <Footer/>
-    <ScrollToHashElement/>
-  </>;
+  const meta = page ?
+    <DefaultMeta
+      page={page}
+      path={canonical || path}
+    />
+    :
+    '';
+  return (
+    <>
+      {meta}
+      <Header window={window || {}} />
+      <Breadcrumbs path={path} />
+      <article>{children}</article>
+      <Footer window={window || {}} />
+      <ScrollToHashElement />
+    </>
+  );
 };
 
 export default Layout;
