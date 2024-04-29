@@ -14,6 +14,7 @@ git pull
 git push
 
 git checkout the-one
+git pull
 git merge $branch
 git push
 
