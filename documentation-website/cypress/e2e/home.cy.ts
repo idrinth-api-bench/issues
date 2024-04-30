@@ -38,11 +38,13 @@ describe('home', () => {
         `©2020-${ new Date().getFullYear() } Björn Büttner and contributors.`,
       );
   },);
-  it('Cookie consent form', () => {
+  it('Cookie consent form displays', () => {
     cy.get('div.cookie-consent', flakeTimeout,)
       .should('not.exist',);
     cy.get('form.cookie-consent', flakeTimeout,)
       .as('form',);
+  })
+  it('Cookie consent form', () => {
     cy.get('ul#consent-choices', flakeTimeout,)
       .as('choices',);
     cy.get('@choices',)

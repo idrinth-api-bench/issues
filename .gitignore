@@ -88,7 +88,7 @@
 
 #Scripts
 gitCommit.sh
-gitMergeOne.sh
+gitDev2One.sh
 
 # Editor directories and files
 .DS_Store
