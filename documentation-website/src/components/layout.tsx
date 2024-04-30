@@ -4,6 +4,7 @@ import DefaultMeta from './default-meta.tsx';
 import Footer from './footer.tsx';
 import ScrollToHashElement from './hash-scroll.tsx';
 import Header from './header.tsx';
+import Airtime from './airtime.tsx';
 
 interface LayoutProps {
   children?: React.ReactNode | React.ReactNode[];
@@ -32,6 +33,7 @@ const Layout = ({
       <Breadcrumbs path={path} />
       <article>{children}</article>
       <Footer window={window || {}} />
+      <Airtime/>
       <ScrollToHashElement />
     </>
   );
