@@ -64,7 +64,8 @@ describe('home', () => {
           cy.get('@input',)
             .click(multiple,)
             .should('not.be.checked',);
-          },);
+        },
+      );
     cy.get('@choices',)
       .contains('Matomo tracking',)
       .should('exist',);
