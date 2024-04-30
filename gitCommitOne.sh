@@ -44,7 +44,7 @@ set +e
 
 git checkout the-one
 git pull
-git merge $branch
+git merge "$branch"
 git push
 
 git checkout $branch
