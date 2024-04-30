@@ -4,7 +4,7 @@ import React, {
   ReactNode,
 } from 'react';
 import languageKey from '../locales/language-key.ts';
-
+import './sponsor.scss';
 interface SponsorProps {
   img: ReactNode;
   lnkey: string;

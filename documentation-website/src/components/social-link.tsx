@@ -30,7 +30,7 @@ const SocialLink = ({
         );
         // eslint-disable-next-line no-await-in-loop
         const text = await t(`socials.${ label }.text${ pos }` as languageKey,);
-        items.push(<li>
+        items.push(<li key={label + pos}>
           <a
             href={url}
             rel='noreferrer'
@@ -49,7 +49,7 @@ const SocialLink = ({
         </span>,
       };
     },);
-    return <li id={label}>
+    return <li id={label} key={label}>
       <Suspense fallback={<span
         className="external-link"
       >
