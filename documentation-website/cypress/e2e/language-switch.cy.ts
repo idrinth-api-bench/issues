@@ -1,8 +1,8 @@
 import {
   BASE_URL,
-  EMPTY_ARRAY_LENGTH,
-  PAGE_LOAD_WAIT_MS,
+  EMPTY_LENGTH,
   page,
+  PAGE_LOAD_WAIT_MS,
 } from '../fixtures/constants.ts';
 
 describe('language-switch', () => {
@@ -16,7 +16,7 @@ describe('language-switch', () => {
     cy.get(languageSwitchSelector,).should('exist',);
     cy.get('select[name="language-switch"] option',).should(
       'have.length.greaterThan',
-      EMPTY_ARRAY_LENGTH,
+      EMPTY_LENGTH,
     );
   },);
 
