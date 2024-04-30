@@ -35,10 +35,12 @@ echo ""
 read -rp "What issue number does this address? " issue
 echo ""
 
+set -e
 git pull
 git add .
 git commit -m "$task($scope): $summary \n $description \n closes #$issue"
 git push
+set +e
 
 git checkout the-one
 git pull
