@@ -86,10 +86,6 @@
 /mindmap/assets/iab.svg
 /mindmap/assets/favicon.svg
 
-#Scripts
-gitCommit.sh
-gitDev2One.sh
-
 # Editor directories and files
 .DS_Store
 *.suo
