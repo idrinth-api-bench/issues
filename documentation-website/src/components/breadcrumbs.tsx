@@ -6,6 +6,7 @@ import Lang from './lang.tsx';
 import {
   ONE,
 } from '../constants.ts';
+import './breadcrumbs.scss';
 
 interface BreadcrumbsProps {
   path: string;

@@ -1,28 +1,28 @@
 .cookie-consent {
   background-color: var(--background-color);
-  color: var(--text-color);
-  padding: 1.25em;
   border-radius: 5px;
+  bottom: 20px;
+  box-shadow: 0 0 5px var(--shadow);
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
-  position: fixed;
-  bottom: 20px;
-  z-index: 100;
   left: 10px;
   max-width: 410px;
-  box-shadow: 0 0 5px var(--shadow);
+  padding: 1.25em;
+  position: fixed;
+  z-index: 100;
 
   .cookie-consent-description {
-    text-align: left;
-    width: 100%;
     display: block;
     margin-bottom: 0.75em;
+    text-align: left;
+    width: 100%;
   }
 
   .cookie-title {
+    font-size: 1.2em;
     margin: 0;
     text-align: left;
-    font-size: 1.2em;
   }
 
   ul,
@@ -40,9 +40,9 @@
   }
 
   li.service input {
-    width: 1em;
-    height: 1em;
     border: 1px solid var(--highlight-color);
+    height: 1em;
+    width: 1em;
   }
 
   li.service input:checked {
@@ -51,17 +51,17 @@
 
   .cookie-consent-buttons {
     display: flex;
+    gap: 0.5em;
     justify-content: flex-start;
     width: 100%;
-    gap: 0.5em;
   }
 
   .cookie-consent-accept-button,
   .cookie-consent-decline-button,
   .cookie-consent-custom-button {
-    padding: 20px;
     border-radius: 10px;
     cursor: pointer;
+    padding: 20px;
   }
 
   .cookie-consent-accept-button {
