@@ -47,5 +47,5 @@ git pull
 git merge "$branch"
 git push
 
-git checkout $branch
+git checkout "$branch"
 echo 'Your are now on your working branch. Happy coding!'
