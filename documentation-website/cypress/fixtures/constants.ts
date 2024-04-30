@@ -18,5 +18,10 @@ export const page = {
   usage: '/usage/',
   'code-of-conduct': '/code-of-conduct/',
 };
-export const EMPTY_ARRAY_LENGTH = 0;
-export const PAGE_LOAD_WAIT_MS = 1000;
+export const flakeTimeout = {
+  timeout: 6000,
+};
+export const multiple = {
+  multiple: true,
+};
+
