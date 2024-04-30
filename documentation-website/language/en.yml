@@ -502,7 +502,7 @@ cookie-consent:
       description: "We will load videos from www.youtube-nocookie.com to directly play on the site."
     airtime:
       title: "Airtime"
-      description: "Participate in a short user survey via airtimeux.com."
+      description: "Participate in a short user survey via airtimeux.com with the response data stored by them."
 
 language-switch:
   aria: "Language switch"
