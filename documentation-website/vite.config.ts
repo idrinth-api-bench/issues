@@ -24,14 +24,12 @@ export default defineConfig({
       plugins: [ plugin(), ],
     },
   },
-  plugins: [
-    react({
-      babel: {
-        plugins: babelPlugins,
-        generatorOpts: {
-          importAttributesKeyword: 'with',
-        },
+  plugins: [ react({
+    babel: {
+      plugins: babelPlugins,
+      generatorOpts: {
+        importAttributesKeyword: 'with',
       },
-    },),
-  ],
+    },
+  },), ],
 },);
