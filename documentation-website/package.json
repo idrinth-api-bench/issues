@@ -77,13 +77,14 @@
     "lighthouse": "^12.0.0",
     "markdownlint-cli": "^0.40.0",
     "mocha": "^10.3.0",
+    "rollup": "^4.17.2",
     "spellchecker-cli": "^6.2.0",
     "start-server-and-test": "^2.0.3",
     "stylelint": "^16.2.1",
     "stylelint-config-standard": "^36.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.3.3",
-    "vite": "^5.1.1"
+    "vite": "^5.2.10"
   },
   "engines": {
     "node": ">=20"
