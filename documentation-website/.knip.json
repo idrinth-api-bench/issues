@@ -2,5 +2,5 @@
   "$schema": "https://unpkg.com/knip@5/schema.json",
   "entry": ["vite.config.ts", "src/main.tsx", "src/tracking.ts", "src/airtime.ts", "src/locales/*.ts", "tools/**/*.js", "cypress/**/*.ts", "test/**/*.ts"],
   "project": ["src/**/*.ts", "src/**/*.tsx", "tools/**/*.js", "test/**/*.ts", "cypress/**/*.ts"],
-  "ignoreDependencies": ["ts-node", "@types/mocha"]
+  "ignoreDependencies": ["ts-node", "@types/mocha", "rollup"]
 }
