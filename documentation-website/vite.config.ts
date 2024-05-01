@@ -7,7 +7,10 @@ import plugin from '@idrinth/rollup-plugin-react-modular-css';
 import istanbul from 'babel-plugin-istanbul';
 import million from 'million/compiler';
 
-const babelPlugins = [ attributes, ];
+const babelPlugins = [
+  attributes,
+  million.babel(),
+];
 if (process.env.LIVE_SITE !== 'true') {
   babelPlugins.push(istanbul,);
 }
@@ -18,15 +21,7 @@ export default defineConfig({
       output: {
         importAttributesKey: 'with',
       },
-      plugins: [
-        {
-          name: '@idrinth/vite-plugin-import-json',
-          transform(code, id,) {
-            if (! id.startsWith('node_modules',) && code.match(/json/ug,)) {
-              console.log(id);
-            }
-          },
-        }, plugin(), ],
+      plugins: [ plugin(), ],
     },
   },
   plugins: [
@@ -37,10 +32,6 @@ export default defineConfig({
           importAttributesKeyword: 'with',
         },
       },
-    },),
-    million.vite({
-      auto: true,
-      telemetry: false,
     },),
   ],
 },);
