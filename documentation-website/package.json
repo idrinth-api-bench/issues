@@ -73,7 +73,7 @@
     "http-server": "^14.1.1",
     "knip": "^5.8.0",
     "lighthouse": "^12.0.0",
-    "markdownlint-cli": "^0.39.0",
+    "markdownlint-cli": "^0.40.0",
     "mocha": "^10.3.0",
     "spellchecker-cli": "^6.2.0",
     "start-server-and-test": "^2.0.3",
