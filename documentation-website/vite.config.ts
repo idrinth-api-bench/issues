@@ -6,6 +6,10 @@ import plugin from '@idrinth/rollup-plugin-react-modular-css';
 import attributes from '@babel/plugin-syntax-import-attributes';
 import istanbul from 'babel-plugin-istanbul';
 
+const babelPlugins = [ attributes, ];
+if (process.env.LIVE_SITE !== 'true') {
+  babelPlugins.push(istanbul,);
+}
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
@@ -15,10 +19,7 @@ export default defineConfig({
   },
   plugins: [ react({
     babel: {
-      plugins: [
-        attributes,
-        istanbul,
-      ],
+      plugins: babelPlugins,
     },
   },), ],
 },);
