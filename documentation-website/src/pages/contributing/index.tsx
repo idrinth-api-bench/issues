@@ -2,7 +2,7 @@ import React from 'react';
 import Code from '../../components/code.tsx';
 import Layout from '../../components/layout.tsx';
 import pkg from '../../../../package.json' with {
-  type: 'json'
+  type: 'json',
 };
 import Lang from '../../components/lang.tsx';
 import ContentUnit from '../../components/content-unit.tsx';
