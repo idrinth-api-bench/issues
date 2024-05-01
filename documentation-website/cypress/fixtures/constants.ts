@@ -25,4 +25,4 @@ export const multiple = {
   multiple: true,
 };
 export const EMPTY_LENGTH = 0;
-export const PAGE_LOAD_WAIT_MS = 10000;
+export const PAGE_LOAD_WAIT_MS = 1000;
