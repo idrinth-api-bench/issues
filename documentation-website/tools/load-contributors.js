@@ -48,9 +48,13 @@ if (! process.env.CI) {
       users[contributor.login].contributions = contributor.contributions;
       return;
     }
-    const data = await fetch(contributor.url,);
+    const data = await fetch(contributor.url,
+      process.env.GITHUB_API_TOKEN ? {
+        headers: {
+          Authorization: `Bearer ${ process.env.GITHUB_API_TOKEN }`,
+        },
+      } : {},);
     const user = await data.json();
-    console.log(user);
     const hash = crypto
       .createHash('md5',)
       .update(user.login,)
