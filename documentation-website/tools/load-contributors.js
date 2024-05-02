@@ -1,6 +1,6 @@
 import {
   existsSync,
-  mkdirSync,
+  mkdirSync, readdirSync,
   readFileSync,
   writeFileSync,
 } from 'fs';
@@ -9,16 +9,23 @@ import {
   CONTRIBUTOR_API_URL,
   CONTRIBUTOR_PAGE_SIZE,
 } from './constants.js';
+import {
+  Transformer,
+} from '@napi-rs/image';
 
 const defaultBio = 'An awesome person helping others in their time off work, ' +
   'but who doesn\'t yet have a personalized bio.';
 const MILLISECONDS_PER_DAY = 86400000;
-
+const WEBP_QUALITY = 90;
 const users = {};
+const FILE = './src/pages/contributing/contributors/code-contributors.json';
 
 if (! process.env.CI) {
-  if (existsSync('./src/contributors.json',)) {
-    const old = JSON.parse(readFileSync('./src/contributors.json', 'utf8',),);
+  if (existsSync(FILE,)) {
+    const old = JSON.parse(readFileSync(
+      FILE,
+      'utf8',
+    ),);
     for (const key of Object.keys(old,)) {
       if (old[key].lastUpdated > Date.now() - MILLISECONDS_PER_DAY) {
         users[key] = old[key];
@@ -49,19 +56,21 @@ if (! process.env.CI) {
     users[user.login] = {
       contributions: contributor.contributions,
       name: user.name || user.login,
-      avatar: '/assets/profile-' + hash + '.jpg',
+      avatar: '/assets/profile-' + hash + '.webp',
       url: user.html_url,
       bio: user.bio || defaultBio,
       location: user.location || 'unknown',
       lastUpdated: Date.now(),
     };
-    writeFileSync(
-      './public/assets/profile-' + hash + '.jpg',
-      Buffer.from(
-        new Uint8Array(
-          await (await fetch(user.avatar_url,)).arrayBuffer(),
-        ),
+    const jpeg = Buffer.from(
+      new Uint8Array(
+        await (await fetch(user.avatar_url,)).arrayBuffer(),
       ),
+    );
+    const transformer = new Transformer(jpeg,);
+    writeFileSync(
+      './public/assets/profile-' + hash + '.webp',
+      transformer.webpSync(WEBP_QUALITY,),
     );
   };
 
@@ -89,4 +98,20 @@ if (! process.env.CI) {
   } while (full);
 }
 
-writeFileSync('./src/contributors.json', JSON.stringify(users,),);
+writeFileSync(
+  FILE,
+  JSON.stringify(users,),
+  'utf8',
+);
+
+for (const file of readdirSync('./public/assets/contributors', 'utf8',)) {
+  if (file.endsWith('.jpg',)) {
+    const transformer = new Transformer(
+      readFileSync('./public/assets/contributors/' + file),
+    );
+    writeFileSync(
+      './public/assets/contributors/' + file.replace(/jpg$/u, 'webp',),
+      transformer.webpSync(WEBP_QUALITY,),
+    );
+  }
+}

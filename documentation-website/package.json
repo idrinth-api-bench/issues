@@ -78,6 +78,8 @@
     "markdownlint-cli": "^0.40.0",
     "mocha": "^10.3.0",
     "rollup": "^4.17.2",
+    "rollup-plugin-napi-image": "^0.6.1",
+    "@napi-rs/image": "^1.9.2",
     "spellchecker-cli": "^6.2.0",
     "start-server-and-test": "^2.0.3",
     "stylelint": "^16.2.1",
