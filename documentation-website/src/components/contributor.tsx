@@ -29,8 +29,8 @@ const Contributor = ({
     id={id}
     className={'contributor'}>
     <picture>
-      <source src={avatar.replace(/jpg$/u, 'avif',)} type="image/avif"/>
-      <source src={avatar.replace(/jpg$/u, 'webp',)} type="image/webp"/>
+      <source srcSet={avatar.replace(/jpg$/u, 'avif',)} type="image/avif"/>
+      <source srcSet={avatar.replace(/jpg$/u, 'webp',)} type="image/webp"/>
       <img src={avatar} alt={name}/>
     </picture>
     <div>
