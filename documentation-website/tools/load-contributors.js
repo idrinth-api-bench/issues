@@ -1,6 +1,7 @@
 import {
   existsSync,
-  mkdirSync, readdirSync,
+  mkdirSync,
+  readdirSync,
   readFileSync,
   writeFileSync,
 } from 'fs';
