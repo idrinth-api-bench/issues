@@ -108,7 +108,7 @@ writeFileSync(
 for (const file of readdirSync('./public/assets/contributors', 'utf8',)) {
   if (file.endsWith('.jpg',)) {
     const transformer = new Transformer(
-      readFileSync('./public/assets/contributors/' + file),
+      readFileSync('./public/assets/contributors/' + file,),
     );
     writeFileSync(
       './public/assets/contributors/' + file.replace(/jpg$/u, 'webp',),
