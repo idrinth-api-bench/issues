@@ -4,6 +4,9 @@ import {
 import react from '@vitejs/plugin-react';
 import attributes from '@babel/plugin-syntax-import-attributes';
 import plugin from '@idrinth/rollup-plugin-react-modular-css';
+import {
+  napiImage,
+} from 'rollup-plugin-napi-image';
 import istanbul from 'babel-plugin-istanbul';
 import million from 'million/compiler';
 
@@ -21,7 +24,14 @@ export default defineConfig({
       output: {
         importAttributesKey: 'with',
       },
-      plugins: [ plugin(), ],
+      plugins: [
+        plugin(),
+        napiImage({
+          mode: 'lossy',
+          quality: 90,
+          toModernExt: () => 'webp',
+        },),
+      ],
     },
   },
   plugins: [ react({
