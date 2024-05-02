@@ -70,8 +70,18 @@ if (! process.env.CI) {
     );
     const transformer = new Transformer(jpeg,);
     writeFileSync(
+      './public/assets/profile-' + hash + '.jpg',
+      jpeg,
+    );
+    writeFileSync(
       './public/assets/profile-' + hash + '.webp',
       transformer.webpSync(WEBP_QUALITY,),
+    );
+    writeFileSync(
+      './public/assets/profile-' + hash + '.avif',
+      transformer.avifSync({
+        quality: WEBP_QUALITY,
+      },),
     );
   };
 
@@ -113,6 +123,12 @@ for (const file of readdirSync('./public/assets/contributors', 'utf8',)) {
     writeFileSync(
       './public/assets/contributors/' + file.replace(/jpg$/u, 'webp',),
       transformer.webpSync(WEBP_QUALITY,),
+    );
+    writeFileSync(
+      './public/assets/contributors/' + file.replace(/jpg$/u, 'avif',),
+      transformer.avifSync({
+        quality: WEBP_QUALITY,
+      },),
     );
   }
 }
