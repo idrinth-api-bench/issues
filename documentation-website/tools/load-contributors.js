@@ -50,6 +50,7 @@ if (! process.env.CI) {
     }
     const data = await fetch(contributor.url,);
     const user = await data.json();
+    console.log(user);
     const hash = crypto
       .createHash('md5',)
       .update(user.login,)
