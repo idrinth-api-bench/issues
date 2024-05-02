@@ -35,7 +35,7 @@ const Index = () => {
     .map((contributor,) => <Contributor
       key={contributor.id}
       name={contributor.name}
-      avatar={`/assets/contributors/${ contributor.id }.webp`}
+      avatar={`/assets/contributors/${ contributor.id }.jpg`}
       url={contributor.url}
       location={contributor.location}
       contributions={contributor.contributions}

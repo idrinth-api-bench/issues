@@ -57,7 +57,7 @@ if (! process.env.CI) {
     users[user.login] = {
       contributions: contributor.contributions,
       name: user.name || user.login,
-      avatar: '/assets/profile-' + hash + '.webp',
+      avatar: '/assets/profile-' + hash + '.jpg',
       url: user.html_url,
       bio: user.bio || defaultBio,
       location: user.location || 'unknown',
