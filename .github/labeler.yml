@@ -1,49 +1,49 @@
-documentation:
+"component: documentation":
   - changed-files:
       - any-glob-to-any-file:
           - "**/*.md"
-cli:
+"component: cli":
   - changed-files:
       - any-glob-to-any-file:
           - cli/**/*
-documentation-website:
+"component: documentation-website":
   - changed-files:
       - any-glob-to-any-file:
           - documentation-website/**/*
-examples:
+"component: examples":
   - changed-files:
       - any-glob-to-any-file:
           - examples/**/*
-framework:
+"component: framework":
   - changed-files:
       - any-glob-to-any-file:
           - framework/**/*
-history-microservice:
+"component: history-microservice":
   - changed-files:
       - any-glob-to-any-file:
           - history-microservice/**/*
-history-website:
+"component: history-website":
   - changed-files:
       - any-glob-to-any-file:
           - history-website/**/*
-translation:
+"component: translation":
   - changed-files:
       - any-glob-to-any-file:
           - '*/language/*.yml'
-mindmap:
+"component: mindmap":
   - changed-files:
       - any-glob-to-any-file:
           - mindmap/**/*
-tooling:
+"component: tooling":
   - changed-files:
       - any-glob-to-any-file:
           - tools/**/*
           - "*/tools/**/*"
-continuous-integration:
+"component: continuous-integration":
   - changed-files:
       - any-glob-to-any-file:
           - ".github/workflows/*"
-desktop:
+"component: desktop":
   - changed-files:
       - any-glob-to-any-file:
           - desktop/**/*
