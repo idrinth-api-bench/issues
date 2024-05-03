@@ -25,12 +25,18 @@ footer {
     display: flex;
     gap: 1em;
     padding-left: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 2rem;
   }
 
   @media only screen and (width >= 600px) {
     span {
       max-height: 100%;
       white-space: nowrap;
+    }
+    ul {
+      padding-bottom: 0;
     }
   }
 
