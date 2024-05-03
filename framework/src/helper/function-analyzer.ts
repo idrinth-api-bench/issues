@@ -27,11 +27,14 @@ const getEnv = (name: string, defaultValue: string,): string => {
 const commentAndAssignmentRegExp=/\/\*.+\*\/.+=.+/u;
 const commentRegExp=/\/\*.+\*\/.+/u;
 const assignmentRegExp=/.+=.+/u;
-const commentOrAssignmentAtEndRegExp =/\/\*.+\*\/|=.+$/gu;
+const commentOrAssignmentAtEndRegExp =/(\/\*.+\*\/)|(=.+$)/gu;
 const whitespaceRegExp =/\s*/gu;
 const beginningAssignmentRegExp=/^.+=/u;
-const leadingOrTrailingWhitespaceRegExp=/^\s*|\s*$/gu;
-const commentBlockOrWhitespaceRegExp=/^.*\/\*|\*\/.+$/gu;
+const leadingOrTrailingWhitespaceRegExp=/(^\s*)|(\s*$)/gu;
+const commentBlockOrWhitespaceRegExp=/(^.*\/\*)|(\*\/.+$)/gu;
+const functionWhitespaceRegExp=/\s*function\s*/u;
+const functionDetectionRegExp = /(^function\s*\()|(\)\s*\{.*\}\s*$)/gu;
+const arrowFunctionDetectionRegExp = /(^\s*\()|(\)\s*=>\s*.*$)/gu;
 const buildParameter = (parameter: string,): Param => {
   const value: Param = {
     name: '',
@@ -81,11 +84,11 @@ const buildParameter = (parameter: string,): Param => {
     }
   };
   if (commentAndAssignmentRegExp.exec(parameter,)) {
-    processCommentAndAssignment(parameter, value,);
+    processCommentAndAssignment();
   } else if (commentRegExp.exec(parameter,)) {
-    processComment(parameter, value,);
+    processComment();
   } else if (assignmentRegExp.exec(parameter,)) {
-    processAssignment(parameter, value,);
+    processAssignment();
   } else {
     value.name = parameter.replace(whitespaceRegExp, '',);
   }
@@ -121,17 +124,17 @@ const parseParameterString = (parameter: string,): Param => {
   }
   return value;
 };
-const functionWhitespaceRegExp=/\s*function\s*/u;
-export const analyze = (func: MyFunction,): Param[] => {
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const analyze = (func: Function,): Param[] => {
   const parameters: string[] = ((): string[] => {
     const fun: string = func.toString().replace(/[\r\n]/gu, ' ',);
     if (functionWhitespaceRegExp.exec(fun,)) {
       return fun
-        .replace(/(^function\s*\()|(\)\s*\{.*\}\s*$)/gu, '',)
+        .replace(functionDetectionRegExp, '',)
         .split(',',);
     }
     return fun
-      .replace(/(^\s*\()|(\)\s*=>\s*.*$)/gu, '',)
+      .replace(arrowFunctionDetectionRegExp, '',)
       .split(',',);
   })();
   const ret: Param[] = [];
