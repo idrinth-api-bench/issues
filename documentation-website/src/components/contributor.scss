@@ -4,10 +4,10 @@
 
   img {
     border-radius: 50%;
-    max-width: 200px;
+    border: 1px solid var(--highlight-color);
     place-self: center center;
     justify-self: center;
-    border: 1px solid var(--highlight-color);
+    max-width: 200px;
   }
 
   h2 {
@@ -17,7 +17,7 @@
 
 @media only screen and (width >= 600px) {
   .contributor {
-    padding: 2em 3em;
     grid-template-columns: 1fr 2fr;
+    padding: 2em 3em;
   }
 }

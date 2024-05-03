@@ -1,0 +1,36 @@
+#loader {
+  background-color: var(--background-loader);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  span {
+    animation: rotate 1s infinite linear 0s;
+    background-image: url('../assets/loading-svgrepo-com.black.svg');
+    background-size: 100% 100%;
+    height: 5em;
+    left: calc(50% - 2.5em);
+    position: absolute;
+    top: calc(50% - 0.5em - 5em);
+    width: 5em;
+  }
+
+  strong {
+    position: absolute;
+    text-align: center;
+    top: calc(50% - 0.5em);
+    width: 100%;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

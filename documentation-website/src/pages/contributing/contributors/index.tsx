@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../../../components/layout.tsx';
-import codeContributors from '../../../contributors.json' with {
+import codeContributors from './code-contributors.json' with {
   type: 'json'
 };
 import Lang from '../../../components/lang.tsx';

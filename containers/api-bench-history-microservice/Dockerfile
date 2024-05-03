@@ -1,4 +1,7 @@
-FROM node:21.7.3-alpine
+ARG BUILD_VERSION
+
+FROM idrinth/api-bench-build:${BUILD_VERSION} AS build
+FROM node:21.7.3-alpine AS node
 
 ARG BUILD_VERSION
 ARG BUILD_TIME
@@ -30,6 +33,9 @@ LABEL org.opencontainers.image.description="A microservice prepared for monitori
 ENV IDRINTH_API_BENCH_VERSION=$BUILD_VERSION
 ENV IDRINTH_API_BENCH_BUILT=$BUILD_TIME
 
+WORKDIR /project
+COPY --from=build /project/@idrinth/api-bench/history-microservice /project
+
 EXPOSE 80
 
-ENTRYPOINT ["node", "/var/microservice/index.js"]
+ENTRYPOINT ["node", "/project/index.js"]

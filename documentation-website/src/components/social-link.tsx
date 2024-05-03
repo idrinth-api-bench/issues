@@ -7,20 +7,18 @@ import languageKey from '../locales/language-key.ts';
 import {
   INITIAL_ZERO,
 } from '../constants.ts';
+import SocialImage from './social-image.tsx';
 
 interface SocialLinkType {
   to: string|string[];
   label: string;
-  logo?: string;
 }
 const SocialLink = ({
   to,
   label,
-  logo,
 }: SocialLinkType,) => {
   if (Array.isArray(to,)) {
     const EL = lazy(async() => {
-      const alt = await t(`socials.${ label }.alt` as languageKey,);
       const items: React.JSX.Element[] = [];
       let pos = INITIAL_ZERO;
       for (const url of to) {
@@ -30,7 +28,7 @@ const SocialLink = ({
         );
         // eslint-disable-next-line no-await-in-loop
         const text = await t(`socials.${ label }.text${ pos }` as languageKey,);
-        items.push(<li>
+        items.push(<li key={label + pos}>
           <a
             href={url}
             rel='noreferrer'
@@ -44,22 +42,21 @@ const SocialLink = ({
         default: () => <span
           className="external-link"
         >
-          <img alt={alt} src={'/assets/socials/' + (logo ?? label) + '.svg'}/>
+          <SocialImage label={label}/>
           <ul>{items}</ul>
         </span>,
       };
     },);
-    return <li id={label}>
+    return <li id={label} key={label}>
       <Suspense fallback={<span
         className="external-link"
       >
-        <img alt={''} src={'/assets/socials/' + (logo ?? label) + '.svg'}/>
+        <SocialImage label={label}/>
       </span>}><EL/></Suspense>
     </li>;
   }
   const EL = lazy(async() => {
     const title = await t(`socials.${ label }.title` as languageKey,);
-    const alt = await t(`socials.${ label }.alt` as languageKey,);
     return {
       default: () => <a
         href={to}
@@ -68,7 +65,7 @@ const SocialLink = ({
         rel='noreferrer'
         title={title}
       >
-        <img alt={alt} src={'/assets/socials/' + (logo ?? label) + '.svg'}/>
+        <SocialImage label={label}/>
       </a>,
     };
   },);
@@ -79,7 +76,7 @@ const SocialLink = ({
       target='_blank'
       rel='noreferrer'
     >
-      <img alt={''} src={'/assets/socials/' + (logo ?? label) + '.svg'}/>
+      <SocialImage label={label}/>
     </a>}><EL/></Suspense>
   </li>;
 };

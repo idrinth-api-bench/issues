@@ -24,8 +24,17 @@ const getEnv = (name: string, defaultValue: string,): string => {
   }
   return defaultValue;
 };
-
-// eslint-disable-next-line complexity
+const commentAndAssignmentRegExp=/\/\*.+\*\/.+=.+/u;
+const commentRegExp=/\/\*.+\*\/.+/u;
+const assignmentRegExp=/.+=.+/u;
+const commentOrAssignmentAtEndRegExp =/(\/\*.+\*\/)|(=.+$)/gu;
+const whitespaceRegExp =/\s*/gu;
+const beginningAssignmentRegExp=/^.+=/u;
+const leadingOrTrailingWhitespaceRegExp=/(^\s*)|(\s*$)/gu;
+const commentBlockOrWhitespaceRegExp=/(^.*\/\*)|(\*\/.+$)/gu;
+const functionWhitespaceRegExp=/\s*function\s*/u;
+const functionDetectionRegExp = /(^function\s*\()|(\)\s*\{.*\}\s*$)/gu;
+const arrowFunctionDetectionRegExp = /(^\s*\()|(\)\s*=>\s*.*$)/gu;
 const buildParameter = (parameter: string,): Param => {
   const value: Param = {
     name: '',
@@ -34,50 +43,55 @@ const buildParameter = (parameter: string,): Param => {
     value: '',
     envName: '',
   };
-  if (parameter.match(/\/\*.+\*\/.+=.+/u,)) {
+  const processCommentAndAssignment = () => {
     value.name = parameter
-      .replace(/(\/\*.+\*\/)|(=.+$)/gu, '',)
-      .replace(/\s*/gu, '',);
+      .replace(commentOrAssignmentAtEndRegExp, '',)
+      .replace(whitespaceRegExp, '',);
     value.default = parameter
-      .replace(/^.+=/u, '',)
-      .replace(/(^\s*)|(\s*$)/gu, '',);
+      .replace(beginningAssignmentRegExp, '',)
+      .replace(leadingOrTrailingWhitespaceRegExp, '',);
     value.type = parameter
-      .replace(/(^.*\/\*)|(\*\/.+$)/gu, '',)
-      .replace(/\s*/gu, '',)
+      .replace(commentBlockOrWhitespaceRegExp, '',)
+      .replace(whitespaceRegExp, '',)
       .toLowerCase();
-    return value;
-  }
-  if (parameter.match(/\/\*.+\*\/.+/u,)) {
+  };
+  const processComment = () => {
     value.name = parameter
-      .replace(/(\/\*.+\*\/)|(=.+$)/gu, '',)
-      .replace(/\s*/gu, '',);
+      .replace(commentOrAssignmentAtEndRegExp, '',)
+      .replace(whitespaceRegExp, '',);
     value.default = '';
     value.type = parameter
-      .replace(/(^.*\/\*)|(\*\/.+$)/gu, '',)
-      .replace(/\s*/gu, '',)
+      .replace(commentBlockOrWhitespaceRegExp, '',)
+      .replace(whitespaceRegExp, '',)
       .toLowerCase();
     if (value.type === 'boolean') {
       value.default = 'false';
     } else if (value.type === 'number') {
       value.default = '0';
     }
-    return value;
-  }
-  if (parameter.match(/.+=.+/u,)) {
+  };
+  const processAssignment = () => {
     value.name = parameter
-      .replace(/(\/\*.+\*\/)|(=.+$)/gu, '',)
-      .replace(/\s*/gu, '',);
+      .replace(commentOrAssignmentAtEndRegExp, '',)
+      .replace(whitespaceRegExp, '',);
     value.default = parameter
-      .replace(/^.+=/u, '',)
-      .replace(/(^\s*)|(\s*$)/gu, '',);
+      .replace(beginningAssignmentRegExp, '',)
+      .replace(leadingOrTrailingWhitespaceRegExp, '',);
     if (! Number.isNaN(Number.parseFloat(value.default,),)) {
       value.type = 'number';
     } else if (value.default === 'true' || value.default === 'false') {
       value.type = 'boolean';
     }
-    return value;
+  };
+  if (commentAndAssignmentRegExp.exec(parameter,)) {
+    processCommentAndAssignment();
+  } else if (commentRegExp.exec(parameter,)) {
+    processComment();
+  } else if (assignmentRegExp.exec(parameter,)) {
+    processAssignment();
+  } else {
+    value.name = parameter.replace(whitespaceRegExp, '',);
   }
-  value.name = parameter.replace(/\s*/gu, '',);
   return value;
 };
 // eslint-disable-next-line complexity
@@ -114,13 +128,13 @@ const parseParameterString = (parameter: string,): Param => {
 export const analyze = (func: Function,): Param[] => {
   const parameters: string[] = ((): string[] => {
     const fun: string = func.toString().replace(/[\r\n]/gu, ' ',);
-    if (fun.match(/\s*function\s*/u,)) {
+    if (functionWhitespaceRegExp.exec(fun,)) {
       return fun
-        .replace(/(^function\s*\()|(\)\s*\{.*\}\s*$)/gu, '',)
+        .replace(functionDetectionRegExp, '',)
         .split(',',);
     }
     return fun
-      .replace(/(^\s*\()|(\)\s*=>\s*.*$)/gu, '',)
+      .replace(arrowFunctionDetectionRegExp, '',)
       .split(',',);
   })();
   const ret: Param[] = [];

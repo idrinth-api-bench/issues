@@ -23,7 +23,7 @@ if (window.location.host === 'idrinth-api-ben.ch') {
     ],);
     _paq.push([
       'setSiteId',
-      '1wAKBrJmbyXexadajNRk7MYxP',
+      'jqvEzlmebRJKAVxYo2ND0VXk8',
     ],);
     make('matomo.js',);
   })();
@@ -35,5 +35,5 @@ if (window.location.host === 'idrinth-api-ben.ch') {
     'mtm.startTime': new Date().getTime(),
     'event': 'mtm.Start',
   },);
-  make('js/container_Mf0xOjsp.js',);
+  make('js/container_Nt38ZwM5.js',);
 }
