@@ -35,5 +35,5 @@ if (window.location.host === 'idrinth-api-ben.ch') {
     'mtm.startTime': new Date().getTime(),
     'event': 'mtm.Start',
   },);
-  make('js/container_Mf0xOjsp.js',);
+  make('js/container_Nt38ZwM5.js',);
 }
