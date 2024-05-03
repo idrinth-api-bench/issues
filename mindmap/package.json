@@ -45,7 +45,8 @@
     "c8": "^9.1.0",
     "ts-node": "^10.9.2",
     "@types/mocha": "^10.0.6",
-    "@types/chai": "^4.3.14"
+    "@types/chai": "^4.3.14",
+    "@napi-rs/image": "^1.9.2"
   },
   "engines": {
     "node": ">=20"
