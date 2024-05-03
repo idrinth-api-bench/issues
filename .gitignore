@@ -57,7 +57,10 @@
 /documentation-website/public/sitemap.xml
 /documentation-website/src/locales
 /documentation-website/public/assets/profile-*.jpg
+/documentation-website/public/assets/profile-*.webp
+/documentation-website/public/assets/profile-*.avif
 /documentation-website/public/assets/contributors/*.webp
+/documentation-website/public/assets/contributors/*.avif
 /documentation-website/public/assets/*-*.min.css
 /documentation-website/dump.txt
 /documentation-website/src/assets/iab.svg
