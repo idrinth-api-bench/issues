@@ -68,7 +68,7 @@ home:
     title: "Home"
     description: "Welcome to the documentation for the framework @idrinth/api-bench"
   title: "What does this project do?"
-  what: "This project provides a framework for testing rest-APIs and websites for  changes in response times."
+  what: "This project provides an API performance measuring and monitoring framework, that strives to provide the best developer experience possible while keeping it easy to expand and configure."
   why: "This helps to detect performance changes in code in a quick and simple manner."
   demo:
     youtube: "Version 2.7.4 Demo"
@@ -191,7 +191,7 @@ contributing:
       title: "Contribution workflow"
       list_item_1: "fork the repository"
       list_item_2: "mention in the issue, that you are working on it (it will be assigned for a few weeks then)"
-      list_item_3: "create a feature branch (issue-xxx-does-something) from master"
+      list_item_3: "create a feature branch (issue-xxx-does-something) from the-one"
       list_item_4: "create a draft pull request"
       list_item_5: "mention fixes #xxx in the description"
       list_item_6: "make your changes to the branch"
@@ -216,6 +216,9 @@ contributing:
       manual:
         title: "Manual Tests"
         description: "For manual testing you can run 'npm run coai' in the source folder to automatically check out and install all required files for testing."
+      locally:
+        title: "Running Tests Locally"
+        description: "To see a list of available CI tasks and their corresponding commands to run them locally, you can run 'npm run local' in the source folder. This is particularly useful for testing specific CI tasks before committing your changes."
     naming:
       title: "Naming conventions"
       list_item_1: "camelCase for variables and functions"
@@ -497,3 +500,14 @@ cookie-consent:
     youtube:
       title: "YouTube"
       description: "We will load videos from www.youtube-nocookie.com to directly play on the site."
+    airtime:
+      title: "Airtime"
+      description: "Participate in a short user survey via airtimeux.com with the response data stored by them."
+
+language-switch:
+  aria: "Language switch"
+
+languages:
+  en: "English"
+  fr: "Français"
+  it: "Italiano"

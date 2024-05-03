@@ -22,13 +22,17 @@ const Contributor = ({
   contributions,
 }: ContributorType,) => {
   if (typeof contributions === 'number') {
-    contributions = `${ contributions } contributions to master`;
+    contributions = `${ contributions } contributions to the-one`;
   }
   id = id.toLowerCase();
   return <div
     id={id}
     className={'contributor'}>
-    <img src={avatar} alt={name}/>
+    <picture>
+      <source srcSet={avatar.replace(/jpg$/u, 'avif',)} type="image/avif"/>
+      <source srcSet={avatar.replace(/jpg$/u, 'webp',)} type="image/webp"/>
+      <img src={avatar} alt={name}/>
+    </picture>
     <div>
       <h2>
         <a href={`#${ id }`}>#</a>

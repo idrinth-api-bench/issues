@@ -2,13 +2,13 @@ name: Docker
 on:
   push:
     branches:
-      - master
+      - the-one
     paths:
       - 'containers/*/Dockerfile'
       - '.github/workflows/docker.yml'
   pull_request:
     branches:
-      - master
+      - the-one
     paths:
       - 'containers/*/Dockerfile'
       - '.github/workflows/docker.yml'

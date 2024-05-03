@@ -2,13 +2,13 @@ name: api-bench-build Hadolint
 on:
   push:
     branches:
-      - master
+      - the-one
     paths:
       - 'containers/api-bench-build/Dockerfile'
       - '.github/workflows/api-bench-build.hadolint.yml'
   pull_request:
     branches:
-      - master
+      - the-one
     paths:
       - 'containers/api-bench-build/Dockerfile'
       - '.github/workflows/api-bench-build.hadolint.yml'

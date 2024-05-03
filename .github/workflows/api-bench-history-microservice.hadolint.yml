@@ -2,13 +2,13 @@ name: api-bench-history-microservice Hadolint
 on:
   push:
     branches:
-      - master
+      - the-one
     paths:
       - 'containers/api-bench-history-microservice/Dockerfile'
       - '.github/workflows/api-bench-history-microservice.hadolint.yml'
   pull_request:
     branches:
-      - master
+      - the-one
     paths:
       - 'containers/api-bench-history-microservice/Dockerfile'
       - '.github/workflows/api-bench-history-microservice.hadolint.yml'

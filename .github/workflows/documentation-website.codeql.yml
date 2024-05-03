@@ -1,10 +1,18 @@
 name: documentation-website CodeQL
 on:
-  workflow_run:
-    types:
-      - completed
-    workflows:
-      - NPM Cache
+  push:
+    branches:
+    - the-one
+    paths:
+      - 'documentation-website/**.ts'
+      - 'documentation-website/**.tsx'
+      - 'documentation-website/**.js'
+      - 'documentation-website/**.cjs'
+      - 'documentation-website/package-lock.json'
+      - '.github/workflows/documentation-website.codeql.yml'
+  pull_request:
+    branches:
+    - the-one
     paths:
       - 'documentation-website/**.ts'
       - 'documentation-website/**.tsx'
@@ -34,12 +42,14 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ env.CURRENT_NODE_VERSION }}
-    - name: Restore Builds
-      id: cache-builds-restore
-      uses: actions/cache/restore@v4
-      with:
-        path: ~/.npm
-        key: "${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}"
+        cache: 'npm'
+        cache-dependency-path: |
+          framework/package-lock.json
+          documentation-website/package-lock.json
+          history-microservice/package-lock.json
+          history-website/package-lock.json
+          cli/package-lock.json
+          package-lock.json
     - run: cd documentation-website && npm ci
     - run: cd documentation-website && npm run language
     - name: Perform CodeQL Analysis

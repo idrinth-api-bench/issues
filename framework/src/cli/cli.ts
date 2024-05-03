@@ -9,12 +9,14 @@ import run from '../main.js';
 import pkg from '../../package.json' with {
   type: 'json',
 };
-import factory from './config/factory.js';
+import configFactory from './config/config-factory.js';
+import storageFactory from '../storage/storage-factory.js';
 
 // eslint-disable-next-line complexity
 export default async(args: string[], cwd: string,): Promise<number> => {
-  const config = factory(cwd, args, process.env,);
+  const config = configFactory(cwd, args, process.env,);
   resultStore.set(false,);
+  const storage = storageFactory(config,);
   switch (config.task) {
     case 'bench':
       await run({
@@ -22,6 +24,7 @@ export default async(args: string[], cwd: string,): Promise<number> => {
         taskId: config.taskId,
         language: config.language,
         cwd: config.cwd,
+        resultStorage: storage,
       }, config.threads, config.repetitions,);
       break;
     case 'content':

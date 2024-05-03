@@ -47,7 +47,7 @@
     "c8": "^9.1.0",
     "chai": "^5.0.3",
     "eslint": "^8.57.0",
-    "markdownlint-cli": "^0.39.0",
+    "markdownlint-cli": "^0.40.0",
     "mocha": "^10.2.0",
     "mock-fs": "^5.2.0",
     "ts-node": "^10.9.1",
@@ -60,9 +60,11 @@
     "make-benchmark-project": "bin/make-benchmark-project.js",
     "generate-benchmark-from-open-api": "bin/generate-benchmark-from-open-api.js",
     "generate-benchmark-from-har": "bin/generate-benchmark-from-har.js",
+    "generate-benchmark-from-curl": "bin/generate-benchmark-from-curl.js",
     "iabgbfh": "bin/generate-benchmark-from-har.js",
     "iabmp": "bin/make-benchmark-project.js",
-    "iabgfoa": "bin/generate-benchmark-from-open-api.js"
+    "iabgfoa": "bin/generate-benchmark-from-open-api.js",
+    "iabgbfc": "bin/generate-benchmark-from-curl.js"
   },
   "scripts": {
     "lint": "eslint . --ext .js,.ts,.cjs,.json,.tsx",

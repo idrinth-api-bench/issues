@@ -21,6 +21,7 @@ const CookieConsent = () => {
   const types = [
     'youtube',
     'tracking',
+    'airtime',
   ];
   let wasAllAnswered = true;
   for (const type of types) {
@@ -69,18 +70,18 @@ const CookieConsent = () => {
   };
 
   const visible = ! consentWasClosed && ! localStorage.getItem('consent',);
+  const forget = () => {
+    localStorage.setItem('consent', '',);
+    setConsentWasClosed(false,);
+  };
 
   if (! visible) {
-    const forget = () => {
-      localStorage.setItem('consent', '',);
-      setConsentWasClosed(false,);
-    };
     return <button onClick={forget}>
       <Lang lnkey={'cookie-consent.open'}/>
     </button>;
   }
 
-  return createPortal(<div className={'cookie-consent'}>
+  const Portal = () => createPortal(<div className={'cookie-consent'}>
     <div className={'cookie-consent-description'}>
       <h2 className={'cookie-title'}>
         <Lang lnkey={'cookie-consent.title'} />
@@ -90,8 +91,11 @@ const CookieConsent = () => {
       </p>
     </div>
     <ul id={'consent-choices'}>
-      <CookieConsentService>tracking</CookieConsentService>
-      <CookieConsentService>youtube</CookieConsentService>
+      { types.map(
+        (type,) => <CookieConsentService
+          key={type}
+        >{type}</CookieConsentService>,
+      ) }
     </ul>
     <div className={'cookie-consent-buttons'}>
       <button
@@ -114,6 +118,12 @@ const CookieConsent = () => {
       </button>
     </div>
   </div>, document.body,);
+  return <>
+    <button onClick={forget}>
+      <Lang lnkey={'cookie-consent.open'}/>
+    </button>
+    <Portal/>
+  </>;
 };
 
 export default CookieConsent;

@@ -2,7 +2,7 @@ import React from 'react';
 import Code from '../../components/code.tsx';
 import Layout from '../../components/layout.tsx';
 import pkg from '../../../../package.json' with {
-  type: 'json'
+  type: 'json',
 };
 import Lang from '../../components/lang.tsx';
 import ContentUnit from '../../components/content-unit.tsx';
@@ -83,6 +83,14 @@ git clone https://github.com/idrinth/api-bench
 cd api-bench
 npm run coai
   `}</Code>
+    </div>
+  </div>
+  <div className='card'>
+    <h4><Lang lnkey={'contributing.code.tests.locally.title'}/></h4>
+    <div>
+      <p>
+        <Lang lnkey={'contributing.code.tests.locally.description'}/>
+      </p>
     </div>
   </div>
   <ListUnit text={'contributing.code.naming.title'} level={'h3'}>

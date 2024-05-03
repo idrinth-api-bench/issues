@@ -11,7 +11,8 @@
       "history-website",
       "mindmap",
       "tools",
-      "containers"
+      "containers",
+      "desktop"
     ]],
     "type-enum": [2, "always", [
       "bug",

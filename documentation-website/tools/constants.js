@@ -1,4 +1,4 @@
 export const EXIT_FAILURE = 1;
-export const EXIT_SUCCESS = 0;
-export const MAX_RETRIES = 5;
-export const LOCAL_URL = 'http://localhost:8080/';
+export const CONTRIBUTOR_PAGE_SIZE = 30;
+export const CONTRIBUTOR_API_URL =
+  'https://api.github.com/repos/Idrinth/api-bench/contributors?page=';

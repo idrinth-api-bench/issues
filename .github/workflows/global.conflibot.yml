@@ -2,7 +2,7 @@ name: conflibot
 on:
   pull_request:
     branches:
-      - master
+      - the-one
 
 jobs:
   conflibot:

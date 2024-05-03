@@ -64,10 +64,15 @@ svg span:focus {
   height: 2em;
 }
 
-#markmap img {
+#markmap picture {
   height: 2em;
   align-self: center;
   grid-row: 1 / 3;
+}
+
+#markmap picture > * {
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (prefers-color-scheme: dark) {

@@ -86,6 +86,12 @@ and the points you are not confident about. -->
 - [ ] the default behaviour did not change
 - [ ] shared code has been extracted in a different file
 
+## Desktop
+
+- [ ] the change can be packaged
+- [ ] the default behaviour did not change
+- [ ] shared code has been extracted in a different file
+
 ## Notes
 
 <!-- Write any note or comment. You can share your thoughts or ideas. -->
