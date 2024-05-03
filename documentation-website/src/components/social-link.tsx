@@ -44,7 +44,7 @@ const SocialLink = ({
         default: () => <span
           className="external-link"
         >
-          <img alt={alt} src={'/assets/socials/' + (logo ?? label) + '.svg'}/>
+          <img alt={alt} style={{maxHeight: '1em'}} src={'/assets/socials/' + (logo ?? label) + '.svg'}/>
           <ul>{items}</ul>
         </span>,
       };
@@ -53,7 +53,7 @@ const SocialLink = ({
       <Suspense fallback={<span
         className="external-link"
       >
-        <img alt={''} src={'/assets/socials/' + (logo ?? label) + '.svg'}/>
+        <img alt={''} style={{maxHeight: '1em'}} src={'/assets/socials/' + (logo ?? label) + '.svg'}/>
       </span>}><EL/></Suspense>
     </li>;
   }
@@ -68,7 +68,7 @@ const SocialLink = ({
         rel='noreferrer'
         title={title}
       >
-        <img alt={alt} src={'/assets/socials/' + (logo ?? label) + '.svg'}/>
+        <img alt={alt} style={{maxHeight: '1em'}} src={'/assets/socials/' + (logo ?? label) + '.svg'}/>
       </a>,
     };
   },);
@@ -79,7 +79,7 @@ const SocialLink = ({
       target='_blank'
       rel='noreferrer'
     >
-      <img alt={''} src={'/assets/socials/' + (logo ?? label) + '.svg'}/>
+      <img alt={''} style={{maxHeight: '1em'}} src={'/assets/socials/' + (logo ?? label) + '.svg'}/>
     </a>}><EL/></Suspense>
   </li>;
 };
