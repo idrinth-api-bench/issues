@@ -7,8 +7,8 @@ import {
 } from 'fs';
 import crypto from 'crypto';
 import {
-  CONTRIBUTOR_API_URL,
   CONTRIBUTOR_PAGE_SIZE,
+  ORGANIZATION_REPOS_URL,
 } from './constants.js';
 import {
   Transformer,
@@ -29,7 +29,10 @@ if (! process.env.CI) {
     ),);
     for (const key of Object.keys(old,)) {
       if (old[key].lastUpdated > Date.now() - MILLISECONDS_PER_DAY) {
-        users[key] = old[key];
+        users[key] = {
+          ...old[key],
+          contributions: 0,
+        };
       }
     }
   }
@@ -44,8 +47,9 @@ if (! process.env.CI) {
     if (contributor.type !== 'User') {
       return;
     }
+    // eslint-disable-next-line max-len
     if (users[contributor.login]) {
-      users[contributor.login].contributions = contributor.contributions;
+      users[contributor.login].contributions += contributor.contributions;
       return;
     }
     const data = await fetch(contributor.url,
@@ -90,28 +94,38 @@ if (! process.env.CI) {
     );
   };
 
-  let full = false;
-  let page = 0;
-  do {
-    page ++;
-    // eslint-disable-next-line no-await-in-loop
-    const contributors = await fetch(
-      CONTRIBUTOR_API_URL + page,
-      process.env.GITHUB_API_TOKEN ? {
-        headers: {
-          Authorization: `Bearer ${ process.env.GITHUB_API_TOKEN }`,
-        },
-      } : {},
-    );
-    let count = 0;
-    // eslint-disable-next-line no-await-in-loop
-    for (const contributor of await contributors.json()) {
+  const requestOptions = process.env.GITHUB_API_TOKEN ? {
+    headers: {
+      Authorization: `Bearer ${ process.env.GITHUB_API_TOKEN }`,
+    },
+  } : {};
+
+  const repos = await fetch(
+    ORGANIZATION_REPOS_URL,
+    requestOptions,
+  );
+
+  for (const repo of await repos.json()) {
+    let full = false;
+    let page = 0;
+    do {
+      page ++;
+      const url = `${ repo.contributors_url }?page=`;
       // eslint-disable-next-line no-await-in-loop
-      await update(contributor,);
-      count ++;
-    }
-    full = count === CONTRIBUTOR_PAGE_SIZE;
-  } while (full);
+      const contributors = await fetch(
+        url + page,
+        requestOptions,
+      );
+      let count = 0;
+      // eslint-disable-next-line no-await-in-loop
+      for (const contributor of await contributors.json()) {
+        // eslint-disable-next-line no-await-in-loop
+        await update(contributor,);
+        count ++;
+      }
+      full = count === CONTRIBUTOR_PAGE_SIZE;
+    } while (full);
+  }
 }
 
 writeFileSync(
