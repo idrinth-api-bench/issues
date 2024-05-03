@@ -19,7 +19,8 @@ const has = (
   element: HTMLAnchorElement|HTMLSpanElement,
   key: string,
 ) => element.hasAttribute(key,);
-const create = (type: 'a'|'img',) => document.createElement(type,);
+const create =
+  (type: 'a'|'img'|'picture'|'source',) => document.createElement(type,);
 const removeModals = () => {
   const modals = document.getElementsByClassName('modal',);
   while (modals.item(FIRST,)) {
@@ -33,10 +34,28 @@ window.show = (element: HTMLAnchorElement|HTMLSpanElement,) => {
     return;
   }
   removeModals();
+  const picture = create('picture',);
   const img = create('img',);
+  const webp = create('source',);
+  const avif = create('source',);
   set(img, 'src', get(element, 'data-image',),);
+  set(
+    webp,
+    'srcset',
+    get(element, 'data-image',).replace(/(jpg|png)$/u, 'webp',),
+  );
+  set(
+    avif,
+    'srcset',
+    get(element, 'data-image',).replace(/(jpg|png)$/u, 'avif',),
+  );
+  set(webp, 'type', 'image/webp',);
+  set(avif, 'type', 'image/avif',);
+  picture.appendChild(avif,);
+  picture.appendChild(webp,);
+  picture.appendChild(img,);
   if (has(element, 'title',)) {
-    set(img, 'title', get(element, 'title',),);
+    set(picture, 'title', get(element, 'title',),);
   }
   if (has(element, 'href',)) {
     const a = create('a',);
@@ -44,12 +63,12 @@ window.show = (element: HTMLAnchorElement|HTMLSpanElement,) => {
     set(a, 'target', '_blank',);
     set(a, 'rel', 'noreferrer',);
     set(a, 'class', 'modal',);
-    a.appendChild(img,);
-    img.onmouseleave = () => remove(a,);
+    a.appendChild(picture,);
+    picture.onmouseleave = () => remove(a,);
     add(a,);
     return;
   }
-  img.onmouseleave = () => remove(img,);
-  set(img, 'class', 'modal',);
-  body.append(img,);
+  picture.onmouseleave = () => remove(picture,);
+  set(picture, 'class', 'modal',);
+  body.append(picture,);
 };

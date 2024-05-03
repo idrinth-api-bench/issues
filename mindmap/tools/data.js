@@ -21,6 +21,9 @@ import {
   createHash,
 } from 'crypto';
 import cminify from 'css-simple-minifier';
+import {
+  Transformer,
+} from '@napi-rs/image';
 
 const FIRST = 0;
 const SECOND = 1;
@@ -108,7 +111,11 @@ html = html
   .replace(
     /(<\/body>)/u,
     '<div id=markmap>' +
+    '<picture>' +
+    '<source srcset=markmap.avif type="image/avif" />' +
+    '<source srcset=markmap.webp type="image/webp" />' +
     '<img src=markmap.png alt=Markmap />' +
+    '</picture>' +
     '<span>Powered by</span>' +
     `<a href=https://markmap.js.org/ ${ attributes }>Markmap</a>` +
     '</div>' +
@@ -212,4 +219,21 @@ for (const file of readdirSync(`${ cwd }/public`, 'utf8',)) {
     readFileSync(`${ cwd }/public/${ file }`, 'utf8',),
     'utf8',
   );
+}
+const IMAGE_QUALITY = 90;
+for (const file of readdirSync(`${ cwd }/dist`, 'utf8',)) {
+  if (file.endsWith('.jpg',) || file.endsWith('.png',)) {
+    const raw = readFileSync(`${ cwd }/dist/${ file }`,);
+    const transformer = new Transformer(raw,);
+    writeFileSync(
+      `${ cwd }/dist/${ file.replace(/(png|jpg)$/u, 'webp',) }`,
+      transformer.webpSync(IMAGE_QUALITY,),
+    );
+    writeFileSync(
+      `${ cwd }/dist/${ file.replace(/(png|jpg)$/u, 'avif',) }`,
+      transformer.avifSync({
+        quality: IMAGE_QUALITY,
+      },),
+    );
+  }
 }
