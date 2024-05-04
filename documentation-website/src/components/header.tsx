@@ -92,6 +92,10 @@ const Header = ({
         to={'https://www.reddit.com/r/IdrinthApiBench'}
         label={'reddit'}
       />
+      <SocialLink
+        to={'https://twitter.com/IdrinthApiBench'}
+        label={'x'}
+      />
     </ul>
   </nav>
   <nav aria-label='Main Menu'>
