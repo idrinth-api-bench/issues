@@ -13,6 +13,7 @@ import DarkModeButton from './dark-mode-button.tsx';
 import './header.scss';
 import Lang from './lang.tsx';
 import SocialLink from './social-link.tsx';
+import ExternalLink from './external-link.tsx';
 
 const preventOpenLink = (event: React.MouseEvent<SVGElement, MouseEvent>,) => {
   event.preventDefault();
@@ -96,6 +97,10 @@ const Header = ({
   </nav>
   <nav aria-label='Main Menu'>
     <ul>
+    <li>
+        <ExternalLink to = "https://tally.so/r/3NA48l" label='send us feedback'/>
+         
+      </li>
       <li>
         <NavLink to="/quick-start/">
           <Lang lnkey='nav.quick-start'/>
