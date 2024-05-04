@@ -11,7 +11,7 @@ describe('usage/storage', () => {
     cy.url().should('eq', BASE_URL + page.storage,);
   },);
   it('title matches', () => {
-    cy.title().should('eq', 'Storage | Usage | @idrinth/api-bench',);
+    cy.title().should('eq', 'Storage | Usage | @idrinth-api-bench/api-bench',);
   },);
   it('h1 matches', () => {
     cy.get('h1',)

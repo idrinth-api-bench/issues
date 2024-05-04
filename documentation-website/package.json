@@ -1,5 +1,5 @@
 {
-  "name": "@idrinth/api-bench/website",
+  "name": "@idrinth-api-bench/api-bench/website",
   "private": true,
   "version": "2.7.4",
   "license": "MIT",
@@ -9,7 +9,7 @@
   "contributors": [],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Idrinth/api-bench.git"
+    "url": "https://github.com/idrinth-api-bench/api-bench.git"
   },
   "scripts": {
     "start": "npm run build && npm run serve",

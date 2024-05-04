@@ -1,4 +1,4 @@
-# @idrinth/api-bench/microservice
+# @idrinth-api-bench/api-bench/microservice
 
 ## Description
 

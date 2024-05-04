@@ -28,7 +28,7 @@ const DefaultMeta = ({
         <Head.Meta
           content={description}
           name='description'/>
-        <Head.Title>{title} | @idrinth/api-bench</Head.Title>
+        <Head.Title>{title} | @idrinth-api-bench/api-bench</Head.Title>
         <Head.Link rel='canonical' href={'https://idrinth-api-ben.ch' + path}/>
       </Head>,
     };

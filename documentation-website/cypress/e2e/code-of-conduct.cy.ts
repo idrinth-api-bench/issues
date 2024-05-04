@@ -11,7 +11,7 @@ describe('home', () => {
     cy.url().should('eq', BASE_URL + page['code-of-conduct'],);
   },);
   it('title matches', () => {
-    cy.title().should('eq', 'Code of Conduct | @idrinth/api-bench',);
+    cy.title().should('eq', 'Code of Conduct | @idrinth-api-bench/api-bench',);
   },);
   it('h1 matches', () => {
     cy.get('h1',)

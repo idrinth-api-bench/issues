@@ -50,9 +50,9 @@ const xray: Reporter = async(
     method: 'POST',
     body: JSON.stringify({
       info: {
-        summary: '@idrinth/api-bench execution',
+        summary: '@idrinth-api-bench/api-bench execution',
         // eslint-disable-next-line max-len
-        description: 'This is an automated result export of a run of @idrinth/api-bench',
+        description: 'This is an automated result export of a run of @idrinth-api-bench/api-bench',
         startDate: formatDate(STARTED,),
         finishDate: formatDate(end,),
         testPlanKey: process.env.XRAY_TEST_PLAN_KEY,

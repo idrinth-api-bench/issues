@@ -25,7 +25,7 @@ jobs:
         uses: ScribeMD/docker-cache@0.5.0
         with:
           key: docker-${{ runner.os }}-${{ hashFiles('containers/api-bench-build/Dockerfile') }}
-      - run: docker build --build-arg="BUILD_VERSION=$(git describe --tags `git rev-list --tags --max-count=1`)" -t "idrinth/api-bench-build:$(git describe --tags `git rev-list --tags --max-count=1`)" --build-arg="BUILD_TIME=now" containers/api-bench-build
+      - run: docker build --build-arg="BUILD_VERSION=$(git describe --tags `git rev-list --tags --max-count=1`)" -t "idrinth-api-bench/api-bench-build:$(git describe --tags `git rev-list --tags --max-count=1`)" --build-arg="BUILD_TIME=now" containers/api-bench-build
   build:
     needs:
       - builder

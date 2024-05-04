@@ -109,7 +109,7 @@ Testing new code is expected and adding tests or improving tests for old code is
 For manual testing you can run `npm run coai` in the source folder to automatically check out and install all required files for testing.
 
 ```bash
-git clone https://github.com/idrinth/api-bench
+git clone https://github.com/idrinth-api-bench/api-bench
 cd api-bench
 npm run coai
 ```
@@ -137,7 +137,7 @@ useful for testing specific CI tasks before committing your changes.
 Run the following commands to create the full project:
 
 ```sh
-git clone https://github.com/idrinth/api-bench
+git clone https://github.com/idrinth-api-bench/api-bench
 cd api-bench
 npm run setup
 ```

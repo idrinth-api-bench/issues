@@ -1,4 +1,4 @@
-# @idrinth/api-bench build on alpine
+# @idrinth-api-bench/api-bench build on alpine
 
 This image builds api-bench on alpine and is mostly for internal usage.
 
