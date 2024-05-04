@@ -11,7 +11,7 @@ describe('usage/middlewares', () => {
     cy.url().should('eq', BASE_URL + page.middlewares,);
   },);
   it('title matches', () => {
-    cy.title().should('eq', 'Middlewares | Usage | ' +  
+    cy.title().should('eq', 'Middlewares | Usage | ' +
     '@idrinth-api-bench/api-bench',);
   },);
   it('h1 matches', () => {
