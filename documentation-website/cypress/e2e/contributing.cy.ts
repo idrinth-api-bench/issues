@@ -11,7 +11,7 @@ describe('contributing', () => {
     cy.url().should('eq', BASE_URL + page.contributing,);
   },);
   it('title matches', () => {
-    cy.title().should('eq', 'Contributing | @idrinth/api-bench',);
+    cy.title().should('eq', 'Contributing | @idrinth-api-bench/api-bench',);
   },);
   it('h1 matches', () => {
     cy.get('h1',)
