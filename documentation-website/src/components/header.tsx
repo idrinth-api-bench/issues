@@ -48,11 +48,11 @@ const Header = ({
       />
       <SocialLink
         to={[
-          'https://hub.docker.com/r/idrinth-api-bench/api-bench-gitlab-runner',
-          'https://hub.docker.com/r/idrinth-api-bench/api-bench-gitea-action',
-          'https://hub.docker.com/r/idrinth-api-bench/api-bench',
-          'https://hub.docker.com/r/idrinth-api-bench/api-bench-history-microservice',
-          'https://hub.docker.com/r/idrinth-api-bench/api-bench-history-website',
+          'https://hub.docker.com/r/idrinth/api-bench-gitlab-runner',
+          'https://hub.docker.com/r/idrinth/api-bench-gitea-action',
+          'https://hub.docker.com/r/idrinth/api-bench',
+          'https://hub.docker.com/r/idrinth/api-bench-history-microservice',
+          'https://hub.docker.com/r/idrinth/api-bench-history-website',
         ]}
         label={'docker'}
       />
