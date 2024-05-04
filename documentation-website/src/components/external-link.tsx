@@ -2,7 +2,7 @@ import React from 'react';
 import {
   FiExternalLink,
 } from 'react-icons/fi';
-const externalLink = ({
+const ExternalLink = ({
   to,
   label = '',
 },) => <a
@@ -15,4 +15,4 @@ const externalLink = ({
   <FiExternalLink className="external-link-icon"/>
 </a>;
 
-export default externalLink;
+export default ExternalLink;
