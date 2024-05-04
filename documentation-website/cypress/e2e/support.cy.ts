@@ -11,7 +11,7 @@ describe('support', () => {
     cy.url().should('eq', BASE_URL + page.support,);
   },);
   it('title matches', () => {
-    cy.title().should('eq', 'Support | @idrinth-api-bench/api-bench',);
+    cy.title().should('eq', 'Support | @idrinth/api-bench',);
   },);
   it('h1 matches', () => {
     cy.get('h1',)

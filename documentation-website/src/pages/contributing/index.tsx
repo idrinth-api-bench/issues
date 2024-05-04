@@ -79,7 +79,7 @@ const Index = () => <Layout
         <Lang lnkey={'contributing.code.tests.manual.description'}/>
       </p>
       <Code language='bash'>{`
-git clone https://github.com/idrinth-api-bench/api-bench
+git clone https://github.com/idrinth/api-bench
 cd api-bench
 npm run coai
   `}</Code>
@@ -118,7 +118,7 @@ npm run coai
         <Lang lnkey={'contributing.code.setup.description'}/>
       </p>
       <Code language='bash'>{`
-git clone https://github.com/idrinth-api-bench/api-bench
+git clone https://github.com/idrinth/api-bench
 cd api-bench
 npm run setup
   `}</Code>

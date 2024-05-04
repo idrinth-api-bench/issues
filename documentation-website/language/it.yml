@@ -19,54 +19,54 @@ nav:
 
 socials:
   npm:
-    title0: "@idrinth-api-bench/api-bench su NPMJS"
-    text0: "@idrinth-api-bench/api-bench"
-    title1: "@idrinth-api-bench/api-bench-cli su NPMJS"
-    text1: "@idrinth-api-bench/api-bench-cli"
+    title0: "@idrinth/api-bench su NPMJS"
+    text0: "@idrinth/api-bench"
+    title1: "@idrinth/api-bench-cli su NPMJS"
+    text1: "@idrinth/api-bench-cli"
     alt: "NPM"
   docker:
-    title0: "idrinth-api-bench/api-bench-gitlab-runner su DockerHub"
+    title0: "idrinth/api-bench-gitlab-runner su DockerHub"
     text0: "Gitlab Runner"
-    title1: "idrinth-api-bench/api-bench-gitea-action su DockerHub"
+    title1: "idrinth/api-bench-gitea-action su DockerHub"
     text1: "Gitea Action"
-    title2: "idrinth-api-bench/api-bench su DockerHub"
+    title2: "idrinth/api-bench su DockerHub"
     text2: "Pure Alpine"
-    title3: "idrinth-api-bench/api-bench-history-microservice su DockerHub"
+    title3: "idrinth/api-bench-history-microservice su DockerHub"
     text3: "History Microservice"
-    title4: "idrinth-api-bench/api-bench-history-website su DockerHub"
+    title4: "idrinth/api-bench-history-website su DockerHub"
     text4: "History Website"
     alt: "DockerHub"
   github:
-    title: "idrinth-api-bench/api-bench su GitHub"
+    title: "idrinth/api-bench su GitHub"
     alt: "GitHub"
   medium:
-    title: "idrinth-api-bench/api-bench su Medium"
+    title: "idrinth/api-bench su Medium"
     alt: "Medium"
   youtube:
     title: "idrinth-api-bench su YouTube"
     alt: "YouTube"
   slack:
-    title: "@idrinth-api-bench/api-bench su slack"
+    title: "@idrinth/api-bench su slack"
     alt: "Slack"
   linkedin:
-    title: "@idrinth-api-bench/api-bench su LinkedIn"
+    title: "@idrinth/api-bench su LinkedIn"
     alt: "LinkedIn"
   open-sauced:
-    title: "@idrinth-api-bench/api-bench projects su OpenSauced"
+    title: "@idrinth/api-bench projects su OpenSauced"
     alt: "OpenSauced"
   reddit:
-    title: "@idrinth-api-bench/api-bench su Reddit"
+    title: "@idrinth/api-bench su Reddit"
     alt: "Reddit"
 
 code-of-conduct:
   meta:
     title: "Codice di Comportamento"
-    description: "Il Codice di Comportamento dei Contributori @idrinth-api-bench/api-bench"
+    description: "Il Codice di Comportamento dei Contributori @idrinth/api-bench"
 
 home:
   meta:
     title: "Home"
-    description: "Benvenuti nel sito della documentazione per il framework @idrinth-api-bench/api-bench"
+    description: "Benvenuti nel sito della documentazione per il framework @idrinth/api-bench"
   title: "In cosa consiste questo progetto?"
   what: "Questo progetto fornisce un framework per testare le API rest e i siti Web per monitorarne i tempi di risposta."
   why: "Ciò aiuta a rilevare le modifiche delle prestazioni nel codice in modo rapido e semplice."
@@ -98,7 +98,7 @@ youtube:
 faq:
   meta:
     title: "FAQ"
-    description: "Domande frequenti riguardo @idrinth-api-bench/api-bench"
+    description: "Domande frequenti riguardo @idrinth/api-bench"
   title: "FAQ"
   description: "Se alla tua domanda non è stata ancora data risposta, vai su Slack, LinkedIn o GitHub e scrivila lì. Risponderemo il più rapidamente possibile."
   questions:
@@ -129,7 +129,7 @@ sponsors:
     title: "Sponsor | Contribuire"
     description: "Le seguenti aziende e società sponsorizzano lo sviluppo di api-bench fornendo tempo, denaro o strumenti necessari."
   title: "Sponsor"
-  description: "Le seguenti aziende e aziende supportano lo sviluppo di @idrinth-api-bench/api-bench. Ciò significa che forniscono tempo, denaro o strumenti necessari per lo sviluppo."
+  description: "Le seguenti aziende e aziende supportano lo sviluppo di @idrinth/api-bench. Ciò significa che forniscono tempo, denaro o strumenti necessari per lo sviluppo."
   bjoernbuettner:
     intro: "Björn Büttner è un'azienda con sede in Germania che fornisce servizi di sviluppo e hosting personalizzati in un contesto web. Oltre a ciò vengono offerti corsi di formazione e consulenza, che includono questo progetto per il monitoraggio delle prestazioni."
     sponsoring: "L'azienda sostiene il progetto ospitando gratuitamente questo sito di documentazione e fornendo il dominio."
@@ -149,7 +149,7 @@ contributors:
 support:
   meta:
     title: "Supporto"
-    description: "Opzioni di supporto per il framework @idrinth-api-bench/api-bench."
+    description: "Opzioni di supporto per il framework @idrinth/api-bench."
   title: "Supporto"
   description: "Non importa chi tu sia, puoi ottenere supporto tramite gli issues e le discussions di GitHub. I tempi di risposta del supporto dipendono dalla disponibilità dei volontari, quindi potrebbero essere necessari uno o due giorni."
   commercial:
@@ -169,7 +169,7 @@ support:
 contributing:
   meta:
     title: "Contribuire"
-    description: "Linee guida per contribuire al framework @idrinth-api-bench/api-bench"
+    description: "Linee guida per contribuire al framework @idrinth/api-bench"
   title: "Linee Guida per Contribuire"
   description: "Tutti i contributi sono incoraggiati."
   youtube: "Panoramica della struttura su YouTube"
@@ -298,12 +298,12 @@ contributing:
 license:
   meta:
     title: "Licenza"
-    description: "Il framework @idrinth-api-bench/api-bench è disponibile su licenza MIT"
+    description: "Il framework @idrinth/api-bench è disponibile su licenza MIT"
 
 autowiring:
   meta:
     title: "Autowiring | Utilizzo"
-    description: "Il framework @idrinth-api-bench/api-bench può collegare automaticamente le variabili di ambiente alle definizioni delle rotte."
+    description: "Il framework @idrinth/api-bench può collegare automaticamente le variabili di ambiente alle definizioni delle rotte."
   title: "Autowiring Parametri delle Rotte"
   limitations: "I tipi di commento prevarranno sempre sui tipi di valore predefiniti. Se questi due non corrispondono, potresti ottenere risultati strani. Purtroppo alcune cose non possono essere fatte."
   conversion: "I tipi verranno applicati automaticamente se è presente un valore predefinito da cui ottenere il tipo o un commento come /* boolean */ parametro aggiunto davanti al parametro."
@@ -321,7 +321,7 @@ autowiring:
 middlewares:
   meta:
     title: "Middleware | Utilizzo"
-    description: "Il framework @idrinth-api-bench/api-bench fornisce middleware predefiniti e consente middleware personalizzati"
+    description: "Il framework @idrinth/api-bench fornisce middleware predefiniti e consente middleware personalizzati"
   title: "Middleware"
   description: "I middleware utilizzano un percorso file assoluto per essere caricati. I seguenti caratteri verranno utilizzati per espandere short form:"
   provided:
@@ -346,7 +346,7 @@ middlewares:
 results:
   meta:
     title: "Risultati | Utilizzo"
-    description: "Il framework @idrinth-api-bench/api-bench fornisce gestori di risultati predefiniti e consente ulteriori gestori di risultati personalizzati"
+    description: "Il framework @idrinth/api-bench fornisce gestori di risultati predefiniti e consente ulteriori gestori di risultati personalizzati"
   title: "Risultati"
   description: "Di default, vengono forniti tutti i possibili formati di risultato. I file vengono creati nella radice dell'applicazione, ma possono essere sovrascritti a livello di codice."
   csv:
@@ -371,7 +371,7 @@ results:
 usage:
   meta:
     title: "Utilizzo"
-    description: "Informazioni di base sull'utilizzo del framework @idrinth-api-bench/api-bench"
+    description: "Informazioni di base sull'utilizzo del framework @idrinth/api-bench"
   title: "Utilizzo"
   binaries:
     title: "File Binari"
@@ -383,7 +383,7 @@ usage:
 logging:
   meta:
     title: "Logging | Utilizzo"
-    description: "Informazioni sull'utilizzo del logging e supporto del framework @idrinth-api-bench/api-bench"
+    description: "Informazioni sull'utilizzo del logging e supporto del framework @idrinth/api-bench"
   title: "Logging"
   description: "Qualsiasi logger che implementa l'interfaccia o dispone di un wrapper è un'opzione. Sono disponibili wrapper per Pino e Winston."
   used:
@@ -397,7 +397,7 @@ logging:
 storage:
   meta:
     title: "Archiviazione | Utilizzo"
-    description: "Informazioni sullo spazio di archiviazione MySQL fornito e su come creare implementazioni di archiviazione personalizzate per @idrinth-api-bench/api-bench"
+    description: "Informazioni sullo spazio di archiviazione MySQL fornito e su come creare implementazioni di archiviazione personalizzate per @idrinth/api-bench"
   title:  "Archiviazione"
   description: "Le classi di archiviazione archiviano ogni set finito della run. Per impostazione predefinita, non viene archiviato nulla, ma per coloro che lo desiderano viene fornito un archivio MySQL."
   experimental:
@@ -410,7 +410,7 @@ storage:
 routes:
   meta:
     title: "Rotte | Utilizzo"
-    description: "Informazioni su come creare definizioni di rotte di test con il framework @idrinth-api-bench/api-bench"
+    description: "Informazioni su come creare definizioni di rotte di test con il framework @idrinth/api-bench"
   title: "Rotte"
   description: "Le rotte vengono create come oggetti di configurazione, che devono essere esportati per impostazione predefinita o forniti tramite module.exports ed essere in un file Javascript. L'oggetto è racchiuso in una funzione per consentire l'inserimento dell'ambiente, vedi sotto per un esempio."
   example:
@@ -422,7 +422,7 @@ quick-start:
   meta:
     title: "Avvio rapido"
     description: "Pochi passaggi per rendere rapidamente operativo un progetto api-bench."
-  title: "@idrinth-api-bench/api-bench avvio rapido"
+  title: "@idrinth/api-bench avvio rapido"
   description: "Iniziare con il framework non è difficile. Segui i prossimi due passaggi e avrai il tuo primo caso pronto per l'esecuzione in pochi minuti."
   step1:
     title: "Requisiti"
@@ -451,7 +451,7 @@ loader:
 command:
   or: "oppure"
   deprecated: "Questo comando è deprecato."
-  cli: "Disponibile tramite il pacchetto CLI @idrinth-api-bench/api-bench-cli ed il framework."
+  cli: "Disponibile tramite il pacchetto CLI @idrinth/api-bench-cli ed il framework."
   iabr:
     description: "esegue il progetto della directory di lavoro corrente se la cartella delle rotte è configurata correttamente"
     arg_1: "Parametro 1: threads (default 1)"
