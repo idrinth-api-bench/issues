@@ -42,7 +42,7 @@ export default async(args: string[], cwd: string,): Promise<number> => {
       return STATUSCODE_FAILURE;
     default:
       console.log(
-        `@idrinth-api-bench/api-bench v${ pkg.version }`,
+        `@idrinth/api-bench v${ pkg.version }`,
       );
       console.log(
         'iab bench --language=en --taskId=test --threads=11 --repetitions=100',

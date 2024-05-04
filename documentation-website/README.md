@@ -1,4 +1,4 @@
-# @idrinth-api-bench/api-bench/website
+# @idrinth/api-bench/website
 
 ## Description
 

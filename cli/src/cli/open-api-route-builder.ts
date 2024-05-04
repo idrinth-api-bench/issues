@@ -29,7 +29,7 @@ const write = (
   stream.write(
     `import {
   Task,
-} from '@idrinth-api-bench/api-bench';
+} from '@idrinth/api-bench';
 
 export default (/*String*/apiBaseUrl: string): Task => ({
   id: '${ name.replace(/[^a-z0-9_\-/ ]+/iug, '',) }',

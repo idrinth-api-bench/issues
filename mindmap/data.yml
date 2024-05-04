@@ -1,8 +1,8 @@
-text: "@idrinth-api-bench/api-bench"
+text: "@idrinth/api-bench"
 $schema: ./schema.json
 children:
   - text: Marketing
-    url: https://github.com/idrinth-api-bench/api-bench/labels/marketing
+    url: https://github.com/Idrinth/api-bench/labels/marketing
     children:
       - text: Opensauced
         url: https://opensauced.pizza
@@ -52,7 +52,7 @@ children:
         - text: code generators  from common formats
         - text: stable versions
         - text: migration tools between stable versions (WIP)
-          url: https://github.com/idrinth-api-bench/api-bench/issues/441
+          url: https://github.com/Idrinth/api-bench/issues/441
         - text: reusable route definitions
       - text: business/company support options
         children:
@@ -61,12 +61,12 @@ children:
       - text: core features
         children:
         - text: monitoring solution (WIP)
-          url: https://github.com/idrinth-api-bench/api-bench/issues/279
+          url: https://github.com/Idrinth/api-bench/issues/279
         - text: benchmarking
         - text: load testing
         - text: content testing/integration testing
         - text: stress testing (WIP)
-          url: https://github.com/idrinth-api-bench/api-bench/issues/571
+          url: https://github.com/Idrinth/api-bench/issues/571
         - text: Multi lingual
           children:
             - text: guaranteed

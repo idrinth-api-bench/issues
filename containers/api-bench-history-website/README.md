@@ -1,4 +1,4 @@
-# @idrinth-api-bench/api-bench/history-website + alpine
+# @idrinth/api-bench/history-website + alpine
 
 This image prepares the history website for usage with the monitoring
 microservice.

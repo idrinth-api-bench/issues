@@ -1,4 +1,4 @@
-# @idrinth-api-bench/api-bench + gitea/act_runner + alpine
+# @idrinth/api-bench + gitea/act_runner + alpine
 
 This image prepares an action for use in gitea,
 that brings along everything required to run API tests.

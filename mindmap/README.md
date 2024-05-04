@@ -1,4 +1,4 @@
-# @idrinth-api-bench/api-bench/mindmap
+# @idrinth/api-bench/mindmap
 
 This mindmap is hosted [here](https://mindmap.idrinth-api-ben.ch).
 

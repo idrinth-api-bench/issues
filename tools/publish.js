@@ -69,7 +69,7 @@ const data = JSON.parse(readFileSync(
   process.cwd() + '/framework/package.json',
   'utf8',
 ),);
-data.dependencies['@idrinth-api-bench/api-bench-cli'] = '^' + version;
+data.dependencies['@idrinth/api-bench-cli'] = '^' + version;
 writeFileSync(
   process.cwd() + '/framework/package.json',
   // eslint-disable-next-line no-undefined

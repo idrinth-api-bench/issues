@@ -70,7 +70,7 @@ export default (args: string[], cwd: string,) => {
       private: true,
       type: 'module',
       dependencies: {
-        '@idrinth-api-bench/api-bench': '^' + pkg.version,
+        '@idrinth/api-bench': '^' + pkg.version,
       },
       devDependencies: {
         typescript: '^5.3.3',

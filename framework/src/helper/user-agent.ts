@@ -32,5 +32,5 @@ const getVersion = (name: string, lock: Lock,): string => {
 const lock: Lock = reqlib.require('/package-lock.json',) as Lock;
 const main = `${ lock.name }/${ formatVersion(lock,) }`;
 const needle = `needle/${ getVersion('needle', lock,) }`;
-const self = `@idrinth-api-bench/api-bench/${ getVersion('@idrinth-api-bench/api-bench', lock,) }`;
+const self = `@idrinth/api-bench/${ getVersion('@idrinth/api-bench', lock,) }`;
 export default `${ main } ${ self } ${ needle }`.replace(/ {2,}/ug, ' ',);

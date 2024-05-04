@@ -1,5 +1,5 @@
 {
-  "name": "@idrinth-api-bench/api-bench/mindmap",
+  "name": "@idrinth/api-bench/mindmap",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/idrinth-api-bench/api-bench.git"
+    "url": "https://github.com/Idrinth/api-bench.git"
   },
   "private": true,
   "type": "module",

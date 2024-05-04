@@ -52,7 +52,7 @@ for (const folder of readdirSync(process.cwd() + '/examples', {
 },)) {
   if (folder !== '.eslintrc.yml') {
     exec(`cd examples/${ folder } && npm install`, true,);
-    rm(`/examples/${ folder }/node_modules/@idrinth-api-bench/api-bench`,);
+    rm(`/examples/${ folder }/node_modules/@idrinth/api-bench`,);
     copy('/framework', `/examples/${ folder }`,);
   }
 }

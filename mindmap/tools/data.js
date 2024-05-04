@@ -64,7 +64,7 @@ let html = fillTemplate(
 );
 html = html.replace(
   '<title>Markmap</title>',
-  '<title>MindMap | @idrinth-api-bench/api-bench</title>',
+  '<title>MindMap | @idrinth/api-bench</title>',
 );
 html = hminify(
   html,
@@ -121,7 +121,7 @@ html = html
     '</div>' +
     '<div id=iab>' +
     `<a href=https://idrinth-api-ben.ch/ ${ attributes }>` +
-    '<img src=iab.svg alt="@idrinth-api-bench/api-bench" />' +
+    '<img src=iab.svg alt="@idrinth/api-bench" />' +
     '</a>' +
     '</div>$1',
   );

@@ -1,10 +1,10 @@
 {
-  "name": "@idrinth-api-bench/api-bench/example/reqres.in",
+  "name": "@idrinth/api-bench/example/reqres.in",
   "version": "1.0.0",
   "description": "",
   "private": true,
   "dependencies": {
-    "@idrinth-api-bench/api-bench": "*"
+    "@idrinth/api-bench": "*"
   },
   "scripts": {
     "start": "run-benchmark 2 3"
