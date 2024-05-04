@@ -11,7 +11,7 @@ describe('usage/results', () => {
     cy.url().should('eq', BASE_URL + page.results,);
   },);
   it('title matches', () => {
-    cy.title().should('eq', 'Results | Usage | @idrinth/api-bench',);
+    cy.title().should('eq', 'Results | Usage | @idrinth-api-bench/api-bench',);
   },);
   it('h1 matches', () => {
     cy.get('h1',)

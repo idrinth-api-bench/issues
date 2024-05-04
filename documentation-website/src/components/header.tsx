@@ -32,27 +32,27 @@ const Header = ({
 }: {window: Window},) => <header>
   <div>
     <NavLink id="logo" to="/">
-      <img src={IAB} alt="@idrinth/api-bench" />
+      <img src={IAB} alt="@idrinth-api-bench/api-bench" />
     </NavLink>
-    <strong>@idrinth/api-bench</strong>
+    <strong>@idrinth-api-bench/api-bench</strong>
     <em>v{pkg.version}</em>
   </div>
   <nav aria-label='Social Links Menu'>
     <ul className={'socials'}>
       <SocialLink
         to={[
-          'https://www.npmjs.com/package/@idrinth/api-bench',
-          'https://www.npmjs.com/package/@idrinth/api-bench-cli',
+          'https://www.npmjs.com/package/@idrinth-api-bench/api-bench',
+          'https://www.npmjs.com/package/@idrinth-api-bench/api-bench-cli',
         ]}
         label={'npm'}
       />
       <SocialLink
         to={[
-          'https://hub.docker.com/r/idrinth/api-bench-gitlab-runner',
-          'https://hub.docker.com/r/idrinth/api-bench-gitea-action',
-          'https://hub.docker.com/r/idrinth/api-bench',
-          'https://hub.docker.com/r/idrinth/api-bench-history-microservice',
-          'https://hub.docker.com/r/idrinth/api-bench-history-website',
+          'https://hub.docker.com/r/idrinth-api-bench/api-bench-gitlab-runner',
+          'https://hub.docker.com/r/idrinth-api-bench/api-bench-gitea-action',
+          'https://hub.docker.com/r/idrinth-api-bench/api-bench',
+          'https://hub.docker.com/r/idrinth-api-bench/api-bench-history-microservice',
+          'https://hub.docker.com/r/idrinth-api-bench/api-bench-history-website',
         ]}
         label={'docker'}
       />
@@ -81,7 +81,7 @@ const Header = ({
         label={'slack'}
       />
       <SocialLink
-        to="https://github.com/Idrinth/api-bench"
+        to="https://github.com/idrinth-api-bench/api-bench"
         label={'github'}
       />
       <SocialLink

@@ -22,7 +22,7 @@ const Route = () => <Layout
       </p>
       <Code language='typescript'>{`import {
   Task,
-} from '@idrinth/api-bench';
+} from '@idrinth-api-bench/api-bench';
 
 export default (apiURL, apiPassword): Task => {
   main: {

@@ -11,7 +11,7 @@ describe('imprint', () => {
     cy.url().should('eq', BASE_URL + page.imprint,);
   },);
   it('title matches', () => {
-    cy.title().should('eq', 'Imprint | @idrinth/api-bench',);
+    cy.title().should('eq', 'Imprint | @idrinth-api-bench/api-bench',);
   },);
   it('h1 matches', () => {
     cy.get('h1',)
