@@ -81,7 +81,7 @@ const Header = ({
         label={'slack'}
       />
       <SocialLink
-        to="https://github.com/idrinth-api-bench/api-bench"
+        to="https://github.com/idrinth-api-bench/"
         label={'github'}
       />
       <SocialLink
