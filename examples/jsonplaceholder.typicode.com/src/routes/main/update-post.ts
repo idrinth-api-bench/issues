@@ -1,4 +1,4 @@
-module.exports = (apiRootUrl) => ({
+export default (apiRootUrl: string,) => ({
   id: 'update post 1',
   main: {
     method: 'put',
