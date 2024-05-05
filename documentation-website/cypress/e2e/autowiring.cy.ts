@@ -12,7 +12,7 @@ describe('usage/autowiring', () => {
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Autowiring | Usage | '
-    + '@idrinth-api-bench/api-bench',);
+    + '@idrinth/api-bench',);
   },);
   it('h1 matches', () => {
     cy.get('h1',)

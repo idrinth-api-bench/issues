@@ -21,7 +21,7 @@ describe('language-switch', () => {
   },);
 
   it('changes language correctly', () => {
-    const pageSignature = '@idrinth-api-bench/api-bench';
+    const pageSignature = '@idrinth/api-bench';
     const defaultPageTitle = `Quick Start | ${ pageSignature }`;
     const translatedPageTitle = `Avvio rapido | ${ pageSignature }`;
     const newLanguage = 'it';

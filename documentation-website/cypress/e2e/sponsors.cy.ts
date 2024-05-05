@@ -12,7 +12,7 @@ describe('contributing/sponsors', () => {
   },);
   it('title matches', () => {
     cy.title().should('eq', 'Sponsors | Contributing | '+
-    '@idrinth-api-bench/api-bench',);
+    '@idrinth/api-bench',);
   },);
   it('h1 matches', () => {
     cy.get('h1',)

@@ -13,7 +13,7 @@ describe('contributors', () => {
   it('title matches', () => {
     cy.title()
       .should('eq', 'Contributors | Contributing | '+
-      '@idrinth-api-bench/api-bench',);
+      '@idrinth/api-bench',);
   },);
   it('h1 matches', () => {
     cy.get('h1',)

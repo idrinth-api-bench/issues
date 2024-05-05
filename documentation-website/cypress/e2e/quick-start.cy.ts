@@ -11,12 +11,12 @@ describe('usage/quick-start', () => {
     cy.url().should('eq', BASE_URL + page.quickStart,);
   },);
   it('title matches', () => {
-    cy.title().should('eq', 'Quick Start | @idrinth-api-bench/api-bench',);
+    cy.title().should('eq', 'Quick Start | @idrinth/api-bench',);
   },);
   it('h1 matches', () => {
     cy.get('h1',)
       .invoke('text',)
-      .should('eq', '@idrinth-api-bench/api-bench quick start',);
+      .should('eq', '@idrinth/api-bench quick start',);
   },);
   it('link to self exists', () => {
     cy.get('header nav a[href="/quick-start/"]',)
