@@ -7,7 +7,7 @@
     "@idrinth/api-bench": "*"
   },
   "scripts": {
-    "start": "run-benchmark 2 3"
+    "start": "tsc -p tsconfig.json && run-benchmark 2 3"
   },
   "engines": {
     "node": ">=20"
