@@ -32,17 +32,17 @@ const Header = ({
 }: {window: Window},) => <header>
   <div>
     <NavLink id="logo" to="/">
-      <img src={IAB} alt="@idrinth-api-bench/api-bench" />
+      <img src={IAB} alt="@idrinth/api-bench" />
     </NavLink>
-    <strong>@idrinth-api-bench/api-bench</strong>
+    <strong>@idrinth/api-bench</strong>
     <em>v{pkg.version}</em>
   </div>
   <nav aria-label='Social Links Menu'>
     <ul className={'socials'}>
       <SocialLink
         to={[
-          'https://www.npmjs.com/package/@idrinth-api-bench/api-bench',
-          'https://www.npmjs.com/package/@idrinth-api-bench/api-bench-cli',
+          'https://www.npmjs.com/package/@idrinth/api-bench',
+          'https://www.npmjs.com/package/@idrinth/api-bench-cli',
         ]}
         label={'npm'}
       />
@@ -81,7 +81,7 @@ const Header = ({
         label={'slack'}
       />
       <SocialLink
-        to="https://github.com/idrinth-api-bench/api-bench"
+        to="https://github.com/idrinth/api-bench"
         label={'github'}
       />
       <SocialLink

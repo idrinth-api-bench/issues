@@ -19,54 +19,54 @@ nav:
 
 socials:
   npm:
-    title0: "@idrinth-api-bench/api-bench on NPMJS"
-    text0: "@idrinth-api-bench/api-bench"
-    title1: "@idrinth-api-bench/api-bench-cli on NPMJS"
-    text1: "@idrinth-api-bench/api-bench-cli"
+    title0: "@idrinth/api-bench on NPMJS"
+    text0: "@idrinth/api-bench"
+    title1: "@idrinth/api-bench-cli on NPMJS"
+    text1: "@idrinth/api-bench-cli"
     alt: "NPM"
   docker:
-    title0: "idrinth-api-bench/api-bench-gitlab-runner on DockerHub"
+    title0: "idrinth/api-bench-gitlab-runner on DockerHub"
     text0: "Gitlab Runner"
-    title1: "idrinth-api-bench/api-bench-gitea-action on DockerHub"
+    title1: "idrinth/api-bench-gitea-action on DockerHub"
     text1: "Gitea Action"
-    title2: "idrinth-api-bench/api-bench on DockerHub"
+    title2: "idrinth/api-bench on DockerHub"
     text2: "Pure Alpine"
-    title3: "idrinth-api-bench/api-bench-history-microservice on DockerHub"
+    title3: "idrinth/api-bench-history-microservice on DockerHub"
     text3: "History Microservice"
-    title4: "idrinth-api-bench/api-bench-history-website on DockerHub"
+    title4: "idrinth/api-bench-history-website on DockerHub"
     text4: "History Website"
     alt: "DockerHub"
   github:
-    title: "idrinth-api-bench/api-bench on GitHub"
+    title: "idrinth/api-bench on GitHub"
     alt: "GitHub"
   medium:
-    title: "idrinth-api-bench/api-bench on Medium"
+    title: "idrinth/api-bench on Medium"
     alt: "Medium"
   youtube:
     title: "idrinth-api-bench on YouTube"
     alt: "YouTube"
   slack:
-    title: "@idrinth-api-bench/api-bench on slack"
+    title: "@idrinth/api-bench on slack"
     alt: "Slack"
   linkedin:
-    title: "@idrinth-api-bench/api-bench on LinkedIn"
+    title: "@idrinth/api-bench on LinkedIn"
     alt: "LinkedIn"
   open-sauced:
-    title: "@idrinth-api-bench/api-bench projects on OpenSauced"
+    title: "@idrinth/api-bench projects on OpenSauced"
     alt: "OpenSauced"
   reddit:
-    title: "@idrinth-api-bench/api-bench on Reddit"
+    title: "@idrinth/api-bench on Reddit"
     alt: "Reddit"
 
 code-of-conduct:
   meta:
     title: "Code of Conduct"
-    description: "The Contributor's Code of Conduct for @idrinth-api-bench/api-bench"
+    description: "The Contributor's Code of Conduct for @idrinth/api-bench"
 
 home:
   meta:
     title: "Home"
-    description: "Welcome to the documentation for the framework @idrinth-api-bench/api-bench"
+    description: "Welcome to the documentation for the framework @idrinth/api-bench"
   title: "What does this project do?"
   what: "This project provides an API performance measuring and monitoring framework, that strives to provide the best developer experience possible while keeping it easy to expand and configure."
   why: "This helps to detect performance changes in code in a quick and simple manner."
@@ -98,7 +98,7 @@ youtube:
 faq:
   meta:
     title: "FAQ"
-    description: "frequently asked questions about @idrinth-api-bench/api-bench"
+    description: "frequently asked questions about @idrinth/api-bench"
   title: "Frequently Asked Questions"
   description: "If your question is not yet answered, head over to slack, LinkedIn or GitHub and leave it there. We will address it as quickly as possible."
   questions:
@@ -129,7 +129,7 @@ sponsors:
     title: "Sponsors | Contributing"
     description: "The following businesses and companies are sponsoring the development of api-bench by providing time, money or necessary tools."
   title: "Sponsors"
-  description: "The following businesses and companies support the development of @idrinth-api-bench/api-bench. This means they provide time, money or necessary tools for the development."
+  description: "The following businesses and companies support the development of @idrinth/api-bench. This means they provide time, money or necessary tools for the development."
   bjoernbuettner:
     intro: "Björn Büttner is a Germany based business, that provides custom development and hosting services in a web context. Additionally to that some training and consulting are offered, that do include this project for performance monitoring."
     sponsoring: "The business supports the project by hosting this documentation site for free and supplying the domain."
@@ -149,7 +149,7 @@ contributors:
 support:
   meta:
     title: "Support"
-    description: "Support options for the @idrinth-api-bench/api-bench framework."
+    description: "Support options for the @idrinth/api-bench framework."
   title: "Support"
   description: "No matter who you are, you can get support via GitHub issues and discussions. Support reaction times depend on the availability of volunteers, so it may take a day or two."
   commercial:
@@ -169,7 +169,7 @@ support:
 contributing:
   meta:
     title: "Contributing"
-    description: "Contribution guidelines for the framework @idrinth-api-bench/api-bench"
+    description: "Contribution guidelines for the framework @idrinth/api-bench"
   title: "Contributing Guidelines"
   description: "Any and all contributions are encouraged."
   youtube: "Structure Overview on YouTube"
@@ -298,12 +298,12 @@ contributing:
 license:
   meta:
     title: "License"
-    description: "The framework @idrinth-api-bench/api-bench is available under the MIT license"
+    description: "The framework @idrinth/api-bench is available under the MIT license"
 
 autowiring:
   meta:
     title: "Autowiring | Usage"
-    description: "The framework @idrinth-api-bench/api-bench can autowire environment variables into route definitions"
+    description: "The framework @idrinth/api-bench can autowire environment variables into route definitions"
   title: "Autowiring Route Parameters"
   limitations: "Comment types will always win over default value types. If those two don't match, you might get weird results. Sadly, a few things can't be done."
   conversion: "Types will be automatically applied if there is either a default value to get the type from or a comment like /* boolean */ parameter added in front of the parameter."
@@ -321,7 +321,7 @@ autowiring:
 middlewares:
   meta:
     title: "Middlewares | Usage"
-    description: "The framework @idrinth-api-bench/api-bench provides default middlewares and allows for custom middlewares"
+    description: "The framework @idrinth/api-bench provides default middlewares and allows for custom middlewares"
   title: "Middlewares"
   description: "Middlewares use an absolute file path to be loaded. The following characters will be used to expand short forms:"
   provided:
@@ -346,7 +346,7 @@ middlewares:
 results:
   meta:
     title: "Results | Usage"
-    description: "The framework @idrinth-api-bench/api-bench provides default result handlers and allows for additional custom result handlers"
+    description: "The framework @idrinth/api-bench provides default result handlers and allows for additional custom result handlers"
   title: "Results"
   description: "By default, all possible result formats are provided. The files are created in the application root, but that can be overwritten programmatically."
   csv:
@@ -371,7 +371,7 @@ results:
 usage:
   meta:
     title: "Usage"
-    description: "Basic usage information for the framework @idrinth-api-bench/api-bench"
+    description: "Basic usage information for the framework @idrinth/api-bench"
   title: "Usage"
   binaries:
     title: "Binaries"
@@ -383,7 +383,7 @@ usage:
 logging:
   meta:
     title: "Logging | Usage"
-    description: "Information about logging usage and support of the framework @idrinth-api-bench/api-bench"
+    description: "Information about logging usage and support of the framework @idrinth/api-bench"
   title: "Logging"
   description: "Any logger that either implements the interface or has a wrapper is an option. Wrappers for pino and winston are available."
   used:
@@ -397,7 +397,7 @@ logging:
 storage:
   meta:
     title: "Storage | Usage"
-    description: "Information about the provided MySQL storage and how to create custom storage implementations for @idrinth-api-bench/api-bench"
+    description: "Information about the provided MySQL storage and how to create custom storage implementations for @idrinth/api-bench"
   title:  "Storage"
   description: "Storage classes store each finished set of the run. By default, nothing is stored, but a MySQL storage is provided for those wanting it."
   experimental:
@@ -410,7 +410,7 @@ storage:
 routes:
   meta:
     title: "Routes | Usage"
-    description: "Information about how to create test route definitions with the framework @idrinth-api-bench/api-bench"
+    description: "Information about how to create test route definitions with the framework @idrinth/api-bench"
   title: "Routes"
   description: "Routes are build as configuration objects, that must be default-exported or provided via module.exports and be in a Javascript file. The object is wrapped in a function to allow environment injection, see below for an example."
   example:
@@ -422,7 +422,7 @@ quick-start:
   meta:
     title: "Quick Start"
     description: "A few steps to quickly get an api-bench project up and running."
-  title: "@idrinth-api-bench/api-bench quick start"
+  title: "@idrinth/api-bench quick start"
   description: "Starting out with the framework is not difficult. Follow the next couple steps and you will have your first case ready to run in a few minutes."
   step1:
     title: "Requirements"
@@ -451,7 +451,7 @@ loader:
 command:
   or: "or"
   deprecated: "This command is deprecated."
-  cli: "Available via the CLI package @idrinth-api-bench/api-bench-cli and the framework."
+  cli: "Available via the CLI package @idrinth/api-bench-cli and the framework."
   iabr:
     description: "runs the current working directory's project if the routes folder is properly setup"
     arg_1: "Argument 1: threads (default 1)"
