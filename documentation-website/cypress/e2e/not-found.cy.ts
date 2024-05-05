@@ -11,7 +11,7 @@ describe('404', () => {
     cy.url().should('eq', BASE_URL + page.notFound,);
   },);
   it('title matches', () => {
-    cy.title().should('eq', '404 NOT FOUND | @idrinth-api-bench/api-bench',);
+    cy.title().should('eq', '404 NOT FOUND | @idrinth/api-bench',);
   },);
   it('h1 matches', () => {
     cy.get('h1',)
