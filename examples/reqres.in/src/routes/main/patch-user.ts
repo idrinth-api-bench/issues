@@ -1,4 +1,4 @@
-module.exports = (apiRootUrl,) => ({
+export default (apiRootUrl: string,) => ({
   id: 'patch user',
   main: {
     method: 'patch',

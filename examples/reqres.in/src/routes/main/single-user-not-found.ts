@@ -1,4 +1,4 @@
-module.exports = (apiRootUrl,) => ({
+export default (apiRootUrl: string,) => ({
   id: 'single user not found',
   main: {
     method: 'get',

@@ -1,4 +1,4 @@
-module.exports = (apiRootUrl,) => ({
+export default (apiRootUrl: string,) => ({
   id: 'create user',
   main: {
     method: 'post',
