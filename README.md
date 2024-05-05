@@ -36,11 +36,6 @@ The documentation website is a React application written in Typescript.
 It serves as the central web presence and documentation for all
 involved projects.
 
-### [Examples](/examples)
-
-These are examples based on @idrinth/api-bench (the framework). Try
-them out to see how it works and what the framework provides.
-
 ### [History Microservice](/history-microservice/README.md)
 
 The history microservice is a Fastify application, that serves as
