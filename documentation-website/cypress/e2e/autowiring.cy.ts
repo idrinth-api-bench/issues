@@ -11,8 +11,7 @@ describe('usage/autowiring', () => {
     cy.url().should('eq', BASE_URL + page.autowiring,);
   },);
   it('title matches', () => {
-    cy.title().should('eq', 'Autowiring | Usage | '
-    + '@idrinth/api-bench',);
+    cy.title().should('eq', 'Autowiring | Usage | @idrinth/api-bench',);
   },);
   it('h1 matches', () => {
     cy.get('h1',)
