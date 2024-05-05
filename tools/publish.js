@@ -120,38 +120,4 @@ exec(
   'cd framework && npm install && npm publish',
   true,
 );
-await delay(NPM_PULL_DELAY,);
-const main = version.replace(/\..+$/u, '',);
-const feature = version.replace(/\.[^.]+$/u, '',);
-writeFileSync('./pw', dockerPassword,);
-exec('cat pw | docker login -u idrinth --password-stdin', true,);
-rmSync('./pw',);
-const args = [
-  `--build-arg="BUILD_VERSION=${ version }"`,
-  `--build-arg="BUILD_TIME=${ new Date().toISOString() }"`,
-  `--build-arg="BUILD_HASH=${ exec('git rev-parse --short HEAD',) }"`,
-];
-for (const image of [
-  'api-bench-build',
-  'api-bench',
-  'api-bench-gitea-action',
-  'api-bench-gitlab-runner',
-]) {
-  const tags = [
-    `-t idrinth/${ image }:latest`,
-    `-t idrinth/${ image }:${ version }`,
-    `-t idrinth/${ image }:${ feature }`,
-    `-t idrinth/${ image }:${ main }`,
-  ];
-  const params = [
-    ...args,
-    ...tags,
-  ];
-  exec(
-    `cd containers/${ image } && docker build ${ params.join(' ',) } .`,
-    true,
-  );
-  exec(`docker push -a idrinth/${ image }`, true,);
-}
-exec('docker image prune --force', true,);
 process.exit(EXIT_SUCCESS,);
