@@ -467,6 +467,9 @@ command:
   iabgfh:
     description: "genera scheletri di test da un documento HAR per un progetto nella directory di lavoro corrente"
     arg_1: "Parametro 1: pecorso del documento HAR"
+  iabgfc:
+    description: "genera scheletri di test da un comando CURL per un progetto nella directory di lavoro corrente"
+    arg_1: "Parametro 1: l'URL da testare"
   iabcrd:
     description: "controlla tutte le rotte per possibili problemi, quindi non ci sono sorprese durante l'esecuzione effettiva del codice."
     arg_1: "Parametro 1: lingua (default: en)"
