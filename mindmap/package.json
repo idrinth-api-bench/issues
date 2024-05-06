@@ -35,7 +35,7 @@
     "@idrinth/duplicate-style-check": "^1.1.0",
     "@types/node": "^20.12.2",
     "chai": "^5.1.0",
-    "eslint": "^8.57.0",
+    "eslint": "^9.2.0",
     "knip": "^5.8.0",
     "mocha": "^10.4.0",
     "spellchecker-cli": "^6.2.0",
