@@ -2,10 +2,16 @@ import React from 'react';
 import {
   FiExternalLink,
 } from 'react-icons/fi';
-const externalLink = ({
+
+interface ExternalLinkType {
+  to: string;
+  label?: string;
+}
+
+const ExternalLink = ({
   to,
   label = '',
-},) => <a
+}: ExternalLinkType,) => <a
   className="external-link"
   href={to}
   target='_blank'
@@ -15,4 +21,4 @@ const externalLink = ({
   <FiExternalLink className="external-link-icon"/>
 </a>;
 
-export default externalLink;
+export default ExternalLink;
