@@ -26,3 +26,13 @@ export const multiple = {
 };
 export const EMPTY_LENGTH = 0;
 export const PAGE_LOAD_WAIT_MS = 1000;
+export const SINGLE_VALUE_LENGTH = 1;
+export const ACCESSIBILITY_FILES_DIR = 'cypress/accessibility';
+export const UI_MODE = {
+  dark: 'dark',
+  light: 'light',
+};
+export const UI_MODE_CLASSES= {
+  [UI_MODE.dark]: 'dark-mode',
+  [UI_MODE.light]: 'light-mode',
+};

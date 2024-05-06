@@ -45,6 +45,7 @@
 # Documentation Website
 /documentation-website/.nyc_output
 /documentation-website/coverage
+/documentation-website/cypress/accessibility
 /documentation-website/cypress/screenshots
 /documentation-website/node_modules
 /documentation-website/dist
