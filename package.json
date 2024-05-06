@@ -1,14 +1,21 @@
 {
-  "name": "@idrinth/api-bench/root",
+  "name": "@idrinth-api-bench/root",
   "version": "2.7.4",
   "description": "",
   "license": "MIT",
   "homepage": "https://idrinth-api-ben.ch",
+  "bugs": {
+    "url": "https://github.com/idrinth-api-bench/api-bench/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idrinth-api-bench/api-bench.git"
+  },
   "type": "module",
   "author": "Björn Büttner",
   "contributors": [],
   "scripts": {
-    "lint": "eslint tools examples --ext .js,.ts,.cjs,.json,.tsx",
+    "lint": "eslint tools --ext .js,.ts,.cjs,.json,.tsx",
     "lint-md": "markdownlint *.md .github/**/*.md containers/**/*.md",
     "coai": "node tools/checkout-and-install.js",
     "publish": "node tools/publish.js",
@@ -27,10 +34,6 @@
     "commitlint": "commitlint --edit",
     "postinstall": "npm run simple-git-hooks",
     "simple-git-hooks": "simple-git-hooks"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Idrinth/api-bench.git"
   },
   "simple-git-hooks": {
     "commit-msg": "npm run commitlint",

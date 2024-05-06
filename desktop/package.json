@@ -5,6 +5,14 @@
   "type": "module",
   "description": "This is a wrapper for framework execution. It provides applications for multiple desktop platforms to previously created run tests.",
   "author": "Björn Büttner",
+  "homepage": "https://idrinth-api-ben.ch",
+  "bugs": {
+    "url": "https://github.com/idrinth-api-bench/api-bench/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idrinth-api-bench/desktop.git"
+  },
   "scripts": {
     "build": "npm run drop-dist && npm run copy-assets && vue-tsc && vite build && node tools/fix-index.js && node tools/copy-starter.js",
     "start": "npm run build && node dist/run.js start",
