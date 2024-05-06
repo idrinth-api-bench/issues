@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "eslint": "^8.57.0",
-    "knip": "^5.8.0",
+    "knip": "^5.12.3",
     "eslint-plugin-fastify-security-rules": "^1.2.0",
     "@types/node": "^20.11.30",
     "markdownlint-cli": "^0.40.0",
