@@ -3,8 +3,11 @@
   list-style-type: none;
   width: 100%;
 
-  &:focus {
-    box-shadow: 0 0 2em var(--shadow);
+  & > button {
+    width: 100%;
+    &:focus {
+      box-shadow: 0 0 2em var(--shadow);
+    }
   }
 
   .accordion-section {
