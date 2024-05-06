@@ -32,13 +32,13 @@ on:
       steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Initiize CodeQL
+      - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
           languages: javascript-typescript
           queries: security-and-quality
           source-root: desktop
-      - name: Setup Node.js enviornment ${{ env.CURRENT_NODE_VERSION }}
+      - name: Setup Node.js environment ${{ env.CURRENT_NODE_VERSION }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}

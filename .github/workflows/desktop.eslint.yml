@@ -2,29 +2,29 @@ name: desktop ESLINT
 on:
   push:
     branches:
-    - the-one
+      - the-one
     paths:
-    - 'desktope/**.ts'
-    - 'desktope/**.tsx'
-    - 'desktope/**.js'
-    - 'desktope/**.cjs'
-    - 'desktope/**.json'
-    - 'desktope/**.svelte'
-    - '.github/workflows/desktope.eslint.yml'
+      - "desktope/**.ts"
+      - "desktope/**.tsx"
+      - "desktope/**.js"
+      - "desktope/**.cjs"
+      - "desktope/**.json"
+      - "desktope/**.svelte"
+      - ".github/workflows/desktope.eslint.yml"
   pull_request:
     branches:
-    - the-one
+      - the-one
     paths:
-    - 'desktope/**.ts'
-    - 'desktope/**.tsx'
-    - 'desktope/**.js'
-    - 'desktope/**.cjs'
-    - 'desktope/**.json'
-    - 'desktope/**.svelte'
-    - '.github/workflows/desktope.eslint.yml'
+      - "desktope/**.ts"
+      - "desktope/**.tsx"
+      - "desktope/**.js"
+      - "desktope/**.cjs"
+      - "desktope/**.json"
+      - "desktope/**.svelte"
+      - ".github/workflows/desktope.eslint.yml"
 env:
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
-josb:
+jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -33,7 +33,7 @@ josb:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.CURRENT_NODE_VERSION }}
-          cache: 'npm'
+          cache: "npm"
           cache-dependency-path: |
             framework/package-lock.json
             documentation-website/package-lock.json

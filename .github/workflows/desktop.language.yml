@@ -1,4 +1,4 @@
-name: dektop language lint
+name: desktop language lint
 on:
   push:
     branches:
@@ -13,14 +13,14 @@ on:
     - 'desktop/language/*.yml'
     - '.github/workflows/desktop.language-lint.yml'
   env:
-    CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
+    CURRENT_NODE_VERSION: ${{ env.CURRENT_NODE_VERSION || 'latest' }
   jobs:
     lint:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v4
         - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
-          uses: actions/checkout@v4
+          uses: actions/setup-node@v4
           with:
             node-version: ${{ env.CURRENT_NODE_VERSION }}
             cache: 'npm'
