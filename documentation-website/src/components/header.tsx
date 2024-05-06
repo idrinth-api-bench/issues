@@ -98,8 +98,7 @@ const Header = ({
   <nav aria-label='Main Menu'>
     <ul>
     <li>
-        <ExternalLink to = "https://tally.so/r/3NA48l" label='send us feedback'/>
-         
+        <ExternalLink to="https://tally.so/r/3NA48l" label='Feedback'/>
       </li>
       <li>
         <NavLink to="/quick-start/">
