@@ -41,6 +41,11 @@ const Usage = () => <Layout
     cli={true}
   >1</Command>
   <Command
+    shortname={'iabgfc'}
+    name={'generate-benchmark-from-curl'}
+    cli={true}
+  >1</Command>
+  <Command
     shortname={'iabcrd'}
     name={'check-route-definitions'}
     deprecated={true}

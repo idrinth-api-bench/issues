@@ -21,7 +21,8 @@
     "lint-fix": "eslint . --ext ts,svelte --report-unused-disable-directives --max-warnings 0 --fix",
     "language": "itlfy generate",
     "spellcheck": "itlfy dump && spellchecker",
-    "knip": "knip"
+    "knip": "knip",
+    "assets": "node tools/copy-assets.js"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
