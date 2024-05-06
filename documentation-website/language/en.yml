@@ -467,6 +467,9 @@ command:
   iabgfh:
     description: "generates test skeletons from an HAR document for a project in the current working directory"
     arg_1: "Argument 1: path to the HAR document"
+  iabgfc:
+    description: "generates a test skeleton from an CURL command for a project in the current working directory"
+    arg_1: "Argument 1: URL to test"
   iabcrd:
     description: "checks all routes for possible issues, so there are no surprises, when actually running the code."
     arg_1: "Argument 1: language(default: en)"
