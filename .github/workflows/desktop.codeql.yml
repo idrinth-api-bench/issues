@@ -1,0 +1,58 @@
+name: desktop CodeQL
+on:
+  push:
+    branches:
+    - the-one
+    paths:
+      - 'desktop/**.ts'
+      - 'desktop/**.tsx'
+      - 'desktop/**.js'
+      - 'desktop/**.cjs'
+      - 'desktop/package-lock.json'
+      - '.github/workflows/desktop.codeql.yml'
+  pull_request:
+    branches:
+    - the-one
+    paths:
+     - 'desktop/**.ts'
+     - 'desktop/**.tsx'
+     - 'desktop/**.js'
+     - 'desktop/**.cjs'
+     - 'desktop/package-lock.json'
+     - '.github/workflows/desktop.codeql.yml'
+  env:
+   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
+  jobs:
+    analyze:
+      name: Analyze
+      runs-on: ubuntu-latest
+      timeout-minutes: 360
+      permissions:
+        security-events: write
+      steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Initiize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: javascript-typescript
+          queries: security-and-quality
+          source-root: desktop
+      - name: Setup Node.js enviornment ${{ env.CURRENT_NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.CURRENT_NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
+      - run: cd desktop && npm ci
+      - run: cd desktop && npm run language
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-actions/analyze@v3
+        with:
+          category: "/language:javascript-typescript"
