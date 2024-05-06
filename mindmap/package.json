@@ -1,5 +1,5 @@
 {
-  "name": "@idrinth/api-bench/mindmap",
+  "name": "@idrinth-api-bench/mindmap",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -17,9 +17,13 @@
     "validate": "node tools/validate.js",
     "assets": "node tools/copy-assets.js"
   },
+  "homepage": "https://idrinth-api-ben.ch",
+  "bugs": {
+    "url": "https://github.com/idrinth-api-bench/api-bench/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Idrinth/api-bench.git"
+    "url": "https://github.com/idrinth-api-bench/mindmap.git"
   },
   "private": true,
   "type": "module",
@@ -36,7 +40,7 @@
     "@types/node": "^20.12.2",
     "chai": "^5.1.0",
     "eslint": "^8.57.0",
-    "knip": "^5.8.0",
+    "knip": "^5.12.2",
     "mocha": "^10.4.0",
     "spellchecker-cli": "^6.2.0",
     "stylelint": "^16.2.1",
@@ -45,7 +49,7 @@
     "c8": "^9.1.0",
     "ts-node": "^10.9.2",
     "@types/mocha": "^10.0.6",
-    "@types/chai": "^4.3.14",
+    "@types/chai": "^4.3.16",
     "@napi-rs/image": "^1.9.2"
   },
   "engines": {

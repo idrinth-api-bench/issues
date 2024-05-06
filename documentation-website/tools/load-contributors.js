@@ -13,6 +13,7 @@ import {
 import {
   Transformer,
 } from '@napi-rs/image';
+import dotenv from 'dotenv';
 
 const defaultBio = 'An awesome person helping others in their time off work, ' +
   'but who doesn\'t yet have a personalized bio.';
@@ -22,6 +23,9 @@ const users = {};
 const FILE = './src/pages/contributing/contributors/code-contributors.json';
 
 if (! process.env.CI) {
+  if (existsSync('./.env',)) {
+    dotenv.config();
+  }
   if (existsSync(FILE,)) {
     const old = JSON.parse(readFileSync(
       FILE,
