@@ -19,39 +19,33 @@ const FaqItem = ({
     setIsOpen(! isOpen,);
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLLIElement>,) => {
-    if (e.key === 'Enter') {
-      toggleOpen();
-    }
-  };
-
   return (
-    <li tabIndex={index + ONE} onKeyDown={handleKeyDown} className={'faq-item'}>
-      <div onClick={() => toggleOpen()} role="button">
+    <li className={ 'faq-item' }>
+      <button tabIndex={ index + ONE } onClick={ () => toggleOpen() }>
         <div className="accordion-section">
           <h2>
             {
               // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-expect-error
-              <Lang lnkey={`faq.questions.title_${ index + ONE }`} />
+              <Lang lnkey={ `faq.questions.title_${ index + ONE }` }/>
             }
           </h2>
-          {isOpen ?
+          { isOpen ?
             <span className="up-arrow"></span>
             :
             <span className="down-arrow"></span>
           }
         </div>
-      </div>
-      {isOpen &&
-        <p>
-          {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-expect-error
-            <Lang lnkey={`faq.questions.description_${ index + ONE }`} />
-          }
-        </p>
-      }
+        { isOpen &&
+          <p>
+            {
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-expect-error
+              <Lang lnkey={ `faq.questions.description_${ index + ONE }` }/>
+            }
+          </p>
+        }
+      </button>
     </li>
   );
 };
