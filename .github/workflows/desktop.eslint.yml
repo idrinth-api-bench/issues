@@ -4,24 +4,24 @@ on:
     branches:
       - the-one
     paths:
-      - "desktope/**.ts"
-      - "desktope/**.tsx"
-      - "desktope/**.js"
-      - "desktope/**.cjs"
-      - "desktope/**.json"
-      - "desktope/**.svelte"
-      - ".github/workflows/desktope.eslint.yml"
+      - "desktop/**.ts"
+      - "desktop/**.tsx"
+      - "desktop/**.js"
+      - "desktop/**.cjs"
+      - "desktop/**.json"
+      - "desktop/**.vue"
+      - ".github/workflows/desktop.eslint.yml"
   pull_request:
     branches:
       - the-one
     paths:
-      - "desktope/**.ts"
-      - "desktope/**.tsx"
-      - "desktope/**.js"
-      - "desktope/**.cjs"
-      - "desktope/**.json"
-      - "desktope/**.svelte"
-      - ".github/workflows/desktope.eslint.yml"
+      - "desktop/**.ts"
+      - "desktop/**.tsx"
+      - "desktop/**.js"
+      - "desktop/**.cjs"
+      - "desktop/**.json"
+      - "desktop/**.vue"
+      - ".github/workflows/desktop.eslint.yml"
 env:
   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
 jobs:

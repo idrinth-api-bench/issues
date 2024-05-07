@@ -9,7 +9,7 @@ on:
     - 'desktop/**.js'
     - 'desktop/**.cjs'
     - 'desktop/**.json'
-    - 'desktop/**.svelte'
+    - 'desktop/**.vue'
     - '.github/workflows/desktop.fta.yml'
   pull_request:
     branches:
@@ -20,7 +20,7 @@ on:
     - 'desktop/**.js'
     - 'desktop/**.cjs'
     - 'desktop/**.json'
-    - 'desktop/**.svelte'
+    - 'desktop/**.vue'
     - '.github/workflows/desktop.fta.yml'
   env:
     CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
