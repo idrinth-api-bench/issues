@@ -9,24 +9,21 @@ import translations from '../locales/translations.js';
 // eslint-disable-next-line complexity
 export default (lnkey: languageKey,): string => {
   if (lnkey.match(/(^|\.)(__proto__|valueOf|toString)(\.|$)/u,)) {
-    return '';
+    return lnkey;
   }
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-expect-error
   const language = (Navigator?.language ?? 'en')
     .replace(/-.*$/u, '',);
-  const main = lnkey.split('.',)[FIRST_ELEMENT];
-  if (! files.includes(`en-${ main }`,)) {
+  if (! files.includes(`en`,)) {
     return lnkey;
   }
-  const keyEn = `en-${ main }` as keyof typeof translations;
-  const keyTr = `${ language }-${ main }` as keyof typeof translations;
-  const originals = translations[keyEn];
-  let output = files.includes(keyTr,)
-    ? translations[keyTr]
+  const originals = translations.en;
+  let output = files.includes(language,)
+    ? translations[language]
     : originals;
   let defaultOutput = originals;
-  for (const part of lnkey.split('.',).slice(SECOND_ELEMENT,)) {
+  for (const part of lnkey.split('.',)) {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
     output = output[part] || defaultOutput[part];
