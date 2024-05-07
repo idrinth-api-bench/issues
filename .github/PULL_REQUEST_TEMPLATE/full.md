@@ -80,12 +80,6 @@ and the points you are not confident about. -->
 - [ ] the change has been given a reason in the overview
 - [ ] the change text is reasonable short
 
-## CLI
-
-- [ ] the change works with both supported node versions
-- [ ] the default behaviour did not change
-- [ ] shared code has been extracted in a different file
-
 ## Desktop
 
 - [ ] the change can be packaged
