@@ -1,8 +1,4 @@
 import type languageKey from '../locales/language-key.js';
-import {
-  FIRST_ELEMENT,
-  SECOND_ELEMENT,
-} from './constants.js';
 import files from '../locales/files.js';
 import translations from '../locales/translations.js';
 
@@ -15,9 +11,6 @@ export default (lnkey: languageKey,): string => {
   // @ts-expect-error
   const language = (Navigator?.language ?? 'en')
     .replace(/-.*$/u, '',);
-  if (! files.includes(`en`,)) {
-    return lnkey;
-  }
   const originals = translations.en;
   let output = files.includes(language,)
     ? translations[language]
