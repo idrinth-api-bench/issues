@@ -1,8 +1,0 @@
-/test
-.eslintrc.yml
-/.nyc_output
-/coverage
-/.mocharc.cjs
-/.nycrc.jso
-/tools
-/.markdownlint.yaml
