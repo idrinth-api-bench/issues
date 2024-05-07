@@ -14,14 +14,14 @@ on:
     branches:
     - the-one
     paths:
-     - 'desktop/**.ts'
-     - 'desktop/**.tsx'
-     - 'desktop/**.js'
-     - 'desktop/**.cjs'
-     - 'desktop/package-lock.json'
-     - '.github/workflows/desktop.codeql.yml'
+    - 'desktop/**.ts'
+    - 'desktop/**.tsx'
+    - 'desktop/**.js'
+    - 'desktop/**.cjs'
+    - 'desktop/package-lock.json'
+    - '.github/workflows/desktop.codeql.yml'
   env:
-   CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
+    CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
   jobs:
     analyze:
       name: Analyze
