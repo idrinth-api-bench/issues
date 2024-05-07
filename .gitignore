@@ -65,6 +65,7 @@
 /documentation-website/dump.txt
 /documentation-website/src/assets/iab.svg
 /documentation-website/src/assets/favicon.svg
+/documentation-website/.env
 
 # History Microservice
 /history-microservice/node_modules
