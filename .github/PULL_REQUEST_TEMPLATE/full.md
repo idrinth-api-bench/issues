@@ -52,28 +52,11 @@ and the points you are not confident about. -->
 - [ ] tests have been added (if required)
 - [ ] shared code has been extracted in a different file
 
-## History-Microservice
-
-- [ ] no breaking changes have been added to the api
-- [ ] changes have been documented in the open-api.yml
-- [ ] tests have been written(if necessary)
-- [ ] shared code has been extracted in a different file
-
 ## Documentation
 
 - [ ] all documentation is in correct english
 - [ ] the documentation explains used words, that are not common
 - [ ] there are no abbreviations used
-
-## Examples
-
-- [ ] the example works without any additional configuration
-- [ ] the example's target has been informed and has agreed
-
-## Dockerfiles
-
-- [ ] the dockerfiles work
-- [ ] the containers are as small as possible
 
 ## Mindmap
 
