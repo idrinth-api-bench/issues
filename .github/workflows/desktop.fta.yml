@@ -1,0 +1,46 @@
+name: desktop FTA
+on:
+  push:
+    branches:
+    - the-one
+    paths:
+    - 'desktop/**.ts'
+    - 'desktop/**.tsx'
+    - 'desktop/**.js'
+    - 'desktop/**.cjs'
+    - 'desktop/**.json'
+    - 'desktop/**.vue'
+    - '.github/workflows/desktop.fta.yml'
+  pull_request:
+    branches:
+    - the-one
+    paths:
+    - 'desktop/**.ts'
+    - 'desktop/**.tsx'
+    - 'desktop/**.js'
+    - 'desktop/**.cjs'
+    - 'desktop/**.json'
+    - 'desktop/**.vue'
+    - '.github/workflows/desktop.fta.yml'
+  env:
+    CURRENT_NODE_VERSION: ${{ vars.CURRENT_NODE_VERSION || 'latest' }}
+  jobs:
+    lint:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ env.CURRENT_NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.CURRENT_NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: |
+            framework/package-lock.json
+            documentation-website/package-lock.json
+            history-microservice/package-lock.json
+            history-website/package-lock.json
+            cli/package-lock.json
+            package-lock.json
+      - run: npm ci
+      - run: cd desktop && npm ci && npm run language
+      - run: npm run fta -- desktop || true
