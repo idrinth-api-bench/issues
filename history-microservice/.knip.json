@@ -1,6 +1,0 @@
-{
-  "$schema": "https://unpkg.com/knip@5/schema.json",
-  "entry": ["index.ts"],
-  "project": ["index.ts", "src/**/*.ts"],
-  "ignoreDependencies": ["eslint-helpers"]
-}
