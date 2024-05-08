@@ -4,7 +4,7 @@
 <template>
   <div>
     <h1>@idrinth/api-bench</h1>
-    <img src="./assets/iab.svg" class="logo" alt="logo" />
+    <img src="@idrinth-api-bench/assets/iab.svg" class="logo" alt="logo" />
   </div>
 </template>
 

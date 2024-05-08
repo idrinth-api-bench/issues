@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "npm run assets && npm run tsc && node tools/data.js",
+    "build": "npm run tsc && node tools/data.js",
     "serve": "http-server ./dist -c-1 --proxy http://localhost:8080? --silent",
     "start": "npm run build && npm run serve",
     "spellcheck": "spellchecker",
@@ -14,8 +14,7 @@
     "knip": "knip",
     "test": "c8 mocha test",
     "tsc": "tsc -p tsconfig.json",
-    "validate": "node tools/validate.js",
-    "assets": "node tools/copy-assets.js"
+    "validate": "node tools/validate.js"
   },
   "homepage": "https://idrinth-api-ben.ch",
   "bugs": {
@@ -28,6 +27,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "@idrinth-api-bench/assets": "https://github.com/idrinth-api-bench/assets",
     "css-simple-minifier": "^2.0.0",
     "html-minifier": "^4.0.0",
     "http-server": "^14.1.1",
