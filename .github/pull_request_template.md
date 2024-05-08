@@ -15,7 +15,6 @@ the pull request as good as possible.
 - [Documentation][Documentation] changes to a md file (Readme for example)
 - [Examples][Examples] adding or adjusting examples
 - [Mindmap][MM] adding to or modifying the mindmap
-- [Desktop][Desktop] changes to the desktop application
 - [Full][Full] changes to multiple categories
 
 [Full]: ?quick_pull=1&template=full.md
@@ -28,4 +27,3 @@ the pull request as good as possible.
 [Framework]: ?quick_pull=1&template=framework.md
 [Examples]: ?quick_pull=1&template=examples.md
 [MM]: ?quick_pull=1&template=mindmap.md
-[Desktop]: ?quick_pull=1&template=desktop.md
