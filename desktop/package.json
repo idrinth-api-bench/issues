@@ -14,16 +14,15 @@
     "url": "https://github.com/idrinth-api-bench/desktop.git"
   },
   "scripts": {
-    "build": "npm run drop-dist && npm run copy-assets && vue-tsc && vite build && node tools/fix-index.js && node tools/copy-starter.js",
+    "build": "npm run drop-dist && vue-tsc && vite build && node tools/fix-index.js && node tools/copy-starter.js",
     "start": "npm run build && node dist/run.js start",
     "package": "npm run build && node dist/run.js package",
     "make": "npm run build && node dist/run.js make",
-    "drop-dist": "node tools/drop-dist.js",
-    "copy-assets": "node tools/copy-assets.js",
-    "postinstall": "npm run copy-assets"
+    "drop-dist": "node tools/drop-dist.js"
   },
   "dependencies": {
-    "vue": "^3.4.21"
+    "vue": "^3.4.21",
+    "@idrinth-api-bench/assets": "https://github.com/idrinth-api-bench/assets"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",

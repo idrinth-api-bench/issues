@@ -17,7 +17,7 @@
   "scripts": {
     "start": "npm run build && npm run serve",
     "dev": "irfbrgr && vite",
-    "build": "npm run assets && npm run drop-dist && npm run routes && npm run language && npm run contributors && vite build && irfbrgf",
+    "build": "npm run drop-dist && npm run routes && npm run language && npm run contributors && vite build && irfbrgf",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint-fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",
@@ -36,8 +36,7 @@
     "drop-dist": "node tools/drop-dist.js",
     "spellcheck": "itlfy dump && spellchecker",
     "knip": "knip",
-    "lighthouse": "npm run build && start-server-and-test serve http://localhost:8080 'node tools/lighthouse-report.js'",
-    "assets": "node tools/copy-assets.js"
+    "lighthouse": "npm run build && start-server-and-test serve http://localhost:8080 'node tools/lighthouse-report.js'"
   },
   "dependencies": {
     "@fontsource/roboto": "^5.0.12",
@@ -49,7 +48,8 @@
     "react-router-dom": "^6.22.0",
     "react-syntax-highlighter": "^15.5.0",
     "the-new-css-reset": "^1.11.2",
-    "window": "^4.2.7"
+    "window": "^4.2.7",
+    "@idrinth-api-bench/assets": "https://github.com/idrinth-api-bench/assets"
   },
   "devDependencies": {
     "@babel/plugin-syntax-import-attributes": "^7.24.1",

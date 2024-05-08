@@ -103,6 +103,7 @@ writeFileSync(
 html = html.replace(
   '</head>',
   '<link rel=icon type=image/svg+xml href=favicon.svg />' +
+  '<link rel=stylesheet type=text/css href=colors.css />' +
   `<link rel=stylesheet type=text/css href=${ ch }.min.css />` +
   `<script type=module src=${ jsh }.min.js ></script>` +
   '</head>',
@@ -234,6 +235,19 @@ for (const file of readdirSync(`${ cwd }/dist`, 'utf8',)) {
       transformer.avifSync({
         quality: IMAGE_QUALITY,
       },),
+    );
+  }
+}
+
+for (const file of readdirSync(
+  `${ cwd }/node_modules/@idrinth-api-bench/assets`,
+  'utf8',
+)) {
+  if (file.endsWith('.svg',) || file.endsWith('.css',)) {
+    const raw = readFileSync(`${ cwd }/dist/${ file }`,);
+    writeFileSync(
+      `${ cwd }/dist/${ file }`,
+      raw,
     );
   }
 }

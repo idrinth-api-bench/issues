@@ -1,31 +1,3 @@
-.light-mode {
-  --text-color: hsla(0deg 0% 15% / 100%);
-  --background-color: hsla(0deg 0% 85% / 100%);
-  --highlight-color: hsla(132deg 33% 29% / 100%);
-  --highlight-text: hsla(0deg 0% 100% / 100%);
-  --highlight-hover: hsla(120deg 77% 36% / 100%);
-  --background-loader: hsla(0deg 0% 0% / 5%);
-  --shadow: rgba(0 0 0 / 50%);
-  --background-offset: hsla(204deg 8% 76% / 100%);
-  --code-keyword: hsla(31deg 100% 40% / 100%);
-  --code-attribute: hsla(219deg 100% 40% / 100%);
-  --code-string: hsla(130deg 100% 40% / 100%);
-  --warning: darkorange;
-}
-
-.dark-mode {
-  --background-color: hsla(0deg 0% 15% / 100%);
-  --text-color: hsla(0deg 0% 85% / 100%);
-  --background-loader: hsla(0deg 0% 100% / 5%);
-  --highlight-color: hsla(120deg 77% 36% / 100%);
-  --highlight-hover: hsla(132deg 33% 29% / 100%);
-  --background-offset: hsla(0deg 0% 25% / 100%);
-  --shadow: rgba(255 255 255 / 50%);
-  --code-keyword: hsla(31deg 100% 60% / 100%);
-  --code-attribute: hsla(219deg 100% 60% / 100%);
-  --code-string: hsla(130deg 100% 60% / 100%);
-}
-
 * {
   max-width: 100%;
   box-sizing: border-box;

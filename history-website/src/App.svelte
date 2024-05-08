@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-  import logo from './assets/iab.svg';
+  import logo from '@idrinth-api-bench/assets/iab.svg';
   import t from './lib/t.js';
 </script>
 

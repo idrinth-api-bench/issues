@@ -8,7 +8,7 @@ import {
 import pkg from '../../package.json' with {
   type: 'json'
 };
-import IAB from '../assets/iab.svg';
+import IAB from '@idrinth-api-bench/assets/iab.svg';
 import DarkModeButton from './dark-mode-button.tsx';
 import './header.scss';
 import Lang from './lang.tsx';
