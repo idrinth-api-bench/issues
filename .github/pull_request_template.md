@@ -2,7 +2,7 @@
 
 - [ ] fixes #<!-- YOUR ISSUE ID HERE -->
 - [ ] all actions are passing
-- [ ] only fixes a single issue
+- [ ] only addresses a single issue
 
 ## Overview
 
