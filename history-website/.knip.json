@@ -1,5 +1,0 @@
-{
-  "$schema": "https://unpkg.com/knip@5/schema.json",
-  "entry": ["tools/*.js", "src/main.ts", "src/locales/*.ts"],
-  "project": ["tools/**/*.js", "src/**/*.svelte", "src/**/*.ts"]
-}

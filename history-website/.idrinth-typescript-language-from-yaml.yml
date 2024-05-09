@@ -1,7 +1,0 @@
-originDirectory: language
-targetDirectory: src/locales
-hasNoTranslationsFile: false
-isVerbatimModuleSyntax: true
-isSplit: false
-isStrictTypes: false
-isFailOnWarning: false

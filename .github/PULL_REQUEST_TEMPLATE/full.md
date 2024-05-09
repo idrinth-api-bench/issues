@@ -15,15 +15,6 @@ Pull Request. -->
 and the points you are not confident about. -->
 <!-- Delete this section if not needed -->
 
-## Framework
-
-- [ ] the change breaks no interface
-- [ ] default behaviour did not change
-- [ ] any new text output is added to the translation files (at least the english one)
-- [ ] tests have been added (if required)
-- [ ] documentation has been adjusted (if required)
-- [ ] shared code has been extracted in a different file
-
 ## Tools
 
 - [ ] the change works with both supported node versions
@@ -57,11 +48,6 @@ and the points you are not confident about. -->
 - [ ] all documentation is in correct english
 - [ ] the documentation explains used words, that are not common
 - [ ] there are no abbreviations used
-
-## Mindmap
-
-- [ ] the change has been given a reason in the overview
-- [ ] the change text is reasonable short
 
 ## Notes
 
