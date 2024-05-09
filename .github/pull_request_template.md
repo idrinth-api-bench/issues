@@ -11,7 +11,6 @@ the pull request as good as possible.
 - [Documentation-Website][DW] changes to the website
 - [History-Microservice][HM] changes to the history-microservice
 - [Documentation][Documentation] changes to a md file (Readme for example)
-- [Desktop][Desktop] changes to the desktop application
 - [Full][Full] changes to multiple categories
 
 [Full]: ?quick_pull=1&template=full.md
@@ -20,4 +19,3 @@ the pull request as good as possible.
 [DW]: ?quick_pull=1&template=documentation-website.md
 [Translations]: ?quick_pull=1&template=translation.md
 [Tools]: ?quick_pull=1&template=tools.md
-[Desktop]: ?quick_pull=1&template=desktop.md
