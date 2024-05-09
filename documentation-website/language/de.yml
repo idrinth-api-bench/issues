@@ -1,0 +1,107 @@
+nav:
+  home: "Startseite"
+  imprint: "Impressum"
+  sponsors: "Sponsoren"
+  contributors: "Mitwirkende"
+  support: "Support"
+  contributing: "Mitwirkung"
+  license: "Lizenz"
+  autowiring: "Automatisches Verdrahten"
+  middlewares: "Middleware"
+  results: "Ergebnisse"
+  usage: "Verwendung"
+  logging: "Protokollierung"
+  storage: "Speicherung"
+  routes: "Routen"
+  quick-start: "Schnellstart"
+  faq: "FAQ"
+  code-of-conduct: "Verhaltenskodex"
+
+socials:
+  npm:
+    title0: "@idrinth/api-bench auf NPM"
+    text0: "@idrinth/api-bench"
+    title1: "@idrinth/api-bench-cli auf NPM"
+    text1: "@idrinth/api-bench-cli"
+    alt: "NPM"
+  docker:
+    title0: "idrinth/api-bench-gitlab-runner auf DockerHub"
+    text0: "Gitlab Runner"
+    title1: "idrinth/api-bench-gitea-action auf DockerHub"
+    text1: "Gitea Action"
+    title2: "idrinth/api-bench auf DockerHub"
+    text2: "Pure Alpine"
+    title3: "idrinth/api-bench-history-microservice auf DockerHub"
+    text3: "Historie Microservice"
+    title4: "idrinth/api-bench-history-website auf DockerHub"
+    text4: "Historie Website"
+    alt: "DockerHub"
+  github:
+    title: "idrinth/api-bench auf GitHub"
+    alt: "GitHub"
+  medium:
+    title: "idrinth/api-bench auf Medium"
+    alt: "Medium"
+  youtube:
+    title: "idrinth-api-bench auf youtube"
+    alt: "YouTube"
+  slack:
+    title: "@idrinth/api-bench auf slack"
+    alt: "Slack"
+  linkedin:
+    title: "@idrinth/api-bench auf LinkedIN"
+    alt: "LinkedIn"
+  open-sauced:
+    title: "@idrinth/api-bench projects auf OpenSauced"
+    alt: "OpenSauced"
+
+code-of-conduct:
+  meta:
+    title: "Verhaltenskodex"
+    description: "Der Verhaltenskodex für Beitragende des @idrinth/api-bench"
+
+home:
+  meta:
+    title: "Startseite"
+    description: "Willkommen in der Dokumentation für das Framework @idrinth/api-bench"
+  title: "Was macht das Projekt?"
+  what: "Dieses Pojekt bietet ein Framework zur Überprüfung von REST-APIs und Websites auf Änderungen der Antwortzeilen"
+  why:"Dies hilft dabei, Leistungsänderungen im Code schnell und einfach zu erkennen"
+  benchmark:
+    title: "Warum einen benschmakr-Runner verwenden?"
+    microservices: "Angesichts der zunehmenden Anzahl von APIs durch den Wechsel zu Mikroservices müssen wir herausfinden, ob Änderungen an den Antwortzeiten eines Dienstes mit Codeänderungen zusammenhängen."
+    purpose: "Für diesen Zweck scheint eine definierte Last mit wiederholbaren Anfragen und einer mittleren Anzahl von Überprüfungen am nützlichsten zu sein."
+  load-test:
+    title: "Warum einen Lasttest-Runner verwenden?"
+    microservices: "Für Planungs- und Skalierungszwecke müssen wir wissen, wie viele Benutzer wir mit einer bestimmten Anzahl von Mikroservice-Instanzen bewältigen können."
+    purpose: "Für diesen Zweck scheint eine definierte wachsende Last mit wiederholbaren Anfragen und wenigen Überprüfungen am nützlichsten zu sein."
+  content-test:
+    title: "Warum einen Inhaltest-Runner verwenden?"
+    microservices: "Mit der steigenden Anzahl von APIs ist es erforderlich, sie schnell und mit möglichst wenig Aufwand zu testen."
+    purpose: "Für diesen Zweck scheinen wiederholbare Anfragen mit vielen Überprüfungen am nützlichsten zu sein."
+  libraries:
+    title: "Zu bestehenden Bibliotheken"
+    description: "Andere Tools wie matteofigus/api-benchmark, bvanderlaan/api-bench-runner oder jeffbski/bench-rest wurden seit geraumer Zeit nicht mehr aktualisiert und bieten keine Typdefinitionen für TypeScript. Dies macht sie weniger attraktiv für Projekte, in denen eine bessere statische Codeprüfung die Entwicklungsgeschwindigkeit erheblich erhöht."
+    reusability: "Ein großer Vorteil der Verwendung dieses Frameworks besteht darin, dass Routendefinitionen einmal geschrieben und für alle gewünschten Testtypen wiederverwendet werden können."
+    threading: "Darüber hinaus trennt dieses Tool den Validierungsthread vom Thread, der die tatsächlichen Anfragen verarbeitet, um den Effekt komplizierter Validierungen oder großer Antwortdatenmengen auf die Datenerfassung weiter zu minimieren."
+
+faq:
+  meta:
+    title: "FAQ"
+    description: "Häufig gestellte Fragen zu @idrinth/api-bench"
+  title: "Häufig gestellte Fragen"
+  description: "Wenn Ihre Frage nicht beantwortet wurde, gehen Sie zu Slack, LinkedIn oder GitHub und hinterlassen Sie sie dort. Wir werden uns so schnell wie möglich darum kümmern."
+  questions:
+    title_1: "Was ist benchmarking?"
+    description_1: "Benchmarking ist der Prozess, bei dem die Leistung von Software im Vergleich zu etablierten Best Practices gemessen wird."
+    title_2: "Was ist ein Lassttest?"
+    description_2: "Lasttests bewerten das Verhalten eines Systems unter Spitzen- oder erwarteten Lastbedingungen."
+    title_3: "Wie lange dauert es einen Test zu schreiben?"
+    description_3: " Die durschnittliche Zeit beträgt 2-3 Minuten.Es kann aber bis zu 15 Minuten dauern. "
+    title_4: "Wie lange dauert die Einrichtung?"
+    description_4: "Wenn Sie dem Schnellstart folgen, dauert es nur wenige Minuten!"
+    title_5: "Ist das Projekt produktiv im Einsatz?"
+    description_5: "Ja, Das Projekt ist sehr produktiv im Einsatz."
+    title_6: "Gibt es zusätzliches Unterrichtsmaterial?"
+    description_6: "Noch nicht, es wird aktiv daran gearbeitet."
+    title_7: "Ist die Nutzung des Frameworks kostenlos?"
