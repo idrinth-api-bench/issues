@@ -1,21 +1,27 @@
-# Please use the matching pull request template
+# The Pull Request is ready
 
-Choose a template by going into `Preview` and then clicking on the link.
-It will reload this page and fill it with a checklist to help you make
-the pull request as good as possible.
+- [ ] fixes #<!-- YOUR ISSUE ID HERE -->
+- [ ] all actions are passing
+- [ ] only fixes a single issue
 
-## Available Templates
+## Overview
 
-- [Tools][Tools] changes to anything in the tools directory
-- [Translations][Translations] changes to the translation files
-- [Documentation-Website][DW] changes to the website
-- [History-Microservice][HM] changes to the history-microservice
-- [Documentation][Documentation] changes to a md file (Readme for example)
-- [Full][Full] changes to multiple categories
+<!-- Provide a brief description of the changes introduced by this
+Pull Request. -->
 
-[Full]: ?quick_pull=1&template=full.md
-[Documentation]: ?quick_pull=1&template=documentation.md
-[HM]: ?quick_pull=1&template=history-microservice.md
-[DW]: ?quick_pull=1&template=documentation-website.md
-[Translations]: ?quick_pull=1&template=translation.md
-[Tools]: ?quick_pull=1&template=tools.md
+## Review points
+
+<!-- List the points to be reviewed in detail 
+and the points you are not confident about. -->
+<!-- Delete this section if not needed -->
+
+## Documentation
+
+- [ ] all documentation is in correct english
+- [ ] the documentation explains used words, that are not common
+- [ ] there are no abbreviations used
+
+## Notes
+
+<!-- Write any note or comment. You can share your thoughts or ideas. -->
+<!-- Delete this section if not needed -->
