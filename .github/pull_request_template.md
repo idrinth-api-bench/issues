@@ -10,7 +10,6 @@ the pull request as good as possible.
 - [Tools][Tools] changes to anything in the tools directory
 - [Translations][Translations] changes to the translation files
 - [Documentation-Website][DW] changes to the website
-- [History-Website][HW] changes to the history-ui
 - [History-Microservice][HM] changes to the history-microservice
 - [Documentation][Documentation] changes to a md file (Readme for example)
 - [Examples][Examples] adding or adjusting examples
@@ -21,7 +20,6 @@ the pull request as good as possible.
 [Full]: ?quick_pull=1&template=full.md
 [Documentation]: ?quick_pull=1&template=documentation.md
 [HM]: ?quick_pull=1&template=history-microservice.md
-[HW]: ?quick_pull=1&template=history-website.md
 [DW]: ?quick_pull=1&template=documentation-website.md
 [Translations]: ?quick_pull=1&template=translation.md
 [Tools]: ?quick_pull=1&template=tools.md
