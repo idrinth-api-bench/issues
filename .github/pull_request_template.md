@@ -6,15 +6,12 @@ the pull request as good as possible.
 
 ## Available Templates
 
-- [Framework][Framework] changes to the framework
 - [Tools][Tools] changes to anything in the tools directory
 - [Translations][Translations] changes to the translation files
 - [Documentation-Website][DW] changes to the website
 - [History-Website][HW] changes to the history-ui
 - [History-Microservice][HM] changes to the history-microservice
 - [Documentation][Documentation] changes to a md file (Readme for example)
-- [Examples][Examples] adding or adjusting examples
-- [Mindmap][MM] adding to or modifying the mindmap
 - [Desktop][Desktop] changes to the desktop application
 - [Full][Full] changes to multiple categories
 
@@ -25,7 +22,4 @@ the pull request as good as possible.
 [DW]: ?quick_pull=1&template=documentation-website.md
 [Translations]: ?quick_pull=1&template=translation.md
 [Tools]: ?quick_pull=1&template=tools.md
-[Framework]: ?quick_pull=1&template=framework.md
-[Examples]: ?quick_pull=1&template=examples.md
-[MM]: ?quick_pull=1&template=mindmap.md
 [Desktop]: ?quick_pull=1&template=desktop.md
