@@ -1,8 +1,8 @@
 no_tasks: Can't measure zero tasks.
 duplicate_task_id: The id %1% is shared.
 invalid_key: The given key %1% is invalid.
-finished_analyzing: Analyzation of %1% finished.
-initialization: Initializing tasks to have %1% Threads x %2% Repetitions todos
+finished_analyzing: Analysing of %1% finished.
+initialization: Initialising tasks to have %1% Threads x %2% Repetitions to do
 starting_result: Starting supplied result handler.
 data: Data
 done: Done
@@ -10,7 +10,7 @@ starting_workers: Starting up %1% Workers.
 starting_after: Starting after request.
 no_after: No after request, done.
 finished_requests: Finished requesting all %1%.
-starting_analyzation: Starting analysation of %1%.
+starting_analyzation: Starting analysing of %1%.
 next_request: Starting next request.
 starting_validation: Starting validation of %1%.
 end_thread: All requests done, terminating thread.
@@ -24,7 +24,7 @@ variable_default_value: Can't handle variable default value on %1%.
 no_content_type: The content-type header is missing.
 no_json_content_type: The content-type %1% is not application/json.
 invalid_json_body: The JSON body is invalid. %1%
-no_xml_content_type: The content-type application/jason is not */xml.
+no_xml_content_type: The content-type %1% is not */xml.
 invalid_xml_body: The XML body is invalid.
 too_slow: The response time was above %1% ns.
 maximum_below_threads: Maximum is lower than the initial thread count.
@@ -39,3 +39,6 @@ invalid_post_definition: The definition of post on route %1% is not valid.
 unknown_route_property: The property %1% on route %1% is unknown.
 invalid_request_property: The request property %2% of task %1% is invalid.
 invalid_request: The request task %1% has unknown properties.
+response_not_success: 'The response was not success, %1% field was %2%'
+response_not_failure: 'The response was not failure, %1% field was %2%'
+no_errors_warnings: No errors or warnings found.

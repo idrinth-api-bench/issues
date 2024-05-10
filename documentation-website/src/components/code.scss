@@ -1,0 +1,22 @@
+.hljs {
+  background: var(--background-offset);
+  padding: 0.5em;
+  overflow-x: scroll;
+
+  > code {
+    display: block;
+  }
+
+  .hljs-keyword,
+  .hljs-built_in {/* stylelint-disable-line */
+    color: var(--code-keyword);
+  }
+
+  .hljs-string {
+    color: var(--code-string);
+  }
+
+  .hljs-attr {
+    color: var(--code-attribute);
+  }
+}

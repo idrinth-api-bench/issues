@@ -1,0 +1,10 @@
+files:
+  - dump.txt
+language: en-GB
+plugins:
+  - spell
+  - indefinite-article
+  - repeated-words
+quiet: true
+dictionaries:
+  - ../.dictionary.txt

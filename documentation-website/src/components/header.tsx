@@ -6,14 +6,25 @@ import {
 import pkg from '../../package.json' with {
   type: 'json'
 };
-import {
-  Lang,
-} from './lang.tsx';
+import Lang from './lang.tsx';
 import DarkModeButton from './dark-mode-button.tsx';
 import SocialLink from './social-link.tsx';
 import {
   MdArrowDropDown,
 } from 'react-icons/md';
+
+const preventOpenLink = (event: React.MouseEvent<SVGElement, MouseEvent>,) => {
+  event.preventDefault();
+  event.stopPropagation();
+  const target = (event.target ?? event.currentTarget) as SVGElement;
+  target.parentElement?.setAttribute(
+    'aria-expanded',
+    target.parentElement?.getAttribute('aria-expanded',) === 'true'
+      ? 'false'
+      : 'true',
+  );
+  return false;
+};
 
 const Header = ({
   window,
@@ -76,6 +87,10 @@ const Header = ({
         to={'https://medium.com/idrinth-api-bench'}
         label={'medium'}
       />
+      <SocialLink
+        to={'https://www.reddit.com/r/IdrinthApiBench'}
+        label={'reddit'}
+      />
     </ul>
   </nav>
   <nav aria-label='Main Menu'>
@@ -93,7 +108,7 @@ const Header = ({
           className="dropdown-links-heading"
           to="/contributing/">
           <Lang lnkey='nav.contributing'/>
-          <MdArrowDropDown />
+          <MdArrowDropDown onClick={preventOpenLink} />
         </NavLink>
         <ul aria-labelledby="dropdown-contributing" id="contributing-menu" >
           <li>
@@ -116,7 +131,7 @@ const Header = ({
           aria-expanded="false"
           to="/usage/">
           <Lang lnkey='nav.usage'/>
-          <MdArrowDropDown />
+          <MdArrowDropDown onClick={preventOpenLink} />
         </NavLink>
         <ul id="usages-menu" aria-labelledby="dropdown-usage-links" >
           <li>

@@ -6,6 +6,7 @@ const externalLink = ({
   to,
   label = '',
 },) => <a
+  className="external-link"
   href={to}
   target='_blank'
   rel='noreferrer'

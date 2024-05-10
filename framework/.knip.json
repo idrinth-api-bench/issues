@@ -1,0 +1,6 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "entry": ["index.ts", "src/middlewares/*.ts", "src/locales/*.ts", "worker/*.js", "bin/*.js", "tools/*.js", "test/**/*.ts", "integration/**/*.ts", "property/**/*.ts"],
+  "project": ["index.ts", "src/**/*.ts", "test/**/*.ts", "integration/**/*.ts", "property/**/*.ts", "tools/*.js"],
+  "ignoreDependencies": ["@idrinth/api-bench-cli", "ts-node"]
+}

@@ -2,11 +2,10 @@ import {
   DEFAULT_RADIX,
   ONE,
 } from '../constants.ts';
-import {
-  Lang,
-} from './lang.tsx';
+import Lang from './lang.tsx';
 import languageKey from '../locales/language-key.ts';
 import React from 'react';
+import Code from './code.tsx';
 
 interface CommandBodyType {
   id: string;
@@ -19,13 +18,25 @@ const CommandBody = ({
   children,
   cli,
 }: CommandBodyType,) => {
-  const args = new Array(Number.parseInt(children, DEFAULT_RADIX,),).fill('',);
+  const commands = children.split(', ',).slice(ONE,);
+  const args = new Array(
+    Number.parseInt(
+      children.split(',',).shift() ?? '0',
+      DEFAULT_RADIX,
+    ),
+  ).fill('',);
   const list = args
-    .map((_, position,) => <li key={`command.${ id }.${ position }`}>
-      <Lang
-        lnkey={`command.${ id }.arg_${ position + ONE }` as languageKey}
-      />
-    </li>,);
+    .map((_, position,) => {
+      const command = commands[position]
+        ? <Code language={'bash'}>{commands[position]}</Code>
+        : '';
+      return <li key={`command.${ id }.${ position }`}>
+        {command}
+        <Lang
+          lnkey={`command.${ id }.arg_${ position + ONE }` as languageKey}
+        />
+      </li>;
+    },);
   return <div>
     <p>
       <Lang lnkey={`command.${ id }.description` as languageKey}/>

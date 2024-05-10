@@ -8,9 +8,15 @@ import files from '../locales/files.ts';
 
 // eslint-disable-next-line complexity
 export default async(lnkey: languageKey, global?: object,): Promise<string> => {
-  const that: Window = (global || window) as Window;
-  const language = (that?.Navigator?.language ?? 'en')
-    .replace(/-.*$/u, '',);
+  if (lnkey.match(/(^|\.)(__proto__|valueOf|toString)(\.|$)/u,)) {
+    return '';
+  }
+  const that: Window = (global ?? window) as Window;
+  const language = (
+    (that?.localStorage?.getItem('language',) || 'en')
+    ?? that?.Navigator?.language
+    ?? 'en'
+  ).split('-',)[FIRST_ELEMENT];
   const main = lnkey.split('.',)[FIRST_ELEMENT];
   if (! files.includes(`en-${ main }`,)) {
     return lnkey;
@@ -20,9 +26,19 @@ export default async(lnkey: languageKey, global?: object,): Promise<string> => {
     ? await import(`../locales/${ language }-${ main }.ts`)
     : originals).default;
   let defaultOutput = originals.default;
-  for (const part of lnkey.split('.',).slice(SECOND_ELEMENT,)) {
-    output = output[part] || defaultOutput[part];
-    defaultOutput = defaultOutput[part];
+  if (! output) {
+    output = defaultOutput;
   }
-  return output || lnkey;
+  if (! defaultOutput) {
+    return lnkey;
+  }
+  try {
+    for (const part of lnkey.split('.',).slice(SECOND_ELEMENT,)) {
+      output = output[part] || defaultOutput[part];
+      defaultOutput = defaultOutput[part];
+    }
+    return output || lnkey;
+  } catch (E) {
+    return lnkey;
+  }
 };

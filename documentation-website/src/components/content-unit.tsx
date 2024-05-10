@@ -1,45 +1,30 @@
 import React, {
   ReactNode,
 } from 'react';
-import {
-  Lang,
-} from './lang.tsx';
-import {
-  ONE,
-} from '../constants.ts';
+import Lang from './lang.tsx';
 import languageKey from '../locales/language-key.ts';
+import Content from './content.tsx';
 
 interface CardProps {
-  titleText: languageKey;
-  titleLevel: number;
-  children: string;
+  text: languageKey;
+  level: 'h1'|'h2'|'h3'|'h4'|'h5'|'h6';
+  children: string|languageKey;
 }
 
 const ContentUnit = ({
-  titleText,
-  titleLevel,
+  text,
+  level,
   children,
 }: CardProps,) => {
-  const TitleTag = `h${ titleLevel }` as keyof JSX.IntrinsicElements;
-  const generateContent = (): ReactNode => {
+  const GenerateContent = (): ReactNode => {
     const keys: languageKey[] = children.split(' ',) as languageKey[];
-    const content = keys.map(
-      (sentence,) => <p key={null}><Lang lnkey={sentence}/></p>,
+    return keys.map(
+      (sentence,) => <p key={sentence}><Lang lnkey={sentence}/></p>,
     );
-    return <div>{content}</div>;
   };
-  let className = 'card';
-  if (titleLevel === ONE) {
-    className = ('title-' + className).replace(/-$/u, '',);
-  }
-  return (
-    <div className={className}>
-      <TitleTag>
-        <Lang lnkey={titleText}/>
-      </TitleTag>
-      {generateContent()}
-    </div>
-  );
+  return <Content level={level} text={text}>
+    <GenerateContent/>
+  </Content>;
 };
 
 export default ContentUnit;

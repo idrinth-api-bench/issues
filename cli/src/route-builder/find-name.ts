@@ -1,6 +1,6 @@
 import OpenApi from './open-api.js';
 
-export const findName = (
+const findName = (
   openApi: OpenApi,
   uri: string,
   method: string,

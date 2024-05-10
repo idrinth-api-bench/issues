@@ -1,9 +1,7 @@
 import React from 'react';
-import {
-  Lang,
-} from './lang.tsx';
+import Lang from './lang.tsx';
 import CommandBody from './command-body.tsx';
-import './command.css';
+import './command.scss';
 
 interface CommandType {
   name: string;

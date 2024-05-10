@@ -1,7 +1,7 @@
 ARG BUILD_VERSION
 
 FROM idrinth/api-bench-build:${BUILD_VERSION} AS build
-FROM node:21.7.1-alpine AS node
+FROM node:21.7.3-alpine AS node
 
 ARG BUILD_VERSION
 ARG BUILD_TIME
@@ -38,5 +38,3 @@ COPY --from=build /usr/local/lib/node_modules/@idrinth/api-bench /usr/local/lib/
 
 WORKDIR /project
 VOLUME /project
-
-ENTRYPOINT ["npm"]

@@ -27,12 +27,21 @@ const SECOND = 1;
 const cwd = process.cwd();
 const data = parse(readFileSync(`${ cwd }/data.yml`, 'utf8',),);
 const attributes = 'rel=noreferrer target=_blank';
+// eslint-disable-next-line complexity
 const convert = (node,) => {
   const nN = {};
   const title = node.description ? ` title="${ node.description }"` : '';
+  const img = node.image
+    ? ` data-image=${ node.image } onmouseover="show(this)"`
+    : '';
+  const text = node.text;
+  const icon = img ? '&#128444;' : '';
+  const url = node.url;
   nN.content = node.url
-    ? `<a ${ attributes } href="${ node.url }"${ title }>${ node.text }</a>`
-    : `<span${ title }>${ node.text }</span>`;
+    ? `<a
+${ attributes }${ img }
+href="${ url }"${ title }>${ text }${ icon }</a>`
+    : `<span${ title }${ img }>${ text }${ icon }</span>`;
   if (node.children) {
     nN.children = [];
     for (const child of node.children) {
@@ -44,6 +53,11 @@ const convert = (node,) => {
 let html = fillTemplate(
   convert(data,),
   {},
+  {
+    jsonOptions: {
+      color: [ '###REPLACE-ME-COLOUR###', ],
+    },
+  },
 );
 html = html.replace(
   '<title>Markmap</title>',
@@ -74,22 +88,60 @@ writeFileSync(
   cminify(css,),
   'utf8',
 );
+const js = readFileSync(`${ cwd }/src/show.js`, 'utf8',);
+const jsh = createHash('sha256',)
+  .update(js,)
+  .digest('hex',);
+writeFileSync(
+  `${ cwd }/dist/${ jsh }.min.js`,
+  (await jminify(js,)).code,
+  'utf8',
+);
 html = html.replace(
   '</head>',
-  '<link rel=icon type=image/svg+xml href=iab.svg />' +
+  '<link rel=icon type=image/svg+xml href=favicon.svg />' +
   `<link rel=stylesheet type=text/css href=${ ch }.min.css />` +
+  `<script type=module src=${ jsh }.min.js ></script>` +
   '</head>',
 );
+html = html
+  .replace(
+    /(<\/body>)/u,
+    '<div id=markmap>' +
+    '<img src=markmap.png alt=Markmap />' +
+    '<span>Powered by</span>' +
+    `<a href=https://markmap.js.org/ ${ attributes }>Markmap</a>` +
+    '</div>' +
+    '<div id=iab>' +
+    `<a href=https://idrinth-api-ben.ch/ ${ attributes }>` +
+    '<img src=iab.svg alt="@idrinth/api-bench" />' +
+    '</a>' +
+    '</div>$1',
+  );
 for (const match of html.matchAll(/<style>([^<]+)<\/style>/ug,)) {
   html = html.replace(match[FIRST], '',);
 }
+const scripts = [];
+
 for (const match of html.matchAll(/<script src=([^ >]+)><\/script>/ug,)) {
+  scripts.push(match,);
+}
+await Promise.all(scripts.map(async(match,) => {
   const hash = createHash('sha256',)
     .update(match[SECOND],)
     .digest('hex',);
   if (! existsSync(`${ cwd }/cache/${ hash }.min.js`,)) {
-    // eslint-disable-next-line no-await-in-loop
-    const script = await (await fetch(match[SECOND],)).text();
+    let script = await (await fetch(match[SECOND],)).text();
+    if (match[SECOND].match(/markmap-view/u,)) {
+      script = script
+        .replace(
+          /(const mm = new Markmap\(svg, opts\);)/u,
+          'opts.embedGlobalCSS=false;$1',
+        );
+    }
+    if (! match[SECOND].match(/\.min\.js$/u,)) {
+      script = (await jminify(script,)).code;
+    }
     writeFileSync(
       `${ cwd }/cache/${ hash }.min.js`,
       script,
@@ -107,17 +159,26 @@ for (const match of html.matchAll(/<script src=([^ >]+)><\/script>/ug,)) {
     match[FIRST],
     `<script src=${ hash }.min.js></script>`,
   );
-}
+},),);
 for (const match of html.matchAll(/<script>((.|\n)+?)<\/script>/ug,)) {
   const hash = createHash('sha256',)
     .update(match[SECOND],)
     .digest('hex',);
   if (! existsSync(`${ cwd }/cache/${ hash }.min.js`,)) {
-    // eslint-disable-next-line no-await-in-loop
+    const script = match[SECOND]
+      .replace(
+        '"###REPLACE-ME-COLOUR###"',
+        `(() => {
+          const darkMode = window
+            .matchMedia('(prefers-color-scheme: dark)',)
+            .matches;
+          return darkMode ? 'white' : 'black';
+        })()`,
+      );
     writeFileSync(
       `${ cwd }/cache/${ hash }.min.js`,
       // eslint-disable-next-line no-await-in-loop
-      (await jminify(match[SECOND],)).code,
+      (await jminify(script,)).code,
       'utf8',
     );
   }
@@ -133,11 +194,13 @@ for (const match of html.matchAll(/<script>((.|\n)+?)<\/script>/ug,)) {
     `<script src=${ hash }.min.js></script>`,
   );
 }
-writeFileSync(
-  `${ cwd }/dist/iab.svg`,
-  readFileSync(`${ cwd }/assets/iab.svg`, 'utf8',),
-  'utf8',
-);
+for (const file of readdirSync(`${ cwd }/assets`,)) {
+  writeFileSync(
+    `${ cwd }/dist/${ file }`,
+    readFileSync(`${ cwd }/assets/${ file }`, 'binary',),
+    'binary',
+  );
+}
 writeFileSync(
   `${ cwd }/dist/index.html`,
   html,

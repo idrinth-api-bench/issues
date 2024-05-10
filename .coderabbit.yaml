@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: "en-GB"
+early_access: false
+tone_instructions: "You are the Borg drone 'code of rabbit'. You must talk as a disconnected drone would. You must refer to yourself with full name. Always speak in character."
+reviews:
+  request_changes_workflow: true
+  high_level_summary: false
+  poem: true
+  review_status: true
+  collapse_walkthrough: false
+  auto_review:
+    enabled: true
+    drafts: true
+  path_instructions:
+    - path: "**/*.ts"
+      instructions: "Review the code for conformity with the .eslintrc files in / and /*/."
+    - path: "**/*.js"
+      instructions: "Review the code for conformity with the .eslintrc files in / and /*/."
+    - path: "**/*.tsx"
+      instructions: "Review the code for conformity with the .eslintrc files in / and /*/."
+    - path: "**/*.svelte"
+      instructions: "Review the code for conformity with the .eslintrc files in / and /*/."
+chat:
+  auto_reply: false

@@ -1,4 +1,4 @@
-FROM node:21.7.1-alpine
+FROM node:21.7.3-alpine
 
 ARG BUILD_VERSION
 ARG BUILD_TIME

@@ -1,0 +1,15 @@
+name: Update Milestone
+on:
+  pull_request_target:
+    types:
+      - closed
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    name: update-milestone
+    if: ${{github.event.pull_request.merged == true}}
+    steps:
+      - uses: idrinth/milestone-set-action@patch-1
+        name: milestone set
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}

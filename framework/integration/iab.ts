@@ -44,7 +44,7 @@ describe('iab-cli', function() {
       '',
       '',
       'bench',
-    ], process.cwd() + '/fixtures',);
+    ], process.cwd() + '/fixtures/test-group-1',);
     await delay(WAIT_CHECK,);
     expect(status,).to.be.eq(STATUSCODE_FAILURE,);
   },).timeout(WAIT_TEST + WAIT_DELAY,);
@@ -54,7 +54,7 @@ describe('iab-cli', function() {
       '',
       '',
       'content',
-    ], process.cwd() + '/fixtures',);
+    ], process.cwd() + '/fixtures/test-group-1',);
     await delay(WAIT_CHECK,);
     expect(status,).to.be.eq(STATUSCODE_FAILURE,);
   },).timeout(WAIT_TEST + WAIT_DELAY,);

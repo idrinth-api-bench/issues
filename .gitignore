@@ -1,6 +1,5 @@
 # ROOT
 /node_modules
-./cypress.config.ts
 
 # CLI
 /cli/src/**/*.js
@@ -9,6 +8,7 @@
 /cli/LICENSE
 /cli/.nyc_output
 /cli/coverage
+/cli/dump.txt
 
 # Framework
 /framework/node_modules
@@ -21,6 +21,7 @@
 /framework/index.js
 /framework/LICENSE
 /framework/src/locales
+/framework/dump.txt
 
 # Examples
 /examples/**/package-lock.json
@@ -45,10 +46,14 @@
 /documentation-website/src/locales
 /documentation-website/public/assets/profile-*.jpg
 /documentation-website/public/assets/*-*.min.css
+/documentation-website/dump.txt
+/documentation-website/src/assets/iab.svg
+/documentation-website/src/assets/favicon.svg
 
 # History Microservice
 /history-microservice/node_modules
 /history-microservice/coverage
+/history-microservice/.env
 
 #History Website
 /history-website/node_modules
@@ -56,11 +61,18 @@
 /history-website/coverage
 /history-website/cypress/screenshots
 /history-website/src/locales
+/history-website/dump.txt
+/history-website/src/assets/iab.svg
+/history-website/src/assets/favicon.svg
 
 #Mindmap
 /mindmap/node_modules
 /mindmap/dist
 /mindmap/cache
+/mindmap/src/*.js
+/mindmap/coverage
+/mindmap/assets/iab.svg
+/mindmap/assets/favicon.svg
 
 # Editor directories and files
 .DS_Store
