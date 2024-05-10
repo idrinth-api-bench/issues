@@ -2,7 +2,7 @@ name: conflibot
 on:
   pull_request:
     branches:
-      - master
+      - the-one
 
 jobs:
   conflibot:
@@ -14,4 +14,4 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           exclude: |
-            **/package-lock.json
+            package-lock.json

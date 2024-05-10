@@ -1,24 +1,12 @@
 {
   "formatter": "@commitlint/format",
   "rules": {
-    "scope-enum": [2, "always", [
-      "ci",
-      "cli",
-      "documentation-website",
-      "examples",
-      "framework",
-      "history-microservice",
-      "history-website",
-      "mindmap",
-      "tools",
-      "containers"
-    ]],
+    "scope-enum": [2, "never"],
     "type-enum": [2, "always", [
       "bug",
       "feature",
       "refactor",
       "ci",
-      "build",
       "documentation"
     ]],
     "signed-off-by": [0, "never"],

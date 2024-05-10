@@ -45,7 +45,7 @@ priority and main affected project part.
 
 - fork the repository
 - mention in the issue, that you are working on it (it will be assigned for a few weeks then)
-- create a feature branch (issue-xxx-does-something) from master
+- create a feature branch (issue-xxx-does-something) from `the-one`
 - create a draft pull request
 - mention fixes #xxx in the description (use the appropriate pull request template)
 - make your changes to the branch

@@ -10,6 +10,18 @@
 /cli/coverage
 /cli/dump.txt
 
+# Desktop
+/desktop/src/**/*.js
+/desktop/src/locales
+/desktop/node_modules
+/desktop/LICENSE
+/desktop/.nyc_output
+/desktopcoverage
+/desktop/dump.txt
+/desktop/dist
+/desktop/src/assets/iab.svg
+/desktop/src/assets/favicon.svg
+
 # Framework
 /framework/node_modules
 /framework/result.json
@@ -41,14 +53,19 @@
 /documentation-website/cypress/fixures/cypress.env.json
 /documentation-website/tsconfig.tsbuildinfo
 /documentation-website/src/routes.tsx
-/documentation-website/src/contributors.json
+/documentation-website/src/pages/contributing/contributors/code-contributors.json
 /documentation-website/public/sitemap.xml
 /documentation-website/src/locales
 /documentation-website/public/assets/profile-*.jpg
+/documentation-website/public/assets/profile-*.webp
+/documentation-website/public/assets/profile-*.avif
+/documentation-website/public/assets/contributors/*.webp
+/documentation-website/public/assets/contributors/*.avif
 /documentation-website/public/assets/*-*.min.css
 /documentation-website/dump.txt
 /documentation-website/src/assets/iab.svg
 /documentation-website/src/assets/favicon.svg
+/documentation-website/.env
 
 # History Microservice
 /history-microservice/node_modules
