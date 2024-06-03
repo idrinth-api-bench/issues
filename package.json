@@ -30,7 +30,7 @@
   "private": true,
   "devDependencies": {
     "@commitlint/cli": "^19.2.1",
-    "knip": "^5.16.0",
+    "knip": "^5.17.3",
     "markdownlint-cli": "^0.41.0",
     "simple-git-hooks": "^2.11.1",
     "spellchecker-cli": "^6.2.0"
