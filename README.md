@@ -1,16 +1,16 @@
 # idrinth-api-bench
 
 This is the central issue repository for the organisation.
-We appreciate any help finding or fixing issues, so feel free to
+We appreciate any help in finding or fixing issues, so feel free to
 open any if you find oddities or errors!
 
-If you want to contribute, have a look at the labels, they tell
+If you want to contribute, have a look at the labels; they tell
 both the size and difficulty of a task, as well as what repository
 to change code in.
 
 ## Branch naming
 
-We use `the-one` as our central branch, since it barely won a
+We use `the-one` as our central branch since it barely won a
 community vote. It was picked as a reference to the one ring -
 this is the branch to rule them all.
 
