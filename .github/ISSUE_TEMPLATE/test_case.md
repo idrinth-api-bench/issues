@@ -2,7 +2,7 @@
 name: Test Case
 about: A new idea to what could be tested manually on top of the automation.
 title: ''
-labels: test-case
+labels: test
 assignees: ''
 
 ---
