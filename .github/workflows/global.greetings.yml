@@ -11,7 +11,7 @@ jobs:
       issues: write
       pull-requests: write
     steps:
-    - uses: actions/first-interaction@v1
+    - uses: actions/first-interaction@v3
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: "Welcome in and thank you for your contribution.\nUsually issues are responded to within 48 hours, but depending on the current workload that may be slightly longer.\n\nYou can also find us on slack at [idrinth-api-bench](https://join.slack.com/t/idrinth-api-bench/shared_invite/zt-2f4zmw2sz-c3etHzCFq3LtZpkR15xXMA)."
